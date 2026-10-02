@@ -70,3 +70,62 @@ nav:
   - Início: index.md
   - Faculdade:
       - faculdade/index.md
+      - PERÍODO 1:
+        - faculdade/periodo-1/index.md
+        - CÁLCULO 1:
+            - faculdade/periodo-1/calculo-1.md
+            - Cálculo 1: faculdade/periodo-1/calculo-1/calculo-1.md
+        - MATEMÁTICA DISCRETA: faculdade/periodo-1/matematica-discreta.md
+        - ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO: faculdade/periodo-1/algebra-vetorial-linear-p-computacao.md
+      - PERÍODO 2:
+        - faculdade/periodo-2/index.md
+        - ALGORITMOS E ESTRUTURAS DE DADOS:
+            - faculdade/periodo-2/algoritmos-e-estruturas-de-dados.md
+            - C: faculdade/periodo-2/algoritmos-e-estruturas-de-dados/c.md
+        - ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO:
+            - faculdade/periodo-2/estatistica-probabilidade-p-computacao.md
+            - Assunções da regressão linear: faculdade/periodo-2/estatistica-probabilidade-p-computacao/assuncoes-da-regressao-linear.md
+            - R: faculdade/periodo-2/estatistica-probabilidade-p-computacao/r.md
+        - FÍSICA P/ COMPUTAÇÃO: faculdade/periodo-2/fisica-p-computacao.md
+        - LÓGICA P/ COMPUTAÇÃO: faculdade/periodo-2/logica-p-computacao.md
+        - SISTEMAS DIGITAIS:
+            - faculdade/periodo-2/sistemas-digitais.md
+            - Assembly: faculdade/periodo-2/sistemas-digitais/assembly.md
+      - PERÍODO 3:
+        - faculdade/periodo-3/index.md
+        - ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS: faculdade/periodo-3/arquitetura-de-computadores-e-sistemas-operacionais.md
+        - CONCEPÇÃO DE ARTEFATOS DIGITAIS:
+            - faculdade/periodo-3/concepcao-de-artefatos-digitais.md
+            - Grupo 7: faculdade/periodo-3/concepcao-de-artefatos-digitais/grupo-7.md
+        - DESENVOLVIMENTO DE SOFTWARE: faculdade/periodo-3/desenvolvimento-de-software.md
+        - ESTRUTURAS DE DADOS ORIENTADAS À OBJETOS: faculdade/periodo-3/estruturas-de-dados-orientadas-a-objetos.md
+      - PERÍODO 4:
+        - faculdade/periodo-4/index.md
+        - BANCO DE DADOS: faculdade/periodo-4/banco-de-dados.md
+        - COMPILADORES: faculdade/periodo-4/compiladores.md
+        - INFORMÁTICA TEÓRICA: faculdade/periodo-4/informatica-teorica.md
+        - INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO: faculdade/periodo-4/integracao-e-evolucao-de-sistemas-de-informacao.md
+      - PERÍODO 5:
+        - faculdade/periodo-5/index.md
+        - APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS:
+            - faculdade/periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados.md
+            - Projeto Aprendizagem de Máquina: faculdade/periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/projeto-aprendizagem-de-maquina.md
+        - INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES:
+            - faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores.md
+            - Projeto Packet Tracer:
+                - faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer.md
+                - E1 - Design Físico e Topologia: faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia.md
+                - E2 - Design de Endereçamento VLSM: faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e2-design-de-enderecamento-vlsm.md
+                - E3 - Design de Segmentação (VLANs e DHCP): faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e3-design-de-segmentacao-vlans-e-dhcp.md
+                - E4 - Roteamento Inter-VLAN e Conectividade: faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade.md
+                - E5 - Apresentação Final: faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e5-apresentacao-final.md
+                - Referências Bibliográficas: faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/referencias-bibliograficas.md
+                - Untitled: faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/untitled.md
+        - METODOLOGIA E EXPRESSÃO TÉCNICO-CIENTÍFICA: faculdade/periodo-5/metodologia-e-expressao-tecnico-cientifica.md
+        - PARADIGMAS DE LINGUAGENS COMPUTACIONAIS: faculdade/periodo-5/paradigmas-de-linguagens-computacionais.md
+      - PERÍODO 6:
+        - faculdade/periodo-6/index.md
+        - EMPREENDIMENTOS EM INFORMÁTICA: faculdade/periodo-6/empreendimentos-em-informatica.md
+        - ENGENHARIA DE REQUISITOS: faculdade/periodo-6/engenharia-de-requisitos.md
+        - INFORMÁTICA E SOCIEDADE: faculdade/periodo-6/informatica-e-sociedade.md
+        - TÓPICOS AVANÇADOS EM SI 3: faculdade/periodo-6/topicos-avancados-em-si-3.md
