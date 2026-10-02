@@ -1,50 +1,33 @@
 # INFORMÁTICA E SOCIEDADE
 
 ---
-<details>
-<summary>Princípios da Educação Online</summary>
-	<details>
-	<summary>Conhecimento como obra aberta</summary>
-		- O conhecimento deve ser entendido como uma construção social contínua, passível de modificação, ressignificação e cocriação
-		- Este princípio combate a visão tradicional (conhecida como "educação bancária"), na qual o conteúdo é visto como um produto acabado e absoluto, exigindo do aluno apenas a assimilação, memorização e repetição passiva das informações
-	</details>
-	<details>
-	<summary>Curadoria de conteúdos online</summary>
-		- Com a imensa abundância de informações na web, o professor não precisa ser o único produtor de conteúdos (como weblivros ou vídeos exclusivos para uma disciplina)
-		- O docente pode atuar de forma mais inteligente como um curador, buscando, mapeando e filtrando os melhores materiais já disponíveis
-		- A partir disso, o professor elabora sínteses e roteiros de estudo que conectam esses conteúdos, podendo até mesmo incorporar produções criadas pelos próprios alunos
-	</details>
-	<details>
-	<summary>Ambiências computacionais diversas</summary>
-		- Em vez de confinar todas as atividades em um único Ambiente Virtual de Aprendizagem (AVA) fechado, como o Moodle ou o Google Classroom, o ensino online deve ocupar múltiplos espaços da internet
-		- O professor é encorajado a usar a diversidade da web, integrando redes sociais, aplicativos, sistemas de edição colaborativa, mapas interativos e outros serviços online para compor aulas de forma híbrida e dinâmica
-	</details>
-	<details>
-	<summary>Aprendizagem colaborativa</summary>
-		- A tecnologia na educação não deve atuar como uma mera "máquina de ensinar" para alunos que estudam sozinhos, mas sim como um meio para conectar pessoas
-		- Esse princípio foca na construção coletiva do conhecimento, valorizando os múltiplos saberes do grupo por meio do convívio e da colaboração em rede
-	</details>
-	<details>
-	<summary>Conversação, interatividade</summary>
-		- Uma aula não pode ser resumida ao "ditar do mestre" ou à mera exibição de slides em que o aluno ouve de forma silenciosa e pouco participa
-		- Deve-se fomentar um espaço de conversa genuína e aberta ao imprevisível, engajando toda a turma
-		- Isso pode ser planejado arquitetando o uso de ferramentas variadas, como videoconferências síncronas, bate-papos, fóruns e grupos de WhatsApp
-	</details>
-	<details>
-	<summary>Atividades autorais</summary>
-		- Foge-se do modelo tradicional de questionários e listas de exercícios de fixação, priorizando-se atividades criativas e práticas
-		- Em um cenário onde qualquer pessoa pode criar para a internet, a ideia é estimular que os estudantes sejam verdadeiros autores, aplicando e transformando os conhecimentos da disciplina de forma ativa e crítica, promovendo multiletramentos
-	</details>
-	<details>
-	<summary>Mediação docente ativa</summary>
-		- O modelo comum de EAD massiva costuma usar "tutores reativos", profissionais que ficam disponíveis algumas horas para responder a milhares de alunos apenas se provocados, esvaziando a relação de ensino
-		- Para a aprendizagem colaborativa acontecer, o professor precisa fazer uma mediação ativa, atuando como um dinamizador constante que estimula debates, resolve dúvidas e intervém nos conflitos usando uma "linguagem emocional" que aproxime o grupo
-	</details>
-	<details>
-	<summary>Avaliação baseada em competências, formativa e colaborativa</summary>
-		- Este princípio desafia a prova presencial focada unicamente na classificação de acertos e erros
-		- Na educação online, as plataformas registram os rastros de participação do aluno
-			- Logo, a avaliação deve ser um processo contínuo (formativo), levando em conta as atitudes (presença e participação), habilidades práticas e conhecimentos
-			- A avaliação deixa de ser apenas responsabilidade do professor (heteroavaliação) e passa a incorporar a autoavaliação do aluno e a avaliação feita pelos próprios colegas do grupo (avaliação 360º ou colaborativa)
-	</details>
-</details>
+
+- Princípios da Educação Online
+    - Conhecimento como obra aberta
+        - O conhecimento deve ser entendido como uma construção social contínua, passível de modificação, ressignificação e cocriação
+        - Este princípio combate a visão tradicional (conhecida como "educação bancária"), na qual o conteúdo é visto como um produto acabado e absoluto, exigindo do aluno apenas a assimilação, memorização e repetição passiva das informações
+    - Curadoria de conteúdos online
+        - Com a imensa abundância de informações na web, o professor não precisa ser o único produtor de conteúdos (como weblivros ou vídeos exclusivos para uma disciplina)
+        - O docente pode atuar de forma mais inteligente como um curador, buscando, mapeando e filtrando os melhores materiais já disponíveis
+        - A partir disso, o professor elabora sínteses e roteiros de estudo que conectam esses conteúdos, podendo até mesmo incorporar produções criadas pelos próprios alunos
+    - Ambiências computacionais diversas
+        - Em vez de confinar todas as atividades em um único Ambiente Virtual de Aprendizagem (AVA) fechado, como o Moodle ou o Google Classroom, o ensino online deve ocupar múltiplos espaços da internet
+        - O professor é encorajado a usar a diversidade da web, integrando redes sociais, aplicativos, sistemas de edição colaborativa, mapas interativos e outros serviços online para compor aulas de forma híbrida e dinâmica
+    - Aprendizagem colaborativa
+        - A tecnologia na educação não deve atuar como uma mera "máquina de ensinar" para alunos que estudam sozinhos, mas sim como um meio para conectar pessoas
+        - Esse princípio foca na construção coletiva do conhecimento, valorizando os múltiplos saberes do grupo por meio do convívio e da colaboração em rede
+    - Conversação, interatividade
+        - Uma aula não pode ser resumida ao "ditar do mestre" ou à mera exibição de slides em que o aluno ouve de forma silenciosa e pouco participa
+        - Deve-se fomentar um espaço de conversa genuína e aberta ao imprevisível, engajando toda a turma
+        - Isso pode ser planejado arquitetando o uso de ferramentas variadas, como videoconferências síncronas, bate-papos, fóruns e grupos de WhatsApp
+    - Atividades autorais
+        - Foge-se do modelo tradicional de questionários e listas de exercícios de fixação, priorizando-se atividades criativas e práticas
+        - Em um cenário onde qualquer pessoa pode criar para a internet, a ideia é estimular que os estudantes sejam verdadeiros autores, aplicando e transformando os conhecimentos da disciplina de forma ativa e crítica, promovendo multiletramentos
+    - Mediação docente ativa
+        - O modelo comum de EAD massiva costuma usar "tutores reativos", profissionais que ficam disponíveis algumas horas para responder a milhares de alunos apenas se provocados, esvaziando a relação de ensino
+        - Para a aprendizagem colaborativa acontecer, o professor precisa fazer uma mediação ativa, atuando como um dinamizador constante que estimula debates, resolve dúvidas e intervém nos conflitos usando uma "linguagem emocional" que aproxime o grupo
+    - Avaliação baseada em competências, formativa e colaborativa
+        - Este princípio desafia a prova presencial focada unicamente na classificação de acertos e erros
+        - Na educação online, as plataformas registram os rastros de participação do aluno
+            - Logo, a avaliação deve ser um processo contínuo (formativo), levando em conta as atitudes (presença e participação), habilidades práticas e conhecimentos
+            - A avaliação deixa de ser apenas responsabilidade do professor (heteroavaliação) e passa a incorporar a autoavaliação do aluno e a avaliação feita pelos próprios colegas do grupo (avaliação 360º ou colaborativa)

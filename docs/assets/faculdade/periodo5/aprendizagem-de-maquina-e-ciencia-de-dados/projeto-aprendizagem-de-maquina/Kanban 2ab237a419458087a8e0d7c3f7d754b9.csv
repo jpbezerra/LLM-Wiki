@@ -1,0 +1,25 @@
+﻿Nome,Atribuir,Etapa
+Setup do Repositório GitHub,,Setup Infraestrutura e Dados
+Aquisição e Ingestão de Dados,,Setup Infraestrutura e Dados
+Análise Exploratória (EDA) - Distribuição,,Setup Infraestrutura e Dados
+Análise Exploratória (EDA) - Correlações,,Setup Infraestrutura e Dados
+Pré-processamento: Tratamento de Nulos e Duplicatas,,Setup Infraestrutura e Dados
+Pré-processamento: Scaling e Encoding,,Setup Infraestrutura e Dados
+Split de Dados (Estratégia de Validação),,Setup Infraestrutura e Dados
+Baseline: Isolation Forest (Probabilístico),,Modelagem Clássica
+Baseline: LOF ou KNN (Distância/Densidade),,Modelagem Clássica
+Feature Selection (Feature Engineering),,Modelagem Clássica
+Otimização de Hiperparâmetros (Clássicos),,Modelagem Clássica
+Arquitetura Autoencoder,,Deep Learning & Avançado
+Pipeline de Treino Autoencoder,,Deep Learning & Avançado
+Definição de Threshold de Anomalia,,Deep Learning & Avançado
+Refinamento do Autoencoder,,Deep Learning & Avançado
+Consolidação de Métricas,,Avaliação e Validação Estatística
+Visualização de Resultados,,Avaliação e Validação Estatística
+Teste de Significância Estatística,,Avaliação e Validação Estatística
+Análise de Falhas,,Avaliação e Validação Estatística
+Relatório: Introdução e Teoria,,Entregáveis e Documentação
+Relatório: Metodologia,,Entregáveis e Documentação
+Relatório: Resultados e Discussão,,Entregáveis e Documentação
+Slides da Apresentação,,Entregáveis e Documentação
+Limpeza do Código (Refactoring),,Entregáveis e Documentação
