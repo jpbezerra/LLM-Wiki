@@ -384,7 +384,7 @@ pág. 305 até pág. 323
                 - q0’ = E({1})
                     - E({1}) = {1, 3}
                 - F’ → todos os estados que contém o estado final de F
-                    - F’ = {{1}, {1, 2}, {1, 3}, {1, 2, 3}}
+                    - F’ = { {1}, {1, 2}, {1, 3}, {1, 2, 3} }
                 
                 ![image.png](../../assets/faculdade/periodo4/informatica-teorica/image%2018.png)
                 
