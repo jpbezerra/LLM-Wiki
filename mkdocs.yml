@@ -72,9 +72,7 @@ nav:
       - faculdade/index.md
       - PERÍODO 1:
         - faculdade/periodo-1/index.md
-        - CÁLCULO 1:
-            - faculdade/periodo-1/calculo-1.md
-            - Cálculo 1: faculdade/periodo-1/calculo-1/calculo-1.md
+        - CÁLCULO 1: faculdade/periodo-1/calculo-1.md
         - MATEMÁTICA DISCRETA: faculdade/periodo-1/matematica-discreta.md
         - ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO: faculdade/periodo-1/algebra-vetorial-linear-p-computacao.md
       - PERÍODO 2:

@@ -1,314 +1,923 @@
-# CÁLCULO 1
+# Cálculo 1
 
----
 ## Conjuntos Numéricos
-<details>
-<summary>Tipos de conjuntos numéricos</summary>
-	> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-</details>
-<details>
-<summary>Símbolos</summary>
-	```plain text
-U: "união"; Ex: AUB = {0,1...,6}; {x/x∈A ou x∈B}
-∩: "interseção"; Ex: A∩B = {0,2,4}; {x/x∈A e x∈B}
-⊂: "contido"
-⊃: "contém"
-∈: "pertence"
-∉: "não pertence"
-Ø ou { }: conjunto vazio
-	```
-</details>
----
-## Expressões
-<details>
-<summary>Numérica</summary>
-	- Regras
-		```plain text
-1 - 1º(); 2°[]; 3º{}
-2 - Potências e Raízes
-3 - Multiplicação e Divisão
-4 - Soma e Subtração
-		```
-</details>
-<details>
-<summary>Algébricas</summary>
-	- Operações com letras
-		- O melhor a se fazer é usar a Fatoração,
-			```plain text
-Ex: x^6+2x^4y+x²y+2y²
-		x^4(x²+2y) + y(x²+2y) = (x^4+y)(x²+2y)
-		
-Ex: x^6+4x³y+4y²
-	x^6+2x³y+2x³y+4y²
-		x³(x³+2y) + 2y(x³+2y) = (x³+2y)(x³+2y)
-			
-Ex: x^6-3x^4y+3x²y²-y³
-	x^6-x^4y-2x^4y+2x²y²+x²y²-y³
-		x^4(x²-y) - 2x²y(x²-y) + y²(x²-y) = (x^4-2x²y+y²)(x²-y)
-			```
-	- Produtos Notáveis
-		```plain text
-- Quadrado da soma: (x+y)² = x²+2xy+y²
-- Quadrado da diferença: (x-y)² = x²-2xy+y²
-- Produto da soma pela diferença: (x+y)(x-y) = x²-y²
-- Cubo da soma: (x+y)³ = x³+3x²y+3xy²+y³
-- Cubo da diferença: (x-y)³ = x³-3x²y+3xy²-y³
-- Soma de cubos: (x³+y³) = (x+y)(x²-xy+y²)
-- Diferença de cubos: (x³-y³) = (x-y)(x²+xy+y²)
-		```
-	- Triângulo de Pascal
-		- Tem função de auxiliar a busca pelos coeficientes de expressões algébricas utilizando os Binômios de Newton
-			<details>
-			<summary>Binômio de Newton</summary>
-				> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-				-  (n¦k) = n!/(n-k)!k!
-					```plain text
-Ex: Determine o coeficiente de x^15y^5 em (x+2y)^20
-		1^15 . 2^5 . (20¦5)
-				32. 20!/15!5! = 496128
-						
-Ex: determine o coeficiente de x^17y³ em (3x+3y)^20
-		3^17 . 3³ . (20¦3)
-				3^17 . 3³ . 20!/17!3!
-					```
-			</details>
-			<details>
-			<summary>Expoentes</summary>
-				```plain text
-Expoente = N
-N = 0; 1
-N = 1; 1 1
-N = 2; 1 2 1
-N = 3; 1 3 3 1
-N = 4; 1 4 6 4 1
-N = 5; 1 5 10 10 5 1
-N = 6; 1 6 15 20 15 6 1
-...
-				```
-			</details>
-	- Importante
-		- Em (x-y)\^n, o *expoente ímpar* do y determina o *sinal negativo*
-</details>
----
+- ![](../../assets/faculdade/periodo1/20231025211330.png)
+- Símbolos
+    - U: "união"; Ex: AUB = {0,1...,6}; {x/x∈A ou x∈B}
+    - ∩: "interseção"; Ex: A∩B = {0,2,4}; {x/x∈A e x∈B}
+    - ⊂: "contido"
+    - ⊃: "contém"
+    - ∈: "pertence"
+    - ∉: "não pertence"
+    - Ø ou { }: conjunto vazio
+- ![](../../assets/faculdade/periodo1/20231025211709.png)
+
+## Expressões Numéricas
+- Regra
+    - 1 - 1º(); 2°[]; 3º{}
+    - 2 - Potências e Raízes
+    - 3 - Multiplicação e Divisão
+    - 4 - Soma e Subtração
+
+## Expressões Algébricas
+- Operações com letras
+    - O melhor a se fazer é usar a Fatoração
+        - Ex: x^6+2x^4y+x²y+2y²
+            - x^4(x²+2y) + y(x²+2y) = (x^4+y)(x²+2y)
+        - Ex: x^6+4x³y+4y²
+            - x^6+2x³y+2x³y+4y²
+                - x³(x³+2y) + 2y(x³+2y) = (x³+2y)(x³+2y)
+        - Ex: x^6-3x^4y+3x²y²-y³
+            - x^6-x^4y-2x^4y+2x²y²+x²y²-y³
+                - x^4(x²-y) - 2x²y(x²-y) + y²(x²-y) = (x^4-2x²y+y²)(x²-y)
+- Produtos Notáveis
+    - Quadrado da soma: (x+y)² = x²+2xy+y²
+    - Quadrado da diferença: (x-y)² = x²-2xy+y²
+    - Produto da soma pela diferença: (x+y)(x-y) = x²-y²
+    - Cubo da soma: (x+y)³ = x³+3x²y+3xy²+y³
+    - Cubo da diferença: (x-y)³ = x³-3x²y+3xy²-y³
+    - Soma de cubos: (x³+y³) = (x+y)(x²-xy+y²)
+    - Diferença de cubos: (x³-y³) = (x-y)(x²+xy+y²)
+- Triângulo de Pascal
+    - Tem função de auxiliar a busca pelos coeficientes de expressões algébricas utilizando os Binômios de Newton
+        - Binômio de Newton
+            - ![](../../assets/faculdade/periodo1/20231025215905.png)
+            - (n¦k) = n!/(n-k)!k!
+                - Ex: Determine o coeficiente de x^15y^5 em (x+2y)^20
+                    - 1^15 . 2^5 . (20¦5)
+                        - 32. 20!/15!5! = 496128
+                - Ex: determine o coeficiente de x^17y³ em (3x+3y)^20
+                    - 3^17 . 3³ . (20¦3)
+                        - 3^17 . 3³ . 20!/17!3!
+        - Expoente = N
+        - N = 0; 1
+        - N = 1; 1 1
+        - N = 2; 1 2 1
+        - N = 3; 1 3 3 1
+        - N = 4; 1 4 6 4 1
+        - N = 5; 1 5 10 10 5 1
+        - N = 6; 1 6 15 20 15 6 1
+        - ...
+- Importante
+    - Em (x-y)^n, o _expoente ímpar_ do y determina o _sinal negativo_
+
 ## Polinômios
-<details>
-<summary>Expressões algébricas formadas pela adição de monômios (expressões algébricas do tipo produto)</summary>
-	- Ex: p(x) = 4x³ - x³ + 2x - 5
-		- OBS: R\[x\] = \{p(x)/ p(x) é um polinômio da variável x e o conjunto dos polinômios na variável x tem coeficientes reais\}
-			- Assim, p(x)∈R\[x\] ⇔ p(x) = a0x\^0 + a1x + ... + anx\^n
-			- p(x) = x\^4 + x³ + 3x² + 0x + 0
-				- (1,1,3,0,0) (coeficientes);
-				> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-</details>
-<details>
-<summary>Grau do polinômio</summary>
-	- É sempre o maior expoente
-		- r(x) = -2x; grau(r(x)) = 1
-		- q(x) = 2; grau(q(x)) = 0
-		- p(x) = 5x\^5 + 2; grau(p(x)) = 5
-</details>
-<details>
-<summary>Operações com polinômios</summary>
-	<details>
-	<summary>Adição</summary>
-		- p(x) = a0 + a1x + a2x² + ... + anx\^n
-		- q(x) = b0 + b1x + b2x² + ... +bnx\^n
-		- p(x) + q(x) = (a0+b0) + (a1+b1)x + (a2+b2)x² + ... + (an+bn)x\^n
-	</details>
-	<details>
-	<summary>Multiplicação</summary>
-		- Na multiplicação os expoentes somados tem que dar o expoente desejado (ou fazer chuveirinho)
-			- p(x) . q(x) = (a0b0) + (a1b0 + a0b1)x + (a2b0 + a1b1 + a0b2)x² + …
-				- a0b0 = 0+0 = 0; a1b0 = 1+0 = 1; a0b1 = 0+1 = 1; a2b0 = 2+0 = 2; a1b1 = 1+1 = 2; a0b2 = 0+2 = 2; …
-		- Ex: p(x) = x³ + 2x; q(x) = 3x² + x + 2
-			- p(x) . q(x) = 2.2x + x.2x +2.x³ + 3x².2x + x.x³ + 3x².x³ → 4x + 2x² + 2x³ + 6x³ + x\^4 + 3x\^5 → 3x\^5 + x\^4 + 8x³ + 2x² + 4x
-		- OBS: grau(p(x) . q(x)) = grau(p(x)) + grau(q(x))
-			- Se grau(p(x)) ≠ grau (q(x)) então:
-				- grau(p(x)) + grau(q(x)) = máx grau(p(x)) . grau(q(x))
-	</details>
-	<details>
-	<summary>Algoritmo da divisão</summary>
-		- Sejam a(x) e d(x)∈R\[x\] dois polinômios com d(x) ≠ 0, então existem únicos q(x) e r(x)∈R\[x\] tais que:
-			- a(x) = d(x) . q(x) + r(x); onde d(x) é o divisor, q(x) é o quociente e r(x) é o resto
-		- Ex: divisão de p(x) = 2x\^4 - 3x² + x - 2 por d(x) = x² - x +1
-			> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-			q(x) = 2x² + 2x - 3; r(x) = -4x + 1
-	</details>
-</details>
-<details>
-<summary>Raízes de Polinômio</summary>
-	- Definição: sejam p(x)∈R\[x\] um polinômio não nulo e a∈R\[x\] um número real; dizemos que x = a é uma raiz de p(x) se p(a) = 0
-		- Ex: p(x) = x\^4 - 4x² + 2x + 1; x = 1 é uma raiz mas x = 0 não
-		- Ex: dividir p(x) x\^4 - 4x² + 2x + 1 por d(x) = x - 1
-			> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-			Resposta: r(x) = 0; q(x) = x³ + x² - 3x - 1; p(x) = (x³ + x² - 3x - 1)(x - 1)
-</details>
-<details>
-<summary>Raiz x = a versus divisão por x - a</summary>
-	- De modo geral:
-		- Dividindo p(x)∈R\[x\] por x - a obtemos q(x) e r(x)∈R\[x\] tais que:
-			- p(x) = q(x) . (x-a) + r(x); com r(x) = 0 ou grau(r(x)) \< grau(x-a) = 1; r(x) = Constante
-			- p(x) = q(x) . (x-a) + C; com p(a) = C; p(x) = q(x) . (x-a) + p(a)
-			- Deste modo, p(a) = 0 ⇔ x - a divide p(x)
-			- Além disso, p(a) é exatamente o resto da divisão de p(x) por x-a
-			- Ex: p(x) = x\^5 - 4 = (x\^4 + x³ + x² + x + 1)(x-1) - 3; com p(1) = -3
-</details>
-<details>
-<summary>Dispositivo de Briot-Ruffini</summary>
-	- Algoritmo que possibilita a divisão entre um polinômio e um binômio de forma mais simples
-	- Ex: dividir o polinômio p(x) = 3x³ + 2x² + x + 5 pelo binômio d(x) = x + 1
-		- Passo a passo
-			<details>
-			<summary>1º - Desenhar dois segmentos de retas, um horizontal e outro vertical</summary>
-				> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-			</details>
-			<details>
-			<summary>2º - Colocar os coeficientes do p(x) acima do segmento horizontal e a direita do segmento vertical e repetir o primeiro coeficiente na parte de baixo; na parte esquerda do segmento vertical e embaixo do segmento horizontal devemos colocar a raiz do binômio ( para determinar a raiz basta igualar o dividendo a zero; x + 1 = 0; x = -1)</summary>
-				> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-			</details>
-			<details>
-			<summary>3º - agora basta multiplicar a raiz do binômio pelo primeiro coeficiente abaixo do segmento horizontal e em seguida somar o resultado pelo próximo coeficiente localizado acima do segmento horizontal e repetir o processo até o último coeficiente</summary>
-				> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-			</details>
-			<details>
-			<summary>Analisando o algoritmo</summary>
-				- Na parte superior do segmento horizontal e à direita do segmento vertical temos os coeficientes do polinômio p(x); p(x) = 3x³ + 2x² + x + 5
-				- O "-1" é a raiz do divisor, portanto o divisor é d(x) = x+1
-				- Na direita do segmento vertical e abaixo do segmento horizontal se encontram o quociente e o resto, que é o último número
-					- Lembrando que o grau do dividendo é 3 e o grau do divisor é 1, portanto o grau(q(x)) = grau(p(x)) - grau(d(x)) = 2; q(x) = 3x² - x + 2
-					- Como r(x) é o último número, r(x) = 3
-				- Utilizando o algoritmo da divisão, temos que: 
-					- Dividendo = Divisor . Quociente + Resto → 3x³ + 2x² + x + 5 = (x+1)(3x² -x + 2) + 3
-			</details>
-</details>
----
+- Expressões algébricas formadas pela adição de monômios (expressões algébricas do tipo produto)
+    - Ex: p(x) = 4x³ - x³ + 2x - 5
+        - OBS: R[x] = {p(x)/ p(x) é um polinômio da variável x e o conjunto dos polinômios na variável x tem coeficientes reais}
+            - Assim, p(x)∈R[x] ⇔ p(x) = a0x^0 + a1x + ... + anx^n
+            - p(x) = x^4 + x³ + 3x² + 0x + 0
+                - (1,1,3,0,0) (coeficientes); ![](../../assets/faculdade/periodo1/20231028145513.png)
+- Grau do polinômio
+    - É sempre o maior expoente
+        - r(x) = -2x; grau(r(x)) = 1
+        - q(x) = 2; grau(q(x)) = 0
+        - p(x) = 5x^5 + 2; grau(p(x)) = 5
+- Operações com polinômios
+    - Adição
+        - p(x) = a0 + a1x + a2x² + ... + anx^n
+        - q(x) = b0 + b1x + b2x² + ... +bnx^n
+        - p(x) + q(x) = (a0+b0) + (a1+b1)x +  (a2+b2)x² + ... + (an+bn)x^n
+    - Multiplicação
+        - Na multiplicação os expoentes somados tem que dar o expoente desejado (ou fazer chuveirinho)
+            - p(x) . q(x) = (a0b0) + (a1b0 + a0b1)x + (a2b0 + a1b1 + a0b2)x² + ...
+            -     a0b0 = 0+0 = 0; a1b0 = 1+0 = 1; a0b1 = 0+1 = 1; a2b0 = 2+0 = 2; a1b1 = 1+1 = 2; a0b2 = 0+2 = 2; ...
+        - Ex: p(x) = x³ + 2x; q(x) = 3x² + x + 2
+            - p(x) . q(x) = 2.2x + x.2x +2.x³ + 3x².2x + x.x³ + 3x².x³ → 4x + 2x² + 2x³ + 6x³ + x^4 + 3x^5 → 3x^5 + x^4 + 8x³ + 2x² + 4x
+        - OBS: grau(p(x) . q(x)) = grau(p(x)) + grau(q(x))
+            - se grau(p(x)) ≠ grau (q(x)) então:
+                - grau(p(x)) + grau(q(x)) = máx grau(p(x)) . grau(q(x))
+    - Algoritmo da Divisão
+        - Sejam a(x) e d(x)∈R[x] dois polinômios com d(x) ≠ 0, então existem únicos q(x) e r(x)∈R[x] tais que:
+            - a(x) = d(x) . q(x) + r(x); onde d(x) é o divisor, q(x) é o quociente e r(x) é o resto
+            - r(x) = 0 ou grau(r(x)) < grau(d(x))
+        - Ex: divisão de p(x) = 2x^4 - 3x² + x - 2 por d(x) = x² - x +1
+            - ![](../../assets/faculdade/periodo1/20231028154124.png)
+            - q(x) = 2x² + 2x - 3; r(x) = -4x + 1
+- Raízes de Polinômio
+        - Definição: sejam p(x)∈R[x] um polinômio não nulo e a∈R[x] um número real; dizemos que x = a é uma raiz de p(x) se p(a) = 0
+            - Ex: p(x) = x^4 - 4x² + 2x + 1; x = 1 é uma raiz mas x = 0 não
+            - Ex: dividir p(x) x^4 - 4x² + 2x + 1 por d(x) = x - 1
+                - ![](../../assets/faculdade/periodo1/20231028155701.png)
+                - Resposta: r(x) = 0; q(x) = x³ + x² - 3x - 1; p(x) = (x³ + x² - 3x - 1)(x - 1)
+                - Então x - 1 é uma raiz de p(x)
+- Raiz x = a versus divisão por x - a
+    - De modo geral:
+        - Dividindo p(x)∈R[x] por x - a obtemos q(x) e r(x)∈R[x] tais que:
+            - p(x) = q(x) . (x-a) + r(x); com r(x) = 0 ou grau(r(x)) < grau(x-a) = 1; r(x) = Constante
+            - p(x) = q(x) . (x-a) + C; com p(a) = C; p(x) = q(x) . (x-a) + p(a)
+            - Deste modo, p(a) = 0 ⇔ x - a divide p(x)
+            - Além disso, p(a) é exatamente o resto da divisão de p(x) por x-a
+            - Ex: p(x) = x^5 - 4 = (x^4 + x³ + x² + x + 1)(x-1) - 3; com p(1) = -3
+- Dispositivo de Briot-Ruffini
+    - Algoritmo que possibilita a divisão entre um polinômio e um binômio de forma mais simples
+    - Ex: dividir o polinômio p(x) = 3x³ + 2x² + x + 5 pelo binômio d(x) = x + 1
+        - Passo a passo
+            - 1º - Desenhar dois segmentos de retas, um horizontal e outro vertical
+                - ![](../../assets/faculdade/periodo1/20231028163500.png)
+            - 2º - Colocar os coeficientes do p(x) acima do segmento horizontal e a direita do segmento vertical e repetir o primeiro coeficiente na parte de baixo; na parte esquerda do segmento vertical e embaixo do segmento horizontal devemos colocar a raiz do binômio ( para determinar a raiz basta igualar o dividendo a zero; x + 1 = 0; x = -1)
+                - ![](../../assets/faculdade/periodo1/20231028163514.png)
+            - 3º - agora basta multiplicar a raiz do binômio pelo primeiro coeficiente abaixo do segmento horizontal e em seguida somar o resultado pelo próximo coeficiente localizado acima do segmento horizontal e repetir o processo até o último coeficiente
+                - ![](../../assets/faculdade/periodo1/20231028163526.png)
+            - Analisando o algoritmo
+                - Na parte superior do segmento horizontal e à direita do segmento vertical temos os coeficientes do polinômio p(x); p(x) = 3x³ + 2x² + x + 5
+                - O "-1" é a raiz do divisor, portanto o divisor é d(x) = x+1
+                - Na direita do segmento vertical e abaixo do segmento horizontal se encontram o quociente e o resto, que é o último número
+                    - Lembrando que o grau do dividendo é 3 e o grau do divisor é 1, portanto o grau(q(x)) = grau(p(x)) - grau(d(x)) = 2; q(x) = 3x² - x + 2
+                    - Como r(x) é o último número, r(x) = 3
+                - Utilizando o algoritmo da divisão, temos que:
+                    - Dividendo = Divisor . Quociente + Resto → 3x³ + 2x² + x + 5 = (x+1)(3x² -x + 2) + 3
+
 ## Funções
-<details>
-<summary>Associações de elementos entre dois conjuntos, por exemplo uma função de A em B significa associar cada elemento de A a um único elemento de B</summary>
-	- Em uma função A→B, o A é chamado de Domínio e o B de Contradomínio
-		- Um elemento de B relacionado a um elemento de A recebe o nome de Imagem, agrupando todas as imagens de B temos um conjunto imagem que é um subconjunto do contradomínio
-			- No gráfico, o f(x) simboliza o eixo y
-</details>
-<details>
-<summary>Ex: A = \{1,2,3,4\}; B = \{1,2,3,4,5,6,7,8\}; f: A→B é x→2x, então f(x) = 2x</summary>
-	- Domínio = \{1,2,3,4\}; Contradomínio = \{1,2,3,4,5,6,7,8\} e Imagem = \{2,4,6,8\}
-</details>
-<details>
-<summary>Tipos</summary>
-	<details>
-	<summary>Função composta: Duas funções f e g podem ser representadas como função composta por f◦g ou g◦f</summary>
-		- f◦g (x) = f(g(x)) e g◦f (x) = g(f(x))
-	</details>
-	<details>
-	<summary>Função constante</summary>
-		- f(x) = C, onde C∈R 
-		<details>
-		<summary>Gráfico</summary>
-			> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-		</details>
-	</details>
-	<details>
-	<summary>Função do 1° grau (Função afim)</summary>
-		- f(x) = ax + b; a,b∈R com a diferente de 0
-		<details>
-		<summary>Gráficos</summary>
-			> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-			- O coeficiente a é a inclinação da reta (ou o coeficiente angular)<br>a = tg(θ), onde θ é o ângulo formado entre a reta e o eixo x
-		</details>
-	</details>
-	<details>
-	<summary>Função do 2° grau (Função quadrática)</summary>
-		- f(x) = ax² + bx + c, para achar a raiz se usa bháskara
-		<details>
-		<summary>Gráficos (Parábola)</summary>
-			> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-			- a\>0 = concavidade pra cima
-			- a\<0 = concavidade pra baixo
-			> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-			- Δ é o discriminante da equação do 2° grau, é a interseção com o eixo x
-		</details>
-		<details>
-		<summary>Interseção com os eixos</summary>
-			- Eixo y: x = 0; y = c
-			- Eixo x: y = 0; Fórmula de Bháskara
-		</details>
-		<details>
-		<summary>Para calcular o x do vértice (ponto que fica no centro da parábola)</summary>
-			xv = -b/2a = x1+x1/2 (x1 e x2 são as raízes)
-		</details>
-		<details>
-		<summary>Para calcular o y do vértice (ponto mais baixo da parábola)</summary>
-			yv = f(xv) = -Δ/4a
-		</details>
-		<details>
-		<summary>Ex: f(x) = x² - 4x + 3</summary>
-			a\>0; c = 3; raízes = (x1 = 1) e (x2 = 3); xv = 2; yv = -1
-		</details>
-	</details>
-	<details>
-	<summary>Função exponencial</summary>
-		- f(x) = a\^x; quando o valor de x aumenta, a imagem também aumenta
-	</details>
-	<details>
-	<summary>Função logarítmica</summary>
-		- f(x) = log de x na base a; com a sendo real, positivo e diferente de 1
-		- A função logarítmica é o inverso da função exponencial
-			<details>
-			<summary>Funções invertíveis</summary>
-				- Uma função f: A→B é invertível se existe uma função g: B→A, ou seja, g = f\^-1
-					- Nesse caso, o domínio A em f vira contradomínio em g e o contradomínio B em f vira o domínio em g
-			</details>
-	</details>
-</details>
-<details>
-<summary>Operações com funções</summary>
-	- (f+g)(x) = f(x) + g(x)
-	- (f-g)(x) = f(x) - g(x)
-	- (Kf)(x) = K . f(x)
-	- (f.g)(x) = f(x) . g(x)
-	- Com D = D(f)∩D(g):
-		- (f/g)(x) = f(x)/g(x)
-		> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-</details>
-<details>
-<summary>Composição de funções</summary>
-	- Dadas duas funções f e g, a composição de f com g é denotada como f◦g tal que f◦g(x) = f(g(x))
-</details>
----
+- Associações de elementos entre dois conjuntos, por exemplo uma função de A em B significa associar cada elemento de A a um único elemento de B
+    - Em uma função A→B, o A é chamado de Domínio e o B de Contradomínio
+        - Um elemento de B relacionado a um elemento de A recebe o nome de Imagem, agrupando todas as imagens de B temos um conjunto imagem que é um subconjunto do contradomínio
+            - No gráfico, o f(x) simboliza o eixo y
+- Ex: A = {1,2,3,4}; B = {1,2,3,4,5,6,7,8}; f: A→B é x→2x, então f(x) = 2x
+    - Domínio = {1,2,3,4}; Contradomínio = {1,2,3,4,5,6,7,8} e Imagem = {2,4,6,8}
+- Tipos
+    - Função composta: Duas funções f e g podem ser representadas como função composta por f◦g ou g◦f
+        - f◦g (x) = f(g(x)) e g◦f (x) = g(f(x))
+    - Função constante
+        - f(x) = C, onde C∈R
+        - Gráfico:
+            - ![](../../assets/faculdade/periodo1/20231104165905.png)
+    - Função do 1° grau (Função afim)
+        - f(x) = ax + b; a,b∈R com a diferente de 0
+        - Gráficos:
+            - ![](../../assets/faculdade/periodo1/20231104170105.png)
+                - O coeficiente a é a inclinação da reta (ou o coeficiente angular)
+                - a = tg(θ), onde θ é o ângulo formado entre a reta e o eixo x
+        - Interseções com os eixos
+            - y: x = 0; y = b
+            - x: y = 0; ax + b = 0; ax = -b (raiz ou zero da função)
+            - Caso especial: função linear, nesse caso f(x) = ax e quando a = 1 a função linear é uma função identidade
+    - Função do 2° grau (Função quadrática)
+        - f(x) = ax² + bx + c, para achar a raiz se usa bháskara
+        - Gráficos (Parábola):
+            - ![](../../assets/faculdade/periodo1/20231104171216.png)
+                - a>0 = concavidade pra cima
+                - a<0 = concavidade pra baixo
+            - ![](../../assets/faculdade/periodo1/20231104171423.png)
+                - Δ é o discriminante da equação do 2° grau, é a interseção com o eixo x
+        - Interseção com os eixos
+            - Eixo y: x = 0; y = c
+            - Eixo x: y = 0; Fórmula de Bháskara
+        - Para calcular o x do vértice (ponto que fica no centro da parábola)
+            - xv = -b/2a = x1+x1/2 (x1 e x2 são as raízes)
+        - Para calcular o y do vértice (ponto mais baixo da parábola)
+            - yv = f(xv) = -Δ/4a
+        - Ex: f(x) = x² - 4x + 3
+            - a>0; c = 3; raízes = (x1 = 1) e (x2 = 3); xv = 2; yv = -1
+    - Função exponencial
+        - f(x) = a^x; quando o valor de x aumenta, a imagem também aumenta
+    - Função logarítmica
+        - f(x) = log de x na base a; com a sendo real, positivo e diferente de 1
+        - A função logarítmica é o inverso da função exponencial
+            - Funções invertíveis
+                - Uma função f: A→B é invertível se existe uma função g: B→A, ou seja, g = f^-1
+                    - Nesse caso, o domínio A em f vira contradomínio em g e o contradomínio B em f vira o domínio em g
+- Operações com funções
+    - (f+g)(x) = f(x) + g(x)
+    - (f-g)(x) = f(x) - g(x)
+    - (Kf)(x) = K . f(x)
+    - (f.g)(x) = f(x) . g(x)
+    - Com D = D(f)∩D(g):
+        - (f/g)(x) = f(x)/g(x)
+    - ![](../../assets/faculdade/periodo1/20231107234927.png)
+- Composição de funções
+    - Dadas duas funções f e g, a composição de f com g é denotada como f◦g tal que f◦g(x) = f(g(x))
+
 ## Limites
----
-## O problema da reta tangente (Derivada)
----
+- O limite tem o objetivo de determinar o comportamento de determinada função f(x) a medida de que ela se aproxima de alguns valores
+    - Ex: f(x) = x+1
+        - ![](../../assets/faculdade/periodo1/20231109075923.png)
+        - À medida que x se aproxima de 1, o valor de f(x) se aproxima de 2
+    - Ex: f(x) = x³ - 1
+        - ![](../../assets/faculdade/periodo1/20231109080051.png)
+        - À medida que x se aproxima de 1, o valor de f(x) se aproxima de 3
+- Definição intuitiva:
+    - seja f(x) uma função definida no ponto a∈R, mas não necessariamente no ponto a
+    - Escrevemos que L∈R é o limite de f quando x tende à a, se tornando x suficientemente próximo de a mas não igual à a; teremos valores de f(x) tão próximos de L quanto quisermos
+    - O limite de f quando x tende a a não depende do valor de f no ponto a
+        - Notação
+            - ![](../../assets/faculdade/periodo1/20231109080419.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20231109081612.png)
+- Propriedades dos limites
+    - ![](../../assets/faculdade/periodo1/20231109081720.png)
+        - Ex: ![](../../assets/faculdade/periodo1/20231109082246.png)
+        - Ex: ![](../../assets/faculdade/periodo1/20231109083228.png)
+        - Ex:![](../../assets/faculdade/periodo1/20231109084426.png)
+        - Ex: ![](../../assets/faculdade/periodo1/20231109084454.png)
+        - Ex: ![](../../assets/faculdade/periodo1/20231109084741.png)
+        - Ex: ![](../../assets/faculdade/periodo1/20231109084831.png)
+        - Ex: ![](../../assets/faculdade/periodo1/20231109090803.png)
+- Limites laterais
+    - Limite lateral pela esquerda![](../../assets/faculdade/periodo1/20231109091448.png)
+        - ![](../../assets/faculdade/periodo1/20231109092100.png)
+    - Limite lateral pela direita![](../../assets/faculdade/periodo1/20231109091740.png)
+        - ![](../../assets/faculdade/periodo1/20231109092114.png)
+    - Ex:![](../../assets/faculdade/periodo1/20231109094344.png)
+    - Portanto, uma função f possui limite quando o limite lateral pela esquerda de f é igual ao limite lateral pela direita de f![](../../assets/faculdade/periodo1/20231109091921.png)
+- Limites contínuos
+    - ![](../../assets/faculdade/periodo1/20231207232727.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231207233055.png)
+    - ![](../../assets/faculdade/periodo1/20231207233531.png)
+    - ![](../../assets/faculdade/periodo1/20231207233618.png)
+        - Na letra c, os limites laterais são diferentes, logo não há limite; para isso, vamos manipular de modo a existir um limite contínuo
+    - Propriedades
+        - ![](../../assets/faculdade/periodo1/20231208000706.png)
+- Limites no infinito
+    - ![](../../assets/faculdade/periodo1/20231208002253.png)
+    - ![](../../assets/faculdade/periodo1/20231208002230.png)
+    - Propriedades
+        - ![](../../assets/faculdade/periodo1/20231208002351.png)
+
+## O problema da reta tangente
+- ![](../../assets/faculdade/periodo1/20231119123753.png)
+- A reta tangente ao gráfico de uma função
+    - Ex: obtenha a equação da reta tangente ao gráfico de f(x) = 4x - x² no ponto de abscissa x = 1
+        - O ponto em que a reta é tangente ao gráfico é P = (1, f(1)); f(1) = 4 - 1 = 3
+            - Logo, P = (1,3)
+        - A equação da reta é dada por: y-yo = m(x-xo)
+            - xo = 1; yo = 3
+            - Logo, a equação da reta do ponto P é y = m(x-1) + 3
+        - ![](../../assets/faculdade/periodo1/20231119125250.png)
+        - ![](../../assets/faculdade/periodo1/20231119125427.png)Se delta = 0 a reta tangente só toca em um ponto, que é o que queremos
+        - Ex: determine a equação da reta tangente ao gráfico f(x) = x³ no ponto P = (1,1)
+            - Equação da reta do ponto P(1,1): y = m(x-1) + 1![](../../assets/faculdade/periodo1/20231119131158.png)
+            - Outra forma de fazer:
+                - Equação da reta: y-yo = m(x-xo)
+                    - m = y-yo/(x-xo )
+                    - ![](../../assets/faculdade/periodo1/20231120002246.png)
+        - Ex: determine a equação da reta tangente ao gráfico f(x) = x² - 3x no ponto P = (1, -2)
+            - Equação da reta no ponto P(1, -2): y + 2 = m(x-1)
+            - ![](../../assets/faculdade/periodo1/20231120002301.png)
+- A reta tangente com limite de retas secantes![](../../assets/faculdade/periodo1/20231120002602.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20231120002809.png)
+- Ex: determine a equação na reta tangente ao gráfico de f(x) = x³ no ponto P = (1,1)
+    - ![](../../assets/faculdade/periodo1/20231120003429.png)
+- Ex: encontre a equação da reta tangente ao gráfico de f(x) = x³ - 4x no ponto P = (1, -2)
+    - ![](../../assets/faculdade/periodo1/20231120004010.png)
+- Derivada
+    - Definição
+        - ![](../../assets/faculdade/periodo1/20231120101615.png)OBS: utilizando o conceito de derivada da direita; h sempre tende à 0![](../../assets/faculdade/periodo1/20231120004257.png)
+        - Basicamente, derivada é igual ao coeficiente m; porém, a derivada se escreve como f'(xo)
+    - Ex: Obtenha a derivada no ponto xo = 0 na função f(x) = x²
+        - ![](../../assets/faculdade/periodo1/20231120005029.png)
+    - Ex: Obtenha a derivada no ponto xo = 1 na função f(x) = x^4 - 3x + 5
+        - ![](../../assets/faculdade/periodo1/20231120005141.png)
+    - Função derivada
+        - ![](../../assets/faculdade/periodo1/20231120102041.png)
+        - OBS: utilizando esse conceito de derivada; h sempre tende à 0
+        - Com isso, é a função derivada que produz a inclinação da reta tangente ao gráfico de f
+    - Derivadas de funções elementares
+            - ![](../../assets/faculdade/periodo1/20231120100850.png)
+            - Ex: item b)
+                - ![](../../assets/faculdade/periodo1/20231120111005.png)
+            - Ex: item f)
+                - ![](../../assets/faculdade/periodo1/20231120111055.png)
+    - Regra de derivação
+        - ![](../../assets/faculdade/periodo1/20231120005552.png) (Regra do tombo)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231120005614.png)![](../../assets/faculdade/periodo1/20231120100005.png)![](../../assets/faculdade/periodo1/20231120100425.png)![](../../assets/faculdade/periodo1/20231120100616.png)
+        - Outras regras
+            - ![](../../assets/faculdade/periodo1/20231120204711.png)
+            - ![](../../assets/faculdade/periodo1/20231120215854.png)
+            - Regra da cadeia (ou Regra da função composta)
+                - Vamos considerar o problema de derivar a função y = (x³+2)^4![](../../assets/faculdade/periodo1/20231120221242.png)
+                    - Para isso, primeiramente vamos atribuir a função u = x³ + 2
+                    - Com isso, y = u^4
+                    - ![](../../assets/faculdade/periodo1/20231120221531.png)
+                    - (derivada externa em relação à derivada da função interna = dy/du) . (derivada interna em relação à variável = du/dx) = (derivada externa em relação à variável = dy/dx)
+                        - Outra forma de expressar a fórmula: y' = f'(u).u'
+        - OBS: sempre que possível, transformar a raiz em uma potência
+        - Ex: obtenha a função derivada de f(x) = 4x³ - 2x + 5
+            - ![](../../assets/faculdade/periodo1/20231120212210.png)
+        - Ex: obtenha a função derivada de f(x) = (2x - 3)/(1 - x)
+            - ![](../../assets/faculdade/periodo1/20231120212712.png)
+        - Ex: obtenha a derivada da função f (x) = (x²+1)^5/(x³+x+1)
+            - ![](../../assets/faculdade/periodo1/20231120223458.png)
+        - Ex: obtenha a derivada da função f (x) = (x³ + 2)^100
+            -  ![](../../assets/faculdade/periodo1/20231120224401.png)
+        - Ex: obtenha P e Q que pertencem à função g(x) = 2x³ - 3x² - 3x onde suas retas tangentes sejam paralelas à y = 3x - 2
+            - Se as retas tangentes de g(x) são paralelas à y e o coeficiente angular (ou derivada) de y é 3
+                - Logo, é válido dizer que [g(x)]' é igual à [y]'; logo, [g(x)]' = 3
+                    - [g(x)]' = 3.2x² - 2.3x¹ - 1.3.x^0 = 6x² - 6x - 3
+                        - 6x² - 6x - 3 = 3; x² - x - 1 = 0
+                            - Resolvendo por Bháskara, encontramos:
+                                - ![](../../assets/faculdade/periodo1/20231202172120.png)
+                            - Portanto, os pontos P e Q são:
+                                - ![](../../assets/faculdade/periodo1/20231202172138.png)
+
 ## Trigonometria
----
+- Relações métricas no triângulo retângulo
+    - ![](../../assets/faculdade/periodo1/20231128110252.png)
+- Relações trigonométricas no triângulo retângulo
+    - ![](../../assets/faculdade/periodo1/20231128110344.png)
+- Arcos notáveis
+    - ![](../../assets/faculdade/periodo1/20231215000037.png)
+- Aplicações
+    - ![](../../assets/faculdade/periodo1/20231128110641.png)
+- Círculo trigonométrico
+    - ![](../../assets/faculdade/periodo1/20231128111041.png)
+    - ![](../../assets/faculdade/periodo1/20231128111114.png)
+        - (1° quadrante é o superior direito e o 4° quadrante é o inferior direito)
+- Funções trigonométricas
+    - ![](../../assets/faculdade/periodo1/20231128111256.png)![](../../assets/faculdade/periodo1/20231128111340.png)
+    - Gráficos
+        - Função seno
+            - ![](../../assets/faculdade/periodo1/20231128112036.png)
+        - Função cosseno
+            - ![](../../assets/faculdade/periodo1/20231128112045.png)
+        - Função tangente
+            - ![](../../assets/faculdade/periodo1/20231128112104.png)
+- Identidades trigonométricas
+    - ![](../../assets/faculdade/periodo1/20231128111509.png)
+    - ![](../../assets/faculdade/periodo1/20231128111726.png)![](../../assets/faculdade/periodo1/20231128111740.png)![](../../assets/faculdade/periodo1/20231128111935.png)
+    - ![](../../assets/faculdade/periodo1/20231212202721.png)
+    - ![](../../assets/faculdade/periodo1/20231212202859.png)
+    - ![](../../assets/faculdade/periodo1/20231212204039.png)
+    - ![](../../assets/faculdade/periodo1/20231212204332.png)
+    - ![](../../assets/faculdade/periodo1/20240301140049.png)
+- Teorema do confronto
+    - ![](../../assets/faculdade/periodo1/20231128202010.png)
+- Limite trigonométrico
+    - ![](../../assets/faculdade/periodo1/20231128202359.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231128205422.png)
+        - ![](../../assets/faculdade/periodo1/20231128205539.png) É outro limite trigonométrico fundamental
+        - ![](../../assets/faculdade/periodo1/20231213212424.png) É outro limite trigonométrico fundamental
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231128205438.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231202172611.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231202172826.png)
+- Derivadas de funções trigonométricas
+    - ![](../../assets/faculdade/periodo1/20231128205913.png)
+        - Demonstração
+            - ![](../../assets/faculdade/periodo1/20231128210027.png)
+    - ![](../../assets/faculdade/periodo1/20231128205925.png)
+        - Demonstração
+            - ![](../../assets/faculdade/periodo1/20231128205959.png)
+    - ![](../../assets/faculdade/periodo1/20231128210106.png)
+        - Demonstração
+            - ![](../../assets/faculdade/periodo1/20231128210121.png)
+    - ![](../../assets/faculdade/periodo1/20231128210135.png)
+        - Demonstração
+            - ![](../../assets/faculdade/periodo1/20231128210157.png)
+    - ![](../../assets/faculdade/periodo1/20231128210220.png)
+        - Demonstração
+            - ![](../../assets/faculdade/periodo1/20231128210235.png)
+    - ![](../../assets/faculdade/periodo1/20231128210254.png)
+        - Demonstração
+            - ![](../../assets/faculdade/periodo1/20231128210309.png)
+    - Tabela para decorar
+        - ![](../../assets/faculdade/periodo1/20231128210339.png)
+    - Outras derivadas
+        - Derivada da função e^x
+            - ![](../../assets/faculdade/periodo1/20231128212159.png)![](../../assets/faculdade/periodo1/20231128212102.png)![](../../assets/faculdade/periodo1/20231128212118.png)
+            - se x é uma função derivável, então [e^x]' = x' . (e^x)
+        - Derivada da função ln(x) ou logaritmo natural de x
+            - ![](../../assets/faculdade/periodo1/20231128213155.png)
+            - se x é uma função derivável, então [ln(x)]' = x' . 1/x
+            - OBS: ln(x) ou logaritmo natural de x
+                - ln(x) pode ser escrito como log de x na base "e"
+                    - por exemplo, ln(1) = log de 1 na base; ou seja existe um x tal que e^x = 1(x = 0)
+        - Derivada de uma constante (a) elevado à outro número real ou função (x)
+            - ![](../../assets/faculdade/periodo1/20231208150935.png)
+            - Exemplos
+                - ![](../../assets/faculdade/periodo1/20231208151719.png)
+                - se x é uma função derivável, então [a^x]' = x' . a^x . ln(a)
+                    - ![](../../assets/faculdade/periodo1/20231208174322.png)
+        - Derivada de uma função elevada à outra função
+            - ![](../../assets/faculdade/periodo1/20231208151730.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20231208154537.png)
+        - Derivada de log
+            - ![](../../assets/faculdade/periodo1/20231208152121.png)
+            - Exemplos
+                - ![](../../assets/faculdade/periodo1/20231208152215.png)
+        - Ex: z = sen(x²)
+            - ![](../../assets/faculdade/periodo1/20231208145924.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231208150000.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231208145837.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231208145820.png)
+    - Derivada da função inversa
+        - ![](../../assets/faculdade/periodo1/20231208173159.png)
+        - ![](../../assets/faculdade/periodo1/20231208173417.png)
+        - Derivada das funções trigonométricas inversas
+            - Arcsen (inversa do seno)
+                - ![](../../assets/faculdade/periodo1/20231208174513.png)
+                    - Demonstração
+                        - ![](../../assets/faculdade/periodo1/20231208174528.png)
+                - Gráfico
+                    - ![](../../assets/faculdade/periodo1/20231208174620.png)
+            - Arccos (inverso do cosseno)
+                - ![](../../assets/faculdade/periodo1/20231208180440.png)
+                - Gráfico
+                    - ![](../../assets/faculdade/periodo1/20231208191732.png)
+            - Arctg (inverso da tangente)
+                - ![](../../assets/faculdade/periodo1/20231208180144.png)
+                    - Demonstração
+                        - ![](../../assets/faculdade/periodo1/20231208180203.png)
+                - Gráfico
+                    - ![](../../assets/faculdade/periodo1/20231208180229.png)
+            - Arccot
+                - ![](../../assets/faculdade/periodo1/20231208192913.png)
+            - Arcsec (inverso da secante)
+                - ![](../../assets/faculdade/periodo1/20231208192208.png)
+                - Demonstração
+                    - ![](../../assets/faculdade/periodo1/20231208192304.png)
+            - Arccosec (inverso da cossecante)
+                - ![](../../assets/faculdade/periodo1/20231208194927.png)
+    - Derivação implícita
+        - ![](../../assets/faculdade/periodo1/20231209071403.png)
+        - ![](../../assets/faculdade/periodo1/20231209071559.png)![](../../assets/faculdade/periodo1/20231209071817.png)
+        - ![](../../assets/faculdade/periodo1/20231209074358.png)
+- OBS: quando usar a regra da cadeia não prestar atenção apenas nas fórmulas mas também na lógica
+    - Para a lógica, separar as derivadas em funções e em coeficientes, já que a regra da cadeia é a derivada da de fora e a de dentro
+    - Por isso, a derivada de uma função sempre é a derivada da função em si vezes a derivada do coeficiente da função
+- OBS: uma função é duas vezes diferenciável se tanto a derivada da função quanto a derivada da sua derivada são diferenciáveis
+    - Se uma função é diferenciável, então a derivada existe para todos os pontos do limite da função
+- OBS: conjugação de raiz cúbica (a lógica é a mesma para as de outras raízes)
+    - ![](../../assets/faculdade/periodo1/20231212220444.png)
+
 ## Teorema do Valor Intermediário (ou Teorema de Bolzano)
 - Propriedade das funções contínuas
-> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-- Toda função polinomial é contínua
-- Para provar que tal função possui raiz, basta achar um f(x) positivo e outro f(x) negativo
-<details>
-<summary>Exemplo</summary>
-	> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/b4b75b2378ac4f74b821e7fd09c3afc8)*
-</details>
----
+- ![](../../assets/faculdade/periodo1/20240102211619.png)
+    - Toda função polinomial é contínua
+    - Para provar que tal função possui raiz, basta achar um f(x) positivo e outro f(x) negativo
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240102212449.png)
+
 ## Teorema do Valor Extremo (ou Teorema de Weierstrass)
----
+- ![](../../assets/faculdade/periodo1/20240102213144.png)
+- ![](../../assets/faculdade/periodo1/20240102214612.png)
+    - O mínimo e máximo absolutos são respectivamente o menor e maior valor que a função atinge em todo o seu domínio
+        - Dada uma função f(x), f(c) é o valor máximo absoluto se f(c) ≥ f(x) para todo x no domínio da função (intervalo aberto)
+        - Dada uma função f(x), f(c) é o valor mínimo absoluto se f(c) ≤ f(x) para todo x no domínio da função (intervalo aberto)
+    - O mínimo e máximo locais são respectivamente o menor e maior valor que a função atinge em um intervalo fechado
+        - Dada uma função f(x), f(c) é o valor máximo absoluto se f(c) ≥ f(x) para todo x no domínio dentro do intervalo fechado
+        - Dada uma função f(x), f(c) é o valor máximo absoluto se f(c) ≤ f(x) para todo x no domínio dentro do intervalo fechado
+    - Todo máximo e mínimo absolutos são um máximo e mínimo locais, mas nem todo máximo e mínimo locais são um máximo e mínimo absoluto
+- ![](../../assets/faculdade/periodo1/20240102213233.png)
+    - Ponto crítico - é um ponto x no domínio de uma função em que f'(x) = 0 ou f'(x) não existe; o ponto crítico é um extremo absoluto
+        - Quando f'(x) = 0, isso caracteriza um ponto de inflexão (ponto sobre uma curva na qual a curvatura troca o sinal, podendo mudar de concavidade para cima, ou positivo, para concavidade para baixo, ou negativo; e vice-versa)
+        - Quando f'(x) não existir, isso indica um sinal de descontinuidade, logo, uma função que não é contínua
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240102224143.png)
+        - ![](../../assets/faculdade/periodo1/20240102230321.png)
+        - Logo, para x = 3/2 temos o valor mínimo de 1 e para x = 1 e x = 2 temos o valor máximo de 2
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240102230029.png)
+        - ![](../../assets/faculdade/periodo1/20240102231121.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240102231818.png)
+        - ![](../../assets/faculdade/periodo1/20240102232359.png)
+
 ## Teorema do Valor Médio
----
+- Teorema de Rolle
+    - Utilizado para demonstrar o Teorema do Valor Médio
+    - ![](../../assets/faculdade/periodo1/20240102233949.png)
+- ![](../../assets/faculdade/periodo1/20240102234918.png)
+- Representação do Teorema
+    - ![](../../assets/faculdade/periodo1/20240102235305.png)
+- Consequências
+    - ![](../../assets/faculdade/periodo1/20240103000329.png)
+    - ![](../../assets/faculdade/periodo1/20240103000337.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240103001047.png)
+        - Como f(x) é uma função polinomial, logo é contínua; além disso, f(x) é uma função derivável no intervalo [1,3]
+            - Com isso, as condições do Teorema do Valor Médio estão atendidas
+        - ![](../../assets/faculdade/periodo1/20240103002225.png)
+
 ## Sinal da 1ª derivada
----
+- Condições
+    - ![](../../assets/faculdade/periodo1/20240103110647.png)
+- ![](../../assets/faculdade/periodo1/20240103112706.png)
+- Ex: Encontre onde a função f(x) = 3x^4 - 4x³ - 12x² + 5 é crescente e onde ela é decrescente
+    - ![](../../assets/faculdade/periodo1/20240103112436.png)
+    - Gráfico
+        - ![](../../assets/faculdade/periodo1/20240103112456.png)
+        - Pelo gráfico, fica fácil perceber que f(x) possui pontos críticos, configurando máximos ou mínimos da função; ou seja, existe mais de um "c" na função
+- ![](../../assets/faculdade/periodo1/20240103112754.png)
+    - Em outras palavras
+        - ![](../../assets/faculdade/periodo1/20240103113029.png)
+    - Gráficos
+        - ![](../../assets/faculdade/periodo1/20240103112623.png)
+
 ## Sinal da 2ª derivada
----
+- ![](../../assets/faculdade/periodo1/20240103114050.png)
+    - ![](../../assets/faculdade/periodo1/20240103121906.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240103114552.png)
+- ![](../../assets/faculdade/periodo1/20240103121329.png)
+    - Os pontos em que ocorrem as mudanças de concavidade são chamados de pontos de inflexão (pontos em que f''(x) = 0)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240103122036.png)
+        - Neste gráfico, há um ponto de inflexão pois a curva no intervalo (0, 12) é côncava para cima e a partir do intervalo (12, 18) é côncava para baixo
+- ![](../../assets/faculdade/periodo1/20240103122453.png)
+    - (Diferentemente do teste da primeira derivada, a derivada no ponto c está definida)
+    - Ex: Determine os máximos e mínimos relativos de f(x) = -4x³ + 3x² + 15
+        - ![](../../assets/faculdade/periodo1/20240103123338.png)
+
 ## Problemas de otimização
----
+- ![](../../assets/faculdade/periodo1/20240111162107.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240111162430.png)
+    - ![](../../assets/faculdade/periodo1/20240111162444.png)
+    - ![](../../assets/faculdade/periodo1/20240111162456.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240111163557.png)
+    - V = (50 - 2x)(30 - 2x).x = 4x³ - 160x² + 1500x
+    - V' = 12x² - 320x + 1500
+    - 12x² - 320x + 1500 = 0
+        - 3x² - 80x + 375 = 0
+        - x1 = (40+5√19)/3 (ponto crítico)
+            - Este valor não é possível no nosso problema, pois x1 ≅ 20 e 2x < 30, logo é um absurdo
+        - x2 = (40-5√19)/3 (ponto crítico)
+            - Valor que vamos usar, x2 ≅ 6,07
+    - Domínio de V(x) = ]0, 15[
+        - Limite de x tende a 0 = 0
+        - Limite de x tende a 15 = 0
+            - Quando x tende aos extremos do domínio o volume tende a x
+    - V(6,07) ≅ 4104 cm³
+        - Ponto máximo da função, portanto, x ≅ 6,07
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240111174613.png)
+    - ![](../../assets/faculdade/periodo1/20240111175942.png)
+
 ## Regra de L'Hôspital
----
+- ![](../../assets/faculdade/periodo1/20240117193144.png)
+    - Se a forma indeterminada persistir, temos que derivar quantas vezes forem necessárias
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240117193604.png)
+        - ![](../../assets/faculdade/periodo1/20240117193805.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240117193751.png)
+        - ![](../../assets/faculdade/periodo1/20240117193814.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240117194750.png)
+        - ![](../../assets/faculdade/periodo1/20240117195246.png)
+
 ## Assíntotas
----
+- Verticais
+    - ![](../../assets/faculdade/periodo1/20240118105332.png)
+    - Se o denominador do limite for igual a 0, temos uma assíntota vertical
+    - Possui foco no "x"
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240118105421.png)
+        - ![](../../assets/faculdade/periodo1/20240118105507.png)
+            - ![](../../assets/faculdade/periodo1/20240118105737.png)
+        - ![](../../assets/faculdade/periodo1/20240118105707.png)
+            - ![](../../assets/faculdade/periodo1/20240118105719.png)
+        - ![](../../assets/faculdade/periodo1/20240118110354.png)
+- Horizontais
+    - ![](../../assets/faculdade/periodo1/20240118110554.png)
+    - Possui foco no "y"
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240118110715.png)
+        - ![](../../assets/faculdade/periodo1/20240118110726.png)
+            - ![](../../assets/faculdade/periodo1/20240118110735.png)
+        - ![](../../assets/faculdade/periodo1/20240118111137.png)
+        - ![](../../assets/faculdade/periodo1/20240118112825.png)
+            - ![](../../assets/faculdade/periodo1/20240118112840.png)
+- ![](../../assets/faculdade/periodo1/20240118112950.png)
+- ![](../../assets/faculdade/periodo1/20240119140259.png)
+    - ![](../../assets/faculdade/periodo1/20240118113543.png)
+- Oblíquas
+    - Funções racionais
+        - Para calcular a assíntota oblíqua, basta realizar a divisão de polinômio até chegar na forma irredutível, o quociente é a assíntota oblíqua
+        - Existem assíntotas oblíquas se o grau do polinômio de cima for unidade maior que o grau do polinômio de baixo; além disso, ela servirá tanto para +∞ quanto -∞
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240119142914.png)
+    - Funções não racionais
+        - ![](../../assets/faculdade/periodo1/20240119151703.png)
+        - Precisamos fazer o cálculo para mais e menos infinito
+        - Se m for igual a 0, a assíntota é horizontal
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240119153545.png)
+                - Logo, y = 1/2 é uma assíntota horizontal
+            - ![](../../assets/faculdade/periodo1/20240119153637.png)
+                - Logo, y = -2x - (1/2) é uma assíntota oblíqua
+
 ## Integral
----
-[Cálculo 1](calculo-1/calculo-1.md)
+- A integral definida
+    - Problema da área
+        - ![](../../assets/faculdade/periodo1/20240227191027.png)![](../../assets/faculdade/periodo1/20240227191048.png)![](../../assets/faculdade/periodo1/20240227191253.png)![](../../assets/faculdade/periodo1/20240227191433.png)![](../../assets/faculdade/periodo1/20240227191508.png)
+        - Ou seja, calcular a integral é calcular a área
+- Notação
+    - ![](../../assets/faculdade/periodo1/20240227193914.png)
+        - ![](../../assets/faculdade/periodo1/20240227195248.png)
+            - ∫ - símbolo da integral
+            - a - limite inferior da integração
+            - b - limite superior da integração
+            - [a,b] - intervalo fechado da função que vamos calcular a área
+        - ![](../../assets/faculdade/periodo1/20240227195431.png)
+            - f(x) - função a integrar
+            - dx - diferencial de x (variável independente)
+        - ![](../../assets/faculdade/periodo1/20240227195717.png)
+            - limite de n tendendo à infinito do somatório de i = 1 até n de f(xi*) (é o f(x) da extremidade direita do xi* (xi* = [x(i-1), xi]), ou seja, o valor de y do ponto xi; entre outras palavras é a altura) vezes Δx ((xi - x(i - 1))/n); ou seja, é o valor da base)
+        - Portanto a integral do intervalo de [a,b] de f(x) é o limite de n tendendo à infinito do somatório de todas as pequenas áreas (diferenciais de x ou pouquinhos de x) do intervalo [a,b] na qual a área de cada pouquinho se dá pela multiplicação da base (Δx) pela altura (f(xi*))
+- Ex: Calcule
+    - ![](../../assets/faculdade/periodo1/20240227191730.png)
+        - ![](../../assets/faculdade/periodo1/20240227203007.png)
+        - ![](../../assets/faculdade/periodo1/20240227203014.png)
+        - ![](../../assets/faculdade/periodo1/20240227215144.png) (isso tudo sobre n)
+            - OBS: segundo a fórmula de Faulhaber:
+                - Seja n, p∈Z*+ (conjunto dos inteiros positivos com exceção do zero)
+                - ![](../../assets/faculdade/periodo1/20240227203840.png)
+                    - ![](../../assets/faculdade/periodo1/20240227205005.png)
+                        - É igual a: 1^p + 2^p + ... + n^p
+                    - p - potência na qual os números estão elevados
+                    - n^(p+1-i) é o último número natural
+                    - Bi = é o i-ésimo número de Bernoulli
+            - OBS: Números de Bernoulli
+                - Sequências de números racionais com conexões na teoria dos números
+                    - Formas de calcular:
+                        - Fórmula de recorrência
+                            - ![](../../assets/faculdade/periodo1/20240227213321.png)
+                                - Se n é impar e maior que 1, Bn = 0
+                        - Fórmula utilizando a função zeta de Riemann
+                            - ![](../../assets/faculdade/periodo1/20240227210500.png)
+                            - ζ(n) é a função zeta de Riemann
+                                - ![](../../assets/faculdade/periodo1/20240227212141.png)
+                    - Sequência
+                        - ![](../../assets/faculdade/periodo1/20240227213451.png) ![](../../assets/faculdade/periodo1/20240227213508.png) E assim por diante
+        - ![](../../assets/faculdade/periodo1/20240227215206.png)
+        - ![](../../assets/faculdade/periodo1/20240227215255.png) o que estava sobre n pode ser cortado, não interferindo no resultado
+- ![](../../assets/faculdade/periodo1/20240227191743.png)![](../../assets/faculdade/periodo1/20240227215349.png)
+    - Teorema
+        - ![](../../assets/faculdade/periodo1/20240227215911.png)
+- Teorema fundamental do cálculo
+    - ![](../../assets/faculdade/periodo1/20240227220116.png)
+        - Outra forma de fazer
+            - ![](../../assets/faculdade/periodo1/20240228010502.png)
+                - f(p(x)) é substituir o p(x) no t e f(q(x)) é substituir o q(x) no t
+    - Primitiva
+        - ![](../../assets/faculdade/periodo1/20240227220136.png)
+        - ![](../../assets/faculdade/periodo1/20240227220154.png)
+        - Como achar a primitiva do tipo x^n:
+            - ![](../../assets/faculdade/periodo1/20240227233936.png)
+    - ![](../../assets/faculdade/periodo1/20240227220220.png)![](../../assets/faculdade/periodo1/20240227220254.png)
+    - Propriedades
+        - ![](../../assets/faculdade/periodo1/20240227215513.png)![](../../assets/faculdade/periodo1/20240227215957.png)
+        - ![](../../assets/faculdade/periodo1/20240229111622.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240227222454.png)
+        - ![](../../assets/faculdade/periodo1/20240227223641.png)
+    - ![](../../assets/faculdade/periodo1/20240227225017.png)
+        - ![](../../assets/faculdade/periodo1/20240227233537.png)
+    - ![](../../assets/faculdade/periodo1/20240227225027.png)
+        - ![](../../assets/faculdade/periodo1/20240228001821.png)
+    - ![](../../assets/faculdade/periodo1/20240227233117.png)
+        - ![](../../assets/faculdade/periodo1/20240228001648.png)
+    - ![](../../assets/faculdade/periodo1/20240227233126.png)
+        - ![](../../assets/faculdade/periodo1/20240228002925.png)
+    - ![](../../assets/faculdade/periodo1/20240227233156.png)
+        - ![](../../assets/faculdade/periodo1/20240228002833.png)
+    - ![](../../assets/faculdade/periodo1/20240227233204.png)
+        - ![](../../assets/faculdade/periodo1/20240228002912.png)
+    - ![](../../assets/faculdade/periodo1/20240227224253.png)
+        - ![](../../assets/faculdade/periodo1/20240227224341.png)
+    - ![](../../assets/faculdade/periodo1/20240228003252.png)
+        - ![](../../assets/faculdade/periodo1/20240228004315.png)
+    - ![](../../assets/faculdade/periodo1/20240228003312.png)
+        - ![](../../assets/faculdade/periodo1/20240228004331.png)
+    - ![](../../assets/faculdade/periodo1/20240228003326.png)
+        - ![](../../assets/faculdade/periodo1/20240228004342.png)
+    - ![](../../assets/faculdade/periodo1/20240228004806.png)
+        - Primeira forma
+            - ![](../../assets/faculdade/periodo1/20240228011022.png)
+        - Segunda forma
+            - ![](../../assets/faculdade/periodo1/20240228011102.png)
+    - ![](../../assets/faculdade/periodo1/20240228011829.png)
+        - ![](../../assets/faculdade/periodo1/20240228011908.png)
+        - ![](../../assets/faculdade/periodo1/20240228011918.png)
+        - ![](../../assets/faculdade/periodo1/20240228011934.png)
+    - ![](../../assets/faculdade/periodo1/20240229095303.png)
+        - ![](../../assets/faculdade/periodo1/20240229101440.png)
+    - ![](../../assets/faculdade/periodo1/20240229095435.png)
+        - ![](../../assets/faculdade/periodo1/20240229101504.png)
+    - ![](../../assets/faculdade/periodo1/20240229101521.png)
+        - ![](../../assets/faculdade/periodo1/20240229111127.png)
+    - ![](../../assets/faculdade/periodo1/20240229101544.png)
+        - ![](../../assets/faculdade/periodo1/20240229111118.png)
+    - ![](../../assets/faculdade/periodo1/20240229101601.png)
+        - ![](../../assets/faculdade/periodo1/20240229111138.png)
+    - ![](../../assets/faculdade/periodo1/20240229101615.png)
+        - ![](../../assets/faculdade/periodo1/20240229111022.png)
+    - ![](../../assets/faculdade/periodo1/20240229101626.png)
+        - ![](../../assets/faculdade/periodo1/20240229111031.png)
+    - ![](../../assets/faculdade/periodo1/20240229101639.png)
+        - ![](../../assets/faculdade/periodo1/20240229111045.png)
+    - ![](../../assets/faculdade/periodo1/20240229101653.png)
+        - ![](../../assets/faculdade/periodo1/20240229111058.png)
+- Áreas de regiões entre gráficos
+    - ![](../../assets/faculdade/periodo1/20240229220149.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240229101729.png)
+            - ![](../../assets/faculdade/periodo1/20240229101745.png)
+        - ![](../../assets/faculdade/periodo1/20240229101808.png)
+            - ![](../../assets/faculdade/periodo1/20240229101819.png)
+        - ![](../../assets/faculdade/periodo1/20240229101840.png)
+            - ![](../../assets/faculdade/periodo1/20240229101916.png)
+        - ![](../../assets/faculdade/periodo1/20240308113316.png)
+            - ![](../../assets/faculdade/periodo1/20240308113737.png)
+        - ![](../../assets/faculdade/periodo1/20240308113754.png)
+            - ![](../../assets/faculdade/periodo1/20240308114401.png)
+        - ![](../../assets/faculdade/periodo1/20240308114751.png)
+            - ![](../../assets/faculdade/periodo1/20240308115746.png)
+        - ![](../../assets/faculdade/periodo1/20240308120043.png)
+            - ![](../../assets/faculdade/periodo1/20240308123005.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240229111851.png)
+        - ![](../../assets/faculdade/periodo1/20240229111903.png)
+    - ![](../../assets/faculdade/periodo1/20240229111920.png)
+        - ![](../../assets/faculdade/periodo1/20240229111932.png)
+- Tabela de integrais definidas
+    - ![](../../assets/faculdade/periodo1/20240229214435.png)![](../../assets/faculdade/periodo1/20240229112138.png)
+    - ![](../../assets/faculdade/periodo1/20240229215743.png)
+    - ![](../../assets/faculdade/periodo1/20240229220850.png)
+- Técnicas de integração
+    - Integração por substituição
+        - ![](../../assets/faculdade/periodo1/20240229215944.png)![](../../assets/faculdade/periodo1/20240229215957.png)
+        - ![](../../assets/faculdade/periodo1/20240229222719.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240229223244.png)
+                - ![](../../assets/faculdade/periodo1/20240229224419.png)
+            - ![](../../assets/faculdade/periodo1/20240229223253.png)
+                - ![](../../assets/faculdade/periodo1/20240229224427.png)
+            - ![](../../assets/faculdade/periodo1/20240229224605.png)
+                - ![](../../assets/faculdade/periodo1/20240229231142.png)
+            - ![](../../assets/faculdade/periodo1/20240229224614.png)
+                - ![](../../assets/faculdade/periodo1/20240229231218.png)
+            - ![](../../assets/faculdade/periodo1/20240229224622.png)
+                - ![](../../assets/faculdade/periodo1/20240229231151.png)
+            - ![](../../assets/faculdade/periodo1/20240229230300.png)
+                - ![](../../assets/faculdade/periodo1/20240229232817.png)
+            - ![](../../assets/faculdade/periodo1/20240229224645.png)
+                - ![](../../assets/faculdade/periodo1/20240229232828.png)
+            - ![](../../assets/faculdade/periodo1/20240229224703.png)
+                - ![](../../assets/faculdade/periodo1/20240229231203.png)
+            - ![](../../assets/faculdade/periodo1/20240229232856.png)
+                - ![](../../assets/faculdade/periodo1/20240229233427.png)
+    - Integração por partes
+        - ![](../../assets/faculdade/periodo1/20240229235356.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240229235541.png)
+                - ![](../../assets/faculdade/periodo1/20240301000950.png)
+            - ![](../../assets/faculdade/periodo1/20240229235600.png)
+                - ![](../../assets/faculdade/periodo1/20240301005655.png)
+            - ![](../../assets/faculdade/periodo1/20240229235615.png)
+                - ![](../../assets/faculdade/periodo1/20240301005724.png)
+            - ![](../../assets/faculdade/periodo1/20240229235627.png)
+                - ![](../../assets/faculdade/periodo1/20240301005836.png)
+            - ![](../../assets/faculdade/periodo1/20240229235636.png)
+                - ![](../../assets/faculdade/periodo1/20240301135846.png)![](../../assets/faculdade/periodo1/20240301135905.png)
+            - ![](../../assets/faculdade/periodo1/20240229235644.png)
+                - ![](../../assets/faculdade/periodo1/20240301011307.png)![](../../assets/faculdade/periodo1/20240301011316.png)
+    - Integrais trigonométricas
+        - ![](../../assets/faculdade/periodo1/20240301013327.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240301122218.png) (regra da potência do cosseno ímpar)
+                    - ![](../../assets/faculdade/periodo1/20240301122908.png)
+                    - ![](../../assets/faculdade/periodo1/20240301122917.png)
+                - ![](../../assets/faculdade/periodo1/20240301122938.png) (regra da potência do seno e cosseno pares)
+                    - ![](../../assets/faculdade/periodo1/20240301124341.png)
+                - ![](../../assets/faculdade/periodo1/20240301130755.png) (regra da potência do seno ímpar)
+                    - ![](../../assets/faculdade/periodo1/20240301131731.png)![](../../assets/faculdade/periodo1/20240301131751.png)
+                - ![](../../assets/faculdade/periodo1/20240301131816.png) (regra da potência do seno e cosseno pares)
+                    - ![](../../assets/faculdade/periodo1/20240301135400.png)![](../../assets/faculdade/periodo1/20240301135439.png)![](../../assets/faculdade/periodo1/20240301135555.png)
+                - ![](../../assets/faculdade/periodo1/20240301171638.png)
+                    - ![](../../assets/faculdade/periodo1/20240303235328.png)
+                - ![](../../assets/faculdade/periodo1/20240301171646.png)
+                    - ![](../../assets/faculdade/periodo1/20240304005848.png)
+                - ![](../../assets/faculdade/periodo1/20240301171656.png)
+                    - ![](../../assets/faculdade/periodo1/20240304010120.png)
+                - ![](../../assets/faculdade/periodo1/20240301171759.png)
+                    - ![](../../assets/faculdade/periodo1/20240303235253.png)
+                - ![](../../assets/faculdade/periodo1/20240301171805.png)
+                    - ![](../../assets/faculdade/periodo1/20240304004418.png)
+                - ![](../../assets/faculdade/periodo1/20240301171812.png)
+                    - ![](../../assets/faculdade/periodo1/20240304005901.png)
+                - ![](../../assets/faculdade/periodo1/20240301171834.png)
+                    - ![](../../assets/faculdade/periodo1/20240303235412.png)
+                - ![](../../assets/faculdade/periodo1/20240301171842.png)
+                    - ![](../../assets/faculdade/periodo1/20240303235352.png)
+                - ![](../../assets/faculdade/periodo1/20240301171848.png)
+                    - ![](../../assets/faculdade/periodo1/20240304002934.png)![](../../assets/faculdade/periodo1/20240304002944.png)![](../../assets/faculdade/periodo1/20240304003001.png)
 
-## Conteúdo
-
-- [Cálculo 1](calculo-1/calculo-1.md)
+        - ![](../../assets/faculdade/periodo1/20240301145630.png)
+            - Quando aparecer apenas tg(x) ou cotg(x), utilizar essa fórmula trigonométrica
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240301135639.png)
+                    - ![](../../assets/faculdade/periodo1/20240301141612.png)
+                - ![](../../assets/faculdade/periodo1/20240301144622.png)
+                    - ![](../../assets/faculdade/periodo1/20240301144739.png)![](../../assets/faculdade/periodo1/20240301144754.png)
+                - ![](../../assets/faculdade/periodo1/20240301171914.png)
+                    - ![](../../assets/faculdade/periodo1/20240304012234.png)
+        - ![](../../assets/faculdade/periodo1/20240301145453.png)
+            - Quando aparecer apenas sec(x) ou cossec(x), utilizar esse macete
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240301151013.png)
+                    - ![](../../assets/faculdade/periodo1/20240301153452.png)![](../../assets/faculdade/periodo1/20240301153504.png)
+                - ![](../../assets/faculdade/periodo1/20240301153407.png)
+                    - ![](../../assets/faculdade/periodo1/20240301153437.png)
+        - ![](../../assets/faculdade/periodo1/20240301013345.png)
+        - ![](../../assets/faculdade/periodo1/20240301154812.png)
+            - ![](../../assets/faculdade/periodo1/20240301154819.png)
+            - Técnica para calcular integral de tg(x)sec(x), pode usar para calcular cossec(x)cotg(x) também
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240301154739.png)
+                    - ![](../../assets/faculdade/periodo1/20240301163423.png)
+                - ![](../../assets/faculdade/periodo1/20240301161525.png)
+                    - ![](../../assets/faculdade/periodo1/20240301163438.png)
+                - ![](../../assets/faculdade/periodo1/20240301161536.png)
+                    - ![](../../assets/faculdade/periodo1/20240301171344.png)![](../../assets/faculdade/periodo1/20240301171356.png)
+                - ![](../../assets/faculdade/periodo1/20240301171929.png)
+                    - ![](../../assets/faculdade/periodo1/20240304012443.png)
+                - ![](../../assets/faculdade/periodo1/20240301171935.png)
+                    - ![](../../assets/faculdade/periodo1/20240304083018.png)
+                - ![](../../assets/faculdade/periodo1/20240301171945.png)
+                    - ![](../../assets/faculdade/periodo1/20240304012259.png)
+                - ![](../../assets/faculdade/periodo1/20240301172003.png)
+                    - ![](../../assets/faculdade/periodo1/20240304083005.png)
+                - ![](../../assets/faculdade/periodo1/20240301172009.png)
+                    - ![](../../assets/faculdade/periodo1/20240304012607.png)
+                - ![](../../assets/faculdade/periodo1/20240301172022.png)
+                    - ![](../../assets/faculdade/periodo1/20240304011833.png)
+    - Substituição trigonométrica
+        - Tabela de substituições trigonométricas
+            - ![](../../assets/faculdade/periodo1/20240304081252.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240304080857.png)
+                    - ![](../../assets/faculdade/periodo1/20240304080925.png)
+                    - ![](../../assets/faculdade/periodo1/20240304080909.png)
+                    - ![](../../assets/faculdade/periodo1/20240304080940.png)
+                - ![](../../assets/faculdade/periodo1/20240304081617.png)
+                    - Primeira forma
+                        - ![](../../assets/faculdade/periodo1/20240304083037.png)
+                    - Segunda forma
+                        - ![](../../assets/faculdade/periodo1/20240304083047.png)
+                - ![](../../assets/faculdade/periodo1/20240304085837.png)
+                    - ![](../../assets/faculdade/periodo1/20240304085941.png)![](../../assets/faculdade/periodo1/20240304085957.png)
+                - ![](../../assets/faculdade/periodo1/20240308123552.png)
+                    - ![](../../assets/faculdade/periodo1/20240308144413.png)![](../../assets/faculdade/periodo1/20240308144433.png)
+        - Área da elipse
+            - ![](../../assets/faculdade/periodo1/20240304080334.png)
+            - ![](../../assets/faculdade/periodo1/20240304080402.png)
+            - ![](../../assets/faculdade/periodo1/20240304080526.png)
+    - Frações parciais
+        - Técnica usada para integrar funções racionais do tipo:
+            - ![](../../assets/faculdade/periodo1/20240308145208.png)
+        - Se apenas o denominador for uma função
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240308145415.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240308145426.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240308145616.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240308145632.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240308145704.png)
+        - Se o numerador e o denominador for uma função:
+            - Caso o grau do numerador seja maior ou igual que o grau do denominador, devemos realizar a divisão do numerador pelo denominador
+                - ![](../../assets/faculdade/periodo1/20240308150358.png)
+                    - P(x) é o dividendo S(x) é o quociente, Q(x) é o divisor e R(x) é resto
+                - Depois, se possível, devemos fatorar completamente o denominador Q(x)
+                - Por fim decompomos em frações parciais encontrando os coeficientes escolhidos
+                    - ![](../../assets/faculdade/periodo1/20240308170019.png)
+                        - ![](../../assets/faculdade/periodo1/20240308170038.png)
+                        - Ex:
+                            - ![](../../assets/faculdade/periodo1/20240308170051.png)
+                            - ![](../../assets/faculdade/periodo1/20240308170101.png)
+                    - ![](../../assets/faculdade/periodo1/20240308170118.png)
+                        - ![](../../assets/faculdade/periodo1/20240308170143.png)
+                        - Ex:
+                            - ![](../../assets/faculdade/periodo1/20240308170159.png)
+                            - ![](../../assets/faculdade/periodo1/20240308170207.png)
+                            - ![](../../assets/faculdade/periodo1/20240308170218.png)
+                    - ![](../../assets/faculdade/periodo1/20240308170229.png)
+                        - ![](../../assets/faculdade/periodo1/20240308170240.png)![](../../assets/faculdade/periodo1/20240308170248.png)
+                        - Ex:
+                            - ![](../../assets/faculdade/periodo1/20240308170316.png)
+                            - ![](../../assets/faculdade/periodo1/20240308170324.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240308150506.png)
+                    - ![](../../assets/faculdade/periodo1/20240308153641.png)
+                - ![](../../assets/faculdade/periodo1/20240308153614.png)
+                    - ![](../../assets/faculdade/periodo1/20240308153819.png)
+                - ![](../../assets/faculdade/periodo1/20240308153911.png)
+                    - ![](../../assets/faculdade/periodo1/20240308161033.png)
+                - ![](../../assets/faculdade/periodo1/20240308172257.png)
+                    - ![](../../assets/faculdade/periodo1/20240308173756.png)

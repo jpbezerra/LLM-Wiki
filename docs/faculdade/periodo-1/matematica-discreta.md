@@ -1,38 +1,1337 @@
-# MATEMÁTICA DISCRETA
+# Matemática Discreta
 
----
 ## Lógica Proposicional
----
+- É constituído por proposições de natureza TRUE (T) ou FALSE (F)
+- Símbolos
+    - ¬ : negação (oposto do valor); Ex: se P é TRUE, então ¬P é FALSE
+    - ^ : "e"; Ex: P^Q (P e Q); só é TRUE quando ambas as proposições são TRUE
+        - Ex: P: 1+2=3, Q: 5+1=7; (P^Q) = FALSE
+    - ∨ : "ou"; Ex: PvQ; é TRUE se uma das duas ou ambas as proposições forem TRUE
+        - Ex: P: 5+3=8, Q: 2+4=7; (PvQ) = TRUE
+    - ⊕ : "ou exclusivo; xor"; é TRUE se apenas uma das proposições forem TRUE e o resto FALSE
+        - Ex: P: 5²=25, Q: 2+4=7; P⊕Q = TRUE
+    - → : "implica, se-então"; Ex: P→Q; se a primeira proposição for FALSE então o conjunto é TRUE
+        - Tabela Verdade:
+            - ![](../../assets/faculdade/periodo1/20231026222904.png)
+    - ⇔ : "se e somente se"; é equivalente à (P→Q)^(Q→P); P⇔Q é TRUE quando P e Q possuem valores iguais
+        - Tabela Verdade:
+        - ![](../../assets/faculdade/periodo1/20231028144105.png)
+- Proposição composta
+    - É uma expressão formada por variáveis proposicionais e operadores lógicos
+- Importante
+    - O _Contrapositivo_ de P→Q é ¬Q→¬P (nega as duas proposições e inverte elas, mantêm a veracidade)
+    - O _Converso_ de P→Q é Q→P (inverte as duas proposições, não mantêm a veracidade)
+    - O _Inverso_ de P→Q é ¬P→¬Q (nega as duas proposições, não mantêm a veracidade)
+    - A negação de ≤ é >
+    - Precedência dos operadores lógicos
+        - ![](../../assets/faculdade/periodo1/20231031213933.png)
+
 ## Equivalência Proposicional
----
+- Tautologia
+    - É uma proposição composta que é sempre T, independente do valor de suas variáveis
+        - ![](../../assets/faculdade/periodo1/20231031214536.png)
+- Contradição
+    - É uma proposição composta que é sempre F, independente do valor de suas variáveis
+    - ![](../../assets/faculdade/periodo1/20231031214643.png)
+- As proposições p e q são _logicamente equivalentes_ se elas possuem o mesmo valor a cada linha da tabela verdade
+    - ![](../../assets/faculdade/periodo1/20231031214814.png)
+- Note que (p⇔q) é T sempre que p e q possuem o mesmo valor em cada linha da tabela verdade (lembrando que p e q também podem ser proposições compostas)
+    - Portanto, podemos definir equivalência lógica em termos do operador ⇔ e do conceito de tautologia
+    - Ou seja, as proposições compostas p e q são logicamente equivalentes se p⇔q é uma tautologia
+    - ![](../../assets/faculdade/periodo1/20231031215312.png)
+- Sejam p e q proposições compostas; a notação p☰q é uma abreviação da frase "(p⇔q) é uma tautologia" ou "p é logicamente equivalente à q"
+    - O símbolo ☰ não é um operador da lógica, nem (p☰q) é uma proposição composta
+- Como mostrar que duas proposições compostas são logicamente equivalentes:
+    - Uma forma é por meio da tabela verdade, e a outra é através de substituições de proposições logicamente equivalentes por meio das leis da lógica proposicional:
+        - ![](../../assets/faculdade/periodo1/20231031215903.png)
+        - ![](../../assets/faculdade/periodo1/20231031215918.png)
+        - ![](../../assets/faculdade/periodo1/20231031215938.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231101175324.png)
+
 ## Predicados e Quantificadores
----
+- Predicados
+    - Se encontram em funções proposicionais do tipo: p(x) = "x é maior que 3" onde o "x" é a variável e "maior que 3" é o predicado da função; o valor da proposição varia de acordo com a variável
+- Quantificadores
+    - Expressam até que ponto o predicado é T; dependem do domínio
+        - Tipos
+            - Quantificadores universais
+                - É comum falarmos de propriedades válidas para elementos de um certo domínio; o quantificador universal de p(x) para um domínio específico é a proposição que afirma que p(x) é verdadeiro para todos os valores de x neste domínio
+                - Notação:
+                    - ![](../../assets/faculdade/periodo1/20231101190905.png) Lê se: "Para todo x do domínio p(x) é T"
+                - Ex:
+                    - ![](../../assets/faculdade/periodo1/20231101191541.png)
+                - Ex:
+                    - ![](../../assets/faculdade/periodo1/20231101191715.png)     Nesse caso é F
+            - Quantificadores existenciais
+                - O quantificador existencial de p(x) para um certo domínio é a proposição "Existe pelo menos um x do domínio tal que p(x) é T"
+                - Notação:
+                    - ![](../../assets/faculdade/periodo1/20231101191926.png)
+                - ∃xP(x) é falso se p(x) for falso para todos os elementos do domínio
+                - Ex:
+                    - ![](../../assets/faculdade/periodo1/20231101192111.png)
+        - Lei de De Morgan para quantificadores
+            - ![](../../assets/faculdade/periodo1/20231101192211.png)
+
 ## Prova Matemática
----
+- Uma prova de uma proposição é um argumento que mostra que a proposição é verdadeira
+    - Quando uma proposição é provada dizemos que ela se torna um teorema
+- Uma teoria matemática precisa de um ponto de partida para que outras proposições comecem a ser provadas, esse ponto de partida são proposições que são assumidas como verdade, os postulados ou axiomas
+    - ![](../../assets/faculdade/periodo1/20231103205308.png)
+- Tipos de provas
+    - Desaprovando afirmações
+        - Basicamente encontrar alguma situação em que a afirmação seja desfavorável
+        - Ex: um colega disse que n²+n+41 é sempre primo, descubra como refutar a afirmação dele
+            - Basta achar uma situação que refute, como substituir x por 41
+                - 41²+41+41 = 41.41+41.2 = 41(41+2) = 41.43, portanto não primo
+    - Prova exaustiva
+        - Fazer todas as possibilidades para provar algo
+        - Ex: prova que (n+1)³ >= 3^n se n é um inteiro positivo com n <= 4
+            - ∀xP∈{1,2,3,4}, (n+1)³ >= 3^n
+            - p(1) = 8 >= 3
+            - p(2) = 27 >= 9
+            - p(3) = 64 >= 27
+            - p(4) = 125 >= 81
+    - Provas por aplicação das regras de inferência
+        - Inferência é uma operação intelectual por meio da qual se afirma a verdade de uma proposição em decorrência de sua ligação com outras já reconhecidas como verdadeiras (teoremas, axiomas, leis de equivalência lógica)
+        - Ex: Se x e y são pares, prove que x+y é par
+            - prova: Assuma x e y inteiros tais que x é par e y é par
+                - Como x é par, existe um inteiro K tal que x = 2K
+                - Similarmente como y é par, existe um inteiro K tal que y = 2K'
+                - Temos que x+y = 2K + 2K' = 2(K+K'); Logo x+y é par
+        - Ex: Se x e y são ímpares, prove que x+y é par
+            - prova: Assuma x e y inteiros tais que x é ímpar e y é ímpar
+                - Como x é ímpar, existe um inteiro K tal que x = 2K + 1
+                - Similarmente como y é ímpar, existe um inteiro K tal que y = 2K' + 1
+                - Temos que x+y = 2K +1 + 2K' + 1 = 2(K+K'+1); Logo x+y é par
+    - Prova direta
+        - Provando afirmações do tipo P→Q
+        - Primeiros supomos uma proposição P como verdade (hipótese), depois de número infinito de passos chegamos em Q e com isso temos P implica Q
+            - Depois de provado, não importa se a proposição P suposta é de fato verdade ou falsa, acontecendo o descarte da suposição
+    - Prova por contrapositiva (ou Prova Indireta)
+        - Temos que P→Q ☰ ¬Q→¬P, sendo ¬Q→¬P é a contraposição de P→Q
+            - Dependendo do caso, é mais fácil provar a contraposição do que a proposição em si
+        - Ex: para qualquer inteiro n, se n² é par então n é par
+            - A contrapositiva seria: se n é ímpar, então n² é ímpar
+                - Como n é ímpar, existe um inteiro K tal que n = 2K+1
+                - n² = (2K+1)² = 4K² + 4K + 1 = 2(2K² + 2K) + 1; portanto é ímpar
+        - Ex: se n = ab, a≤**√**n e b≤√n
+            - A contrapositiva seria: se a > √n e b > √n então ab ≠ n
+                - Tome a e b inteiros tais que a > √n e b > √n; a.b > √n.√n; a.b > n ⇔ a.b ≠ n
+    - Provas de Equivalência
+        - Suponha que queremos provar que P⇔Q, para isso usamos a equivalência
+        - P⇔Q ≡ (P → Q) ∧ (Q→ P), com isso construímos duas provas para cada uma implicação
+            - Ex: para qualquer inteiro n, n é par se, e somente se, n² é par
+                - Então teremos duas provas sendo elas: se n é par, então n² é par; e também se n² é par, então n é par (temos que provar as duas)
+                - Provando a primeira afirmação: como n é par, existe K∈Z tal que n = 2K; como n = 2K,       n² = 4K² ou seja 2(2K²) que é par
+                - Provando a segunda afirmação: podemos utilizar a contrapositiva que fica mais fácil de resolver
+                    - Contrapositiva: se n é ímpar, então n² é ímpar
+                    - como n é ímpar, n = 2K + 1; n² = 4K² + 4K + 1, ou seja, 2(2K² + 2K) + 1, que é ímpar
+                - Com isso provamos que, para qualquer inteiro n, n é par se, e somente se, n² é par
+    - Provas por contradição (Redução ao absurdo)
+        - Assume-se o oposto do que se quer provar, ao chegar a uma contradição a prova é finalizada
+        - Ex: prove que "Se 3n+2 é ímpar, então n é ímpar"
+            - Para isso, assumimos que não é verdade que "se 3n+2 é ímpar, então n é ímpar"
+                - Logo, 3n+2 é ímpar e n é par; como n é par, existe K∈Z tal que n = 2K
+                    - 3n+2 = 3(2K) + 2 = 2(3K) + 1 que é par, o que é um absurdo! Logo, concluímos a prova de "se 3n+2 é ímpar, então n é ímpar"
+        - Ex: prove que √2 é irracional
+            - Assuma que √2 é racional, um número racional é um número do tipo p/q onde p,q∈Z e q≠0
+                - Então, √2 = p/q onde p,q∈Z e q≠0 (Vamos assumir que esta fração está simplificada ao máximo)
+                    - 2 = p²/q², p² = 2q²; p² é par, logo p é par
+                        - (2K)² = 2q²; q² = 2K; q² é par, logo q é par
+                            - Como p é par e q também é par, é impossível a fração estar simplificada ao máximo; logo, √2 não é racional
+    - Provas por casos
+        - Algumas vezes temos um conjunto de possíveis casos numa prova. Não sabemos que casos são verdadeiros, mas sabemos que pelo menos um deles é verdadeiro
+            - Ex: prove que para qualquer inteiro n <= n²
+                - Caso 1: n é positivo, n >= 1; n² >= n
+                - Caso 2: n é zero; 0² >= 0
+                - Caso 3: n é negativo n <= -1; n² >= n
+                - Provamos por casos que a afirmação n²>= n é de fato verdadeira
+            - Ex: existem número irracionais x e y de forma que x^y é racional
+                - Considere x = √2 e y = √2; existem dois casos:
+                    - √2^√2 é racional ou √2^√2 é irracional
+                        - √2^√2 não é racional, e sim irracional
+                            - Então agora dizemos que x = √2^√2 e y = √2
+                                - (√2^√2)^√2 = 2
+                                    - Observe que mesmo após a prova nós não sabemos quais dos dois casos é verdade; dessa forma não podemos exibir os números irracionais que satisfazem o teorema, esse é um exemplo de prova não construtiva, no qual um teorema existencial foi provado sem a construção de um exemplo
+    - Prova por indução
+        - Geralmente utilizamos a indução para provar coisas de natureza "∀n∈N, P(n)"
+        - Passo base da indução - P(1)
+        - Passo indutivo - P(K)→P(K+1)
+        - Ex: P(n) = A soma dos n primeiros números ímpares é igual à n²
+            - Passo base - P(1): 1 = 1, que é verdade
+            - Passo indutivo - P(K)→P(K+1): "Se a soma dos K primeiros números ímpares é igual à K², então a soma dos K+1 primeiros números ímpares é (K+1)²"
+                - Primeiro, temos que supor que P(K) é verdade
+                    - Assuma que: 1+2+...+(2K-1) = K² é verdade
+                - Com essa verdade, temos que chegar de alguma forma em P(K+1)
+                    - P(K+1): 1+2+...+(2K-1)+(2K+1) = (K+1)²
+                - Se somarmos 2K+1 nos dois lados de P(K)
+                    - 1+2+...+(2K-1)+(2K+1) = K² + 2K+1 = (K+1)²
+                - Com isso, provamos P(n)
+        - Ex: Prove que para n >= 1, 1+2¹+2²+...+2^n = 2^n+1 - 1
+            - ![](../../assets/faculdade/periodo1/20231121092932.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231121092953.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231121093121.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231121094930.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231121094958.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231121095013.png)
+        - Ex: prove que o conjunto das partes de um conjunto com n elementos possui 2^n elementos
+            - ![](../../assets/faculdade/periodo1/20231123233553.png)
+        - Fazendo conjecturas
+            - ![](../../assets/faculdade/periodo1/20231126094632.png)
+    - Definições recursivas
+        - Utilizamos definições recursivas em funções, operações, algoritmos, funções, conjuntos e sequências
+        - ![](../../assets/faculdade/periodo1/20231126211631.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231126211747.png)![](../../assets/faculdade/periodo1/20231126215504.png)![](../../assets/faculdade/periodo1/20231126220540.png)
+        - Sequência de Fibonacci
+            - ![](../../assets/faculdade/periodo1/20231126221817.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20231126221830.png)![](../../assets/faculdade/periodo1/20231126222124.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20231126221841.png)![](../../assets/faculdade/periodo1/20231126222150.png)
+
 ## Conjuntos
----
+- Coleção desordenada de objetos que não tem ordem de repetição
+    - Ex: {1,2,3,4} = {1,1,2,2,2,3,4,4,4,4} = {3,2,4,3,2,2,1,4,3}
+- a∈A significa que o elemento a pertence ao conjunto A
+- a∉A significa que o elemento a não pertence ao conjunto A
+- A⊂B significa que todos os elementos de A estão em B mas A é diferente de B
+- A⊆B significa que todos os elementos de A estão em B e A pode ser exatamente igual a B
+- Formalmente: a∉A = ¬(a∈A)
+- Em conjuntos de conjuntos, os elementos estão sempre separados pelas vírgulas mais externas
+    - ![](../../assets/faculdade/periodo1/20231110210556.png)
+- Obs:
+- ![](../../assets/faculdade/periodo1/20231126185541.png)
+- ![](../../assets/faculdade/periodo1/20231110211021.png)
+- Dois conjuntos A e B são iguais se, e somente se, ∀x(x∈A⇔x∈B)
+- Conjunto vazio é o conjunto sem elementos, representado por { } ou Ø
+    - Propriedades
+        - x∈Ø ☰ F
+        - Ø = {x|F}
+    - A diferença entre {Ø} e Ø é que o primeiro representa um subconjunto que contém o conjunto vazio e o segundo é o próprio conjunto vazio
+- A é um subconjunto de B se, e somente se, ∀x(x∈A→x∈B)
+    - Se A⊆B e A≠B, dizemos que A é um subconjunto próprio de B
+        - ![](../../assets/faculdade/periodo1/20231110212255.png)
+- ![](../../assets/faculdade/periodo1/20231110212333.png)
+    - P(n) = 2^n; sendo n = número de elementos do conjunto
+    - O conjunto vazio está contido à todo conjunto
+- Propriedades
+    - Para todo conjunto S, Ø⊆S e S⊆S
+    - A = B ☰ (A⊆B)^(B⊆A)
+    - Finito e infinito, um conjunto é finito se ele contém n elementos distintos onde n ≥ 0
+        - Um conjunto é infinito se ele não é finito
+- Cardinalidade
+    - Para um conjunto finito, |S| denota a cardinalidade de S, ou seja a medida do número de elementos de um conjunto
+    - Ex: |{5,2,89}| = 3
+    - Ex: |{1,1,1,1,1,1,2} = 2
+    - Ex: |{Ø}| = 0
+    - Ex: |{1,2,3}, Ø, {5,6,7...}| = 3
+- Conjunto das partes
+    - O conjunto das partes de S é o conjunto que contém todos os subconjuntos de S
+    - Notação: P(S)
+    - Ex: P({0,1,2}) = {Ø, {0}, {1}, {2}, {0,1}, {0,2}, {1,2}, {0,1,2}}
+        - Ex: f: P({0,1,2}) → N![](../../assets/faculdade/periodo1/20231111171237.png)
+    - Ex: P(Ø) = {Ø}
+        - Ex: P({Ø}) = {Ø; {Ø}}
+            - Ex: P({Ø; {Ø}}) = {Ø; {Ø}; {Ø, {Ø}}}
+- Conjunto universo
+    - O conjunto universo U é o conjunto com todos os elementos que iremos trabalhar
+- Tuplas
+    - Tupla é um conjunto ordenado de elementos
+        - Ex: (1,2,3) é uma tupla de 3 elementos e (3,2,1) também é uma tupla de 3 elementos, porém, são diferentes pois a tupla é um conjunto ordenado de elementos; como o primeiro elemento da primeira tupla é diferente do primeiro elemento da segunda tupla, elas são diferentes
+- Produto cartesiano
+    - ![](../../assets/faculdade/periodo1/20231110221412.png)
+    - ![](../../assets/faculdade/periodo1/20231110221424.png)
+    - O subconjunto de um produto cartesiano é chamado de relação
+    - Propriedades
+        - ![](../../assets/faculdade/periodo1/20231110221516.png)
+    - O número de elementos do produto cartesiano é a multiplicação da cardinalidade dos conjuntos
+        - Ex: |A| = m; |B| = n; |C| = o; AxBxC = m.n.o
+- Operadores de conjuntos
+    - União
+        - ![](../../assets/faculdade/periodo1/20231110222125.png)
+        - Propriedade
+            - ![](../../assets/faculdade/periodo1/20231110222154.png) V ("ou") ☰ U
+        - Exemplo de prova
+            - ![](../../assets/faculdade/periodo1/20231110222335.png)
+    - Interseção
+        - ![](../../assets/faculdade/periodo1/20231110225404.png)
+        - Propriedade
+            - ![](../../assets/faculdade/periodo1/20231110225420.png) ^ ("e") ☰ ∩
+    - Conjuntos disjuntos
+        - Conjuntos são disjuntos se a interseção deles é vazia
+        - Ex: {1,2,3,4} e {5,6,7,8,9,10} são disjuntos
+    - Cardinalidade da união
+        - |AUB| = |A| + |B| -|A∩B|; pois A∩B foi contado duas vezes
+    - Diferença
+        - A diferença de A e B (complemento de A em relação à B),é o conjunto que contém os elementos de A que não fazem parte de B
+        - Ex: {1,2,3,4} - {2,3} = {1,4}
+        - Propriedade
+            - ![](../../assets/faculdade/periodo1/20231110230040.png)
+    - Complemento
+        - ![](../../assets/faculdade/periodo1/20231110232813.png)
+        - Propriedade
+            - ![](../../assets/faculdade/periodo1/20231110232827.png)
+    - Lógica em conjuntos
+        - ![](../../assets/faculdade/periodo1/20231110232854.png)
+        - ![](../../assets/faculdade/periodo1/20231110232909.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231110233041.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231111125314.png)
+    - União generalizada
+        - União generalizada é união de n conjuntos
+        - Notação
+            - ![](../../assets/faculdade/periodo1/20231111125509.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231111125524.png)
+        - ![](../../assets/faculdade/periodo1/20231111130136.png)
+    - Interseção generalizada
+        - Interseção generalizada é a interseção de n conjuntos
+        - Notação
+            - ![](../../assets/faculdade/periodo1/20231111125634.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231111130045.png) Resposta: conjunto vazio
+        - ![](../../assets/faculdade/periodo1/20231111130942.png) Resposta: 3
+
 ## Funções
----
+- Uma função f de A para B relaciona cada elemento de A para apenas um elemento de B
+- ![](../../assets/faculdade/periodo1/20231111131120.png)
+- ![](../../assets/faculdade/periodo1/20231111131202.png)
+- Seja f uma função de A para B, A é o domínio de f e B é o contradomínio de f
+    - Além disso o conjunto imagem de f é todo elemento B relacionado à um elemento de A
+        - ![](../../assets/faculdade/periodo1/20231111131713.png)
+    - Seja f(x) = y; y é a imagem de x e x é a pré-imagem de y
+- Duas funções são iguais se elas possuem o mesmo domínio e contradomínio
+- Função injetiva
+    - ![](../../assets/faculdade/periodo1/20231111133128.png)
+- Função sobrejetiva
+    - ![](../../assets/faculdade/periodo1/20231111133612.png)
+- ![](../../assets/faculdade/periodo1/20231111133729.png)
+- Função bijetiva
+    - ![](../../assets/faculdade/periodo1/20231111133757.png)
+    - A função identidade é um exemplo de função bijetiva
+- Função inversa
+    - ![](../../assets/faculdade/periodo1/20231111152408.png)
+    - ![](../../assets/faculdade/periodo1/20231111152454.png)
+    - Ex:
+    - ![](../../assets/faculdade/periodo1/20231111153210.png)
+        - A função g^-1: g^-1(50) = a, g^-1(20) = b, g^-1(60) = c, g^-1(10) = d, g^-1(30) = e,      g^-1(40) = f
+- Função composta
+    - ![](../../assets/faculdade/periodo1/20231111161121.png)
+- ![](../../assets/faculdade/periodo1/20231111161558.png)
+- ![](../../assets/faculdade/periodo1/20231114100220.png)
+    - Resposta: (gof) não possui inversa pois toda função inversa é caracterizada por uma bijeção, nesse caso gof: A→C, o conjunto A possui dois elementos e o conjunto C possui dois elementos; a função A→C é sobrejetiva mas não é injetiva e portanto não caracteriza uma bijeção, portanto não possui inversa.
+- Outras funções
+    - Função floor
+        - ![](../../assets/faculdade/periodo1/20231111164346.png)
+        - [x] é o maior inteiro menor ou igual a x
+        - Ex: calcule o floor de [1/2], [-2] e [-1/2]
+            - Resposta: 0, -2 e -1
+    - Função teto![](../../assets/faculdade/periodo1/20231111165643.png)
+        -  [x] é o menor inteiro maior ou igual a x
+        -  Ex: calcule o ceiling de [1/2], [-2] e [-1/2]
+            -  Resposta: 1, -2 e 0
+    - Propriedades
+        - ![](../../assets/faculdade/periodo1/20231114101000.png)
+        - ![](../../assets/faculdade/periodo1/20231114101009.png)
+        - ![](../../assets/faculdade/periodo1/20231114101019.png)
+        - ![](../../assets/faculdade/periodo1/20231114101051.png)
+        - ![](../../assets/faculdade/periodo1/20231114101100.png)
+        - ![](../../assets/faculdade/periodo1/20231114101112.png)
+        - ![](../../assets/faculdade/periodo1/20231114101128.png)
+
 ## Sequências e somatórios
----
+- Sequências são listas ordenadas de termos que podem ser calculados com uma fórmula específica para cada sequência; utilizamos a notação "an"
+    - Ex: considere uma sequência an onde an = 1/n
+        - a1 = 1; a2 = 1/2; a3 = 1/3...
+    - As sequências podem ser feitas de forma aritmética ou geométrica
+    - Sequência de Fibonacci
+        - Exemplo de sequência recursiva (quando um termo pode ser calculado em função de termos anteriores)
+    - Sequências infinitas
+        - Sequência que possui uma quantidade ilimitada de termos, podem ser enumeráveis ou não enumeráveis
+            - Enumeráveis
+                - Ser enumerável significa que ou o conjunto é finito ou se existe uma bijeção entre determinado conjunto e o conjunto dos naturais (válido apenas para números infinitos)
+                - Conjunto dos naturais
+                    - A cardinalidade do conjunto dos naturais é a mesma do conjunto dos naturais não nulos que é a mesma do conjunto dos pares não nulos; conseguimos enumerar os elementos desses três conjuntos
+                        - Pois, existe uma função bijetora que relaciona cada elemento do conjunto natural em um do conjunto dos pares não nulos ![](../../assets/faculdade/periodo1/20231114205140.png)
+                            - Logo, temos que card(conjunto natural) = card(conjunto dos pares não nulos)
+                - Conjunto dos inteiros
+                    - ![](../../assets/faculdade/periodo1/20231114230450.png)
+                        - Com isso, card(inteiros) = card(naturais)
+                - Conjunto dos racionais
+                    - Os números racionais são um quociente de dois números inteiros, para provar que são enumeráveis basta fazer uma "matriz" onde o numerador é a coluna e o denominador é a coluna
+                        - ![](../../assets/faculdade/periodo1/20231115092723.png)Como são enumeráveis, card(racionais) = card(naturais)
+            - Não enumeráveis
+                - Conjunto dos reais
+                    - Abrange os racionais e os irracionais
+                    - Prova por absurdo
+                        - O conjunto real é enumerável
+                        - Vamos observar o intervalo (0,1) e listar números reais aleatoriamente
+                            - ![](../../assets/faculdade/periodo1/20231115110654.png)
+                            - Dados esses números, podemos usar a diagonalidade (após a vírgula) deles para mostrar um número que não está na lista
+                            - Vamos pegar o primeiro dígito do primeiro número, o segundo dígito do segundo número, e assim por diante, e somar +1 para cada número (sendo 9+1 = 0)
+                            - ![](../../assets/faculdade/periodo1/20231115111445.png)
+                            - Esse número se difere do primeiro pelo primeiro dígito, se difere do segundo pelo segundo dígito... ou seja, ele não pode estar na lista
+                            - Ou seja, existe pelo menos um número real que não pode ser associado à sequência dos naturais; logo a lista não é sobrejetiva tampouco bijetiva e por isso o conjunto não é enumerável; então card(reais) > card(naturais)
+            - Associamos à cardinalidade dos naturais, inteiros e racionais um número transfinito (forma rigorosa para contar elementos de conjuntos infinitos, conseguindo fazer "operações" com esse número) denominado áleph-null ou ℵ0
+                - ℵ0 + 1 = ℵ0; 2ℵ0 = ℵ0
+                - Além disso, de acordo com hipótese do contínuo de Cantor, a cardinalidade do conjunto  P(N) é maior que a cardinalidade do próprio conjunto N; ou seja, 2^ℵ0 > ℵ0; além disso, a cardinalidade de P(N) é igual à cardinalidade do conjunto real; logo 2^ℵ0 = ℵ1
+                    - Curiosamente, conseguimos aplicar essa lógica de forma infinita: 2^ℵ1 = ℵ2 e assim por diante
+            - De forma semelhante, associamos à cardinalidade dos reais outro número transfinito denominado áleph-one ou ℵ1 ou 2^ℵ0
+            - Não há nenhum número entre ou |N| e |R| ou ℵ0 e ℵ1
+- Somatório
+    - Índice de soma
+        - ![](../../assets/faculdade/periodo1/20231114193741.png)
+
 ## Análise combinatória
----
+- Princípios básicos da contagem
+    - "ou" soma e "e" multiplica
+    - Regra do produto
+        - ![](../../assets/faculdade/periodo1/20231201082150.png)
+        - ![](../../assets/faculdade/periodo1/20231201082448.png)
+        - ![](../../assets/faculdade/periodo1/20231201082528.png)
+    - Regra da soma
+        - ![](../../assets/faculdade/periodo1/20231201082614.png)
+    - Exemplos
+        - ![](../../assets/faculdade/periodo1/20231201082731.png)![](../../assets/faculdade/periodo1/20231201082715.png)
+            - ![](../../assets/faculdade/periodo1/20231201082758.png)
+    - Princípio da inclusão-exclusão
+        - Utiliza a ideia de cardinalidade de conjuntos união
+        - ![](../../assets/faculdade/periodo1/20231201082829.png)
+            - ![](../../assets/faculdade/periodo1/20231201082923.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231201082953.png)
+- Permutação
+    - Na permutação a ordem importa e agrupamos todos os elementos do conjunto![](../../assets/faculdade/periodo1/20231201081728.png)
+        - ![](../../assets/faculdade/periodo1/20231201081817.png)
+- Arranjo
+    - No arranjo a ordem importa e agrupamos apenas parte dos elementos de um conjunto , ou seja, um número de subconjuntos ordenados (diferentemente da permutação que agrupa todos os elementos do conjunto)![](../../assets/faculdade/periodo1/20231201081903.png)
+    - ![](../../assets/faculdade/periodo1/20231201081851.png)
+- Combinação
+    - agrupa um determinado número de subconjuntos
+        - ![](../../assets/faculdade/periodo1/20231204234628.png)
+        - ![](../../assets/faculdade/periodo1/20231204234653.png) n!/(k!(n-k)!) é exatamente a mesma que o binômio (n|k)
+    - Binômio
+        - Termo geral
+            - ![](../../assets/faculdade/periodo1/20231025215905.png)
+            - Expandindo o binômio
+                - ![](../../assets/faculdade/periodo1/20231205003846.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240124111719.png)
+        - Importante
+            - Em (x-y)^n, o _expoente ímpar_ do y determina o _sinal negativo_
+            - Se na questão pedir um número inválido, o coeficiente é zero
+            - Para saber a soma de todos os coeficientes da expressão, basta substituir as variáveis por 1
+                - Ex:
+                    - ![](../../assets/faculdade/periodo1/20240122221731.png)
+        - Triângulo de Pascal
+            - ![](../../assets/faculdade/periodo1/20231205002636.png)
+        - Igualdades importantes do binômio
+            - ![](../../assets/faculdade/periodo1/20231204235410.png)
+                - Prova
+                    - ![](../../assets/faculdade/periodo1/20231204235427.png)
+            - ![](../../assets/faculdade/periodo1/20231205004520.png)
+            - ![](../../assets/faculdade/periodo1/20231204235527.png)
+                - Prova
+                    - ![](../../assets/faculdade/periodo1/20231205000538.png)
+            - ![](../../assets/faculdade/periodo1/20231204235541.png)
+                - Prova
+                    - ![](../../assets/faculdade/periodo1/20231205000618.png)
+            - ![](../../assets/faculdade/periodo1/20231205005022.png)
+                - Com o auxílio do triângulo de Pascal:
+                    - ![](../../assets/faculdade/periodo1/20231205005423.png)
+            - Identidade de Vandermonde![](../../assets/faculdade/periodo1/20231205002935.png)
+            - Elemento central da linha do triângulo de pascal
+                - É o coeficiente com o maior valor numérico
+                - Caso n seja par, o elemento central k = n/2
+                - Caso n seja ímpar, o elemento central k = (n-1)/2
+- Princípio da casa dos pombos
+    - Conceito
+        - ![](../../assets/faculdade/periodo1/20231215185146.png)
+            - Resposta: porque em todas as possibilidades, há pelo menos 2 pombos na mesma casa
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231215185233.png)
+            - Sim, pelo menos 6 alunos possuem médias iguais
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231215185322.png)
+            - ![](../../assets/faculdade/periodo1/20231215185405.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231215185542.png)
+            - ![](../../assets/faculdade/periodo1/20231215185620.png)
+    - Generalizando
+        - ![](../../assets/faculdade/periodo1/20231215185709.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231215185743.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231215190012.png)
+        - ![](../../assets/faculdade/periodo1/20231215185906.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231215190104.png)
+    - OBS: em exemplos como "quantos números entre 1 e 401 são divisíveis por 2", utilizamos a função floor pois queremos a parte inteira; neste exemplo faríamos floor de 401/2 = 200
+- Princípio da inclusão-exclusão
+    - ![](../../assets/faculdade/periodo1/20231215191519.png)A fórmula diz que a cardinalidade da união de n conjuntos é igual ao somatório dos conjuntos (|Ai|) menos o somatório da interseção dos conjuntos dois a dois (|Ai∩Aj|) mais o somatório da interseção dos conjuntos 3 a 3 (|Ai∩Aj∩Ak|) - ... mais ou menos (depende se n é par ou ímpar, por isso: (-1)^n+1) a interseção dos conjuntos n a n (|A1∩A2∩...∩An|)
+        - Dito isso, |Ai| nada mais é que a combinação de C(n,1); |Ai∩Aj| = C(n,2) e etc.
+        - Portanto, a cardinalidade da união dos conjuntos A1, ... An = C(n,1) - C(n,2) + C(n,3) - ... + (-1)^n+1 . C(n,n)
+            - OBS: C(n,n) = 1 sempre
+    - ![](../../assets/faculdade/periodo1/20231215191550.png)![](../../assets/faculdade/periodo1/20231215190827.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231215195742.png)
+        - 1°: 30; 2°: 29; 3°: 24
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231215200446.png)
+            - ![](../../assets/faculdade/periodo1/20231215200507.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231215201125.png)
+            - ![](../../assets/faculdade/periodo1/20231215201133.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231217121355.png)
+            - ![](../../assets/faculdade/periodo1/20231217124324.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231217121413.png)
+            - ![](../../assets/faculdade/periodo1/20231217124314.png)
+
 ## Teoria dos números
----
+- Divisibilidade de números inteiros
+    - ![](../../assets/faculdade/periodo1/20231217124550.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231217124625.png)
+    - Propriedades
+        - ![](../../assets/faculdade/periodo1/20231217124653.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231217125040.png)
+    - Algoritmo
+        - ![](../../assets/faculdade/periodo1/20231217130348.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231217130947.png)
+    - Conjunto dos divisores
+        - ![](../../assets/faculdade/periodo1/20231217131335.png)
+        - MDC
+            - ![](../../assets/faculdade/periodo1/20231217131425.png)
+        - Números primos
+            - ![](../../assets/faculdade/periodo1/20231217131443.png)![](../../assets/faculdade/periodo1/20231217131546.png)![](../../assets/faculdade/periodo1/20231217131611.png)
+            - Teoria fundamental da aritmética
+                - ![](../../assets/faculdade/periodo1/20231217131846.png)![](../../assets/faculdade/periodo1/20231217131909.png)![](../../assets/faculdade/periodo1/20231217132221.png)MMC
+                    - ![](../../assets/faculdade/periodo1/20231217133249.png)
+                - ![](../../assets/faculdade/periodo1/20231217133734.png)
+                - Ex:
+                    - ![](../../assets/faculdade/periodo1/20231217133757.png)
+    - Algoritmo de Euclides
+        - ![](../../assets/faculdade/periodo1/20231217143214.png)![](../../assets/faculdade/periodo1/20231217143247.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231217143705.png)
+        - Identidade de Bezóut
+            - ![](../../assets/faculdade/periodo1/20231217143925.png)![](../../assets/faculdade/periodo1/20231217144022.png)
+            - Algoritmo de Euclides Estendido
+                - ![](../../assets/faculdade/periodo1/20231217144111.png)![](../../assets/faculdade/periodo1/20231217144209.png)(Em 6, é 6 = 18.17 - 300.1)
+                - Ex: mdc(57,10)
+                    - ![](../../assets/faculdade/periodo1/20231218195307.png)
+                - Aplicação: Equação Diofantina Linear
+                    - ![](../../assets/faculdade/periodo1/20231217221246.png)![](../../assets/faculdade/periodo1/20231217221334.png)
+                    - Fazendo o exemplo:
+                        - ![](../../assets/faculdade/periodo1/20231218200343.png)
+                    - ![](../../assets/faculdade/periodo1/20231217221356.png)
+                    - O "d" é o mdc(a, b); o slide está errado
+                    - (Se existe uma solução, então existem infinitas soluções)![](../../assets/faculdade/periodo1/20231217223911.png)![](../../assets/faculdade/periodo1/20231217225743.png)
+                    - Ex:
+                        - ![](../../assets/faculdade/periodo1/20231218200816.png)(Os números só podem ser multiplicados por inteiros positivos)
+                            - Primeiro exemplo
+                                - ![](../../assets/faculdade/periodo1/20231218214049.png)
+                            - Segundo exemplo
+                                - ![](../../assets/faculdade/periodo1/20231218214104.png)
+                            - Terceiro exemplo
+                                - ![](../../assets/faculdade/periodo1/20231218214212.png)
+            - Consequências
+                - ![](../../assets/faculdade/periodo1/20231217230017.png)
+- Aritmética Modular
+    - ![](../../assets/faculdade/periodo1/20231226011240.png)
+        - m | a-b ↔ (a (mod m) = b (mod m))
+    - Ex: 7 ≡ 2 (mod 5)
+        - 7 (mod 5) ≡ 2 (mod 5)
+        - 2 ≡ 2
+    - ![](../../assets/faculdade/periodo1/20231226012735.png)
+    - ![](../../assets/faculdade/periodo1/20231226014908.png)
+    - Ex: calcular horas num relógio
+        - 23 + 3 ≡ (23(mod 12) + 3(mod 12) (mod 12))
+        - 14 (mod 12) = 2
+        - ou
+        - 26 (mod 12) = 2
+        - 23 . 3 ≡ (23(mod 12) . 3(mod 12) (mod12))
+        - 33 (mod 12) = 9
+        - ou
+        - 69 (mod 12) = 9
+    - ![](../../assets/faculdade/periodo1/20231226015039.png)
+        - Prova
+            - ![](../../assets/faculdade/periodo1/20231226015256.png)
+            - ![](../../assets/faculdade/periodo1/20231226015418.png)
+    - Algumas aplicações de congruência
+        - ![](../../assets/faculdade/periodo1/20231226015514.png)
+        - ![](../../assets/faculdade/periodo1/20231226020008.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231226021044.png)
+            - ![](../../assets/faculdade/periodo1/20231226021057.png)
+    - Propriedades
+        - ![](../../assets/faculdade/periodo1/20231226021906.png)
+        - ![](../../assets/faculdade/periodo1/20231226021914.png)
+    - Congruência linear
+        - ![](../../assets/faculdade/periodo1/20231226022733.png)
+            - Nem sempre é possível realizar estas congruências lineares
+            - Uma maneira de checar se existe é utilizando a identidade de Bézout![](../../assets/faculdade/periodo1/20231226025342.png)
+                - ![](../../assets/faculdade/periodo1/20231226024105.png)
+                - ![](../../assets/faculdade/periodo1/20231226024215.png)
+                    - ![](../../assets/faculdade/periodo1/20231226024315.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231226025343.png)
+            - ![](../../assets/faculdade/periodo1/20231226025355.png)
+    - Algoritmo
+        - ![](../../assets/faculdade/periodo1/20231226025453.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231226030036.png)
+            - ![](../../assets/faculdade/periodo1/20231226030554.png)
+        - Ex: encontre x para 7x ≡ 5 (mod 11)
+            - ![](../../assets/faculdade/periodo1/20231227002317.png)
+        -  Ex:
+            - ![](../../assets/faculdade/periodo1/20240122222946.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240122223003.png)
+            - ![](../../assets/faculdade/periodo1/20240122223012.png)
+            - ![](../../assets/faculdade/periodo1/20240122223025.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240123163633.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240123163653.png)
+            - ![](../../assets/faculdade/periodo1/20240123163710.png)
+    - Teorema chinês do resto
+        - Contexto
+            - ![](../../assets/faculdade/periodo1/20231227002843.png)
+        - Teorema
+            - ![](../../assets/faculdade/periodo1/20231227002858.png)
+            - Encontrar um "x" que satisfaça todas as equações
+        - Fórmula
+            - ![](../../assets/faculdade/periodo1/20231227002938.png)
+        - Resolução do exemplo
+            - ![](../../assets/faculdade/periodo1/20231227003218.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231227004101.png)
+            - ![](../../assets/faculdade/periodo1/20231227011001.png)
+    - Pequeno Teorema de Fermat
+        - Contexto: Teste de primalidade
+            - ![](../../assets/faculdade/periodo1/20231227015124.png)
+        - ![](../../assets/faculdade/periodo1/20231227015040.png)
+        - ![](../../assets/faculdade/periodo1/20231227015139.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231227021812.png)
+            - ![](../../assets/faculdade/periodo1/20231227021759.png)
+            - (o último fica 3^204 ≡ 4 mod 11)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231227021830.png)
+            - ![](../../assets/faculdade/periodo1/20231227023254.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240123165521.png)
+            - ![](../../assets/faculdade/periodo1/20240123165532.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240205220635.png)
+            - ![](../../assets/faculdade/periodo1/20240205220524.png)
+            - ![](../../assets/faculdade/periodo1/20240205220900.png)
+        - Aplicações
+            - Criptografia
+                - ![](../../assets/faculdade/periodo1/20231227023356.png)
+                - ![](../../assets/faculdade/periodo1/20231227023457.png)
+                - ![](../../assets/faculdade/periodo1/20231227023505.png)
+                - ![](../../assets/faculdade/periodo1/20231227023539.png)
+                - ![](../../assets/faculdade/periodo1/20231227023601.png)
+    - Fórmula quadrática modular
+        - Usada em casos de ax² ± bx ± c ≡ 0 (mod m)
+        - Para aplicar a fórmula basta fazer bháskara convencionalmente mas lembrando que está em mod m
+            - Se as soluções da bháskara não satisfazerem o ax² ± bx ± c ≡ 0 (mod m), então a equação quadrática não tem soluções modulares
+
 ## Relações
----
+- Seja S um conjunto de pessoas, digamos que queremos escolher os pares ordenados de S X S (S cartesiano S) de forma que os componentes dos par iniciem com a mesma letra; esse subconjunto de S X S é chamada de relação binária sobre S
+- Notações
+    - R = {(x, y)|x e y ∈ S e x e y começam com a mesma letra}
+    - xRy ↔ x, y ∈ S e x e y começam com a mesma letra
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240209104225.png)
+    - ![](../../assets/faculdade/periodo1/20240209104239.png)
+        - R1 = {(1,1), (2,2), (3,3)}
+    - ![](../../assets/faculdade/periodo1/20240209104318.png)
+        - R2 = {(1,2), (1,3), (2,3)}
+    - ![](../../assets/faculdade/periodo1/20240209104359.png)
+- ![](../../assets/faculdade/periodo1/20240209104445.png)
+- Todas as relações possuem sentido direto e sentido inverso
+    - Sentido direto: R = {(a,b), (c,d)}
+    - Sentido inverso: R = {(b,a), (d,c)}
+- Função como Relação
+    - ![](../../assets/faculdade/periodo1/20240209104652.png)
+- Propriedades da Relação
+    - Reflexividade
+        - ![](../../assets/faculdade/periodo1/20240209105831.png)
+            - É preciso conter todos os pares do tipo (a,a), porém, pode haver outros elementos
+        - Ex: S = {1, 2, 3}
+            - Exemplos de relações reflexivas
+                - R1 = {(1,1), (2,2), (3,3)}
+                - R2 = {(1,1), (1,3), (2,1), (2,2), (3,2), (3,3)}
+                - R3 = {(1,1), (2,1), (2,2), (3,3)}
+    - Simetria
+        - ![](../../assets/faculdade/periodo1/20240209110215.png)
+        - Ex: S = {1, 2, 3}
+            - Exemplos de relações simétricas
+                - R1 = {(1,2), (1,3), (2,1), (2,3), (3,1), (3,2)}
+                - R2 = {(1,1), (2,2), (3,3)}
+                - R3 = {(1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3)}
+                - R4 = {(1,2), (2,1), (2,2)}
+    - Anti-Simetria
+        - ![](../../assets/faculdade/periodo1/20240209111445.png)
+        - Ex: A = {1, 2, 3}
+            - Exemplos de relações antissimétricas
+                - R1 = {(1,2), (1,3), (2,3), (3,2)}
+                - R2 = {(1,1), (2,2), (3,3)}
+                - R3 = {(1,1)}
+                - R4 = {(1,1), (2,1), (3,2)}
+    - Transitividade
+        - ![](../../assets/faculdade/periodo1/20240209112201.png)
+        - Ex: T = {1, 2, 3}
+            - Exemplos de relações transitivas
+                - R1 = {(1,2), (1,3), (2,3)}
+                - R2 = {(1,1), (1,2), (1,3), (2,3), (3,2)}
+                - R3 = {(1,1), (1,2), (1,3), (2,2), (2,3), (3,3)}
+    - Relações do tipo R = {(a,a), (a+1,a+1), ... ,(a+n,a+n)} são reflexivas, simétricas, assimétricas e transitivas
+    - Ex: Dado o conjunto S = {1,2,3,4,5}, dê exemplos de relações que são
+        - Apenas reflexivas
+            - R1 = {(1,1), (2,2), (3,3), (4,4), (5,5)}
+        - Apenas simétricas
+            - R2 = {(1,2), (2,1)}
+        - Apenas antissimétricas
+            - R3 = {(1,3), (4,5)}
+        - Apenas transitivas
+            - R4 = {(1,2), (1,3), (2,3), (4,4), (4,5), (5,4), (5,5)}
+        - Nenhuma propriedade
+            - R5 = {(1,2), (1,3), (1,4), (2,1), (2,5)}
+        - Reflexivas, simétricas, antissimétricas e transitivas
+            - R6 = {(1,1), (2,2), (3,3), (4,4), (5,5)}
+- Combinando relações
+    - ![](../../assets/faculdade/periodo1/20240221072858.png)
+- Composição de relações
+    - ![](../../assets/faculdade/periodo1/20240221073100.png)
+        - S◦R = {(a,c) / (a∈A, c∈C) ^ (∃ b∈B / (a,b)∈R, (b,c)∈S)} ![](../../assets/faculdade/periodo1/20240221073446.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240221074000.png)
+        - Para achar S◦R, primeiramente fixamos o primeiro par R e percorremos S de modo que se o segundo elemento do par R for o primeiro elemento de algum par S então o par (primeiro elemento R, segundo elemento S) pertence à S◦R; após percorremos S mudamos para o segundo par de R e fazemos isso até acabar os pares de R
+            - OBS: a relação que está do lado direito do "◦" é a relação que vamos fixar os pares
+            - ![](../../assets/faculdade/periodo1/20240221075126.png)
+            - ![](../../assets/faculdade/periodo1/20240221075206.png)
+            - ![](../../assets/faculdade/periodo1/20240221075225.png)
+            - ![](../../assets/faculdade/periodo1/20240221075314.png)
+            - ![](../../assets/faculdade/periodo1/20240221075332.png)
+        - Logo, S◦R = {(1,0), (1,1), (2,1), (2,2), (3,0), (3,1)}
+- Potências de relação
+    - ![](../../assets/faculdade/periodo1/20240221075615.png)
+        - Logo, R² = R◦R; R³ = R² ◦ R e assim por diante
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240221075716.png)
+            - ![](../../assets/faculdade/periodo1/20240221080413.png)
+            - ![](../../assets/faculdade/periodo1/20240221080449.png)
+            - ![](../../assets/faculdade/periodo1/20240221080506.png)
+            - ![](../../assets/faculdade/periodo1/20240221080520.png)
+                - A partir de dado momento, as potências de relações começam a ser iguais
+    - Se R é reflexiva, R^n também é
+- Teorema
+    - ![](../../assets/faculdade/periodo1/20240221081526.png)
+        - Prova
+            - ![](../../assets/faculdade/periodo1/20240221081540.png)
+                - (a,b)∈R^(b,c)∈R → (a,c)∈R
+            - ![](../../assets/faculdade/periodo1/20240221081549.png)
+                - Prova por indução
+                    - ![](../../assets/faculdade/periodo1/20240221083003.png)
+- Representando relações
+    - Usando matrizes
+        - ![](../../assets/faculdade/periodo1/20240221083632.png)
+            - OBS: o número de linhas é dada pelo número de elementos de A e o número de colunas é dada pelo número de elementos de B (pois é uma relação de A para B, se fosse de B para A o número de linhas seria o número de elementos de B e o número de colunas seria o número de elementos de A; ou seja, a transposta)
+            - OBS: é possível fazer composição de matriz fazendo a multiplicação de duas matrizes de relações, basta que o resultado da multiplicação dê maior que 0 para que Mij = 1
+        - Ex: Represente a seguinte relação usando matrizes
+            - ![](../../assets/faculdade/periodo1/20240221083657.png)
+                - ![](../../assets/faculdade/periodo1/20240221084856.png)
+                - Potências de R:
+                    - ![](../../assets/faculdade/periodo1/20240221095633.png)
+        - Ex: Represente a união, interseção e composição das relações usando matrizes
+            - ![](../../assets/faculdade/periodo1/20240221091347.png)
+            - União
+                - ![](../../assets/faculdade/periodo1/20240221091406.png)
+            - Interseção
+                - ![](../../assets/faculdade/periodo1/20240221111016.png)
+            - Composição
+                - ![](../../assets/faculdade/periodo1/20240221091430.png)!![](../../assets/faculdade/periodo1/20240221111331.png)
+    - Usando dígrafos (grafo direcionado):
+        - ![](../../assets/faculdade/periodo1/20240221091806.png)
+            - ![](../../assets/faculdade/periodo1/20240221091826.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240221094223.png)
+            - Potências de R:
+                - ![](../../assets/faculdade/periodo1/20240221094935.png)
+        - Ex: Represente a união, interseção e composição das relações usando dígrafos
+            - ![](../../assets/faculdade/periodo1/20240221103527.png)
+            - União
+                - ![](../../assets/faculdade/periodo1/20240221103618.png)
+            - Interseção
+                - ![](../../assets/faculdade/periodo1/20240221110112.png)
+            - Composição
+                - ![](../../assets/faculdade/periodo1/20240221110051.png)
+- Caminho de uma relação
+    - ![](../../assets/faculdade/periodo1/20240225234957.png)
+        - O tamanho do caminho é o número de arestas que o caminho percorreu
+    - Teorema
+        - ![](../../assets/faculdade/periodo1/20240225235016.png)
+    - Ex: Dada a relação R = {(1,1), (1,3), (2,1), (2,5), (3,1), (3,4), (4,2)}, qual o menor caminho n de (1,5)
+        - ![](../../assets/faculdade/periodo1/20240226010055.png)
+        - O menor caminho é n = 4 (1 → 3 → 4 → 2 → 5)
+- Fechos
+    - Um fecho de uma relação é a união entre essa relação e um conjunto de pares a fim de satisfazer determinada propriedade
+    - Tipos
+        - Fecho reflexivo
+            - ![](../../assets/faculdade/periodo1/20240223195243.png)
+            - Ex: Seja o conjunto A = {1,2,3,4} e R = {(1,2), (3,4), (4,4)} uma relação de A. Qual o fecho reflexivo de R?
+                - ∆ = {(1,1), (2,2), (3,3)}
+                - Fecho reflexivo (R) = R∪∆
+                    - Fecho reflexivo (R) =  {(1,2), (3,4), (4,4)}∪{(1,1), (2,2), (3,3)}
+                    - Fecho reflexivo (R) = {(1,1), (1,2), (2,2), (3,3), (3,4), (4,4)}
+        - Fecho simétrico
+            - ![](../../assets/faculdade/periodo1/20240225233520.png)
+            - A relação R^-1 equivale à matriz transposta de R
+            - Ex: Seja o conjunto A = {1,2,3,4} e R = {(1,2), (3,4), (4,4)} uma relação de A. Qual o fecho simétrico de R?
+                - R^-1 = {(2,1), (4,3), (4,4)}
+                - Fecho simétrico (R) = R∪R^-1
+                    - Fecho simétrico (R) =  {(1,2), (3,4), (4,4)}∪{(2,1), (4,3), (4,4)}
+                    - Fecho simétrico (R) = {(1,2), (2,1), (3,4), (4,3), (4,4)}
+        - Fecho transitivo
+            - ![](../../assets/faculdade/periodo1/20240226004301.png)
+                - OBS: R* = R∪R²∪R³...
+            - ![](../../assets/faculdade/periodo1/20240226004618.png)
+            - ![](../../assets/faculdade/periodo1/20240226010553.png)
+            - ![](../../assets/faculdade/periodo1/20240226010628.png)
+            - Ex: Dado o conjunto A = {1,2,3,4} e uma relação de A, R = {(1,2), (2,1), (2,3), (3,4), (4,1)}; ache o fecho transitivo de R
+                - ![](../../assets/faculdade/periodo1/20240226020817.png)
+                - ![](../../assets/faculdade/periodo1/20240226020836.png)
+                - ![](../../assets/faculdade/periodo1/20240226020845.png)
+                - ![](../../assets/faculdade/periodo1/20240226020852.png)
+                - Logo, o fecho transitivo de R é a relação representada pela matriz MR*
+- Relação de equivalência
+    - ![](../../assets/faculdade/periodo1/20240226021605.png)
+    - Se R é uma relação de equivalência então (a,b)∈R ↔ a é equivalente à b
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240226022419.png)
+            - R é reflexiva pois a - a = 0, que é um número inteiro, então os todos pares da forma (a,a) estão na relação e portanto R é reflexiva
+            - R é simétrica pois (a,b) e (b,a) vão existir em R; pois, independente de a ser maior que B ou B ser maior que A, é garantido que a - b é um inteiro e que b - a é outro inteiro; portanto, (a,b) e (b,a) pertencem ao conjunto
+            - R é transitiva pois, vamos supor que (a,b): a - b = I (número inteiro) pertence à relação e (b,c): b - c = Z (número inteiro) pertence à relação também
+                - Se b = a - I; então a - I - c = Z
+                    - a - c = X (número inteiro I - Z); logo atende à restrição pois (a,c): a - c = X
+                    - Portanto todos os pares do tipo (a,b), (b,c) e (a,c) pertencem à relação e R é transitiva
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240226025317.png)
+            - R é reflexiva pois se (a,b) pertence à R então a≡a (mod m) e isso significa que m|(a-a); ou seja, m|0; o que é verdade, logo R é reflexiva
+            - R é simétrica pois se (a,b) pertence à R então a≡b (mod m) e se (b,a) pertence à R então b≡a (mod m) isso significa que m|(a-b) e m(b-a)
+                - Portanto, mx = (a-b) e se multiplicarmos a expressão por (-1) encontramos que m(-x) = b-a; portanto provamos que tanto (a,b) quanto (b,a) pertencem à R e R, por sua vez é simétrica
+            - R é transitiva pois, vamos supor que (a,b) e (b,c) pertencem à R
+                - Isso significa que a≡b (mod m) e b≡c (mod m)
+                    - Ou seja, m|a-b e m|b-c, portanto mx = (a-b) e my = (b-c)
+                        - b = a + m(-x). logo: my = a + m(-x) - c
+                        - my + mx = a - c; m(x+y) = a-c
+                        - mz = a - c; logo m|(a-c) e a≡c (mod m)
+                - Logo, todos os pares do tipo (a,b), (b,c) e (a,c) pertencem à R, portanto R é transitiva
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240226032143.png)
+        - R é reflexiva pois se (a,b) e (a,b) pertencem à R, ab = ab o que é verdade, logo R é reflexiva
+        - R é simétrica pois se (a,b) e (c,d) pertencem à R, então (b,a) e (d,c) também pertencem; com isso, ad = bc e bc = ad; o que é verdade, logo R é simétrica
+        - R é transitiva pois se (a,b) e (c,d) pertencem à R, assim como (c,d) e (e,f) pertencem à R; com isso, temos que ad = bc e cf = de; ou seja, d/c = b/a e d/c = f/e
+            - Ou seja, b/a = f/e, logo af = be provando que (a,b) e (e,f) se relacionam pela restrição e cumprem a propriedade de transitividade
+            - Logo, R é transitiva
+    - Classes de equivalência
+        - ![](../../assets/faculdade/periodo1/20240226212134.png)
+        - ![](../../assets/faculdade/periodo1/20240226212147.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240226212203.png)
+            - [0]R = {4k/k∈Z}
+            - [1]R = {1+4k/k∈Z}
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240226212846.png)
+            - Classes de equivalência de R:
+                - [0000]R = {0000}
+                - [1000]R = {1000, 0100, 0010, 0001}
+                - [1100]R = {1100, 1010, 1001, 0110, 0101, 0011}
+                - [1110]R = {1110, 1011, 1101, 0111}
+                - [1111]R = {1111}
+        - Teorema
+            - ![](../../assets/faculdade/periodo1/20240226213302.png)
+                - Se dois elementos se relacionam, então as classes de equivalência deles são iguais; portanto, a interseção [a]∩[b] ≠ 0
+                    - Usando o exemplo anterior, 1110 se relaciona com 0111; logo           (1110, 0111)∈R e [1110] = [0111]; logo [1110]∩[0111] ≠ 0
+    - Partição de um conjunto
+        - ![](../../assets/faculdade/periodo1/20240226213420.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240226214531.png)
+            - Apenas a letra b é uma partição do conjunto {1,2,3,4,5,6}; na letra a {1, 2}∩{2, 3, 4, 5, 6} é diferente de ∅ e na letra c a união dos subconjuntos disjuntos é diferente de {1, 2, 3, 4, 5, 6} pois falta o elemento 3
+            - ![](../../assets/faculdade/periodo1/20240226214546.png)
+            - [1] =  {1}
+            - [2] = [3] = [6] = {2,3,6}
+            - [4] = {4}
+            - [5] = {5}
+            - R = {(1,1), (2,2), (2,3), (2,6), (3,2), (3,3), (3,6), (6,2), (6,3), (6,6), (4,4), (5,5)}
+            - Matriz de R:
+                - ![](../../assets/faculdade/periodo1/20240226220701.png)
+                - OBS: elementos que se relacionam ficam juntos
+- Relações de ordem
+    - Ordem parcial
+        - Uma relação R em um conjunto A é chamada de relação de ordem parcial se ela é reflexiva, antissimétrica e transitiva
+        - Se R é uma relação de ordem parcial então (a,b)∈R ↔ a é menor ou igual à b
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240226221907.png)
+        - Conjunto Parcialmente Ordenado (poset)
+            - É um conjunto S juntamente com uma ordem parcial R (exemplo ⊂, |, etc): (S,R)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240226222512.png)
+                - S = {a,b,c}
+                - P(S) = {∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3}}
+                    - P(S) é reflexiva pois todo elemento a está contido nele mesmo, logo (a,a)∈P(S)
+                    - P(S) é antissimétrica pois se a está contido em b e b está contido em a, então a = b e P(S) é antissimétrica
+                    - P(S) é transitiva pois se a está contido em b e b está contido em c, então a está contido em c
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240226223105.png)
+                    - x≤y ↔ x | y
+                - Z+ é reflexiva pois ∀x∈Z+, x | x
+                - Z+ é antissimétrica pois ∀(x,y)∈Z+, se x divide y e y divide x → x = y (já que são apenas os inteiros positivos)
+                - Z+ é transitiva pois ∀(x,y,z)∈Z+, se x | y e y | z, então x | z
+                - Com isso, podemos dizer que nesta relação, é falso que 2≤3 e que 7≤100 e que é verdade que 2≤10
+            - ![](../../assets/faculdade/periodo1/20240226223923.png)
+            - ![](../../assets/faculdade/periodo1/20240226224021.png)
+                - ![](../../assets/faculdade/periodo1/20240226230001.png)
+        - Diagrama de Hasse
+            - É uma representação mais "enxuta" de uma relação usando os digrafos, os elementos que mais se relacionam com outros ficam na base do digrafo
+            - ![](../../assets/faculdade/periodo1/20240226225242.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240226224156.png)
+                - ![](../../assets/faculdade/periodo1/20240226232022.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240226225726.png)
+                - ![](../../assets/faculdade/periodo1/20240226232051.png)
+                - ![](../../assets/faculdade/periodo1/20240226232100.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240226225800.png)
+                - ![](../../assets/faculdade/periodo1/20240226232126.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240226225814.png)
+                - ![](../../assets/faculdade/periodo1/20240226232238.png)
+        - Conjunto totalmente ordenado
+            - ![](../../assets/faculdade/periodo1/20240226230054.png)
+    - Ordem lexicográfica
+        - ![](../../assets/faculdade/periodo1/20240228195154.png)![](../../assets/faculdade/periodo1/20240228195115.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240228195241.png)
+                - ![](../../assets/faculdade/periodo1/20240228195248.png) Verdadeiro, Verdadeiro, Verdadeiro
+        - Definindo a ordem lexicográfica a partir de n posets
+            - ![](../../assets/faculdade/periodo1/20240228195342.png)
+        - Ordem lexicográfica de cadeias
+            - ![](../../assets/faculdade/periodo1/20240228195453.png)
+            - Ex: (6,8) ≤ (6,8,0)?
+                - 6 ≤1 6
+                    - 6 = 6, 8 ≤2 8
+                        - vazio ≤ 0; logo é verdade que (6,8) ≤ (6,8,0)
+    - Elementos maximais e minimais
+        - ![](../../assets/faculdade/periodo1/20240228213728.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240228214227.png)
+            - Maximais - 12,20,25
+            - Minimais - 2,5
+    - Maior/menor elemento
+        - ![](../../assets/faculdade/periodo1/20240228213744.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240228223535.png)
+            - Maior elemento - não existe
+            - Menor elemento - não existe
+    - Limitante superior/inferior
+        - ![](../../assets/faculdade/periodo1/20240228213756.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240228223608.png)
+            - Quais os limitantes superiores e inferiores do subconjunto {4, 10}
+                - Limitantes superiores - 20
+                - Limitantes inferiores - 2
+    - Supremo e ínfimo
+        - ![](../../assets/faculdade/periodo1/20240228213811.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240228223608.png)
+            - Qual o supremo e qual o ínfimo do subconjunto {4, 10}
+                - Limite superior - 20
+                - Limite inferior - 2
+                - Supremo - 20
+                - Ínfimo - 2
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240228233725.png)
+            - ![](../../assets/faculdade/periodo1/20240229002142.png)
+            - ![](../../assets/faculdade/periodo1/20240229002203.png)
+    - Ex: Ache os maximais, minimais, maior/menor elemento, os limites superiores e inferiores de {a,b,c}, {h,j} e {a,c,d,f} bem como os seus supremos e ínfimos
+        - ![](../../assets/faculdade/periodo1/20240229003531.png)
+            - Maximais - h,j
+            - Minimais - a
+            - Maior elemento - Não existe
+            - Menor elemento - a
+            - Limite superior {a,b,c} - e,f,h,j
+            - Limite inferior {a,b,c} - a
+            - Supremo {a,b,c} - e
+            - Ínfimo {a,b,c} - a
+            - Limite superior {h,j} - Não existe
+            - Limite inferior {h,j} - a,b,c,d,e,f
+            - Supremo {h,j} - Não existe
+            - Ínfimo {h,j} - f
+            - Limite superior {a,c,d,f} - f,h,j
+            - Limite inferior {a,c,d,f} - a
+            - Supremo {a,c,d,f} - f
+            - Ínfimo {a,c,d,f} - a
+    - Ex: Ache os maximais, minimais, maior/menor elemento, os limites superiores de {a,b,c} bem como o seu supremo e os limites inferiores de {f,g,h} bem como o seu ínfimo
+        - ![](../../assets/faculdade/periodo1/20240229004502.png)
+            - Maximais - l,m
+            - Minimais - a,b,c
+            - Maior elemento - Não existe
+            - Menor elemento - Não existe
+            - Limite superior {a,b,c} - k,l,m
+            - Supremo {a,b,c} - k
+            - Limite inferior {f,g,h} - Não existe
+            - Ínfimo {f,g,h} - Não existe
+    - Reticulado
+        - ![](../../assets/faculdade/periodo1/20240229002433.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240229002445.png)
+            - Apenas o (a) e o (c) são reticulados; pois o par {b, c} em (b) não possui supremo
+                - Limite superior ({b,c}) - d,e,f
+                - Limite inferior ({b,c}) - a
+                - Supremo ({b,c}) - Não existe
+                - Ínfimo ({b,c}) - a
+        - Aplicação
+            - ![](../../assets/faculdade/periodo1/20240229003234.png)
+            - ![](../../assets/faculdade/periodo1/20240229003242.png)
+            - ![](../../assets/faculdade/periodo1/20240229003256.png)
+
 ## Grafos
----
+- ![](../../assets/faculdade/periodo1/20240301202359.png)
+- Elementos
+    - Vértices e arestas
+        - Laço - é uma aresta formada por um par de vértices idênticos
+- Tipos
+    - Grafos simples
+        - ![](../../assets/faculdade/periodo1/20240308190438.png)![](../../assets/faculdade/periodo1/20240308190314.png)
+            - ![](../../assets/faculdade/periodo1/20240308190510.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308190940.png)
+            - ![](../../assets/faculdade/periodo1/20240308191247.png)
+    - Pseudografo
+        - ![](../../assets/faculdade/periodo1/20240308191505.png)
+    - Multigrafo
+        - ![](../../assets/faculdade/periodo1/20240308191259.png)
+            - ![](../../assets/faculdade/periodo1/20240308191329.png)
+        - Todo multigrafo é um pseudografo, mas nem todo pseudografo é um multigrafo
+- Grau de um vértice
+    - ![](../../assets/faculdade/periodo1/20240308192008.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240308192015.png)
+    - ![](../../assets/faculdade/periodo1/20240308192104.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240308192137.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240308192535.png)
+        - Vértices isolados - 5
+        - Vértices pendentes - 4
+        - Vértices ímpares - 3,4
+        - Vértice par - 1,2,5
+- Mais tipos de grafo
+    - Grafo regular (k-regular)
+        - ![](../../assets/faculdade/periodo1/20240308192321.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308192331.png)É um grafo dois-regular
+    - Grafo nulo (vazio)
+        - ![](../../assets/faculdade/periodo1/20240308195739.png)
+        - ![](../../assets/faculdade/periodo1/20240308195814.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308195822.png)
+    - Grafo completo
+        - ![](../../assets/faculdade/periodo1/20240308195849.png)
+        - ![](../../assets/faculdade/periodo1/20240308195921.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308195935.png)
+- Soma dos graus de um grafo
+    - A soma dos graus de um grafo é igual à duas vezes o número de arestas e por isso é sempre par
+        - ![](../../assets/faculdade/periodo1/20240308194907.png)
+        - Portanto, a quantidade de arestas de um grafo é igual à quantidade de graus de um grafo sobre dois
+    - A soma dos graus de um grafo k-regular é igual à k vezes o número de vértices do grafo e a quantidade de arestas de um grafo k-regular é igual à soma dos graus do grafo sobre dois
+        - ![](../../assets/faculdade/periodo1/20240308195118.png)
+            - r - grau
+    - Para qualquer grafo, o número de vértices de grau ímpar é par
+        - Prova
+            - ![](../../assets/faculdade/periodo1/20240308195707.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240308194447.png)
+            - ![](../../assets/faculdade/periodo1/20240308194454.png)
+                - Sim, a soma dos vértices é par e não há nenhum vértice ultrapassando o grau
+                - ![](../../assets/faculdade/periodo1/20240308194750.png)
+            - ![](../../assets/faculdade/periodo1/20240308194800.png)
+                - Não, a soma dos vértices é ímpar e não é possível colocar um vértice com grau 5
+            - ![](../../assets/faculdade/periodo1/20240308194832.png)
+                - Não, a soma dos vértices é ímpar
+    - OBS: dado um grafo de k vértices em um grafo simples, é impossível os vértices deste grafo terem grau k
+    - OBS: quantidade de arestas de um grafo Kn (grafo completo) é dada por
+        - ![](../../assets/faculdade/periodo1/20240308200243.png)
+            - Onde |v| é número de vértices e r é o grau
+            - Também pode ser escrito como:
+                - ![](../../assets/faculdade/periodo1/20240308200328.png)
+                    - Em que n é o número de vértices
+- Complemento de um grafo
+    - ![](../../assets/faculdade/periodo1/20240308200525.png)
+    - Basicamente, o complemento de um grafo G é o grafo G' que possui o conjunto de vértices na qual se fizermos G∪G', temos um grafo completo
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240308200810.png)
+    - Propriedades
+        - Um grafo regular tem complemento regular
+            - O complemento de um grafo k-regular com n vértices é um outro grafo com n vértices e n-1-k-regular
+        - O complemento de um grafo Kn é Nn
+- Outros tipos de grafo
+    - Grafo cíclico (ciclo)
+        - ![](../../assets/faculdade/periodo1/20240308201808.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308201816.png)
+    - Grafo roda
+        - ![](../../assets/faculdade/periodo1/20240308201838.png)
+        - Logo, um Grafo Wn possui n+1 vértices e todos os vértices possuem grau 3 com exceção do vértice central, que possui grau n
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308201847.png)
+    - Grafo n-cúbicos
+        - ![](../../assets/faculdade/periodo1/20240308202006.png)![](../../assets/faculdade/periodo1/20240308202012.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308202140.png)
+                - Grafo 3-cúbico
+    - Grafo orientado (dígrafo)
+        - ![](../../assets/faculdade/periodo1/20240308202307.png)Ex:
+            - ![](../../assets/faculdade/periodo1/20240308202313.png)
+        - Os vértices de um dígrafo possuem
+            - ![](../../assets/faculdade/periodo1/20240308202528.png)
+    - Multigrafo orientado
+        - ![](../../assets/faculdade/periodo1/20240308202346.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308202435.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240308203629.png)
+        - Se o grafo regular possui grau 4, logo é um K5; possui 5 vértices
+            - Outra forma de fazer é usando o número de arestas
+                - |E| = (r|V|)/2; 20 = 4|V|; |V| = 5
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240308204024.png)
+        - ![](../../assets/faculdade/periodo1/20240308234011.png)
+- Mais tipos de grafo
+    - Grafo bipartido
+        - ![](../../assets/faculdade/periodo1/20240308204949.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308231918.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308232152.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308232247.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308232324.png)
+                - ![](../../assets/faculdade/periodo1/20240308232341.png)
+                    - ![](../../assets/faculdade/periodo1/20240308232631.png)
+                - ![](../../assets/faculdade/periodo1/20240308232610.png)
+                    - ![](../../assets/faculdade/periodo1/20240308232620.png)
+        - OBS: como saber que um grafo pode ser bipartido
+            - Basta fazer testes com 2 cores, na qual duas cores não podem estar ligadas; se duas cores iguais tiverem ligadas então o grafo não pode ser bipartido
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240311183543.png)
+                    - Não pode ser bipartido
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240311183615.png)
+    - Grafo bipartido completo - Km,n
+        - ![](../../assets/faculdade/periodo1/20240308231401.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308233624.png)
+                - ![](../../assets/faculdade/periodo1/20240308233634.png)
+            - ![](../../assets/faculdade/periodo1/20240308233650.png)
+                - ![](../../assets/faculdade/periodo1/20240308233700.png)
+    - Subgrafo
+        - ![](../../assets/faculdade/periodo1/20240308231703.png)
+            - Todo grafo é subgrafo dele mesmo
+        - ![](../../assets/faculdade/periodo1/20240308231759.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308231723.png)
+        - OBS: o número de subgrafos de um Kn é igual à 2^número de arestas
+            - O número de arestas de um Kn é igual à (n(n-1))/2
+    - Subgrafo próprio
+        - ![](../../assets/faculdade/periodo1/20240308231740.png)
+    - Subgrafo induzido
+        - ![](../../assets/faculdade/periodo1/20240308231530.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240308231550.png)
+    - Clique
+        - ![](../../assets/faculdade/periodo1/20240311173313.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311173321.png)
+- Representação de gafos
+    - Lista de adjacência
+        - Listando os vértices adjacentes de cada vértice do grafo
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311174036.png)
+        - Lista de adjacência em grafos direcionados
+            - ![](../../assets/faculdade/periodo1/20240311174125.png)
+    - Matriz de adjacência
+        - ![](../../assets/faculdade/periodo1/20240311174945.png)
+        - ![](../../assets/faculdade/periodo1/20240311175651.png)![](../../assets/faculdade/periodo1/20240311175958.png)![](../../assets/faculdade/periodo1/20240311175948.png)
+        - OBS: matrizes de grafos direcionados é basicamente matrizes de relações
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311175620.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311175745.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311175823.png)
+- Isomorfismo
+    - ![](../../assets/faculdade/periodo1/20240311181009.png)
+        - Em outras palavras
+            - ![](../../assets/faculdade/periodo1/20240311181027.png)
+    - Ex: Diga se os grafos são isomorfos
+        - ![](../../assets/faculdade/periodo1/20240311181111.png)
+            - ![](../../assets/faculdade/periodo1/20240311183802.png)
+            - Logo, são isomorfos
+    - Propriedades
+        - O isomorfismo preserva:
+            - ![](../../assets/faculdade/periodo1/20240311184322.png)
+        - Se G1 ≈ G2 (invariantes), ou seja, isomorfos:
+            - ![](../../assets/faculdade/periodo1/20240311184425.png)
+            - OBS: os graus dos vértices vizinhos também são mantidos
+            - OBS: a matriz de adjacência de isomorfos é a mesma
+    - Ex: Diga se os dois grafos são isomorfos
+        - ![](../../assets/faculdade/periodo1/20240311185421.png)
+            - ![](../../assets/faculdade/periodo1/20240311190209.png)
+    - Ex: Diga se os dois grafos são isomorfos
+        - ![](../../assets/faculdade/periodo1/20240311190522.png)
+            - ![](../../assets/faculdade/periodo1/20240311191900.png)
+            - ![](../../assets/faculdade/periodo1/20240311191908.png)
+- Conectividade
+    - Caminho em um grafo não orientado
+        - ![](../../assets/faculdade/periodo1/20240311193324.png)![](../../assets/faculdade/periodo1/20240311193340.png)
+    - Caminho em um multigrafo direcionado
+        - ![](../../assets/faculdade/periodo1/20240311193429.png)![](../../assets/faculdade/periodo1/20240311193507.png)
+    - Circuito ou ciclo
+        - ![](../../assets/faculdade/periodo1/20240311193531.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311193547.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311193604.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311193633.png)
+    - Caminho simples ou circuito simples
+        - ![](../../assets/faculdade/periodo1/20240311193748.png)
+    - Grafo conexo
+        - Definição para grafos não orientados
+            - ![](../../assets/faculdade/periodo1/20240311194018.png)
+    - Grafo desconexo
+        - Possui "ilhas", ou seja, existem pares de vértices que não podem ser conectados
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311194456.png)
+            - Não há um caminho de (x4,x5), logo o grafo é desconexo
+    - Componente conexo
+        - ![](../../assets/faculdade/periodo1/20240311194546.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311194558.png)
+            - S1 e S2 são componentes conexas de G
+    - Vértice de corte
+        - ![](../../assets/faculdade/periodo1/20240311195105.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311195113.png)
+    - Ponte
+        - ![](../../assets/faculdade/periodo1/20240311195212.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240311195220.png)
+    - Grafo fortemente conexo
+        - ![](../../assets/faculdade/periodo1/20240312000424.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240312002026.png)
+    - Grafo fracamente conexo
+        - ![](../../assets/faculdade/periodo1/20240312002119.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240312002211.png)
+            - ![](../../assets/faculdade/periodo1/20240312002217.png)
+                - Pois nunca conseguimos chegar no x7
+    - Caminho/circuito euleriano
+        - ![](../../assets/faculdade/periodo1/20240312002238.png)
+        - Circuito/ciclo euleriano
+            - É um caminho euleriano (na qual um caminho no grafo passa por todas as arestas exatamente uma vez) mas que começa e termina no vértice v
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240312002246.png)
+        - Teorema
+            - ![](../../assets/faculdade/periodo1/20240312002318.png)
+            - Prova
+                - ![](../../assets/faculdade/periodo1/20240312002331.png)![](../../assets/faculdade/periodo1/20240312002343.png)![](../../assets/faculdade/periodo1/20240312002356.png)
+                    - ![](../../assets/faculdade/periodo1/20240312002403.png)
+        - Algoritmo de Hierholzer
+            - ![](../../assets/faculdade/periodo1/20240312002508.png)
+            - Passo a passo
+                - ![](../../assets/faculdade/periodo1/20240312002519.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240312002740.png)
+        - Teorema
+            - ![](../../assets/faculdade/periodo1/20240312002816.png)
+        - Para ser caminho euleriano precisar ter 2 ou nenhum vértice de grau ímpar; para ser circuito euleriano precisa necessariamente ter nenhum vértice de grau ímpar, todos precisam ser de grau par
+    - Caminho/circuito hamiltoniano
+        - ![](../../assets/faculdade/periodo1/20240312002909.png)
+        - Circuito/ciclo hamiltoniano
+            - É um caminho hamiltoniano (que passa por cada um dos os vértices exatamente uma vez) mas que retorna ao vértice inicial
+            - Um grafo é dito hamiltoniano se possui um ciclo hamiltoniano
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240312015549.png)
+            - ![](../../assets/faculdade/periodo1/20240312003218.png)
+                - Prova
+                    - ![](../../assets/faculdade/periodo1/20240312003231.png)
+                - Todos os grafos do tipo k-regular são circuitos hamiltonianos
+            - Teoremas que podem ser válidos para achar grafos hamiltonianos
+                - Teorema Dirac
+                    - ![](../../assets/faculdade/periodo1/20240312202945.png)
+                    - Esse teorema não abrange os grafos do tipo 2-regular, que são grafos hamiltonianos
+                - Teorema Ore
+                    - ![](../../assets/faculdade/periodo1/20240312203045.png)
+                        - OBS: vértices não adjacentes são vértices que não estão conectados diretamente
+                    - ![](../../assets/faculdade/periodo1/20240312203208.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240312002924.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240312002944.png)
+        - Para ser circuito hamiltoniano, não pode existir vértices de grau 1
+- Planaridade
+    - Grafo planar
+        - Grafo que pode ser desenhado sem cruzamentos, isto é, duas arestas somente se encontram nos vértices onde são incidentes
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240412010637.png) (K4)
+            - Apesar do K4 ser um grafo planar, dependendo modo em que ele é desenhado; ele pode não ser planar
+                - ![](../../assets/faculdade/periodo1/20240412010737.png)
+        - Ou seja, para um grafo ser planar, ele precisa admitir pelo menos uma representação planar
+    - Conceitos
+        - Todo subgrafo de um grafo planar é planar
+        - Todo grafo que tem subgrafo não planar não é planar
+        - Todo grafo que contém o K3,3 ou K5 como subgrafos não é planar
+    - Grafos homeomórficos
+        - Dois grafos são ditos homeomórficos se ambos podem ser obtidos a partir do mesmo grafo através da inserção de novos vértices de grau 2 em suas arestas (tal operação é chamada de **subdivisão elementar**)
+        - Teorema de Kuratowski
+            - Um grafo é planar se e somente se não contém nenhum subgrafo heomeomórfico a K3,3 ou K5
+    - Regiões
+        - Se G é um grafo planar, a representação planar de G divide o plano em regiões![](../../assets/faculdade/periodo1/20240412011725.png)
+        - A fórmula de Euler
+            - ![](../../assets/faculdade/periodo1/20240412011812.png)
+- Coloração
+    - Se G é um grafo simples, então uma coloração para G é uma atribuição de cores para cada vértice de forma que vértices adjacentes tenham diferentes cores
+    - Dizemos que G é k-colorível se podemos atribuir uma das k cores para colorir G
+    - O número cromático de um grafo G é o menor número de cores que é necessário para colorir G
+        - Seja c o número cromático de G, escrevemos crom(G)=c
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240412013953.png)
+    - Colorindo vértices
+        - ![](../../assets/faculdade/periodo1/20240412014058.png)![](../../assets/faculdade/periodo1/20240412014113.png)![](../../assets/faculdade/periodo1/20240412020634.png)![](../../assets/faculdade/periodo1/20240412020705.png)![](../../assets/faculdade/periodo1/20240412020727.png)![](../../assets/faculdade/periodo1/20240412020755.png)
+    - Colorindo mapas
+        - ![](../../assets/faculdade/periodo1/20240412021811.png)![](../../assets/faculdade/periodo1/20240412021825.png)
+
 ## Árvores
----
-<details>
-<summary>Classes de equivalência</summary>
-	- Classes usadas para agrupar elementos que são considerados equivalentes sob uma determinada relação de equivalência
-	<details>
-	<summary>Relação de equivalência</summary>
-		- É uma relação binária que satisfaz 3 propriedades
-			- Reflexividade: para todo elemento a ∈ A, temos a \~ a
-			- Simetria: para quaisquer a, b ∈ A, se a \~ b então b \~ a
-			- Transitividade: para quaisquer a, b, c ∈ A; se a \~ b e b \~ c então a \~ c
-	</details>
-</details>

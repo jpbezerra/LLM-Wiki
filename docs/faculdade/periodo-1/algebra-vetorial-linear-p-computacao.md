@@ -1,42 +1,1371 @@
-# ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO
+# Álgebra Vetorial Linear para Computação
 
----
 ## Geometria Analítica
----
-- Função explícita: fala cada um dos pontos/objetos
-- Função implícita: fala apenas a propriedade
-<details>
-<summary>Distância</summary>
-	- Principal ferramenta que permite transformar elementos geométricos em símbolos formais
-	- Uma função entre dois pontos é considerada uma distância se:
-		- Dist(A,B) \>= 0
-		- Dist(A,A) = 0
-		- Dist(A,B) = Dist (B,A)
-		- Dist(A,C) =\< Dist(A,B) + Dist(B,C)
-	- Distância com coordenadas
-		> 🖼️ *Imagem não migrada ainda — [ver original no Notion](https://www.notion.so/ccdbe1e1bf64407ab9236791cc8a37e6)*
-</details>
+- Função explícita
+    - Fala cada um dos pontos/objetos
+- Função implícita
+    - Fala apenas a propriedade
+- Distância
+    - Principal ferramenta que permite transformar elementos geométricos em símbolos formais
+    - Uma função entre dois pontos é considerada uma distância se:
+        - Dist(A,B) >= 0
+        - Dist(A,A) = 0
+        - Dist(A,B) = Dist (B,A)
+        - Dist(A,C) =< Dist(A,B) + Dist(B,C)
+    - Distância com coordenadas
+        - ![](../../assets/faculdade/periodo1/20231026072756.png)
+- Pontos
+    - Primitivas geométricas associadas à localização
+    - Distância entre dois pontos representados como pares ordenados
+        - Sendo dois pontos A(xa,ya) e B(xb,yb); Dist(A,B) = √((xb-xa)²+(yb-ya)²) = vetor
+- Vetores
+    - Informações extraídas da geometria: direção, sentido e módulo
+        - ![](../../assets/faculdade/periodo1/20231026073107.png)
+        - v = G-A, u = Q-H; v(Gx-Ax, Gy-Ay )// u(Qx-Hx, Qy-Hy)
+            - Com isso, o vetor v = (0,0)(Gx-Ax, Gy-Ay) com (0,0,0) sendo a origem do vetor
+    - Para descobrir o tamanho do vetor basta usar Pitágoras
+        - v = √(xb - xa)²+(yb-ya)²; se for tridimensional, v = √(xb-xa)²+(yb-ya)²+(zb-za)²
+    - Propriedades![](../../assets/faculdade/periodo1/20231026073357.png)
+    - Operações com vetores
+        - Adição
+            - Dados dois vetores: u = (a,b) e v = (c,d), u+v = (a+c, b+d)
+        - Subtração
+            - Dados dois vetores: u = (a,b) e v = (c,d), u+v = (a-c, b-d)
+        - Multiplicação
+            - Dado o vetor: v = (a, b); 2.v = (2a, 2b)
+    - Ex: Distância de Q1 = (4,4,0), P1(7,1,0) no R²
+        - Dist(Q1,P1)² = (7-4)² + (1-4)² = 3√2
+    - Ex: Distância de Q1 = (4,4,5), P1(7,1,2) no R³
+        - Dist(Q1,P1)² = (7-4)² + (1-4)² + (2-5)² = 3√3
+    - Produto Escalar
+        - Função binária que envolve dois vetores e o resultado é um número real chamado de escalar
+            - Considere o plano R² com o seguinte operador:
+                - Sejam v = (x1,y1) e u = (x2,y2); definimos o produto escalar entre dois vetores por:
+                    - v . u = (x1,y1).(x2,y2) = x1.x2 + y1.y2
+            - Ex: v = (5,-1) e u = (3,7)
+                - Produto escalar entre v e u: 5 . 3 + -1 . 7 = 8
+        - Propriedades
+            - v.v >= 0 e v.v = 0 ⇔ v(0,0)
+                - v.v = x²+y² >= 0
+                    - se v.v = 0, então: x²+y² = 0; x² = -y²
+            - v.u = u.v
+            - u.(k.v) = k.(u.v) = (k.u).v
+            - u.(v+w) = u.v + u.w
+            - Essas propriedades também se aplicam ao R³ com poucos ajustes
+                - v,u∈R³, v = (x1, y1, z1) e u = (x2, y2, z2); v.u = x1.x2 + y1.y2 + z1.z2
+    - Norma de um vetor
+            - É o módulo ou comprimento do vetor calculado por meio da distância de seu ponto final até a origem
+                - u = (x1,y1); ||u||² = x1² + y1²; ||u|| = √x1² + y1²; ||u|| = √u.u (produto escalar de u.u)
+                - No caso do R³, se u = (x1,y1,z1); ||u|| = √x1² + y1² + z1²
+                - Ex: ||(1,2,-2)|| = √1² + 2² + (-2)² = √9 = 3 ou √(1,2,-2).(1,2,-2) = 1+4+4 = 9
+            - Propriedades (Vale pra qualquer R^n)
+                - ||u|| >= 0; se ||u|| = 0 então u = 0
+                - ||k.u|| = |k| . ||u||
+                    - ||k.u|| = √(k.u).(k.u) = √k²(u.u) = √k² . √u.u = |k| . ||u||
+                    - Ex: u = (2,-1); k = -3
+                        - ||k.u|| = ||(-6,3)|| = √(-6)² + 3² = √45 = 3√5
+                        - ||k|| . ||u|| = |-3| . ||(2,-1)|| = 3√2²+(-1)² = 3√5
+                - Desigualdade de Cauchy-Schwarz
+                    - |u.v| =< ||u||.||v||
+                        - Demonstração através da lei dos cossenos (generalização do teorema de Pitágoras pois serve para qualquer tipo de triângulo e se for retângulo é igual a Pitágoras)
+                            - Fórmula: L2²(segmento oposto ao ângulo α) = L1² + L3² - 2.L1.L3.cos(α)
+                        - ![](../../assets/faculdade/periodo1/20231030200733.png) O lado do triângulo corresponde à norma
+                            - ||u-v||² = ||u||² + ||v||² - 2.||u||.||v||.cos(α)
+                                - Por outro lado: ||u-v||² = (u-v).(u-v) = u.u-2u.v+2v = ||u||² -2u.v + ||v||²
+                                    - Então: ||u||² + ||v||² - 2.||u||.||v||.cos(α) = ||u||² -2u.v + ||v||²
+                                        - Sobra: ||u||.||v||.cos(α) = u.v; cos(α) = u.v/||u||.||v||; se o ângulo for 90°, então u.v = 0
+                                            - cos(α) =< 1; u.v/||u||.||v|| =< 1; |u.v| =< ||u||.||v||
+                - Desigualdade Triangular
+                    - ||u+v|| =< ||u|| + ||v||
+                        - ||u+v||² = ||u||² + 2.uv + ||v||²; como |u.v| =< que ||u||.||v|| então vamos majorar
+                            - ||u+v||² =< ||u||² + 2.||u||.||v|| + ||v||²; ||u+v||² =< (||u||+||v||)²; ||u+v|| =< ||u|| + ||v||
+            - Normalização de vetores
+                - Normalizar seria "deixar no padrão"; no caso de vetores, o padrão de comprimento de um vetor é 1 e devemos deixá-lo apontado à mesma direção e sentido
+                - ![](../../assets/faculdade/periodo1/20231030213305.png)
+                    - u = k.v; ||u|| = 1; ||k.v|| = 1; |k|.||v|| = 1; k.||v|| = 1; k = 1/||v||
+                        - u = (1/||v||).v (fórmula de normalização do vetor v)
+                    - Ex: normalizar o vetor v(5,-4)
+                        - u = (1/||v||).v; u = (1/√25+16)(5,-4); u = (1/√41)(5,-4); u = (5/√41 - 4/√41)
+                            - ||u|| = ((5/√41)² (-4/√41)²); ||u|| = (25/41 + 16/41) = 1
+    - Vetores Ortogonais
+        - Dois vetores v e u são ditos ortogonais se u.v = 0 (o ângulo tem que ser de 90° pois cos(α) = u.v/||u||.||v||; se α = 90°, cos(α) = 0, e portanto u.v = 0 )
+        - Ex: u(1,1) e v(1,-1) (R²)
+            - u e v são ortogonais pois: u.v = (1,1)(1,-1) = 1 - 1 = 0
+        - Ex: u(1,2,-2) e v(-2,2,1) (R³)
+            - u e v são ortogonais pois: u.v = (1,2,-2)(-2,2,1) = -2+4-2 = 0
+        - Projeção Ortogonal
+            - Representação de um objeto (nesse caso um vetor) em um plano de projeção
+            - ![](../../assets/faculdade/periodo1/20231030215806.png)
+                - Projetar ortogonalmente u sobre v = formar um ângulo ortogonal entre u e v
+                - A reta em azul claro é a reta projetante ( u - proj de u sobre v) e a reta em verde é a projeção de u sobre v
+                    - o complemento da proj de u sobre v é ortogonal à v, que é o que caracteriza a projeção ser ortogonal
+                - ![](../../assets/faculdade/periodo1/20231030221548.png)
+                    - proj de u sobre v = k.v (o k seria uma constante, que nesse caso diminiu o vetor v pela multiplicação até um ponto em que a reta ortogonal projetante e o v se toquem em um único ponto)
+                    - Como nós queremos que u - proj seja ortogonal à v, então (u - proj).v = 0
+                - ![](../../assets/faculdade/periodo1/20231030221606.png)
+                    - passando v.v dividindo descobrimos que k = u.v/v.v; agora basta substituir k na expressão da projeção ficando proj(de u sobre v) = (u.v/v.v).v (produto escalar de u.v sobre produto escalar de v.v vezes v), não pode simplificar pois é um produto escalar e não um produto real
+                - Ex: w(2,3) e v1(4,1); proj de w sobre v = (w.v1/v1.v1).v1
+                    - (w.v1) = 8+3 = 11; (v1.v1) = 16+1 = 17; proj de w sobre v1 = (11/17).v1
+                        - (11/17).v1 = (44/17, 11/17)
+                - Ex: proj de v1 sobre w = (v1.w/w.w).w
+                    - (v1.w) = 8+3 = 11; (w.w) = 4+9 = 13; proj de v1 sobre w = (11/13).w
+                        - (11/13).w = (22/13, 33/13)
+            - Pé da altura
+                - É traçar uma reta em um triângulo que tem origem em um dos vértices e essa reta projetante é perpendicular à aresta oposta
+                    - Ex: Dados 3 pontos A = (1,1,1), B = (2,3,0) e C = (1,2,4) encontre o pé da altura relativa ao vértice A:
+                        - ![](../../assets/faculdade/periodo1/20231031195307.png)
+                        - Notas: BA = A - B = (-1,-2,1); BC = C-B = (-1,-1,4); Pa = B + Proj de BA sobre BC
+                        - Proj de BA sobre BC = (BA.BC / BC.BC). BC; Proj = (1+2+4/1+1+16).(-1,-1,4)
+                            - Proj = (7/18)(-1,-1,4)
+                        - Pa = (2,3,0) + (7/18)(-1,-1,4)
+                            - Pa = (36/18,54/18,0) + (-7/18,-7/18,28/18); Pa = (29/18, 47/18, 28/18)
+    - Produto Vetorial
+        - Dados dois vetores v e u em um plano tridimensional, o produto vetorial entre v e u é um vetor perpendicular à esses vetores e, em consequência, à o plano em que esses dois vetores fazem parte (o produto vetorial funciona apenas em R³)
+        - Como existem dois vetores ortogonais que passam pelo ponto em que os dois vetores a e b estão no mesmo ponto, um dos vetores ortogonais é um dos vetores vezes o outro, por exemplo a X b, e o outro vetor ortogonal com sentido inverso é o contrário do outro produto vetorial, então b X a ou -a X b
+            - ![](../../assets/faculdade/periodo1/20231108205413.png)
+        - O produto vetorial mede o quanto dois vetores apontam em direções diferentes
+        - O produto vetorial retorna um vetor, diferentemente do produto escalar que retorna um número
+        - Notação: v X u
+        - Base canônica
+            - Na álgebra linear, uma base de um espaço vetorial é um conjunto de vetores linearmente independentes que geram esse espaço
+            - Dito isso, a base canônica é a base mais primitiva, pois no R³ (onde iremos utilizar), a base canônica é determinada pelo conjunto {(1,0,0); (0,1,0); (0,0,1)}
+                - Por convenção, chamamos (1,0,0) de i; (0,1,0) de j; e (0,0,1) de k
+                - Portanto, a base canônica no R³ é dada pelo conjunto {i,j,k}
+                - ![](../../assets/faculdade/periodo1/20231108204721.png)
+                - (x,y,z) = (x,0,0) + (0,y,0) + (0,0,z) = x(1,0,0) + y(0,1,0) + z(0,0,1)
+                    - Ex: (3,-7,12) = 3(1,0,0) + (-7(0,1,0)) + 12(0,0,1) = 3i -7j + 12k
+        - O produto vetorial é definido pela determinante de uma matriz
+                - ![](../../assets/faculdade/periodo1/20231108205655.png) (a primeira linha corresponda à base canônica)
+            - Como calcular um determinante de uma matriz 3x3:![](../../assets/faculdade/periodo1/20231108205828.png)
+            - Ex:![](../../assets/faculdade/periodo1/20231108205800.png) (13,-17,-7) é o vetor ortogonal resultante
+            - Para checar a ortogonalidade, basta multiplicar o produto vetorial por um dos vetores (pois para ser ortogonal, o escalar de um vetor com outro tem que ser igual a 0)
+                - Ex: (13,-17,-7).(1,2-3) = 0 e (13,-17,-7).(4,1,5) = 0
+        - Propriedades
+            - u X u = (0,0,0)
+            - k(u X v) = (ku)X v
+            - u X (v+w) = u X v + u X w
+            - (u x v)X w ≠ u X(v X w)
+            - u X v = -v X u
+        - O tamanho ou módulo do produto vetorial corresponde numericamente à área de um paralelogramo, área paralelogramo = ||u X v||; porém são definições diferentes
+            - ![](../../assets/faculdade/periodo1/20231108214940.png) Por consequência, também podemos calcular a área de um triângulo usando produto vetorial, basta dividir a área do paralelogramo por dois: área triângulo = (||u X v||)1/2
+            - Porém, outra forma de calcular a área do paralelogramo é utilizando a projeção ortogonal:
+                - ![](../../assets/faculdade/periodo1/20231108215843.png)                                                                           Com isso, área do paralelogramo = ||v||.||u-proj de u sobre v|| (multiplicação normal, pois é área)
+                - E área do triângulo = (||v||.||u-proj de u sobre v||)1/2
+            - Além disso, podemos encontrar a altura utilizando o seno:
+                - ![](../../assets/faculdade/periodo1/20231108220613.png) (b = u, a = v)
+                - O sen(θ) = h/||u|| (cateto oposto sobre a hipotenusa); então h = ||u||sen(θ)
+                - Logo, área do paralelogramo = ||v||.||u||sen(θ) e área do triângulo = (||v||.||u||sen(θ))1/2
+            - Como a área do paralelogramo pode ser calculada de diversas formas, podemos igualar essas diferentes equações
+                - ||u X v|| = ||v||.||u||sen(θ)
+        - (conferir depois) Tendo 3 vetores, conseguimos calcular o volume de um paralelepípedo utilizando o produto misto, que é a mistura de produto escalar com vetorial
+            - volume de um paralelepípedo = área x altura
+                - área = ||u X v||
+                - como a altura é o produto escalar dos vetores u e v, altura = ||u X v||
+                - Logo, volume = ||u X v||.||u X v|| (escalar)
+- Circunferência
+    - ![](../../assets/faculdade/periodo1/20231026075643.png)
+    - Equação da circunferência reduzida:
+        - (x - xc)² + (y - yc)² = r²
+    - Equação geral da circunferência
+        - x² + y² - 2.xc.x - 2.yc.y + (xc²+yc²-r²) = 0
+    - Ex: C = {(x,y)∈R²/(x-2)²+(y-3)² = 16}
+        - C∩Eixo X = {(x,y)∈R²/(x-2)²+(y-3)² = 16 e y = 0}
+            - (x-2)²+(0+3)² = 16
+                - x² - 4x + 4 + 9 =16
+                    - x² - 4x - 3 =0 (resolve com Bháskara x=(-b±√(b^2-4ac))/2a)
+- Cônicas
+    - Conjunto de pontos que satisfazem uma equação do 2º grau:
+        - ax²+bxy+cy²+dx+ey+f = 0
+    - Tipos
+        - Elipse
+            - Equação reduzida:
+                - ![](../../assets/faculdade/periodo1/20231026074215.png)
+        - Hipérbole
+            - Equação reduzida:
+                - ![](../../assets/faculdade/periodo1/20231026074246.png)
+        - Parábola
+            - Equação reduzida:
+                - ![](../../assets/faculdade/periodo1/20231026074328.png)
+- Esfera
+    - Equação da esfera:
+        - (x - xc)² + (y-yc)² + (z-zc)² = r²
+            - Quando o centro da esfera fica no ponto C = (0,0,0); a equação da esfera fica:
+                - x² + y² + z² = r²
+            - Ex: E = {(x,y,z)∈R³/(x-1)²+(y-2)²+(z-1)² = 9} (O centro da esfera está nas coordenadas (1,2,1))
+                - E∩Eixo Z = {(x,y,z)∈R³/(x-1)²+(y-2)²+(z-1)² = 9, x = 0 e y = 0}
+                    - (0-1)²+(0-2)²+(z-1)² = 9 → 1 + 4 + z² - 2z + 1 = 9 → z² - 2z - 3 = 0 (usar Bháskara)
+                - Conclui-se que: E∩Eixo Z = {(0,0,-1),(0,0,3)}
+- Importante
+    - R² = Plano cartesiano e R³ = Plano Tridimensional
+
 ## Descrição cartesiana de retas
----
+- Dados um ponto P = (xo,yo) e um vetor v = (a,b), qual é o lugar geométrico dos pontos tais que se subtraídos de p geram vetores ortogonais a v?
+    - ![](../../assets/faculdade/periodo1/20231113112307.png)                                                                          O vetor gerado por Q - P é ortogonal ao vetor v, vamos chamar o vetor Q-P de u
+    - Para checar a ortogonalidade devemos fazer o escalar de u.v = 0
+        - ((x,y) - (xo,yo)).v = 0; ((x-xo), (y-yo)).(a,b) = 0
+        - a(x-xo) + b(y-yo) = 0
+        - ![](../../assets/faculdade/periodo1/20231113112916.png)(r é a reta)
+- Ex: qual é a reta ortogonal ao vetor v = (2,1) e passando pelo ponto P = (5,-3)
+    - (2 = a, 1 = b, 5 = xo, -3 = yo)
+    - ![](../../assets/faculdade/periodo1/20231113113139.png)
+- Ex: sejam as retas R: 2x+y = -3 e S: -3x+2y = 1, encontre a interseção entre R e S
+    - Uma forma de resolução é resolver o sistema de equação 2x2 R e S
+    - ![](../../assets/faculdade/periodo1/20231113113559.png)
+- Posições relativas de duas retas no R²
+    - Duas retas paralelas
+        - Sistema 2x2 sem solução
+    - Duas retas concorrentes
+        - Sistema 2x2 com uma solução
+    - Duas retas coincidentes
+        - Sistema 2x2 indeterminado
+- Ex: sejam A = (1,-2) e B = (5,-6), encontre a forma cartesiana da reta que é ortogonal à A e B
+    - ![](../../assets/faculdade/periodo1/20231113114142.png)
+    - ![](../../assets/faculdade/periodo1/20231113114204.png)
+    - ![](../../assets/faculdade/periodo1/20231113114530.png)
+    - ![](../../assets/faculdade/periodo1/20231113114634.png)
+    - ![](../../assets/faculdade/periodo1/20231113114646.png)
+    - ![](../../assets/faculdade/periodo1/20231113115010.png)
+- Forma explícita ou paramétrica de retas
+    - Formas de representar as retas através de um parâmetro (variável) que irá fazer a ligação de duas equações que pertencem a uma mesma reta
+    - ![](../../assets/faculdade/periodo1/20231113115842.png)
+    - ![](../../assets/faculdade/periodo1/20231113115900.png)
+        - v é o vetor diretor da reta (vetor diretor de uma reta é um vetor que tem a mesma direção dessa reta)
+        - x, xo e a representam o mesmo eixo assim como y, yo e b
+    - Ex: sejam A = (5,-2) e B = (-4,3), encontre a forma paramétrica da reta que passa por A e B
+        - vetor v = AB = (-9,5)
+            - v é o vetor diretor
+        - forma paramétrica:
+            - A:(x,y) = (5,-2) + t(-9,5)
+                - x = 5 -9t
+                - y = -2 +5t
+            - B:(x,y) = (-4,3) + t(-9,5)
+                - x = -4 -9t
+                - y = 3 +5t
+    - Ex: sejam as seguintes retas
+        - R:{x = 2 - 3t}, {y = 5 + t}
+        - S = {(x,y)/3x - 4y + 2 = 0}
+        - Encontre S∩R
+        - Para o ponto de interseção, que satisfaz a forma paramétrica de R e a forma cartesiana de S, vale:
+            - 3(x) - 4(y) + 2 = 0
+            - 3(2-3t) - 4(5+t) + 2 = 0
+            - -13t - 12 = 0
+            - t = -12/13
+            - O ponto é encontrado substituindo o valor de t na forma paramétrica de R
+                - x = 2 - 3(-12/13) = 62/13
+                - y = 5 - 12/13 = 53/13
+                - Ponto de interseção = (62/13, 53/13)
+        - Outro modo de resolução
+            - Passar a reta paramétrica R para uma forma cartesiana
+                - De forma geométrica:
+                    - ponto: xo = 2, yo = 5; vetor diretor de R = (-3, 1; vetor normal de R = (1(a), 3(b))
+                    - a(x-xo) + b(y-yo)
+                    - 1(x-2) + 3(y-5) = 0
+                    - x+3y-17 = 0
+                - De forma algébrica:
+                    - Pegando o y de R: y = 5+t; t = y-5
+                        - Substituindo o t no x de R: x = 2 -3t
+                            - x = 2-3y+15; x+3y-17 = 0
+    - Ex: Encontre S∩R onde R: {x = 1+3t}, {y = 2-t} e S: {x = -1-2q}, {y=4+2q}
+        - Como queremos saber o ponto de interseção I entre S e R, então xR = xS e yR = yS, logo:
+            - 1+3t = -1-2q
+            - 2-t = 4+2q
+            - Resolvendo o sistema encontramos que t = 0
+            - (nesse caso não precisa, mas pra achar o parâmetro q podemos apenas substituir t por 0  em alguma equação e encontrar o valor de q, que nesse caso é -1)
+            - Com t=0, podemos substituir o valor de t na reta R e encontrar o ponto de interseção I entre R e S
+                - x = 1+3(0) = 1
+                - y = 2-1(0) = 2
+                - Portanto, I = (1,2)
+    - Ex: considere a circunferência de equação (x-1)² + (y+2)² = 9, seja R: {x = 5+2t}, {y = 2+t}; encontre a interseção de R com a circunferência:
+        - Primeiro devemos substituir o x e o y de R na equação da circunferência
+            - (5+2t - 1)² + (2+t + 2)² = 9
+            - (4+2t)² + (4+t)² = 9
+            - (16 + 16t + t²) + (16 + 8t + t²) = 9
+            - 32 + 24t + 2t² = 9
+            - 23 + 24t + 2t² = 0
+            - Fazer Bháskara:
+                - (-24 +- √576-460)/10 = t
+                - (-24 +- √116)/10 = t
+                - (-24 +- 2√29)/10
+                - (-12 +- √29)/5
+                - t1 = (-12+√29)/5
+                - t2 = (-12-√29)/5
+                - Como existem duas raízes, isso quer dizer que a reta toca (intersecta) a circunferência em dois pontos diferentes; substituindo os dois "t" em R:
+                    - I1 = {x = 5 + 2((-12+√29)/5)}, {y = 2 + 1((-12+√29)/5)}
+                    - I2 = {x = 5 + 2((-12-√29)/5)}, {y = 2 + 1((-12-√29)/5)}
+- Importante
+    - Na descrição cartesiana, o vetor diretor é normal ao plano, reta, etc.
+
 ## Forma paramétrica de uma reta no R³
----
+- Dados dois pontos A e B; v = B-A; B = A+v; P(t) = A+tv
+    - P(t) = (xo+at, yo+bt, zo+ct)
+    - Equação da reta do ponto P
+        - ![](../../assets/faculdade/periodo1/20231115214251.png)
+- Ex: qual é a reta que "passa" por A = (3,-2,1) e tem a direção de v = (5,2,4)
+    - r: {x = 3+5t}, {y = -2+2t}, {z = 1+4t}
+        - Essa reta "passa" por um plano ordenado? (r∩plano ordenado)
+            - OBS: os planos ordenados no R³ são xy (z = 0), xz (y = 0) e yz (x = 0)
+            - r∩plano ordenado xy
+                - z = 1+4t = 0; t = -1/4
+                - x = 3+5(-1/4) = 7/4
+                - y = -2+2(-1/4) = -5/2
+                - Interseção r∩plano ordenado xy = (7/4, -5/2, 0)
+            - r∩plano ordenado xz
+                - y = -2+2t = 0; t = 1
+                - x = 3+5(1) = 8
+                - z = 1+4(1) = 5
+                - Interseção r∩plano ordenado xz = (8, 0, 5)
+            - r∩plano ordenado yz
+                - x = 3+5t = 0; t = -3/5
+                - y = -2+2(-3/5) = -16/5
+                - z = 1+4(-3/5) = -7/5
+                - Interseção r∩plano ordenado yz = (0, -16/5, -7/5)
+- Ex: Dada a reta s: {x = 1+3t}, {y = 5}, {z = 2-t}; encontre sua interseção com o plano xz
+    - Se existe um ponto de interseção ele deve satisfazer {x = 1+3t}, {y = 5}, {z = 2-t} e y = 0 ao mesmo tempo; o que é impossível pois o y não pode assumir dois valores ao mesmo tempo
+    - Logo, s∩plano ordenado xz = ∅
+- Ex: Sejam P = (xo, yo, zo) ponto e v = (a, b, c) vetor do R³, qual é o lugar geométrico dos pontos no R³ tais que se subtraídos de P geram vetores ortogonais a v?
+    - ![](../../assets/faculdade/periodo1/20231115220620.png)Desenho onde mostra que existe um plano onde os pontos são ortogonais a v, como por exemplo o ponto Q
+    - ![](../../assets/faculdade/periodo1/20231115220811.png) (π está representando um plano)
+- Ex: Dado o ponto P = (3, 7, -2) (xo, yo,zo) e o vetor v = (4, -1, 2) (a, b, c); qual é o plano ortogonal que a v que "passa" por P?
+    - π = {(x ,y ,z)∈R³/ 4x -y +2z - 4.3 - (-1.7) - (2.-2)} =
+    - π = {(x ,y ,z)∈R³/ 4x -y +2z - 1}
+- Ex: Encontre a interseção da reta s: {x = 3-t}, {y = 2+2t}, {z = 1-3t} com o plano π: 4x -y +2z - 1 = 0
+    - A interseção I satisfaz a forma paramétrica de s e a cartesiana de π
+        - 4(3-t) -1(2+2t) +2(1-3t) -1 = 0
+        - 12-4t-2-2t+2-6t-1 = 0
+        - 11-12t = 0
+        - t = 11/12
+        - x = 3-(11/12) = 25/12
+        - y = 2+2(11/12) = 23/6
+        - z = 1-3(11/12) = -7/4
+        - Interseção s∩π = (25/12, 23/6, -7/4)
+- A interseção de dois planos concorrentes é uma reta
+    - ![](../../assets/faculdade/periodo1/20231115223633.png)
+    - Então r: π∩π pode ser descrita como
+        - ![](../../assets/faculdade/periodo1/20231115223816.png)
+- Ex: Considere a reta r: {x = 1-2t}, {y = 3+2t}, {z = -1-t}, encontre sua forma de interseção de planos
+    - vetor diretor de r = (-2, 2, -1)
+    - Quais são os vetores ortogonais a v?
+    - (a, b, c)(-2, 2, -1) = 0; -2a + 2b - c = 0
+        - Precisamos de dois vetores para encontrar os dois planos que fazem interseção e geram r:
+            - Para isso, basta arbitrar o vetor (arbitrar é a mesma coisa que fazer a interseção com um plano ordenado)
+                - Se c = 0
+                    - -2a + 2b = 0; a = b
+                    - Então o vetor é: (a,a,0) ou a(1,1,0)
+                - Se b = 0
+                    - -2a - c =0; c = -2a
+                    - Então o vetor é: (a,0,-2a) ou a(1,0,-2)
+        - Agora basta escolher os vetores atribuindo qualquer valor à "a"
+            - Os vetores escolhidos foram v1 = (1,1,0) e v2 = (1,0,-2)
+    - Com isso, os planos são:
+        - π1: 1(x-1) + 1(y-3) + 0(z-(-1)) = x + y - 4 =0
+        - π2: 1(x-1) + 0(y-3) + (-2)(z-(-1)) = x - 2z - 3 = 0
+    - ![](../../assets/faculdade/periodo1/20231115225752.png)
+    - Forma algébrica de resolver a questão:
+        - Primeiro escolhe um dos eixos de r para isolar t e substituir nos outros dois eixos
+            - z = -1-t; t = -1-z
+            - x = 1 - 2(-1-z); x = 3 + 2z; x - 2z - 3 = 0
+            - y = 3 + 2(-1-z); y = 1 - 2z; y + 2z - 1 = 0
+- Ex: Seja s: {2x-y+2z = 1}, {x+y-3z = 4}; encontre uma forma paramétrica de s
+    - Nesse caso existem dois vetores que definem s; o primeiro é w = (2,-1,2) e o segundo é u = (1,1,-3)
+        - ![](../../assets/faculdade/periodo1/20231116010517.png)O produto vetorial w X u gera um vetor v que é ortogonal aos dois vetores ao mesmo tempo; após encontrar o vetor basta encontrar um ponto utilizando a arbitrariedade para fazer a equação da reta utilizando os parâmetros de v
+        - w X u
+            - ![](../../assets/faculdade/periodo1/20231116010655.png)
+        - Arbitrando um ponto: tentando z = 0
+            - 2x-y+2z = 1; 2x-y = 1
+            - x+y-3z = 4; x+y = 4
+                - Somando os dois sistemas chegamos em x = 5/3
+                    - Substituindo x em alguma equação que há y, chegamos em y = 7/3
+                    - P = (5/3, 7/3, 0)
+                        - Logo, a equação paramétrica de s é:
+                            - {x = 5/3 + t}, {y = 7/3 + 8t}, {z = 3t} (parâmetros (a,b,c) de v e coordenadas (x,y,z) do ponto P)
+- Ex: Seja E: (x-1)² + (y+1)² + (z-2)² = 16(4²) esfera, e π: x+2y+z+1 = 0; encontre centro e raio da circunferência: π∩E
+    - ![](../../assets/faculdade/periodo1/20231121200612.png)
+- Importante
+    - Na descrição cartesiana, o vetor diretor possui mesmo sentido ao plano, reta, etc.
+
 ## Produto misto
----
+- Envolve um produto vetorial seguido de um produto escalar
+- ![](../../assets/faculdade/periodo1/20231121204349.png)
+
 ## Posições relativas de retas no espaço
----
+- ![](../../assets/faculdade/periodo1/20231121205918.png)
+- ![](../../assets/faculdade/periodo1/20231121202635.png)
+- OBS: retas reversas não ocorrem no R²
+- Como descobrir qual a posição relativa
+    - OBS: no R³, se o determinante entre dois vetores = 0, as retas são paralelas ou coincidentes; caso contrário, são concorrentes ou reversas
+    - ![](../../assets/faculdade/periodo1/20231121210142.png)
+- Ex: seja r: {x = 1+t}, {y = 2-t} e s: 2x+3y-3 = 0; qual é a posição relativa entre as retas r e s?
+    - Vetor diretor de r: (1,-1); Vetor normal de s: (2,3)
+        - O produto escalar entre eles é diferente de 0, logo as retas são concorrentes pois está no R²
+        - Para conferir, vamos checar se existe interseção
+            - 2(1+t)+3(2-t)-3=0; t = 5; substituindo t na reta r: {x = 6}, {y = -3}
+                - Logo, as retas se intersectam no ponto (6,-3)
+    - Ex: r:{x = 1+t}, {y = 2-t} e s: 3x+3y-5=0
+        - ![](../../assets/faculdade/periodo1/20231121212111.png)
+    - Ex: π1: 2x+y-2z=5 e π2: x+2y+2z=1
+        - Vetor normal π1 = (2,1,-2)
+        - Vetor normal π2 = (1,2,2)
+        - Como os vetores normais dos planos π1 e π2 não são múltiplos, então eles são concorrentes entre si (teria a possibilidade de serem reversas se fossem retas)
+    - Ex: posição relativa das retas r:{x=1+2t},{y=2-3t},{z=-1-t}; s:{x=2+q},{y=2+q},{z=1-q}
+        - Vetor diretor de r: (2,-3,-1); vetor diretor de s: (1,1,-1)
+        - Como os vetores não são múltiplos, logo as retas ou são concorrentes ou são reversas
+            - Para isso, vamos verificar se existe uma interseção entre elas
+            - ![](../../assets/faculdade/periodo1/20231121214035.png)
+                - Calculamos os parâmetros t e q e substituímos na mesma coordenada, se os resultados forem diferentes não há interseção e portanto são reversas
+
 ## Distâncias
----
+- Definimos a distância entre duas regiões A (com ponto P) e B (com ponto Q) como sendo:       dist(A,B) = min{d(P,Q)}
+- Distância no R²
+    - Distância entre ponto e ponto
+        - Ponto A = (xa,ya), Ponto B = (xb,yb)
+        - A distância entre dois pontos é dada pela norma da subtração de um ponto pelo outro
+            - ![](../../assets/faculdade/periodo1/20231121221753.png)
+        - Ex: distância entre P = (43,-76) e Q = (-87,114)
+            - ![](../../assets/faculdade/periodo1/20231121225114.png)
+    - Distância entre ponto e reta
+            - ![](../../assets/faculdade/periodo1/20231121222925.png)
+            - Para achar a distância entre ponto e reta, temos que achar uma reta ortogonal à r que passa pelo ponto P
+            - ![](../../assets/faculdade/periodo1/20231121222423.png)
+            - ![](../../assets/faculdade/periodo1/20231121222508.png)
+            - ![](../../assets/faculdade/periodo1/20231121223003.png)
+            - Logo, a dist(P,r) = dist(P,Q2) = ||P-Q2||
+                - ![](../../assets/faculdade/periodo1/20231121223050.png)
+                - ![](../../assets/faculdade/periodo1/20231121223101.png)
+                    - Que é a mesma coisa que
+                    - ![](../../assets/faculdade/periodo1/20231121223141.png)
+        - Logo, a distância entre ponto e reta tem a fórmula
+            - ![](../../assets/faculdade/periodo1/20231121223240.png)
+                - OBS: xo e yo são as coordenadas do ponto em questão
+                - OBS: a e b são as coordenadas do vetor normal de r e c é a constante de r; logo a, b e c podem ser encontrados olhando a forma cartesiana de r
+        - Ex: qual a distância mínima entre P = (6,17) e r:5x-3y-40 = 0
+            - ![](../../assets/faculdade/periodo1/20231121224702.png)
+    - Distância entre reta e reta
+        - ![](../../assets/faculdade/periodo1/20231121225418.png)
+        - Ex: distância entre r:2x+2y-3 = 0 e s:3x+3y-5 = 0
+            - Primeiro, é possível analisar que as duas retas são paralelas pois os vetores normais delas são múltiplos entre si
+            - Agora, vamos escolher um ponto P em uma das retas e calcular a distância
+                - ![](../../assets/faculdade/periodo1/20231121233544.png)
+    - Ex: distância entre a circunferência C = (x-2)² + (y+3)² = 25 e a reta r:4x-5y = 30
+        - ![](../../assets/faculdade/periodo1/20231121234527.png)
+- Distância no R³
+    - Distância entre ponto e ponto
+        - É a mesma lógica que o R² porém com uma coordenada a mais
+        - Ponto A = (xa,ya,za), Ponto B = (xb,yb,zb)
+        - A distância entre dois pontos é dada pela norma da subtração de um ponto pelo outro
+            - ![](../../assets/faculdade/periodo1/20231121234706.png)
+        - Ex: distância entre P = (15,32,-4) e Q = (12,12,32)
+            - ![](../../assets/faculdade/periodo1/20231122001713.png)
+    - Distância entre ponto e reta
+        - É a mesma lógica que o R² porém com uma coordenada a mais
+        - Ponto A = (xa,ya,za); r:ax+by+cz+d = 0
+        - Vetor normal de r: (a,b,c)
+        - Logo, a fórmula para o R³ é
+            - ![](../../assets/faculdade/periodo1/20231122000044.png) ou |a.xa + b.ya + c.za + d|/||(a,b,c)||
+        - Outro método:
+            - ![](../../assets/faculdade/periodo1/20231123073829.png)
+        - Ex: P = (2,3,1); r:4x-y+2z-10 = 0
+            - dist(P,r) = |4.2+(-1.3)+2.1+(-10)|/√4²+(-1)²+2²
+                - |8-3+2-10|/√16+1+4
+                - |-3|/√21 = 3/√21
+    - Distância entre ponto e plano
+        - Para calcular a distância entre um ponto e um plano, temos que pensar que existe uma reta ortogonal ao plano que passa pelo ponto
+        - P = (xo,yo,zo); π: ax+by+cz+d
+            - O plano possui um vetor normal que por sua vez é vetor diretor dessa reta em questão
+            - Vetor diretor de π: (a,b,c)
+            - r: {x=xo+at},{y=yo+bt},{z=zo+ct}
+            - Com isso, podemos fazer a interseção entre a reta e o plano que resulta num outro ponto
+                - ![](../../assets/faculdade/periodo1/20231122002452.png)
+                - Portanto, podemos fazer a distância entre esse ponto gerado e o ponto para calcularmos a distância entre o ponto e o plano
+                    - ![](../../assets/faculdade/periodo1/20231122002643.png)
+        - Ou podemos simplesmente pegar as coordenadas do ponto e pegar o vetor diretor do plano e substituir na equação do plano e calcular a distância
+        - Logo, a distância entre o ponto e o plano tem fórmula
+            - ![](../../assets/faculdade/periodo1/20231122002721.png)
+        - Ex: Sejam E:(x-1)²+(y+1)²+(z-2)²=16 e π:2x-5y+3z+15=0, qual é a dist(E,π)?
+            - ![](../../assets/faculdade/periodo1/20231122003654.png)
+    - Distância entre reta e plano
+        - Mesma lógica da distância entre ponto e plano, porém, agora temos que pegar um ponto P na reta r que passa por uma reta s que por sua vez é perpendicular ao plano e sua interseção com o plano gera um ponto Q; aí fazemos a distância entre P e Q
+        - ![](../../assets/faculdade/periodo1/20231122003839.png)
+        - ![](../../assets/faculdade/periodo1/20231122003850.png)
+        - Ex: Calcule a distância entre π:2x−3y+z−5=0 e r:{x=1+t},{y=-2t},{z=3t-2}
+            - ![](../../assets/faculdade/periodo1/20231122011000.png)
+    - Distância entre reta e reta
+        - Retas concorrentes e coincidentes
+            - A distância é sempre 0
+        - Retas paralelas
+            - Método 1
+                - Dadas duas retas paralelas, podemos achar a equação do plano de cada uma delas para descobrir o parâmetro (que é igual nas duas) e substituir o valor do parâmetro na reta para achar um ponto em cada reta (caso a reta esteja na forma cartesiana, transformar em paramétrica)
+                    - Agora, para calcular a distância basta calcular a norma da diferença dos dois pontos
+                - ![](../../assets/faculdade/periodo1/20231122103056.png)
+                - ![](../../assets/faculdade/periodo1/20231122103034.png)
+            - Método 2
+                - Primeiro, pegamos dois pontos quaisquer na reta r e s e fazemos um vetor que é a diferença entre esses dois pontos (vetor v)
+                - Com esse vetor, podemos fazer uma projeção entre esse vetor v e o vetor diretor (vetor diretor de r ou vetor diretor de s representado por u) de uma das retas (vetor proj)
+                - Com isso, para calcular a distância podemos realizar a norma da diferença do vetor v com o vetor proj
+                - ![](../../assets/faculdade/periodo1/20231122103109.png)
+                - ![](../../assets/faculdade/periodo1/20231122103044.png)
+                - Também pode ser assim:
+                    - ![](../../assets/faculdade/periodo1/20231123073709.png)
+        - Retas reversas
+            - Dadas duas retas reversas, podemos encontrar um par de planos paralelos cada um contendo uma reta
+            - Dadas as retas, podemos achar o vetor normal de cada uma e se calcular o produto vetorial entre elas achamos o vetor normal dos planos que pertencem à cada reta
+                - Com isso, basta calcular a distância entre a reta e o plano
+            - ![](../../assets/faculdade/periodo1/20231122103615.png)
+            - ![](../../assets/faculdade/periodo1/20231122103625.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20231122111123.png)
+                - Achamos os dois planos, como o produto vetorial entre os dois vetores deu diferente de 0; as retas são concorrentes ou reversas
+                    - Para isso, vamos comparar os dois planos e arbitrar um ponto; ex: z=0
+                        - π1:x+y-z-4=0
+                        - π2:x+y-z-7=0
+                            - π1:x+y-4=0; x=4-y
+                                - Substituir x em π2
+                                - π2: x+y-7=0; 4-y+y-7=0; -3=0 o que é um absurdo! Logo, não existe interseção e portanto são reversas
+                - ![](../../assets/faculdade/periodo1/20231122111156.png)
+
 ## Álgebra Linear
----
+- Sistemas de equações lineares
+    - ![](../../assets/faculdade/periodo1/20231130110110.png)
+    - ![](../../assets/faculdade/periodo1/20231130110140.png)
+    - a são os coeficientes, x são as incógnitas e b são os termos independentes
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231130110203.png) Sistema linear com 3 equações e 5 incógnitas
+    - ![](../../assets/faculdade/periodo1/20231130110410.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231130110435.png)![](../../assets/faculdade/periodo1/20231130110445.png)
+    - Resolução de sistemas
+        - Um sistema qualquer admite apenas 3 tipos de conjuntos solução
+            - Solução única
+                - ![](../../assets/faculdade/periodo1/20231130110554.png)
+            - Sem solução
+                - ![](../../assets/faculdade/periodo1/20231130110606.png)
+            - Soluções infinitas
+                - Para isso, vamos ter que utlizar do conceito de matrizes de um sistema mxn
+                - Matrizes de um sistema mxn
+                    - ![](../../assets/faculdade/periodo1/20231130110726.png)
+                    - Podemos representar esse sistema matricialmente, onde A é a matriz dos coeficientes, X é a matriz das incógnitas e b é a matriz dos termos independentes
+                        - ![](../../assets/faculdade/periodo1/20231130110832.png)![](../../assets/faculdade/periodo1/20231130110843.png)
+                    - Ex:
+                        - ![](../../assets/faculdade/periodo1/20231130110927.png)![](../../assets/faculdade/periodo1/20231130110945.png)
+                    - ![](../../assets/faculdade/periodo1/20231130111211.png)
+                    - ![](../../assets/faculdade/periodo1/20231130111225.png)
+                        - ![](../../assets/faculdade/periodo1/20231130111351.png)
+                        - ![](../../assets/faculdade/periodo1/20231130111439.png)
+                            - ![](../../assets/faculdade/periodo1/20231130111454.png)
+                                - ![](../../assets/faculdade/periodo1/20231130111642.png)
+                                - ![](../../assets/faculdade/periodo1/20231130111848.png)
+                                    - ![](../../assets/faculdade/periodo1/20231130112053.png)
+                                        - Sabemos que X1^~ é um ponto solução e X2^~ é outro ponto solução da reta r; com isso, se subtrairmos X2^~ - X1^~ teremos um "vetor"
+                                            - Com isso, se adicionarmos qualquer ponto solução com esse vetor vamos ter outro ponto solução
+                                                - Ex: X3^~ = X1^~ + (X2^~ - X1^~)
+                                    - ![](../../assets/faculdade/periodo1/20231130112652.png)
+                                            - I é o sistema AX1^~ = b e II é o sistema    AX2^~= b
+                                        - ![](../../assets/faculdade/periodo1/20231130112749.png)
+        - Resolução de um sistema por eliminação de incógnitas
+            - Operações elementares-linha
+                - Operações válidas sobre as linhas de um sistema pois preservam as soluções deste sistema
+                    - Troca de linhas
+                        - Trocar as linhas de lugar não mudam o conjunto solução
+                        - Li ⇔ Lj
+                    - Multiplicação por uma constante
+                        - Li . K → Li; esta operação preserva as soluções do sistema pois conseguimos invertê-la fazendo Li . 1/K → Li
+                    - Somando outra linha
+                        - Li + K.Lj → Li; esta operação preserva as soluções do sistema pois conseguimos invertê-la fazendo Li - K.Lj  → Li
+            - ![](../../assets/faculdade/periodo1/20231204223706.png)
+            - ![](../../assets/faculdade/periodo1/20231204223751.png)
+            - ![](../../assets/faculdade/periodo1/20231204223843.png) (Matriz na forma ampliada, que significa que também há a matriz b)
+            - O objetivo é deixar todos os coeficientes dentro do triângulo zerados; para isso, vamos fazer operações elementares-linha
+                - ![](../../assets/faculdade/periodo1/20231204225443.png)
+                    - Com isso, descobrimos que w = -4/5 e agora basta fazer operações para descobrir as outras incógnitas
+        - Resolução utilizando escalonamento
+                - OBS: elementos de uma matriz
+                    - Pivô de linha - 1° elemento não nulo de uma linha
+                    - Posto - números de pivôs da forma escada de uma matriz
+                    - Duas matrizes são ditas equivalentes se B pode ser obtida a partir de A através de operações elementares-linha, notação: A~B; ou seja, dois sistemas cujas matrizes ampliadas são linha-equivalentes possuem as mesmas soluções
+                    - Matriz identidade - quando todos os valores da diagonal da matriz são iguais à 1, ou seja, os valores das incógnitas estão definidos e com solução trivial
+                    - Nulidade de uma matriz ou dimensão de uma matriz - é o nº de colunas de uma matriz - posto de uma matriz
+                    - Traço de uma matriz - soma dos elementos da diagonal principal da matriz
+                    - A matriz na forma escada é a forma mais irredutível de uma matriz
+                    - Matriz Transposta - para fazer a transposição de uma matriz, basta trocar a linha pela coluna; de modo que a matriz anteriormente M(i x j) se torne uma matriz M(j x i)
+                        - Notação
+                            - ![](../../assets/faculdade/periodo1/20231221111944.png)
+                        - Ex:
+                            - ![](../../assets/faculdade/periodo1/20231221111221.png)
+            - ![](../../assets/faculdade/periodo1/20231204225755.png)
+            - ![](../../assets/faculdade/periodo1/20231204225949.png)
+            - ![](../../assets/faculdade/periodo1/20231204230504.png)
+            - ![](../../assets/faculdade/periodo1/20231204230515.png)
+            - ![](../../assets/faculdade/periodo1/20231204230614.png)
+            - Ex: Qual o pivô, o posto e a nulidade da matriz?
+                - ![](../../assets/faculdade/periodo1/20231204230931.png)
+                    - ![](../../assets/faculdade/periodo1/20231204231613.png)
+            - Propriedades das matrizes nos diferentes tipos
+                - Matriz com solução única
+                    - ![](../../assets/faculdade/periodo1/20231204231753.png) (A:b é a matriz ampliada)
+                - Matriz sem solução
+                    - ![](../../assets/faculdade/periodo1/20231204231857.png)
+                - Matriz com infinitas soluções
+                    - ![](../../assets/faculdade/periodo1/20231204231926.png)
+        - Resolução de matriz utilizando parametrização
+            - ![](../../assets/faculdade/periodo1/20231204232102.png)
+            - ![](../../assets/faculdade/periodo1/20231204232136.png)
+            - Variáveis independentes são: x1, x3, x5 e x8 (colunas que não possuem pivô de linha)
+                - Vamos atribuir para cada variável independente um parâmetro
+                    - Ex: x1 = t; x3 = s; x5 = r; x8 = q
+            - Com isso, podemos fazer as equações das linhas em que há os pivôs
+                - x2 + 3s + r + q = -1; x2 = -1 - 3s - r - q
+                - De forma semelhante, vamos fazer isso para as variáveis dependentes restantes
+                    - x4 = 4 - 3s -3q
+                    - x6 = 7 + 5q
+                    - x7 = 6 - 4q
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231207101232.png)
+            - Deixando a matriz na forma escada
+                - ![](../../assets/faculdade/periodo1/20231207101629.png)
+                - ![](../../assets/faculdade/periodo1/20231207101723.png)
+                    - Achamos o tipo do conjunto-solução, agora vamos descrever as soluções (para isso vamos parametrizar)
+                        - ![](../../assets/faculdade/periodo1/20231207101817.png) (os coeficientes das colunas que não tem o pivô são aquelas que recebem os parâmetros)
+                        - Descrição das soluções
+                            - ![](../../assets/faculdade/periodo1/20231207101933.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231207102158.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231207102221.png)
+            - Deixando a matriz na forma escada
+                - ![](../../assets/faculdade/periodo1/20231207102324.png)
+                - ![](../../assets/faculdade/periodo1/20231207102336.png)
+                - ![](../../assets/faculdade/periodo1/20231207102345.png)
+                - ![](../../assets/faculdade/periodo1/20231207102404.png)
+                    - Conjuntos-solução
+                        - ![](../../assets/faculdade/periodo1/20231207102547.png)
+                        - ![](../../assets/faculdade/periodo1/20231207102601.png)
+                        - No caso do sistema admitir infinitas soluções, vamos parametrizar a matriz
+                            - ![](../../assets/faculdade/periodo1/20231207102644.png)
+                            - ![](../../assets/faculdade/periodo1/20231207102703.png)
+- Matriz Inversa
+    - ![](../../assets/faculdade/periodo1/20231207103344.png)
+    - ![](../../assets/faculdade/periodo1/20231207103406.png)
+    - Se o determinante da matriz for diferente de 0, então a matriz é inversível
+    - OBS: Multiplicação de matrizes
+        - Para multiplicar duas matrizes, devemos multiplicar a linha da primeira matriz A com a primeira coluna da segunda matriz B para acharmos o termo a11 e fazer isso continuamente para achar os outros termos
+            - O resultado dará uma matriz com tamanho linhaA x colunaB
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231207105302.png)
+    - É dito que uma matriz é invertível se ela admite uma matriz inversa e a multiplicação entre ela e a inversa é uma matriz identidade
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231207103654.png)
+        - ![](../../assets/faculdade/periodo1/20231207103708.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231207105353.png)
+            - Deixando a matriz na forma escada
+                - ![](../../assets/faculdade/periodo1/20231207105430.png)
+                - ![](../../assets/faculdade/periodo1/20231207105453.png)
+- Matriz elementar
+    - ![](../../assets/faculdade/periodo1/20231207105837.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231207105904.png)
+    - ![](../../assets/faculdade/periodo1/20231207105916.png)
+    - ![](../../assets/faculdade/periodo1/20231207105930.png)
+    - Operações elementares e seus inversos
+        - ![](../../assets/faculdade/periodo1/20231207110157.png) ou Lj ⇔ Li; a inversa é Li ⇔ Lj
+            - ![](../../assets/faculdade/periodo1/20231207110215.png)
+        - ![](../../assets/faculdade/periodo1/20231207110224.png) ou Li ← (1/k)Li; a inversa é Li ← k.Li
+            - ![](../../assets/faculdade/periodo1/20231207110237.png)
+        - ![](../../assets/faculdade/periodo1/20231207110306.png)
+        - ou Li ← Li - k.Lj; a inversa é Li ← Li +k.Lj
+            - ![](../../assets/faculdade/periodo1/20231207110347.png)
+            - ![](../../assets/faculdade/periodo1/20231207110403.png)
+    - Escalonamento usando matrizes elementares
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231219094326.png)![](../../assets/faculdade/periodo1/20231219094439.png)![](../../assets/faculdade/periodo1/20231219094656.png)![](../../assets/faculdade/periodo1/20231219094707.png)![](../../assets/faculdade/periodo1/20231219094717.png)
+        - Seja S o sistema AX = b; podemos escalonar o sistema utilizando uma sequência de produtos de matrizes elementares até chegarmos em sua forma escada
+            - ![](../../assets/faculdade/periodo1/20231219094837.png)
+        - Seja S o sistema AX = b tendo solução única (o resultado é uma matriz identidade) e A sendo uma matriz quadrada
+            - ![](../../assets/faculdade/periodo1/20231219094959.png)
+                - ![](../../assets/faculdade/periodo1/20231219101245.png)
+            - ![](../../assets/faculdade/periodo1/20231219095013.png) Ou seja, A¦I = I¦A^-1
+            - ![](../../assets/faculdade/periodo1/20231219101311.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231219095741.png)![](../../assets/faculdade/periodo1/20231219101555.png)
+
 ## Espaço vetorial
----
+- Seja V um conjunto, com duas operações sobre seus elementos:
+    - Se u,v∈V; u+v (soma)
+    - Se K∈R; K.v (multiplicação por escalar)
+- (V, +, ·) é um espaço vetorial se atender à todas as 8 propriedades do espaço vetorial
+- Propriedades
+    - ![](../../assets/faculdade/periodo1/20231219102310.png)
+    - ![](../../assets/faculdade/periodo1/20231219102327.png)![](../../assets/faculdade/periodo1/20231219102401.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20231219102546.png)
+    - ![](../../assets/faculdade/periodo1/20231219102610.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20231219104215.png)
+    - ![](../../assets/faculdade/periodo1/20231219104237.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20231219104307.png)
+    - ![](../../assets/faculdade/periodo1/20231219104409.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20231219104426.png)
+    - ![](../../assets/faculdade/periodo1/20231219104437.png)
+- Subespaço vetorial
+    - Seja (V, +, ·) um espaço vetorial, e seja S⊂V um subconjunto de V; queremos saber se o fato de S ser subespaço de V o torna espaço vetorial por si só
+    - Definição
+        - S é um subespaço vetorial de V se:
+            - ![](../../assets/faculdade/periodo1/20231219110345.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231219111124.png)
+        - ![](../../assets/faculdade/periodo1/20231219111150.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231219111635.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231219111946.png)![](../../assets/faculdade/periodo1/20231219115411.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231219115429.png)![](../../assets/faculdade/periodo1/20231219121618.png)![](../../assets/faculdade/periodo1/20231219121629.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231219131957.png)
+        - Verificando o 1º
+            - ![](../../assets/faculdade/periodo1/20231219132102.png)
+            - ![](../../assets/faculdade/periodo1/20231219132125.png)
+            - ![](../../assets/faculdade/periodo1/20231219132139.png)
+            - ![](../../assets/faculdade/periodo1/20231219132150.png)
+        - Verificando o 2º
+            - ![](../../assets/faculdade/periodo1/20231219132231.png)
+            - ![](../../assets/faculdade/periodo1/20231219132242.png)
+            - ![](../../assets/faculdade/periodo1/20231219132315.png)
+            - ![](../../assets/faculdade/periodo1/20231219132404.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20231219132436.png)
+        - ![](../../assets/faculdade/periodo1/20231219132507.png)
+        - ![](../../assets/faculdade/periodo1/20231219132531.png)
+        - ![](../../assets/faculdade/periodo1/20231219132543.png)
+        - ![](../../assets/faculdade/periodo1/20231219132555.png)
+        - ![](../../assets/faculdade/periodo1/20231219132608.png)
+        - ![](../../assets/faculdade/periodo1/20231219132624.png)
+    - Todo subespaço vetorial é conjunto-solução de sistema linear homogêneo (AX = 0); e todo conjunto-solução de sistema linear homogêneo é um subespaço do espaço de soluções
+    - Interseção e soma de subespaços
+        - Interseção
+            - ![](../../assets/faculdade/periodo1/20231219164542.png)
+            - ![](../../assets/faculdade/periodo1/20231219164653.png)
+            - ![](../../assets/faculdade/periodo1/20231219164704.png)
+            - ![](../../assets/faculdade/periodo1/20231219164720.png)
+            - ![](../../assets/faculdade/periodo1/20231219165035.png)
+            - ![](../../assets/faculdade/periodo1/20231219165047.png)
+        - Soma
+            - ![](../../assets/faculdade/periodo1/20231219165115.png)
+            - ![](../../assets/faculdade/periodo1/20231219165141.png)
+            - ![](../../assets/faculdade/periodo1/20231219165736.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231219174716.png)![](../../assets/faculdade/periodo1/20231219174730.png)![](../../assets/faculdade/periodo1/20231219183400.png)![](../../assets/faculdade/periodo1/20231219191315.png)![](../../assets/faculdade/periodo1/20231219191328.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231219224803.png)![](../../assets/faculdade/periodo1/20231219224814.png)![](../../assets/faculdade/periodo1/20231219224826.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20231219232753.png)
+            - ![](../../assets/faculdade/periodo1/20231219232931.png)
+            - ![](../../assets/faculdade/periodo1/20231219232953.png)
+            - ![](../../assets/faculdade/periodo1/20231219233019.png)
+            - ![](../../assets/faculdade/periodo1/20231219233028.png)
+            - ![](../../assets/faculdade/periodo1/20231219233040.png)
+
 ## Combinações lineares
----
+- ![](../../assets/faculdade/periodo1/20231219234610.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20231219234629.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20231219234639.png)
+    - ![](../../assets/faculdade/periodo1/20231219234737.png)
+        - (No exemplo, chegamos em um absurdo ao dizer que 0 = 1)
+- ![](../../assets/faculdade/periodo1/20231219235434.png)
+    - {v1, v2,..., vn} = α
+    - [v1, v2,..., vn] = conjunto de todas as combinações lineares (popularmente atribuída à letra S)
+    - ![](../../assets/faculdade/periodo1/20231219235445.png)
+    - ![](../../assets/faculdade/periodo1/20231219235500.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20231219235537.png)
+    - ![](../../assets/faculdade/periodo1/20231219235606.png)
+- Independência linear
+    - Seja E um espaço vetorial e v1, ... vn ∈ E; dizemos que o conjunto {v1, ... vn} é linearmente independente (ou que os vetores v1, ... vn são LI) se a1v1 + ... + anvn = 0 e a1 = a2 = ... = an = 0
+    - Outra forma de detectar se vetores são linearmente independentes
+        - O conjunto {v1, ... vn} é considerado LI se, e somente se nenhum destes vetores for uma combinação linear dos outros
+- Dependência linear
+    - Seja E um espaço vetorial e v1, ... vn ∈ E; dizemos que o conjunto {v1, ... vn} é linearmente dependente (ou que os vetores v1, ... vn são LD) se a1v1 + ... + anvn = 0 e se existe algum ai ≠ 0
+    - Outra forma de detectar se vetores são linearmente dependentes
+        - O conjunto {v1, ... vn} é considerado LD se, e somente se um destes vetores for uma combinação linear dos outros
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240103190239.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240103190300.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240103190156.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240103190210.png)
+
 ## Conjunto gerador
----
+- O conjunto gerador de um espaço vetorial é um conjunto de vetores cujas combinações lineares podem representar todos os elementos de uma matriz, independente destes vetores serem LD ou LI
+- O conjunto gerador que possui um conjunto de vetores LI é chamado de conjunto base
+    - Conjunto Base
+        - Queremos determinar um conjunto de vetores que gere um espaço vetorial tal que todos os elementos sejam realmente necessários para gerar este espaço, se pudermos encontrar esses vetores teremos o alicerce de nosso espaço e este conjunto de vetores se denomina de base
+            - Em outras palavras, a base de um espaço vetorial é um conjunto de vetores LI que geram esse espaço
+                - Este conjunto por sua vez está contido no espaço vetorial
+                    - Ex:  V = R^n (espaço vetorial) e β = {e1, ... , en} (base vetorial de V); logo, β⊂V
+            - Logo, um conjunto de vetores vão ser a base de um espaço vetorial se o conjunto for LI e se qualquer vetor do espaço vetorial puder ser escrito como combinação linear dos vetores da base
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240104145958.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240104150055.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240104150107.png)
+        - Dimensão
+            - Qualquer base de um espaço vetorial tem sempre o mesmo número elementos, esse número é chamado de dimensão do espaço vetorial (notação: dim V)
+            - ![](../../assets/faculdade/periodo1/20240104155232.png)
+                - A dimensão de um espaço vetorial R^n possui dimensão n
+                - O conjunto dos polinômios de grau até n possui dimensão n+1
+                - O conjunto de uma matriz m por n possui dimensão m.n
+        - Teoremas
+            - ![](../../assets/faculdade/periodo1/20240104151403.png)
+                - ![](../../assets/faculdade/periodo1/20240104151456.png)
+                - Ex:
+                    - ![](../../assets/faculdade/periodo1/20240104172059.png)
+                    - ![](../../assets/faculdade/periodo1/20240104172115.png)
+                    - ![](../../assets/faculdade/periodo1/20240104172140.png)
+                    - ![](../../assets/faculdade/periodo1/20240104172149.png)
+            - ![](../../assets/faculdade/periodo1/20240104151518.png)
+                - ![](../../assets/faculdade/periodo1/20240104151853.png)
+                - ![](../../assets/faculdade/periodo1/20240104151903.png)
+                - Ou seja, para ser base precisa ser LI e para ser LI o sistema precisa admitir solução única ou não ter solução
+                - Os vetores da base são LD se o sistema admitir infinitas soluções
+            - ![](../../assets/faculdade/periodo1/20240104154421.png)
+                - ![](../../assets/faculdade/periodo1/20240104154655.png)
+                - ![](../../assets/faculdade/periodo1/20240104154755.png)
+                - Se dim V = n, qualquer conjunto de n vetores LI formará uma base de V
+                    - ![](../../assets/faculdade/periodo1/20240104155111.png)
+                        - É um absurdo pois qualquer base de um espaço vetorial possui o mesmo número de elementos
+            - ![](../../assets/faculdade/periodo1/20240104155357.png)
+            - ![](../../assets/faculdade/periodo1/20240104160523.png)
+                - ![](../../assets/faculdade/periodo1/20240104160533.png)
+        - Sejam β = {v1, ..., vn} base de V e v∈V onde v = a1v1+ ... + anvn (combinação linear dos vetores); chamamos os números a1, ... , an de coordenadas de v em relação à base β e podemos representá-la matricialmente
+            - ![](../../assets/faculdade/periodo1/20240104161037.png)
+            - Ex:
+                - ![](../../assets/faculdade/periodo1/20240104161251.png)
+                    - ![](../../assets/faculdade/periodo1/20240104161309.png)
+                    - OBS:
+                        - ![](../../assets/faculdade/periodo1/20240104161323.png)
+        - Ex: Verifique se os seguintes conjuntos são LI
+            - ![](../../assets/faculdade/periodo1/20240104165142.png)
+            - ![](../../assets/faculdade/periodo1/20240104171211.png)
+- Extração de uma base a partir de um gerador
+    - Basta considerar os vetores como linhas de uma matriz e escalonar até a sua forma escada
+        - Os vetores não nulos são LI
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240104174400.png)
+    - Ex: Encontre a base e a dimensão para os seguintes conjuntos
+        - ![](../../assets/faculdade/periodo1/20240104174508.png)
+            - ![](../../assets/faculdade/periodo1/20240104181246.png)
+        - ![](../../assets/faculdade/periodo1/20240104174517.png)
+            - ![](../../assets/faculdade/periodo1/20240104181444.png)
+            - dim S2 = 2
+        - ![](../../assets/faculdade/periodo1/20240104174527.png)
+            - ![](../../assets/faculdade/periodo1/20240104181434.png)
+        - ![](../../assets/faculdade/periodo1/20240104174537.png)
+            - ![](../../assets/faculdade/periodo1/20240104181425.png)
+- Mudança de base
+    - ![](../../assets/faculdade/periodo1/20240109173254.png)
+    - ![](../../assets/faculdade/periodo1/20240109173450.png)
+    - ![](../../assets/faculdade/periodo1/20240109173542.png)
+    - ![](../../assets/faculdade/periodo1/20240109174032.png)
+    - ![](../../assets/faculdade/periodo1/20240109173655.png)
+    - ![](../../assets/faculdade/periodo1/20240109173756.png)
+    - Outra forma de explicar
+        - ![](../../assets/faculdade/periodo1/20240109175303.png)
+    - Ex:
+        -  ![](../../assets/faculdade/periodo1/20240109184942.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240109193128.png)
+        - ![](../../assets/faculdade/periodo1/20240109193143.png)
+    - ![](../../assets/faculdade/periodo1/20240109185702.png)
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240109193212.png)
+            - ![](../../assets/faculdade/periodo1/20240109193242.png)
+        - Com isso:
+            - ![](../../assets/faculdade/periodo1/20240208104844.png)
+            - ![](../../assets/faculdade/periodo1/20240208104900.png)
+
 ## Transformações Lineares
----
+- ![](../../assets/faculdade/periodo1/20240208105337.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240208105839.png)
+    - ![](../../assets/faculdade/periodo1/20240208110851.png)
+    - ![](../../assets/faculdade/periodo1/20240208110912.png)
+- A transformação linear do zero absoluto é o próprio zero absoluto
+    - ![](../../assets/faculdade/periodo1/20240208111055.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240208111249.png)
+    - ![](../../assets/faculdade/periodo1/20240208111420.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240208111430.png)
+    - ![](../../assets/faculdade/periodo1/20240208111610.png)
+    - ![](../../assets/faculdade/periodo1/20240208111623.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240208111750.png)
+    - ![](../../assets/faculdade/periodo1/20240208111816.png)
+    - ![](../../assets/faculdade/periodo1/20240208111832.png)
+- ![](../../assets/faculdade/periodo1/20240214163823.png)
+- ![](../../assets/faculdade/periodo1/20240214163910.png)
+- Ex: Gráfico das transformações lineares
+    - ![](../../assets/faculdade/periodo1/20240214164011.png)
+    - ![](../../assets/faculdade/periodo1/20240214164035.png)
+- ![](../../assets/faculdade/periodo1/20240214164628.png)
+- Núcleo e imagem de transformação linear
+    - ![](../../assets/faculdade/periodo1/20240214164811.png)
+        - Portanto, ker(T) é um subconjunto e um subespaço vetorial de V
+        - Prova
+            - ![](../../assets/faculdade/periodo1/20240214165606.png)
+            - ![](../../assets/faculdade/periodo1/20240214165615.png)
+    - ![](../../assets/faculdade/periodo1/20240214164722.png)
+        - Portanto, Im(T) é um subconjunto e um subespaço vetorial de W
+        - Prova
+            - ![](../../assets/faculdade/periodo1/20240214165629.png)
+            - ![](../../assets/faculdade/periodo1/20240214165659.png)
+    - ![](../../assets/faculdade/periodo1/20240214164929.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240214170647.png)
+    - (A)
+        - Base de Nu(T)
+            - ![](../../assets/faculdade/periodo1/20240214171439.png)
+            - ![](../../assets/faculdade/periodo1/20240214171535.png)
+            - ![](../../assets/faculdade/periodo1/20240214171557.png)
+        - Base de Im(T)
+            - ![](../../assets/faculdade/periodo1/20240214171705.png)
+            - ![](../../assets/faculdade/periodo1/20240214171713.png)
+            - ![](../../assets/faculdade/periodo1/20240214171930.png)
+    - (B)
+        - ![](../../assets/faculdade/periodo1/20240214172134.png)
+        - ![](../../assets/faculdade/periodo1/20240214172144.png)
+        - ![](../../assets/faculdade/periodo1/20240214172155.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240214172415.png)
+    - ![](../../assets/faculdade/periodo1/20240214172435.png)
+    - ![](../../assets/faculdade/periodo1/20240214172455.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240216122333.png)
+    - Base e dimensão de Nu(T)
+        - ![](../../assets/faculdade/periodo1/20240216123627.png)
+        - ![](../../assets/faculdade/periodo1/20240216123640.png)
+    - Base e dimensão de Im(T)
+        - ![](../../assets/faculdade/periodo1/20240216123706.png)
+        - ![](../../assets/faculdade/periodo1/20240216123723.png)
+    - Conjunto-solução
+        - ![](../../assets/faculdade/periodo1/20240216123821.png)
+        - ![](../../assets/faculdade/periodo1/20240216123828.png)
+- Tipos de Transformação Linear
+    - Injetiva
+        - ![](../../assets/faculdade/periodo1/20240216123854.png)
+            - Ou: T(a) = T(b) → a = b; a ≠ b → T(a) ≠ T(b)
+        - ![](../../assets/faculdade/periodo1/20240216123906.png)
+        - ![](../../assets/faculdade/periodo1/20240216123934.png)
+    - Teorema
+        - ![](../../assets/faculdade/periodo1/20240216123950.png)
+        - Prova
+            - Supondo que T é injetiva
+                - ![](../../assets/faculdade/periodo1/20240216124029.png)
+                - ![](../../assets/faculdade/periodo1/20240216124042.png)
+            - Supondo que Nu(T) = {0}
+                - ![](../../assets/faculdade/periodo1/20240216124235.png)
+    - Sobrejetiva
+        - ![](../../assets/faculdade/periodo1/20240216124312.png)
+            - Em outras palavras, dada a transformação T: V→W, para a transformação linear ser sobrejetiva é necessário que T(V) = W; ou seja, que a dimensão da imagem seja igual à dimensão do contradomínio
+    - Bijetiva
+        - ![](../../assets/faculdade/periodo1/20240216124336.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240216124403.png)
+        - ![](../../assets/faculdade/periodo1/20240216124409.png)
+        - (1)
+            - ![](../../assets/faculdade/periodo1/20240216124422.png)
+            - ![](../../assets/faculdade/periodo1/20240216124449.png)
+        - (2)
+            - ![](../../assets/faculdade/periodo1/20240216124508.png)
+            - ![](../../assets/faculdade/periodo1/20240216124523.png)
+        - (3)
+            - ![](../../assets/faculdade/periodo1/20240216124544.png)
+        - (4)
+            - ![](../../assets/faculdade/periodo1/20240216124556.png)
+            - ![](../../assets/faculdade/periodo1/20240216124611.png)
+    - Teorema
+        - ![](../../assets/faculdade/periodo1/20240216124700.png)
+        - ![](../../assets/faculdade/periodo1/20240216124708.png)
+- Composta de transformações lineares
+    - ![](../../assets/faculdade/periodo1/20240221224346.png)
+    - ![](../../assets/faculdade/periodo1/20240221224437.png)
+    - Mostrando que S◦R é transformação linear
+        - ![](../../assets/faculdade/periodo1/20240221224531.png)
+        - ![](../../assets/faculdade/periodo1/20240221224539.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240221224604.png)
+            - ![](../../assets/faculdade/periodo1/20240221224920.png)
+            - ![](../../assets/faculdade/periodo1/20240221225106.png)
+    - ![](../../assets/faculdade/periodo1/20240221230822.png)
+        - Im(S) contém Im(S◦T)
+        - Nu(T) está contido no Nu(S◦T)
+- Teorema
+    - ![](../../assets/faculdade/periodo1/20240221231027.png)
+    - ![](../../assets/faculdade/periodo1/20240221231050.png)
+    - ![](../../assets/faculdade/periodo1/20240221231257.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240221231709.png)
+    - Escolhendo a base e vendo o que a transformação faz nela
+        - ![](../../assets/faculdade/periodo1/20240221231742.png)
+    - Base da Imagem
+        - ![](../../assets/faculdade/periodo1/20240221231942.png)
+    - Base do Núcleo
+        - ![](../../assets/faculdade/periodo1/20240221231956.png)
+        - ![](../../assets/faculdade/periodo1/20240221231835.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240221232036.png)
+        - ![](../../assets/faculdade/periodo1/20240221232436.png)
+        - ![](../../assets/faculdade/periodo1/20240221232446.png)
+        - ![](../../assets/faculdade/periodo1/20240221232454.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240221235213.png)
+        - Manipulando os vetores que recebemos na questão
+        - ![](../../assets/faculdade/periodo1/20240221235235.png)
+        - ![](../../assets/faculdade/periodo1/20240221235322.png)
+        - ![](../../assets/faculdade/periodo1/20240222000551.png)
+    - Achando as bases de Im(T) e Nu(T)
+        - ![](../../assets/faculdade/periodo1/20240221235619.png)
+        - ![](../../assets/faculdade/periodo1/20240221235626.png)
+            - Base de Im(T): {(1,0), (0,1)}
+            - Base de Nu(T): {(2,-3,1)}
+- Teorema
+    - ![](../../assets/faculdade/periodo1/20240221235803.png)
+        - ![](../../assets/faculdade/periodo1/20240221235815.png)
+        - ![](../../assets/faculdade/periodo1/20240221235831.png)
+        - ![](../../assets/faculdade/periodo1/20240221235904.png)
+        - ![](../../assets/faculdade/periodo1/20240221235916.png)
+    - OBS
+        - ![](../../assets/faculdade/periodo1/20240223151816.png)
+    - OBS
+        - ![](../../assets/faculdade/periodo1/20240223151834.png)
+    - OBS
+        - ![](../../assets/faculdade/periodo1/20240223152820.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240223151703.png)
+    - (1)
+        - ![](../../assets/faculdade/periodo1/20240223151713.png)
+        - ![](../../assets/faculdade/periodo1/20240223151727.png)
+    - (2)
+        - ![](../../assets/faculdade/periodo1/20240223152014.png)
+        - ![](../../assets/faculdade/periodo1/20240223152037.png)
+    - (3) R³ → R³
+        - ![](../../assets/faculdade/periodo1/20240223152055.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240223152932.png)
+    - ![](../../assets/faculdade/periodo1/20240223152939.png)
+    - ![](../../assets/faculdade/periodo1/20240223152948.png)
+    - Encontrando a transformação linear
+        - (-2,3,1) é Nu(T); então se relaciona com a Im(T) = (0,0,0,0)
+        - Como só temos esse vetor da base do Nu(T), escolhemos outros dois vetores quaisquer (de preferência os vetores da base canônica de modo a "cancelar" as coordenadas do vetor da base) de modo a completar a dimensão do domínio
+        - ![](../../assets/faculdade/periodo1/20240223153037.png)
+        - ![](../../assets/faculdade/periodo1/20240223153207.png)
+        - ![](../../assets/faculdade/periodo1/20240223153215.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240223153228.png)
+    - ![](../../assets/faculdade/periodo1/20240223153252.png)
+    - ![](../../assets/faculdade/periodo1/20240223153317.png)
+    - ![](../../assets/faculdade/periodo1/20240223153326.png)
+- Inversa de transformações lineares
+    - ![](../../assets/faculdade/periodo1/20240223153350.png)
+    - ![](../../assets/faculdade/periodo1/20240223153416.png)
+    - Representação da transformação linear inversa
+        - ![](../../assets/faculdade/periodo1/20240223153454.png)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240223153507.png)
+    - ![](../../assets/faculdade/periodo1/20240223153515.png)
+    - ![](../../assets/faculdade/periodo1/20240223153547.png)
+    - ![](../../assets/faculdade/periodo1/20240223153555.png)
+    - Conferindo se o resultado está certo
+        - ![](../../assets/faculdade/periodo1/20240223153605.png)
+- Matriz de uma Transformação Linear
+    - ![](../../assets/faculdade/periodo1/20240223175940.png)
+    - ![](../../assets/faculdade/periodo1/20240223175948.png)
+    - ![](../../assets/faculdade/periodo1/20240223175955.png)
+    - ![](../../assets/faculdade/periodo1/20240223180032.png)
+    - ![](../../assets/faculdade/periodo1/20240223180040.png)
+    - ![](../../assets/faculdade/periodo1/20240223180049.png)
+    - OBS: o tamanho da matriz é dada pelo número de linhas igual à dimensão do contradomínio e número de colunas igual à dimensão do domínio
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240228181209.png)
+        - ![](../../assets/faculdade/periodo1/20240228181220.png)
+            - ![](../../assets/faculdade/periodo1/20240228182951.png)
+            - ![](../../assets/faculdade/periodo1/20240228183008.png)
+            - ![](../../assets/faculdade/periodo1/20240228183023.png)
+            - ![](../../assets/faculdade/periodo1/20240228183033.png)
+        - ![](../../assets/faculdade/periodo1/20240228181227.png)
+            - ![](../../assets/faculdade/periodo1/20240228183557.png)
+        - ![](../../assets/faculdade/periodo1/20240228181241.png)
+            - ![](../../assets/faculdade/periodo1/20240228184216.png)
+        - ![](../../assets/faculdade/periodo1/20240228181247.png)
+            - ![](../../assets/faculdade/periodo1/20240228184822.png)
+                - É igual aos "argumentos" da transformação linear
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240228184925.png)
+            - ![](../../assets/faculdade/periodo1/20240228191044.png)
+            - ![](../../assets/faculdade/periodo1/20240228191055.png)
+            - ![](../../assets/faculdade/periodo1/20240228191114.png)
+            - ![](../../assets/faculdade/periodo1/20240228191130.png)
+                - (Ao invés de -8 é 8)
+- Matriz de composta de transformação linear
+    - ![](../../assets/faculdade/periodo1/20240228191517.png)
+    - ![](../../assets/faculdade/periodo1/20240228191533.png)
+    - ![](../../assets/faculdade/periodo1/20240228191725.png)
+    - ![](../../assets/faculdade/periodo1/20240228191737.png)
+    - Para achar o núcleo de (T•S), basta pegar a matriz de T•S e multiplicar pelas coordenadas (exemplo, se em T•S o domínio está no R², basta multiplicar por uma matriz de uma única coluna x, y) e igualar a 0; assim acharemos a base geradora do núcleo de T•S; para achar a base do núcleo basta escalonar
+    - Para achar a imagem de (T•S) basta pegar a matriz transposta de T•S e acharemos o conjunto gerador da imagem (cada linha se torna um vetor e concebemos um parâmetro para cada vetor), escalonando encontramos a base da imagem
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240301172235.png)
+            - ![](../../assets/faculdade/periodo1/20240301174056.png)
+            - ![](../../assets/faculdade/periodo1/20240301174109.png)
+            - ![](../../assets/faculdade/periodo1/20240301174120.png)
+                - No caso, a base da imagem seriam os vetores que são LI
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240301174138.png)
+        - ![](../../assets/faculdade/periodo1/20240301174150.png)
+            - ![](../../assets/faculdade/periodo1/20240301174919.png)
+- Matriz de inversa de transformação linear
+    - ![](../../assets/faculdade/periodo1/20240301175023.png)
+    - ![](../../assets/faculdade/periodo1/20240301175034.png)
+    - ![](../../assets/faculdade/periodo1/20240301175042.png)
+        - Transformação identidade
+            - ![](../../assets/faculdade/periodo1/20240301175125.png)
+                - Se multiplicar pela inversa dela, dá a matriz identidade
+            - Não confundir com matriz identidade, transformação identidade é uma matriz de mudança de base de α para α no mesmo subespaço
+    - ![](../../assets/faculdade/periodo1/20240301175056.png)
+    - ![](../../assets/faculdade/periodo1/20240301175109.png)
+    - OBS: A transformação linear possui inversa se o determinante dela for diferente de 0 (no caso de matriz quadrada)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240301180059.png)
+            - ![](../../assets/faculdade/periodo1/20240301180120.png)
+- Operador linear
+    - ![](../../assets/faculdade/periodo1/20240301180239.png)
+        - Transformação linear de um espaço vetorial nele mesmo
+        - T•T-1 é um exemplo de operador linear
+        - Ex:
+            - ![](../../assets/faculdade/periodo1/20240301184710.png)
+    - ![](../../assets/faculdade/periodo1/20240301180503.png)
+    - ![](../../assets/faculdade/periodo1/20240301180557.png)
+        - ![](../../assets/faculdade/periodo1/20240301180945.png)
+        - ![](../../assets/faculdade/periodo1/20240301180958.png)
+    - Tipos
+        - Expansão ou Contração
+            - ![](../../assets/faculdade/periodo1/20240326153056.png)
+            - ![](../../assets/faculdade/periodo1/20240326153137.png)
+        - Reflexão
+            - No eixo x
+                - ![](../../assets/faculdade/periodo1/20240326153338.png)
+            - Na origem
+                - ![](../../assets/faculdade/periodo1/20240326153353.png)
+        - Rotação
+            - ![](../../assets/faculdade/periodo1/20240326154007.png)
+        - Cisalhamento
+            - ![](../../assets/faculdade/periodo1/20240326155847.png)
+        - Translação
+            - ![](../../assets/faculdade/periodo1/20240326155906.png)
+
 ## Autovalores e autovetores
----
+- ![](../../assets/faculdade/periodo1/20240315123650.png)
+- Além disso, (v, λ) é dito um autopar do operador linear T
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240315124519.png)
+    - ![](../../assets/faculdade/periodo1/20240315124540.png)
+    - ![](../../assets/faculdade/periodo1/20240315124558.png)
+    - ![](../../assets/faculdade/periodo1/20240315124658.png)
+    - ![](../../assets/faculdade/periodo1/20240315124746.png)
+    - ![](../../assets/faculdade/periodo1/20240315124847.png)![](../../assets/faculdade/periodo1/20240315125225.png)
+- Autovetores/autovalores de operadores lineares
+    - ![](../../assets/faculdade/periodo1/20240315125434.png)
+    - Formas matriciais para ajudar a encontrar autovetores
+        - Teorema
+            - ![](../../assets/faculdade/periodo1/20240315125520.png)
+            - Ida
+                - ![](../../assets/faculdade/periodo1/20240315125533.png)
+                - ![](../../assets/faculdade/periodo1/20240315125541.png)
+            - Volta
+                - ![](../../assets/faculdade/periodo1/20240315125558.png)
+                - ![](../../assets/faculdade/periodo1/20240315133943.png)
+                - ![](../../assets/faculdade/periodo1/20240315134021.png)
+                - ![](../../assets/faculdade/periodo1/20240315140132.png)
+                    - (A-λI) - M
+                    - v - X
+- Polinômio característico
+    - Forma mais fácil de achar autovalores e autovetores na qual escrevemos um polinômio em função de λ, p(λ); logo, p(λ) é o polinômio característico de A
+    - Ou seja, p(λ) = det(A -λI)
+- Ex:
+    - ![](../../assets/faculdade/periodo1/20240315154031.png)
+        - ![](../../assets/faculdade/periodo1/20240315154041.png)
+            - ![](../../assets/faculdade/periodo1/20240315161652.png)
+                - (1-λ)(1-λ)-2 = 0 é o polinômio característico de A
+        - ![](../../assets/faculdade/periodo1/20240315154104.png)
+            - ![](../../assets/faculdade/periodo1/20240315165001.png)
+            - (1-λ)^4 = 0 é o polinômio característico de A
+- Diagonalização de operadores
+    - ![](../../assets/faculdade/periodo1/20240315175138.png)
+    - Teorema
+        - Autovetores associados a autovalores distintos são L.I.
+        - Prova
+            - ![](../../assets/faculdade/periodo1/20240315175348.png)
+        - Consequências
+            - Se V é um espaço vetorial de dimensão n e T: V→V é um operador linear que possui n valores distintos, então V possui uma base β cujos vetores são todos os autovetores de T
+            - Além disso, T de β para β é uma matriz diagonal pois é uma β é uma base formada apenas por autovetores de T
+                - Portanto, um operador T: V→V admite uma base β à qual sua matriz T de β para β é diagonal, se e somente se essa base β for formada por autovetores de T desde que dim(β) = dim(V)
+                - Além disso, os elementos que estão na diagonal representa os autovalores dos autovetores que estão na base β
+    - ![](../../assets/faculdade/periodo1/20240315181150.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240315140235.png)
+        - ![](../../assets/faculdade/periodo1/20240315140452.png)
+        - ![](../../assets/faculdade/periodo1/20240315141239.png)
+        - ![](../../assets/faculdade/periodo1/20240315141247.png)
+        - ![](../../assets/faculdade/periodo1/20240315141300.png)
+        - Para λ = 0:
+            - ![](../../assets/faculdade/periodo1/20240315141324.png)
+        - Para λ = √21:
+            - ![](../../assets/faculdade/periodo1/20240315141757.png)
+            - ![](../../assets/faculdade/periodo1/20240315141809.png)
+            - ![](../../assets/faculdade/periodo1/20240315141821.png)
+        - Para λ = -√21:
+            - ![](../../assets/faculdade/periodo1/20240315141934.png)
+            - ![](../../assets/faculdade/periodo1/20240315141943.png)
+        - ![](../../assets/faculdade/periodo1/20240315142032.png)
+            - ![](../../assets/faculdade/periodo1/20240315142334.png)
+            - Por ser uma base composta por autovetores, T de α em α resulta nos autovalores correspondentes aos autovetores de forma ordenada (a posição do autovalor depende da ordem em que os autovetores foram escritos na base) e que ficam na diagonal da matriz
+            - (-1,-1,1) - representa os autovetores de λ = 0; etc...
+            - Portanto, o operador T é diagonalizável
+        - ![](../../assets/faculdade/periodo1/20240315142500.png)
+        - ![](../../assets/faculdade/periodo1/20240315143132.png)
+        - ![](../../assets/faculdade/periodo1/20240315143140.png)
+            - Pode ser escrito como:
+                - ![](../../assets/faculdade/periodo1/20240315143210.png)
+            - OBS:
+            - ![](../../assets/faculdade/periodo1/20240315143228.png)
+    - Polinômio minimal
+        - ![](../../assets/faculdade/periodo1/20240315183542.png)
+        - ![](../../assets/faculdade/periodo1/20240315183610.png)
+        - ![](../../assets/faculdade/periodo1/20240315184459.png)
+        - ![](../../assets/faculdade/periodo1/20240315184507.png)
+        - Como achar o polinômio minimal de T:
+            - ![](../../assets/faculdade/periodo1/20240315190645.png)
+                - Com isso, provamos que toda matriz se anula no seu polinômio característico
+                - Quando encontramos este polinômio tal que p(A) = 0, então A é uma matriz diagonalizável
+            - ![](../../assets/faculdade/periodo1/20240315190702.png)
+            - ![](../../assets/faculdade/periodo1/20240315190712.png)
+            - ![](../../assets/faculdade/periodo1/20240315191652.png)
+                - Multiplicidade algébrica - número de vezes que λ aparece como raiz do polinômio característico
+                    - Ex: no exemplo acima, como p(λ) = (3-λ)²(-1-λ)²; logo, λ = 3 possui multiplicidade 2 bem como λ = -1 também possui multiplicidade 2
+                - Multiplicidade geométrica - dimensão do subespaço vetorial Sλ (dimensão do autoespaço associado ao autovalor λ)
+                - A multiplicidade algébrica de cada autovalor de T é igual à sua multiplicidade geométrica
+                - A multiplicidade geométrica é no mínimo 1 e no máximo a multiplicidade algébrica de λ no polinômio característico
+                    - Logo, a dimensão do autoespaço associado ao autovalor λ é no mínimo 1 e no máximo igual a multiplicidade algébrica deste autovalor λ no polinômio característico
+                - ![](../../assets/faculdade/periodo1/20240317125603.png)
+            - ![](../../assets/faculdade/periodo1/20240315191700.png)
+                - Como a multiplicidade algébrica de λ = 3 e λ = -1 é dois, bem como a dimensão geométrica de ambos também é dois, logo; na matriz T de β em β, 3 e -1 aparece duas vezes
+                - Como a multiplicidade algébrica de cada λ é igual à multiplicidade geométrica associada à cada λ, logo, T de β em β é diagonal
+        - Com isso, precisamos apenas saber a multiplicidade algébrica e geométrica de cada autovalor e com isso conseguimos achar os autovetores sem necessariamente destrinchar dentre todos os polinômios minimais
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240317123113.png)
+
 ## Produto interno
----
+- Seja V um espaço vetorial real, um produto interno sobre V é uma função V X V → R, que a cada par de elementos v e u em V, associa um número real k denotado por <v1,v2> satisfazendo as propriedades:
+    - ![](../../assets/faculdade/periodo1/20240318022609.png)
+- Produto interno euclidiano (usual)
+    - Sejam u = (u1,u1,...,un) e v = (v1,v2,...,vn) vetores do Rn; então a aplicação <·,·>: Rn X Rn → R é dada por:
+        - <u,v> = u1v1 + u2v2 + ... + unvn; define um produto interno, denominado produto interno euclidiano do Rn
+            - ![](../../assets/faculdade/periodo1/20240318025430.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240318024057.png)
+    - OBS:
+        - Produto interno estrela
+            - ![](../../assets/faculdade/periodo1/20240318025533.png)
+        - Produto interno com integral
+            - ![](../../assets/faculdade/periodo1/20240318044446.png)
+- Ortogonalidade
+    - Seja V um espaço vetorial com produto interno <,>; diz-se que dois vetores v e w de V são ortogonais se <v,w> = 0
+        - Caso v e w sejam de fato ortogonais, escrevemos que v ⊥ w
+    - Propriedades
+        - ![](../../assets/faculdade/periodo1/20240318024603.png)
+    - Teorema
+        - ![](../../assets/faculdade/periodo1/20240318024657.png)
+        - Prova
+            - ![](../../assets/faculdade/periodo1/20240318024734.png)
+    - Diz-se que uma base {v1,v2,...,vn} é base ortogonal se <vi,vj> = 0 para i ≠ j, isto é, os vetores da base são dois a dois ortogonais
+    - Projeção ortogonal
+        - ![](../../assets/faculdade/periodo1/20240318050259.png)
+        - ![](../../assets/faculdade/periodo1/20240318050316.png)
+        - ![](../../assets/faculdade/periodo1/20240318050344.png)
+        - ![](../../assets/faculdade/periodo1/20240318050352.png)
+- Coeficientes de Fourier
+    - ![](../../assets/faculdade/periodo1/20240318041005.png)
+    - ![](../../assets/faculdade/periodo1/20240318041019.png)
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240318041153.png)
+- Norma
+    - Seja V um espaço vetorial com um produto interno <,>; a norma de um vetor v = (u1, ... , un) em relação ao produto interno é dada por ||v|| = √<v,v> = √u1² + ... + un²
+        - Se ||v|| = 1, isto é, <v,v> = 1, dizemos que v é um vetor unitário e que v está normalizado
+    - Todo vetor não nulo v∈V pode ser normalizado
+        - ![](../../assets/faculdade/periodo1/20240318040733.png)
+        - Na qual u é o vetor v normalizado
+    - Propriedades
+        - ![](../../assets/faculdade/periodo1/20240318042415.png)
+    - Distância
+        - ![](../../assets/faculdade/periodo1/20240318044729.png)
+- Cosseno
+    - Podemos definir a medida entre o ângulo de u e v da seguinte forma:
+        - ![](../../assets/faculdade/periodo1/20240318042458.png)
+- Base ortonormal
+    - ![](../../assets/faculdade/periodo1/20240318044938.png)
+        - ![](../../assets/faculdade/periodo1/20240318044947.png)
+- Processo de ortogonalização de Gram-Schmidt
+    - ![](../../assets/faculdade/periodo1/20240318050032.png)
+    - ![](../../assets/faculdade/periodo1/20240318052218.png)
+    - OBS: para dimensões maiores que 2:
+        - ![](../../assets/faculdade/periodo1/20240319154237.png)
+        - E assim por diante
+        - Para ser base ortonormal basta normalizar cada vetor
+    - Ou seja, para obtermos uma base ortonormal a partir de uma qualquer, fazemos o processo de Gram-Schmidt para descobrir cada vetor e depois normalizamos cada vetor descoberto
+    - Ex:
+        - ![](../../assets/faculdade/periodo1/20240318052709.png)
+- Complemento ortogonal
+    - ![](../../assets/faculdade/periodo1/20240318110722.png)
+        - ![](../../assets/faculdade/periodo1/20240318110609.png)
+- Matriz do produto interno
+    - ![](../../assets/faculdade/periodo1/20240319162503.png)
+        - A matriz muda dependendo da base
+    - Com isso, podemos definir o produto interno como:
+        - ![](../../assets/faculdade/periodo1/20240319162824.png)
+            - u.v é o produto interno
+            - Onde Gα é a matriz do produto interno, [u]α^T é o vetor u na base alfa transposto e [v]α é o vetor v na base α
+    - Se a base for ortogonal, a matriz do produto interno vai ser uma matriz diagonal
+    - Se a base for ortonormal, a matriz do produto interno vai ser a matriz identidade
+- ![](../../assets/faculdade/periodo1/20240319163541.png)
+    - Ou seja, a matriz do produto interno é simétrica
+    - Teorema
+        - ![](../../assets/faculdade/periodo1/20240319163652.png)
+- Matriz de mudança de base
+    - Sejam α e β bases ortonormais, a matriz de mudança de base de α para β possui a seguinte propriedade:
+        - ![](../../assets/faculdade/periodo1/20240319163859.png)
+        - Ou seja, a matriz de mudança de base de β para α é ortogonal, logo sua inversa é igual à sua transposta
+- Operadores especiais
+    - Operador ortogonal
+        - ![](../../assets/faculdade/periodo1/20240319164936.png)
+        - ![](../../assets/faculdade/periodo1/20240319165357.png)
+            - Ou seja, preserva o produto interno
+        - OBS:
+            - ![](../../assets/faculdade/periodo1/20240319165409.png)
+    - Operador auto-adjunto
+        - ![](../../assets/faculdade/periodo1/20240319165009.png)
+        - Teorema
+            - ![](../../assets/faculdade/periodo1/20240319165111.png)
+        - Teorema
+            - ![](../../assets/faculdade/periodo1/20240319165557.png)
+                - Ou seja, v1 e v2 são ortogonais
+        - Teorema
+            - ![](../../assets/faculdade/periodo1/20240319170010.png)
+            - Ou seja, se A = [T] de α em α = A^T (matriz simétrica), então A é diagonalizável e existe uma base ortonormal de autovalores de T; na qual A pode ser vista como a matriz de um operador auto-adjunto com relação à uma base ortonormal
+    - Teorema
+        - ![](../../assets/faculdade/periodo1/20240319170044.png)
