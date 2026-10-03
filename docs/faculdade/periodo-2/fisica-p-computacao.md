@@ -1,209 +1,181 @@
 # FÍSICA P/ COMPUTAÇÃO
 
----
+## Eletrostática
 
-## Eletroestática
+A **eletrostática** é o ramo da física que estuda o comportamento de cargas elétricas em repouso.
 
-- Ramo da física que observa o comportamento de cargas elétricas em repouso
-- Cargas elétricas
-    
-    Carga elementar = e = 1.6x10^-19 Coulombs
-    
-    - Unidades de medida
-        - Mili (m)
-            - 10^-3
-        - Micro (µ)
-            - 10^-6
-        - Nano (n)
-            - 10^-9
-    - Elétrons
-        - Carga negativa
-        - É uma particula elementar
-        - São muito mais móveis do que prótons
-        - São léptons, ou seja, não são compostos por quarks
-        - Carga elétrica = -e
-    - Prótons
-        - Carga positiva
-        - Possui 2 quarks up e 1 down
-        - Não é uma partícula elementar
-        - Carga elétrica = e
-            - Carga = 2x(2e/3) + -e/3 = +1.6x10^-19
-    - Nêutrons
-        - Carga neutra
-        - Possui 2 quarks down e 1 up
-        - Carga elétrica = 0
-            - Carga = (2e/3) + 2x(-e/3) = 0
-- Materiais
-    - Condutores, isolantes, semicondutores, supercondutores
-- Força elétrica (Lei de Coulumb)
-    - É a força entre duas cargas
-    
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled.png)
-    
-    - Fórmula
-        
-        $$
-        
-        F = \frac{K \cdot |q_1 \cdot q_2|}{r^2}
-        
-        $$
-        
-        $$
-        K = 1 / \text{4πε}
-        $$
-        
-        ε = Permissividade elétrica do meio (depende do meio)
-        
-        K = 9x10^9 N.m²/C² (constante)
-        
-        q1 e q2 = Magnetude das cargas elétricas
-        
-        r = Distância entre os centros das cargas
-        
-        Unidade = Newton
-        
-    - A força é um vetor, que pode ser dividida em Fe x̂ e Fe ŷ; ou seja, Força elétrica na coordenada x e Força elétrica na coordenada y
-        - Revisão de vetores
-            
-            ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%201.png)
-            
-    - Atração
-        - Cargas opostas se atraem
-    - Repulsão
-        - Cargas iguais se repelem
-    - Exemplo
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%202.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%203.png)
-        
-        - (Ele quer saber a quantidade de elétrons em cada carga)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%204.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%205.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%206.png)
-        
-- Princípio da superposição
-    - Força entre 3 ou mais cargas
-    - O princípio diz que a força entre duas cargas num grupo de cargas é independente da presença das outras cargas
-        - Logo, a força elétrica resultante entre essas 3 ou mais cargas é o vetor resultante das forças elétricas entre essas cargas
-            
-            ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%207.png)
-            
-    - Exemplo
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%208.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%209.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2010.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2011.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2012.png)
-        
-        - Sem querer eu coloquei 0.9/4.4; mas o certo é 0.9/4.7 = 0.1914893617
-            - O arctan(0.1914893617) é exatamente 10.8º
-- Campo elétrico
-    - É um campo vetorial provocado pela ação de cargas elétricas, que existe tanto no vácuo como em meio material
-    - Tipos de campo
-        - Escalares
-            - Retorna um valor escalar
-            - Exemplo: pressão
-        - Vetoriais
-            - Retorna um valor vetorial
-            - Exemplo: velocidade das partícula num fluido
-    - Para caracterizar E, usamos uma carga de prova q’, onde q’ é sempre uma carga positiva (maior que zero)
-        - Com essa caracterização, descobrimos como se calcular o campo elétrico:
-            
-            $$
-            E = \frac{K|q|}{r^2} \hat{\imath}
-            
-            $$
-            
-            K = 9x10^9 N.m²/C² (constante)
-            
-            q = magnetude das cargas elétricas
-            
-            r = distância da carga para a carga de prova
-            
-            î = direção do campo elétrico
-            
-            Unidade = N/C
-            
-    - Dependendo da carga, o campo elétrico é positivo ou negativo
-        - Se a carga for positiva
-            
-            ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2013.png)
-            
-            - A direção do campo elétrico é contrária aonde a carga está
-        - Se a carga for negativa
-            
-            ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2014.png)
-            
-            - O campo elétrico é em direção aonde a carga está
-    - Linhas de fluxo
-        - Fornecem a direção e o sentido do campo E local
-        - A densidade da linha é proporcional à intensidade de E; que é proporcional à carga q; que é inversamente proporcional à r²
-            - Ou seja, se as linhas de fluxo forem menores vão existir mais linhas; se as linhas de fluxo forem maiores vão existir menos linhas
-                
-                ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2015.png)
-                
-    - Exemplo
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2016.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2017.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2018.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2019.png)
-        
-    - Campo gerado por várias cargas
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2020.png)
-        
-        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2021.png)
-        
-- Energia potencial elétrica
-    - Energia potencial elétrica é uma forma de energia relacionada à posição relativa entre pares de cargas elétricas
-    - Fórmula
-        
-        $$
-        Ep(r) = \frac{K \cdot |q_1 \cdot q_2|}{r}
-        $$
-        
-        K = 9x10^9 N.m²/C² (constante)
-        
-        q1 e q2 = magnetude das cargas elétricas
-        
-        r = Distância entre as cargas
-        
-        Unidade = J
-        
-        - Caso queira calcular a Ep entre duas cargas deve utilizar apenas a fórmula acima
-        - Caso queira calcular a Ep entre três ou mais cargas, deve se fazer um somatório dos energias
-            - Exemplo
-                
-                ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2022.png)
-                
-- Potencial elétrico
-    - É a capacidade que um corpo energizado tem de realizar trabalho, ou seja, atrair ou repelir outras cargas elétricas
-    - Fórmula
-        
-        $$
-        V(r) = \frac{Ep(r)}{q'} = \frac{Kq}{r}
-        $$
-        
-        K = 9x10^9 N.m²/C² (constante)
-        
-        q’ e q = Magnetude das cargas elétricas
-        
-        r = Distância entre as cargas
-        
-        Unidade = V (J/C)
-        
+### Cargas elétricas
 
----
+A **carga elementar** é a menor unidade de carga elétrica livre observada na natureza: $e = 1{,}6 \times 10^{-19}$ Coulombs.
+
+**Unidades de medida (prefixos usados para submúltiplos)**
+
+| Prefixo | Símbolo | Fator |
+|---|---|---|
+| Mili | m | $10^{-3}$ |
+| Micro | µ | $10^{-6}$ |
+| Nano | n | $10^{-9}$ |
+
+**Partículas elementares e sua carga**
+
+- **Elétrons** — têm carga negativa ($-e$); são partículas elementares, ou seja, não são compostas por quarks (são **léptons**); e são muito mais móveis do que os prótons.
+- **Prótons** — têm carga positiva ($+e$); não são partículas elementares, sendo compostos por 2 quarks *up* e 1 quark *down*. A carga resultante é $2 \times \frac{2e}{3} + \left(-\frac{e}{3}\right) = +1{,}6 \times 10^{-19}$ C.
+- **Nêutrons** — têm carga neutra ($0$); são compostos por 2 quarks *down* e 1 quark *up*. A carga resultante é $\frac{2e}{3} + 2 \times \left(-\frac{e}{3}\right) = 0$.
+
+### Materiais
+
+De acordo com sua capacidade de conduzir eletricidade, os materiais são classificados em: **condutores**, **isolantes**, **semicondutores** e **supercondutores**.
+
+### Força elétrica (Lei de Coulomb)
+
+A **força elétrica** é a força de interação entre duas cargas.
+
+![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled.png)
+
+**Fórmula (Lei de Coulomb)**
+
+$$F = \frac{K \cdot |q_1 \cdot q_2|}{r^2}$$
+
+$$K = \frac{1}{4\pi\varepsilon}$$
+
+Onde:
+
+- $\varepsilon$ — permissividade elétrica do meio (depende do meio em que as cargas estão).
+- $K$ — constante eletrostática, $K = 9 \times 10^9 \, \text{N} \cdot \text{m}^2/\text{C}^2$.
+- $q_1$ e $q_2$ — magnitude das cargas elétricas.
+- $r$ — distância entre os centros das cargas.
+- Unidade de $F$: Newton.
+
+A força elétrica é uma grandeza vetorial, podendo ser decomposta em $F_e \hat{x}$ e $F_e \hat{y}$ — isto é, a componente da força elétrica na coordenada $x$ e na coordenada $y$, respectivamente.
+
+!!! note "Revisão de vetores"
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%201.png)
+
+**Atração e repulsão**
+
+- Cargas opostas se **atraem**.
+- Cargas iguais se **repelem**.
+
+!!! example
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%202.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%203.png)
+
+    (O objetivo do exercício é determinar a quantidade de elétrons presente em cada carga.)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%204.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%205.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%206.png)
+
+### Princípio da superposição
+
+Trata da força resultante entre três ou mais cargas. O princípio afirma que a força entre duas cargas, dentro de um grupo de cargas, é **independente** da presença das demais cargas do grupo. Logo, a força elétrica resultante entre três ou mais cargas é o vetor resultante da soma das forças elétricas entre cada par de cargas.
+
+![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%207.png)
+
+!!! example
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%208.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%209.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2010.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2011.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2012.png)
+
+    !!! warning "Correção de cálculo"
+        Na resolução original, foi usado por engano $0{,}9/4{,}4$; o valor correto é $0{,}9/4{,}7 = 0{,}1914893617$. O $\arctan(0{,}1914893617)$ é exatamente $10{,}8°$.
+
+### Campo elétrico
+
+O **campo elétrico** é um campo vetorial provocado pela ação de cargas elétricas, existindo tanto no vácuo quanto em meios materiais.
+
+**Tipos de campo**
+
+- **Escalares** — retornam um valor escalar (ex.: pressão).
+- **Vetoriais** — retornam um valor vetorial (ex.: velocidade das partículas em um fluido).
+
+Para caracterizar o campo elétrico $E$, usa-se uma **carga de prova** $q'$, sempre positiva ($q' > 0$). Com essa caracterização, obtém-se a fórmula do campo elétrico:
+
+$$E = \frac{K|q|}{r^2}\hat{\imath}$$
+
+Onde:
+
+- $K = 9 \times 10^9 \, \text{N} \cdot \text{m}^2/\text{C}^2$ (constante).
+- $q$ — magnitude da carga elétrica geradora do campo.
+- $r$ — distância da carga até a carga de prova.
+- $\hat{\imath}$ — direção do campo elétrico.
+- Unidade de $E$: N/C.
+
+**Sinal da carga e direção do campo**
+
+=== "Carga positiva"
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2013.png)
+
+    A direção do campo elétrico é contrária ao local onde a carga está (aponta para fora da carga).
+
+=== "Carga negativa"
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2014.png)
+
+    O campo elétrico aponta em direção ao local onde a carga está.
+
+**Linhas de fluxo**
+
+As linhas de fluxo fornecem a direção e o sentido do campo $E$ local. A densidade das linhas é proporcional à intensidade de $E$, que por sua vez é proporcional à carga $q$ e inversamente proporcional a $r^2$. Em outras palavras, onde as linhas de fluxo estão mais próximas umas das outras (mais densas), existem mais linhas; onde estão mais espaçadas, existem menos linhas.
+
+![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2015.png)
+
+!!! example
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2016.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2017.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2018.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2019.png)
+
+**Campo gerado por várias cargas**
+
+Da mesma forma que a força elétrica, o campo elétrico resultante gerado por várias cargas é a soma vetorial (princípio da superposição) do campo gerado por cada carga individualmente.
+
+![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2020.png)
+
+![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2021.png)
+
+### Energia potencial elétrica
+
+A **energia potencial elétrica** é uma forma de energia relacionada à posição relativa entre pares de cargas elétricas.
+
+**Fórmula**
+
+$$E_p(r) = \frac{K \cdot |q_1 \cdot q_2|}{r}$$
+
+Onde:
+
+- $K = 9 \times 10^9 \, \text{N} \cdot \text{m}^2/\text{C}^2$ (constante).
+- $q_1$ e $q_2$ — magnitude das cargas elétricas.
+- $r$ — distância entre as cargas.
+- Unidade: Joule (J).
+
+Para calcular a energia potencial elétrica entre **duas** cargas, basta aplicar a fórmula acima diretamente. Para calcular a energia potencial elétrica entre **três ou mais** cargas, deve-se fazer o somatório das energias potenciais de cada par de cargas.
+
+!!! example
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2022.png)
+
+### Potencial elétrico
+
+O **potencial elétrico** é a capacidade que um corpo energizado tem de realizar trabalho — ou seja, de atrair ou repelir outras cargas elétricas.
+
+**Fórmula**
+
+$$V(r) = \frac{E_p(r)}{q'} = \frac{Kq}{r}$$
+
+Onde:
+
+- $K = 9 \times 10^9 \, \text{N} \cdot \text{m}^2/\text{C}^2$ (constante).
+- $q'$ e $q$ — magnitude das cargas elétricas.
+- $r$ — distância entre as cargas.
+- Unidade: Volt (V), equivalente a J/C.

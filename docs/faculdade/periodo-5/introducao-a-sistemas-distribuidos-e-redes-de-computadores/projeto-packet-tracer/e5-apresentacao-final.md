@@ -1,77 +1,75 @@
-# E5 - Apresentação Final
-
-# 🎤 E5 - Apresentação Final do Projeto
+# E5 - Apresentação Final do Projeto
 
 **Data de Entrega:** 19/11 (Quarta-feira)
 
-**Critério Principal:** **Conectividade Total** - os PCs devem conversar entre si e navegar na Internet. Demonstração oral de funcionamento.
+**Critério Principal:** **Conectividade Total** — os PCs devem conversar entre si e navegar na Internet. Demonstração oral de funcionamento.
 
 ---
 
-## 📖 O que é esperado nesta entrega?
+## O que é esperado nesta entrega?
 
-A E5 é a **culminação** do projeto. Você deverá:
+A E5 é a culminação do projeto. Você deverá:
 
-1. **Consolidar toda a documentação** (E1 a E4) em um relatório final coeso
-2. Apresentar o funcionamento da rede no Packet Tracer
-3. **Explicar suas decisões de design** e justificar escolhas técnicas
+1. Consolidar toda a documentação (E1 a E4) em um relatório final coeso.
+2. Apresentar o funcionamento da rede no Packet Tracer.
+3. Explicar suas decisões de design e justificar escolhas técnicas.
 
-Esta é sua oportunidade de mostrar que você não apenas seguiu instruções, mas **compreendeu** os fundamentos de redes!
+Esta é a oportunidade de mostrar que você não apenas seguiu instruções, mas compreendeu os fundamentos de redes.
 
 ---
 
 ### Demonstração 1: Tabela de Roteamento
 
-```
+```text
 R-CIN# show ip route
 ```
 
 ### Demonstração 2: VLANs e Trunks
 
-```
+```text
 Switch-Core# show vlan brief
 Switch-Core# show interfaces trunk
 ```
 
 ### Demonstração 3: DHCP em Ação
 
-- Abrir um PC
-- Mostrar que está configurado para DHCP
-- Executar `ipconfig` no Command Prompt
+- Abrir um PC.
+- Mostrar que está configurado para DHCP.
+- Executar `ipconfig` no Command Prompt.
 
 ### Demonstração 4: Conectividade Intra-VLAN
 
-```
+```text
 PC-Lab1-01> ping 172.20.1.10
 ```
 
 ### Demonstração 5: Conectividade Inter-VLAN
 
-```
+```text
 PC-Lab1-01> ping 172.20.1.70
 ```
 
 ### Demonstração 6: Traceroute
 
-```
+```text
 PC-Lab1-01> tracert 172.20.1.70
 ```
 
 ### Demonstração 7: Conectividade Externa
 
-```
+```text
 PC-Lab1-01> ping 2.2.2.2
 ```
 
 ---
 
-## 🎯 Perguntas que serão feitas
+## Perguntas que Serão Feitas
 
 Esteja preparado para responder:
 
 ### Sobre Design
 
-- "Como escalaria esta rede para 10 laboratórios?"
+- "Como você escalaria esta rede para 10 laboratórios?"
 
 ### Sobre VLSM
 
@@ -94,9 +92,8 @@ Esteja preparado para responder:
 
 ---
 
-**❌ Evite:**
-
-- Ler slides ou relatório palavra por palavra
-- Demonstrações muito longas sem explicação
-- Jargão técnico excessivo sem contexto
-- Culpar erros no software ("o Packet Tracer está bugado")
+!!! warning "Evite"
+    - Ler slides ou relatório palavra por palavra.
+    - Demonstrações muito longas sem explicação.
+    - Jargão técnico excessivo sem contexto.
+    - Culpar erros no software ("o Packet Tracer está bugado").

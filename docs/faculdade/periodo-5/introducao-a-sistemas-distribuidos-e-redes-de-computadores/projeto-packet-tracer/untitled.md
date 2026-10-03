@@ -4,7 +4,7 @@
 
 Vocês são a Equipe de Elite de Analistas de Redes e foram convocados para um desafio de vida ou morte no mundo da conectividade: acabar de uma vez por todas com o caótico problema de lentidão, configuração errada e desperdício de IPs e equipamentos nos laboratórios do Centro de Informática da UFPE.
 
-A missão é clara: a rede está um “caótica” de configurações antigas e endereçamento ineficiente. A única solução é estruturar a rede do zero.
+A missão é clara: a rede está um caos de configurações antigas e endereçamento ineficiente. A única solução é estruturar a rede do zero.
 
 A alta gerência decidiu que cada grupo de analistas criará um projeto-piloto completo. A rede de produção será montada com base naquele que apresentar a melhor solução técnica e o uso mais eficiente de recursos.
 
@@ -17,13 +17,13 @@ O objetivo é planejar e documentar a reestruturação completa de uma instânci
 ### **Requisitos e Cenário**
 
 - **Bloco IP Único:** Cada grupo pode encontrar o seu bloco IP na planilha de grupos do Classroom.
-- **VLSM Obrigatório:** Seu grupo deve usar o bloco ‘/24‘ para criar cinco sub-redes com os tamanhos apropriados dos laboratórios simulados, aplicando VLSM para minimizar o desperdício de IP:
+- **VLSM Obrigatório:** Seu grupo deve usar o bloco `/24` para criar cinco sub-redes com os tamanhos apropriados dos laboratórios simulados, aplicando VLSM para minimizar o desperdício de IP:
     1. Sub-rede para 35 hosts (precisará de 2 switches)
     2. Sub-rede para 30 hosts (precisará de 2 switches)
     3. Sub-rede para 20 hosts
     4. Sub-rede para 20 hosts
     5. Sub-rede para 15 hosts
-- **Conectividade Externa (Provedor Pronto):** O Roteador do CIn (R-CIN) conecta-se à RNP em ‘2.2.2.2 /30‘.
+- **Conectividade Externa (Provedor Pronto):** O Roteador do CIn (R-CIN) conecta-se à RNP em `2.2.2.2/30`.
 
 ### **Equipamentos Disponíveis por Grupo (Uso Mínimo/Máximo)**
 

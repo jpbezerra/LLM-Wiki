@@ -1,1379 +1,883 @@
 # COMPILADORES
 
-[https://www.youtube.com/@LeopoldoTeixeiraCInUFPE/playlists](https://www.youtube.com/@LeopoldoTeixeiraCInUFPE/playlists)
-
-[https://if688.github.io](https://if688.github.io/)
-
-[https://github.com/if688/if688.github.io/tree/master](https://github.com/if688/if688.github.io/tree/master)
-
----
+!!! info "Referências do curso"
+    - [Playlists do professor Leopoldo Teixeira (CIn/UFPE)](https://www.youtube.com/@LeopoldoTeixeiraCInUFPE/playlists)
+    - [Material do curso IF688](https://if688.github.io)
+    - [Repositório do curso no GitHub](https://github.com/if688/if688.github.io/tree/master)
 
 ## Conceitos
 
-- Linguagem
-    - É um sistema de comunicação baseado em símbolos e regras, essencial para a comunicação
-    - Como expressar uma linguagem que uo computador entenda? Linguagens de programação
-- Compilador
-    - Antes de um programa ser executado, é preciso traduzi-lo em algo que um computador possa executar
-    - Essa tradução é feita através dos compiladores, que possuem a função de traduzir de uma linguagem fonte para uma linguagem alvo
-        - Existem diversas linguagens que fazem explitamente o processo de compilação primeiro para depois executar o programa → linguagens compiladas
-        
-        ![image.png](../../assets/faculdade/periodo4/compiladores/image.png)
-        
-    - Ao ser compilado, o programa alvo vira um executável
-        - Existem linguagens que abstraem a parte de compilação e executa diretamente o programa → linguagens interpretadas
-        
-        ![image.png](../../assets/faculdade/periodo4/compiladores/image%201.png)
-        
-- Existem linguagens que misturam as duas partes, utilizando um programa intermediário e uma máquina virtual para executar os programas
-    - Tradutor gera código intermediário e máquina virtual executa este código
-    
-    ![image.png](../../assets/faculdade/periodo4/compiladores/image%202.png)
-    
-- Os compiladores não tentam traduzir o código inteiro de uma vez, mas aplicam o “dividir para conquistar” a fim de quebrar o código em módulos independentes
-    - Por isso, os compiladores possuem duas grandes fases: análise e síntese
+Uma **linguagem** é um sistema de comunicação baseado em símbolos e regras — essencial para qualquer forma de comunicação, humana ou não. A pergunta que motiva toda essa disciplina é: como expressar uma linguagem que o computador entenda? A resposta prática são as **linguagens de programação**.
+
+Antes que um programa possa ser executado, é preciso traduzi-lo para algo que o computador consiga realmente processar. Essa tradução é feita por um **compilador**: um programa cuja função é traduzir de uma **linguagem fonte** para uma **linguagem alvo**.
+
+Existem linguagens que fazem esse processo de compilação explicitamente, antes de executar o programa — chamadas de **linguagens compiladas**:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image.png)
+
+Ao ser compilado, o programa alvo se torna um executável. Já existem linguagens que abstraem completamente essa etapa de compilação e executam o programa diretamente — chamadas de **linguagens interpretadas**:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%201.png)
+
+E existem linguagens que misturam as duas abordagens, usando um programa intermediário e uma máquina virtual para executar os programas: um tradutor gera um **código intermediário**, e uma máquina virtual executa esse código.
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%202.png)
+
+!!! tip "Dividir para conquistar"
+    Os compiladores não tentam traduzir o código inteiro de uma só vez — eles aplicam a estratégia de "dividir para conquistar", quebrando o processo em módulos independentes. Por isso, todo compilador possui duas grandes fases: **análise** e **síntese**.
 
 ---
 
 ## Fases da Compilação
 
-- O Front End simboliza a fase de análise e o Back End simboliza a fase de síntese
-    
-    ![image.png](../../assets/faculdade/periodo4/compiladores/image%203.png)
-    
-- Análise
-    - Serve para transformar o código fonte textual em uma IR válida, correta e livre de erros para que o compilador consiga entender e trabalhar
-    - Etapas
-        - Análise Léxica (Scanner)
-            - Converte o texto do programa em tokens, a fim de identificar a estrutura básica do código
-                - Os tokens podem conter algum valor associado
-                - Exemplo
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%204.png)
-                    
-            - Conceitos
-                - Token: par com o nome do token e atributos opcionais
-                    - São especificados por meio de expressões regulares
-                - Lexema: sequência de caracteres que casam com o padrão de um tipo de token
-                - Padrão: descrição de possíveis lexemas associados a um tipo de token
-            - O projetista do compilador caracteriza o analisador léxico por meio de expressões regulares (ERs), a geração do analisador léxico é automática a partir da definição das ERs
-                - Expressão regular
-                    - Formalismo denotacional definida a partir de conjuntos básicos, concatenação e união
-                    - Operadores regulares
-                        - Operador .
-                            - . → reconhece qualquer caractere exceto “\n”
-                            - a.c → abc, aac, acc, a9c, etc.
-                        - Operador *
-                            - r* permite zero ou mais repetições de r
-                            - r* reconhece “”, “r”, “rr”, etc.
-                        - Operador +
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%205.png)
-                            
-                        - Operador ?
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%206.png)
-                            
-                        - Operador |
-                            - Significa “ou”
-                            - r1 | r2 → r1 ou r2
-                    - Classes de caracteres
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%207.png)
-                        
-                        - Também existe [^xyz], significa qualquer caractere exceto x,y e z
-                        - [^0-9] → qualquer caractere exceto dígito
-                    - Exemplo
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%208.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%209.png)
-                        
-            - É preciso definir a microsintaxe da linguagem (os tokens e lexemas), definir critérios de separação e agregação de palavras, estabelecer palavras especiais e reservadas e implementar o analisador a partir da especificação
-            - Exemplos
-                - 1
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2010.png)
-                    
-                - 2
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2011.png)
-                    
-            - Reconhecimento de tokens
-                - Para reconhecer os tokens, é necessário gerar diagramas de transição e depois implementar uma máquina de estados combinando estes diagramas
-                - Exemplo
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2012.png)
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2013.png)
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2014.png)
-                    
-            - Lexer interage ditamente com o parser
-                - Ajuda no reconhecimento de erros
-                
-                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2015.png)
-                
-        - Análise Sintática (Parser)
-            - Usa os tokens gerados na análise léxica para construir uma árvore sintática e verificar se a estrutura do código segue a gramática da linguagem
-                - Cada nó interno da árvore representa uma operação e os nós filhos representam argumentos
-            - Serve para detectar erros da estrutura
-            - Exemplo
-                
-                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2016.png)
-                
-            - Casos
-                - Caso o parser ocorra perfeitamente, então a sintaxe do programa está correta e a tring de entrada está bem formatada
-                - Caso contrário, há um erro de sintaxe ou violação das regras de sintaxe
-                - Independente dos casos, o programa pode ainda conter erros capturados ou não pelo type checker
-            - Gramática
-                - A gramática de livre contexto (GLC) caracteriza a linguagem e o parser gerado a partir de uma GLC pode ser automatizado
-                    - Para cada classe gramatical da GLC haverá uma estrutura de dados correspondente
-                - Derivamos palavras de uma gramática G a partir do seu símbolo inicial e repetidamente substituindo não-terminais pelo corpo de uma produção
-                    - A linguagem gerada por G chama-se L(G) e inclui todas as strings que podemos obter através de derivações em G
-                    - Exemplo
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2017.png)
-                        
-                - Expressões regulares vs Gramáticas livres de contexto
-                    - Tudo que pode ser escrito por uma ER pode ser escrito com GLC, mas:
-                        - Regras léxicas são mais especificadas mais simplesmente com ER
-                        - ER geralmente são mais concisas e simples
-                        - Podem ser gerados analisadores léxicos mais eficientes a partir de expressões regulares
-                        - Estrutura/modulariza o front-end do compilador
-                    - ER são convenientes para especificar a estrutura de construções léxicas, como identificadores, constantes, palavras, chave e etc.
-                    - Usamos gramáticas para especificar estruturas aninhadas, como parênteses, begin-end, if-then-else e etc.
-                - Derivação
-                    - Dada uma gramática G, produz uma string s que faz parte de L(G)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2018.png)
-                        
-            - Parsing
-                - Dada uma string s em L(G), produz uma árvore sintática que demonstra como obter a derivação de s
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2019.png)
-                    
-                - Para gramáticas livres de contexto sempre é possível construir um parser com complexidade O(n³) para fazer o parsing de n tokens
-                    - Na prática, o parsing de linguagens de programação normalmente pode ser feito linearmente
-                    - Travessia linear da esquerda para a direita, olhando um token de cada vez
-                - Parsers devem ler não apenas os símbolos terminas, mas também o marcador de fim de arquivo (EOF)
-                    - Usa-se $ para representar o fim do arquivo
-                    - S’ → S$
-                - Categorias
-                    - Métodos de parsing universais: funcionam para qualquer gramática, mas são muito ineficientes (inviáveis para uso prático)
-                    - Top down
-                        - Constroem as parse trees a partir da raiz em direção às folhas
-                        - Método
-                            - A partir do símbolo inicial da gramática, consuma tokens da esquerda para a direita
-                            - Decida que produção aplicar, de acordo com o token retornado
-                            - Continue até que um dos casos seja verdadeiro:
-                                - Todas as folhas sejam símbolos terminais e não há mais tokens a serem lidos da entrada
-                                - Ocorra uma falta de correspondência entre a entrada e as folhas da parse tree parcialmente construída
-                                    - Nesse, caso utiliza backtracking e restaura o estado anterior à última escolha
-                        - Exemplo
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2020.png)
-                            
-                        - Backtracking
-                            - É interessante ter parsers que não fazem backtracking, pois causa ineficiência de código
-                                - Principalmente em parser top-down e leftmost
-                            - Como solução, o ideal é realizar um predective parsing
-                        - Predective parsing
-                            - O token lido como primeiro terminal deve fornecer informação suficiente para decidirmos que produção aplicar
-                            - Situações que geram problemas para predective parsing
-                                - Recursão à esquerda
-                                    - Uma gramática é recursiva à esquerda se existe um não terminal A tal que existe uma derivação de A que gera Aα, para alguma string α
-                                    - Existem técnicas para eliminar a recursão à esquerda automaticamente
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2021.png)
-                                        
-                                    - Técnicas
-                                        - Reescrever produções tornando-as recursivas à direita
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2022.png)
-                                            
-                                            - Exemplo
-                                                
-                                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2023.png)
-                                                
-                                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2024.png)
-                                                
-                                        - Fatoração à esquerda
-                                            - Técnica de transformação de gramática usada para produzir uma gramática adequada para predective parsing
-                                            - Combina os casos em que há mais de uma alternativa a partir do reconhecimento de um token
-                                            - Existem algoritmos para fazer a fatoração à esquerda
-                                            - Exemplo
-                                                
-                                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2025.png)
-                                                
-                                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2026.png)
-                                                
-                                                - Solução
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2027.png)
-                                                    
-                                - Ambiguidade
-                                    - Uma gramática é dita ambígua quando gera mais de uma parse-tree para a mesma string
-                                        - Interpretação pode ser diferente de
-                                        acordo com estrutura derivada
-                                        - Exemplo
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2028.png)
-                                            
-                            - Gramática preditiva
-                                - Características
-                                    - É uma gramática LL(1)
-                                        - O parser lê a entrada da esquerda para a direita
-                                        - Produz uma derivação mais à esquerda (leftmost derivation)
-                                        - Usa 1 símbolo lookahead para decidir qual regra aplicar
-                                    - É uma gramática não ambígua, cada entrada (símbolo terminal) leva a no máximo uma produção possível
-                                    - Não é recursiva à esquerda → não pode ter produções que começam com o próprio não terminal
-                                    - Fatorada à esquerda (left-factored) → se duas produções de um mesmo não terminal começam com o mesmo prefixo, este prefixo deve ser extraído
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2029.png)
-                                        
-                                - A construção dos parsers top-down e bottom-up é auxiliada pelos conjuntos e funções de FIRST e FOLLOW, que auxiliam o parser a decidir qual produção será aplicada com base no próximo símbolo de entrada
-                                - Classe rica o suficiente para cobrir a maioria das construções de linguagens de programação
-                                - FIRST
-                                    - FIRST(α), onde α é qualquer string de símbolos da gramática, é o conjunto de terminais que iniciam strings derivadas a partir de α
-                                    - Se α pode gerar ε, ε pertence a FIRST(α)
-                                    - Exemplo
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2030.png)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2031.png)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2032.png)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2033.png)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2034.png)
-                                        
-                                    - Como calcular FIRST(X)
-                                        - Se x é um terminal FIRST(X) = {x};
-                                        - Se X → ε, ε ∈ FIRST(X)
-                                        - Se X → Y1Y2...Yk, FIRST(Y1Y2...Yk) ⊆ FIRST(X)
-                                        - FIRST(Y1Y2...Yk) é
-                                            - [ε ∉ FIRST(Y1)] FIRST(Y1); ou
-                                            - [ε ∈ FIRST(Y1)] FIRST(Y1 {ε} ∪ FIRST(Y2...Yk)
-                                            - Se ε ∈ FIRST(Yj) para todo j de 1 a k, ε ∈ FIRST(Y1Y2...Yk)
-                                - FOLLOW
-                                    - FOLLOW(A), onde A é um não-terminal, é o conjunto de terminais α que pode aparecer imediatamente à direita de A numa palavra
-                                    - Se A pode ser a última produção à direita, $ pertence a FOLLOW(A)
-                                    - Exemplo
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2035.png)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2036.png)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2037.png)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2038.png)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2039.png)
-                                        
-                                    - Como calcular FOLLOW
-                                        - $ ∈ FOLLOW(S), onde S é o símbolo inicial e $ é fim da entrada
-                                        - Se existe uma produção A → αBβ, tudo que pertence a FIRST(β) exceto ε está em FOLLOW(B)
-                                        - Se existe uma produção A → αB, então tudo que estiver em FOLLOW(A) estará em FOLLOW(B)
-                                        - Se existe uma produção A → αBβ, e ε ∈ FIRST(β), tudo que estiver em FOLLOW(A) estará em FOLLOW(B)
-                            - LL(1) table-driven parsing
-                                - Parsing Table
-                                    - Mapa que diz quão ação tomar com base no estado atual e no próximo símbolo de entrada, representadas como uma matriz bidimensional
-                                    - Construída com base nos conjuntos FIRST e FOLLOW, com uma tabela auxiliar
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2040.png)
-                                        
-                                    - Depois constrói a tabela M[A, a] onde A é um não terminal e a um símbolo terminal (incluindo $)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2041.png)
-                                        
-                                    - Algoritmo
-                                        - Para cada produção A → α de G
-                                            - Para todo a ∈ FIRST(α), adicione A → α em M[A,a]
-                                                - Se ε ∈ FIRST(α), então, para todo b ∈ FOLLOW(A), adicione A → α em M[A,b]
-                                                - A regra acima leva em conta também o símbolo $
-                                            - Posições em branco na tabela são error
-                                    - Exemplo
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2042.png)
-                                        
-                                - Gramática LL(1)
-                                    - G é LL(1) se, e somente se, quando A → α | β são duas produções distintas de G e as condições abaixo são satisfeitas
-                                        - Para nenhum terminal a, α e β geram palavras iniciadas
-                                        em a
-                                        - No máximo um de α e β deriva a palavra vazia
-                                        - Se β gera ε por meio de derivação sucessiva, α não pode
-                                        derivar palavras iniciadas com terminais de FOLLOW(A)
-                                        - Se α gera ε por meio de derivação sucessiva, β não pode
-                                        derivar palavras iniciadas com terminais de FOLLOW(A)
-                                    - Exemplos
-                                        - Gramática LL(1)?
-                                        - 1
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2043.png)
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2044.png)
-                                            
-                                            - Não, pois a produção A→Abc é uma recursão à esquerda
-                                            - Além disso FIRST(Abc) contém FIRST(A), que é {b}, significando que M[A,b] tentaria conter duas produções
-                                        - 2
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2045.png)
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2046.png)
-                                            
-                                            - FIRST(eS) = {e}, logo, M[S’, e]=S’→eS
-                                            - Entretanto, como FIRST(ε) = {ε}, precisamos olhar para o FOLLOW(S’) = {$, e}
-                                                - Para $, M[S’, $] = S’ → ε
-                                                - Para e, M[S’, e] = S’ → ε
-                                                - Porém, em M[S’, e] já existe S’ → eS, causando um conflito
-                                            - Logo, não é gramática LL(1)
-                                - Exemplo
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2047.png)
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2048.png)
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2049.png)
-                                    
-                        - Non-Recursive Predective Parsing
-                            - Um parser preditivo não recursivo pode ser construído mantendo uma pilha explicitamente, ao invés de implicitamente por chamadas recursivas
-                            - Se w é a entrada que foi casada até o momento, a pilha vai manter uma sequência de símbolos da gramática tais que S →* wα
-                            - Exemplo
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2050.png)
-                                
-                        - Recursive-descent parsing
-                            - Método de análise sintática top-down em que um conjunto de procedimentos recursivos é usado para processar a entrada
-                                - Cada procedimento está associado a um símbolo não-terminal da gramática
-                                - Predective parsing é um caso especial de recursive descent parsing em que o símbolo lookahead determina sem ambiguidades o procedimento a ser chamada para cada não-terminal
-                    - Bottom up
-                        - Constroem as parse trees a partir das folhas, com a ideia de converter o programa de entrada para o símbolo inicial
-                            - O parser lê tokens até que tenha uma subpalavra w que case com o lado direito de uma produção A → B e ao chegar nesse estágio substitui B por A se isto resultar em uma derivação válida
-                            - Essa substituição é chamada de redução
-                            - Exemplo
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2051.png)
-                                
-                                - Outra visualização
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2052.png)
-                                    
-                                    - Derivações
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2053.png)
-                                        
-                        - Uma redução transforma a entrada uwv em uAv se A → w é uma produção da gramática
-                        - Handle
-                            - Um handle é uma substring w e uma produção A → w tal que, reduzindo uwv → uAv permite que o símbolo inicial seja alcançado de uAv, ou seja, uma produção que podemos reduzir sem que seja gerado um problema
-                            - Exemplo de “falso” handle
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2054.png)
-                                
-                            - Identificação de handles
-                                - Análise de shift-reduce
-                                    - A ideia é dividir a entrada em duas partes, ilustrada pelo marcador | ou •
-                                        - À direita do marcador existem terminais ainda não reduzidos e à esquerda existem terminais e não-terminais
-                                        - A parte mais a direita (ou imediatamente à esquerda) contém um potencial candidato a handle
-                                    - Handles e reduções só ocorrem na substring da esquerda e a da direita apenas terminais
-                                        - A cada passo da análise precisa se decidir entre shift ou reduce
-                                        - Shift: deslocar o foco à direita → jogando um terminal para a substring da direita
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2055.png)
-                                            
-                                        - Reduce: aplicar uma redução a um handle
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2056.png)
-                                            
-                                        - Caso não consiga fazer nenhuma das duas ações, isso significa erro sintático
-                                - Shift-reduce parsing
-                                    - Toda redução é na parte mais à direita da substring da esquerda
-                                        - Se representar esta substring como uma pilha, o shift empilha um token e o reduce desempilha símbolos da pilha e empilha o não-terminal apropriado
-                                        - Ou seja, em reduce para A → w, desempilha |w| e empilha A
-                                        - A redução ocorre quando o conteúdo da pilha for um handle
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2057.png)
-                                            
-                                    - Para reconhecer os handles, deve-se olhar para a pilha e o lookahead
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2058.png)
-                                        
-                                    - O conjunto de prefixos viáveis de uma gramática é uma linguagem regular, logo, pode-se utilizar AFD’s para determinar se o conteúdo da pilha corresponde a um prefixo viável ou não
-                                    - Toda gramática LR(0) é analisada por um shift-reduce parsing
-                                        - LR(0)
-                                            - Classificação
-                                                - L → lê a entrada da esquerda para a direita
-                                                - R → procura a derivação mais à direita
-                                                - (k) → número de tokens lookahead lidos, mas não consumidos
-                                            - O parsing pode ser feito olhando apenas o conteúdo da pilha
-                                            - Não usa lookahead para decidir entre ações de shift e reduce
-                                            - Classe razoavelmente fraca de gramáticas
-                                            - Algoritmo de construção de tabelas é útil como introdução a algoritmos LR(1)...
-                                            - Exemplos
-                                                
-                                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2059.png)
-                                                
-                                                - Construção do parsing table
-                                                    - Regras
-                                                        - sn → shift e vá para o estado n
-                                                        - gn → vá para o estado n
-                                                        - rk → reduza pela regra k
-                                                        - a → aceite a entrada
-                                                        - erro → entradas em branco
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2060.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2061.png)
-                                                    
-                                    - Parsing
-                                        - Ao invés de reescanear a pilha para cada token, pode lembrar o estado alcançado para cada elemento da pilha
-                                        - O algoritmo consiste em olhar para o estado no topo da pilha e o símbolo  de entrada para definir a ação
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2062.png)
-                                            
-                                        - Exemplo
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2063.png)
-                                            
-                                            - Empilha o estado 1 inicialmente
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2064.png)
-                                            
-                                            - M[1, (] = s3, empilha o estado 3
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2065.png)
-                                            
-                                            - M[3, x] = s2, empilha o estado 2
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2066.png)
-                                            
-                                            - M[2, ,] = r2, então reduz para a regra 2 substituindo o x por S e volta para o estado 3 (1 símbolo)
-                                                - M[3, S] = g7, logo empilha 7
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2067.png)
-                                            
-                                            - M[7, ,] = r3, então reduz para a regra 3 substituindo o S por L e volta para o estado 3 desempilhando 7 (1 símbolo)
-                                                - M[3, L] = g5, logo empilha 5
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2068.png)
-                                            
-                                            - M[5, ,] = s8, empilha o estado 8
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2069.png)
-                                            
-                                            - M[8, x] = s2, empilha o estado 2
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2070.png)
-                                            
-                                            - M[2, )] = r2, então reduz para a regra 2 substituindo x por S e volta para o estado 8 desempilhando 2 (1 símbolo)
-                                                - M[8, S] = g9, logo empilha 9
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2071.png)
-                                            
-                                            - M[9, )] = r4, então reduz para a regra 4 substituindo L,S por L e volta para o estado 8 desempilhando 9, 8 e 5 da pilha (pois são 3 símbolos) ficando 3 no topo
-                                                - M[3, L] = g5, logo empilha 5
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2072.png)
-                                            
-                                            - M[5, )] = s6, empilha o estado 6
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2073.png)
-                                            
-                                            - M[6, $] = r1, logo reduz (L) por S desempilhando 6, 5 e 3 (pois são 3 símbolos) ficando 1 no topo da pilha
-                                                - M[1, S] = g4, empilha o estado 4
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2074.png)
-                                            
-                                            - M[4, $] = a, logo aceita a entrada
-                                        - Problemas
-                                            - Problemas na gramática ou limitações da técnica escolhida podem levar a conflitos
-                                                - shift-reduce: não consegue decidir entre uma ação de shift (ou mais) ou reduce
-                                                - reduce-reduce: não tem como decidir entre duas ou mais ações de reduce, geralmente por ambiguidade ou algum bug na gramática
-                                                - Exemplo de shift-reduce em M[1, +]
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2075.png)
-                                                    
-                                            - Para resolver estes conflitos, realiza-se uma análise SLR
-                                                - Análise SLR
-                                                    - Utiliza o conjunto FOLLOW para resolver conflitos
-                                                    - Intuição: só reduz se o próximo token (lookahead) estiver no conjunto FOLLOW do não-terminal associado
-                                                    - Na tabela de parsing, só inclui ação de reduce, caso o terminal esteja no conjunto FOLLOW
-                                                    - Autômatos SLR
-                                                        - Estados podem ter mais de um item de redução, caso conjuntos FOLLOW sejam distintos
-                                                        - Estados podem misturar itens de shift com itens de redução, caso os terminais associados ao shift não estejam no FOLLOW dos itens de redução
-                                                        - Isso não elimina todos os tipos de conflitos
-                                                            
-                                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2076.png)
-                                                            
-                                                    - Para um recurso ainda mais poderoso, existem as linguagens LR(1)
-                                    - LR(1)
-                                        - Mais poderoso que SLR
-                                        - Suficiente para grande parte das linguagens de programação
-                                        - A noção de item é mais sofisticada, inclui o símbolo de lookahead
-                                        - Simulam dois processos simultaneamente
-                                        - Compreendem o autômato LR(0) para encontrar handles
-                                        - Um rastreador de tokens de lookahead, para determinar qual o lookahead atual
-                                        - Remover os lookaheads de um autômato LR(1) resulta em um autômato LR(0) muito maior para a mesma gramática
-                                        - Construção do Autômato LR(1)
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%2077.png)
-                                            
-                                            - Exemplo
-                                                
-                                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%2078.png)
-                                                
-                                                - Passo 1 (pode-se incrementar o conjunto dentro dos colchetes, como S → •[$, +])
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2079.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2080.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2081.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2082.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2083.png)
-                                                    
-                                                - Passo 2
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2084.png)
-                                                    
-                                                - Passo 3
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2085.png)
-                                                    
-                                                - Passo 4
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2086.png)
-                                                    
-                                                - Passo 5
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2087.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2088.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2089.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2090.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2091.png)
-                                                    
-                                                - Passo 6
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2092.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2093.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2094.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2095.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2096.png)
-                                                    
-                                                - Passo 7
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2097.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2098.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2099.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20100.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20101.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20102.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20103.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20104.png)
-                                                    
-                                                - Passo 8
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20105.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20106.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20107.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20108.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20109.png)
-                                                    
-                                                - Passo 9
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20110.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20111.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20112.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20113.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20114.png)
-                                                    
-                                                - Autômato final
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20115.png)
-                                                    
-                                                - Tabela de parsing
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20116.png)
-                                                    
-        - Análise Semântica
-            - Valida o significado das expressões, detectando erros  mais profundos que não envolvem a forma do código, mas sim o sentido
-                - Usa a árvore sintática e a tabela de símbolos para checar a consistência semântica com a definição da linguagem
-                - A linguagem pode permitir coercions → conversão automática de tipos compatíveis
-            - Uma vez encerrada, consideramos o programa de entrada válido
-            - O maior desafio é rejeitar o maior número de programas incorretos e acertar o maior númeo de programas corretos
-            - Exemplo
-                
-                ![image.png](../../assets/faculdade/periodo4/compiladores/image%20117.png)
-                
-            - Limitações de GLC
-                - Como previne definições de classes duplicadas?
-                - Como diferencia variáveis de um tipo com variáveis de outro tipo?
-                - Como garante que uma dada classe implementa todos os métodos de uma interface?
-            - AST (Árvores Sintáticas Abstratas)
-                - Sintetizar as informações de uma parse tree, focando mas informações importantes e classificando os nós de acordo com seu papel na estrutura da linguagem
-                - Representação compacta que facilita o trabalho do compilador
-                - Utiliza-se as AST’s para criar estruturas de dados em código
-                    - Para toda AST é preferível que exista um interpretador que executa as ações que cada nó da árvore representa, sendo geralmente uma função recursiva mantendo o estado do programa
-                - Exemplo
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20118.png)
-                    
-                    - Árvore sintática
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20119.png)
-                        
-                    - AST
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20120.png)
-                        
-                - Direções de Modularidade
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20121.png)
-                    
-                - Visitor Design Pattern
-                    - Padrão de modelagem de AST’s que centraliza as funcionalidades em um objeto Visitor que encapsula as operações das AST’s e recebe a própria AST como um parâmetro das funções
-                    - Possui a finalidade de separar os algoritmos das estruturas de dados em que ele opera, permitindo adicionar novas operações a uma estrutura complexa sem precisar modificar as classes desses objetos
-            - Checagem de Tipos (Type-Checking)
-                - Um tipo é uma categoria de elementos de programação
-                - A checagem de tipos é o primeiro passo da análise semântica
-                    - Consiste em duas atividades: inferência de tipos e checagem
-                    - A checagem pode ser feita de maneira estática ou dinâmica
-                - Sistema de Tipos
-                    - Coleção de regras que limitam como um programa pode ser escrito
-                    - Garante a segurança em tempo de execução
-                    - A checagem de tipos verifica se as regras do sistema de tipos estão sendo respeitadas
-                    - Strong → sistemas que nunca permitem erros de tipo
-                    - Weak → podem permitir erros de tipo
-                    - Componentes
-                        - Built-in
-                            - Tipos pré-definidos para certos grupos de dados, como números, booleanos e caracteres
-                            - Variam entre as linguagens de programação
-                        - Tipos compostos
-                            - Consistem de um ou mais objetos, cada um com seu próprio tipo, como arrays, strings e enums
-                            - É possível criar Structures (Records) que agrupam múltiplos objetos de tipos arbitrários
-                            - Ponteiros são tipos especiais, pois conseguem manipular memória
-                            - Criação de novos tipos a partir dos existentes
-                        - Equivalência
-                            - As linguagens precisam ter regras sem ambiguidade para responder se dois tipos diferentes são equivalentes
-                            - Name Equivalence
-                                - Dois tipos são equivalentes se e somente se tem o mesmo nome
-                                - Se o programador escolheu nomes diferentes, a linguagem deve respeitar este ato
-                                - Porém. a complexidade da tarefa de gerenciar a consistência dos nomes cresce com o tempo
-                            - Structural equivalence
-                                - Dois tipos são equivalentes se tem mesma estrutura
-                                - Dois objetos podem ser trocados se consistem do mesmo conjunto de campos, na mesma ordem, e estes campos tem tipos equivalentes
-                                - Examina as propriedades essenciais que definem o tipo
-                        - Regras de inferência
-                            - Envolve os tipos de operandos e o tipo de resultado da expressão, como em expressões aritméticas na qual os tipos do lado esquerdo e direito do operando devem ser compatíveis
-                            - Misturar tipos em expressões pode ser ilegal, chegando a talvez nem compilar
-                                - O compilador pode fazer conversões implícitas (coercions)
-                            - Muitas linguagens exigem declarações de variáveis antes do uso, estabelecendo tipos bem definidos
-                                - Algumas linguagens não exigem declaração prévia, o que pode tornar o problema de inferência de tipos mais complexo
-                            - Expressões e funções
-                                - Inferência de tipos de expressões normalmente seguem a estrutura das expressões
-                                - Podem depender de procedimentos e funções do programa
-                                - Para isto, funções normalmente definem assinaturas de tipos
-                - Gramática de atributos
-                    - Formalismo para realizar análise sensível ao contexto, enriquecendo uma GLC com regras especificando computações
-                        - Cada regra define um atributo em termos dos valores de outros atributos
-                        - Exemplo
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20122.png)
-                            
-                            - Atributo type é sintetizado e atributo in é herdado (definidos em termos de nós ]dos ancestrais, irmãos, etc.)
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%20123.png)
-                                
-                    - Exemplo
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20124.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20125.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20126.png)
-                        
-                        - Adicionando novas regras
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20127.png)
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20128.png)
-                            
-                        - Adicionando novas regras novamente
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20129.png)
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20130.png)
-                            
-            - Escopo
-                - Um nome pode ter diferentes significados em um mesmo programa
-                    - Abstração → processo que associa um nome a um fragmento de programa
-                    - Binding → associação entre o nome e a funcionalidade a ser nomeada, podendo ser feitas em diferentes momentos de compilação
-                - Escopo é uma região do programa na qual um binding de um nome a uma entidade é válido e visível
-                    - O escopo determina onde pode ver e usar uma variável ou função pelo nome
-                    - É possível fazer shadowing, na qual acontece quando um mesmo nome é utilizado em escopos diferentes
-                - Escopo em OO
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20131.png)
-                    
-                - Passadas
-                    - Conseguimos resolver análise léxica e sintática com uma única passada sobre a entrada
-                        - Alguns compiladores também combinam análise semântica e geração de código, chamados de single-pass compilers
-                        - Outros passam novamente pela entrada, chamados de multi-pass compilers
-                            - Ler a entrada e construir a AST (primeira passada), caminhar pela AST coletando informações sobre as classes (segunda passada), caminhar pela AST checando outras propriedades (terceira passada)…
-                            - Pode combinar algumas destas passadas, embora sejam logicamente distintas
-                            - As passadas podem ser implementadas usando a estratégia de visitors
-            - Tabelas de Símbolos
-                - Mapeamento de nomes para a entidade a que o nome se refere
-                    - Ao processar declarações de tipos, variáveis, e funções, associamos os identificadores com o seu significado na tabela
-                    - Ao processar usos de tais identificadores, fazemos o lookup na tabela
-                - A implementação deve privilegiar eficiência ao acessar informações, deve ser capaz de ser expandida de forma fácil e eficiente
-                    - Em geral, implementadas usando hash tables, podendo ser tabelas encadeadas a depender do nível de escopo
-                        - Spaghetti Stacks
-                            - Trata a tabela de símbolos como uma lista encadeada de escopos
-                            - Cada escopo armazena um ponteiro para o seu ancestral mas a recíproca não é verdadeira
-                            - Em qualquer ponto do programa a tabela pode ser vista como uma pilha
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%20132.png)
-                                
-                                - 2b e 2a são basicamente sibling nodes
-                - Operações
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20133.png)
-                    
-                - Ao lidar com o escopo, a maioria das linguagens permitem declaração de nomes em múltiplos níveis de escopo
-                    - Nesse caso, precisa-se adaptar a tabela de símbolos para considerar os escopos
-                    - O compilador precisa fazer o processo de name resolution, mapeando cada nome referenciado no programa com o nível de escopo
-                        - A medida que o compilador sai de um escopo, a tabela encadeada é excluída
-                        - Para lidar com mudanças de escopo, é preciso operações adicionais
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20134.png)
-                            
-                - Exemplo
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20135.png)
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20136.png)
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20137.png)
-                    
-                    - No nível 3, para calcular b = a + b + c + w, para cada variável o compilador pega o nome no escopo mais perto do escopo atual
-                        - a → nível 2b
-                        - b → nível 1
-                        - c → nível 3
-                        - 2 → nível 0
-- IR Intermediate Representation
-    - É uma forma abstrata, independente de máquina do programa, que serve como ponte entre o front-end e o back-end
-        - Pode ser uma árvore (AST simplificada), código de três endereços, um bytecode intermediário (LLMV, JVM), etc.
-        - Durante o processo de tradução um compilador pode construir uma ou mais IRs do programa
-    - A separação de fases e o uso do IR é muito útil pois traz várias vantagens práticas, teóricas e arquiteturais
-        - A separação de fases melhora a modularização, tratamento de erros e reuso
-        - O uso do IR melhora principalmente o quesito de portabilidade, otimização e independência tanto de linguagens quanto de máquinas, permitindo flexibilidade
-            
-            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20138.png)
-            
-    - Além disso, compiladores mais modernos utilizam mais de uma IR com alguns optimizers
-        - Os optimizers são responsáveis por otimizar os IRs, melhorando o desempenho do programa final
-            
-            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20139.png)
-            
-    - O IR sempre tenta chegar mais próximo da linguagem de máquina
-        
-        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20140.png)
-        
-    - Ao derivar conhecimento sobre o código, é necessário transmitir esta informação entre as passadas, portanto o compilador precisa de uma representação dos fatos que deriva a partir de um programa
-        - Precisa ser expressiva o suficiente para registrar fatos úteis que o compilador precisa transmitir
-        - Existem vários tipos de representações intermediárias e a escolha varia de acordo com o compilador como Parse Trees, AST’s e DAG’s
-            - DAG
-                - É um grafo acíclico dirigido, com o objetivo de eliminar subexpressões comuns e resultar em um código mais rápido e enxuto
-                - Para construir é preciso primeiro listar os nós do DAG (na qual cada nó representa um operador ou uma variável) e uma tabela de símbolos (na qual mapeia os identificadores para o nó do DAG que contém o valor mais recente daquela variável)
-                - Para otimizar o código, realize apenas as operações aritméticas que estão em formato de nó
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20141.png)
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20142.png)
-                    
-            - Como alternativa a representações gráficas, existem as representações lineares
-            - Representações lineares
-                - Sequências de instruções que executam em ordem, impondo uma ordem clara e útil
-                - Se aproximam de código assembly para uma máquina abstrata
-                - Geralmente precisa codificar mecanismos de transferência de controle entre pontos do programa (jumps e conditional branches)
-                - Tipos de IR Lineares
-                    - One-address code
-                        - Modela o comportamento de acumuladores e máquinas baseadas em pilha
-                        - Código compacto
-                        - Stack-Machine Code
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20143.png)
-                            
-                    - Two-address code
-                        - Modela máquinas que tem operações destrutivas
-                        - Se tornou menos popular com a redução de restrições de memória
-                    - Three-address code
-                        - Modela máquinas em que a maioria das operações recebem dois operandos e produzem resultado (popularidade de RISC)
-                        - Frequentemente usado como código intermediário
-                            - Abstrai um assembler, onde cada instrução básica referencia no máximo 3 endereços
-                            - No máximo um operador no lado direito das instruções
-                        - Formato → x := y op z
-                            - Exemplo: x + y * z é reescrito como → t1 := y * z, t2 := x + t1
-                - Instruções
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20144.png)
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20145.png)
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20146.png)
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20147.png)
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20148.png)
-                    
-                - Operadores
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20149.png)
-                    
-                - Estruturas de Dados
-                    - A representação das instruções de três endereços pode se dar por meio de objetos e/ou registros com campos para os operadores e operandos
-                    - Quadruples
-                        - Um “quad”, contém quatro campos: op, arg1, arg2, e result
-                        - Instruções com operadores unários não usam arg2
-                        - Operadores como param, não usam arg2 ou result
-                        - Desvios colocam label em result
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20150.png)
-                            
-                - Gerando código IR
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20151.png)
-                    
-                    - Com a ideia de fluxo de controle, é possível enriquecer a linguagem
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20152.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20153.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20154.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20155.png)
-                        
-                - Control-Flow Graph
-                    - Representa o fluxo de controle do programa
-                        - Bastante utilizados em análises de programas para realizar otimizações, instruction scheduling e alocação global de registradores
-                    - Nós correspondem a blocos básicos de código e as arestas representam o controle sendo transferido
-                        - Blocos básicos → sequência de operações que sempre executam em conjunto, cada instrução em um bloco básico é executada após todas as instruções anteriores terem sido executadas
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20156.png)
-                            
-                    - O CFG fornece uma representação gráfica dos possíveis caminhos do programa em tempo de execução
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20157.png)
-                        
-                        - Podem existir caminhos impossíveis
-                    - Construção
-                        - Podemos construir CFGs para representação intermediária de alto nível ou de baixo nível
-                            - No caso de ASTs, a construção se dá traduzindo cada nó a um CFG e fazendo a composição
-                            - No caso de representações mais baixo nível, como código de três endereços, por meio da análise de labels e instruções com desvios
-                        - O CGF de um Statement pode ser definido como CFG(S), um grafo de uma instrução alto nível S na qual ele é um grafo de entrada e saída simples, podendo ser definido recursivamente
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20158.png)
-                            
-                        - Condicionais
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20159.png)
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20160.png)
-                            
-                        - Laço de repetição
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20161.png)
-                            
-                        - Exemplo
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20162.png)
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20163.png)
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20164.png)
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20165.png)
-                            
-                        - Este algoritmo recursivo gera um CFG com muitos blocos, gerando uma ineficiência
-                        - Para realizar uma construção eficiente, é preciso o mínimo de blocos possível de menor tamanho possível
-                            - Não devem ocorrer pares de blocos (B1, B2) tal que B2 é sucessor de B1, B1 tem uma aresta outgoing e B2 tem uma aresta incoming
-                            - Não devem ocorrer blocos básicos vazios
-                            - Exemplo
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%20166.png)
-                                
-                        - CFG’s para TAC (Three Address Code)
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20167.png)
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20168.png)
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20169.png)
-                            
-- Otimização
-    - Realiza transformações no código com o objetivo de melhorar algum aspecto relevante, podendo ser específicas a uma arquitetura ou geral sem afetar o comportamento do programa
-        - O foco da otimização é em IR’s
-        - O objetivo é obter o máximo de melhoria com o mínimo de esforço
-        - É preciso aplicar transformações com safety e profitability
-            - Safety
-                - Corretude é o critério mais importante que o compilador deve satisfazer
-                - Como saber que uma transformação é segura?
-                - O que é o sentido de um programa?
-            - Profitability
-                - Qual a vantagem de aplicar uma transformação como loop unrolling?
-                    - Diminuir quantidade de iterações
-                    - Evitar trabalho duplicado
-                    - Memory bound
-    - Granularidade
-        - Local → aplicada a blocos básicos isoladamente
-            - Otimizações locais
-                - Forma mais simples
-                - Não é necessário analisar o corpo completo do procedimento/método
-                - Single Assignment form
-                    - Representação que visa facilitar otimizações de código
-                    - Muitas otimizações podem ser simplificadas se cada atribuição é feita a um temporário que ainda não apareceu no bloco básico
-                    - Código de três endereços pode ser rescrito na forma de static single assignment (SSA)
-                        - SSA
-                            - Disciplina de nomes que muitos compiladores modernos usam para codificar informação sobre o fluxo de controle e dados de valores
-                                - A forma SSA foi intencionada para otimização de código
-                            - Na forma SSA, nomes correspondem unicamente a pontos específicos de definição no código
-                                - Cada nome é definido apenas uma vez
-                                - Como um corolário, cada uso de um nome como argumentos de operação carrega informação sobre o ponto onde o valor foi originado
-                            - Um programa está na forma SSA quando cada definição tem um nome distinto e todo uso se refere a uma única definição
-                            - Para transformar um programa em SSA, é necessário inserir funções especiais, denominadas phi, em pontos onde o fluxo de
-                            controle converge
-                            - A propriedade de single-assignment permite ao compilador ficar alheio a muitas questões associadas ao tempo de vida de valores
-                                - Nomes nunca são redefinidos ou mortos, o valor está sempre disponível a partir de um caminho
-                            - Exemplo
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%20170.png)
-                                
-                - Formas de otimizações locais
-                    - Simplificações algébricas
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20171.png)
-                        
-                    - Constant Folding
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20172.png)
-                        
-                    - Copy Propagation
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20173.png)
-                        
-                    - Copy propagation + Constant folding
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20174.png)
-                        
-                    - Eliminando common subexpressions
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20175.png)
-                        
-                    - Dead code elimination
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20176.png)
-                        
-                - Exemplo de Otimização
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20177.png)
-                    
-                    - Simplificação algébrica
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20178.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20179.png)
-                        
-                    - Copy Propagation
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20180.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20181.png)
-                        
-                    - Constant Folding
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20182.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20183.png)
-                        
-                    - Common Subexpression Elimination
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20184.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20185.png)
-                        
-                    - Copy Propagation
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20186.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20187.png)
-                        
-                    - Dead Code Elimination
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20188.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20189.png)
-                        
-                - Como eliminar expressões redundantes
-                    - Assuma que queremos eliminar expressões redundantes de um bloco básico
-                    - Uma expressão e é redundante em p se já foi avaliada em todos os caminhos que levam a p
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20190.png)
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20191.png)
-                        
-                    - A otimização só será aplicada se não for necessário avaliar novamente (safety)
-                    - É interessante substituir avaliações redundantes com referências a valores computados anteriormente (profitability)
-                    - Local Value Numbering
-                        - Técnica para implementar a eliminação de um código que está em SSA
-                        - Faz uma travessia no bloco básico e assinala números distintos a cada valor que o bloco computa
-                        - Chave: Escolher números de tal forma que duas expressões ei e ej tem o mesmo valor sse os valores dos operandos são comprovadamente iguais
-                            - Hashing de operações, para armazenar expressões já calculadas
-                        - Exemplo
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20192.png)
-                            
-        - Global (intra-procedural) → aplicada a um CFG isoladamente
-            - Otimizações Globais
-                - Operam em um procedimento ou método inteiro (ou seja, um CFG inteiro)
-                    - Modificam múltiplos blocos básicos
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20193.png)
-                        
-                        - Existem situações que podem não ser otimizados
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20194.png)
-                            
-                - Data-flow Analysis
-                    - Antes de aplicar uma otimização, é necessário localizar pontos onde o programa pode ser modificado para melhor
-                        - Para coletar esta informação, o compilador normalmente usa algum tipo de análise estática
-                        - Geralmente inicia-se com algum tipo de análise do fluxo de controle, para montar um CFG
-                        - A partir do CFG, podemos analisar como os valores fluem por meio do código (data-flow analysis)
-                    - É feito de forma iterativa
-                        - Geralmente construídas a partir de um conjunto de equações definidas a partir de conjuntos
-                        - Estas equações definem como dados são transferidos entre blocos básicos (funções de transferência)
-                        - A solução para estas equações é um algoritmo de ponto fixo, simples e robusto
-                - Corretude
-                    - Forma de saber que está tudo certo com a propagação de uma constante
-                    - Para substituir o uso de x por uma constante k, devemos garantir a seguinte condição
-                        - Em todos os caminhos onde há um uso de x, a última atribuição a x é x = k
-                        - Chamaremos esta condição de Φ
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20195.png)
-                            
-                    - Checagem de corretude
-                        - Não é trivial
-                        - Ao quantificarmos todos os caminhos, precisamos incluir loops e branches de condicionais
-                        - Checar esta condição requer análise global (análise do CFG para um corpo de método)
-                - Otimizações globais dependem do conhecimento de uma propriedade P em um ponto particular da execução do programa, de modo a provar que P em qualquer ponto requer conhecimento do corpo inteiro do método
-                    - Existem otimizações globais indecidíveis
-                    - A otimização só é aplicada apenas quando se tem certeza absoluta
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20196.png)
-                        
-                - Global constant propagation
-                    - Em cada ponto do programa associa-se um valor possível valor para x
-                        
-                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20197.png)
-                        
-                        - Exemplo
-                            - 1
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%20198.png)
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%20199.png)
-                                
-                            - 2
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%20200.png)
-                                
-                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%20201.png)
-                                
-                    - Dado que temos informações globais, é fácil de realizar a otimização
-                        - Basta inspecionar as propriedades x = ? associadas com instruções que usam x
-                        - Se x for constante naquele ponto, substitua o uso de x pela constante
-                        - A ideia é transferir a informação de uma instrução para a próxima
-                            - Para cada instrução s, computamos a informação sobre o valor de x imediatamente antes e depois de s
-                            - Cin(x,s) = valor de x antes de s
-                            - Cout(x,s) = valor de x após s
-                    - A informação é propagada por meio de funções de transferência entre instruções, definidas por meio de regras
-                        - Funções de transferência
-                            - Regras
-                                - 1
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20202.png)
-                                    
-                                - 2
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20203.png)
-                                    
-                                - 3
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20204.png)
-                                    
-                                - 4
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20205.png)
-                                    
-                                - Regras 1 a 4
-                                    - Relacionam o in de um statement com o out do mesmo statement
-                                        - Propagam informação entre statements
-                                    - Precisamos de regras relacionando o out de um statement com o in do statement seguinte para propagar informação entre nós do CFG
-                                - 5
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20206.png)
-                                    
-                                - 6
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20207.png)
-                                    
-                                - 7
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20208.png)
-                                    
-                                - 8
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20209.png)
-                                    
-                            - Algoritmo
-                                - Para todo nó inicial (statement) s do programa, defina Cin(x,s)=*
-                                - Em todos os demais pontos do programa, defina Cin(x,s) = Cout(x,s) = #
-                                    - O valor inicial # significa “até o momento, com o que sabemos, controle não alcança este ponto”
-                                    - Permite que a análise alcance um ponto fixo
-                                - Repita o processo abaixo até que a aplicação das regras 1-8 não produza alteração
-                                    - Dado um statement que não satisfaça 1-8, atualize usando a regra apropriada
-                                - Exemplo
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20210.png)
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20211.png)
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20212.png)
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20213.png)
-                                    
-                                - O algoritmo termina pois o que está entre o *, valores constantes e # é uma relação de ordem
-                                    - Relação de ordem
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20214.png)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20215.png)
-                                        
-                                        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20216.png)
-                                        
-        - Inter-procedural → aplicada entre fronteiras de métodos
-    - É feita em duas etapas: análise e transformação
-        - Análise
-            - Determina onde o compilador pode aplicar otimizações de forma segura e benéfica
-            - Análise de fluxo de dados e aálise de dependências
-        - Transformação
-            - O compilador usa os resultados da análise para reescrever o código de forma mais eficiente
-            - Variam em efeito, escopo e análise necessária para habilitá-las
-    - Exemplo
-        
-        ![image.png](../../assets/faculdade/periodo4/compiladores/image%20217.png)
-        
-- Síntese
-    - Responsável por gerar o código alvo final, como binário ou bytecode
-    - Ambiente de Execução
-        - Um compilador deve implementar precisamente abstrações definidas na linguagem fonte como nomes, operadores, escopo, bindings, …
-            - Isso é feito cooperando com o SO e outros softwares para dar suporte à estas abstrações
-            - Para realizar esta implementação, o compilador cria um ambiente de execução no qual assume que os programas serão executados
-        - Organização da memória
-            - O programa tem seu próprio espaço lógico de memória, onde cada valor tem seu local
-                - Memória
-                    
-                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20218.png)
-                    
-                - Gerenciamento e organização deste espaço é compartilhado entre o compilador, SO e máquina
-                - O SO mapeia endereços lógicos em físicos, espalhados pela memória
-                    - A representação de um programa neste espaço lógico consiste de áreas de dados e programa
-                - O tamanho do código gerado é fixo em tempo de compilação e pode-se colocar em uma área estática
-                    - O tamanho de alguns objetos de dados do programa (constantes e dados gerados pelo compilador) podem também ser alocados em áreas estáticas
-                    - Decisões de alocação estática são feitas apenas com base no texto do programa fonte, enquanto que decisões dinâmicas só podem ser tomadas durante a execução
-            - Para maximizar o uso do espaço durante a execução, a heap e pilha mudam de tamanho dinamicamente
-                - Pilha → nomes locais a um procedimento
-                    - Stack Allocation
-                        - Compiladores de linguagens que usam procedimentos, funções ou métodos como unidades de modularização gerenciam ao menos parte da memória runtime em uma pilha
-                        - Ao chamar um procedimento, espaço para as variáveis locais é alocado na pilha e ao término da execução, o espaço é liberado
-                        - Exemplo
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20219.png)
-                            
-                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20220.png)
-                            
-                        - Ativação
-                            - Ativação de um procedimento = execução de um procedimento
-                                - Tempo de vida de uma ativação → sequência de passos do início ao fim do corpo de um procedimento p, incluindo a execução de procedimentos chamados por p
-                            - Se a e b são ativações de procedimentos, seus tempos de vida ou não se sobrepõem ou são aninhados
-                                - As alocações na pilha não seriam possíveis se as ativações não fossem aninhadas apropriadamente
-                            - Se a ativação de um procedimento p chama procedimento q, a ativação de q deve terminar antes que a ativação de p
-                                - Situações
-                                    - Ativação de q termina normalmente
-                                        - Controle volta para o ponto de p onde q foi
-                                        chamado
-                                    - Ativação de q, ou de algum procedimento chamado por q, aborta, direta ou indiretamente
-                                        - p encerra simultaneamente com q
-                                    - Ativação de q termina por conta de uma exceção que q não consegue tratar
-                                        - Procedimento p pode tratar a exceção, neste caso a ativação de q termina, enquanto a ativação de p continua, não necessariamente do ponto onde q foi chamada
-                                        - Se p não consegue tratar a exceção, a ativação de p termina ao mesmo tempo que a de q, e presumidamente, a exceção será tratada por outro procedimento
-                            - Árvores de Ativação
-                                - Podemos representar as ativações de procedimento feitas durante a execução de um programa com uma árvore
-                                    - Cada nó corresponde a uma ativação
-                                    - Os filhos de um nó p são ativações de procedimento feitas durante ativação de p
-                                    - Ativações são ordenadas da esquerda pra direita, na ordem que foram chamadas
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20221.png)
-                                    
-                            - Registros de Ativação
-                                - Cada ativação viva tem um registro (frame) na pilha de controle com a raiz da árvore de ativação no fundo
-                                    - A sequência de registros de ativação corresponde ao caminho percorrido na árvore de ativação, onde o controle se encontra
-                                    - Última ativação reside no topo da pilha
-                                - Elementos de registro
-                                    - Valores temporários, resultantes de avaliação de expressões, etc.
-                                    - Dados locais pertencentes ao procedimento ativo
-                                    - Estado da máquina logo antes da chamada ao procedimento, endereço de retorno do contador de programas, por ex. conteúdo de registradores que será restaurado
-                                    - Link de acesso para dados localizados em outros registros de ativação
-                                    - Link de controle, registro de ativação de quem chamou procedimento
-                                    - Valor de retorno, se houver, se possível usar registradores
-                                    - Parâmetros reais, se possível, usar registradores
-                                    
-                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20222.png)
-                                    
-                - Heap → dados que podem existir após uma chamada de procedimento (dados que vivem indefinidamente)
-                    - Heap Allocation
-                        - Na medida que memória é utilizada e liberada, o espaço da heap é dividido entre partes livres e ocupadas de memória
-                            - As partes livres (holes) não residem em áreas contíguas da heap
-                            - A cada requisição deve-se encontrar um hole grande o suficiente para alocar os dados
-                                - A não ser que seja exatamente do tamanho solicitado, temos que dividir o hole ao alocar espaço, podendo gerar fragmentação (grandes quantidades de espaços livres pequenos e não contíguos)
-                        - Estratégias para reduzir a fragmentação
-                            - Controlar antes
-                                - Controlar a maneira de como os objetos são alocados na heap
-                                - first-fit vs. best-fit vs. next-fit
-                                    - First-fit aloca o primeiro espaço livre e qye cabe
-                                    - Best-fit divide espaços livres em bins, de tamanhos variáveis, melhorando space utilization
-                                    - Next-fit tenta melhorar spatial locality, usando best-fit e alocando objetos próximos
-                            - Controlar depois
-                                - Ao desalocar objetos na heap, combinar (coalesce) o espaço livre com espaços livres adjacentes da heap
-                                    - Marcar bins com um bit indicando se está ocupado ou livre
-                                    - Se bins não forem utilizados, marcar as fronteiras dos espaços livres
-                        - Manual Deallocation
-                            - Gerenciamento manual de memória tende a gerar erros
-                            - Memory leak → esquecer de deletar dados que não podem mais ser referenciados
-                            - Dangling reference → referenciar dados deletados
-                        - Garbage Collection
-                            - Garbage → dados que não podem mais ser referenciados
-                                - Objetos se tornam garbage quando o programa não pode mais alcançar os objetos
-                                - É possível saber como um objeto é garbage a partir do tipo, na qual por meio disto é capaz de dizer o tamanho do objeto e quais componentes deste objeto tem referências a outros objetos
-                                    - Referências são sempre endereços para o início dos objetos
-                            - Reachability
-                                - Dados que podem ser acessados diretamente por um programa, sem precisar dereferenciar um ponteiro, formam o root set
-                                    - Um programa pode alcançar qualquer membro deste conjunto a qualquer momento
-                                    - Recursivamente, qualquer objeto cujas referências são armazenadas nos membros do root set é também alcançável
-                                - O conjunto de objetos alcançáveis muda durante a execução do programa, existindo operações que alteram este conjunto
-                                    - Object allocation, reference assignments, …
-                                - Como encontrar objetos inalcançáveis
-                                    - Incremental → a cada instrução realiza alguma tarefa
-                                        - Reference Counting
-                                            - Adicionar um contador para cada objeto alocado na heap
-                                            - O contador rastreia o número de ponteiros para aquele objeto
-                                            - Quando o contador alcança zero, o sistema pode liberar aquele objeto
-                                            - Liberar um objeto pode levar a liberação de outros
-                                            - Problemas
-                                                
-                                                ![image.png](../../assets/faculdade/periodo4/compiladores/image%20223.png)
-                                                
-                                    - Batch-oriented → roda sob demanda, quando o espaço esgota
-                                        - Batch Collectors
-                                            - Geralmente são executados quando espaço livre está esgotado ou abaixo de um certo limiar
-                                            - Collector pausa a execução do programa, examina memória alocada para descobrir objetos inutilizados e libera o espaço
-                                            - Geralmente rodam em duas fases: descoberta de objetos mortos e desalocação e “reciclagem” de objetos mortos
-                                            - Identificando objetos live (Mark-andSweep)
-                                                - Em geral, usa-se o que é chamado de algoritmo de marking
-                                                    - O coletor usa um bit para cada objeto na heap, chamado de mark bit
-                                                    - Este bit é armazenado no cabeçalho do objeto, junto à informação para registro de localização e tamanho do objeto
-                                                    - Limpa todos os mark bits e constrói uma worklist
-                                                        - Todos os ponteiros em registradores e em variáveis acessíveis aos procedimentos
-                                                        - Caminha nesta worklist e segue quaisquer referências a partir destes ponteiros como alcançável
-                                                - Ao término de algoritmo, objetos unmarked (objetos mortos) são inalcançáveis e podem ser liberados (sweep)
-                                                    - Realiza uma travessia nos objetos da heap liberando objetos inalcançáveis
-                                                    - Opcionalmente, já reseta o mark bit para a fase de marking evitar a travessia inicial
-                                                - Definição do algoritmo
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20224.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20225.png)
-                                                    
-                                                    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20226.png)
-                                                    
-                                            - Todos os algoritmos em batch (trace-based) computam o conjunto de objetos alcançáveis e usam o seu complemento para liberar memória
-                                            - A memória é reciclada de forma que o programa faz requisições de alocação, garbage collector descobre reachability e libera o espaço dos objetos inalcançáveis
-                                            - Embora os algoritmos trace-based possam diferir em sua implementação, em geral são descritos de acordo com estados gerais
-                                                - Free: espaço de memória pronto para ser alocado; não pode conter objeto alcançável
-                                                - Unreached: espaço normalmente é denominado inalcançável, a não ser que o tracing prove o contrário
-                                                - Unscanned: espaço alcançável, mas seus ponteiros ainda não foram escaneados
-                                                - Scanned: todo objeto Unscanned eventualmente será observado e transiciona para este estado
-                                            - Variações do mark-and-sweep
-                                                - Baker’s mark-and-sweep: ao invés de examinar a heap inteira, mantém uma lista de objetos alocados
-                                                - Mark-and-compact: move objetos na heap para eliminar fragmentação de memória, ao invés de apenas marcar como livre
-                                                - Incremental: intercalam GC e programa, são conservadores, portanto
-                                                - Copying collectors
-                                                    - Divide a heap em duas pools, old e new
-                                                    - Aloca memória sempre a partir  old
-                                                    - Stop and copy: quando a alocação falha, copia todos os dados live da old para new e inverte identidade, podendo usar mark-and-sweep ou incremental
-                                    - Comparações
-                                        - Com GC vs Sem GC
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20227.png)
-                                            
-                                        - Reference Counting vs Batch Collectors
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20228.png)
-                                            
-                                        - Mark-and-sweep vs Copying Collectors
-                                            
-                                            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20229.png)
-                                            
-    - Seleção de instruções
-        - Reescreve operações de IR em operações de linguagem de máquina, ainda abstraindo a quantidade de registradores simbólicos
-            - Pode se beneficiar de operações especiais na máquina alvo
-    - Alocação de registradores
-        - É mais eficiente realizar operações manipulando dados próximos a CPU, em registradores
-        - O desafio desta etapa é conseguir associar as diversas variáveis do código em poucos registradores, com o objetivo de minimizar o spilling
-            - Spilling: processo de mover variáveis da CPU para a memória RAM quando não há registradores suficientes disponíveis para armazenar todas as variáveis temporárias necessárias durante a execução de um trecho de código, afetando bastante o desempenho do código
-    - Geração do código de máquina final
-        - Traduz a IR para instruções da arquitetura alvo, criando um programa executável que o processador ou VM consiga entender
-        - Vários problemas complexos tendem a surgir nesta etapa e interagem entre si
-            - Reordenar as instruções pode acabar aumentando o número de registradores necessários
-            - Alocação de registradores pode criar falsa sensação de dependência entre valores, prejudicando a instruction scheduling
-                - Instruction scheduling (escalonamento de instruções): otimização para aumentar o paralelismo em nível de instrução, reorganizando as instruções e melhorando o desempenho em máquinas com pipelines de instrução
-        - Exemplo
-            
-            ![image.png](../../assets/faculdade/periodo4/compiladores/image%20230.png)
+O **Front End** corresponde à fase de análise, e o **Back End** à fase de síntese:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%203.png)
+
+## Análise
+
+A fase de análise transforma o código fonte textual em uma **representação intermediária (IR)** válida, correta e livre de erros, para que o compilador consiga entender e trabalhar com o programa. Ela se divide em três etapas sequenciais: léxica, sintática e semântica.
+
+### Análise Léxica (Scanner)
+
+O **analisador léxico** (ou *scanner*) converte o texto do programa em **tokens**, identificando a estrutura básica do código — cada token pode carregar um valor associado.
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%204.png)
+
+**Terminologia fundamental:**
+
+| Termo | Definição |
+| --- | --- |
+| **Token** | Par formado pelo nome do token e atributos opcionais; os tipos de token são especificados por meio de expressões regulares. |
+| **Lexema** | A sequência de caracteres concreta que casa com o padrão de um tipo de token. |
+| **Padrão** | A descrição dos possíveis lexemas associados a um tipo de token. |
+
+O projetista do compilador caracteriza o analisador léxico por meio de **expressões regulares (ERs)** — a geração do analisador léxico a partir dessas ERs pode ser automatizada.
+
+#### Expressões regulares
+
+Uma expressão regular é um formalismo denotacional definido a partir de conjuntos básicos, concatenação e união. Os operadores regulares fundamentais são:
+
+| Operador | Significado | Exemplo |
+| --- | --- | --- |
+| `.` | Reconhece qualquer caractere exceto `\n` | `a.c` → `abc`, `aac`, `acc`, `a9c`, etc. |
+| `*` | Zero ou mais repetições de `r` | `r*` reconhece `""`, `"r"`, `"rr"`, etc. |
+| `+` | Uma ou mais repetições | ![image.png](../../assets/faculdade/periodo4/compiladores/image%205.png) |
+| `?` | Zero ou uma ocorrência (opcional) | ![image.png](../../assets/faculdade/periodo4/compiladores/image%206.png) |
+| `\|` | "Ou" | `r1 \| r2` → `r1` ou `r2` |
+
+Também existem **classes de caracteres**:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%207.png)
+
+A notação `[^xyz]` significa qualquer caractere **exceto** `x`, `y` e `z` — por exemplo, `[^0-9]` casa qualquer caractere que não seja dígito.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%208.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%209.png)
+
+Para implementar um analisador léxico, é preciso: definir a **microssintaxe** da linguagem (tokens e lexemas), estabelecer critérios de separação e agregação de palavras, definir palavras especiais/reservadas, e implementar o analisador a partir dessa especificação.
+
+!!! example "Especificações léxicas"
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2010.png)
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2011.png)
+
+#### Reconhecimento de tokens
+
+Para reconhecer os tokens, constrói-se **diagramas de transição** e, em seguida, implementa-se uma máquina de estados que combina esses diagramas.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2012.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2013.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2014.png)
+
+O **lexer** interage diretamente com o **parser**, o que ajuda no reconhecimento de erros mais cedo no pipeline:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2015.png)
+
+### Análise Sintática (Parser)
+
+O **parser** usa os tokens gerados pela análise léxica para construir uma **árvore sintática**, verificando se a estrutura do código segue a gramática da linguagem. Cada nó interno da árvore representa uma operação, e seus filhos representam os argumentos dessa operação. A análise sintática serve, portanto, para detectar erros de **estrutura**.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2016.png)
+
+Há três desfechos possíveis: (1) o parsing ocorre perfeitamente, e a sintaxe do programa está correta; (2) ocorre um erro de sintaxe (violação das regras gramaticais); (3) independentemente do caso, o programa ainda pode conter erros que só serão capturados (ou não) pelo *type checker* na análise semântica.
+
+#### Gramáticas livres de contexto
+
+A **gramática livre de contexto (GLC)** caracteriza a linguagem, e o parser pode ser gerado automaticamente a partir dela — para cada classe gramatical da GLC, existirá uma estrutura de dados correspondente no compilador.
+
+Derivamos palavras de uma gramática $G$ a partir do seu símbolo inicial, substituindo repetidamente não-terminais pelo corpo de uma produção. A linguagem gerada por $G$, denotada $L(G)$, inclui todas as strings obtidas através de derivações em $G$.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2017.png)
+
+**Expressões regulares vs. gramáticas livres de contexto.** Tudo que pode ser escrito com uma ER também pode ser escrito com uma GLC, mas as ERs têm vantagens práticas importantes:
+
+- regras léxicas são especificadas mais simplesmente com ER;
+- ERs geralmente são mais concisas e simples;
+- é possível gerar analisadores léxicos mais eficientes a partir de ERs;
+- isso estrutura/modulariza o front-end do compilador.
+
+Na prática, ERs são convenientes para especificar a estrutura de construções léxicas (identificadores, constantes, palavras-chave), enquanto gramáticas são usadas para especificar estruturas **aninhadas** (parênteses balanceados, `begin`-`end`, `if`-`then`-`else`, etc.).
+
+**Derivação**: dada uma gramática $G$, produz uma string $s \in L(G)$.
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2018.png)
+
+#### Parsing
+
+Dada uma string $s \in L(G)$, o **parsing** produz uma árvore sintática que demonstra como obter uma derivação de $s$:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2019.png)
+
+Para gramáticas livres de contexto, é sempre possível construir um parser com complexidade $O(n^3)$ para processar $n$ tokens — mas, na prática, o parsing de linguagens de programação normalmente pode ser feito **linearmente**, com uma travessia da esquerda para a direita, olhando um token por vez.
+
+!!! note "O marcador de fim de arquivo"
+    Parsers devem ler não apenas os símbolos terminais, mas também o marcador de fim de entrada. Usa-se `$` para representá-lo, e costuma-se aumentar a gramática com uma produção extra $S' \to S\$$.
+
+Existem três grandes categorias de métodos de parsing: os **métodos universais** (funcionam para qualquer gramática, mas são ineficientes demais para uso prático), os métodos **top-down**, e os métodos **bottom-up**.
+
+### Parsing Top-Down
+
+Métodos top-down constroem a árvore sintática a partir da **raiz**, em direção às folhas. O método geral é:
+
+1. A partir do símbolo inicial da gramática, consumir tokens da esquerda para a direita.
+2. Decidir qual produção aplicar, de acordo com o token lido.
+3. Continuar até que um dos casos a seguir se torne verdadeiro:
+    - todas as folhas são símbolos terminais e não há mais tokens a ler;
+    - ocorre uma incompatibilidade entre a entrada e as folhas da árvore parcialmente construída — nesse caso, usa-se **backtracking**, restaurando o estado anterior à última escolha.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2020.png)
+
+#### Backtracking e parsing preditivo
+
+Backtracking é indesejável — causa ineficiência de código, principalmente em parsers top-down com derivação mais-à-esquerda. A solução ideal é realizar um **parsing preditivo (predictive parsing)**: o token lido como próximo terminal deve fornecer informação suficiente para decidir, sem ambiguidade, qual produção aplicar.
+
+Duas situações geram problemas para o parsing preditivo: **recursão à esquerda** e **ambiguidade**.
+
+**Recursão à esquerda.** Uma gramática é recursiva à esquerda se existe um não-terminal $A$ tal que $A$ deriva $A\alpha$ para alguma string $\alpha$. Existem técnicas para eliminar essa recursão automaticamente:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2021.png)
+
+- **Reescrever as produções, tornando-as recursivas à direita:** ![image.png](../../assets/faculdade/periodo4/compiladores/image%2022.png)
+
+    !!! example
+        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2023.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2024.png)
+
+- **Fatoração à esquerda**: técnica de transformação de gramática que combina os casos em que há mais de uma alternativa a partir do reconhecimento de um único token (existem algoritmos sistemáticos para realizá-la).
+
+    !!! example
+        ![image.png](../../assets/faculdade/periodo4/compiladores/image%2025.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2026.png)
+
+        Solução: ![image.png](../../assets/faculdade/periodo4/compiladores/image%2027.png)
+
+**Ambiguidade.** Uma gramática é dita **ambígua** quando gera mais de uma árvore sintática para a mesma string — e a interpretação do programa pode mudar dependendo de qual estrutura foi derivada.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2028.png)
+
+#### Gramática preditiva (LL(1))
+
+Uma **gramática preditiva** é uma gramática **LL(1)**: o primeiro **L** significa que o parser lê a entrada da esquerda para a direita; o segundo **L** significa que ele produz uma derivação mais-à-esquerda (*leftmost*); e o **(1)** significa que usa exatamente 1 símbolo de *lookahead* para decidir qual regra aplicar.
+
+Uma gramática LL(1) precisa ser:
+
+- **não ambígua** — cada entrada (símbolo terminal) leva a, no máximo, uma produção possível;
+- **não recursiva à esquerda** — não pode ter produções que começam com o próprio não-terminal;
+- **fatorada à esquerda** — se duas produções do mesmo não-terminal começam com o mesmo prefixo, esse prefixo precisa ser extraído.
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2029.png)
+
+A construção de parsers top-down (e também bottom-up) é auxiliada pelos conjuntos **FIRST** e **FOLLOW**, que ajudam o parser a decidir qual produção aplicar com base no próximo símbolo de entrada. A classe LL(1), apesar de restrita, é rica o suficiente para cobrir a maioria das construções de linguagens de programação reais.
+
+**FIRST.** $\text{FIRST}(\alpha)$, onde $\alpha$ é qualquer string de símbolos da gramática, é o conjunto de terminais que podem iniciar strings derivadas a partir de $\alpha$. Se $\alpha$ pode gerar $\varepsilon$, então $\varepsilon \in \text{FIRST}(\alpha)$.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2030.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2031.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2032.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2033.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2034.png)
+
+*Como calcular $\text{FIRST}(X)$:*
+
+- se $X$ é terminal, $\text{FIRST}(X) = \{X\}$;
+- se $X \to \varepsilon$, então $\varepsilon \in \text{FIRST}(X)$;
+- se $X \to Y_1Y_2\ldots Y_k$, então $\text{FIRST}(Y_1Y_2\ldots Y_k) \subseteq \text{FIRST}(X)$, onde $\text{FIRST}(Y_1Y_2\ldots Y_k)$ é:
+    - $\text{FIRST}(Y_1)$, se $\varepsilon \notin \text{FIRST}(Y_1)$;
+    - $(\text{FIRST}(Y_1) \setminus \{\varepsilon\}) \cup \text{FIRST}(Y_2\ldots Y_k)$, se $\varepsilon \in \text{FIRST}(Y_1)$;
+    - e $\varepsilon \in \text{FIRST}(Y_1Y_2\ldots Y_k)$ se $\varepsilon \in \text{FIRST}(Y_j)$ para todo $j$ de $1$ a $k$.
+
+**FOLLOW.** $\text{FOLLOW}(A)$, onde $A$ é um não-terminal, é o conjunto de terminais $a$ que podem aparecer imediatamente à direita de $A$ em alguma derivação. Se $A$ pode ser a produção mais à direita da gramática, então $\$ \in \text{FOLLOW}(A)$.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2035.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2036.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2037.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2038.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2039.png)
+
+*Como calcular $\text{FOLLOW}(A)$:*
+
+- $\$ \in \text{FOLLOW}(S)$, onde $S$ é o símbolo inicial;
+- se existe produção $A \to \alpha B \beta$, tudo que está em $\text{FIRST}(\beta)$ exceto $\varepsilon$ está em $\text{FOLLOW}(B)$;
+- se existe produção $A \to \alpha B$, tudo que está em $\text{FOLLOW}(A)$ está em $\text{FOLLOW}(B)$;
+- se existe produção $A \to \alpha B \beta$ e $\varepsilon \in \text{FIRST}(\beta)$, tudo que está em $\text{FOLLOW}(A)$ está em $\text{FOLLOW}(B)$.
+
+#### LL(1) table-driven parsing
+
+A **tabela de parsing** diz qual ação tomar com base no estado atual e no próximo símbolo de entrada — representada como uma matriz bidimensional $M[A, a]$, onde $A$ é não-terminal e $a$ é terminal (incluindo `$`), construída a partir de FIRST e FOLLOW:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2040.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2041.png)
+
+**Algoritmo de construção da tabela:**
+
+1. Para cada produção $A \to \alpha$ de $G$:
+    - para todo $a \in \text{FIRST}(\alpha)$, adicione $A \to \alpha$ em $M[A, a]$;
+    - se $\varepsilon \in \text{FIRST}(\alpha)$, então, para todo $b \in \text{FOLLOW}(A)$ (incluindo `$`), adicione $A \to \alpha$ em $M[A, b]$.
+2. Posições em branco na tabela representam **erro**.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2042.png)
+
+#### Gramática LL(1): definição formal e exemplos
+
+$G$ é LL(1) se, e somente se, para quaisquer duas produções distintas $A \to \alpha \mid \beta$:
+
+1. para nenhum terminal $a$, tanto $\alpha$ quanto $\beta$ geram palavras iniciadas em $a$;
+2. no máximo um de $\alpha, \beta$ deriva a palavra vazia;
+3. se $\beta$ deriva $\varepsilon$, $\alpha$ não pode derivar palavras iniciadas com terminais de $\text{FOLLOW}(A)$;
+4. se $\alpha$ deriva $\varepsilon$, $\beta$ não pode derivar palavras iniciadas com terminais de $\text{FOLLOW}(A)$.
+
+!!! example "A gramática é LL(1)?"
+    **1.** ![image.png](../../assets/faculdade/periodo4/compiladores/image%2043.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2044.png)
+
+    Não — a produção $A \to Abc$ é recursiva à esquerda. Além disso, $\text{FIRST}(Abc)$ contém $\text{FIRST}(A) = \{b\}$, o que faria $M[A, b]$ conter duas produções simultaneamente.
+
+    **2.** ![image.png](../../assets/faculdade/periodo4/compiladores/image%2045.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2046.png)
+
+    $\text{FIRST}(eS) = \{e\}$, logo $M[S', e] = S' \to eS$. Porém, como $\varepsilon \in \text{FIRST}(\varepsilon)$, é preciso olhar $\text{FOLLOW}(S') = \{\$, e\}$: para `$`, $M[S', \$] = S' \to \varepsilon$; para `e`, $M[S', e] = S' \to \varepsilon$ — mas $M[S', e]$ já contém $S' \to eS$, gerando um **conflito**. Logo, **não** é LL(1).
+
+!!! example "Exemplo completo"
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2047.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2048.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2049.png)
+
+#### Parsing preditivo não recursivo
+
+Um parser preditivo **não recursivo** pode ser construído mantendo uma pilha explícita, em vez de usar chamadas recursivas implícitas. Se $w$ é a entrada já casada, a pilha mantém uma sequência de símbolos da gramática $\alpha$ tal que $S \Rightarrow^* w\alpha$.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2050.png)
+
+#### Recursive-descent parsing
+
+É um método de análise sintática top-down em que um conjunto de **procedimentos recursivos** processa a entrada — cada procedimento associado a um não-terminal da gramática. O parsing preditivo é um caso especial de recursive-descent parsing, em que o símbolo de lookahead determina, sem ambiguidade, qual procedimento chamar para cada não-terminal.
+
+### Parsing Bottom-Up
+
+Métodos bottom-up constroem a árvore sintática a partir das **folhas**, com a ideia de converter o programa de entrada no símbolo inicial. O parser lê tokens até encontrar uma subpalavra $w$ que case com o lado direito de uma produção $A \to w$; ao chegar nesse ponto, substitui $w$ por $A$, se isso resultar em uma derivação válida. Essa substituição é chamada de **redução**.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2051.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2052.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2053.png)
+
+Formalmente, uma redução transforma a entrada $uwv$ em $uAv$ se $A \to w$ é uma produção da gramática.
+
+#### Handles
+
+Um **handle** é uma substring $w$ e uma produção $A \to w$ tal que, reduzindo $uwv \to uAv$, ainda é possível alcançar o símbolo inicial a partir de $uAv$ — ou seja, é uma redução que pode ser aplicada sem causar um beco sem saída.
+
+!!! warning "Um \"falso\" handle"
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2054.png)
+
+#### Análise shift-reduce
+
+A ideia central é dividir a entrada em duas partes, separadas por um marcador `|` (ou `•`): à direita, terminais ainda não reduzidos; à esquerda, terminais e não-terminais já processados. A parte mais à direita da substring esquerda (ou imediatamente adjacente ao marcador) contém o candidato a handle. Handles e reduções só ocorrem dentro da substring esquerda; a direita contém apenas terminais ainda não vistos.
+
+A cada passo, é preciso decidir entre duas ações:
+
+- **Shift**: desloca o foco para a direita, "jogando" um terminal para a substring esquerda. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2055.png)
+- **Reduce**: aplica uma redução a um handle. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2056.png)
+
+Se nenhuma das duas ações for possível, há um **erro sintático**.
+
+#### Shift-reduce parsing com pilha
+
+Toda redução ocorre na parte mais à direita da substring esquerda — representando-a como uma **pilha**, o `shift` empilha um token, e o `reduce` desempilha os símbolos de $w$ (reduzindo $A \to w$) e empilha $A$ em seu lugar. A redução ocorre quando o conteúdo do topo da pilha corresponde exatamente a um handle:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2057.png)
+
+Para reconhecer handles, observa-se tanto a pilha quanto o lookahead:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2058.png)
+
+!!! tip "Prefixos viáveis são regulares"
+    O conjunto de prefixos viáveis de uma gramática forma uma **linguagem regular** — por isso é possível usar AFDs para determinar se o conteúdo da pilha corresponde a um prefixo viável.
+
+#### Gramáticas LR(0)
+
+Toda gramática **LR(0)** pode ser analisada por um shift-reduce parser. A classificação do nome segue a convenção:
+
+- **L** → lê a entrada da esquerda para a direita;
+- **R** → procura a derivação mais à direita;
+- **(k)** → número de tokens de lookahead lidos, mas não consumidos.
+
+Uma gramática LR(0) pode ser processada olhando **apenas** o conteúdo da pilha, sem usar lookahead para decidir entre shift e reduce — é, por isso, uma classe razoavelmente **fraca** de gramáticas, mas o algoritmo de construção de tabelas LR(0) é uma introdução valiosa aos algoritmos LR(1).
+
+!!! example "Construção da tabela de parsing LR(0)"
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2059.png)
+
+    Regras de notação: `sn` → shift e vá para o estado $n$; `gn` → vá para o estado $n$ (goto); `rk` → reduza pela regra $k$; `a` (accept) → aceite a entrada; células vazias → erro.
+
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2060.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2061.png)
+
+**Executando o parsing.** Em vez de reescanear a pilha inteira a cada token, pode-se lembrar o estado alcançado em cada elemento da pilha — o algoritmo olha apenas o estado no topo da pilha e o símbolo de entrada atual para decidir a ação:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2062.png)
+
+!!! example "Trace completo de execução"
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2063.png)
+
+    1. Empilha o estado 1 inicialmente. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2064.png)
+    2. $M[1, (] = s3$ — empilha o estado 3. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2065.png)
+    3. $M[3, x] = s2$ — empilha o estado 2. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2066.png)
+    4. $M[2, {,}] = r2$ — reduz pela regra 2, substituindo `x` por `S`, volta ao estado 3; $M[3, S] = g7$, empilha 7. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2067.png)
+    5. $M[7, {,}] = r3$ — reduz pela regra 3, substituindo `S` por `L`, desempilhando 7 e voltando ao estado 3; $M[3, L] = g5$, empilha 5. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2068.png)
+    6. $M[5, {,}] = s8$ — empilha o estado 8. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2069.png)
+    7. $M[8, x] = s2$ — empilha o estado 2. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2070.png)
+    8. $M[2, )] = r2$ — reduz `x` para `S`, desempilhando 2 e voltando a 8; $M[8, S] = g9$, empilha 9. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2071.png)
+    9. $M[9, )] = r4$ — reduz `(L, S)` para `L`, desempilhando 9, 8 e 5 (3 símbolos), voltando a 3; $M[3, L] = g5$, empilha 5. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2072.png)
+    10. $M[5, )] = s6$ — empilha o estado 6. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2073.png)
+    11. $M[6, \$] = r1$ — reduz `(L)` para `S`, desempilhando 6, 5 e 3 (3 símbolos), voltando a 1; $M[1, S] = g4$, empilha 4. ![image.png](../../assets/faculdade/periodo4/compiladores/image%2074.png)
+    12. $M[4, \$] = a$ — **aceita** a entrada.
+
+**Conflitos.** Problemas na gramática, ou limitações da técnica escolhida, podem gerar conflitos na construção da tabela:
+
+- **shift-reduce**: o parser não consegue decidir entre uma ação de shift (ou mais de uma) ou de reduce;
+- **reduce-reduce**: não há como decidir entre duas ou mais ações de reduce — geralmente por ambiguidade na gramática, ou algum erro de projeto.
+
+!!! example "Exemplo de conflito shift-reduce em $M[1, +]$"
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2075.png)
+
+#### Análise SLR
+
+Para resolver esses conflitos, usa-se a análise **SLR (Simple LR)**, que utiliza o conjunto FOLLOW: a intuição é só reduzir se o próximo token (lookahead) estiver no conjunto FOLLOW do não-terminal associado à produção. Na tabela de parsing, inclui-se uma ação de reduce apenas se o terminal estiver no FOLLOW correspondente.
+
+Nos autômatos SLR, estados podem conter mais de um item de redução, caso os conjuntos FOLLOW envolvidos sejam distintos entre si, e podem misturar itens de shift com itens de redução, caso os terminais de shift não estejam no FOLLOW dos itens de redução. Mas isso **não elimina todos os tipos de conflito**:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2076.png)
+
+Para um poder de análise ainda maior, existem as gramáticas **LR(1)**.
+
+#### Gramáticas LR(1)
+
+LR(1) é mais poderoso que SLR, e suficiente para cobrir boa parte das linguagens de programação do mundo real. A noção de **item** é mais sofisticada, incluindo o símbolo de lookahead explicitamente. O parser LR(1) simula dois processos simultaneamente:
+
+1. o autômato LR(0) subjacente, para encontrar handles;
+2. um rastreador de tokens de lookahead, para determinar qual o lookahead atual.
+
+!!! note
+    Remover os lookaheads de um autômato LR(1) produz um autômato LR(0) correto, mas **muito maior**, para a mesma gramática.
+
+**Construção do autômato LR(1):**
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%2077.png)
+
+!!! example "Construção passo a passo"
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%2078.png)
+
+    Passo 1 (pode-se incrementar o conjunto dentro dos colchetes, como $S \to \bullet[\$, +]$): ![image.png](../../assets/faculdade/periodo4/compiladores/image%2079.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2080.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2081.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2082.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2083.png)
+
+    Passo 2: ![image.png](../../assets/faculdade/periodo4/compiladores/image%2084.png)
+
+    Passo 3: ![image.png](../../assets/faculdade/periodo4/compiladores/image%2085.png)
+
+    Passo 4: ![image.png](../../assets/faculdade/periodo4/compiladores/image%2086.png)
+
+    Passo 5: ![image.png](../../assets/faculdade/periodo4/compiladores/image%2087.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2088.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2089.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2090.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2091.png)
+
+    Passo 6: ![image.png](../../assets/faculdade/periodo4/compiladores/image%2092.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2093.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2094.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2095.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2096.png)
+
+    Passo 7: ![image.png](../../assets/faculdade/periodo4/compiladores/image%2097.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2098.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%2099.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20100.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20101.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20102.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20103.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20104.png)
+
+    Passo 8: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20105.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20106.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20107.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20108.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20109.png)
+
+    Passo 9: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20110.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20111.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20112.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20113.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20114.png)
+
+    **Autômato final:** ![image.png](../../assets/faculdade/periodo4/compiladores/image%20115.png)
+
+    **Tabela de parsing resultante:** ![image.png](../../assets/faculdade/periodo4/compiladores/image%20116.png)
+
+### Análise Semântica
+
+A análise semântica valida o **significado** das expressões, detectando erros mais profundos — não mais sobre a *forma* do código, mas sobre o seu *sentido*. Usa a árvore sintática e a tabela de símbolos para checar a consistência semântica com a definição da linguagem (a linguagem pode permitir **coercions**: conversões automáticas entre tipos compatíveis). Uma vez que essa fase termina com sucesso, o programa de entrada é considerado válido. O maior desafio é um equilíbrio: rejeitar o maior número possível de programas incorretos, acertando o maior número possível de programas corretos.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20117.png)
+
+!!! note "Limitações das GLCs"
+    Uma gramática livre de contexto, por si só, não consegue responder perguntas como: como prevenir definições de classes duplicadas? Como diferenciar variáveis de um tipo das de outro tipo? Como garantir que uma classe implementa todos os métodos de uma interface? É justamente para isso que servem a análise semântica e a tabela de símbolos.
+
+#### Árvores Sintáticas Abstratas (AST)
+
+A **AST** sintetiza as informações de uma árvore sintática (*parse tree*), focando nas informações importantes e classificando os nós de acordo com seu papel na estrutura da linguagem — é uma representação mais compacta que facilita o trabalho do compilador. Usa-se a AST para criar estruturas de dados em código; idealmente, para toda AST existe um **interpretador** que executa as ações representadas por cada nó, geralmente implementado como uma função recursiva que mantém o estado do programa.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20118.png)
+
+    Árvore sintática (parse tree) completa: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20119.png)
+
+    AST correspondente, mais compacta: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20120.png)
+
+**Direções de modularidade** na organização do front-end: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20121.png)
+
+**Visitor Design Pattern.** É um padrão de modelagem para ASTs que centraliza as funcionalidades em um objeto *Visitor*, que encapsula as operações sobre a AST e recebe a própria árvore como parâmetro de suas funções. Sua finalidade é separar os algoritmos das estruturas de dados sobre as quais operam, permitindo adicionar novas operações a uma estrutura complexa sem precisar modificar as classes dos objetos que a compõem.
+
+#### Checagem de tipos (Type-Checking)
+
+Um **tipo** é uma categoria de elementos de programação. A checagem de tipos é o primeiro passo propriamente dito da análise semântica, composta por duas atividades: **inferência de tipos** e **checagem** propriamente dita — que pode ser feita de forma **estática** (em tempo de compilação) ou **dinâmica** (em tempo de execução).
+
+**Sistema de tipos.** É a coleção de regras que limitam como um programa pode ser escrito, garantindo segurança em tempo de execução; a checagem de tipos verifica se essas regras estão sendo respeitadas. Um sistema é **strong** (fortemente tipado) se nunca permite erros de tipo passarem sem detecção, e **weak** (fracamente tipado) se pode permitir alguns.
+
+**Componentes de um sistema de tipos:**
+
+- **Built-in**: tipos pré-definidos para grupos de dados comuns (números, booleanos, caracteres), que variam entre linguagens.
+- **Tipos compostos**: formados por um ou mais objetos, cada um com seu próprio tipo (arrays, strings, enums). É possível criar *structures* (records) que agrupam múltiplos objetos de tipos arbitrários; ponteiros são um tipo especial, capaz de manipular memória diretamente; e novos tipos podem ser criados a partir de tipos já existentes.
+- **Equivalência de tipos**: toda linguagem precisa de regras sem ambiguidade para decidir se dois tipos diferentes são equivalentes:
+    - **Name equivalence**: dois tipos são equivalentes **sse** têm o mesmo nome — se o programador escolheu nomes diferentes, a linguagem respeita essa escolha. A complexidade de gerenciar essa consistência de nomes cresce com o tempo.
+    - **Structural equivalence**: dois tipos são equivalentes se têm a **mesma estrutura** — dois objetos podem ser trocados se têm o mesmo conjunto de campos, na mesma ordem, com tipos equivalentes. Examina as propriedades essenciais que definem o tipo, não seu nome.
+- **Regras de inferência**: envolvem os tipos dos operandos e o tipo do resultado de uma expressão (por exemplo, em expressões aritméticas, os tipos dos dois lados de um operador precisam ser compatíveis). Misturar tipos incompatíveis em uma expressão pode ser ilegal, podendo até impedir a compilação — ou o compilador pode aplicar conversões implícitas (*coercions*). Muitas linguagens exigem declaração de variáveis antes do uso, estabelecendo tipos bem definidos desde o início; linguagens que não exigem isso tornam a inferência de tipos mais complexa. A inferência de tipos de expressões normalmente segue a estrutura sintática da própria expressão, e pode depender de procedimentos/funções do programa — por isso, funções normalmente definem **assinaturas de tipo** explícitas.
+
+#### Gramática de atributos
+
+É um formalismo para realizar análise sensível ao contexto, enriquecendo uma GLC com regras que especificam computações: cada regra define um atributo em termos dos valores de outros atributos.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20122.png)
+
+    O atributo `type` é **sintetizado** (calculado a partir dos filhos), e o atributo `in` é **herdado** (definido em termos de nós ancestrais, irmãos, etc.):
+
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20123.png)
+
+!!! example "Exemplo completo com extensão incremental de regras"
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20124.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20125.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20126.png)
+
+    Adicionando novas regras: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20127.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20128.png)
+
+    Adicionando novas regras novamente: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20129.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20130.png)
+
+#### Escopo
+
+Um mesmo nome pode ter diferentes significados dentro de um programa. **Abstração** é o processo que associa um nome a um fragmento de programa; **binding** é a associação entre o nome e a funcionalidade que ele nomeia, podendo ser feita em diferentes momentos da compilação.
+
+O **escopo** é a região do programa onde o binding de um nome a uma entidade é válido e visível — ele determina onde se pode ver e usar uma variável ou função pelo seu nome. É possível fazer **shadowing**: quando o mesmo nome é usado em escopos diferentes, com significados distintos.
+
+!!! example "Escopo em OO"
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20131.png)
+
+**Passadas (passes).** Análise léxica e sintática normalmente podem ser resolvidas com uma única passada sobre a entrada. Alguns compiladores também combinam análise semântica e geração de código na mesma passada — chamados de **single-pass compilers**. Outros fazem múltiplas passadas (**multi-pass compilers**): por exemplo, ler a entrada e construir a AST (1ª passada), caminhar pela AST coletando informações sobre classes (2ª passada), caminhar novamente checando outras propriedades (3ª passada)... Algumas dessas passadas podem ser combinadas, mesmo que sejam logicamente distintas — e, na prática, costumam ser implementadas usando o padrão *Visitor*.
+
+#### Tabelas de símbolos
+
+Uma **tabela de símbolos** é um mapeamento de nomes para a entidade a que esses nomes se referem. Ao processar declarações de tipos, variáveis e funções, associamos os identificadores a seu significado na tabela; ao processar usos desses identificadores, fazemos o *lookup* na tabela.
+
+A implementação deve priorizar eficiência de acesso, e deve ser facilmente expansível. Em geral, implementa-se usando **hash tables**, possivelmente encadeadas conforme o nível de escopo.
+
+!!! note "Spaghetti stacks"
+    Uma forma de implementação trata a tabela de símbolos como uma **lista encadeada de escopos**: cada escopo armazena um ponteiro para seu ancestral, mas a recíproca não é verdadeira. Em qualquer ponto do programa, a tabela pode ser vista como uma pilha:
+
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20132.png)
+
+    (Por exemplo, dois escopos irmãos no mesmo nível — "2b" e "2a" — são essencialmente *sibling nodes*, sem relação direta entre si, apenas com o ancestral comum.)
+
+**Operações básicas da tabela de símbolos:**
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20133.png)
+
+Como a maioria das linguagens permite declarar nomes em múltiplos níveis de escopo, a tabela de símbolos precisa se adaptar a essa hierarquia. O compilador precisa fazer **name resolution**, mapeando cada nome referenciado a seu nível de escopo correto; à medida que o compilador sai de um escopo, a tabela encadeada daquele nível é descartada. Isso exige operações adicionais para gerenciar mudanças de escopo:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20134.png)
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20135.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20136.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20137.png)
+
+    No nível 3, para calcular `b = a + b + c + w`, para cada variável o compilador busca o nome no escopo mais próximo do escopo atual: `a` → nível 2b; `b` → nível 1; `c` → nível 3; `w` → nível 0.
+
+---
+
+## Representação Intermediária (IR)
+
+A **IR (Intermediate Representation)** é uma forma abstrata e independente de máquina do programa, que serve de ponte entre o front-end e o back-end. Pode ser uma árvore (AST simplificada), código de três endereços, um bytecode intermediário (LLVM IR, bytecode da JVM), etc. Durante a tradução, um compilador pode construir uma ou mais IRs do mesmo programa.
+
+A separação em fases, junto ao uso de uma IR, traz vantagens práticas, teóricas e arquiteturais substanciais: a separação de fases melhora modularização, tratamento de erros e reuso de código do compilador; e o uso da IR melhora, sobretudo, **portabilidade**, **otimização** e independência tanto de linguagens quanto de máquinas, dando grande flexibilidade ao pipeline:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20138.png)
+
+Compiladores modernos tipicamente usam mais de uma IR, intercaladas com *optimizers* — responsáveis por otimizar as IRs e melhorar o desempenho do programa final:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20139.png)
+
+A IR sempre tenta se aproximar progressivamente da linguagem de máquina final:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20140.png)
+
+Como o conhecimento derivado sobre o código precisa ser transmitido entre as passadas, o compilador precisa de uma representação dos fatos que ele deriva a partir do programa — essa representação precisa ser expressiva o suficiente para registrar tudo que é útil transmitir. Existem vários tipos de IR, e a escolha varia de compilador para compilador: Parse Trees, ASTs e DAGs, entre outras.
+
+### DAG (Grafo Acíclico Dirigido)
+
+Um **DAG** tem o objetivo de **eliminar subexpressões comuns**, resultando em código mais rápido e enxuto. Para construí-lo, lista-se primeiro os nós (cada um representando um operador ou uma variável) e uma tabela de símbolos que mapeia identificadores para o nó do DAG que contém o valor mais recente daquela variável. Para otimizar, realizam-se apenas as operações aritméticas que efetivamente correspondem a um nó.
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20141.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20142.png)
+
+### Representações lineares
+
+Como alternativa às representações gráficas, existem as **representações lineares**: sequências de instruções que executam em ordem, impondo uma sequência clara e útil — aproximando-se de código assembly para uma máquina abstrata. Geralmente precisam codificar mecanismos de transferência de controle entre pontos do programa (*jumps* e *conditional branches*).
+
+| Tipo | Modela | Observação |
+| --- | --- | --- |
+| **One-address code** | Acumuladores e máquinas baseadas em pilha | Código bastante compacto. ![image.png](../../assets/faculdade/periodo4/compiladores/image%20143.png) |
+| **Two-address code** | Máquinas com operações destrutivas | Perdeu popularidade com a redução das restrições de memória. |
+| **Three-address code** | Máquinas onde a maioria das operações recebe dois operandos e produz um resultado (popularidade das arquiteturas RISC) | O mais usado como código intermediário hoje. |
+
+**Three-address code (TAC)** abstrai um assembler onde cada instrução básica referencia no máximo 3 endereços, com no máximo um operador no lado direito de cada instrução — no formato `x := y op z`. Por exemplo, `x + y * z` é reescrito como:
+
+```text
+t1 := y * z
+t2 := x + t1
+```
+
+**Instruções e operadores típicos de TAC:**
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20144.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20145.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20146.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20147.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20148.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20149.png)
+
+**Estruturas de dados.** As instruções de três endereços podem ser representadas por objetos e/ou registros com campos para operadores e operandos. Uma estrutura comum é a **quadruple** ("quad"): contém quatro campos, `op`, `arg1`, `arg2` e `result`. Instruções com operadores unários não usam `arg2`; operadores como `param` não usam `arg2` nem `result`; desvios (jumps) colocam o rótulo (*label*) de destino em `result`.
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20150.png)
+
+**Gerando código IR:**
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20151.png)
+
+Com a ideia de fluxo de controle, é possível enriquecer a linguagem com estruturas de alto nível que se traduzem para TAC com jumps:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20152.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20153.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20154.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20155.png)
+
+### Control-Flow Graph (CFG)
+
+O **CFG** representa o fluxo de controle do programa, sendo bastante utilizado em análises de otimização, *instruction scheduling* e alocação global de registradores. Seus nós correspondem a **blocos básicos** de código, e as arestas representam a transferência de controle entre eles.
+
+Um **bloco básico** é uma sequência de operações que sempre executam em conjunto — cada instrução de um bloco básico só executa depois que todas as instruções anteriores já executaram (não há pontos de entrada/saída intermediários):
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20156.png)
+
+O CFG fornece uma representação gráfica dos caminhos possíveis do programa em tempo de execução (podendo conter caminhos que, na prática, são impossíveis de ocorrer de fato):
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20157.png)
+
+**Construção.** Pode-se construir CFGs tanto para IR de alto nível (traduzindo cada nó de uma AST e compondo os resultados) quanto para IR de baixo nível (analisando labels e instruções de desvio em código de três endereços). O CFG de uma instrução de alto nível $S$, $\text{CFG}(S)$, é um grafo com entrada e saída simples, e pode ser definido **recursivamente**:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20158.png)
+
+!!! example "Construção recursiva"
+    Condicionais: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20159.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20160.png)
+
+    Laço de repetição: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20161.png)
+
+    Exemplo completo: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20162.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20163.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20164.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20165.png)
+
+!!! warning "Ineficiência da construção recursiva ingênua"
+    Esse algoritmo recursivo gera um CFG com muitos blocos pequenos, o que é ineficiente. Uma construção eficiente deve minimizar o número e o tamanho dos blocos:
+
+    - não devem existir pares de blocos $(B_1, B_2)$ onde $B_2$ é sucessor único de $B_1$, $B_1$ tem apenas uma aresta de saída e $B_2$ tem apenas uma aresta de entrada (nesse caso, $B_1$ e $B_2$ deveriam ser fundidos em um só);
+    - não devem existir blocos básicos vazios.
+
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20166.png)
+
+**CFGs para código de três endereços (TAC):**
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20167.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20168.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20169.png)
+
+---
+
+## Otimização
+
+A **otimização** realiza transformações no código com o objetivo de melhorar algum aspecto relevante (desempenho, tamanho, consumo de energia), podendo ser específica a uma arquitetura ou geral, e sem alterar o comportamento observável do programa. O foco da otimização recai sobre as IRs, buscando o máximo de melhoria com o mínimo de esforço de engenharia.
+
+Toda transformação de otimização precisa satisfazer dois critérios:
+
+- **Safety (segurança)**: corretude é o critério mais importante que o compilador deve satisfazer. Como saber que uma transformação é segura? O que, exatamente, é "o sentido" de um programa? (Perguntas que remetem de volta à semântica formal da linguagem.)
+- **Profitability (benefício)**: qual a vantagem real de aplicar uma transformação como *loop unrolling*? Pode ser diminuir o número de iterações, evitar trabalho duplicado, ou reduzir a pressão sobre a memória (*memory bound*).
+
+### Granularidade da otimização
+
+| Nível | Escopo |
+| --- | --- |
+| **Local** | Aplicada a um bloco básico, isoladamente. |
+| **Global (intra-procedural)** | Aplicada a um CFG inteiro (um procedimento/método completo). |
+| **Inter-procedural** | Aplicada através das fronteiras entre métodos/procedimentos. |
+
+### Otimizações locais
+
+São a forma mais simples de otimização — não é necessário analisar o corpo completo do procedimento.
+
+**Single Assignment Form.** Representação que facilita otimizações: muitas delas se simplificam se cada atribuição é feita a um temporário que ainda não apareceu no bloco básico. Código de três endereços pode ser reescrito nessa forma, conhecida como **Static Single Assignment (SSA)**.
+
+!!! note "SSA"
+    SSA é uma disciplina de nomes usada por muitos compiladores modernos para codificar informação sobre fluxo de controle e de dados dos valores — foi concebida especificamente para viabilizar otimizações de código. Na forma SSA, cada nome corresponde unicamente a um ponto específico de definição: cada nome é definido **exatamente uma vez**, e cada uso carrega, implicitamente, informação sobre onde o valor foi originado.
+
+    Um programa está em SSA quando toda definição tem um nome distinto e todo uso se refere a uma única definição. Para transformar um programa em SSA, é necessário inserir funções especiais chamadas **phi ($\phi$)** nos pontos onde o fluxo de controle converge (por exemplo, após um `if`-`else`, onde uma variável pode ter sido definida em dois ramos diferentes).
+
+    A propriedade de single-assignment permite ao compilador ficar alheio a diversas questões associadas ao tempo de vida dos valores: nomes nunca são redefinidos ou "mortos" — o valor está sempre disponível a partir de algum caminho do grafo.
+
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20170.png)
+
+**Formas de otimização local:**
+
+| Técnica | Descrição | Referência |
+| --- | --- | --- |
+| Simplificação algébrica | Reescreve expressões usando identidades algébricas (ex.: `x + 0 = x`). | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20171.png) |
+| Constant folding | Avalia, em tempo de compilação, expressões cujos operandos são constantes conhecidas. | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20172.png) |
+| Copy propagation | Substitui o uso de uma variável pelo valor que lhe foi copiado, eliminando a cópia intermediária. | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20173.png) |
+| Copy propagation + Constant folding | As duas técnicas combinadas, aplicadas repetidamente. | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20174.png) |
+| Eliminação de subexpressões comuns | Evita recalcular uma expressão já computada antes no mesmo bloco. | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20175.png) |
+| Dead code elimination | Remove código cujo resultado nunca é usado. | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20176.png) |
+
+!!! example "Exemplo de otimização encadeada"
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20177.png)
+
+    1. Simplificação algébrica: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20178.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20179.png)
+    2. Copy propagation: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20180.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20181.png)
+    3. Constant folding: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20182.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20183.png)
+    4. Common subexpression elimination: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20184.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20185.png)
+    5. Copy propagation (novamente): ![image.png](../../assets/faculdade/periodo4/compiladores/image%20186.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20187.png)
+    6. Dead code elimination: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20188.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20189.png)
+
+#### Eliminando expressões redundantes
+
+Suponha que queremos eliminar expressões redundantes de um bloco básico. Uma expressão $e$ é **redundante** em um ponto $p$ se já foi avaliada em **todos** os caminhos que levam a $p$.
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20190.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20191.png)
+
+A otimização só pode ser aplicada se não for necessário reavaliar a expressão (*safety*); e é interessante substituir as avaliações redundantes por referências ao valor já computado anteriormente (*profitability*).
+
+!!! note "Local Value Numbering"
+    Técnica para implementar essa eliminação em código já em forma SSA. Faz uma travessia do bloco básico, atribuindo números distintos a cada valor que ele computa. A chave é escolher os números de forma que duas expressões $e_i$ e $e_j$ recebam o mesmo número **sse** os valores de seus operandos são, comprovadamente, iguais — usando *hashing* de operações para armazenar expressões já calculadas.
+
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20192.png)
+
+### Otimizações globais
+
+Operam sobre um procedimento (ou método) inteiro — ou seja, sobre um CFG completo — podendo modificar múltiplos blocos básicos simultaneamente:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20193.png)
+
+Existem situações em que uma otimização aparentemente óbvia **não** pode ser aplicada com segurança, por causa de caminhos de execução que o compilador precisa considerar:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20194.png)
+
+#### Data-flow analysis
+
+Antes de aplicar uma otimização, é preciso localizar os pontos onde o programa pode ser modificado com segurança para melhor. Para coletar essa informação, o compilador usa alguma forma de **análise estática**: tipicamente, primeiro constrói-se o CFG via análise de fluxo de controle, e depois se analisa como os valores *fluem* através do código — a **análise de fluxo de dados** propriamente dita.
+
+Essa análise é feita de forma **iterativa**: geralmente se constrói um conjunto de equações definidas sobre conjuntos, que descrevem como os dados são transferidos entre blocos básicos (**funções de transferência**). A solução dessas equações é obtida por um **algoritmo de ponto fixo**, simples e robusto.
+
+**Corretude.** Para substituir o uso de `x` por uma constante `k`, é preciso garantir que, em **todos** os caminhos que levam a esse uso, a última atribuição a `x` tenha sido `x = k`. Chamamos essa condição de $\Phi$:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20195.png)
+
+Checar essa condição não é trivial: ao quantificar sobre todos os caminhos, é preciso considerar loops e ramos condicionais — o que exige análise **global** (do CFG do método inteiro).
+
+!!! warning "Algumas otimizações globais são indecidíveis"
+    Otimizações globais em geral dependem de provar que uma propriedade $P$ vale em um ponto particular da execução — e provar $P$ em qualquer ponto exige, em princípio, conhecimento do corpo inteiro do método. Existem otimizações globais genuinamente **indecidíveis** em geral; por isso, a otimização só é aplicada quando se tem certeza absoluta (uma aproximação conservadora e segura).
+
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20196.png)
+
+#### Global Constant Propagation
+
+Em cada ponto do programa, associa-se um possível valor para cada variável `x`:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20197.png)
+
+!!! example
+    1. ![image.png](../../assets/faculdade/periodo4/compiladores/image%20198.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20199.png)
+    2. ![image.png](../../assets/faculdade/periodo4/compiladores/image%20200.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20201.png)
+
+Com a informação global disponível, a otimização em si é simples: basta inspecionar as propriedades `x = ?` associadas às instruções que usam `x`; se `x` for constante naquele ponto, substitui-se o uso de `x` pela própria constante. A ideia central é **transferir informação** de uma instrução para a próxima: para cada instrução $s$, computam-se $C_{in}(x, s)$ (valor de `x` imediatamente antes de $s$) e $C_{out}(x, s)$ (valor de `x` imediatamente depois de $s$).
+
+A informação se propaga através de **funções de transferência** entre instruções, definidas por um conjunto de regras:
+
+| Regra | Caso |
+| --- | --- |
+| 1 | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20202.png) |
+| 2 | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20203.png) |
+| 3 | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20204.png) |
+| 4 | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20205.png) |
+
+As regras 1 a 4 relacionam o `in` de uma instrução com o `out` da **mesma** instrução — propagando informação *dentro* de cada statement. Faltam regras relacionando o `out` de uma instrução com o `in` da instrução **seguinte**, para propagar informação *entre* os nós do CFG:
+
+| Regra | Caso |
+| --- | --- |
+| 5 | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20206.png) |
+| 6 | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20207.png) |
+| 7 | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20208.png) |
+| 8 | ![image.png](../../assets/faculdade/periodo4/compiladores/image%20209.png) |
+
+**Algoritmo:**
+
+1. Para todo nó inicial (statement) $s$ do programa, defina $C_{in}(x, s) = \star$ (valor desconhecido/qualquer).
+2. Em todos os demais pontos, defina inicialmente $C_{in}(x, s) = C_{out}(x, s) = \#$ — o valor `#` significa "até o momento, com o que sabemos, o controle não alcança este ponto". Isso garante que a análise consiga alcançar um ponto fixo.
+3. Repita: para qualquer statement que não satisfaça as regras 1–8, atualize-o usando a regra apropriada — até que nenhuma mudança mais ocorra.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20210.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20211.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20212.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20213.png)
+
+O algoritmo **termina** porque a relação entre `*`, os valores constantes, e `#` forma uma relação de ordem (um reticulado, *lattice*) de altura finita — garantindo que o processo iterativo converge:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20214.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20215.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20216.png)
+
+### Otimização: análise e transformação
+
+Toda otimização se divide em duas etapas:
+
+- **Análise**: determina onde o compilador pode aplicar otimizações de forma segura e benéfica (análise de fluxo de dados, análise de dependências);
+- **Transformação**: usa os resultados da análise para efetivamente reescrever o código de forma mais eficiente.
+
+Diferentes otimizações variam em efeito, escopo, e na quantidade de análise necessária para habilitá-las com segurança.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20217.png)
+
+---
+
+## Síntese
+
+A fase de síntese é responsável por gerar o código alvo final — binário ou bytecode.
+
+### Ambiente de execução
+
+Um compilador precisa implementar precisamente as abstrações definidas pela linguagem fonte: nomes, operadores, escopo, bindings, e assim por diante. Isso é feito cooperando com o sistema operacional e outros softwares para dar suporte a essas abstrações — o compilador cria, nesse processo, um **ambiente de execução** no qual assume que os programas serão executados.
+
+#### Organização da memória
+
+O programa tem seu próprio espaço lógico de memória, onde cada valor tem seu local:
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20218.png)
+
+O gerenciamento desse espaço é compartilhado entre compilador, SO e máquina física — o SO mapeia endereços lógicos em físicos, espalhados pela memória real. A representação de um programa nesse espaço lógico consiste de áreas de **dados** e de **programa (código)**.
+
+O tamanho do código gerado é fixo em tempo de compilação, podendo ser colocado em uma área estática; o mesmo vale para alguns objetos de dados (constantes, dados gerados pelo próprio compilador). Decisões de alocação **estática** são feitas apenas com base no texto do programa fonte; decisões **dinâmicas** só podem ser tomadas durante a execução.
+
+Para maximizar o uso do espaço disponível durante a execução, a **heap** e a **pilha (stack)** mudam de tamanho dinamicamente.
+
+#### Pilha — nomes locais a um procedimento
+
+Compiladores de linguagens que usam procedimentos, funções ou métodos como unidade de modularização gerenciam, ao menos parcialmente, a memória de execução em uma **pilha**: ao chamar um procedimento, o espaço para suas variáveis locais é alocado na pilha, e liberado automaticamente ao término da execução.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20219.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20220.png)
+
+**Ativação.** A **ativação** de um procedimento é sua execução completa — o **tempo de vida de uma ativação** é a sequência de passos do início ao fim do corpo do procedimento $p$, incluindo a execução de qualquer procedimento chamado por $p$. Se $a$ e $b$ são ativações de dois procedimentos, seus tempos de vida ou **não se sobrepõem**, ou são **aninhados** — as alocações em pilha não seriam possíveis se as ativações não fossem aninhadas apropriadamente.
+
+Se a ativação de $p$ chama $q$, a ativação de $q$ deve terminar **antes** da de $p$. Três situações são possíveis:
+
+1. a ativação de $q$ termina normalmente, e o controle volta ao ponto de $p$ onde $q$ foi chamado;
+2. a ativação de $q$ (ou de algum procedimento que $q$ chamou) aborta, direta ou indiretamente — nesse caso, $p$ encerra simultaneamente com $q$;
+3. a ativação de $q$ termina por uma exceção que $q$ não consegue tratar — se $p$ consegue tratá-la, a ativação de $q$ termina enquanto a de $p$ continua (não necessariamente do ponto onde $q$ foi chamada); se $p$ também não consegue tratá-la, a ativação de $p$ termina junto com a de $q$, e presumivelmente outro procedimento tratará a exceção.
+
+**Árvores de ativação.** Podemos representar todas as ativações de procedimento feitas durante a execução de um programa com uma árvore: cada nó corresponde a uma ativação; os filhos de um nó $p$ são as ativações feitas durante a execução de $p$; e as ativações são ordenadas da esquerda para a direita, na ordem em que foram chamadas.
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20221.png)
+
+**Registros de ativação (activation records / frames).** Cada ativação viva tem um registro (*frame*) na pilha de controle, com a raiz da árvore de ativação no fundo da pilha; a sequência de registros corresponde ao caminho percorrido na árvore até onde o controle se encontra, com a última ativação no topo. Um registro de ativação tipicamente contém:
+
+- valores temporários, resultantes da avaliação de expressões;
+- dados locais pertencentes ao procedimento ativo;
+- o estado da máquina imediatamente antes da chamada (endereço de retorno do contador de programa, conteúdo de registradores a restaurar);
+- um **link de acesso**, para dados localizados em outros registros de ativação;
+- um **link de controle**, apontando para o registro de ativação de quem o chamou;
+- o valor de retorno, se houver (usando registradores quando possível);
+- os parâmetros reais passados (também usando registradores quando possível).
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20222.png)
+
+#### Heap — dados de vida indefinida
+
+A **heap** armazena dados que podem existir **depois** do término de uma chamada de procedimento — dados que vivem potencialmente por tempo indefinido.
+
+À medida que memória é usada e liberada, o espaço da heap se divide entre partes ocupadas e **livres (holes)** — que, em geral, não residem em áreas contíguas. A cada requisição, é preciso encontrar um *hole* grande o suficiente; a menos que seja do tamanho exato solicitado, é preciso dividi-lo ao alocar, o que pode gerar **fragmentação** (muitos espaços livres pequenos e não contíguos).
+
+**Estratégias para reduzir fragmentação:**
+
+- **Controlar antes (na alocação)**: controlar como os objetos são alocados —
+    - *first-fit*: aloca o primeiro espaço livre que couber;
+    - *best-fit*: divide espaços livres em *bins* de tamanhos variáveis, melhorando a utilização do espaço;
+    - *next-fit*: tenta melhorar a localidade espacial, alocando objetos próximos uns dos outros (combinando ideias de *best-fit*).
+- **Controlar depois (na desalocação)**: ao liberar um objeto, combinar (*coalesce*) o espaço livre com espaços livres adjacentes — marcando *bins* com um bit indicando se estão ocupados ou livres, ou marcando as fronteiras dos espaços livres quando bins não são usados.
+
+**Desalocação manual.** O gerenciamento manual de memória tende a gerar dois tipos clássicos de erro:
+
+- **Memory leak**: esquecer de liberar dados que não podem mais ser referenciados;
+- **Dangling reference**: referenciar dados que já foram liberados.
+
+#### Garbage Collection
+
+**Garbage** são dados que não podem mais ser referenciados pelo programa — um objeto se torna *garbage* quando o programa não tem mais como alcançá-lo. É possível saber, a partir do **tipo** de um objeto, seu tamanho e quais de seus componentes contêm referências a outros objetos (referências sempre apontam para o início de um objeto).
+
+**Reachability (alcançabilidade).** Os dados diretamente acessíveis pelo programa, sem precisar desreferenciar um ponteiro, formam o **root set** — o programa pode alcançar qualquer membro desse conjunto em qualquer momento. Recursivamente, qualquer objeto referenciado (direta ou indiretamente) a partir de um membro do root set também é **alcançável**. O conjunto de objetos alcançáveis muda durante a execução (alocação de objetos, atribuições de referência, etc.).
+
+**Como encontrar objetos inalcançáveis:**
+
+| Estratégia | Quando atua |
+| --- | --- |
+| **Incremental** | Realiza alguma tarefa a cada instrução executada. |
+| **Batch-oriented** | Roda sob demanda, quando o espaço livre se esgota. |
+
+**Reference Counting (incremental).** Adiciona um contador a cada objeto alocado na heap, rastreando quantos ponteiros apontam para ele. Quando o contador chega a zero, o objeto pode ser liberado imediatamente — e liberar um objeto pode, em cascata, levar à liberação de outros.
+
+!!! warning "Problema clássico do Reference Counting"
+    Referências cíclicas nunca chegam a contador zero, mesmo quando o ciclo inteiro é inalcançável do resto do programa — causando *memory leaks* persistentes a menos que se use uma técnica adicional para detectar ciclos:
+
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20223.png)
+
+**Batch Collectors.** Geralmente executados quando o espaço livre se esgota ou cai abaixo de um limiar. O *collector* pausa a execução do programa, examina a memória alocada para descobrir objetos inutilizados, e libera o espaço correspondente. Em geral, operam em duas fases: descoberta de objetos mortos, e desalocação/"reciclagem" desses objetos.
+
+**Mark-and-Sweep.** A técnica clássica para identificar objetos *live* (vivos) usa um algoritmo de *marking*:
+
+1. O coletor reserva um bit por objeto na heap, chamado **mark bit**, armazenado no cabeçalho do objeto (junto com informações de localização e tamanho).
+2. Limpa todos os mark bits, e constrói uma *worklist* a partir de todos os ponteiros em registradores e variáveis acessíveis pelos procedimentos ativos.
+3. Caminha pela worklist, seguindo recursivamente quaisquer referências a partir desses ponteiros, marcando tudo que é alcançável.
+4. Ao final, objetos **não marcados** (mortos) são inalcançáveis, e podem ser liberados na fase de *sweep* — uma travessia pela heap que libera os objetos inalcançáveis (podendo, opcionalmente, já resetar o mark bit, evitando uma travessia extra na próxima fase de *marking*).
+
+**Definição formal do algoritmo:**
+
+![image.png](../../assets/faculdade/periodo4/compiladores/image%20224.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20225.png) ![image.png](../../assets/faculdade/periodo4/compiladores/image%20226.png)
+
+Todos os algoritmos *batch* (também chamados *trace-based*) computam o conjunto de objetos alcançáveis e usam seu **complemento** para liberar memória — o ciclo geral é: o programa faz requisições de alocação; o garbage collector descobre a reachability; e libera o espaço dos objetos inalcançáveis. Embora implementações variem, esses algoritmos costumam ser descritos em termos de quatro estados gerais para cada região de memória:
+
+| Estado | Significado |
+| --- | --- |
+| **Free** | Espaço pronto para alocação; não pode conter objeto alcançável. |
+| **Unreached** | Presumido inalcançável, a menos que o *tracing* prove o contrário. |
+| **Unscanned** | Alcançável, mas seus ponteiros ainda não foram examinados. |
+| **Scanned** | Todo objeto *unscanned* eventualmente é observado e transita para este estado. |
+
+**Variações do mark-and-sweep:**
+
+- **Baker's mark-and-sweep**: em vez de examinar a heap inteira, mantém uma lista explícita de objetos alocados.
+- **Mark-and-compact**: além de marcar espaço como livre, *move* objetos na heap para eliminar fragmentação.
+- **Incremental**: intercala GC e execução do programa — por isso, tende a ser conservador nas suas decisões.
+- **Copying collectors**: dividem a heap em duas regiões (*pools*), *old* e *new*; a alocação sempre ocorre a partir de *old*. Na estratégia *stop-and-copy*, quando a alocação falha, todos os dados vivos são copiados de *old* para *new*, e as identidades das duas regiões são invertidas — podendo usar mark-and-sweep ou uma variante incremental internamente.
+
+**Comparações entre estratégias:**
+
+- Com GC vs. sem GC: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20227.png)
+- Reference Counting vs. Batch Collectors: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20228.png)
+- Mark-and-sweep vs. Copying Collectors: ![image.png](../../assets/faculdade/periodo4/compiladores/image%20229.png)
+
+### Seleção de instruções
+
+Reescreve as operações da IR em operações da linguagem de máquina alvo, ainda abstraindo a quantidade real de registradores disponíveis (trabalhando com "registradores simbólicos"). Pode se beneficiar de operações especiais disponíveis na máquina alvo.
+
+### Alocação de registradores
+
+É muito mais eficiente realizar operações manipulando dados próximos à CPU, em **registradores**, do que na memória RAM. O desafio desta etapa é associar as diversas variáveis do código a um número limitado de registradores físicos, minimizando o **spilling**: o processo de mover variáveis da CPU para a RAM quando não há registradores suficientes disponíveis para todas as variáveis temporárias necessárias — o que afeta significativamente o desempenho final.
+
+### Geração do código de máquina final
+
+Traduz a IR para instruções da arquitetura alvo, produzindo um programa executável que o processador (ou VM) consegue de fato processar. Vários problemas complexos surgem nessa etapa e **interagem entre si** de formas nada triviais:
+
+- reordenar instruções pode acabar *aumentando* o número de registradores necessários simultaneamente;
+- a alocação de registradores pode criar uma falsa sensação de dependência entre valores, prejudicando o **instruction scheduling** — a otimização que reorganiza instruções para aumentar o paralelismo em nível de instrução, melhorando o desempenho em máquinas com pipeline de instruções.
+
+!!! example
+    ![image.png](../../assets/faculdade/periodo4/compiladores/image%20230.png)
