@@ -10,11 +10,13 @@ O **conversor analógico-digital (ADC)** é um dispositivo eletrônico capaz de 
 
 Quando os conversores fazem essas representações, parte das informações é perdida, como mostrado na imagem:
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled.png)
 
 É perceptível que, durante a conversão, muitas informações são perdidas; mas, de acordo com a quantidade de bits (resolução) do conversor, menos informação é perdida (é impossível recuperar 100% da informação original). Com mais bits, menos "quadrado" fica o gráfico à direita:
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%201.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%201.png)
 
 ### Atributos de um ADC
 
@@ -61,9 +63,10 @@ São circuitos cujos valores de entrada e saída são bits, pois são baseados n
 
 Uma **função lógica booleana** é uma função que possui uma ou mais variáveis de entrada e produz um resultado que depende somente dos valores dessas variáveis.
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%202.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%202.png)
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%203.png)
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%203.png)
 
 **Como otimizar uma função booleana**
 
@@ -85,80 +88,152 @@ Uma **função lógica booleana** é uma função que possui uma ou mais variáv
 
 **Regras**
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%204.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%204.png)
 
 **Teoremas**
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%205.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%205.png)
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%206.png)
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%206.png)
 
 ### Portas lógicas
 
 === "NOT"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%207.png)
+    Inverte o sinal de entrada: $\overline{A}$.
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%208.png)
+    | A | NOT |
+    |---|---|
+    | 0 | 1 |
+    | 1 | 0 |
+
+    ??? note "Símbolo da porta e tabela-verdade (imagens de referência)"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%207.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%208.png)
 
 === "AND"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%209.png)
+    Saída `1` apenas quando **ambas** as entradas são `1`.
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2010.png)
+    | A | B | X |
+    |---|---|---|
+    | 0 | 0 | 0 |
+    | 0 | 1 | 0 |
+    | 1 | 0 | 0 |
+    | 1 | 1 | 1 |
+
+    ??? note "Símbolo da porta e tabela-verdade (imagens de referência)"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%209.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2010.png)
 
 === "NAND"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2011.png)
+    Negação do AND: saída `0` apenas quando ambas as entradas são `1`.
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2012.png)
+    | A | B | X |
+    |---|---|---|
+    | 0 | 0 | 1 |
+    | 0 | 1 | 1 |
+    | 1 | 0 | 1 |
+    | 1 | 1 | 0 |
+
+    ??? note "Símbolo da porta e tabela-verdade (imagens de referência)"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2011.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2012.png)
 
 === "OR"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2013.png)
+    Saída `1` quando **pelo menos uma** entrada é `1`.
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2014.png)
+    | A | B | X |
+    |---|---|---|
+    | 0 | 0 | 0 |
+    | 0 | 1 | 1 |
+    | 1 | 0 | 1 |
+    | 1 | 1 | 1 |
+
+    ??? note "Símbolo da porta e tabela-verdade (imagens de referência)"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2013.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2014.png)
 
 === "NOR"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2015.png)
+    Negação do OR: saída `1` apenas quando ambas as entradas são `0`.
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2016.png)
+    | A | B | X |
+    |---|---|---|
+    | 0 | 0 | 1 |
+    | 0 | 1 | 0 |
+    | 1 | 0 | 0 |
+    | 1 | 1 | 0 |
+
+    ??? note "Símbolo da porta e tabela-verdade (imagens de referência)"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2015.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2016.png)
 
 === "XOR"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2017.png)
+    Saída `1` quando as entradas são **diferentes**.
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2018.png)
+    | A | B | X |
+    |---|---|---|
+    | 0 | 0 | 0 |
+    | 0 | 1 | 1 |
+    | 1 | 0 | 1 |
+    | 1 | 1 | 0 |
+
+    ??? note "Símbolo da porta e tabela-verdade (imagens de referência)"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2017.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2018.png)
 
 === "XNOR"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2019.png)
+    Negação do XOR: saída `1` quando as entradas são **iguais**.
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2020.png)
+    | A | B | X |
+    |---|---|---|
+    | 0 | 0 | 1 |
+    | 0 | 1 | 0 |
+    | 1 | 0 | 0 |
+    | 1 | 1 | 1 |
+
+    ??? note "Símbolo da porta e tabela-verdade (imagens de referência)"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2019.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2020.png)
 
 ### Mintermos e maxtermos
 
 - **Mintermos** — são as linhas da tabela-verdade cujo resultado é 1. Para obter a expressão em soma de produtos (SOP), faz-se a soma de todos os mintermos dessas linhas.
 
     !!! example
-        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2021.png)
+        ??? note "Imagens de referência"
+            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2021.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2022.png)
+            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2022.png)
 
 - **Maxtermos** — são as linhas da tabela-verdade cujo resultado é 0. Para obter a expressão em produto de somas (POS), faz-se o produto de todos os maxtermos dessas linhas.
 
     !!! example
-        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2023.png)
+        ??? note "Imagens de referência"
+            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2023.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2024.png)
+            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2024.png)
 
 ### Mapa de Karnaugh
 
@@ -167,23 +242,27 @@ Uma **função lógica booleana** é uma função que possui uma ou mais variáv
 **Como montar um mapa de Karnaugh**
 
 !!! example "Tabela-verdade de exemplo"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2025.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2025.png)
 
     **Mintermos**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2026.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2026.png)
 
 1. **Identificar as combinações** que resultam em 1 na tabela-verdade.
 
 2. **Colocar no mapa de Karnaugh** todas as combinações:
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2027.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2027.png)
 
     A primeira linha simboliza o valor de $P_1$, e a primeira coluna simboliza os valores de $P_2$ e $P_3$, nessa ordem.
 
 3. **Formar grupos** de potências de dois ($1, 2, 4, 8, \ldots$) que contenham as combinações cujo valor é 1. Para formar os grupos, é preciso considerar as células (os quadrados) adjacentes (esquerda, direita, acima ou abaixo), formando os grupos com o maior número de células possível.
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2028.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2028.png)
 
 4. **Identificar, dentro de cada grupo**, células que apresentam uma variável em sua forma normal e em sua forma complementar. Quando isso acontece, devemos excluir essa variável do termo produto final.
 
@@ -191,19 +270,22 @@ Uma **função lógica booleana** é uma função que possui uma ou mais variáv
 
     - Célula 1:
 
-        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2029.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2029.png)
 
         $f(P_1, P_2, P_3) = P_1$ (o $P_2$ e o $P_3$ se cancelam, pois assumem valores complementares).
 
     - Célula 2:
 
-        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2030.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2030.png)
 
         $f(P_1, P_2, P_3) = \emptyset$ (o $P_1$, o $P_2$ e o $P_3$ se cancelam, pois assumem valores complementares).
 
     - Célula 3:
 
-        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2031.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2031.png)
 
         $f(P_1, P_2, P_3) = P_2$ (o $P_1$ e o $P_3$ se cancelam, pois assumem valores complementares).
 
@@ -212,50 +294,59 @@ Uma **função lógica booleana** é uma função que possui uma ou mais variáv
 **Exemplos**
 
 !!! example "Exemplo 1"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2032.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2032.png)
 
     Termo produto final: $f(x,y,z) = z'x' + x'y' + z'y'$
 
 !!! example "Exemplo 2"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2033.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2033.png)
 
     Termo produto final: $f(x,y,z) = z'y' + x'$
 
 !!! example "Exemplo 3"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2034.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2034.png)
 
     Termo produto final: $f(a,b,c,d) = ac'd + b'c$
 
 !!! example "Exemplo 4"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2035.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2035.png)
 
     Termo produto final: $f(a,b,c,d) = cd + ad + b$
 
 **Terminologia**
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2036.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2036.png)
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2037.png)
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2037.png)
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2038.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2038.png)
 
 ### Exemplo — projetando circuitos a partir do mapa de Karnaugh
 
 O objetivo é projetar os circuitos digitais para as funções abaixo, utilizando o mapa de Karnaugh para otimizá-los.
 
 !!! example "Função 1"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2039.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2039.png)
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2040.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2040.png)
 
     **Mapa de Karnaugh**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2041.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2041.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2042.png)
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2042.png)
 
     Produto final: $f(a,b,c,d) = a'c + a'b + c'd + ac'$ (os termos $a'b$ e $c'd$ são primos não essenciais, logo podemos escolher apenas um deles para a solução mínima).
 
@@ -263,23 +354,27 @@ O objetivo é projetar os circuitos digitais para as funções abaixo, utilizand
         Esta tabela-verdade foi marcada no material original para revisão — pode conter um erro que ainda não foi verificado.
 
 !!! example "Função 2"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2043.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2043.png)
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2044.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2044.png)
 
     **Mapa de Karnaugh**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2045.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2045.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2046.png)
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2046.png)
 
     Produto final: $f(a,b,c,d) = a'c + ac' + abcd$
 
     **Circuito correspondente**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2047.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2047.png)
 
 ### Clock
 
@@ -296,55 +391,64 @@ Possuem uma ou duas entradas, e necessariamente duas saídas: $Q$ e $\overline{Q
 **Tipos de flip-flop**
 
 === "SR (Set-Reset)"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2048.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2048.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2049.png)
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2049.png)
 
     Possui duas entradas: *set* ($S$) e *reset* ($R$).
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2050.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2050.png)
 
     Quando $S = 0$ e $R = 0$, o flip-flop mantém o estado anterior/inicial (se, antes do sinal entrar no flip-flop, $Q$ era 0, então permanece 0).
 
 === "JK"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2051.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2051.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2052.png)
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2052.png)
 
     É, basicamente, um flip-flop SR aprimorado, com $J$ fazendo o papel de *set* e $K$ o de *reset*.
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2053.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2053.png)
 
     - Quando $J = 0$ e $K = 0$, $Q$ e $\overline{Q}$ mantêm o estado anterior.
     - `CLK` é o sinal de clock (nesse caso, acionado por borda de descida).
     - *Toggle* é o valor invertido do estado anterior: se antes $Q$ era 0, depois será 1.
 
     !!! example "Exemplo — contador decimal"
-        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2054.png)
+        ??? note "Imagens de referência"
+            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2054.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2055.png)
+            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2055.png)
 
 === "D (Data)"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2056.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2056.png)
 
     Armazena em $Q$ o dado que foi colocado no pino $D$.
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2057.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2057.png)
 
 === "T (Toggle)"
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2058.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2058.png)
 
     É uma forma resumida do flip-flop JK, juntando as duas entradas $J$ e $K$ em uma única entrada $T$.
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2059.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2059.png)
 
     - Quando $J = 0$ e $K = 0$, $Q$ e $\overline{Q}$ mantêm o estado anterior.
     - `CLK` é o sinal de clock (nesse caso, acionado por borda de descida).
@@ -355,15 +459,17 @@ Possuem uma ou duas entradas, e necessariamente duas saídas: $Q$ e $\overline{Q
 **Circuito combinacional** — tipo de circuito digital em que as saídas são determinadas exclusivamente pelas combinações das entradas presentes no momento, sem depender de qualquer estado anterior ou armazenamento de informações. Esses circuitos são baseados em operações lógicas que ocorrem instantaneamente em resposta às entradas, e não têm capacidade de memória.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2060.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2060.png)
 
     **Tabela-verdade**
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2061.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2061.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2062.png)
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2062.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2063.png)
+        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2063.png)
 
 **Circuito sequencial** — tipo de circuito digital em que as saídas são determinadas tanto pelos valores das entradas presentes no momento quanto pelos valores de qualquer estado anterior (ou seja, o output depende do input atual e do input do estado anterior). Esses circuitos armazenam as informações dos estados passados em flip-flops, e possuem clocks:
 
@@ -393,12 +499,14 @@ Pode ser definida como uma tupla $(M, S, I, O, \delta, \lambda)$, onde:
 1. **Diagrama de estados** — forma de representação através de desenhos, usada para descrever a operação de um circuito, mostrando todos os estados individuais da máquina e as possíveis sequências de mudança de um estado para outro.
 
     !!! example
-        ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2064.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2064.png)
 
         No exemplo, $X$ é o valor da entrada, e o valor da saída $R$ indica onde a transição ocorre ($R = 0$: não ocorre; $R = 1$: ocorre a transição).
 
         !!! example "Exemplo de contador"
-            ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2065.png)
+            ??? note "Imagem de referência"
+                ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2065.png)
 
 2. **Fazer a tabela-verdade.**
 3. **Fazer o mapa de Karnaugh.**
@@ -408,13 +516,15 @@ Pode ser definida como uma tupla $(M, S, I, O, \delta, \lambda)$, onde:
 
 **Máquina de estados de Moore** — as saídas dependem apenas do estado atual; as saídas só são atualizadas quando os estados variam (transições de estado não síncronas).
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2066.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2066.png)
 
 É usada como controlador de semáforos, reconhecimento de padrões e detecção/correção de erros.
 
 **Máquina de estados de Mealy** — as saídas dependem tanto das entradas quanto dos estados. Quando a entrada muda, as saídas são atualizadas imediatamente, sem esperar pelo clock. Esse modelo permite representar comportamentos mais complexos, que dependem da interação entre o estado interno e as entradas externas.
 
-![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2067.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/sistemas-digitais/Untitled%2067.png)
 
 ## Processador (visão geral de uma arquitetura MIPS simplificada)
 

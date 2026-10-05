@@ -29,48 +29,69 @@ Em `scanf`, é preciso passar o **endereço** da variável (por isso o `&var`), 
     ```
 
 !!! example "scanf vs. fgets"
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled.png)
 
     Com a entrada `Bro Code` para o nome, o `scanf` da idade não é lido corretamente se não tratarmos a quebra de linha.
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%201.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%201.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%202.png)
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%202.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%203.png)
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%203.png)
 
     Sem o `fgets()`, o programa não funcionaria corretamente: o `scanf` da idade acabaria lendo o espaço em branco deixado e retornaria `0` para a idade.
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%204.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%204.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%205.png)
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%205.png)
 
 ### Tabela de tipos e specifiers
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%206.png)
+| Tipo | Exemplo | Tamanho | Intervalo | Format specifier |
+|---|---|---|---|---|
+| `char` | `char a = 'C';` | 1 byte | caractere único | `%c` |
+| `char[]` | `char b[] = "Bro";` | — | array de caracteres (string) | `%s` |
+| `char` | `char f = 120;` | 1 byte | -128 a +127 | `%d` ou `%c` |
+| `unsigned char` | `unsigned char g = 255;` | 1 byte | 0 a +255 | `%d` ou `%c` |
+| `short int` | `short int h = 32767;` | 2 bytes | -32.768 a +32.767 | `%d` |
+| `unsigned short int` | `unsigned short int i = 65535;` | 2 bytes | 0 a +65.535 | `%d` |
+| `int` | `int j = 2147483647;` | 4 bytes | -2.147.483.648 a +2.147.483.647 | `%d` |
+| `unsigned int` | `unsigned int k = 4294967295;` | 4 bytes | 0 a +4.294.967.295 | `%u` |
+| `long long int` | `long long int l = 987654234567899765;` | 8 bytes | -9 a +9 quintilhões | `%lld` |
+| `unsigned long long int` | `unsigned long long int m = 12345678902345;` | 8 bytes | 0 a +18 quintilhões | `%llu` |
+| `float` | `float c = 3.141592;` | 4 bytes (32 bits de precisão) | 6-7 dígitos | `%f` |
+| `double` | `double d = 3.141592653589793;` | 8 bytes (64 bits de precisão) | 15-16 dígitos | `%lf` |
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%207.png)
+??? note "Imagem de referência (screenshots de código)"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%206.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%208.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%207.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%209.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%208.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2010.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%209.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2011.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2010.png)
+
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2011.png)
 
 !!! note
     - `long double` usa `%llf`.
     - Existe também `%zu`, usado para o tipo `size_t` (ainda a pesquisar em mais detalhes).
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2012.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2012.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2013.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2013.png)
 
 Usar `%.1f` (ou qualquer número de casas decimais) arredonda a parte decimal exibida — não muda o valor armazenado, só a formatação da saída.
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2014.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2014.png)
 
 ### `const`
 
@@ -83,13 +104,17 @@ const float PI = 3.1415;  // não pode ser alterado
 
 ## Operadores
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2015.png)
+**Operadores aritméticos**: `+` (adição), `-` (subtração), `*` (multiplicação), `/` (divisão), `%` (módulo), `++` (incremento), `--` (decremento).
 
-**Operadores de atribuição composta** (augmented assignment):
+??? note "Imagem de referência (screenshot de código)"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2015.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2016.png)
+**Operadores de atribuição composta** (augmented assignment): `x = x + 2` equivale a `x += 2`; `x = x - 3` equivale a `x -= 3`; `x = x * 4` equivale a `x *= 4`; `x = x / 5` equivale a `x /= 5`; `x = x % 2` equivale a `x %= 2`.
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2017.png)
+??? note "Imagem de referência (screenshots de código)"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2016.png)
+
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2017.png)
 
 !!! warning "Divisão entre inteiros"
     A divisão entre dois `int` sempre retorna um `int` — se a divisão não for exata, a parte decimal é **descartada** (não arredondada). Para obter o resultado com parte decimal, pelo menos um dos operandos precisa ser `float` ou `double`.
@@ -100,7 +125,8 @@ const float PI = 3.1415;  // não pode ser alterado
     printf("%d\n", a / b); // 2
     ```
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2018.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2018.png)
 
     Saída: `2`
 
@@ -109,7 +135,8 @@ const float PI = 3.1415;  // não pode ser alterado
     printf("%f\n", a / b); // 2.000000
     ```
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2019.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2019.png)
 
     Saída: `2.000000`
 
@@ -119,7 +146,8 @@ const float PI = 3.1415;  // não pode ser alterado
     printf("%f\n", a / b); // 2.500000 (para outros valores de a e b)
     ```
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2020.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2020.png)
 
     Saída: `2.500000`
 
@@ -127,7 +155,21 @@ const float PI = 3.1415;  // não pode ser alterado
 
 Disponíveis incluindo `<math.h>`.
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2021.png)
+```c
+double A = sqrt(9);
+double B = pow(2, 4);
+int C = round(3.14);
+int D = ceil(3.14);
+int E = floor(3.99);
+double F = fabs(-100);
+double G = log(3);
+double H = sin(45);
+double I = cos(45);
+double J = tan(45);
+```
+
+??? note "Imagem de referência (screenshot de código)"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2021.png)
 
 ## Condicionais
 
@@ -137,13 +179,19 @@ Disponíveis incluindo `<math.h>`.
 
 Alternativa mais eficiente a uma longa cadeia de `else if`, quando queremos testar um único valor contra vários casos possíveis (igualdade exata).
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2022.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2022.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2023.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2023.png)
 
 ## Operadores lógicos
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2024.png)
+- `&&` (AND) — checa se duas ou mais variáveis são verdadeiras.
+- `||` (OR) — checa se pelo menos uma variável é verdadeira.
+- `!` (NOT) — inverte o valor de uma condição booleana.
+
+??? note "Imagem de referência (screenshot de código)"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2024.png)
 
 ## Funções
 
@@ -154,125 +202,177 @@ Uma função é um bloco de código nomeado, executado quando é chamado em algu
 - O tipo de retorno é declarado **antes** do nome da função.
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2025.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2025.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2026.png)
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2026.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2027.png)
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2027.png)
 
 Uma função pode ter múltiplos `return`s: a execução **para** no primeiro `return` alcançado (exceto em chamadas recursivas, onde a mesma função é lida novamente a cada chamada).
 
 **Parâmetros e argumentos:**
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2028.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2028.png)
 
 Variáveis declaradas dentro de uma função só existem (têm *escopo*) dentro dela, a menos que sejam retornadas. Para tornar um valor acessível dentro de uma função sem declará-lo nela, basta passá-lo como **parâmetro**.
 
 ## Operador ternário
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2029.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2029.png)
 
 !!! example "Sem usar o operador ternário"
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2030.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2030.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2031.png)
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2031.png)
 
 !!! example "Usando o operador ternário"
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2032.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2032.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2031.png)
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2031.png)
 
 ## Function prototype
 
 Usado quando uma função é **definida** depois de `main` no código — o compilador precisa conhecer a assinatura da função antes de encontrar sua chamada, então declaramos o *prototype* (assinatura, sem corpo) antes de `main`.
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2033.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2033.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2034.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2034.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2035.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2035.png)
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2036.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2036.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2037.png)
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2037.png)
 
 ## Funções de string
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2038.png)
+```c
+strlwr(string1);             // converte a string para minúsculas
+strupr(string1);             // converte a string para maiúsculas
+strcat(string1, string2);    // concatena string2 ao final de string1
+strncat(string1, string2, 1);// concatena n caracteres de string2 ao final de string1
+strcpy(string1, string2);    // copia string2 em string1
+strncpy(string1, string2, 2);// copia n caracteres de string2 em string1
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2039.png)
+strset(string1, '?');        // atribui um caractere a todos os caracteres da string
+strnset(string1, 'x', 1);    // atribui um caractere aos n primeiros caracteres da string
+strrev(string1);             // inverte a string
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2040.png)
+int result = strlen(string1);          // retorna o tamanho da string (int)
+int result = strcmp(string1, string2); // compara todos os caracteres das duas strings
+int result = strncmp(string1, string2, 1); // compara n caracteres
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2041.png)
+int result = strcmpi(string1, string1);  // compara tudo, ignorando maiúsc./minúsc.
+int result = strnicmp(string1, string1, 1); // compara n caracteres, ignorando maiúsc./minúsc.
+```
+
+??? note "Imagem de referência (screenshots de código)"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2038.png)
+
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2039.png)
+
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2040.png)
+
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2041.png)
 
 !!! note
     As funções de comparação de string (como `strcmp`, abaixo de `strlen` na tabela) retornam `0` quando as strings são iguais, e um inteiro diferente de zero caso contrário.
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2042.png)
+```c
+if (result == 0) {
+    printf("These strings are the same");
+} else {
+    printf("These strings are not the same");
+}
+```
+
+??? note "Imagem de referência (screenshot de código)"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2042.png)
 
 ## Loops
 
 ### For
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2043.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2043.png)
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2044.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2044.png)
 
 ### While
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2045.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2045.png)
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2046.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2046.png)
 
 ### Do-while
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2047.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2047.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2048.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2048.png)
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2049.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2049.png)
 
 ### Loops aninhados (nested loops)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2050.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2050.png)
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2051.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2051.png)
 
 ### Break e continue
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2052.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2052.png)
 
 ## Arrays
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2053.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2053.png)
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2054.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2054.png)
 
 ### Iterando sobre uma array
 
 Para iterar sobre uma array, usamos um `for`:
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2055.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2055.png)
 
 `sizeof()` retorna o tamanho de um operando **em bytes**. Por isso, para obter o número de elementos de uma array estática, dividimos `sizeof(array)` por `sizeof(array[0])` (por exemplo, se `sizeof(prices) = 48` e `sizeof(prices[i]) = 8`, a array tem `48 / 8 = 6` elementos) — o equivalente ao `len()` do Python, só que calculado manualmente.
 
 ### Arrays 2D
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2056.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2056.png)
 
 **Declarando a array:**
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2057.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2057.png)
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2058.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2058.png)
 
     Usando `sizeof` para calcular a quantidade de iterações dos `for`s — mas se lermos o número de linhas e colunas via `scanf` antes, podemos declarar a array já com o tamanho correto, sem precisar desse cálculo.
 
@@ -299,22 +399,27 @@ Os algoritmos de ordenação (Selection sort, Bubble sort, Insertion sort, Merge
 
 Uma `struct` agrupa variáveis de tipos diferentes sob um único nome.
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2059.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2059.png)
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2060.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2060.png)
 
 ### Typedef
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2061.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2061.png)
 
 **Usando `typedef` sem struct:**
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2062.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2062.png)
 
 **Usando `typedef` com struct:**
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2063.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2063.png)
 
 Usando `typedef` junto com `struct`, não precisamos mais escrever a palavra `struct` toda vez que declararmos uma variável desse tipo.
 
@@ -323,93 +428,116 @@ Usando `typedef` junto com `struct`, não precisamos mais escrever a palavra `st
 Para agrupar várias instâncias de uma struct, podemos criar uma **array de structs**.
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2064.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2064.png)
 
     Poderíamos usar `typedef` para eliminar a necessidade de escrever `struct` repetidamente dentro de `main`.
 
 ## Enum
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2065.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2065.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2066.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2066.png)
 
 Valores de `enum` são tratados como constantes inteiras.
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2067.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2067.png)
 
     Não é necessário atribuir números explicitamente: `Sun` recebe implicitamente o valor `0`, `Mon` recebe `1`, e assim por diante. Porém, se atribuirmos valores explicitamente a todas as constantes, elas serão tratadas simplesmente como `int`.
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2068.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2068.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2069.png)
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2069.png)
 
     Esta última versão é mais legível.
 
 ## Números (pseudo-)aleatórios
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2070.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2070.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2071.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2071.png)
 
 Precisamos dessas duas bibliotecas (`<stdlib.h>` para `rand()`/`srand()` e `<time.h>` para `time()`).
 
 !!! example "Rolando um dado"
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2072.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2072.png)
 
     O `srand(time(0))` é necessário para definir a **seed** (semente) do gerador de números pseudo-aleatórios. Sem essa chamada, toda vez que executássemos o programa obteríamos a mesma sequência de números (não necessariamente todos iguais entre si na mesma execução, mas a mesma sequência se repetindo entre execuções diferentes).
 
 ## Operadores bitwise
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2073.png)
+Operadores especiais usados em programação a nível de bits (é importante saber binário para este tópico):
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2074.png)
+- `&` = AND
+- `|` = OR
+- `^` = XOR
+- `<<` = left shift (deslocamento à esquerda)
+- `>>` = right shift (deslocamento à direita)
+
+??? note "Imagem de referência (screenshots de código)"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2073.png)
+
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2074.png)
 
 Existe também o operador de complemento (`~`), um pouco mais complexo de interpretar na prática.
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2075.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2075.png)
 
 ## Endereços de memória
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2076.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2076.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2077.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2077.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2078.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2078.png)
 
 Ao declarar uma variável, o programa reserva um bloco de memória para guardar aquele valor, e essa variável passa a ter um **endereço de memória** específico (se mudarmos o tipo da mesma variável, o endereço pode mudar). `sizeof` mostra a quantidade de memória ocupada por uma variável de determinado tipo.
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2079.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2079.png)
 
 Usando o format specifier `%p`, imprimimos o endereço de uma variável (`p` de *pointer*, o próximo tópico).
 
 !!! example "O que é impresso"
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2080.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2080.png)
 
     Cada caractere do endereço impresso (notação hexadecimal) pode ser um número de `0` a `9` ou uma letra de `A` a `F`.
 
 ## Pointers (ponteiros)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2081.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2081.png)
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2082.png)
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2082.png)
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2083.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2083.png)
 
 ### Ponteiros como argumento de função
 
 Basta colocar um `*` antes do parâmetro para indicar que a função recebe um ponteiro.
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2084.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2084.png)
 
 ### Boas práticas com ponteiros
 
 É uma boa prática declarar um ponteiro já atribuindo `NULL` a ele, até que receba um endereço válido.
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2085.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2085.png)
 
 Também é boa prática checar primeiro se o ponteiro é `NULL`, e usar um `else` para conter o restante do código que depende dele estar válido.
 
@@ -419,15 +547,18 @@ Também é boa prática checar primeiro se o ponteiro é `NULL`, e usar um `else
 
 **`fopen()`**
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2086.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2086.png)
 
 **`fclose()`**
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2087.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2087.png)
 
 **`fprintf()`**
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2088.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2088.png)
 
 **`fscanf()`** — lê um conjunto de dados de um arquivo.
 
@@ -439,10 +570,12 @@ Parâmetros:
 - `int size` — número máximo de caracteres a serem lidos.
 - `FILE *fp` — ponteiro que guarda as informações do arquivo aberto em modo de leitura.
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2089.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2089.png)
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2090.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2090.png)
 
     Dentro de um `while`, `fgets` lê todas as linhas de `file.txt`; usado fora do `while`, lê apenas a primeira linha.
 
@@ -453,30 +586,35 @@ Parâmetros:
 
 ### Criando/escrevendo um arquivo
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2091.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2091.png)
 
 Se não especificarmos a localização do arquivo, ele é criado no diretório/pasta atual. Podemos especificar o local desejado:
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2092.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2092.png)
 
 !!! tip
     Checar se `pF` (o ponteiro de arquivo) é `NULL` antes de usá-lo é boa prática: se houver erro na criação do arquivo, o programa pode imprimir uma mensagem e retornar, em vez de travar.
 
 ### Deletando um arquivo
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2093.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2093.png)
 
 Executando esse código a primeira vez, o arquivo criado na seção anterior é deletado; executando de novo, o programa imprime `"That file was NOT deleted!"` (já que o arquivo não existe mais).
 
 ### Lendo arquivos
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2094.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2094.png)
 
     Essa versão lê e imprime apenas a primeira linha de `file.txt`.
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2095.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2095.png)
 
     Essa versão lê e imprime todas as linhas de `file.txt`.
 
@@ -528,7 +666,8 @@ int *p;
 p = (int*) malloc(sizeof(int));
 ```
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2096.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2096.png)
 
 Basicamente, em vez de um ponteiro receber o endereço de uma variável já existente, usamos `malloc` para reservar e atribuir o endereço diretamente a ele — sem a necessidade de criar antes uma variável como `int a; int *p = NULL; p = &a;`.
 
@@ -553,9 +692,10 @@ ponteiro, que costuma ser 8 bytes */
 **`malloc` vs. `calloc`:**
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2097.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2097.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2098.png)
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2098.png)
 
 #### `free`
 
@@ -1308,19 +1448,23 @@ void freeArray(dynamic_array* container) {
 
 Memória dinâmica se comporta como uma array, com o tipo de dado determinado pelo tipo do ponteiro. Assim como em arrays comuns, acessamos um elemento pelo seu índice:
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2099.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%2099.png)
 
 Também podemos desreferenciar o ponteiro para acessar diretamente o **primeiro** elemento:
 
-![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%20100.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%20100.png)
 
 Ao desreferenciar o ponteiro, obtemos o valor no endereço para o qual ele aponta; nesse caso, como o ponteiro ainda aponta para o início da alocação, desreferenciá-lo retorna o primeiro elemento.
 
 !!! example "Criando uma array dinâmica"
     Usando `calloc` + `free`:
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%20101.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%20101.png)
 
     Usando `malloc` + `free`:
 
-    ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%20102.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/c/Untitled%20102.png)

@@ -8,7 +8,8 @@ Um **Sistema de Informação (SI)** é um conjunto de componentes inter-relacion
 
 Os SI são o motor que movimenta a **pirâmide DIKW** — um modelo que representa a progressão hierárquica da informação, desde o dado bruto até a sabedoria aplicada:
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image.png)
+??? note "Diagrama da pirâmide"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image.png)
 
 | Nível | Significado |
 | --- | --- |
@@ -24,14 +25,22 @@ Um **sistema**, de forma geral, é uma coleção de componentes que interagem en
 - **Sistemas fechados**: não interagem além de suas próprias fronteiras;
 - **Sistemas abertos**: interagem ativamente com o ambiente ao seu redor.
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%201.png)
+Esquematicamente, todo sistema aberto tem essa forma: um fluxo de **entrada** atravessa a **fronteira do sistema**, passa por etapas de processamento internas, gera um **feedback** que realimenta o próprio processamento, e produz um fluxo de **saída** que cruza a fronteira de volta para o ambiente.
+
+??? note "Diagrama de um sistema aberto genérico"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%201.png)
 
 Os SI são, por definição, exemplos de **sistemas abertos** — são estabelecidos para servir à estratégia geral de uma organização, ajudando-a a cumprir seus objetivos no contexto de um ambiente externo em constante mudança.
 
 !!! note "Nem todo SI é digital"
-    Um Sistema de Informação não precisa necessariamente envolver computadores — um sistema de fichas de papel em uma biblioteca também é um SI. O que nos interessa aqui, especificamente, é o **SI baseado em computador**:
+    Um Sistema de Informação não precisa necessariamente envolver computadores — um sistema de fichas de papel em uma biblioteca também é um SI. O que nos interessa aqui, especificamente, é o **SI baseado em computador**, composto por:
 
-    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%202.png)
+    - **Componentes de Tecnologia da Informação**: hardware, software, banco de dados e rede;
+    - **Procedimentos/processos**;
+    - **Pessoas**.
+
+    ??? note "Diagrama de referência"
+        ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%202.png)
 
 ### Tecnologia da Informação vs. Sistema de Informação
 
@@ -51,17 +60,25 @@ A infraestrutura de TI evoluiu por sucessivas eras: **mainframe** → **computad
     - **Custo de hardware (armazenamento)** — **Law of Mass Digital Storage**: o número de kilobytes que podem ser armazenados ao custo de 1 dólar dobra a cada 15 meses.
     - **Redução dos custos de comunicação** — **Lei de Metcalfe**: o valor de uma rede é proporcional ao quadrado do seu número de nós.
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%203.png)
+O ecossistema de infraestrutura de TI é formado por sete categorias de fornecedores que se interligam: plataformas de hardware de computador (ex.: Dell, IBM, Sun, HP, Apple, máquinas Linux), plataformas de sistemas operacionais (ex.: Microsoft Windows, Unix, Linux, Mac OS X, Google Chrome), aplicações de software empresarial — incluindo middleware (ex.: SAP, Oracle, Microsoft, BEA), gerenciamento e armazenamento de dados (ex.: IBM DB2, Oracle, SQL Server, Sybase, MySQL, EMC Systems), plataformas de internet (ex.: Apache, Microsoft IIS/.NET, Unix, Cisco, Java), redes e telecomunicações (ex.: Microsoft Windows Server, Linux, Novell, Cisco, Alcatel-Lucent, Nortel, AT&T, Verizon) e consultores/integradores de sistemas (ex.: IBM, EDS, Accenture).
+
+??? note "Diagrama do ecossistema de infraestrutura de TI"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%203.png)
 
 !!! example "Tendências (2012)"
-    - Hardware: ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%204.png)
-    - Software: ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%205.png)
+    - **Hardware**: The Emerging Mobile Digital Platform; Grid Computing; Virtualization; Cloud Computing; Green Computing; Autonomic Computing; High-Performance and Power-Saving Processors.
+    - **Software**: Linux and Open Source Software; Software for the Web (Java and Ajax); Web Services and Service-Oriented Architecture; Software Outsourcing and Cloud Services.
+
+??? note "Imagens de referência (listas de tendências)"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%204.png)
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%205.png)
 
 ### Diamante de Leavitt
 
 O **Diamante de Leavitt** é um modelo de análise organizacional que ajuda a entender como diferentes elementos de uma organização estão interligados, trazendo uma visão sistêmica do negócio:
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%206.png)
+??? note "Diagrama do Diamante de Leavitt"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%206.png)
 
 | Elemento | Pergunta que responde |
 | --- | --- |
@@ -184,22 +201,22 @@ O **BPMN** é uma linguagem padronizada para modelagem de processos de negócio,
 
 **Activities** (ações realizadas no processo):
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%207.png)
+- **Tasks**: passos simples e indivisíveis (ex.: "edit order");
+- **Subprocessos**: representam um conjunto de tarefas colapsadas em um único elemento, identificado por um pequeno "+" no retângulo (ex.: "procure goods").
 
-- **Tasks**: passos simples e indivisíveis;
-- **Subprocessos**: representam um conjunto de tarefas colapsadas em um único elemento. ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%208.png)
+??? example "Exemplo de processo BPMN (pedido com procurement)"
+    Um exemplo típico: o processo começa com o evento *Order Received*; segue para a task *Check Availability*; um gateway exclusivo (XOR) verifica se o artigo está disponível — se **sim**, vai direto para *Ship Article* e depois *Financial Settlement* (um subprocesso), terminando em *Payment Received*; se **não**, entra no subprocesso *Procurement*, que pode terminar em *Undelivered* (via evento intermediário de erro) ou *Late Delivery* (via evento intermediário de timer) — ambos os casos acionam a task *Inform Customer*, e o caminho de entrega atrasada ainda segue para *Remove Article from Catalogue*, terminando em *Article Removed*.
+
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%207.png)
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%208.png)
 
 **Events** (pontos de entrada, interrupção ou saída):
-
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%209.png)
 
 - **Start events**: iniciam a instância do processo;
 - **Intermediate events**: representam marcos ou condições intermediárias;
 - **End events**: encerram o processo.
 
 **Gateways** (controles do fluxo de decisão):
-
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2010.png)
 
 | Tipo | Comportamento |
 | --- | --- |
@@ -210,15 +227,11 @@ O **BPMN** é uma linguagem padronizada para modelagem de processos de negócio,
 
 **Connecting Objects** (conectam os elementos do processo entre si):
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2011.png)
-
 - **Sequence flow**: fluxo de sequência entre tarefas, gateways e eventos;
 - **Message flow**: comunicação entre *pools*;
 - **Association**: liga dados ou artefatos a atividades.
 
 **Artefatos** (fornecem dados e informações de apoio, como complementos de informação):
-
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2012.png)
 
 - **Data objects**: representam arquivos ou documentos usados/gerados pelo processo;
 - **IT Systems**: representam sistemas que executam tarefas automatizadas;
@@ -226,10 +239,15 @@ O **BPMN** é uma linguagem padronizada para modelagem de processos de negócio,
 
 **Swimlanes** (organização por responsabilidades, mostrando quem é responsável por cada parte do processo):
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2013.png)
-
 - **Pools**: representam entidades organizacionais inteiras;
 - **Lanes**: representam grupos ou papéis específicos dentro de uma pool.
+
+??? note "Ícones de notação BPMN (Events, Gateways, Connecting Objects, Artifacts, Swimlanes)"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%209.png)
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2010.png)
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2011.png)
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2012.png)
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2013.png)
 
 ---
 
@@ -270,8 +288,21 @@ Containers permitem empacotar aplicações junto com suas dependências, garanti
 | **PaaS** (Platform as a Service) | Linguagem de programação, banco de dados, etc. — uma plataforma completa para desenvolvimento e implantação. | O provedor gerencia, além de HW e virtualização, também o SO e os logs; o usuário foca exclusivamente no desenvolvimento. | Google App Engine, Heroku, Azure App Services |
 | **SaaS** (Software as a Service) | O software em si, acessado via internet. | O provedor gerencia praticamente tudo; o usuário gerencia apenas seus dados e configurações — menos controle geral, mas uso muito mais simples. | Gmail, Microsoft 365, Salesforce |
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2014.png)
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2015.png)
+A tabela acima mostra apenas três modelos, mas a divisão de responsabilidades entre contratante e provedor é, na prática, um espectro mais granular. Considerando as camadas de uma aplicação (dados/configurações, código da aplicação, escalonamento, runtime, SO, virtualização e hardware), quem gerencia cada camada varia conforme o modelo:
+
+| Camada | On-Premises | IaaS | CaaS (Containers) | PaaS | FaaS (Function) | SaaS |
+| --- | --- | --- | --- | --- | --- | --- |
+| Dados e configurações | Você | Você | Você | Você | Você | Você |
+| Código da aplicação | Você | Você | Você | Você | Você | Provedor |
+| Escalonamento | Você | Você | Você | Você | Provedor | Provedor |
+| Runtime | Você | Você | Você | Provedor | Provedor | Provedor |
+| Sistema operacional | Você | Você | Provedor | Provedor | Provedor | Provedor |
+| Virtualização | Você | Provedor | Provedor | Provedor | Provedor | Provedor |
+| Hardware | Você | Provedor | Provedor | Provedor | Provedor | Provedor |
+
+??? note "Diagramas de referência (pirâmide SaaS/PaaS/IaaS e tabela de responsabilidades completa)"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2014.png)
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2015.png)
 
 ---
 
@@ -316,7 +347,8 @@ Integrar sistemas é conectar aplicações (muitas vezes legadas, construídas e
 
 Em sistemas **distribuídos**, o Teorema CAP afirma que não é possível garantir simultaneamente as três propriedades a seguir:
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2016.png)
+??? note "Diagrama de Venn do Teorema CAP"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2016.png)
 
 | Propriedade | Garantia |
 | --- | --- |
@@ -345,28 +377,32 @@ Existem quatro estilos clássicos de integração entre aplicações, cada um co
 
 **File Transfer.** Uma aplicação escreve um arquivo (em um formato acordado) que outra aplicação posteriormente lê.
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2017.png)
+??? note "Diagrama: File Transfer"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2017.png)
 
 - Gera um **acoplamento fraco** entre os sistemas (eles nem precisam saber da existência um do outro diretamente, apenas do formato do arquivo);
 - Tem desvantagens relacionadas a aspectos temporais — não há garantia de quando o arquivo será lido, nem notificação imediata de disponibilidade.
 
 **Shared Database.** Múltiplas aplicações leem e escrevem diretamente no mesmo banco de dados.
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2018.png)
+??? note "Diagrama: Shared Database"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2018.png)
 
 - O gerenciamento de transações é garantido pelo próprio SGBD;
 - Mas gera **acoplamento forte** no nível do schema: qualquer mudança na estrutura dos dados pode quebrar todas as aplicações que compartilham o banco.
 
 **Remote Procedure Invocation.** Uma aplicação chama diretamente uma função/método exposto por outra, como se fosse uma chamada local.
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2019.png)
+??? note "Diagrama: Remote Procedure Invocation"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2019.png)
 
 - O acesso aos dados fica **encapsulado** atrás da interface da função (em vez de exposto diretamente, como no shared database);
 - Passa a ser possível também expor **funcionalidades**, não apenas dados — mas isso introduz acoplamento temporal forte: ambos os lados precisam estar disponíveis simultaneamente para a chamada funcionar.
 
 **Messaging.** As aplicações trocam mensagens assíncronas através de um canal intermediário (fila, tópico, barramento de mensagens).
 
-![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2020.png)
+??? note "Diagrama: Messaging"
+    ![image.png](../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2020.png)
 
 - O envio de mensagens não exige que todos os sistemas estejam funcionando ao mesmo tempo;
 - Produz **baixo acoplamento** temporal — o receptor pode processar a mensagem quando estiver disponível;

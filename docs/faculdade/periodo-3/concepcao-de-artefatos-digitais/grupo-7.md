@@ -39,9 +39,13 @@ A pesquisa documental levantou fontes secundárias sobre o problema da adoção 
 ### 1.4 Estado da arte e da técnica
 
 - **Referência**: mapa mental, feito no Miro.
-- **Entrega**:
+- **Entrega**: mapa mental centrado em "As adversidades no processo de adoção de animais", organizado em três ramos principais:
+    - **Relevância social do tema**: segundo a OMS, o número de animais abandonados no Brasil em 2022 era de 30 milhões — a adoção contribui para reduzir esse número; além disso, a companhia de um animal pode aumentar a saúde física e mental de um indivíduo (a Universidade da Califórnia aponta redução de estresse, ansiedade e solidão).
+    - **Problemas relacionados ao abandono e à adoção animal**: desconhecimento sobre gastos financeiros, comportamento e cuidados necessários; impulsividade e desinformação como principais causas de arrependimento; frustração com o animal levando a abandono; falta de suporte tanto pré-doação (falta de transparência sobre o passado/traumas do animal) quanto pós-doação (94% dos entrevistados de uma pesquisa pensavam em abandonar seus animais, mas mantiveram o pet após receber suporte); despreparo das ONGs (que pode reforçar a desinformação do adotante); e dúvidas causadas por mitos (como o mito da superioridade de animais de raça, que desestimula a adoção de animais de rua).
+    - **Personas dos potenciais adotantes**: o indivíduo impulsivo (não pondera responsavelmente a adoção), o indivíduo desinformado (atribui ao pet custos altos) e o indivíduo hesitante (preocupado com o suporte pós-adoção e com a "inferioridade" atribuída a animais de rua).
 
-    ![image.png](../../../assets/faculdade/periodo3/concepcao-de-artefatos-digitais/grupo-7/image.png)
+    ??? note "Mapa mental completo (captura do Miro)"
+        ![image.png](../../../assets/faculdade/periodo3/concepcao-de-artefatos-digitais/grupo-7/image.png)
 
     [Mapa mental completo (Google Drive)](https://drive.google.com/file/d/1iLwdLQcAz3C2zg-jaFgPmihjr0XfRaGp/view)
 

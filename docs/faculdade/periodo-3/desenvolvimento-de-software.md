@@ -125,7 +125,10 @@ Um processo de desenvolvimento de software define quais atividades e etapas deve
 
 **Processos Waterfall (cascata)** são processos dirigidos por planejamento, que propõem que a construção de um sistema seja feita em etapas sequenciais, como uma cascata de água:
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image.png)
+**Levantamento de Requisitos → Análise → Projeto → Codificação → Testes → Implantação**
+
+??? note "Foto do livro-texto (modelo cascata)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image.png)
 
 Esse modelo foi elaborado há mais tempo e foi muito criticado devido aos atrasos e problemas recorrentes que gerava na prática.
 
@@ -140,7 +143,10 @@ Modelos permitem que os desenvolvedores analisem propriedades e características
 
 Frequentemente, modelos de software são baseados em notações gráficas — entre elas, a **UML** (*Unified Modeling Language*), uma notação que define mais de uma dezena de diagramas gráficos para representar propriedades estruturais e comportamentais de um sistema.
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%201.png)
+Um exemplo típico é um **diagrama de classes** como o abaixo, relacionando uma classe `Cliente` (com atributos `id`, `nome`, `especial`) a uma classe `ContaBancaria` (com atributo `saldo` e os métodos `getSaldo()`, `getNomeCliente()` e `getExtrato(inicio: Data)`), ligadas por uma associação `cliente` de multiplicidade 1.
+
+??? note "Foto do livro-texto (exemplo de diagrama de classes UML)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%201.png)
 
 Nesse tipo de diagrama, as caixas retangulares representam classes do sistema, incluindo seus métodos e atributos, e as setas indicam relações entre duas classes. (O capítulo 4 do livro, resumido mais abaixo, aprofunda os principais diagramas UML.)
 
@@ -195,7 +201,10 @@ No início, o processo utilizado na engenharia de software foi o processo em cas
 
 A principal característica dos processos ágeis é a adoção de **ciclos curtos e iterativos** de desenvolvimento: implementa-se primeiro uma versão do sistema com as funcionalidades mais urgentes segundo o cliente, e o sistema é construído de forma gradativa, começando pelo que é mais urgente. Caso essa versão seja aprovada, um novo ciclo (ou iteração) se inicia, com as próximas funcionalidades também priorizadas pelos clientes. Normalmente esses ciclos são curtos, de modo que o sistema é construído de forma incremental, com cada incremento devidamente aprovado pelos clientes.
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%202.png)
+Cada iteração produz um pequeno incremento de sistema (`S++`), que vai se somando aos anteriores até formar o sistema completo: `S++ → S++ → S++ → ... → SISTEMA`.
+
+??? note "Foto do livro-texto (incrementos sucessivos até o sistema completo)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%202.png)
 
 !!! warning
     Esse esquema pode sugerir que cada iteração é uma "mini-waterfall" e que, ao final de cada iteração, o sistema precisa ir para produção para uso pelos usuários finais. Nenhuma das duas coisas é necessariamente verdade.
@@ -235,9 +244,14 @@ XP defende que o desenvolvimento de projetos de software seja norteado por três
 
 #### 2.3.3 - Práticas sobre o Processo de Desenvolvimento
 
-XP recomenda o **envolvimento dos clientes** com o projeto, de modo que os times incluam pelo menos um representante dos clientes. Uma das funções desse representante é escrever as **user stories**: documentos feitos à mão que descrevem os requisitos do sistema de forma resumida.
+XP recomenda o **envolvimento dos clientes** com o projeto, de modo que os times incluam pelo menos um representante dos clientes. Uma das funções desse representante é escrever as **user stories**: documentos feitos à mão que descrevem os requisitos do sistema de forma resumida. Um exemplo de user story:
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%203.png)
+> **Postar Pergunta**
+>
+> Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um leiaute diferenciado.
+
+??? note "Foto do cartão de user story"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%203.png)
 
 As user stories podem ser vistas como lembretes para que, depois, o requisito seja verbalmente detalhado pelo representante dos clientes — não como uma especificação completa e autossuficiente.
 
@@ -290,17 +304,22 @@ Os dois artefatos principais do Scrum são o **backlog do produto** e o **backlo
 
 Terminada a reunião de planejamento, tem início o sprint, e o time começa a trabalhar na implementação das tarefas do backlog. Os times Scrum têm autonomia para decidir como e por quem as histórias serão implementadas.
 
-!!! note "Quadro Scrum (Scrum Board)"
-    Quadro com tarefas a fazer, em andamento e finalizadas.
+??? note "Quadro Scrum (Scrum Board) — exemplo"
+    Quadro com tarefas a fazer, em andamento e finalizadas, organizado em cinco colunas: Backlog, To Do, Doing, Testing e Done.
 
     ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%204.png)
 
 Uma decisão importante em projetos Scrum envolve os critérios para considerar uma história ou tarefa concluída — tais critérios devem ser combinados com o time e ser do conhecimento de todos os membros.
 
 !!! note "Gráfico de Burndown"
-    A cada dia do sprint, o gráfico mostra quantas horas ainda são necessárias para implementar as tarefas que ainda não estão concluídas (no dia X do sprint, restam Y tarefas que somam Z horas).
+    A cada dia do sprint, o gráfico mostra quantas horas ainda são necessárias para implementar as tarefas que ainda não estão concluídas (no dia X do sprint, restam Y tarefas que somam Z horas). Um exemplo, para um sprint de 15 dias, com as horas restantes caindo de forma aproximadamente linear:
 
-    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%205.png)
+    | Dia | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
+    |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+    | Horas restantes | 400 | 390 | 360 | 360 | 300 | 280 | 280 | 260 | 200 | 170 | 140 | 120 | 70 | 35 | 0 |
+
+    ??? note "Foto do livro-texto (gráfico de burndown)"
+        ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%205.png)
 
 #### 2.4.3 - Outros Eventos
 
@@ -308,9 +327,18 @@ Uma decisão importante em projetos Scrum envolve os critérios para considerar 
 - **Revisão do sprint** — reunião para mostrar os resultados de um sprint, com a participação de todos os membros do time e, idealmente, de outros stakeholders envolvidos com o resultado do sprint. Caso o PO detecte problema em alguma história, ela volta para o backlog do produto para ser retrabalhada em um próximo sprint.
 - **Retrospectiva** — reunião do time Scrum com o objetivo de refletir sobre o sprint que está terminando e identificar pontos de melhoria no processo, nas pessoas, nos relacionamentos e nas ferramentas usadas.
 
-Uma característica de todos os eventos Scrum é terem uma duração bem definida, chamada de ***time-box*** da atividade.
+Uma característica de todos os eventos Scrum é terem uma duração bem definida, chamada de ***time-box*** da atividade:
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%206.png)
+| Evento | Time-box |
+|---|---|
+| Planejamento do Sprint | máximo de 8 horas |
+| Sprint | menos de 1 mês |
+| Reunião Diária | 15 minutos |
+| Revisão do Sprint | máximo de 4 horas |
+| Retrospectiva | máximo de 3 horas |
+
+??? note "Foto do livro-texto (time-boxes dos eventos Scrum)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%206.png)
 
 ### 2.5 - Kanban
 
@@ -321,19 +349,27 @@ No Quadro Kanban, a primeira coluna é o backlog do produto (funciona igual ao S
 Cada coluna é subdividida em duas subcolunas: "em execução" e "concluídas". Tarefas concluídas em um passo ficam aguardando serem **puxadas** por um membro do time para o próximo passo — por isso, Kanban é chamado de **sistema de pull**.
 
 !!! example "Exemplo de Quadro Kanban"
-    Antes:
+    O quadro tem as colunas Backlog, Especificação (subcolunas "em espec." e "especificadas"), Implementação (subcolunas "em implementação" e "implementadas") e Revisão de Código (subcolunas "em revisão" e "revisadas").
 
-    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%207.png)
+    **Antes**: `H3` está no backlog; `H2` está "em espec."; `T6`, `T7`, `T8`, `T9` estão "especificadas"; `T4`, `T5` estão "em implementação"; `T3` está "implementada"; `T2` está "em revisão"; `T1` está "revisada".
 
-    Depois:
+    **Depois**, após uma rodada de "puxadas": a história `H2` termina sua especificação e vira as tarefas `T10`, `T11`, `T12`, que se juntam a `T8`, `T9` em "especificadas" (deixando "em espec." vazio); as tarefas `T6`, `T7` são puxadas de "especificadas" para "em implementação" (junto com `T4`, `T5`); a tarefa `T3` é puxada de "implementada" para "em revisão" (deixando "implementadas" vazio); e a tarefa `T2` é puxada de "em revisão" para "revisada" (junto com `T1`).
 
-    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%208.png)
+    ??? note "Fotos do livro-texto (quadro antes e depois)"
+        ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%207.png)
+
+        ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%208.png)
 
 #### Limites WIP (Work In Progress)
 
 Um **limite WIP** é o número máximo de tarefas que podem estar em cada um dos passos de um Quadro Kanban. Conta-se tanto as tarefas "em andamento" quanto as "concluídas" de cada passo, com exceção do último passo, no qual conta-se apenas as "em andamento".
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%209.png)
+| | Backlog | Especificação (WIP = 2) | Implementação (WIP = 5) | Revisão de Código (WIP = 3) |
+|---|---|---|---|---|
+| | H3 | em espec. *(vazio)* / especificadas: T8, T9, T10, T11, T12 | em implementação: T4, T5, T6, T7 / implementadas *(vazio)* | em revisão: T3 / revisadas: T1, T2 |
+
+??? note "Foto do livro-texto (quadro com limites WIP)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%209.png)
 
 No exemplo, a história H3 não pode ser puxada para a fase de especificação, pois nessa fase o limite WIP é 2 e já há 5 tarefas; porém, pode-se puxar uma tarefa de especificação para a implementação. Esses limites são necessários para evitar que os times Kanban fiquem sobrecarregados.
 
@@ -341,9 +377,10 @@ No exemplo, a história H3 não pode ser puxada para a fase de especificação, 
 
 Existe mais de uma alternativa para calcular os limites WIP, mas o livro aborda um algoritmo proposto por Eric Brechner, com os seguintes passos:
 
-1. Estimar quanto tempo, em média, cada tarefa fica em cada passo do Quadro Kanban — esse tempo é chamado de ***lead time* (LT)**.
+1. Estimar quanto tempo, em média, cada tarefa fica em cada passo do Quadro Kanban — esse tempo é chamado de ***lead time* (LT)**. No exemplo do livro: LT(especificação) = 5 dias, LT(implementação) = 12 dias, LT(revisão) = 6 dias.
 
-    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2010.png)
+    ??? note "Foto do livro-texto (lead times do exemplo)"
+        ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2010.png)
 
     O lead time inclui o tempo em fila, que é o tempo que a tarefa fica na segunda subcoluna dos passos do Quadro Kanban, aguardando ser puxada para o passo seguinte.
 
@@ -353,18 +390,32 @@ Existe mais de uma alternativa para calcular os limites WIP, mas o livro aborda 
 
     $$\text{WIP(passo)} = TP \times LT(\text{passo})$$
 
-    em que `TP` é o throughput mais lento, calculado no passo anterior.
+    em que `TP` é o throughput mais lento, calculado no passo anterior. Aplicando aos lead times do exemplo (TP = 0,38):
 
-    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2011.png)
+    - WIP(especificação) = 0,38 × 5 = 1,9
+    - WIP(implementação) = 0,38 × 12 = 4,57
+    - WIP(revisão) = 0,38 × 6 = 2,29
+
+    Arredondando para cima, os resultados finais ficam: WIP(especificação) = 2, WIP(implementação) = 5, WIP(revisão) = 3.
+
+    ??? note "Foto do livro-texto (cálculo dos WIPs do exemplo)"
+        ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2011.png)
 
 !!! tip
     Esse algoritmo sugere adicionar uma margem de erro de 50% nos WIPs calculados.
 
 #### 2.5.2 - Lei de Little
 
-O procedimento de cálculo de WIPs descrito acima é uma aplicação direta da **Lei de Little**, um dos resultados mais importantes da Teoria de Filas. A lei afirma que o número de itens em um sistema de filas é igual à taxa de chegada desses itens multiplicada pelo tempo que cada item permanece no sistema — no caso do Kanban, o "sistema" é um passo do processo, e os "itens" são as tarefas.
+O procedimento de cálculo de WIPs descrito acima é uma aplicação direta da **Lei de Little**, um dos resultados mais importantes da Teoria de Filas. A lei afirma que o número de itens em um sistema de filas é igual à taxa de chegada desses itens multiplicada pelo tempo que cada item permanece no sistema — no caso do Kanban, o "sistema" é um passo do processo, e os "itens" são as tarefas:
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2012.png)
+- **WIP** — número de tarefas em um dado passo de um processo Kanban.
+- **Throughput (TP)** — taxa de chegada dessas tarefas nesse passo.
+- **Lead Time (LT)** — tempo que cada tarefa fica nesse passo.
+
+Ou seja: **WIP = TP × LT** — um passo do Kanban recebe tarefas a uma taxa `TP` (throughput), e cada uma fica no passo durante um tempo `LT` (lead time), resultando em `WIP` tarefas simultâneas naquele passo.
+
+??? note "Foto do livro-texto (diagrama da Lei de Little)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2012.png)
 
 ### 2.6 - Quando Não Usar Métodos Ágeis?
 
@@ -390,7 +441,8 @@ Nesse modelo, um sistema é desenvolvido na forma de uma espiral de iterações.
 3. Desenvolvimento e testes — ao final dessa etapa, deve-se gerar um protótipo que possa ser demonstrado aos usuários do sistema.
 4. Planejamento da próxima iteração, ou então a decisão de parar.
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2013.png)
+??? note "Diagrama de referência (as quatro etapas em espiral)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2013.png)
 
 Cada iteração, somando-se as quatro fases, pode levar de 6 a 24 meses — ou seja, é um modelo iterativo, mas de ciclos bem mais longos do que os dos métodos ágeis.
 
@@ -401,7 +453,8 @@ O RUP é um método de processo unificado implementado pela Rational, vinculado 
 - às linguagens de modelagem **UML**, já que muitos dos resultados do RUP são documentados e representados usando diagramas gráficos UML;
 - a ferramentas de apoio ao projeto e à análise de software, conhecidas como ferramentas **CASE** (*Computer-Aided Software Engineering*), que são usadas para produzir esses diagramas UML.
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2014.png)
+??? note "Print de ferramenta CASE (ArgoUML editando um diagrama de classes)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2014.png)
 
 O RUP é organizado em quatro fases:
 
@@ -410,13 +463,24 @@ O RUP é organizado em quatro fases:
 3. **Construção** — realiza-se o projeto de mais baixo nível, a implementação e os testes do sistema. Ao final dessa fase, deve haver um sistema funcional, com documentação e manuais, que possa ser validado pelos usuários.
 4. **Transição** — ocorre a disponibilização do sistema para produção, incluindo a definição de todas as rotinas de implantação, como políticas de backup, migração de dados de sistemas legados e treinamento da equipe de operação.
 
-Esse processo de quatro fases pode ser repetido várias vezes:
+Esse processo de quatro fases pode ser repetido várias vezes: cada fase pode, ela mesma, ser repetida internamente (um laço sobre si mesma), e, ao final da Transição, o ciclo completo pode recomeçar da Inception, dando início a uma nova geração do produto.
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2015.png)
+??? note "Diagrama de referência (ciclo de fases do RUP)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2015.png)
 
 O RUP também define um conjunto de **disciplinas** de engenharia — modelagem de negócios, definição de requisitos, análise e design, implementação, testes e implantação, entre outras. Esses fluxos de trabalho podem ocorrer em qualquer fase, mas espera-se que algumas disciplinas sejam mais intensas em determinadas fases do que em outras.
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2016.png)
+O gráfico clássico do RUP (as "colinas" de intensidade por disciplina) mostra, para cada disciplina, em que momento do processo (Inception I1 · Elaboração E1-E2 · Construção C1-C4 · Transição T1-T2) ela é mais intensa:
+
+- **Business Modeling** — intensa na Inception (I1), decaindo rapidamente ao longo da Elaboração até praticamente desaparecer na Construção.
+- **Requirements** — também concentrada no início (I1-E1), com um pico logo no começo e declínio gradual até o fim da Elaboração.
+- **Analysis & Design** — cresce a partir da Inception, atinge o pico por volta do fim da Elaboração/início da Construção (E2-C1), e decai ao longo da Construção.
+- **Implementation** — começa baixa, cresce ao longo da Elaboração e atinge seu pico durante a Construção (C2-C3), decaindo na Transição.
+- **Test** — presente de forma mais constante ao longo de toda a Construção, com pequenos picos em cada iteração (C1 a C4).
+- **Deployment** — praticamente ausente até o fim da Construção, crescendo fortemente e atingindo o pico durante a Transição (T1-T2).
+
+??? note "Foto do livro-texto (gráfico de disciplinas x fases do RUP)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2016.png)
 
 Quanto maior a área ocupada por uma disciplina no gráfico, maior a intensidade dessa disciplina durante aquela fase.
 
@@ -437,9 +501,23 @@ Requisitos definem o que um sistema deve fazer e sob quais restrições. É úti
 
 **Elicitação de requisitos** é o nome dado às atividades relacionadas à descoberta e ao entendimento dos requisitos de um sistema. Diversas técnicas podem ser usadas, como entrevistas com stakeholders, aplicação de questionários e prototipação. A **etnografia** é a técnica de engenharia de requisitos que recomenda que o desenvolvedor se integre ao ambiente de trabalho dos stakeholders e observe como eles desenvolvem suas atividades no dia a dia. Após a elicitação, os requisitos devem ser documentados, verificados, validados e priorizados.
 
-No que diz respeito à **documentação**, no desenvolvimento ágil ela costuma ser feita por meio de user stories; em alguns projetos, porém, ainda se exige um documento de especificação de requisitos, no qual todos os requisitos são documentados em linguagem natural. Um padrão de documentação bastante usado, herdado do waterfall e ainda vigente, é o **IEEE 830**:
+No que diz respeito à **documentação**, no desenvolvimento ágil ela costuma ser feita por meio de user stories; em alguns projetos, porém, ainda se exige um documento de especificação de requisitos, no qual todos os requisitos são documentados em linguagem natural. Um padrão de documentação bastante usado, herdado do waterfall e ainda vigente, é o **IEEE 830**, que organiza os requisitos em:
 
-![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2017.png)
+- **Requisitos Relacionados com Interfaces Externas**
+    - Interfaces com o Usuário
+    - Interfaces com Hardware
+    - Interfaces com Outros Sistemas de Software
+    - Interfaces de Comunicação
+- **Requisitos Funcionais**
+    - Requisito Funcional #1
+    - Requisito Funcional #2
+    - ...
+- **Requisitos de Desempenho**
+- **Requisitos de Projeto**
+- **Outros Requisitos**
+
+??? note "Foto do livro-texto (estrutura do IEEE 830)"
+    ![image.png](../../assets/faculdade/periodo3/desenvolvimento-de-software/image%2017.png)
 
 Na etapa de **verificação e validação**, é preciso garantir que os requisitos estejam:
 

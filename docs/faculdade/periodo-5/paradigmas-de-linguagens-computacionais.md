@@ -26,9 +26,22 @@ A **programação funcional** é o paradigma declarativo que descreve uma comput
 
 Nesse paradigma, todos os subprogramas são vistos como funções que recebem argumentos e retornam resultados, onde a solução depende apenas da entrada — e o momento em que a função é chamada é irrelevante, já que essas funções não produzem efeitos colaterais.
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image.png)
+**Vantagens da programação funcional:**
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%201.png)
+- Manipulação mais simples de programas: legibilidade, modularidade, corretude.
+- Prova de propriedades (ver seção de Transparência Referencial, abaixo).
+- Concorrência explorada de forma natural, sem estado compartilhado.
+
+**Problemas/desvantagens:**
+
+- "O mundo não é funcional!" — o esforço inicial de adaptação ao paradigma não é desprezível.
+- Implementações historicamente menos eficientes (a relevância disso depende do domínio da aplicação).
+- Mecanismos mais primitivos de entrada/saída (E/S) e formatação, prejudicando a interface com o usuário.
+
+??? note "Slides originais"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image.png)
+
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%201.png)
 
 !!! tip "Por que usar linguagens declarativas?"
     Linguagens declarativas permitem escrever programas de forma clara, concisa e com alto nível de abstração, permitem prototipagem rápida, fornecem poderosas ferramentas de resolução de problemas e suportam componentes de software reutilizáveis. Isso ajuda a enfrentar dificuldades centrais do desenvolvimento de software — o tamanho e a complexidade de sistemas modernos, o tempo e custo de desenvolvimento, e a confiança de que os programas concluídos funcionam corretamente.
@@ -46,13 +59,36 @@ O código é organizado em **módulos** — um conjunto de definições (tipos, 
 Uma das propriedades mais importantes de Haskell é a **transparência referencial**: uma expressão pode ser substituída pelo seu valor resultante sem alterar o comportamento do programa. Isso é o que permite provar propriedades matemáticas sobre funções, pois a ordem de avaliação não altera o resultado — variáveis, uma vez vinculadas, nunca mudam de valor. É essa propriedade que permite tratar código Haskell como matemática pura.
 
 !!! example "Transparência referencial na prática"
-    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%202.png)
+    Em uma linguagem imperativa, a ordem dos "fatores" pode alterar o resultado, pois ela reatribui o valor de `b`:
 
-    Em uma linguagem imperativa, a ordem dos "fatores" pode alterar o resultado, pois ela reatribui o valor de `b`.
+    ```c
+    int b = 1;
+    ...
+    int f(int x) {
+        b = x;
+        return (5);
+    }
 
-    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%203.png)
+    addD(f(3), b) == addD(b, f(3))  // ?
+    ```
 
-    Em Haskell, independentemente da ordem de avaliação, o valor de `b` permanece imutável — exatamente como na matemática pura.
+    Como `f` reatribui a variável global `b` antes de retornar, o valor de `b` usado em `addD` muda dependendo de qual dos dois argumentos é avaliado primeiro — a expressão à esquerda e à direita do `==` podem produzir resultados diferentes.
+
+    Em Haskell, independentemente da ordem de avaliação, o valor de `b` permanece imutável — exatamente como na matemática pura:
+
+    ```haskell
+    -- Exemplo:
+    addD a b = 2 * (a+b)
+             = 2 * (b+a) = addD b a
+
+    -- Válida para quaisquer argumentos a e b.
+    -- Não seria válida em linguagens imperativas, com variáveis globais...
+    ```
+
+    ??? note "Slides originais"
+        ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%202.png)
+
+        ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%203.png)
 
 ### Definição de funções
 
@@ -101,7 +137,21 @@ maxi n m | n >= m = n
 				 | otherwise = m
 ```
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%204.png)
+Alguns exemplos de chamada dessas funções, incluindo as duas notações (com e sem parênteses/vírgulas) para aplicação de função:
+
+```haskell
+square 5         -- = 25
+square(5)        -- = 25
+
+allEqual 1 2 3       -- = False
+allEqual(1,2,3)      -- ERRO!!! (isso seria interpretado como 1 argumento, uma tupla)
+allEqual(1) (2) (3)  -- = False
+
+maxi 24 645      -- = 645
+```
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%204.png)
 
 #### Recursão
 
@@ -152,28 +202,98 @@ myAnd False x = False
 myAnd True  x = x
 ```
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%205.png)
+Regras do casamento de padrões:
+
+- Todos os padrões (à esquerda) devem ter tipos compatíveis — não necessariamente iguais.
+- Os casos devem ser exaustivos, embora isso não seja obrigatório (gerando funções parciais).
+- Não deve haver ambiguidade: a ordem dos padrões é usada para resolver conflitos.
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%205.png)
 
 Os casos de um pattern match devem idealmente ser exaustivos, mas isso não é obrigatório — nesse caso obtemos **funções parciais**, que falham em tempo de execução para entradas não cobertas.
 
 ### Notação
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%206.png)
+Convenções de nomenclatura em Haskell:
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%207.png)
+- **Maiúsculas**: tipos e construtores (para tipos algébricos).
+- **Minúsculas**: funções, constantes e parâmetros.
+- É **case sensitive**.
+- Comentários: `--isso é um comentário de uma linha` e `{- comentário de várias linhas... -}`.
 
-Existem duas formas de usar funções binárias (prefixa e infixa). Alguns erros comuns de notação:
+Existem duas formas de usar funções binárias (prefixa e infixa):
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%208.png)
+```haskell
+f n + 1        -- = (f n) + 1
+f (n + 1)
+
+2 + 3
+(+) 2 3
+
+maxi 2 4
+2 `maxi` 4
+```
+
+Alguns erros comuns de notação (a mensagem de erro real do GHC está ao lado de cada exemplo):
+
+```text
+square x = x
+*x
+-- parse error on input '*'
+
+funny x = x +
+1
+-- parse error (possibly incorrect indentation)
+
+Funny x = x+1
+-- Not in scope: data constructor `Funny'
+```
+
+??? note "Slides originais"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%206.png)
+
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%207.png)
+
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%208.png)
 
 ### Definições locais: `where` e `let`
 
 - `where` aparece no **final** de uma equação ou guarda, definindo nomes visíveis apenas naquela equação.
 - `let` aparece **antes** da expressão que usa as variáveis, podendo ser usado em qualquer lugar — exceto em definições de funções no nível superior.
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%209.png)
+```haskell
+sumSquares :: Int -> Int -> Int
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2010.png)
+sumSquares x y = sqX + sqY
+  where sqX = x * x
+        sqY = y * y
+
+-- equivalente, usando uma só função local:
+sumSquares x y = sq x + sq y
+  where sq z = z * z
+
+-- a mesma coisa com 'let ... in':
+sumSquares x y = let sqX = x * x
+                     sqY = y * y
+                 in sqX + sqY
+```
+
+```haskell
+maxThreeOccurs :: Int -> Int -> Int -> (Int, Int)
+maxThreeOccurs m n p = (mx, eqCount)
+  where mx = maxiThree m n p
+        eqCount = equalCount mx m n p
+
+-- Resumindo:
+-- let definições in expressão
+-- definições where definições
+```
+
+??? note "Slides originais"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%209.png)
+
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2010.png)
 
 ### Tipos básicos
 
@@ -187,51 +307,181 @@ Existem duas formas de usar funções binárias (prefixa e infixa). Alguns erros
 | `Float` | Ponto flutuante, ~8 dígitos decimais |
 | `Double` | Ponto flutuante, ~16 dígitos decimais |
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2011.png)
+**Operadores e funções:**
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2012.png)
+- Aritméticos: `+`, `*`, `^`, `-`, `div`, `mod`, `abs`, `negate`.
+- Relacionais: `>`, `>=`, `==`, `/=`, `<=`, `<`.
+
+**Booleanos:**
+
+```haskell
+True, False :: Bool
+
+(&&), (||) :: Bool -> Bool -> Bool
+not :: Bool -> Bool
+```
+
+??? note "Slides originais"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2011.png)
+
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2012.png)
 
 ### Listas
 
 Listas são coleções de objetos de um mesmo tipo.
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2013.png)
+```haskell
+[1,2,3,4]               :: [Int]
+[(5,True),(7,True)]     :: [(Int,Bool)]
+[[4,2],[3,7,7,1],[],[9]] :: [[Int]]
+['b','o','m']           :: [Char]
+"bom"                   :: [Char]
+```
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2013.png)
 
 O **construtor de listas** `(:)` tem a assinatura `a -> [a] -> [a]`, recebendo uma cabeça (`head`, do tipo `a`) e uma cauda (`tail`, do tipo `[a]`), e devolvendo a lista resultante.
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2014.png)
+```haskell
+-- Outra forma de escrever listas:
+[5]           é o mesmo que   5:[]
+[4,5]         é o mesmo que   4:(5:[])
+[2,3,4,5]     é o mesmo que   2:3:4:5:[]
+
+-- (:) é um construtor polimórfico:
+(:) :: Int -> [Int] -> [Int]
+(:) :: Bool -> [Bool] -> [Bool]
+(:) :: t -> [t] -> [t]
+```
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2014.png)
 
 Listas também podem ser declaradas através de *ranges*:
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2015.png)
+```haskell
+[2..7]        = [2,3,4,5,6,7]
+[-1..3]       = [-1,0,1,2,3]
+['a'..'d']    = ['a','b','c','d']
+[2.8..5.0]    = [2.8,3.8,4.8]
+[7,5..0]      = [7,5,3,1]
+[2.8,3.3..5.0] = [2.8,3.3,3.8,4.3,4.8]
+```
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2015.png)
 
 Algumas funções úteis sobre listas:
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2016.png)
+```haskell
+-- Comprimento
+length :: [t] -> Int
+length [] = 0
+length (a:as) = 1 + length as
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2017.png)
+-- Concatenação
+(++) :: [t] -> [t] -> [t]
+[] ++ y = y
+(x:xs) ++ y = x : (xs ++ y)
 
-E as **compreensões de lista** (*list comprehensions*), que permitem construir listas de forma declarativa a partir de outras listas e condições:
+-- Estas funções são polimórficas!
+```
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2018.png)
+Um exemplo de uso de recursão sobre listas — somar os elementos de uma lista:
+
+```haskell
+sumList :: [Int] -> Int
+sumList as
+  | as == []  = 0
+  | otherwise = (head as) + sumList (tail as)
+```
+
+??? note "Slides originais"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2016.png)
+
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2017.png)
+
+E as **compreensões de lista** (*list comprehensions*), que permitem construir listas de forma declarativa a partir de outras listas e condições — usadas para definir listas em função de outras listas:
+
+```haskell
+doubleList xs = [2*a | a <- xs]
+doubleIfEven xs = [2*a | a <- xs, isEven a]
+
+sumPairs :: [(Int,Int)] -> [Int]
+sumPairs lp = [a+b | (a,b) <- lp]
+
+digits :: String -> String
+digits st = [ch | ch <- st, isDigit ch]
+```
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2018.png)
 
 ### `case`
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2019.png)
+O `case` permite casamento de padrões com valores arbitrários — não apenas com os argumentos da função:
+
+```haskell
+firstDigit :: String -> Char
+firstDigit st = case (digits st) of
+                  []     -> '\0'
+                  (a:as) -> a
+```
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2019.png)
 
 ### Tuplas
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2020.png)
+```haskell
+intP :: (Int, Int)
+intP = (33,43)
+
+(True, 'x') :: (Bool, Char)
+(34, 22, 'b') :: (Int, Int, Char)
+
+addPair :: (Int,Int) -> Int
+addPair (x,y) = x+y
+
+shift :: ((Int,Int),Int) -> (Int,(Int,Int))
+shift ((x,y),z) = (x,(y,z))
+```
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2020.png)
 
 ### Tipos
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2021.png)
+É possível nomear tipos (inclusive compostos, como tuplas) com `type`, criando sinônimos que tornam assinaturas mais legíveis:
+
+```haskell
+type Name = String
+type Age = Int
+type Phone = Int
+type Person = (Name, Age, Phone)
+
+name :: Person -> Name
+name (n,a,p) = n
+```
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2021.png)
 
 ### Polimorfismo
 
 Uma função é polimórfica quando possui um tipo genérico, usando variáveis de tipo em vez de tipos concretos.
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2022.png)
+```haskell
+(==) :: t -> t -> Bool
+
+(<) :: t -> t -> Bool
+
+show :: t -> String
+```
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2022.png)
 
 Esse polimorfismo "paramétrico" é usado quando o tipo exato dos elementos não importa para a lógica da função (ex: `length`, que funciona para listas de qualquer tipo).
 
@@ -246,18 +496,41 @@ exemplo :: Eq t -> t -> Bool
 ```
 
 !!! example "Exemplo"
-    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2023.png)
+    ```haskell
+    allEqual :: Eq t => t -> t -> t -> Bool
+    allEqual n m p = (n == m) && (m == p)
 
-As **instâncias** são os membros concretos de uma classe:
+    member :: Eq t => [t] -> t -> Bool
+    member [] b = False
+    member (a:as) b = (a==b) || member as b
+    ```
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2024.png)
+    ??? note "Slide original"
+        ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2023.png)
+
+As **instâncias** são os membros concretos de uma classe — por exemplo, `Int`, `Float`, `Char`, `Bool`, `[Int]`, `(Int,Bool)`, `[[Char]]` e `[(Int,[Bool])]` são todos instâncias de `Eq`, mas `(Int -> Int)` não é. **Instâncias são TIPOS, não valores.**
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2024.png)
 
 ### Funções de Alta Ordem
 
 Uma função de alta ordem é aquela que recebe uma função como argumento e/ou retorna uma função como resultado.
 
 !!! example "Exemplo"
-    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2025.png)
+    ```haskell
+    applyBinOper :: (t -> t -> t) -> t -> t -> t
+    applyBinOper f x y = f x y
+
+    -- Exemplos:
+    applyBinOper (+) 10 20       -- 30
+    applyBinOper (*) 10 20       -- 200
+    applyBinOper (||) True False -- True
+    applyBinOper (++) "abc" "def" -- "abcdef"
+    ```
+
+    ??? note "Slide original"
+        ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2025.png)
 
     O argumento-função é aquele que aparece entre parênteses, e normalmente é uma função de **transformação** — recebe um valor e retorna outro valor transformado.
 
@@ -273,9 +546,22 @@ map :: (a -> b) -> [a] -> [b]
 -- Exemplo
 map (*2) [1,2,3,4]
 -- [2,4,6,8]
+
+-- Implementação:
+map :: (t -> u) -> [t] -> [u]
+map f []     = []
+map f (a:as) = f a : map f as
+
+-- Outros exemplos:
+doubleList xs = map times2 xs
+sqrList    xs = map sqr xs
+
+seconds :: [(t,u)] -> [u]
+seconds xs = map snd xs
 ```
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2026.png)
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2026.png)
 
 **`fold`** — reduz uma lista a um único valor, aplicando uma função binária recursivamente. Pode ser `foldr` (acumula da direita para a esquerda) ou `foldl` (acumula da esquerda para a direita).
 
@@ -290,9 +576,18 @@ foldr (+) 0 [1,2,3,4]
 
 foldl (+) 0 [1,2,3,4]
 -- 10
+
+-- Implementação (ideia geral, caso base sem o acumulador):
+-- e1 + e2 + ... + em
+fold :: (t -> t -> t) -> [t] -> t
+fold f [a]    = a
+fold f (a:as) = f a (fold f as)
+
+sumList l = fold (+) l
 ```
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2027.png)
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2027.png)
 
 **`filter`** — mantém apenas os elementos que satisfazem um predicado (função que retorna um `Bool`).
 
@@ -302,9 +597,25 @@ filter :: (a -> Bool) -> [a] -> [a]
 -- Exemplo
 filter even [1,2,3,4,5,6]
 -- [2,4,6]
+
+-- Implementação:
+filter :: (t -> Bool) -> [t] -> [t]
+filter p []     = []
+filter p (a:as)
+    | p a       = a : filter p as
+    | otherwise = filter p as
+
+-- Outros exemplos:
+digits, letters :: String -> String
+digits st  = filter isDigit st
+letters st = filter isLetter st
+
+evens xs = filter isEven xs
+  where isEven n = (n `mod` 2 == 0)
 ```
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2028.png)
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2028.png)
 
 **`all`** — recebe um predicado e uma lista, retornando `True` se a função vale para todos os elementos.
 
@@ -465,29 +776,110 @@ clima Inverno = Frio
 clima _ = Quente
 ```
 
-**Tuplas vs. tipos algébricos**: tuplas combinam valores de forma anônima e posicional; tipos algébricos nomeiam a estrutura e seus construtores, tornando o código mais legível e seguro.
+**Tuplas vs. tipos algébricos**: tuplas combinam valores de forma anônima e posicional; tipos algébricos nomeiam a estrutura e seus construtores, tornando o código mais legível e seguro:
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2029.png)
+```haskell
+-- Com tuplas: elementos mais compactos, definições mais curtas,
+-- e maior probabilidade de reusar funções polimórficas.
+type Pessoas = (Nome, Idade)
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2030.png)
+-- Com tipos algébricos: cada objeto do tipo tem um rótulo explícito.
+-- Não se pode confundir um tipo com outro, devido ao construtor
+-- (definições fortemente tipadas). Permitem tipos recursivos e enumerados.
+data Pessoas = Pessoa Nome Idade
+```
+
+??? note "Slides originais"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2029.png)
+
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2030.png)
 
 Os construtores de um tipo algébrico também podem receber argumentos:
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2031.png)
+```haskell
+data Nome_do_Tipo
+    = Construtor1 t11 ... t1k1
+    | Construtor2 t21 ... t2k2
+    ...
+    | Construtorn tn1 ... Tnkn
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2032.png)
+-- O tipo pode ser recursivo.
+-- A definição pode ser polimórfica, adicionando argumentos ao Nome_do_Tipo.
 
-**Forma geral** de um tipo algébrico:
+-- Exemplo:
+data Shape = Circle Float
+           | Rectangle Float Float
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2033.png)
+Circle 4.9 :: Shape
+Rectangle 4.2 2.0 :: Shape
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2034.png)
+isRound :: Shape -> Bool
+isRound (Circle _) = True
+isRound (Rectangle _ _) = False
+```
+
+??? note "Slides originais"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2031.png)
+
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2032.png)
+
+**Forma geral** de um tipo algébrico — tipos de dados recursivos, com funções também definidas recursivamente sobre eles:
+
+```haskell
+data Nome_do_Tipo
+    = Construtor1 t11 ... t1k1
+    | Construtor2 t21 ... t2k2
+    ...
+    | Construtorn tn1 ... Tnkn
+
+-- O tipo pode ser recursivo.
+-- A definição pode ser polimórfica, adicionando argumentos ao Nome_do_Tipo.
+
+-- Exemplo de tipo recursivo e função recursiva sobre ele:
+data Expr = Lit Int
+          | Add Expr Expr
+          | Sub Expr Expr
+
+eval :: Expr -> Int
+eval (Lit n)     = n
+eval (Add e1 e2) = (eval e1) + (eval e2)
+eval (Sub e1 e2) = (eval e1) - (eval e2)
+```
+
+??? note "Slides originais (o slide da forma geral aparece repetido duas vezes no material original)"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2033.png)
+
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2034.png)
 
 E os **tipos polimórficos**, que combinam tipos algébricos com variáveis de tipo:
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2035.png)
+```haskell
+-- Tipos de dados polimórficos:
+data Pairs t = Pair t t
+Pair 6 8       :: Pairs Int
+Pair True True :: Pairs Bool
+Pair [] [1,3]  :: Pair [Int]
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2036.png)
+-- Listas
+data List t = Nil | Cons t (List t)
+
+-- Árvores
+data Tree t = NilT
+            | Node t (Tree t) (Tree t)
+```
+
+É possível criar um tipo algébrico como instância de algumas classes (comportamento padrão, nem sempre faz sentido — se necessário, é possível especificar uma instância manualmente):
+
+```haskell
+data Tree t = NilT
+            | Node t (Tree t) (Tree t)
+            deriving (Eq, Show)
+```
+
+??? note "Slides originais"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2035.png)
+
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2036.png)
 
 ### Laziness (Avaliação Preguiçosa)
 
@@ -584,7 +976,19 @@ Toda mônada é composta por três elementos:
     - *Caso de sucesso* (`Just`): se o valor à esquerda do operador for `Just x`, a função `f` à direita é aplicada ao valor `x` que estava dentro do `Just` — ou seja, `(>>=) (Just x) f = f x`.
     - *Caso de falha* (`Nothing`): se o valor à esquerda for `Nothing`, a função `f` é completamente ignorada, e o resultado da operação é simplesmente `Nothing` — ou seja, `(>>=) Nothing _ = Nothing`.
 
-![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2037.png)
+A instância completa de `Monad` para `Maybe`:
+
+```haskell
+instance Monad Maybe where
+    (>>=) Just x f = f x
+    (>>=) Nothing _ = Nothing
+
+    return x = Just x
+    (...)
+```
+
+??? note "Slide original"
+    ![image.png](../../assets/faculdade/periodo5/paradigmas-de-linguagens-computacionais/image%2037.png)
 
 #### Notação `do`
 

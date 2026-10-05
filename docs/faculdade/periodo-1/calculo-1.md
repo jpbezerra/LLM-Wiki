@@ -4,7 +4,8 @@
 
 Antes de falar de funções, limites e derivadas, vale revisar a notação de conjuntos que aparece o tempo todo em Cálculo. A figura abaixo mostra os conjuntos numéricos clássicos (naturais, inteiros, racionais, irracionais e reais) e como eles se encaixam uns dentro dos outros.
 
-![](../../assets/faculdade/periodo1/20231025211330.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231025211330.png)
 
 ### Símbolos usuais
 
@@ -26,7 +27,8 @@ Antes de falar de funções, limites e derivadas, vale revisar a notação de co
 
 A figura seguinte ilustra visualmente essas operações com diagramas de Venn.
 
-![](../../assets/faculdade/periodo1/20231025211709.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231025211709.png)
 
 ## Expressões Numéricas
 
@@ -87,7 +89,8 @@ N = 6:  1  6  15 20 15  6  1
 
 Esses coeficientes são exatamente os números $\binom{n}{k}$ do **Binômio de Newton**, a fórmula geral para expandir $(x+y)^n$:
 
-![](../../assets/faculdade/periodo1/20231025215905.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231025215905.png)
 
 $$\binom{n}{k} = \frac{n!}{(n-k)!\,k!}$$
 
@@ -228,11 +231,13 @@ $$(f\circ g)(x) = f(g(x)) \qquad \text{e} \qquad (g\circ f)(x) = g(f(x))$$
 
 **Função constante.** $f(x) = C$, com $C \in \mathbb{R}$. Seu gráfico é uma reta horizontal:
 
-![](../../assets/faculdade/periodo1/20231104165905.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231104165905.png)
 
 **Função do 1º grau (função afim).** $f(x) = ax+b$, com $a,b \in \mathbb{R}$ e $a \neq 0$.
 
-![](../../assets/faculdade/periodo1/20231104170105.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231104170105.png)
 
 O coeficiente $a$ é a inclinação da reta (coeficiente angular), relacionado ao ângulo $\theta$ que a reta forma com o eixo $x$ por $a = \tan(\theta)$.
 
@@ -246,12 +251,14 @@ O coeficiente $a$ é a inclinação da reta (coeficiente angular), relacionado a
 
 **Função do 2º grau (função quadrática).** $f(x) = ax^2+bx+c$. As raízes são encontradas pela fórmula de Bhaskara. O gráfico é uma parábola:
 
-![](../../assets/faculdade/periodo1/20231104171216.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231104171216.png)
 
 - $a>0 \Rightarrow$ concavidade para cima
 - $a<0 \Rightarrow$ concavidade para baixo
 
-![](../../assets/faculdade/periodo1/20231104171423.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231104171423.png)
 
 Aqui $\Delta$ (discriminante) determina quantas interseções a parábola tem com o eixo $x$.
 
@@ -285,7 +292,8 @@ Para a divisão, o domínio resultante é $D = D(f)\cap D(g)$ (excluindo onde $g
 
 $$\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}$$
 
-![](../../assets/faculdade/periodo1/20231107234927.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231107234927.png)
 
 ### Composição de funções
 
@@ -312,20 +320,27 @@ O **limite** é a ferramenta central do Cálculo: seu objetivo é determinar o c
 
 Seja $f(x)$ uma função definida perto do ponto $a \in \mathbb{R}$ (mas não necessariamente em $a$). Dizemos que $L \in \mathbb{R}$ é o limite de $f$ quando $x$ tende a $a$ se, tornando $x$ suficientemente próximo de $a$ (mas não igual a $a$), os valores de $f(x)$ ficam tão próximos de $L$ quanto quisermos. O limite de $f$ quando $x \to a$ **não depende** do valor de $f$ no ponto $a$ (ele pode nem existir ali). A notação é:
 
-![](../../assets/faculdade/periodo1/20231109080419.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231109080419.png)
 
 $$\lim_{x\to a} f(x) = L$$
 
-!!! example "Exemplo"
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20231109081612.png)
 
 ### Propriedades dos limites
 
-As propriedades a seguir permitem calcular limites de combinações de funções a partir dos limites das partes (soma, produto, quociente, potência etc.), desde que os limites individuais existam:
+As propriedades a seguir permitem calcular limites de combinações de funções a partir dos limites das partes (soma, produto, quociente, potência etc.), desde que os limites individuais existam. Sejam $f$ e $g$ funções, $a\in\mathbb{R}$, e suponha que $\lim_{x\to a}f(x)=L$ e $\lim_{x\to a}g(x)=M$. Então:
 
-![](../../assets/faculdade/periodo1/20231109081720.png)
+1. $\lim_{x\to a}[f(x)+g(x)] = \lim_{x\to a}f(x)+\lim_{x\to a}g(x) = L+M$;
+2. $\lim_{x\to a}[\lambda\cdot f(x)] = \lambda\cdot\lim_{x\to a}f(x) = \lambda\cdot L$, onde $\lambda\in\mathbb{R}$ é uma constante;
+3. $\lim_{x\to a}[f(x)\cdot g(x)] = \lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x) = L\cdot M$;
+4. $\lim_{x\to a}\left[\dfrac{f(x)}{g(x)}\right] = \dfrac{\lim_{x\to a}f(x)}{\lim_{x\to a}g(x)} = \dfrac{L}{M}$, quando $M\neq0$.
 
-!!! example "Exemplos de aplicação"
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231109081720.png)
+
+??? example "Exemplos de aplicação"
     ![](../../assets/faculdade/periodo1/20231109082246.png)
     ![](../../assets/faculdade/periodo1/20231109083228.png)
     ![](../../assets/faculdade/periodo1/20231109084426.png)
@@ -340,52 +355,76 @@ As propriedades a seguir permitem calcular limites de combinações de funções
 
 **Limite lateral pela esquerda** ![](../../assets/faculdade/periodo1/20231109091448.png)
 
-![](../../assets/faculdade/periodo1/20231109092100.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231109092100.png)
 
 **Limite lateral pela direita** ![](../../assets/faculdade/periodo1/20231109091740.png)
 
-![](../../assets/faculdade/periodo1/20231109092114.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231109092114.png)
 
-!!! example "Exemplo"
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20231109094344.png)
 
 Uma função $f$ possui limite em $a$ **se e somente se** o limite lateral pela esquerda é igual ao limite lateral pela direita:
 
-![](../../assets/faculdade/periodo1/20231109091921.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231109091921.png)
 
 $$\lim_{x\to a} f(x) = L \iff \lim_{x\to a^-} f(x) = \lim_{x\to a^+} f(x) = L$$
 
 ### Limites e continuidade
 
-![](../../assets/faculdade/periodo1/20231207232727.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231207232727.png)
 
-!!! example "Exemplo"
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20231207233055.png)
 
-![](../../assets/faculdade/periodo1/20231207233531.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231207233531.png)
 
-![](../../assets/faculdade/periodo1/20231207233618.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231207233618.png)
 
 No item (c) acima, os limites laterais são diferentes, logo não existe o limite naquele ponto; nesses casos, muitas vezes é preciso manipular algebricamente a expressão para conseguir calcular (ou mostrar a inexistência de) um limite.
 
-**Propriedades:**
+**Propriedades (funções contínuas).** Se $f,g$ são funções contínuas em $a$, então:
 
-![](../../assets/faculdade/periodo1/20231208000706.png)
+(a) $(f+g)$ e $(f-g)$ são contínuas em $a$;
+(b) $(\lambda f)$, com $\lambda\in\mathbb{R}$, é contínua em $a$;
+(c) $\dfrac{f}{g}$ é contínua em $a$ quando $g(a)\neq0$.
+
+**Proposição.** Se $f$ é contínua, então $\lim_{x\to x_0} f(g(x)) = f\left(\lim_{x\to x_0} g(x)\right)$, quando $\lim_{x\to x_0}g(x) = a$ (existir) e $a\in\text{Dom}(f)$.
+
+!!! example "Exemplo"
+    $$\lim_{x\to1}\sqrt{\frac{x^2-1}{x-1}} = \sqrt{\lim_{x\to1}\frac{x^2-1}{x-1}} = \sqrt2$$
+
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231208000706.png)
 
 ### Limites no infinito
 
 Além de analisar o que ocorre quando $x$ se aproxima de um número finito, também interessa saber o que acontece com $f(x)$ quando $x \to +\infty$ ou $x \to -\infty$ — este é o comportamento assintótico da função, essencial para esboçar gráficos.
 
-![](../../assets/faculdade/periodo1/20231208002253.png)
-![](../../assets/faculdade/periodo1/20231208002230.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20231208002253.png)
+    ![](../../assets/faculdade/periodo1/20231208002230.png)
 
-**Propriedades:**
+**Propriedades.**
 
-![](../../assets/faculdade/periodo1/20231208002351.png)
+- Se $\lim_{x\to+\infty}f(x)=+\infty$ e $\lim_{x\to+\infty}g(x)=M\neq0$ (finito), então $\lim_{x\to+\infty}[f(x)+g(x)]=+\infty$.
+- Se $\lim_{x\to+\infty}f(x)=+\infty$ e $\lim_{x\to+\infty}g(x)=M\neq0, M>0$, então $\lim_{x\to+\infty}[g(x)\cdot f(x)]=+\infty$; se $M<0$, o produto tende a $-\infty$.
+- Se $\lim_{x\to+\infty}f(x)=+\infty$ e $\lim_{x\to+\infty}g(x)=-\infty$, então $\lim_{x\to+\infty}[f(x)+g(x)]$ é **indeterminado** ($\infty-\infty$).
+- Se $\lim_{x\to+\infty}f(x)=+\infty$ e $\lim_{x\to+\infty}g(x)=0$, então $\lim_{x\to+\infty}[f(x)\cdot g(x)]$ é **indeterminado** ($\infty\cdot0$).
+
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231208002351.png)
 
 ## O problema da reta tangente
 
-![](../../assets/faculdade/periodo1/20231119123753.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231119123753.png)
 
 A derivada nasce de um problema geométrico: como encontrar a equação da reta que toca o gráfico de uma função em um único ponto, sem cruzá-lo — a **reta tangente**.
 
@@ -420,7 +459,8 @@ A derivada nasce de um problema geométrico: como encontrar a equação da reta 
 
 A ideia mais poderosa (e que generaliza para qualquer função) é pensar a reta tangente como o **limite** de retas secantes: traçamos uma reta ligando o ponto de tangência a outro ponto próximo do gráfico, e fazemos esse segundo ponto se aproximar cada vez mais do primeiro.
 
-![](../../assets/faculdade/periodo1/20231120002602.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231120002602.png)
 
 !!! example "Exemplos"
     ![](../../assets/faculdade/periodo1/20231120002809.png)
@@ -437,9 +477,11 @@ A ideia mais poderosa (e que generaliza para qualquer função) é pensar a reta
 
 **Definição.** A derivada de $f$ no ponto $x_0$ é o coeficiente angular $m$ dessa reta tangente, obtido como o limite das inclinações das retas secantes quando o incremento $h$ tende a $0$ (conceito de derivada "pela direita"):
 
-![](../../assets/faculdade/periodo1/20231120101615.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231120101615.png)
 
-![](../../assets/faculdade/periodo1/20231120004257.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231120004257.png)
 
 Ou seja, a derivada é igual ao coeficiente $m$; porém, ela é denotada $f'(x_0)$.
 
@@ -454,13 +496,29 @@ Ou seja, a derivada é igual ao coeficiente $m$; porém, ela é denotada $f'(x_0
 
 **Função derivada.** Em vez de calcular a derivada em um ponto fixo, podemos deixar $x_0$ genérico e obter uma nova função $f'(x)$, que associa a cada ponto do domínio a inclinação da reta tangente ali:
 
-![](../../assets/faculdade/periodo1/20231120102041.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231120102041.png)
 
 Aqui também $h$ sempre tende a $0$. É a função derivada $f'(x)$ que fornece a inclinação da reta tangente ao gráfico de $f$ em qualquer ponto.
 
 **Derivadas de funções elementares.**
 
-![](../../assets/faculdade/periodo1/20231120100850.png)
+a) $f(x)=1 \rightsquigarrow f'(x)=0$
+
+b) $f(x)=2x-1 \rightsquigarrow f'(x)=2$
+
+c) $f(x)=x^2 \rightsquigarrow f'(x)=2x$
+
+d) $f(x)=x^5 \rightsquigarrow f'(x)=5x^4$
+
+e) $f(x)=x^\pi \rightsquigarrow f'(x)=\dfrac{\pi x^\pi}{x}$
+
+f) $f(x)=\sqrt{x} \rightsquigarrow f'(x)=\dfrac{1}{2\sqrt{x}}$
+
+Em qualquer item acima, $f'(1)$ é a inclinação da reta tangente ao gráfico de $f$ no ponto $(1,1)$.
+
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231120100850.png)
 
 !!! example "Exemplos"
     **Item (b):** ![](../../assets/faculdade/periodo1/20231120111005.png)
@@ -471,26 +529,39 @@ Aqui também $h$ sempre tende a $0$. É a função derivada $f'(x)$ que fornece 
 
 **Regra do tombo** (regra da potência): para derivar $x^n$, "desce" o expoente como coeficiente e subtrai $1$ dele.
 
-![](../../assets/faculdade/periodo1/20231120005552.png)
+$$f(x) = x^N \quad \Rightarrow \quad f'(x_0) = Nx_0^{N-1}$$
 
-!!! example "Exemplos"
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231120005552.png)
+
+??? example "Exemplos"
     ![](../../assets/faculdade/periodo1/20231120005614.png)
     ![](../../assets/faculdade/periodo1/20231120100005.png)
     ![](../../assets/faculdade/periodo1/20231120100425.png)
     ![](../../assets/faculdade/periodo1/20231120100616.png)
 
-**Outras regras** (soma, produto, quociente):
+**Outras regras.** Sejam $f,g:(a,b)\to\mathbb{R}$ duas funções definidas no intervalo $(a,b)$. Então:
 
-![](../../assets/faculdade/periodo1/20231120204711.png)
-![](../../assets/faculdade/periodo1/20231120215854.png)
+1. $[f(x)+g(x)]' = f'(x)+g'(x)$ e $[f(x)-g(x)]' = f'(x)-g'(x)$;
+2. $[\lambda\cdot f(x)]' = \lambda\cdot f'(x)$, para $\lambda\in\mathbb{R}$ um número real fixado;
+3. **Regra do produto:** $[f(x)\cdot g(x)]' = f'(x)\cdot g(x) + f(x)\cdot g'(x)$;
+4. **Regra do quociente:** $\left[\dfrac{f(x)}{g(x)}\right]' = \dfrac{f'(x)\cdot g(x) - f(x)\cdot g'(x)}{(g(x))^2}$, nos pontos em que $g(x)\neq0$.
+
+Também vale lembrar que a derivada de uma constante é sempre $0$: $(c)'=0$.
+
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20231120204711.png)
+    ![](../../assets/faculdade/periodo1/20231120215854.png)
 
 **Regra da cadeia (ou regra da função composta).** Considere o problema de derivar $y = (x^3+2)^4$:
 
-![](../../assets/faculdade/periodo1/20231120221242.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231120221242.png)
 
 Atribuímos $u = x^3+2$, de modo que $y = u^4$:
 
-![](../../assets/faculdade/periodo1/20231120221531.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231120221531.png)
 
 $$\underbrace{\frac{dy}{du}}_{\text{derivada externa}} \cdot \underbrace{\frac{du}{dx}}_{\text{derivada interna}} = \underbrace{\frac{dy}{dx}}_{\text{derivada total}}$$
 
@@ -538,36 +609,43 @@ A trigonometria entra em Cálculo 1 principalmente para derivar e integrar funç
 
 As relações métricas relacionam os lados (cateto oposto, cateto adjacente e hipotenusa) de um triângulo retângulo entre si (incluindo o Teorema de Pitágoras):
 
-![](../../assets/faculdade/periodo1/20231128110252.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128110252.png)
 
 Já as relações trigonométricas relacionam esses lados aos ângulos internos do triângulo (seno, cosseno, tangente):
 
-![](../../assets/faculdade/periodo1/20231128110344.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128110344.png)
 
 ### Arcos notáveis
 
 Os arcos notáveis ($30°$, $45°$ e $60°$, ou $\pi/6$, $\pi/4$ e $\pi/3$ em radianos) têm valores de seno, cosseno e tangente que vale a pena memorizar, pois aparecem o tempo todo:
 
-![](../../assets/faculdade/periodo1/20231215000037.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231215000037.png)
 
 ### Aplicações
 
-![](../../assets/faculdade/periodo1/20231128110641.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128110641.png)
 
 ### Círculo trigonométrico
 
 O círculo trigonométrico (círculo de raio $1$ centrado na origem) é a ferramenta que generaliza seno e cosseno para qualquer ângulo, não só os de um triângulo retângulo — incluindo ângulos negativos ou maiores que $90°$.
 
-![](../../assets/faculdade/periodo1/20231128111041.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128111041.png)
 
-![](../../assets/faculdade/periodo1/20231128111114.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128111114.png)
 
 Por convenção, o 1º quadrante é o superior direito e o 4º quadrante é o inferior direito (seguindo o sentido anti-horário a partir do eixo $x$ positivo).
 
 ### Funções trigonométricas
 
-![](../../assets/faculdade/periodo1/20231128111256.png)
-![](../../assets/faculdade/periodo1/20231128111340.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20231128111256.png)
+    ![](../../assets/faculdade/periodo1/20231128111340.png)
 
 **Gráficos:**
 
@@ -584,25 +662,28 @@ Por convenção, o 1º quadrante é o superior direito e o 4º quadrante é o in
 
 As identidades trigonométricas são igualdades que valem para todo ângulo (dentro do domínio), fundamentais para simplificar expressões antes de derivar, integrar ou calcular limites trigonométricos:
 
-![](../../assets/faculdade/periodo1/20231128111509.png)
-![](../../assets/faculdade/periodo1/20231128111726.png)
-![](../../assets/faculdade/periodo1/20231128111740.png)
-![](../../assets/faculdade/periodo1/20231128111935.png)
-![](../../assets/faculdade/periodo1/20231212202721.png)
-![](../../assets/faculdade/periodo1/20231212202859.png)
-![](../../assets/faculdade/periodo1/20231212204039.png)
-![](../../assets/faculdade/periodo1/20231212204332.png)
-![](../../assets/faculdade/periodo1/20240301140049.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20231128111509.png)
+    ![](../../assets/faculdade/periodo1/20231128111726.png)
+    ![](../../assets/faculdade/periodo1/20231128111740.png)
+    ![](../../assets/faculdade/periodo1/20231128111935.png)
+    ![](../../assets/faculdade/periodo1/20231212202721.png)
+    ![](../../assets/faculdade/periodo1/20231212202859.png)
+    ![](../../assets/faculdade/periodo1/20231212204039.png)
+    ![](../../assets/faculdade/periodo1/20231212204332.png)
+    ![](../../assets/faculdade/periodo1/20240301140049.png)
 
 ### Teorema do confronto
 
 O Teorema do Confronto (ou *squeeze theorem*) diz que se $g(x) \le f(x) \le h(x)$ perto de $a$, e $\lim_{x\to a} g(x) = \lim_{x\to a} h(x) = L$, então $\lim_{x\to a} f(x) = L$ também — a função $f$ fica "espremida" entre $g$ e $h$ e é forçada a convergir para o mesmo limite. É exatamente essa ideia que permite demonstrar o limite trigonométrico fundamental abaixo.
 
-![](../../assets/faculdade/periodo1/20231128202010.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128202010.png)
 
 ### Limite trigonométrico fundamental
 
-![](../../assets/faculdade/periodo1/20231128202359.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128202359.png)
 
 !!! example "Exemplos"
     ![](../../assets/faculdade/periodo1/20231128205422.png)
@@ -619,53 +700,77 @@ O Teorema do Confronto (ou *squeeze theorem*) diz que se $g(x) \le f(x) \le h(x)
 
 ### Derivadas de funções trigonométricas
 
-![](../../assets/faculdade/periodo1/20231128205913.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128205913.png)
 
 ??? note "Demonstração"
     ![](../../assets/faculdade/periodo1/20231128210027.png)
 
-![](../../assets/faculdade/periodo1/20231128205925.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128205925.png)
 
 ??? note "Demonstração"
     ![](../../assets/faculdade/periodo1/20231128205959.png)
 
-![](../../assets/faculdade/periodo1/20231128210106.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128210106.png)
 
 ??? note "Demonstração"
     ![](../../assets/faculdade/periodo1/20231128210121.png)
 
-![](../../assets/faculdade/periodo1/20231128210135.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128210135.png)
 
 ??? note "Demonstração"
     ![](../../assets/faculdade/periodo1/20231128210157.png)
 
-![](../../assets/faculdade/periodo1/20231128210220.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128210220.png)
 
 ??? note "Demonstração"
     ![](../../assets/faculdade/periodo1/20231128210235.png)
 
-![](../../assets/faculdade/periodo1/20231128210254.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128210254.png)
 
 ??? note "Demonstração"
     ![](../../assets/faculdade/periodo1/20231128210309.png)
 
 **Tabela para decorar:**
 
-![](../../assets/faculdade/periodo1/20231128210339.png)
+| $f(x)$ | $f'(x)$ |
+|---|---|
+| $\text{sen}(x)$ | $\cos(x)$ |
+| $\cos(x)$ | $-\text{sen}(x)$ |
+| $\text{tg}(x)$ | $\sec^2(x)$ |
+| $\text{cotg}(x)$ | $-\text{cossec}^2(x)$ |
+| $\sec(x)$ | $\text{tg}(x)\sec(x)$ |
+| $\text{cossec}(x)$ | $-\text{cotg}(x)\,\text{cossec}(x)$ |
+
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128210339.png)
 
 ### Outras derivadas importantes
 
-**Derivada da função $e^x$.**
+**Derivada da função $e^x$.** O número de Euler (ou de Neper), $e \cong 2{,}718281828459045$, é definido pelo **Limite Exponencial Fundamental**: $\lim_{x\to+\infty}\left(1+\dfrac1x\right)^x = e$, equivalente ao limite $\lim_{h\to0}\dfrac{e^h-1}{h}=1$. Usando essa equivalência para derivar $e^x$ pela definição:
 
-![](../../assets/faculdade/periodo1/20231128212159.png)
-![](../../assets/faculdade/periodo1/20231128212102.png)
-![](../../assets/faculdade/periodo1/20231128212118.png)
+$$[e^x]' = \lim_{h\to0}\frac{e^{x+h}-e^x}{h} = \lim_{h\to0}\frac{e^xe^h-e^x}{h} = \lim_{h\to0}\frac{e^x(e^h-1)}{h} = e^x\lim_{h\to0}\frac{e^h-1}{h} = e^x\cdot1 = e^x$$
+
+$$\boxed{[e^x]' = e^x}$$
+
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20231128212159.png)
+    ![](../../assets/faculdade/periodo1/20231128212102.png)
+    ![](../../assets/faculdade/periodo1/20231128212118.png)
 
 Se $x$ é uma função derivável, então $[e^x]' = x' \cdot e^x$.
 
-**Derivada da função $\ln(x)$ (logaritmo natural de $x$).**
+**Derivada da função $\ln(x)$ (logaritmo natural de $x$).** Considere a função $\ln(x) \overset{\text{def}}{=} \log_e(x)$, definida para $x>0$. Mostra-se que:
 
-![](../../assets/faculdade/periodo1/20231128213155.png)
+$$\boxed{[\ln(x)]' = \frac{1}{x}}$$
+
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231128213155.png)
 
 Se $x$ é uma função derivável, então $[\ln(x)]' = x' \cdot \dfrac{1}{x}$.
 
@@ -674,7 +779,10 @@ Se $x$ é uma função derivável, então $[\ln(x)]' = x' \cdot \dfrac{1}{x}$.
 
 **Derivada de uma constante elevada a uma função ($a^x$).**
 
-![](../../assets/faculdade/periodo1/20231208150935.png)
+$$\boxed{[a^x]' = a^x\ln(a)}$$
+
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231208150935.png)
 
 !!! example "Exemplos"
     ![](../../assets/faculdade/periodo1/20231208151719.png)
@@ -685,16 +793,22 @@ Se $x$ é uma função derivável, então $[\ln(x)]' = x' \cdot \dfrac{1}{x}$.
 
 **Derivada de uma função elevada a outra função** (requer derivação logarítmica):
 
-![](../../assets/faculdade/periodo1/20231208151730.png)
+$$\boxed{\left[f(x)^{g(x)}\right]' = f(x)^{g(x)} \cdot \frac{d}{dx}\Big[g(x)\ln\big(f(x)\big)\Big]}$$
 
-!!! example "Exemplo"
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231208151730.png)
+
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20231208154537.png)
 
 **Derivada de logaritmo em base genérica.**
 
-![](../../assets/faculdade/periodo1/20231208152121.png)
+$$\boxed{[\log_a(x)]' = \frac{1}{\ln(a)}\cdot\frac{1}{x}}$$
 
-!!! example "Exemplos"
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20231208152121.png)
+
+??? example "Exemplos"
     ![](../../assets/faculdade/periodo1/20231208152215.png)
 
 !!! example "Mais exemplos (regra da cadeia com funções trigonométricas e exponenciais)"
@@ -710,52 +824,88 @@ Se $x$ é uma função derivável, então $[\ln(x)]' = x' \cdot \dfrac{1}{x}$.
 
 ### Derivada da função inversa
 
-![](../../assets/faculdade/periodo1/20231208173159.png)
-![](../../assets/faculdade/periodo1/20231208173417.png)
+**Definição (função inversa).** Seja $f:A\to B$ uma função; dizemos que $g:B\to A$ é a função inversa de $f$ se $g\circ f = id_A$ e $f\circ g = id_B$. Notação: $g=f^{-1}$.
+
+!!! example "Exemplos"
+    Se $f:\mathbb{R}_+\to\mathbb{R}_+$ é dada por $f(x)=x^2$, então $f^{-1}:\mathbb{R}_+\to\mathbb{R}_+$ é dada por $f^{-1}(x)=\sqrt{x}$ (de fato, $(\sqrt x)^2=x$ e $\sqrt{x^2}=x$ para todo $x\in\mathbb{R}_+$).
+
+    Se $g:\mathbb{R}\to\mathbb{R}_+^*$ é dada por $g(x)=e^x$, então $g^{-1}:\mathbb{R}_+^*\to\mathbb{R}$ é dada por $g^{-1}(x)=\ln(x)$ (de fato, $\ln(e^x)=x$ para todo $x\in\mathbb{R}$, e $e^{\ln(x)}=x$ para todo $x\in\mathbb{R}_+^*$).
+
+**Proposição (derivada da função inversa).** Se $f^{-1}$ é a função inversa de $f$, então:
+
+$$\left[f^{-1}(x)\right]' = \frac{1}{f'\big(f^{-1}(x)\big)}$$
+
+!!! example "Exemplos"
+    Quando $f(x)=x^3$, $f^{-1}(x)=\sqrt[3]{x}$. Assim:
+
+    $$\left[\sqrt[3]{x}\right]' = \left[f^{-1}(x)\right]' = \frac{1}{f'(f^{-1}(x))} = \frac{1}{3\left(\sqrt[3]{x}\right)^2} \;\Rightarrow\; \left[\sqrt[3]{x}\right]' = \frac{1}{3\sqrt[3]{x^2}}$$
+
+    Quando $f(x)=e^x$, $f^{-1}(x)=\ln(x)$. Assim:
+
+    $$[\ln(x)]' = \left[f^{-1}(x)\right]' = \frac{1}{f'(f^{-1}(x))} = \frac{1}{e^{\ln(x)}} = \frac{1}{x} \;\Rightarrow\; [\ln(x)]' = \frac{1}{x}$$
+
+    (confirmando, por este caminho alternativo, o resultado já visto acima.)
+
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20231208173159.png)
+    ![](../../assets/faculdade/periodo1/20231208173417.png)
 
 **Derivadas das funções trigonométricas inversas:**
 
 === "Arcsen (inversa do seno)"
-    ![](../../assets/faculdade/periodo1/20231208174513.png)
+    $$[\text{arcsen}(x)]' = \frac{1}{\sqrt{1-x^2}}$$
 
-    ??? note "Demonstração"
+    ??? note "Fotos do quadro"
+        ![](../../assets/faculdade/periodo1/20231208174513.png)
         ![](../../assets/faculdade/periodo1/20231208174528.png)
 
     Gráfico: ![](../../assets/faculdade/periodo1/20231208174620.png)
 
 === "Arccos (inversa do cosseno)"
-    ![](../../assets/faculdade/periodo1/20231208180440.png)
+    $$[\arccos(x)]' = -\frac{1}{\sqrt{1-x^2}}$$
+
+    ??? note "Foto do quadro"
+        ![](../../assets/faculdade/periodo1/20231208180440.png)
 
     Gráfico: ![](../../assets/faculdade/periodo1/20231208191732.png)
 
 === "Arctg (inversa da tangente)"
-    ![](../../assets/faculdade/periodo1/20231208180144.png)
+    $$[\text{arctg}(x)]' = \frac{1}{1+x^2}$$
 
-    ??? note "Demonstração"
+    ??? note "Fotos do quadro"
+        ![](../../assets/faculdade/periodo1/20231208180144.png)
         ![](../../assets/faculdade/periodo1/20231208180203.png)
 
     Gráfico: ![](../../assets/faculdade/periodo1/20231208180229.png)
 
 === "Arccot"
-    ![](../../assets/faculdade/periodo1/20231208192913.png)
+    $$[\text{arccot}(x)]' = -\frac{1}{1+x^2}$$
+
+    ??? note "Foto do quadro"
+        ![](../../assets/faculdade/periodo1/20231208192913.png)
 
 === "Arcsec (inversa da secante)"
-    ![](../../assets/faculdade/periodo1/20231208192208.png)
+    $$[\text{arcsec}(x)]' = \frac{1}{x\sqrt{x^2-1}}$$
 
-    ??? note "Demonstração"
+    ??? note "Fotos do quadro"
+        ![](../../assets/faculdade/periodo1/20231208192208.png)
         ![](../../assets/faculdade/periodo1/20231208192304.png)
 
 === "Arccossec (inversa da cossecante)"
-    ![](../../assets/faculdade/periodo1/20231208194927.png)
+    $$[\text{arccossec}(x)]' = -\frac{1}{x\sqrt{x^2-1}}$$
+
+    ??? note "Foto do quadro"
+        ![](../../assets/faculdade/periodo1/20231208194927.png)
 
 ### Derivação implícita
 
 Quando uma relação entre $x$ e $y$ não está escrita explicitamente como $y=f(x)$ (por exemplo, uma circunferência $x^2+y^2=r^2$), ainda é possível derivar ambos os lados em relação a $x$, tratando $y$ como função de $x$ e aplicando a regra da cadeia sempre que $y$ aparecer.
 
-![](../../assets/faculdade/periodo1/20231209071403.png)
-![](../../assets/faculdade/periodo1/20231209071559.png)
-![](../../assets/faculdade/periodo1/20231209071817.png)
-![](../../assets/faculdade/periodo1/20231209074358.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20231209071403.png)
+    ![](../../assets/faculdade/periodo1/20231209071559.png)
+    ![](../../assets/faculdade/periodo1/20231209071817.png)
+    ![](../../assets/faculdade/periodo1/20231209074358.png)
 
 !!! tip "Observações gerais sobre derivação"
     - Ao usar a regra da cadeia, preste atenção não só nas fórmulas, mas na lógica: separe a derivada em "função" e "coeficiente/interior", pois a regra da cadeia é sempre "derivada de fora vezes derivada de dentro". Por isso, a derivada de uma função composta é sempre a derivada da função externa multiplicada pela derivada do seu argumento interno.
@@ -768,20 +918,23 @@ Quando uma relação entre $x$ e $y$ não está escrita explicitamente como $y=f
 
 Este é uma propriedade das **funções contínuas**: se $f$ é contínua em $[a,b]$ e $N$ é um valor entre $f(a)$ e $f(b)$, então existe pelo menos um $c \in [a,b]$ tal que $f(c) = N$. Intuitivamente, uma função contínua não pode "saltar" de um valor a outro sem passar por todos os valores intermediários.
 
-![](../../assets/faculdade/periodo1/20240102211619.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240102211619.png)
 
 Toda função polinomial é contínua em $\mathbb{R}$. Uma consequência prática muito usada: para provar que uma função possui uma raiz em um intervalo, basta encontrar um ponto onde $f(x)$ é positivo e outro onde $f(x)$ é negativo — pelo TVI, deve existir uma raiz entre eles.
 
-!!! example "Exemplo"
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240102212449.png)
 
 ## Teorema do Valor Extremo (ou Teorema de Weierstrass)
 
 O Teorema do Valor Extremo garante que **toda função contínua em um intervalo fechado $[a,b]$ atinge um valor máximo absoluto e um valor mínimo absoluto** nesse intervalo (não necessariamente nas extremidades).
 
-![](../../assets/faculdade/periodo1/20240102213144.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240102213144.png)
 
-![](../../assets/faculdade/periodo1/20240102214612.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240102214612.png)
 
 Para entender esse teorema, é importante diferenciar extremos absolutos de extremos locais:
 
@@ -791,7 +944,8 @@ Para entender esse teorema, é importante diferenciar extremos absolutos de extr
 !!! note
     Todo extremo absoluto é também um extremo local, mas o contrário não é verdade: nem todo extremo local é absoluto.
 
-![](../../assets/faculdade/periodo1/20240102213233.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240102213233.png)
 
 **Ponto crítico.** É um ponto $x$ no domínio de $f$ em que $f'(x) = 0$ ou $f'(x)$ não existe. Candidatos a extremos absolutos estão sempre entre os pontos críticos e as extremidades do domínio.
 
@@ -819,7 +973,8 @@ Para entender esse teorema, é importante diferenciar extremos absolutos de extr
 
 O Teorema de Rolle é um caso particular (e serve de base para demonstrar) o Teorema do Valor Médio: se $f$ é contínua em $[a,b]$, derivável em $(a,b)$ e $f(a)=f(b)$, então existe $c \in (a,b)$ tal que $f'(c) = 0$ — ou seja, em algum ponto entre $a$ e $b$ a função tem tangente horizontal.
 
-![](../../assets/faculdade/periodo1/20240102233949.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240102233949.png)
 
 ### Teorema do Valor Médio
 
@@ -829,16 +984,19 @@ $$f'(c) = \frac{f(b)-f(a)}{b-a}$$
 
 Ou seja, existe um ponto onde a inclinação da reta tangente é igual à inclinação da reta secante que liga $(a,f(a))$ a $(b,f(b))$.
 
-![](../../assets/faculdade/periodo1/20240102234918.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240102234918.png)
 
 **Representação geométrica do teorema:**
 
-![](../../assets/faculdade/periodo1/20240102235305.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240102235305.png)
 
 **Consequências:**
 
-![](../../assets/faculdade/periodo1/20240103000329.png)
-![](../../assets/faculdade/periodo1/20240103000337.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240103000329.png)
+    ![](../../assets/faculdade/periodo1/20240103000337.png)
 
 !!! example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240103001047.png)
@@ -853,9 +1011,11 @@ O sinal de $f'(x)$ indica se a função está crescendo ou decrescendo: se $f'(x
 
 **Condições:**
 
-![](../../assets/faculdade/periodo1/20240103110647.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240103110647.png)
 
-![](../../assets/faculdade/periodo1/20240103112706.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240103112706.png)
 
 !!! example "Exemplo: onde $f(x) = 3x^4-4x^3-12x^2+5$ é crescente e onde é decrescente"
     ![](../../assets/faculdade/periodo1/20240103112436.png)
@@ -868,28 +1028,34 @@ O sinal de $f'(x)$ indica se a função está crescendo ou decrescendo: se $f'(x
 
 **Teste da primeira derivada** (critério para classificar pontos críticos em máximos ou mínimos locais a partir da troca de sinal de $f'$):
 
-![](../../assets/faculdade/periodo1/20240103112754.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240103112754.png)
 
 Em outras palavras:
 
-![](../../assets/faculdade/periodo1/20240103113029.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240103113029.png)
 
 **Gráficos:**
 
-![](../../assets/faculdade/periodo1/20240103112623.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240103112623.png)
 
 ## Sinal da 2ª derivada
 
 A segunda derivada, $f''(x)$, descreve a **concavidade** do gráfico: $f''(x) > 0$ indica concavidade para cima, $f''(x) < 0$ indica concavidade para baixo.
 
-![](../../assets/faculdade/periodo1/20240103114050.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240103114050.png)
 
-![](../../assets/faculdade/periodo1/20240103121906.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240103121906.png)
 
-!!! example "Exemplo"
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240103114552.png)
 
-![](../../assets/faculdade/periodo1/20240103121329.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240103121329.png)
 
 Os pontos em que ocorre mudança de concavidade são chamados de **pontos de inflexão** (pontos em que $f''(x)=0$ e a concavidade troca de sinal).
 
@@ -900,20 +1066,22 @@ Os pontos em que ocorre mudança de concavidade são chamados de **pontos de inf
 
 **Teste da segunda derivada** (critério alternativo ao teste da primeira derivada para classificar pontos críticos):
 
-![](../../assets/faculdade/periodo1/20240103122453.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240103122453.png)
 
 Diferentemente do teste da primeira derivada, aqui a derivada no ponto crítico $c$ precisa estar definida (não pode ser um ponto onde $f'$ não existe).
 
-!!! example "Exemplo: máximos e mínimos relativos de $f(x) = -4x^3+3x^2+15$"
+??? example "Exemplo: máximos e mínimos relativos de $f(x) = -4x^3+3x^2+15$"
     ![](../../assets/faculdade/periodo1/20240103123338.png)
 
 ## Problemas de otimização
 
 Problemas de otimização usam derivadas para encontrar o maior ou menor valor possível de uma grandeza (área, volume, custo, tempo...) sujeita a alguma restrição. A estratégia geral é: escrever a grandeza a otimizar como função de uma única variável, derivar, encontrar os pontos críticos e verificar qual deles corresponde ao máximo/mínimo desejado dentro do domínio válido do problema.
 
-![](../../assets/faculdade/periodo1/20240111162107.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240111162107.png)
 
-!!! example "Exemplo"
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240111162430.png)
     ![](../../assets/faculdade/periodo1/20240111162444.png)
     ![](../../assets/faculdade/periodo1/20240111162456.png)
@@ -936,7 +1104,7 @@ Problemas de otimização usam derivadas para encontrar o maior ou menor valor p
 
     Calculando: $V(6{,}07) \approx 4104\ \text{cm}^3$, que é o ponto máximo da função. Logo, o valor de $x$ que maximiza o volume é $x \approx 6{,}07$.
 
-!!! example "Exemplo"
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240111174613.png)
     ![](../../assets/faculdade/periodo1/20240111175942.png)
 
@@ -946,11 +1114,12 @@ Quando o cálculo direto de um limite resulta em uma forma indeterminada — tip
 
 $$\lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a} \frac{f'(x)}{g'(x)} \qquad \text{(quando o lado esquerdo é } \tfrac{0}{0} \text{ ou } \tfrac{\infty}{\infty}\text{)}$$
 
-![](../../assets/faculdade/periodo1/20240117193144.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240117193144.png)
 
 Se a forma indeterminada persistir após derivar uma vez, podemos aplicar a regra novamente, derivando quantas vezes forem necessárias.
 
-!!! example "Exemplos"
+??? example "Exemplos"
     ![](../../assets/faculdade/periodo1/20240117193604.png)
     ![](../../assets/faculdade/periodo1/20240117193805.png)
 
@@ -968,11 +1137,12 @@ Assíntotas são retas que o gráfico de uma função se aproxima indefinidament
 
 Uma assíntota vertical ocorre em valores de $x$ onde a função "explode" para $+\infty$ ou $-\infty$ — tipicamente onde o denominador de uma expressão se anula.
 
-![](../../assets/faculdade/periodo1/20240118105332.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240118105332.png)
 
 Se o denominador do limite for igual a $0$ (e o numerador não), temos uma assíntota vertical. O foco aqui está no "$x$": procuramos os valores de $x$ que anulam o denominador.
 
-!!! example "Exemplo"
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240118105421.png)
     ![](../../assets/faculdade/periodo1/20240118105507.png)
     ![](../../assets/faculdade/periodo1/20240118105737.png)
@@ -984,11 +1154,12 @@ Se o denominador do limite for igual a $0$ (e o numerador não), temos uma assí
 
 Uma assíntota horizontal descreve o valor para o qual $f(x)$ se aproxima quando $x \to \pm\infty$.
 
-![](../../assets/faculdade/periodo1/20240118110554.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240118110554.png)
 
 Aqui o foco está no "$y$": calculamos $\lim_{x\to\pm\infty} f(x)$.
 
-!!! example "Exemplo"
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240118110715.png)
     ![](../../assets/faculdade/periodo1/20240118110726.png)
     ![](../../assets/faculdade/periodo1/20240118110735.png)
@@ -996,20 +1167,22 @@ Aqui o foco está no "$y$": calculamos $\lim_{x\to\pm\infty} f(x)$.
     ![](../../assets/faculdade/periodo1/20240118112825.png)
     ![](../../assets/faculdade/periodo1/20240118112840.png)
 
-![](../../assets/faculdade/periodo1/20240118112950.png)
-![](../../assets/faculdade/periodo1/20240119140259.png)
-![](../../assets/faculdade/periodo1/20240118113543.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240118112950.png)
+    ![](../../assets/faculdade/periodo1/20240119140259.png)
+    ![](../../assets/faculdade/periodo1/20240118113543.png)
 
 ### Assíntotas oblíquas
 
 **Funções racionais.** Para calcular a assíntota oblíqua de uma função racional, basta dividir o polinômio do numerador pelo do denominador até chegar à forma irredutível; o quociente dessa divisão é a assíntota oblíqua. Existe assíntota oblíqua quando o grau do polinômio de cima é exatamente uma unidade maior que o grau do polinômio de baixo, e ela vale tanto para $+\infty$ quanto para $-\infty$.
 
-!!! example "Exemplo"
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240119142914.png)
 
 **Funções não racionais.**
 
-![](../../assets/faculdade/periodo1/20240119151703.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240119151703.png)
 
 Para funções não racionais, é preciso calcular separadamente o comportamento para $+\infty$ e $-\infty$. Se o coeficiente angular $m$ obtido for igual a $0$, a assíntota é, na verdade, horizontal.
 
@@ -1028,17 +1201,19 @@ Para funções não racionais, é preciso calcular separadamente o comportamento
 
 A integral nasce do problema de calcular a área sob o gráfico de uma função entre dois pontos. A estratégia é aproximar essa área por uma soma de retângulos finos cada vez mais estreitos, e tomar o limite dessa soma quando o número de retângulos tende ao infinito.
 
-![](../../assets/faculdade/periodo1/20240227191027.png)
-![](../../assets/faculdade/periodo1/20240227191048.png)
-![](../../assets/faculdade/periodo1/20240227191253.png)
-![](../../assets/faculdade/periodo1/20240227191433.png)
-![](../../assets/faculdade/periodo1/20240227191508.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240227191027.png)
+    ![](../../assets/faculdade/periodo1/20240227191048.png)
+    ![](../../assets/faculdade/periodo1/20240227191253.png)
+    ![](../../assets/faculdade/periodo1/20240227191433.png)
+    ![](../../assets/faculdade/periodo1/20240227191508.png)
 
 Ou seja: **calcular a integral é calcular a área** sob a curva.
 
 ### Notação
 
-![](../../assets/faculdade/periodo1/20240227193914.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240227193914.png)
 
 $$\int_a^b f(x)\,dx$$
 
@@ -1047,16 +1222,19 @@ $$\int_a^b f(x)\,dx$$
 - $b$ — limite superior da integração
 - $[a,b]$ — intervalo fechado onde calculamos a área
 
-![](../../assets/faculdade/periodo1/20240227195248.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240227195248.png)
 
 - $f(x)$ — função a integrar
 - $dx$ — diferencial de $x$ (variável independente)
 
-![](../../assets/faculdade/periodo1/20240227195431.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240227195431.png)
 
 Formalmente, a integral é definida como a **soma de Riemann**:
 
-![](../../assets/faculdade/periodo1/20240227195717.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240227195717.png)
 
 $$\int_a^b f(x)\,dx = \lim_{n\to\infty} \sum_{i=1}^{n} f(x_i^*)\,\Delta x$$
 
@@ -1107,44 +1285,58 @@ onde $f(x_i^*)$ é o valor de $f$ na extremidade direita do subintervalo $[x_{i-
 
     O que estava "sobre $n$" pode ser cortado no limite, sem interferir no resultado final.
 
-![](../../assets/faculdade/periodo1/20240227191743.png)
-![](../../assets/faculdade/periodo1/20240227215349.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240227191743.png)
+    ![](../../assets/faculdade/periodo1/20240227215349.png)
 
 **Teorema:**
 
-![](../../assets/faculdade/periodo1/20240227215911.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240227215911.png)
 
 ### Teorema fundamental do cálculo
 
 O Teorema Fundamental do Cálculo é a ponte entre derivadas e integrais: ele diz que, para calcular uma integral definida, basta encontrar uma **primitiva** (antiderivada) da função e avaliá-la nos extremos do intervalo.
 
-![](../../assets/faculdade/periodo1/20240227220116.png)
+Se $f$ for uma função contínua no intervalo $[a,b]$, então a função $F:[a,b]\to\mathbb{R}$ definida por $F(x)=\int_a^x f(t)\,dt$, com $a\le x\le b$, é contínua em $[a,b]$ e derivável em $(a,b)$. Além disso, $F'(x)=f(x)$, ou seja:
 
-**Outra forma de aplicar** (quando os limites de integração são funções de $x$):
+$$\frac{d}{dx}\left[\int_a^x f(t)\,dt\right] = f(x)$$
 
-![](../../assets/faculdade/periodo1/20240228010502.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240227220116.png)
+
+**Outra forma de aplicar** (quando os limites de integração são funções de $x$): se $F(x) = \int_{q(x)}^{p(x)} f(t)\,dt$, então
+
+$$F'(x) = f(p(x))\cdot p'(x) - f(q(x))\cdot q'(x)$$
+
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240228010502.png)
 
 Aqui, $f(p(x))$ significa substituir $p(x)$ no lugar de $t$, e $f(q(x))$ significa substituir $q(x)$ no lugar de $t$.
 
 **Primitiva.** Uma primitiva (ou antiderivada) de $f(x)$ é uma função $F(x)$ tal que $F'(x) = f(x)$.
 
-![](../../assets/faculdade/periodo1/20240227220136.png)
-![](../../assets/faculdade/periodo1/20240227220154.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240227220136.png)
+    ![](../../assets/faculdade/periodo1/20240227220154.png)
 
 Como achar a primitiva do tipo $x^n$ (regra inversa à regra do tombo):
 
 $$\int x^n\,dx = \frac{x^{n+1}}{n+1} + C \qquad (n \neq -1)$$
 
-![](../../assets/faculdade/periodo1/20240227233936.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240227233936.png)
 
-![](../../assets/faculdade/periodo1/20240227220220.png)
-![](../../assets/faculdade/periodo1/20240227220254.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240227220220.png)
+    ![](../../assets/faculdade/periodo1/20240227220254.png)
 
 **Propriedades da integral:**
 
-![](../../assets/faculdade/periodo1/20240227215513.png)
-![](../../assets/faculdade/periodo1/20240227215957.png)
-![](../../assets/faculdade/periodo1/20240229111622.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240227215513.png)
+    ![](../../assets/faculdade/periodo1/20240227215957.png)
+    ![](../../assets/faculdade/periodo1/20240229111622.png)
 
 !!! example "Exemplos de integrais"
     ![](../../assets/faculdade/periodo1/20240227222454.png)
@@ -1222,9 +1414,10 @@ $$\int x^n\,dx = \frac{x^{n+1}}{n+1} + C \qquad (n \neq -1)$$
 
 Quando a região de interesse está delimitada por duas curvas (não apenas pelo eixo $x$), a área entre elas é a integral da diferença entre a função "de cima" e a função "de baixo" no intervalo de interseção.
 
-![](../../assets/faculdade/periodo1/20240229220149.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240229220149.png)
 
-!!! example "Exemplos"
+??? example "Exemplos"
     ![](../../assets/faculdade/periodo1/20240229101729.png)
     ![](../../assets/faculdade/periodo1/20240229101745.png)
 
@@ -1246,7 +1439,7 @@ Quando a região de interesse está delimitada por duas curvas (não apenas pelo
     ![](../../assets/faculdade/periodo1/20240308120043.png)
     ![](../../assets/faculdade/periodo1/20240308123005.png)
 
-!!! example "Mais exemplos"
+??? example "Mais exemplos"
     ![](../../assets/faculdade/periodo1/20240229111851.png)
     ![](../../assets/faculdade/periodo1/20240229111903.png)
 
@@ -1255,10 +1448,11 @@ Quando a região de interesse está delimitada por duas curvas (não apenas pelo
 
 **Tabela de integrais definidas:**
 
-![](../../assets/faculdade/periodo1/20240229214435.png)
-![](../../assets/faculdade/periodo1/20240229112138.png)
-![](../../assets/faculdade/periodo1/20240229215743.png)
-![](../../assets/faculdade/periodo1/20240229220850.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240229214435.png)
+    ![](../../assets/faculdade/periodo1/20240229112138.png)
+    ![](../../assets/faculdade/periodo1/20240229215743.png)
+    ![](../../assets/faculdade/periodo1/20240229220850.png)
 
 ### Técnicas de integração
 
@@ -1266,11 +1460,12 @@ Quando a região de interesse está delimitada por duas curvas (não apenas pelo
 
 A ideia é identificar uma parte da expressão como uma nova variável $u$, de modo que a integral se simplifique em termos de $u$ e $du$ — é essencialmente a regra da cadeia "ao contrário".
 
-![](../../assets/faculdade/periodo1/20240229215944.png)
-![](../../assets/faculdade/periodo1/20240229215957.png)
-![](../../assets/faculdade/periodo1/20240229222719.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240229215944.png)
+    ![](../../assets/faculdade/periodo1/20240229215957.png)
+    ![](../../assets/faculdade/periodo1/20240229222719.png)
 
-!!! example "Exemplos"
+??? example "Exemplos"
     ![](../../assets/faculdade/periodo1/20240229223244.png)
     ![](../../assets/faculdade/periodo1/20240229224419.png)
 
@@ -1304,9 +1499,10 @@ Usada quando o integrando é um produto de duas funções de tipos diferentes (e
 
 $$\int u\,dv = uv - \int v\,du$$
 
-![](../../assets/faculdade/periodo1/20240229235356.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240229235356.png)
 
-!!! example "Exemplos"
+??? example "Exemplos"
     ![](../../assets/faculdade/periodo1/20240229235541.png)
     ![](../../assets/faculdade/periodo1/20240301000950.png)
 
@@ -1331,7 +1527,8 @@ $$\int u\,dv = uv - \int v\,du$$
 
 Produtos e potências de funções trigonométricas (como $\sin^m x \cos^n x$) têm técnicas específicas, geralmente baseadas em identidades trigonométricas que reduzem a potência ou trocam a função por sua "complementar".
 
-![](../../assets/faculdade/periodo1/20240301013327.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240301013327.png)
 
 !!! example "Exemplos"
     **Regra da potência do cosseno ímpar:** ![](../../assets/faculdade/periodo1/20240301122218.png)
@@ -1383,11 +1580,12 @@ Produtos e potências de funções trigonométricas (como $\sin^m x \cos^n x$) t
     ![](../../assets/faculdade/periodo1/20240304002944.png)
     ![](../../assets/faculdade/periodo1/20240304003001.png)
 
-![](../../assets/faculdade/periodo1/20240301145630.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240301145630.png)
 
 Quando aparecer apenas $\tan(x)$ ou $\cot(x)$ na integral, utilize essa fórmula trigonométrica para reescrever o integrando em termos de $\sec$ ou $\csc$.
 
-!!! example "Exemplos"
+??? example "Exemplos"
     ![](../../assets/faculdade/periodo1/20240301135639.png)
     ![](../../assets/faculdade/periodo1/20240301141612.png)
 
@@ -1398,11 +1596,12 @@ Quando aparecer apenas $\tan(x)$ ou $\cot(x)$ na integral, utilize essa fórmula
     ![](../../assets/faculdade/periodo1/20240301171914.png)
     ![](../../assets/faculdade/periodo1/20240304012234.png)
 
-![](../../assets/faculdade/periodo1/20240301145453.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240301145453.png)
 
 Quando aparecer apenas $\sec(x)$ ou $\csc(x)$, utilize esse macete.
 
-!!! example "Exemplos"
+??? example "Exemplos"
     ![](../../assets/faculdade/periodo1/20240301151013.png)
     ![](../../assets/faculdade/periodo1/20240301153452.png)
     ![](../../assets/faculdade/periodo1/20240301153504.png)
@@ -1410,14 +1609,16 @@ Quando aparecer apenas $\sec(x)$ ou $\csc(x)$, utilize esse macete.
     ![](../../assets/faculdade/periodo1/20240301153407.png)
     ![](../../assets/faculdade/periodo1/20240301153437.png)
 
-![](../../assets/faculdade/periodo1/20240301013345.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240301013345.png)
 
-![](../../assets/faculdade/periodo1/20240301154812.png)
-![](../../assets/faculdade/periodo1/20240301154819.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240301154812.png)
+    ![](../../assets/faculdade/periodo1/20240301154819.png)
 
 Técnica para calcular a integral de $\tan(x)\sec(x)$, que também serve para $\csc(x)\cot(x)$.
 
-!!! example "Exemplos"
+??? example "Exemplos"
     ![](../../assets/faculdade/periodo1/20240301154739.png)
     ![](../../assets/faculdade/periodo1/20240301163423.png)
 
@@ -1452,7 +1653,14 @@ Quando o integrando contém expressões do tipo $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2
 
 **Tabela de substituições trigonométricas:**
 
-![](../../assets/faculdade/periodo1/20240304081252.png)
+| Expressão | Substituição | Identidade resultante | Diferencial |
+|---|---|---|---|
+| $\sqrt{a^2-x^2}$ | $x=a\,\text{sen}(t)$ | $\sqrt{a^2-x^2}=a\cos(t)$ | $dx=a\cos(t)\,dt$ |
+| $\sqrt{x^2+a^2}$ | $x=a\,\text{tg}(t)$ | $\sqrt{x^2+a^2}=a\sec(t)$ | $dx=a\sec^2(t)\,dt$ |
+| $\sqrt{x^2-a^2}$ | $x=a\sec(t)$ | $\sqrt{x^2-a^2}=a\,\text{tg}(t)$ | $dx=a\sec(t)\text{tg}(t)\,dt$ |
+
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240304081252.png)
 
 !!! example "Exemplos"
     ![](../../assets/faculdade/periodo1/20240304080857.png)
@@ -1476,21 +1684,23 @@ Quando o integrando contém expressões do tipo $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2
 
 **Área da elipse** (aplicação clássica da substituição trigonométrica):
 
-![](../../assets/faculdade/periodo1/20240304080334.png)
-![](../../assets/faculdade/periodo1/20240304080402.png)
-![](../../assets/faculdade/periodo1/20240304080526.png)
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240304080334.png)
+    ![](../../assets/faculdade/periodo1/20240304080402.png)
+    ![](../../assets/faculdade/periodo1/20240304080526.png)
 
 #### Frações parciais
 
-Técnica usada para integrar funções racionais do tipo:
+Técnica usada para integrar funções racionais do tipo $\dfrac{P(x)}{Q(x)}$.
 
-![](../../assets/faculdade/periodo1/20240308145208.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240308145208.png)
 
 A ideia é decompor a fração em uma soma de frações mais simples, cujos denominadores são os fatores do denominador original, e integrar cada parcela separadamente.
 
 **Caso em que apenas o denominador é fatorável:**
 
-!!! example "Exemplos"
+??? example "Exemplos"
     ![](../../assets/faculdade/periodo1/20240308145415.png)
 
     ![](../../assets/faculdade/periodo1/20240308145426.png)
@@ -1505,40 +1715,52 @@ A ideia é decompor a fração em uma soma de frações mais simples, cujos deno
 
 Quando isso ocorre, primeiro dividimos o numerador pelo denominador:
 
-![](../../assets/faculdade/periodo1/20240308150358.png)
+??? note "Foto do quadro"
+    ![](../../assets/faculdade/periodo1/20240308150358.png)
 
 Onde $P(x)$ é o dividendo, $S(x)$ é o quociente, $Q(x)$ é o divisor e $R(x)$ é o resto. Depois, se possível, fatoramos completamente o denominador $Q(x)$ e, por fim, decompomos em frações parciais, encontrando os coeficientes:
 
-**Fatores lineares distintos:**
+**Caso I — fatores lineares distintos:** o denominador $Q(x)$ é um produto de fatores lineares distintos, ou seja, $Q(x)=(a_1x+b_1)(a_2x+b_2)\cdots(a_kx+b_k)$, onde nenhum fator é repetido (nem múltiplo constante do outro). Nesse caso, existem constantes $A_1,A_2,\dots,A_k$ tais que:
 
-![](../../assets/faculdade/periodo1/20240308170019.png)
-![](../../assets/faculdade/periodo1/20240308170038.png)
+$$\frac{R(x)}{Q(x)} = \frac{A_1}{a_1x+b_1}+\frac{A_2}{a_2x+b_2}+\dots+\frac{A_k}{a_kx+b_k}$$
 
-!!! example "Exemplo"
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240308170019.png)
+    ![](../../assets/faculdade/periodo1/20240308170038.png)
+
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240308170051.png)
     ![](../../assets/faculdade/periodo1/20240308170101.png)
 
-**Fatores lineares repetidos:**
+**Caso II — fatores lineares repetidos:** $Q(x)$ é um produto de fatores lineares, e alguns se repetem. Suponha que o fator $(a_1x+b_1)$ se repita $r$ vezes; então, em vez de um único termo $A_1/(a_1x+b_1)$, usamos:
 
-![](../../assets/faculdade/periodo1/20240308170118.png)
-![](../../assets/faculdade/periodo1/20240308170143.png)
+$$\frac{A_1}{a_1x+b_1}+\frac{A_2}{(a_1x+b_1)^2}+\dots+\frac{A_r}{(a_1x+b_1)^r}$$
 
-!!! example "Exemplo"
+Por exemplo: $\dfrac{x^3-x+1}{x^2(x-1)^3} = \dfrac{A}{x}+\dfrac{B}{x^2}+\dfrac{C}{x-1}+\dfrac{D}{(x-1)^2}+\dfrac{E}{(x-1)^3}$.
+
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240308170118.png)
+    ![](../../assets/faculdade/periodo1/20240308170143.png)
+
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240308170159.png)
     ![](../../assets/faculdade/periodo1/20240308170207.png)
     ![](../../assets/faculdade/periodo1/20240308170218.png)
 
-**Fatores quadráticos irredutíveis:**
+**Caso III — fatores quadráticos irredutíveis, nenhum repetido:** se $Q(x)$ tiver o fator $ax^2+bx+c$, onde $b^2-4ac<0$, então, além das frações parciais dos Casos I/II, a expressão para $R(x)/Q(x)$ terá um termo da forma $\dfrac{Ax+B}{ax^2+bx+c}$, onde $A$ e $B$ são constantes a determinar. Por exemplo, $f(x)=\dfrac{x}{(x-2)(x^2+1)(x^2+4)}$ tem decomposição $\dfrac{A}{x-2}+\dfrac{Bx+C}{x^2+1}+\dfrac{Dx+E}{x^2+4}$.
 
-![](../../assets/faculdade/periodo1/20240308170229.png)
-![](../../assets/faculdade/periodo1/20240308170240.png)
-![](../../assets/faculdade/periodo1/20240308170248.png)
+Esse tipo de termo pode ser integrado completando o quadrado (se necessário) e usando a fórmula $\displaystyle\int\frac{dx}{x^2+a^2}=\frac1a\tan^{-1}\!\left(\frac xa\right)+C$.
 
-!!! example "Exemplo"
+??? note "Fotos do quadro"
+    ![](../../assets/faculdade/periodo1/20240308170229.png)
+    ![](../../assets/faculdade/periodo1/20240308170240.png)
+    ![](../../assets/faculdade/periodo1/20240308170248.png)
+
+??? example "Exemplo"
     ![](../../assets/faculdade/periodo1/20240308170316.png)
     ![](../../assets/faculdade/periodo1/20240308170324.png)
 
-!!! example "Exemplos completos"
+??? example "Exemplos completos"
     ![](../../assets/faculdade/periodo1/20240308150506.png)
     ![](../../assets/faculdade/periodo1/20240308153641.png)
 

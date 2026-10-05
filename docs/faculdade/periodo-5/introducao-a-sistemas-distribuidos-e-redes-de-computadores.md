@@ -10,7 +10,18 @@ Existem diversas definições sobre o que é um sistema distribuído, que evolu�
 
 **Definição clássica**: um sistema operacional distribuído é aquele que aparece para os usuários como um sistema centralizado ordinário, mas que executa em múltiplas CPUs independentes. O conceito primordial aqui é a **transparência** — o sistema é idealmente visto como um único "uniprocessador virtual", e não como uma coleção de máquinas distintas.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image.png)
+A transparência se manifesta em várias dimensões, cada uma escondendo um aspecto diferente da distribuição:
+
+- **Localização**: esconde onde o recurso está localizado.
+- **Acesso**: operações idênticas para acesso local e remoto.
+- **Migração**: esconde que um recurso pode se mover para outra localização.
+- **Relocação**: esconde que um recurso pode ser movido para outra localização enquanto está em uso.
+- **Concorrência**: compartilhamento de recursos sem interferência entre processos concorrentes.
+- **Falha**: esconde a falha e recuperação de um recurso.
+- **Replicação**: esconde de usuários ou programadores de aplicação a existência de réplicas de recursos.
+
+??? note "Imagem de referência (slide)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image.png)
 
 **Definição moderna**: um sistema distribuído é uma coleção de sistemas computacionais em rede, nos quais processos e recursos estão espalhados por diferentes computadores.
 
@@ -36,7 +47,8 @@ Essa onipresença exige dinamicidade e adaptação constante às mudanças no am
 
 ### Centralizado vs. Descentralizado vs. Distribuído
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%201.png)
+??? note "Imagem de referência (diagrama dos três modelos como grafos de nós)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%201.png)
 
 | Modelo | Definição | Observações |
 |---|---|---|
@@ -47,7 +59,8 @@ Essa onipresença exige dinamicidade e adaptação constante às mudanças no am
 !!! example "DNS: logicamente centralizado, fisicamente distribuído"
     O **DNS** (*Domain Name System*) traduz nomes de domínio para endereços IP numéricos, que os computadores usam para se encontrar e se comunicar.
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%202.png)
+    ??? note "Imagem de referência (árvore de nomes do DNS)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%202.png)
 
     É um sistema hierárquico, distribuído, mas administrado de forma centralizada: sua raiz é logicamente centralizada, mas fisicamente distribuída e descentralizada entre diversas organizações. A hierarquia vai de Raiz (gerida pela IANA/ICANN, conhece quais servidores respondem por cada TLD) → TLD → Zona Delegada (recorte da árvore com autoridade sobre seus próprios nomes) → Subdomínios.
 
@@ -68,11 +81,12 @@ Essa onipresença exige dinamicidade e adaptação constante às mudanças no am
 
 ### Modelos de Sistemas Distribuídos
 
-A evolução dos modelos de SD acompanhou a evolução do compartilhamento de recursos computacionais:
+A evolução dos modelos de SD acompanhou a evolução do compartilhamento de recursos computacionais, partindo de um único processo sequencial sobre um SO/hardware isolado, passando por múltiplos processos *multi-threaded* (concorrentes, mas ainda numa só máquina), até múltiplos processos comunicantes entre máquinas diferentes ligadas por uma rede — cada máquina rodando seu próprio SO sobre seu próprio hardware, mas cooperando via comunicação em rede.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%203.png)
+??? note "Imagem de referência (evolução sequencial → multi-thread → múltiplas máquinas em rede)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%203.png)
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%204.png)
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%204.png)
 
 #### Modelo Cliente/Servidor
 
@@ -87,7 +101,8 @@ O ciclo do protocolo RR é:
 
 O modelo cliente/servidor é tipicamente 1:N (um servidor para vários clientes). O servidor não precisa saber muito sobre o cliente, mas o cliente precisa conhecer o servidor — este compartilha seus recursos com aquele.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%205.png)
+??? note "Imagem de referência (ciclo request/reply entre processo cliente e servidor)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%205.png)
 
 #### Modelo P2P (Peer-to-Peer)
 
@@ -104,7 +119,8 @@ Tipos de redes P2P:
 - **Híbrido**: há componentes centrais apenas para descoberta/coordenação.
 - **Estruturado (DHT)**: usa tabelas de hash distribuídas para localizar recursos em $O(\log N)$.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%206.png)
+??? note "Imagem de referência (rede baseada em servidor vs. rede peer-to-peer)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%206.png)
 
 ### Desafios dos Sistemas Distribuídos
 
@@ -126,11 +142,17 @@ Dados dentro de um programa são estruturados (objetos, registros), enquanto men
 
 **Marshalling**: processo de converter um objeto ou estrutura de dados em um formato que possa ser enviado pela rede ou armazenado — uma linearização de uma coleção de itens de dados estruturados, traduzindo-os para um formato externo (ex: **XDR**, *eXternal Data Representation*).
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%207.png)
+Exemplo: uma árvore binária com os valores `6, 5, 2, 8, 7, 9` (raiz 6, filhos 5 e 8, netos 2, 7 e 9) é percorrida e **linearizada** em um array sequencial `[6, 5, 2, 8, 7, 9]`, que é o formato que pode ser transmitido pela rede.
+
+??? note "Imagem de referência (árvore → array linearizado)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%207.png)
 
 **Unmarshalling**: o processo inverso — converter os dados recebidos de volta para um formato usável pelo sistema local, restaurando os itens de dados de acordo com sua estrutura original.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%208.png)
+Seguindo o exemplo: o array `[6, 5, 2, 8, 7, 9]` recebido pela rede é reconstruído de volta na árvore binária original (raiz 6, filhos 5 e 8, netos 2, 7 e 9).
+
+??? note "Imagem de referência (array linearizado → árvore reconstruída)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%208.png)
 
 Diferentes sistemas (escritos em diferentes linguagens ou plataformas) precisam entender uns aos outros, e marshalling/unmarshalling garantem que os dados possam ser convertidos para um formato universal e depois desconvertidos adequadamente.
 
@@ -138,11 +160,17 @@ Diferentes sistemas (escritos em diferentes linguagens ou plataformas) precisam 
 
 - **Big-endian**: o byte mais significativo é armazenado/transmitido primeiro, no endereço de memória mais baixo. É o formato padrão de muitos protocolos de rede, chamado de "ordem de rede".
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%209.png)
+    Exemplo: para o valor `n = 0x01020304` (byte 0 = `0x01`, byte 1 = `0x02`, byte 2 = `0x03`, byte 3 = `0x04`), o *push* para a memória é feito do byte 0 ao byte 3, na ordem em que aparecem — resultando em `n` armazenado em memória exatamente como `0x01  0x02  0x03  0x04`.
+
+    ??? note "Imagem de referência (passo a passo do push em big-endian)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%209.png)
 
 - **Little-endian**: o byte menos significativo é armazenado/transmitido primeiro. É o formato predominante nas arquiteturas x86, base da maioria dos PCs modernos.
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2010.png)
+    Exemplo: para o mesmo valor `n = 0x01020304`, o *push* para a memória é feito do byte 3 ao byte 0 (ordem invertida) — resultando em `n` armazenado em memória como `0x04  0x03  0x02  0x01`.
+
+    ??? note "Imagem de referência (passo a passo do push em little-endian, comparado ao big-endian)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2010.png)
 
 Para contornar essa ambiguidade, costuma-se incluir uma identificação de arquitetura diretamente na mensagem.
 
@@ -152,21 +180,48 @@ RPC é a execução de um procedimento em um espaço de endereço **diferente** 
 
 **Stubs**: componentes que facilitam a comunicação entre cliente e servidor. Um stub fica no lado do **cliente**, atuando como um proxy para o objeto remoto, e é responsável por empacotar as chamadas de método e enviar os dados pela rede — cuidando de transparência de acesso, tratamento local de algumas exceções, *marshalling* e *unmarshalling*.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2011.png)
+??? note "Imagem de referência (stub do cliente e do servidor ligados pela rede)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2011.png)
 
 **Skeleton**: fica no lado do **servidor**, recebendo a chamada do stub, desempacotando os dados, invocando o método real no objeto servidor e devolvendo o resultado. Stubs e skeletons juntos simplificam a comunicação, abstraindo detalhes como serialização de dados e comunicação em rede.
 
-**Chamadas e mensagens em RPC**:
+**Chamadas e mensagens em RPC**: o fluxo completo de uma chamada remota, do lado do cliente ao lado do servidor, segue estes passos:
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2012.png)
+1. O cliente (processo 0) chama o stub do cliente, que **intercepta a chamada**.
+2. O stub do cliente **empacota os parâmetros** (*marshalling*).
+3. O stub do cliente **envia a mensagem de request** ao servidor, através do núcleo (kernel).
+4. O kernel do servidor **recebe a mensagem de request**.
+5. O stub do servidor **desempacota os parâmetros** (*unmarshalling*).
+6. O stub do servidor **chama o procedimento real**, passando os parâmetros já desempacotados.
+7. Após a execução, o stub do servidor **empacota o resultado**.
+8. O stub do servidor **envia a mensagem de reply** ao cliente, através do kernel.
+9. O kernel do cliente **recebe a mensagem de reply**.
+10. O stub do cliente **desempacota o resultado**.
+11. O stub do cliente **passa o resultado para o cliente**.
 
-O módulo de comunicação usa um protocolo *request-reply* para a troca de mensagens entre cliente e servidor:
+??? note "Imagem de referência (diagrama numerado da chamada RPC cliente ↔ servidor)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2012.png)
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2013.png)
+O módulo de comunicação usa um protocolo *request-reply* para a troca de mensagens entre cliente e servidor. A mensagem de aplicação (ex: `res = srv.Soma(a, b)`) é encapsulada nesse protocolo através de operações específicas:
 
-**Passagem de parâmetros**:
+- **`DoOperation`**: do lado do cliente, empacota a chamada em uma mensagem de request (`res = request(clt, srv, msg)`) e a envia.
+- **`GetRequest`**: do lado do servidor, recebe a mensagem de request.
+- **`SendReply`**: do lado do servidor, depois de executar a operação (`res = Soma(a,b)`), envia a mensagem de reply de volta ao cliente.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2014.png)
+??? note "Imagem de referência (operações DoOperation / GetRequest / SendReply do protocolo request-reply)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2013.png)
+
+**Passagem de parâmetros**: ao chamar `k = add(i, j)`, o fluxo entre as máquinas cliente e servidor é:
+
+1. O processo cliente faz a chamada ao procedimento `add`.
+2. O stub do cliente constrói a mensagem com o nome do procedimento (`proc: "add"`) e os valores dos parâmetros (`int: val(i)`, `int: val(j)`).
+3. A mensagem é enviada pela rede, através do SO cliente e do SO servidor.
+4. O SO do servidor entrega a mensagem ao stub do servidor.
+5. O stub do servidor desempacota a mensagem.
+6. O stub do servidor faz a chamada local real a `add`, dentro do processo servidor.
+
+??? note "Imagem de referência (passagem de parâmetros cliente → servidor, passo a passo)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2014.png)
 
 **Ligação (Binding)**: o mecanismo de RPC possui um *binder* para resolução de nomes, permitindo ligação dinâmica (de nome para endereço, em tempo de execução) e transparência de localização.
 
@@ -174,24 +229,37 @@ O módulo de comunicação usa um protocolo *request-reply* para a troca de mens
 
 É a representação do RPC no paradigma de programação orientada a objetos — a mesma ideia de invocação remota, mas operando sobre objetos e métodos, em vez de procedimentos soltos.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2015.png)
+Exemplo clássico em pseudo-Java: uma classe `HelloWorld` com um método local `sayHello()` que imprime `"Hello World!"`. No modelo RMI, o servidor registra o objeto remoto (`Naming.rebind("hello", this)`), e o cliente obtém uma referência remota a esse objeto (`Naming.lookup("rmi://hostB/Hello")`) e chama `hello_server.sayHello()` como se fosse uma chamada local — mas a chamada de fato atravessa a rede até o objeto remoto no servidor. É importante lembrar, aqui, das transparências de **localização** e de **acesso** (vistas no início do capítulo): o cliente não precisa saber onde o objeto está, nem que a chamada é remota.
+
+??? note "Imagem de referência (exemplo de código RMI: classe local, servidor e cliente)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2015.png)
 
 ### Middleware
 
-É a camada intermediária que se situa entre as aplicações e os sistemas operacionais de rede, abstraindo a complexidade da comunicação distribuída.
+É a camada intermediária que se situa entre as aplicações e os sistemas operacionais de rede, abstraindo a complexidade da comunicação distribuída. Ela pode ser organizada em diferentes arquiteturas, dependendo de onde a lógica de distribuição é implementada:
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2016.png)
+- **Sistemas Operacionais Distribuídos**: cada máquina roda um kernel próprio, e por cima dele há "serviços de sistema operacional distribuído" (`Distributed operating system services`) compartilhados entre as máquinas, sobre os quais rodam as aplicações distribuídas.
+- **Sistemas Operacionais de Rede**: cada máquina mantém seu próprio kernel e seus próprios "serviços de SO de rede" (`Network OS services`) de forma mais independente, com as aplicações distribuídas ficando por cima.
+- **Middleware**: uma camada de *middleware services* roda por cima dos serviços de SO de rede de cada máquina, oferecendo uma abstração comum às aplicações distribuídas.
+
+!!! note "Observação da imagem original"
+    Hoje em dia, os Sistemas Operacionais de Rede (SORs) estão sendo ressignificados/reconceituados para dar suporte à programação de redes — exemplos citados: **NOX**, **Onix** e **ONOS**.
+
+??? note "Imagem de referência (três arquiteturas: SO distribuído, SO de rede, middleware)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2016.png)
 
 Os principais tipos de middleware são:
 
 - **RPC** (visto acima).
-- **Message-Oriented Middleware (MOM)**: comunicação baseada em troca de mensagens, nos paradigmas de *publish-subscribe*:
+- **Message-Oriented Middleware (MOM)**: comunicação baseada em troca de mensagens, nos paradigmas de *publish-subscribe* — onde publicadores enviam eventos (`publish(e1)`, `publish(e2)`, `advertise(t1)`) para o sistema, e assinantes recebem o que lhes interessa (`subscribe(t1)`, `subscribe(t2)`, `notify(e1)`):
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2017.png)
+    ??? note "Imagem de referência (sistema publish-subscribe)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2017.png)
 
-    ou de fila de mensagens:
+    ou de fila de mensagens — onde produtores enviam (`Send`) mensagens para filas, e consumidores as recebem (`Receive`), consultam (`Poll`) ou são notificados (`Notify`):
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2018.png)
+    ??? note "Imagem de referência (sistema de fila de mensagens)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2018.png)
 
 - **Object-Oriented Middleware (OOM)**: fornece referências para objetos-servidores, tarefas e serviços. Dois exemplos clássicos:
     - **DCOM** (*Distributed Component Object Model*): tecnologia proprietária da Microsoft para comunicação entre componentes de software distribuídos em rede.
@@ -207,7 +275,14 @@ O CORBA é baseado na definição de interfaces de objetos com a **IDL** (*Inter
 - **Interface do ORB**: fornece operações para manipulação de informações do próprio ORB.
 - Inclui stubs, skeletons e o **POA** (*Portable Object Adapter*), que ajuda componentes em diferentes linguagens e máquinas a se comunicarem.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2019.png)
+A arquitetura completa conecta o **Cliente** e o **Objeto (Servant)** ao núcleo do ORB por caminhos diferentes:
+
+- O **Cliente** chama através da **Interface de Invocação Dinâmica (DII)** ou de **Stubs Estáticos**, passando pela **Interface do ORB**.
+- O **Objeto (Servant)** é acessado através de **Esqueletos Estáticos** ou da **Interface de Esqueletos Dinâmicos (DSI)**, e pelo **Adaptador de Objetos** (o POA).
+- O Núcleo do ORB se conecta a um **Repositório de Interfaces** (metadados das interfaces IDL) e a um **Repositório de Implementações** (informações sobre os objetos-servidor em execução).
+
+??? note "Imagem de referência (arquitetura do ORB: DII, stubs, esqueletos, POA e repositórios)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2019.png)
 
 **Etapas de um sistema CORBA:**
 
@@ -218,57 +293,238 @@ O CORBA é baseado na definição de interfaces de objetos com a **IDL** (*Inter
 5. Comunicação intermediada pelo ORB.
 
 !!! example "Exemplo cliente-servidor simples em CORBA"
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2020.png)
+    O cliente envia um `número` ao servidor, que responde com a string `Hello <número>`. O exemplo está estruturado em três partes: (1) interface CORBA em IDL, (2) servidor em C++ implementando a lógica `Hello <número>`, (3) cliente em C++ enviando o número e recebendo a resposta.
+
+    ??? note "Imagem de referência (diagrama cliente/servidor do exemplo)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2020.png)
 
     **Servidor em C++** (implementando a lógica `Hello<número>`):
 
-    - Interface CORBA em IDL
+    - Interface CORBA em IDL — define um módulo `HelloApp` com uma interface `Hello` que tem um único método remoto `sayHello`, recebendo um inteiro (`long`) e retornando uma string:
 
-        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2021.png)
+        ```idl
+        // hello.idl
+        module HelloApp {
+          interface Hello {
+            string sayHello(in long number);
+          };
+        };
+        ```
 
-    - Inclusões e namespace
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2021.png)
 
-        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2022.png)
+    - Inclusões e namespace — `hello.hh` é gerado pelo compilador IDL (`omniidl -bcxx hello.idl`) e define a interface `Hello` que o servidor implementará:
 
-    - Implementação da interface
+        ```cpp
+        #include <omniORB4/CORBA.h>
+        #include "hello.hh"  // Gerado a partir do hello.idl
+        using namespace HelloApp;
+        ```
 
-        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2023.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2022.png)
 
-    - Inicialização do ORB e POA
+    - Implementação da interface — a classe `Hello_impl` herda de `POA_Hello` (gerada a partir do IDL) e implementa o método `sayHello`, que recebe um número inteiro e retorna a string `"Hello <número>"`:
 
-        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2024.png)
+        ```cpp
+        class Hello_impl : public POA_Hello {
+        public:
+          virtual char* sayHello(CORBA::Long number) {
+            char buffer[100];
+            snprintf(buffer, sizeof(buffer), "Hello %ld", number);
+            return CORBA::string_dup(buffer);
+          }
+        };
+        ```
 
-    - Registro do objeto
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2023.png)
 
-        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2025.png)
+    - Inicialização do ORB e POA — inicializa o ORB, obtém referência ao `RootPOA` (responsável por gerenciar objetos CORBA no servidor), e o `POAManager` controla o ciclo de vida do objeto:
 
-    - Escrita da referência em arquivo
+        ```cpp
+        CORBA::ORB_var orb = CORBA::ORB_init(argc, argv);
+        CORBA::Object_var poaObj = orb->resolve_initial_references("RootPOA");
+        PortableServer::POA_var poa = PortableServer::POA::_narrow(poaObj);
+        PortableServer::POAManager_var mgr = poa->the_POAManager();
+        ```
 
-        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2026.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2024.png)
 
-    - Execução do servidor
+    - Registro do objeto — cria uma instância de `Hello_impl`, registra-a no POA, e obtém a referência CORBA para esse objeto:
 
-        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2027.png)
+        ```cpp
+        Hello_impl* hello_servant = new Hello_impl();
+        PortableServer::ObjectId_var id = poa->activate_object(hello_servant);
+        CORBA::Object_var ref = hello_servant->_this();
+        ```
 
-    - Tratamento de exceções
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2025.png)
 
-        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2028.png)
+    - Escrita da referência em arquivo — converte a referência do objeto em uma **IOR** (*Interoperable Object Reference*, string de identificação CORBA) e a salva em `hello.ior`, que será lida pelo cliente:
 
-    - Resumo
+        ```cpp
+        CORBA::String_var ior = orb->object_to_string(ref);
+        FILE* f = fopen("hello.ior", "w");
+        if (f) {
+          fprintf(f, "%s", ior.in());
+          fclose(f);
+        }
+        ```
 
-        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2029.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2026.png)
 
-    - Código completo
+    - Execução do servidor — ativa o `POAManager` e entra no loop de execução do ORB, aguardando chamadas de clientes:
 
-        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2030.png)
+        ```cpp
+        mgr->activate();
+        orb->run();
+        ```
+
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2027.png)
+
+    - Tratamento de exceções — captura exceções CORBA:
+
+        ```cpp
+        catch (CORBA::Exception& ex) {
+          fprintf(stderr, "Erro no servidor: %s\n", ex._name());
+          return 1;
+        }
+        ```
+
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2028.png)
+
+    - Resumo — o código implementa um servidor CORBA em C++ (usando o omniORB) que registra a interface `Hello`, escreve sua referência em `hello.ior` e aguarda chamadas de clientes. O cliente, ao usar esse arquivo, pode chamar `sayHello(n)` e receber a resposta `"Hello n"`.
+
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2029.png)
+
+    - Código completo do servidor:
+
+        ```cpp
+        #include <stdio.h>
+        #include <stdlib.h>
+        #include <string.h>
+        #include <omniORB4/CORBA.h>
+        #include "hello.hh"  // Gerado pelo compilador IDL
+        // (omniidl -bcxx hello.idl)
+
+        using namespace HelloApp;
+
+        class Hello_impl : public POA_Hello {
+        public:
+          virtual char* sayHello(CORBA::Long number) {
+            char buffer[100];
+            snprintf(buffer, sizeof(buffer), "Hello %ld", number);
+            return CORBA::string_dup(buffer);
+          }
+        };
+
+        int main(int argc, char** argv) {
+          try {
+            CORBA::ORB_var orb = CORBA::ORB_init(argc, argv);
+            CORBA::Object_var poaObj = orb->
+                resolve_initial_references("RootPOA");
+            PortableServer::POA_var poa =
+                PortableServer::POA::_narrow(poaObj);
+            PortableServer::POAManager_var mgr = poa->
+                the_POAManager();
+            Hello_impl* hello_servant = new Hello_impl();
+            PortableServer::ObjectId_var id = poa->
+                activate_object(hello_servant);
+            CORBA::Object_var ref = hello_servant->_this();
+            CORBA::String_var ior = orb->object_to_string(ref);
+            FILE* f = fopen("hello.ior", "w");
+            if (f) {
+              fprintf(f, "%s", ior.in());
+              fclose(f);
+            }
+            mgr->activate();
+            orb->run();
+          }
+          catch (CORBA::Exception& ex) {
+            fprintf(stderr, "Erro no servidor: %s\n", ex._name());
+            return 1;
+          }
+          return 0;
+        } // FIM
+        ```
+
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2030.png)
 
     **Cliente em C++** (enviando o número e recebendo a resposta):
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2031.png)
+    ```cpp
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <string.h>
+    #include <omniORB4/CORBA.h>
+    #include "hello.hh"
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2032.png)
+    using namespace HelloApp;
+
+    int main(int argc, char** argv) {
+      if (argc != 2) { // Checagem de argumentos
+        // O cliente precisa receber um número inteiro
+        // como argumento.
+        fprintf(stderr, "Uso: %s <numero>\n", argv[0]);
+        return 1;
+      }
+
+      try {
+        // Inicialização do ORB
+        CORBA::ORB_var orb = CORBA::ORB_init(argc, argv);
+
+        // Ler referência IOR do arquivo gerado
+        // quando o servidor foi executado.
+        FILE* f = fopen("hello.ior", "r");
+        if (!f) {
+          fprintf(stderr, "Arquivo hello.ior não encontrado\n");
+          return 1;
+        }
+        char ior[4096];
+        fscanf(f, "%s", ior);
+        fclose(f);
+        // Converte a string do IOR em uma referência CORBA.
+        CORBA::Object_var obj = orb->string_to_object(ior);
+        Hello_var hello_ref = Hello::_narrow(obj);
+        // Faz o narrow para o tipo específico Hello
+
+        if (CORBA::is_nil(hello_ref)) {
+          fprintf(stderr, "Referência do objeto inválida.\n");
+          return 1;
+        }
+        // Garante que o objeto remoto realmente existe.
+
+        long num = atol(argv[1]);
+        CORBA::String_var response = hello_ref->sayHello(num);
+        printf("Resposta do servidor: %s\n", (char*)response);
+        // Chamada remota ao servidor: envia o número, recebe
+        // de volta a string "Hello <numero>" e imprime a resposta.
+
+        orb->destroy(); // Finalização
+      }
+      catch (CORBA::Exception& ex) {
+        fprintf(stderr, "Erro no cliente: %s\n", ex._name());
+        return 1;
+      }
+      return 0;
+    }
+    ```
 
     O cliente lê a referência do servidor (arquivo `hello.ior`), chama o método remoto `sayHello(n)` passando o número fornecido como parâmetro, e exibe a resposta "Hello n".
+
+    ??? note "Imagem de referência (código completo do cliente)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2031.png)
+
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2032.png)
 
     **Fluxo de uso:**
 
@@ -324,28 +580,36 @@ São métodos para localizar entidades que não usam uma estrutura hierárquica.
 **Broadcasting (Difusão)**: o cliente envia uma mensagem para todos na rede local (LAN), perguntando "quem é X?".
 
 !!! example "ARP (Address Resolution Protocol)"
-    Um computador transmite a pergunta "qual endereço MAC corresponde ao IP 141.23.56.23?", e apenas o computador com esse IP responde.
+    Um computador transmite a pergunta "qual endereço MAC corresponde ao IP 141.23.56.23?", e apenas o computador com esse IP responde. A requisição (*request*) é enviada em broadcast para todos os sistemas da rede local; apenas o sistema com o IP perguntado responde (*reply*) em unicast, informando seu endereço físico (ex: `A4:6E:F4:59:83:AB`).
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2033.png)
+    ??? note "Imagem de referência (ARP request broadcast / reply unicast)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2033.png)
 
 O broadcasting é ineficiente e não escala para redes grandes.
 
-**Ponteiros de encaminhamento (*Forwarding Pointers*)**: quando uma entidade (ex: um objeto) se move, ela deixa um "rastro" (um ponteiro) em sua localização antiga, apontando para a nova.
+**Ponteiros de encaminhamento (*Forwarding Pointers*)**: quando uma entidade (ex: um objeto) se move, ela deixa um "rastro" (um ponteiro) em sua localização antiga, apontando para a nova. Esse rastro forma um "histórico de mudanças" — cada vez que a entidade se move (posições 0, 1, 2, 3, 4...), um novo ponteiro liga a localização anterior à nova.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2034.png)
+??? note "Imagem de referência (cadeia de ponteiros de encaminhamento após sucessivas mudanças)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2034.png)
 
 A limitação é que as cadeias de ponteiros podem ficar longas (aumentando a latência), e se um ponteiro quebrar, a entidade é perdida.
 
 **Abordagem "Home-based" (baseada em residência)**: usada no Mobile IP. Cada entidade móvel tem um endereço "home" fixo; quando ela se move para uma rede visitante, registra seu novo endereço temporário (*care-of address*) junto a um "agente home" em sua rede de origem. Toda comunicação destinada à entidade é primeiro enviada para seu endereço home, e então encaminhada pelo agente home.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2035.png)
+??? note "Imagem de referência (endereço home fixo e trajetória de movimentação da entidade)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2035.png)
 
 A limitação é o aumento de latência, pois todo pacote faz um "triângulo" (remetente → home → destino).
 
 **Tabelas Hash Distribuídas (DHT)**: um sistema descentralizado (sem ponto único de falha) e escalável, em que um nome (chave) é passado por uma função hash que determina em qual nó da rede o endereço (valor) está armazenado.
 
 !!! example "O sistema Chord"
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2036.png)
+    O Chord organiza os nós em um **anel lógico** (ordenados por identificador, ex: de 0 a 31), e cada nó mantém uma **finger table**: uma pequena tabela de roteamento com $O(\log N)$ entradas, onde a entrada $i$ aponta para o sucessor do nó atual $+ 2^{i-1}$ no anel. Para resolver uma chave $k$, um nó consulta sua finger table e "salta" para o nó conhecido mais próximo (sem ultrapassar) de $k$, repetindo o processo até alcançar o nó responsável — por isso a busca é $O(\log N)$ saltos, em vez de percorrer o anel nó a nó.
+
+    No exemplo da imagem: para resolver $k = 12$ a partir do nó 28, a finger table do nó 28 indica que o próximo salto é o nó 4 (pois $12 > 28$ "dá a volta" no anel, mas pela tabela o salto mais próximo sem passar é esse); o processo então continua a partir do nó 4 até alcançar o nó responsável. Já para resolver $k = 26$ a partir do nó 1, a busca segue saltando por nós sucessivamente mais próximos (18, 20, 21) até que o nó 21 reconheça que $21 < 26 < 28$ e encaminhe para o nó 28 — que então se torna responsável por $k = 26$.
+
+    ??? note "Imagem de referência (anel Chord com finger tables e exemplo de resolução de chaves)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2036.png)
 
 #### Nomeação Hierárquica
 
@@ -353,33 +617,48 @@ A rede é dividida em domínios e subdomínios, começando por uma raiz única �
 
 #### Serviços de Nomes (Name Service)
 
-É o serviço que implementa a nomeação:
+É o serviço que implementa a nomeação. No modelo de "Páginas Brancas": permite encontrar objetos através de nomes, mapeando `Nomes → Referência de Objeto`. Essa associação é denominada ***name binding***, e um ***name context*** é o espaço onde o nome do objeto é único — nomes são sempre relativos a um *name context*.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2037.png)
+A interface `NamingContext` (como no CORBA Naming Service) define as operações desse serviço:
 
-Seu funcionamento:
+- `bind`, `rebind`: associa um objeto a um nome dentro de um contexto.
+- `unbind`: remove um objeto de um contexto.
+- `new_context`: retorna/cria um contexto.
+- `bind_new_context`: cria um contexto e o associa com um nome fornecido.
+- `destroy`: apaga um contexto de nome.
+- `resolve`: recupera um objeto através de um nome em um determinado contexto.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2038.png)
+??? note "Imagem de referência (conceitos de Páginas Brancas e interface NamingContext)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2037.png)
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2039.png)
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2038.png)
+
+Seu funcionamento: um servidor (`Server`) registra um nome associado a sua referência de objeto junto ao `Name Server` (operação `re/bind(name, obj_ref)`, passo 1), que mantém internamente uma tabela de pares `<name, object>` (passo 2). Quando um cliente (`Client`) quer usar esse serviço, ele consulta o `Name Server` pelo nome (`resolve(name)`, passo 3), que busca na tabela (passo 4) e devolve a referência do objeto; com essa referência em mãos, o cliente finalmente invoca o serviço diretamente no servidor (passo 5).
+
+??? note "Imagem de referência (sequência de registro e resolução de nomes via Name Server)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2039.png)
 
 **Navegação (Name Resolution)**: como os espaços de nomes (como o do DNS) são muito grandes, eles são particionados em múltiplos servidores de nomes, e a navegação é o processo de consultar esses servidores para resolver um nome. Existem quatro tipos:
 
 - **Iterativa**: o resultado de uma consulta retorna imediatamente para o cliente — se a consulta falha, o cliente sabe onde procurar em seguida.
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2040.png)
+    ??? note "Imagem de referência (cliente consulta NS1, NS2, NS3 sucessivamente)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2040.png)
 
 - **Multicast**: o cliente consulta simultaneamente um grupo de servidores e espera pela primeira resposta.
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2041.png)
+    ??? note "Imagem de referência (cliente consulta NS1, NS2, NS3 em paralelo)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2041.png)
 
 - **Não-recursiva controlada por servidor**: o cliente escolhe um servidor, que faz a navegação iterativa em seu nome.
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2042.png)
+    ??? note "Imagem de referência (NS1 consulta NS2 e NS3 e responde ao cliente)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2042.png)
 
 - **Recursiva controlada por servidor**: servidores recursivamente contatam outros servidores, até o nome ser resolvido.
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2043.png)
+    ??? note "Imagem de referência (NS1 encaminha para NS2, que encaminha para NS3)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2043.png)
 
 ### Tendências
 
@@ -465,9 +744,10 @@ O TCP, por sua vez, é **ponto-a-ponto** (um transmissor, um receptor) e impleme
 - **Controle de fluxo**: o transmissor não sobrecarrega o receptor.
 - **Controle de congestionamento**: o transmissor "diminui a velocidade" quando a rede está congestionada.
 
-**Estrutura do segmento TCP:**
+**Estrutura do segmento TCP:** o cabeçalho tem 32 bits de largura e contém, nesta ordem: porta origem + porta destino; número de sequência; número de reconhecimento; tamanho do cabeçalho + bits não usados + as flags **U**RG/**A**CK/**P**SH/**R**ST/**S**YN/**F**IN + janela de recepção; checksum + dados urgentes; opções (tamanho variável); e por fim os dados de aplicação (tamanho variável). É uma estrutura bem mais rica que o segmento UDP (que tem apenas porta origem/destino, tamanho e checksum antes dos dados).
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2044.png)
+??? note "Imagem de referência (campos do cabeçalho TCP, em comparação ao UDP)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2044.png)
 
 - **Números de sequência (Seq)**: contados em bytes; referem-se ao número do primeiro byte de dados do segmento.
 - **Números de reconhecimento (ACK)**: o número do próximo byte que o receptor espera receber. O TCP usa ACKs cumulativos — um ACK para o byte 80 confirma que todos os bytes até o 79 foram recebidos.
@@ -488,7 +768,8 @@ O TCP, por sua vez, é **ponto-a-ponto** (um transmissor, um receptor) e impleme
 4. **Cliente → Servidor**: o cliente recebe o FIN do servidor e responde com um ACK, entrando em "espera temporizada" para garantir que esse último ACK chegue.
 5. O servidor recebe o ACK e fecha a conexão; o cliente fecha após o timeout.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2045.png)
+??? note "Imagem de referência (diagrama de tempo FIN/ACK/FIN/ACK)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2045.png)
 
 #### Controle de Fluxo vs. Controle de Congestionamento
 
@@ -501,9 +782,10 @@ O TCP, por sua vez, é **ponto-a-ponto** (um transmissor, um receptor) e impleme
     - *Additive Increase*: enquanto não há perda, `CongWin` aumenta linearmente, em 1 MSS por RTT — "sondando" cuidadosamente por mais banda.
     - *Multiplicative Decrease*: ao detectar uma perda (congestionamento), `CongWin` é cortado pela metade (se a perda for detectada por timeout, é cortado para 1 MSS).
 
-    Esse comportamento cria o característico gráfico de "dente de serra":
+    Esse comportamento cria o característico gráfico de "dente de serra": a taxa de envio sobe linearmente (additive increase) até uma perda ser detectada, quando cai pela metade (multiplicative decrease), repetindo o ciclo — sondando continuamente por mais banda disponível.
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2046.png)
+    ??? note "Imagem de referência (gráfico dente de serra da taxa de envio do TCP)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2046.png)
 
 A **janela de congestionamento** (`CongWin`) é a variável que o TCP usa para limitar sua taxa de envio, aproximadamente $\text{CongWin}/\text{RTT}$.
 
@@ -536,9 +818,28 @@ Um endereço IP é um identificador de 32 bits (ex: `223.1.1.1`). Ele está asso
 O **endereçamento "class-full"** era um sistema antigo que dividia os IPs em Classes A, B, C e D. Um host pode ter um IP fixo (definido pelo administrador) ou obter um dinamicamente através do **DHCP** (*Dynamic Host Configuration Protocol*), cujo processo envolve quatro passos: *Discover*, *Offer*, *Request*, *ACK*.
 
 !!! example "Exemplo de roteamento: A → E"
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2047.png)
+    A rede do exemplo tem três sub-redes — `223.1.1` (com os hosts A, B e o roteador em `223.1.1.4`), `223.1.2` (com o host E e o roteador em `223.1.2.9`) e `223.1.3` (com o roteador em `223.1.3.27`) — todas ligadas por um roteador central.
 
-    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2048.png)
+    A **tabela de roteamento do Host A** (visto da rede `223.1.1`) é:
+
+    | Rede destino | Próx. roteador | Núm. saltos |
+    | --- | --- | --- |
+    | 223.1.1 | — | 1 |
+    | 223.1.2 | 223.1.1.4 | 2 |
+    | 223.1.3 | 223.1.1.4 | 2 |
+
+    A **tabela de roteamento do roteador central** (que está diretamente conectado às três sub-redes) é:
+
+    | Rede destino | Próx. roteador | Núm. saltos | Endereço Interface |
+    | --- | --- | --- | --- |
+    | 223.1.1 | — | 1 | 223.1.1.4 |
+    | 223.1.2 | — | 1 | 223.1.2.9 |
+    | 223.1.3 | — | 1 | 223.1.3.27 |
+
+    ??? note "Imagem de referência (topologia e tabelas de roteamento do Host A e do roteador)"
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2047.png)
+
+        ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2048.png)
 
     O Host A (`223.1.1.1`) quer enviar um datagrama para o Host E (`223.1.2.2`):
 
@@ -581,7 +882,8 @@ Controla a comunicação na rede local, convertendo pacotes em **quadros** (*fra
 
 O processo de envio de dados envolve o **encapsulamento**: cada camada adiciona seu próprio cabeçalho (*header*) ao passar os dados para a camada abaixo.
 
-![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2049.png)
+??? note "Imagem de referência (pilha de camadas de origem e destino, com encapsulamento de M e H_t)"
+    ![image.png](../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/image%2049.png)
 
 1. A camada de **Aplicação** cria uma mensagem $M$.
 2. A camada de **Transporte** recebe $M$ e adiciona seu cabeçalho $H_t$ — a unidade resultante é o **Segmento** ($H_t \mid M$).

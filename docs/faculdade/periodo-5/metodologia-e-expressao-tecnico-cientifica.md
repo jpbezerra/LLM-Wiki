@@ -50,9 +50,22 @@ Também compartilha o mesmo objeto das outras ciências, mas com finalidades dif
 
 ### Comparando os quatro tipos de conhecimento
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image.png)
+| Senso Comum | Científico | Filosófico | Teológico |
+|---|---|---|---|
+| Valorativo | Factual | Valorativo | Valorativo |
+| Reflexivo | Contingente | Racional | Inspiracional |
+| Assistemático | Sistemático | Sistemático | Sistemático |
+| Subjetivo | Verificável | Não Verificável | Não Verificável |
+| Verificável | Falível | Infalível | Infalível |
+| Falível | Aproximadamente Exato | Exato | Exato |
+| Inexato | | | |
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%201.png)
+O mapa conceitual abaixo situa esses quatro tipos como ramificações de um único "conhecimento": o **filosófico** nasce do raciocínio e da reflexão, gerando conceitos subjetivos; o **empírico (senso comum)** é obtido de ações não planejadas; o **teológico** se origina da crença e da fé, dependente de crenças individuais e da formação moral, e não está sujeito a negação ou confirmação; já o **científico** decorre do conhecimento sistemático, sujeito à natureza e à comprovação, com base na metodologia científica.
+
+??? note "Mapas de referência (tabela e diagrama originais)"
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image.png)
+
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%201.png)
 
 ## Ciência
 
@@ -65,9 +78,10 @@ O conhecimento científico é:
 - **Homogêneo**: busca leis gerais de funcionamento.
 - **Generalizador**: reúne coisas percebidas como diferentes sob leis semelhantes.
 
-**Validade do trabalho científico:**
+**Validade do trabalho científico:** para que um trabalho tenha validade científica, é necessário que ele se enquadre na ciência (utilizando o método científico) e que tenha finalidade científica (produzindo um resultado verificável) — a combinação dessas duas condições é o que gera uma contribuição científica legítima.
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%202.png)
+??? note "Diagrama de referência"
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%202.png)
 
 ## Método Científico
 
@@ -113,9 +127,10 @@ Seus três elementos são:
 
 O ponto de partida do método dialético na pesquisa é a análise crítica do objeto pesquisado — encontrar as determinações que o fazem ser o que é. Uma de suas características centrais é a contextualização do problema pesquisado, respondendo a perguntas como: quem faz a pesquisa, quando, onde e para quê. As sínteses se constituem em uma relação de tensão, já que a própria realidade contém contradições.
 
-**O caminho do método:**
+**O caminho do método:** o ciclo indutivo-dedutivo parte da **observação** de fatos, que leva à **formulação** de hipóteses gerais; essas hipóteses passam por **verificação**, consolidando-se em **leis**. A partir das leis, nova **formulação** gera hipóteses ainda mais gerais, que passam por **verificação dedutiva** até se tornarem **teorias**; por fim, a **dedução** a partir de uma hipótese fecha o ciclo em um **sistema** teórico coerente.
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%203.png)
+??? note "Diagrama de referência"
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%203.png)
 
 O método científico, de forma geral, é composto por hipóteses, leis e formas de raciocínio.
 
@@ -142,9 +157,10 @@ Uma hipótese é um pressuposto — uma tentativa de explicar o que ainda não s
 | **Negativa** | Nega a existência de uma relação | "Não há perigo de contaminação com o vírus da aids pelo contágio indireto" |
 | **Condicional** | Depende de uma condição específica | "Se não forem bem lubrificados, os motores bicombustível têm maior tendência à corrosão que os a gasolina" |
 
-**Esquema da hipótese:**
+**Esquema da hipótese:** um modelo científico relaciona uma variável dependente a uma variável independente através de uma função, $Y = f \cdot X$, onde a função representa os parâmetros e relacionamentos internos do modelo.
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%204.png)
+??? note "Diagrama de referência"
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%204.png)
 
 **Tipos de variáveis** envolvidas em uma hipótese:
 
@@ -161,15 +177,23 @@ Uma lei científica é um princípio universal que conecta fenômenos, ou partes
 
 ## Metodologias de Pesquisa
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%205.png)
+As seções abaixo cobrem as principais classificações e metodologias de pesquisa: pesquisa quantitativa e qualitativa (esta última incluindo pesquisa etnográfica, pesquisa participante e pesquisa-ação), estudo de caso, **análise de conteúdo** (técnica que examina sistematicamente o conteúdo de documentos, textos ou discursos para identificar padrões, temas e significados), pesquisa bibliográfica, documental, experimental e de campo, e pesquisa exploratória e explicativa.
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%206.png)
+De forma resumida, a pesquisa científica se classifica em quatro eixos: quanto à **natureza** (básica ou aplicada), quanto aos **objetivos** (exploratória, descritiva ou explicativa), quanto aos **procedimentos** (experimental, operacional ou estudo de caso) e, dentro dos procedimentos, quanto ao **local** (laboratório e/ou campo).
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%207.png)
+??? note "Slides originais (outline e diagrama)"
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%205.png)
+
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%206.png)
+
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%207.png)
 
 ### Pesquisa quanto à natureza
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%208.png)
+A pesquisa científica, quanto à natureza, se divide em **Pesquisa Básica ou Fundamental** — que gera conhecimentos sem finalidade imediata, mas que são posteriormente utilizados pela pesquisa aplicada — e **Pesquisa Aplicada** — que gera produtos, processos e conhecimentos com finalidade imediata. Ambas, em conjunto, visam à melhoria da qualidade de vida.
+
+??? note "Diagrama de referência"
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%208.png)
 
 | | Pesquisa Básica | Pesquisa Tecnológica/Aplicada |
 |---|---|---|
@@ -285,11 +309,28 @@ O referencial teórico funciona como a base de sustentação do trabalho (teoria
 
 Uma **revisão** é o processo de busca (sistemática ou não), análise e síntese de um corpo de conhecimento — delimitado de várias formas — relacionado à resposta de uma pergunta específica. "Literatura" cobre todo o material escrito sobre o tema, em diversos veículos.
 
-A revisão de literatura serve para conhecer o que já existe, identificar oportunidades de pesquisa, não reinventar a roda, e mostrar ao leitor a originalidade do trabalho.
+A revisão de literatura serve para conhecer o que já existe, identificar oportunidades de pesquisa, não reinventar a roda, e mostrar ao leitor a originalidade do trabalho. Mais especificamente, ela permite:
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%209.png)
+- Delimitar o problema da pesquisa.
+- Buscar novas linhas para pesquisa.
+- Evitar abordagens mal sucedidas.
+- Obter insights metodológicos.
+- Identificar recomendações de outros pesquisadores.
+- Buscar suporte na teoria já amadurecida.
+- Distinguir o que foi feito daquilo que precisa ser feito.
+- Descobrir variáveis importantes e relevantes.
+- Sintetizar e obter uma nova perspectiva.
+- Identificar relações entre ideias e práticas.
+- Adquirir e melhorar o vocabulário associado ao assunto.
+- Entender a estrutura do assunto.
+- Relacionar ideias e teorias às aplicações.
+- Identificar as principais técnicas e metodologias de pesquisa que estão sendo utilizadas.
+- Inserir o pesquisador no contexto histórico, para mostrar familiaridade com o estado da arte.
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%2010.png)
+??? note "Slides originais"
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%209.png)
+
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%2010.png)
 
 ### Tipos de revisão
 
@@ -300,9 +341,18 @@ A revisão de literatura serve para conhecer o que já existe, identificar oport
 | **De Escopo (Mapeamento)** | Mapeia rapidamente e categoriza as evidências para identificar tipos de estudos, conceitos e fontes sobre um tema mais amplo, sem necessariamente avaliar a qualidade da evidência | Determinar o escopo e a natureza de uma área de pesquisa, identificar lacunas, decidir se uma revisão sistemática completa é viável | Pergunta mais ampla que a sistemática; não costuma avaliar o risco de viés dos estudos |
 | **Integrativa** | Permite a síntese de pesquisas com diferentes metodologias (quantitativas e qualitativas) e/ou tipos de estudos (empíricos e teóricos) | Áreas onde o conhecimento é fragmentado em diferentes abordagens metodológicas (comum em Enfermagem e Ciências Sociais); definir conceitos, revisar teorias | Usa um método sistemático, mas a inclusão de diversos delineamentos pode afetar o rigor ou a comparabilidade da síntese |
 
-**Processo da revisão sistemática**: pergunta específica (formulada em PICO) → protocolo → busca sistemática → seleção de estudos por dois revisores independentes → avaliação do risco de viés → síntese/meta-análise.
+**Processo da revisão sistemática**: pergunta específica (formulada em PICO) → protocolo → busca sistemática → seleção de estudos por dois revisores independentes → avaliação do risco de viés → síntese/meta-análise. Esse processo se organiza em três grandes fases:
 
-![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%2011.png)
+| Planejando a Revisão | Conduzindo a Revisão | Escrevendo a Revisão |
+|---|---|---|
+| Estudo de Viabilidade | Buscar Estudos Primários | Escrevendo o Documento |
+| Definir Questões de Pesquisa | Selecionar Estudos Primários | Validando o Documento |
+| Escrever o Protocolo da Revisão | Avaliar a Qualidade dos Estudos | |
+| Validar o Protocolo da Revisão | Extração dos Dados | |
+| | Síntese dos Dados | |
+
+??? note "Diagrama de referência"
+    ![image.png](../../assets/faculdade/periodo5/metodologia-e-expressao-tecnico-cientifica/image%2011.png)
 
 **Processo da revisão de escopo**: pergunta ampla → protocolo recomendado (ex: PRISMA-ScR) → busca → mapeamento/categorização dos dados → relatório descritivo.
 

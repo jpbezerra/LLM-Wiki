@@ -9,15 +9,18 @@ Um **algoritmo** é uma sequência finita e bem definida de instruções que res
 !!! example "Exemplo: MDC de dois números (algoritmo de Euclides)"
     O algoritmo abaixo calcula o Máximo Divisor Comum (MDC) entre dois números `m` e `n`.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled.png)
 
     Com a entrada `m = 60`, `n = 24`:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%201.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%201.png)
 
     Passo a passo da execução:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%202.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%202.png)
 
     1. Linha 3: `m = 24`; linha 4: `n = 12` — como `n ≠ 0`, o `while` é executado de novo.
     2. Linha 1: entra no `while` pois `n ≠ 0`; linha 2: `r` agora vale `0`; linha 3: `m = 12`; linha 4: `n = 0`. Como `n == 0`, o `while` para.
@@ -30,7 +33,8 @@ Um **algoritmo** é uma sequência finita e bem definida de instruções que res
 A **busca sequencial** compara, um a um, os elementos de uma array com uma chave de busca `K`, até encontrar uma correspondência (busca bem-sucedida) ou esgotar a lista (busca mal-sucedida). É o algoritmo de busca mais simples possível, mas também o menos eficiente — no pior caso, percorre todos os `n` elementos.
 
 !!! example "Exemplo (array ordenada de forma crescente)"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%203.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%203.png)
 
     Os parâmetros são a array `A` e a chave de busca `K`.
 
@@ -45,7 +49,8 @@ A **busca sequencial** compara, um a um, os elementos de uma array com uma chave
 A **busca binária** compara a chave `K` com o elemento do meio da array, `A[m]`. Se eles coincidem, o algoritmo termina; caso contrário, ele repete recursivamente a busca em uma das duas metades, `A[0, …, m]` ou `A[m+1, …, n-1]`. É possível implementar a mesma ideia de forma iterativa, sem recursão. A busca binária é bem mais eficiente que a sequencial, mas **exige que a array esteja ordenada**.
 
 !!! example "Versão recursiva"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%204.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%204.png)
 
     Os parâmetros são a array `A`, o limite esquerdo `l`, o limite direito `r` e a chave `K`.
 
@@ -60,7 +65,8 @@ A **busca binária** compara a chave `K` com o elemento do meio da array, `A[m]`
     9. e 10. Se `r < l`, a busca falhou — retorna `-1`.
 
 !!! example "Versão iterativa"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%205.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%205.png)
 
     Os parâmetros são apenas a array `A` e a chave `K`.
 
@@ -85,7 +91,8 @@ Algoritmos de força bruta resolvem um problema por **exaustão**, testando/apli
 No **Selection sort**, escaneamos toda a array em busca do menor elemento e o trocamos de posição com o primeiro elemento. Repetimos esse processo `n - 1` vezes (para uma array de tamanho `n`), sempre considerando a partir da próxima posição. O nome vem justamente de "selecionar" o menor elemento restante a cada passo e colocá-lo em sua posição final.
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%206.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%206.png)
 
     O único parâmetro é a array `A`.
 
@@ -100,7 +107,8 @@ No **Selection sort**, escaneamos toda a array em busca do menor elemento e o tr
 No **Bubble sort**, comparamos elementos adjacentes da array e os trocamos quando estão fora de ordem. A cada passagem completa, o maior elemento "borbulha" (*bubbles up*) até o final da array; repetindo o processo, o segundo maior sobe na próxima passagem, e assim por diante.
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%207.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%207.png)
 
     O único parâmetro é a array `A`.
 
@@ -119,11 +127,13 @@ Existem três variações quanto a **quanto** o problema diminui a cada passo:
 
 - **Decrease by a constant** — o tamanho da instância diminui por um valor fixo a cada iteração (normalmente igual a 1).
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%208.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%208.png)
 
 - **Decrease by a constant factor** — o tamanho diminui por um fator constante a cada iteração (na maioria das aplicações, um fator igual a 2) — é o caso da busca binária.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%209.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%209.png)
 
 - **Variable decrease** — o padrão de redução varia de uma iteração para outra.
 
@@ -132,7 +142,8 @@ Existem três variações quanto a **quanto** o problema diminui a cada passo:
 A ideia do **Insertion sort** é que a subarray `A[0 .. n-2]` já está ordenada e precisamos inserir `A[n-1]` de modo que a array inteira permaneça ordenada. Isso é feito percorrendo os elementos da direita para a esquerda até achar a posição correta para o novo elemento, deslocando os maiores uma posição para a direita.
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2010.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2010.png)
 
     O único parâmetro é a array `A`.
 
@@ -142,7 +153,8 @@ A ideia do **Insertion sort** é que a subarray `A[0 .. n-2]` já está ordenada
     - **Linha 4** — dentro do `while`, `A[j + 1]` recebe `A[j]` e `j` é decrementado. Isso continua até `j = 0` ou `A[j] ≤ v`. Se a condição for falsa desde o início, aquele trecho da array já está ordenado e nada acontece.
     - **Linha 5** — `A[j + 1]` recebe `v`, inserindo o elemento na posição correta.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2011.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2011.png)
 
     Por exemplo, com `v = A[i] = 29` e `j = i - 1 = 3`: ao entrar no `while`, `j ≥ 0` e `A[j] = 90 > 29`, então `A[j+1]` recebe `90` e `j` decresce. No loop seguinte, `A[j] = 89 > 29`, então `A[j+1]` recebe `89`, e assim por diante até a array ficar ordenada de `0` a `i`.
 
@@ -150,16 +162,19 @@ A ideia do **Insertion sort** é que a subarray `A[0 .. n-2]` já está ordenada
 
 Algoritmos de **divisão e conquista** particionam um problema em vários subproblemas **do mesmo tipo**: o problema de tamanho `n` é dividido em `b` subproblemas de tamanho `n/b`, cada um resolvido recursivamente, e as soluções são combinadas ao final se necessário.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2012.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2012.png)
 
 #### Merge sort
 
 No **Merge sort**, a array de `n` elementos é dividida em `A[0, …, n/2 - 1]` e `A[n/2, …, n-1]`, e cada metade é dividida recursivamente até restarem subarrays de tamanho unitário. Em seguida, as subarrays são combinadas (*merge*) de volta, já ordenadas. É um método eficiente, mas que gasta memória extra com as subarrays auxiliares. A divisão é trivial (imediata); todo o custo está na etapa de conquista (unir as subarrays).
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2013.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2013.png)
 
 !!! example "Função MergeSort"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2014.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2014.png)
 
     A função recebe a array `A[0, …, n-1]`, o primeiro índice `l` (inicialmente `0`) e o último índice `r` (inicialmente `n-1`).
 
@@ -168,7 +183,8 @@ No **Merge sort**, a array de `n` elementos é dividida em `A[0, …, n/2 - 1]` 
     - **Linha 3** — chama recursivamente `MergeSort` para os intervalos `[l, m]` e `[m+1, r]`. A recursão se repete até chegar a subarrays unitárias; quando as chamadas retornam, ambos os intervalos já estão ordenados, e a função `Merge` é chamada sobre `[l, r]`.
 
 !!! example "Função Merge"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2015.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2015.png)
 
     - **Linha 1** — `for i ← l to r do temp[i] ← A[i]`: copia a subarray `A[l..r]` para uma array temporária `temp`.
     - **Linha 2** — `m` recebe `⌊(l + r)/2⌋`.
@@ -184,7 +200,8 @@ No **Merge sort**, a array de `n` elementos é dividida em `A[0, …, n/2 - 1]` 
 Diferente do Merge sort, que divide pela posição, o **Quick sort** divide pelo **valor**: escolhemos um pivô através de uma função de particionamento e movemos os elementos menores que o pivô para a esquerda e os maiores para a direita (elementos iguais ao pivô podem ficar de qualquer lado). Aqui a divisão **não** é trivial (por causa da partição), mas a conquista é imediata — o inverso do Merge sort.
 
 !!! example "QuickSort"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2016.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2016.png)
 
     - **Linha 1** — se o limite esquerdo é menor que o direito, há mais de um elemento; caso contrário a array já está ordenada (tamanho 1).
     - **Linha 2** — a variável de pivô `s` recebe o resultado do particionamento de `A` entre os limites esquerdo e direito. `s` é a posição final e correta do pivô.
@@ -192,7 +209,8 @@ Diferente do Merge sort, que divide pela posição, o **Quick sort** divide pelo
 
 **Hoare partition**
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2017.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2017.png)
 
 - **Linhas 1–3** — o pivô `p` recebe `A[l]` (elemento mais à esquerda do intervalo); criam-se os índices `i = l` (caminha da esquerda para a direita) e `j = r + 1` (começa "fora" do range, pois assim o código consegue incluir o último índice `r` ao caminhar da direita para a esquerda).
 - **Linhas 4 e 12** — um laço `repeat-until`: primeiro executa o corpo, depois checa a condição (`i ≥ j`).
@@ -204,33 +222,52 @@ Diferente do Merge sort, que divide pela posição, o **Quick sort** divide pelo
 - **Linha 15** — retorna `j`, a posição final do pivô, usada por `QuickSort` para as chamadas recursivas `QuickSort(A, l, s-1)` e `QuickSort(A, s+1, r)`.
 
 !!! example "Exemplo de execução"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2018.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2018.png)
 
     Linhas 1 a 3:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2019.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2019.png)
 
     Primeiro loop do `repeat-until` principal, até a linha 10 (condição de parada ainda falsa):
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2020.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2020.png)
 
     Linha 11 — swap entre `0` e `7` (ficam ordenados):
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2021.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2021.png)
 
     Segundo loop — acontece de novo um swap entre `0` e `7` (que não deveria ter ocorrido), e a condição de parada vira verdadeira:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2022.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2022.png)
 
     Linha 13 — desfaz o último swap:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2023.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2023.png)
 
     Linha 14 — swap entre `p` e `A[j]` (0 e 5); ambos ficam em posições corretas, já que à esquerda do pivô só há elementos menores ou iguais a ele, e à direita, maiores ou iguais. A função retorna a posição `3` (`j`), e o processo continua recursivamente.
 
 **Lomuto partition**
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2024.png)
+```
+LomutoPartition(A[left, right])
+  pivot = A[left]
+  s = left
+  for i = left+1 to right do
+      if A[i] < pivot
+          s = s + 1
+          swap(A[s], A[i])
+  swap(A[left], A[s])
+  return s
+```
+
+??? note "Imagem de referência (slide)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2024.png)
 
 ### Transform and conquer
 
@@ -245,9 +282,10 @@ A eficiência de um algoritmo depende do seu **running time** (tempo de execuç�
 
 ### Unidades e notações assintóticas
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2025.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2025.png)
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2026.png)
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2026.png)
 
 As notações assintóticas descrevem o comportamento de uma função de eficiência conforme o tamanho da entrada cresce, abstraindo constantes e termos de menor ordem:
 
@@ -257,9 +295,10 @@ As notações assintóticas descrevem o comportamento de uma função de eficiê
 | $\Omega(g(n))$ | Limite inferior (*lower bound*) | $t(n)$ cresce no mínimo tão rápido quanto $g(n)$ |
 | $\Theta(g(n))$ | Limite justo (*tight bound*) | $t(n)$ cresce exatamente na mesma ordem de $g(n)$ |
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2027.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2027.png)
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2028.png)
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2028.png)
 
 ### Tipos de eficiência
 
@@ -269,9 +308,10 @@ Para um algoritmo cujo comportamento varia conforme a entrada (não apenas o tam
 - **Average-case** — o tempo médio considerando a distribuição esperada das entradas.
 - **Best-case** — o menor tempo possível entre todas as entradas de tamanho `n`.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2029.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2029.png)
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2030.png)
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2030.png)
 
 !!! note "Sequential search vs. Binary search"
     - Eficiência da busca sequencial: $O(n)$.
@@ -280,7 +320,8 @@ Para um algoritmo cujo comportamento varia conforme a entrada (não apenas o tam
 
 ### Comparando algoritmos de ordenação
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2031.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2031.png)
 
 | Algoritmo | Melhor caso | Caso médio | Pior caso | Espaço extra |
 |---|---|---|---|---|
@@ -301,7 +342,8 @@ Antes de falar de estruturas de dados específicas, vale fixar o vocabulário us
 - **Abstract Data Type (ADT)** — o data type encarado como um componente de **software** (não de hardware): a especificação do comportamento, sem se comprometer com uma implementação.
 - **Data structure** — a **implementação** concreta do ADT. Em linguagens orientadas a objetos, o ADT junto com sua implementação corresponde a uma `class`, e cada operação do ADT é implementada por um `method`. Um `object` é uma instância da classe — algo criado e que ocupa memória durante a execução do programa — e as variáveis que definem o espaço necessário para um data item são chamadas de `data members`.
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2032.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2032.png)
 
 ### Listas
 
@@ -462,15 +504,18 @@ Diferente das listas baseadas em array, as listas encadeadas usam **ponteiros** 
 
 A classe da lista mantém três ponteiros: para o início (`head`), para o fim (`tail`) e para a posição atual (`curr`). Como os nós são alocados conforme necessário, **não** é preciso declarar um tamanho fixo ao criar a lista.
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2033.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2033.png)
 
 **Doubly Linked Lists** (listas duplamente encadeadas) — cada nó possui um ponteiro para o próximo **e** para o anterior, permitindo percorrer a lista em ambos os sentidos.
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2034.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2034.png)
 
 **Circular Linked Lists** (listas circulares) — o último nó aponta de volta para o primeiro, formando um ciclo em vez de terminar em `NULL`.
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2035.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2035.png)
 
 #### Array-based list vs. Linked list
 
@@ -491,7 +536,8 @@ Uma **pilha** (stack) é uma estrutura parecida com uma lista, mas com acesso **
 
 A analogia clássica é uma pilha de pratos: o último prato colocado é o primeiro a ser retirado. Essa restrição torna a pilha menos flexível que uma lista genérica, mas não compromete sua eficiência — pelo contrário, operações em pilha são tipicamente $O(1)$.
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2036.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2036.png)
 
 **Operações básicas**
 
@@ -595,7 +641,8 @@ Ambas as abordagens (array e encadeada) são eficientes — $O(1)$ para `push`, 
 
 Assim como as pilhas, as **filas** (queues) são estruturas parecidas com listas, mas com acesso restrito. A diferença em relação à pilha é a convenção de acesso: elementos são inseridos no final da fila (operação `enqueue`) e removidos do início (operação `dequeue`) — ou seja, **FIFO** (*First In, First Out*).
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2037.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2037.png)
 
 **Operações**
 
@@ -729,13 +776,15 @@ Diversas aplicações exigem **partição dinâmica** de um conjunto de `n` elem
 
 ### ADT de um dicionário
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2038.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2038.png)
 
 ## Trees
 
 Uma **árvore** (mais precisamente, uma *árvore livre*) é um grafo conexo e acíclico. Um grafo acíclico mas não necessariamente conexo é chamado de **floresta**.
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2039.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2039.png)
 
 ### Árvores enraizadas
 
@@ -765,9 +814,10 @@ Uma **árvore binária** é uma árvore em que cada vértice tem, no máximo, do
 
 Uma **árvore de busca binária** é uma árvore binária ordenada em que cada vértice guarda um valor (chave), com a propriedade: todo filho à esquerda tem valor **menor** que o do pai, e todo filho à direita tem valor **maior ou igual**. A raiz é o único vértice que não é filho de ninguém, então toda a árvore é organizada em torno do valor da raiz. Para implementar uma BST, cada vértice precisa de ponteiros para seus filhos (e, opcionalmente, para o pai).
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2040.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2040.png)
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2041.png)
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2041.png)
 
 ### Traversals (travessias)
 
@@ -778,11 +828,13 @@ Uma **travessia** é um método sistemático de percorrer todos os vértices de 
 Visitamos primeiro a **raiz**, depois percorremos recursivamente toda a subárvore **esquerda**, e por fim toda a subárvore **direita**. Dentro de cada subárvore, a mesma regra se aplica recursivamente (raiz → esquerda → direita).
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2042.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2042.png)
 
     Pre-order: 37 (raiz), 24 (filho esquerdo da raiz), 7 (neto, esquerda-esquerda), 2 (bisneto, esquerda-esquerda-esquerda), 32 (neto, esquerda-direita), 42 (filho direito da raiz), 40 (neto, direita-esquerda), 42 (neto, direita-direita), 120 (bisneto, direita-direita-direita).
 
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2043.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2043.png)
 
     Pre-order: 5, 3, 2, 1, 4, 7, 6, 8, 7, 12, 9, 14, 23, 21, 18, 56.
 
@@ -791,11 +843,13 @@ Visitamos primeiro a **raiz**, depois percorremos recursivamente toda a subárvo
 Percorremos primeiro toda a subárvore **esquerda**, depois a **raiz**, e por fim toda a subárvore **direita**. Em uma BST, essa travessia sempre produz os valores em ordem **não decrescente** — é a travessia usada quando se quer "ler" a árvore como uma lista ordenada.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2044.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2044.png)
 
     In-order: 2, 7, 24, 32, 37, 40, 42, 42, 120.
 
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2045.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2045.png)
 
     In-order: 1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 12, 14, 18, 21, 23, 56.
 
@@ -804,11 +858,13 @@ Percorremos primeiro toda a subárvore **esquerda**, depois a **raiz**, e por fi
 Percorremos primeiro toda a subárvore **esquerda**, depois toda a subárvore **direita**, e só então a **raiz**.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2046.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2046.png)
 
     Post-order: 2, 7, 32, 24, 40, 120, 42, 42, 37.
 
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2047.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2047.png)
 
     Post-order: 1, 2, 4, 3, 6, 7, 9, 18, 21, 56, 23, 14, 12, 8, 7, 5.
 
@@ -826,27 +882,31 @@ A rotação é o mecanismo central da AVL para re-balancear a árvore. Existem q
 
 - **L-rotation** — rotação simples para a esquerda.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2048.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2048.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2049.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2049.png)
 
 - **R-rotation** — rotação simples para a direita.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2050.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2050.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2051.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2051.png)
 
 - **LR-rotation** — rotação dupla: primeiro para a esquerda, depois para a direita.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2052.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2052.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2053.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2053.png)
 
 - **RL-rotation** — rotação dupla: primeiro para a direita, depois para a esquerda.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2054.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2054.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2055.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2055.png)
 
 !!! warning "Toda rotação exige recalcular alturas"
     Após qualquer uma dessas rotações, é preciso atualizar as alturas dos nós envolvidos — esse detalhe é fácil de esquecer na hora de implementar.
@@ -854,27 +914,33 @@ A rotação é o mecanismo central da AVL para re-balancear a árvore. Existem q
 !!! example "Construindo uma AVL com as inserções 4, 6, 8, 3, 2, 5"
     Inserindo 4 e 6:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2056.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2056.png)
 
     Inserindo 8:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2057.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2057.png)
 
     O nó `4` fica desbalanceado: altura da subárvore esquerda menos a direita dá `-2` (`-1` da esquerda menos `1` da direita). Como o desbalanço está na parte direita da subárvore direita, fazemos uma **L-rotation**, trocando `6` de lugar com `4`:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2058.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2058.png)
 
     Inserindo 3:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2059.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2059.png)
 
     Inserindo 2:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2060.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2060.png)
 
     O nó `4` fica desbalanceado de novo: `1` da esquerda menos `-1` da direita dá `2`. Como o desbalanço está na parte esquerda da subárvore esquerda, fazemos uma **R-rotation**, trocando `3` de lugar com `4`:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2061.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2061.png)
 
 ## Space and time trade-offs
 
@@ -891,11 +957,13 @@ A ideia é **pré-processar** a entrada do problema (total ou parcialmente) e ar
 Para cada elemento, contamos quantos outros elementos são menores que ele — esse contador é exatamente a posição final do elemento em uma array ordenada de forma não decrescente. Ao final, usamos essas contagens para montar a array ordenada `S`.
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2062.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2062.png)
 
     A array `count`, de tamanho `A.length()`, guarda a posição correta de cada elemento de `A` em uma versão ordenada. O `i`-ésimo elemento de `count` indica a posição correta do `i`-ésimo elemento de `A`. `S` é a array resultante, já ordenada.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2063.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2063.png)
 
     - Inicialmente, `count[i] = 0` para todo `i`.
     - Para cada par `(i, j)` com `j > i`: se `A[i] > A[j]`, incrementamos `count[i]`; caso contrário, incrementamos `count[j]`.
@@ -906,13 +974,14 @@ Para cada elemento, contamos quantos outros elementos são menores que ele — e
 Aqui consideramos o menor e o maior elemento, além de duas informações por elemento: sua **frequência** (quantas vezes aparece na array) e seu **valor de distribuição** (ligado aos índices finais). Começamos atribuindo valor de distribuição `1` ao menor elemento; para cada elemento seguinte, o valor de distribuição é o valor de distribuição do elemento anterior somado à sua própria frequência. Com base nisso, percorremos `A` da direita para a esquerda, colocando cada elemento no índice `(valor de distribuição − 1)` da array `S`, e decrementando o valor de distribuição a cada inserção.
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2064.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2064.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2065.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2065.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2066.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2066.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2067.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2067.png)
 
 #### Boyer-Moore algorithm for string matching
 
@@ -930,26 +999,60 @@ O **hashing** é uma forma muito eficiente de implementar dicionários. A ideia 
 
 - **int** — se as chaves são números não negativos, uma Hash Function simples é $h(K) = K \bmod m$.
 
-    - *Trivial method*:
+    - *Trivial method*: tentativa trivial, $h(K) = K \bmod m$. Por exemplo, com $m = 100$ (endereços de hash em `0..99`) e $K = 4567$: $h(K) = 4567 \bmod 100 = 67$.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2068.png)
+        ??? note "Imagem de referência (slide)"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2068.png)
 
-    - *Mid-Square method*:
+    - *Mid-Square method*: uma abordagem melhor — computa-se $K^2$ e seleciona-se os $r$ dígitos do meio, tais que $10^r - 1 < m$. Por exemplo, com $m = 100$ (logo $r = 2$) e $K = 4567$: $K^2 = 20857489$, e os dois dígitos do meio dão $h(K) = 57$.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2069.png)
+        ??? note "Imagem de referência (slide)"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2069.png)
 
 - **char** — se as chaves são letras do alfabeto, podemos usar sua posição (por exemplo, o código ASCII) e aplicar a mesma lógica das chaves inteiras.
 - **string** — podemos somar os valores ASCII de cada caractere e aplicar `mod m`.
 
-    - *Fold*:
+    - *Fold*: soma os valores (código de caractere) de cada posição da string e aplica `mod m`.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2070.png)
+        ```
+        Algorithm: int h(string K)
+        1  s ← length(K)
+        2  sum ← 0
+        3  for i ← 0 to s - 1 do
+        4      sum ← sum + K[i]
+        5  return abs(sum) % m   // abs = overflow e %
+        ```
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2071.png)
+        A distribuição é justa ou ruim dependendo de `m` e `K`: supondo `length(K) = 10` (em média) e que `K` tenha apenas letras maiúsculas — como `A = 65` e `Z = 90`, `sum ∈ [650..900]`. Se `m ≤ 100`, a distribuição é justa; se `m ≥ 1000`, é ruim.
 
-    - *Shift-fold (sfold)*:
+        ??? note "Imagem de referência (slide)"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2070.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2072.png)
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2071.png)
+
+    - *Shift-fold (sfold)*: uma abordagem melhor — divide a string em blocos de 4 caracteres, trata cada bloco como um inteiro (combinando os bytes via multiplicação por potências de 256) e soma os blocos, antes de aplicar `mod m`.
+
+        ```
+        Algorithm: int h(string K)
+        1   intLength ← length(K) / 4
+        2   sum ← 0
+        3   for i ← 0 to intLength - 1 do
+        4       sub ← substring(K, i*4, (i*4)+4)   // posição inicial e final
+        5       mult ← 1
+        6       for j ← 0 to 3 do
+        7           sum ← sum + sub[j] * mult
+        8           mult ← mult * 256
+        9   sub ← substring(K, intLength*4)          // posição inicial até o fim
+        10  mult ← 1
+        11  s ← length(sub)
+        12  for j ← 0 to s - 1 do
+        13      sum ← sum + sub[j] * mult
+        14      mult ← mult * 256
+        15  return abs(sum) % m   // abs = overflow e %
+        ```
+
+        ??? note "Imagem de referência (slide)"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2072.png)
 
 **Hash tables — propriedades desejáveis**
 
@@ -959,9 +1062,10 @@ O **hashing** é uma forma muito eficiente de implementar dicionários. A ideia 
 
 **Colisões**
 
-Uma **colisão** ocorre quando duas ou mais chaves distintas produzem o mesmo endereço de hash — ou seja, "competem" pela mesma posição da tabela.
+Uma **colisão** ocorre quando duas ou mais chaves distintas produzem o mesmo endereço de hash — ou seja, "competem" pela mesma posição da tabela: $h(K_i) = h(K_j)$ para $K_i \neq K_j$.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2073.png)
+??? note "Imagem de referência (diagrama)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2073.png)
 
 Se o tamanho `m` da tabela for menor que o número de chaves `n`, colisões são inevitáveis — mas elas podem ocorrer mesmo com `m` bem maior que `n`. No pior caso teórico, todas as chaves mapeiam para o mesmo endereço; na prática, com um tamanho de tabela apropriado e uma boa função de hash, isso é raro. Ainda assim, **todo** esquema de hashing precisa de um mecanismo de resolução de colisões.
 
@@ -971,36 +1075,72 @@ Se o tamanho `m` da tabela for menor que o número de chaves `n`, colisões são
     Cada posição da tabela aponta para uma lista encadeada contendo todas as chaves que mapearam para aquele endereço — ou seja, cada endereço de hash está associado a uma lista encadeada.
 
     !!! example
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2074.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2074.png)
 
         Convenção: $A = 1$, $Z = 26$. A chave de cada palavra é a soma dos valores de suas letras, módulo 13. Note que *are* e *soon* têm a mesma chave, mas *are* chegou primeiro, então ocupa a primeira posição da célula 11, seguida por *soon*.
 
     **ADT dict**
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2075.png)
+    O dicionário é representado por um tipo composto com o tamanho da tabela `m`, o número de elementos `cnt`, a própria tabela `H` (array de listas) e a função de hash `h`:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2076.png)
+    ```
+    Composite type (Dictionary):
+    1  int m;       // tamanho da hash table
+    2  int cnt;     // número de elementos no dicionário
+    3  List[] H;    // hash table como array de listas
+    4  h: Key → 0..m-1;              // função de hash
+    ```
 
-    **Insert** — insere o elemento no índice `j`. A lista dentro da célula `j` pode ou não estar ordenada.
+    A criação do dicionário aloca a tabela `H` com `size` listas vazias e associa a função de hash:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2077.png)
+    ```
+    Algorithm: Dictionary create_dict(int size, h: Key → 0..m-1)
+    1  d.m ← size; d.cnt ← 0;
+    2  d.H ← new List[size];
+    3  for i ← 0 to size - 1 do
+    4      d.H[i] ← create_list();   // lista de Entry, que combina Key e E
+    5  d.h ← h;
+    6  return d;
+    ```
+
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2075.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2076.png)
+
+    **Insert** — insere o elemento no índice `j`. A lista dentro da célula `j` pode ou não estar ordenada: lista ordenada tem busca melhor e inserção pior; lista não ordenada, o contrário. Assumindo listas não ordenadas (sempre inserindo no final) e que nada é feito se já existe uma entrada com a chave `k`:
+
+    ```
+    Algorithm: void insert(Dictionary d, Key k, E e)
+    1  if find(d, k) = NULL then
+    2      pos ← d.h(k);              // h é a função de hash
+    3      l ← d.H[pos];              // H é a hash table
+    4      entry ← create_entry(k, e);
+    5      append(l, entry);
+    ```
 
     - Eficiência temporal (lista não ordenada): $\Theta(1)$.
     - Eficiência temporal (lista ordenada): $\Theta(1) + \Theta(\text{método de ordenação})$.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2078.png)
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2077.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2079.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2078.png)
 
-    **Search** — busca o elemento no índice `j`.
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2079.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2080.png)
+    **Search** — busca o elemento no índice `j`: computa `h(K) = j`; se a `j`-ésima lista estiver vazia, o elemento não foi encontrado; caso contrário, busca na lista. O custo depende do **fator de carga** $\alpha = \frac{n}{m}$ (com $n$ = número de elementos na tabela): $S \approx 1 + \frac{\alpha}{2}$ para busca bem-sucedida e $U = \alpha$ para mal-sucedida — quando $\alpha \approx 1$, ambas ficam em $\Theta(1)$ em média.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2081.png)
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2080.png)
 
-    **Delete** — remove o elemento do índice `j`; eficiência temporal similar à da busca.
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2081.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2082.png)
+    **Delete** — computa `h(K) = j` e remove da `j`-ésima lista encadeada; eficiência temporal similar à da busca.
+
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2082.png)
 
 === "Closed hashing (Open addressing)"
     As chaves são armazenadas na própria tabela, sem usar listas encadeadas; quando ocorre colisão, procura-se outra posição livre segundo alguma estratégia de *probing*.
@@ -1008,40 +1148,89 @@ Se o tamanho `m` da tabela for menor que o número de chaves `n`, colisões são
     **Linear probing** — ao colidir, verifica a célula seguinte.
 
     !!! example
-        Hash table com chave `key mod 5`:
-
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2083.png)
+        Hash table com chave `key mod 5`, com as células `0` a `4`:
 
         1. Inserir `50` → mapeia para a posição `0` (`50 % 5 == 0`).
+        2. Inserir `70` → deveria ir para a posição `0` (`70 % 5 == 0`), mas `50` já está lá; ocupa a posição `1`.
+        3. Inserir `76` → deveria ir para a posição `1` (`76 % 5 == 1`), mas `70` já está lá; ocupa a posição `2`.
+        4. Inserir `85` → deveria ir para a posição `0`, ocupada por `50`; verifica a posição `1`, também ocupada; ocupa a próxima posição livre, `3`.
+
+        ??? note "Fotos do quadro (passo a passo)"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2083.png)
 
             ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2084.png)
 
-        2. Inserir `70` → deveria ir para a posição `0` (`70 % 5 == 0`), mas `50` já está lá; ocupa a posição `1`.
-
             ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2085.png)
-
-        3. Inserir `76` → deveria ir para a posição `1` (`76 % 5 == 1`), mas `70` já está lá; ocupa a posição `2`.
 
             ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2086.png)
 
-        4. Inserir `85` → deveria ir para a posição `0`, ocupada por `50`; verifica a posição `1`, também ocupada; ocupa a próxima posição livre, `3`.
-
             ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2087.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2088.png)
+    **Search** — computa `h(K) = j`; se `H[j]` está vazio, o elemento não foi encontrado; se `H[j] = K`, foi encontrado; caso contrário, verifica a posição seguinte (volta ao passo 2). Atenção a uma hash table onde `m = n` (tabela cheia), nesse caso a busca pode nunca terminar sem um limite de tentativas.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2089.png)
+    **Deleção** — precisa usar um símbolo especial (*tombstone*) para marcar a célula como removida, sem que pareça vazia; inserção e busca precisam ser atualizadas para considerar esse símbolo.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2090.png)
+    A análise de eficiência temporal é mais complicada: $S \approx \frac{1}{2}\left(1 + \frac{1}{1-\alpha}\right)$ e $U \approx \frac{1}{2}\left(1 + \frac{1}{(1-\alpha)^2}\right)$, com $\alpha$ o fator de carga. Evolução de $S$ e $U$ conforme $\alpha$ cresce:
+
+    | $\alpha$ | $S$ | $U$ |
+    |---|---|---|
+    | 50% | 1.5 | 2.5 |
+    | 75% | 2.5 | 8.5 |
+    | 90% | 5.5 | 50.5 |
+
+    Quando $\alpha \approx 1$, o linear probing se deteriora (**primary clustering**): maior probabilidade de adicionar um elemento a um cluster já existente, e maior probabilidade de dois clusters se fundirem.
+
+    ??? note "Imagem de referência (slides)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2088.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2089.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2090.png)
 
     !!! warning "Primary clustering"
         O linear probing é intuitivo e fácil de implementar, mas sofre de **primary clustering**: elementos consecutivos acabam formando grupos (*clusters*), aumentando o tempo necessário para encontrar uma célula vazia ou uma chave específica. No pior caso, busca, inserção e remoção degradam para $O(n)$, onde $n$ é o tamanho da tabela — basicamente, quanto mais elementos próximos entre si, mais lenta fica a inserção de um elemento com chave parecida.
 
-    **Pseudo-random probing** — evita o primary clustering escolhendo aleatoriamente a próxima célula a verificar (não evita 100%, mas reduz bastante a chance em relação ao linear probing).
+    **Pseudo-random probing** — evita o primary clustering escolhendo aleatoriamente a próxima célula a verificar (não evita 100%, mas reduz bastante a chance em relação ao linear probing). O dicionário guarda, além do habitual (`m`, `cnt`, tabela `H`, função `h`), uma permutação `Perm` de `1..m-1`:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2091.png)
+    ```
+    Composite type (Dictionary):
+    1  int m;        // tamanho da hash table
+    2  int cnt;      // número de elementos no dicionário
+    3  Entry[] H;     // hash table como array de Entry
+    4  int[] Perm;    // permutação de 1..m-1
+    5  h: Key → 0..m-1;              // função de hash
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2092.png)
+    Algorithm: Dictionary create_dict(int size, h: Key → 0..size-1)
+    1  d.m ← size; d.cnt ← 0;
+    2  d.H ← new Entry[size];
+    3  d.Perm ← create_permutation(1..size - 1);
+    4  d.h ← h;
+    5  return d;
+    ```
+
+    A inserção usa a permutação para gerar os deslocamentos de probing (assume-se que `d` é uma hash table com `m` posições e que nada é feito se já existe uma entrada com a chave `k`):
+
+    ```
+    Algorithm: void insert(Dictionary d, Key k, E e)
+    1   if size(d) < d.m ∧ find(d, k) = NULL then
+    2       pos ← d.h(k);                      // h é a função de hash
+    3       if d.H[pos] ≠ NULL ∧ d.H[pos] ≠ deleted then
+    4           i ← 0;
+    5           repeat
+    6               i ← i + 1;
+    7               offset ← d.Perm[i - 1];
+    8               newPos ← (pos + offset) % d.m;
+    9           until d.H[newPos] = NULL ∨ d.H[newPos] = deleted;
+    10          pos ← newPos;
+    11      entry ← create_entry(k, e);
+    12      d.H[pos] ← entry;
+    13      d.cnt = d.cnt + 1;
+    ```
+
+    ??? note "Imagem de referência (slides)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2091.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2092.png)
 
     !!! example
         Hash key: `key - (8 * (key // 8))`. `Perm = {2, 6, 7, 3, 1, 4, 5}` (permutação aleatória de `1` a `M-1`, com `M` = tamanho da tabela). Função de probing: $p(key, i) = Perm[i-1]$. Valores a inserir: `2, 4, 8, 16, 32, -12`.
@@ -1063,7 +1252,8 @@ Se o tamanho `m` da tabela for menor que o número de chaves `n`, colisões são
 
         Hash table final:
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2093.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2093.png)
 
     **Quadratic probing** — ao colidir pela `i`-ésima vez, verifica a célula $p(key, i) = \frac{i^2+i}{2}$ posições adiante.
 
@@ -1083,12 +1273,14 @@ Se o tamanho `m` da tabela for menor que o número de chaves `n`, colisões são
 
         Hash table final:
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2094.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2094.png)
 
     !!! warning "Limitações do quadratic probing"
         Não há garantia de que a sequência de probing cubra **todas** as posições da tabela. Além disso, o quadratic probing sofre de **secondary clustering**: a tendência de formar longas sequências de células ocupadas, afastadas da posição de hash original das chaves.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2095.png)
+        ??? note "Imagem de referência (diagrama)"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2095.png)
 
     **Double hashing** — usa **duas** funções de hash para determinar a sequência de probing, evitando tanto o primary quanto o secondary clustering (as duas funções podem ser combinadas de diferentes formas para gerar a sequência de posições a testar).
 
@@ -1117,7 +1309,8 @@ Uma **heap** é uma árvore binária que obedece a duas propriedades:
 Heaps são a estrutura clássica para implementar **filas de prioridade**, que precisam das operações `find_max`, `remove_max` e `add` (ou os equivalentes para mínimo).
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2096.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2096.png)
 
     A árvore à esquerda é uma heap válida. A árvore do meio não é uma heap, pois não respeita a propriedade de forma. A árvore à direita não é uma heap, pois não respeita a dominância parental (nem mínima, nem máxima).
 
@@ -1125,9 +1318,10 @@ Heaps são a estrutura clássica para implementar **filas de prioridade**, que p
 
 Uma heap pode ser representada eficientemente como uma array, sem necessidade de ponteiros.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2097.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2097.png)
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2098.png)
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2098.png)
 
 Por convenção, o índice `0` da array fica vazio e a heap começa no índice `1`. Graças à propriedade de forma, em uma heap de tamanho `n`:
 
@@ -1150,51 +1344,61 @@ Usada quando **não sabemos de antemão** todos os elementos que serão inserido
 !!! example "Construindo uma max-heap com as inserções 2, 9, 7, 6, 5, 8, 10"
     Inserindo `2`:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2099.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%2099.png)
 
     O `heapify` não foi necessário.
 
     Inserindo `9`: como queremos uma max-heap, `9` troca de lugar com `2`.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20100.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20100.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20101.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20101.png)
 
     Inserindo `7`: a heap já está correta, o `heapify` não altera nada.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20102.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20102.png)
 
     Inserindo `6`: `6` troca de lugar com `2`.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20103.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20103.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20104.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20104.png)
 
     Inserindo `5`: como `5 < 6`, nada muda.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20105.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20105.png)
 
     Inserindo `8`:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20106.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20106.png)
 
     Após o `heapify`:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20107.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20107.png)
 
     Inserindo `10`:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20108.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20108.png)
 
     Como `10 > 8`, troca `10` no lugar de `8`; e como `10 > 9`, também troca com `9`.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20109.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20109.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20110.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20110.png)
 
     Heap final:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20110.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20110.png)
 
 #### Bottom-up
 
@@ -1205,44 +1409,52 @@ Usada quando **já sabemos** todos os elementos que vão compor a heap. Todos os
 !!! example "Construindo uma max-heap (bottom-up) com os inputs 2, 9, 7, 6, 5, 8, 10"
     Heap inicial:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20111.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20111.png)
 
     Como no bottom-up fazemos `heapify` do nó parental mais interno para o mais externo, começamos pelo `7`.
 
     **Heapify com o 7**: comparando `7` com seus filhos:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20112.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20112.png)
 
     `7` é menor que ambos; como `10` é o maior, troca com ele.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20113.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20113.png)
 
     **Heapify com o 9**: os filhos de `9` são menores, então nada muda.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20114.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20114.png)
 
     **Heapify com o 2**: `2` é menor que ambos os filhos; troca com o maior, `10`.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20115.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20115.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20116.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20116.png)
 
     Após a troca, repetimos o `heapify` para verificar os novos filhos de `2`: eles também são maiores, então troca com o maior deles, `8`.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20117.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20117.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20118.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20118.png)
 
     Resultado final:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20119.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20119.png)
 
 ### Heapsort
 
 O **Heapsort** é um algoritmo de ordenação baseado em heaps. Primeiro construímos a heap a partir da array (de preferência via bottom-up, por ser $O(n)$). Depois, aplicamos `remove_max` repetidamente — $n - 1$ vezes — o que devolve os elementos em ordem **decrescente**, podendo ser armazenados em outra estrutura (fila ou pilha) conforme a ordem final desejada.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20120.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20120.png)
 
 ## Grafos
 
@@ -1263,7 +1475,8 @@ Um **grafo** é um conjunto de vértices, alguns dos quais conectados entre si p
 - **Matriz de adjacência** — essencialmente uma array de arrays (ou um `vector<vector<...>>`). A matriz indica, para cada par de vértices, se existe ligação entre eles (tipicamente com `0`/`1`, ou com outra chave qualquer). É comum usar uma matriz booleana auxiliar apenas para marcar presença/ausência de aresta.
 - **Lista de adjacência** — usa listas encadeadas para representar, para cada vértice, os vértices a que ele se conecta.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20121.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20121.png)
 
 Em geral: se o grafo é **denso**, a matriz de adjacência é mais interessante (o desperdício de espaço é pequeno, e o acesso é $O(1)$); se o grafo é **escasso**, a lista de adjacência economiza memória significativamente.
 
@@ -1271,7 +1484,8 @@ Em geral: se o grafo é **denso**, a matriz de adjacência é mais interessante 
 
 Um **grafo ponderado** associa um número a cada aresta, representando seu **peso** (ou custo). Essa representação é essencial para problemas de caminho mínimo, entre outros. Grafos ponderados podem ser representados tanto por matrizes quanto por listas de adjacência, bastando guardar o peso junto da ligação.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20122.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20122.png)
 
 ### Caminhos e ciclos
 
@@ -1293,97 +1507,179 @@ Algoritmos de travessia processam os vértices e arestas de um grafo (e são a b
 O DFS começa em um vértice arbitrário e, a cada passo, avança para um vértice adjacente ainda não visitado (em caso de empate, costuma-se escolher o de menor rótulo). Esse processo continua até um "beco sem saída" — um vértice sem vizinhos não visitados. Quando isso ocorre, o algoritmo **retrocede** (*backtrack*) para o vértice anterior e tenta encontrar outro vizinho não visitado. Ao final, todos os vértices alcançáveis a partir do vértice inicial terão sido visitados.
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20123.png)
+    A função `graphTraverse` visita todos os vértices do grafo (mesmo os de componentes desconexos), chamando `DFS` a partir de cada vértice ainda não visitado:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20124.png)
+    ```
+    Algorithm: void graphTraverse(G g)
+    1  for v ← 0 to n(g) - 1 do
+    2      setMark(g, v, UNVISITED);
+    3  for v ← 0 to n(g) - 1 do
+    4      if getMark(g, v) = UNVISITED
+           then DFS(g, v);
+    ```
+
+    `DFS` propriamente dito marca o vértice atual como visitado e, recursivamente, visita cada vizinho ainda não marcado:
+
+    ```
+    Algorithm: void DFS(G g, int v)
+    1  preVisit(g, v);
+    2  setMark(g, v, VISITED);
+    3  w ← first(g, v);
+    4  while w < n(g) do
+    5      if getMark(g, w) = UNVISITED
+           then DFS(g, w);
+    6      w ← next(g, v, w);
+    7  posVisit(g, v);
+    ```
+
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20123.png)
+
+    Grafo de exemplo, com todos os vértices inicialmente não marcados (`×`):
+
+    ??? note "Imagem de referência (diagrama)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20124.png)
 
     1. Todos os vértices começam marcados como não visitados.
     2. Escolhemos o primeiro vértice (`0`, por ser o menor) e chamamos DFS; `0` é marcado como visitado.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20125.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20125.png)
 
     3. A partir de `0`, só há conexão com `2`; marcamos `2` como visitado e avançamos.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20126.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20126.png)
 
     4. De `2`, escolhemos o menor vizinho não visitado, `1`, e o marcamos.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20127.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20127.png)
 
     5. De `1`, o próximo seria `2` (menor), mas já visitado; vamos então para `5`.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20128.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20128.png)
 
     6. De `5` (conecta com `1, 2, 3, 4`), `1` e `2` já visitados; o próximo é `3`.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20129.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20129.png)
 
     7. De `3` (conecta com `2` e `5`), ambos já visitados; retrocedemos para `5`.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20130.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20130.png)
 
     8. De `5`, o próximo vértice ainda não visitado é `4`; visitamos.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20131.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20131.png)
 
     9. Como todos os vértices já foram visitados, o que resta são os retrocessos recursivos: `4` conecta a `0` e `5` (ambos visitados), volta para `5`;
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20132.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20132.png)
 
         `5` não tem mais vértices a visitar, volta mais uma vez;
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20133.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20133.png)
 
         `1` já checou todas as conexões, volta;
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20134.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20134.png)
 
         `2` termina de checar `3` e `5` (já visitados), volta;
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20135.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20135.png)
 
         por fim, de volta em `0`, o único outro vizinho (`4`) já foi visitado — o algoritmo termina.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20136.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20136.png)
 
 #### BFS (Breadth-First Search / Busca em largura)
 
 O BFS começa em um vértice arbitrário e, a cada iteração, percorre **todos** os vizinhos imediatos, colocando-os em uma fila (os menores entram primeiro). Em seguida, o algoritmo retira o próximo vértice da fila e repete o processo para seus vizinhos não visitados, até a fila esvaziar.
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20137.png)
+    Assim como no DFS, `graphTraverse` percorre todos os vértices do grafo, chamando `BFS` a partir de cada um ainda não visitado:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20138.png)
+    ```
+    Algorithm: void graphTraverse(G g)
+    1  for v ← 0 to n(g) - 1 do
+    2      setMark(g, v, UNVISITED);
+    3  for v ← 0 to n(g) - 1 do
+    4      if getMark(g, v) = UNVISITED
+           then BFS(g, v);
+    ```
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20139.png)
+    `BFS` usa uma fila para visitar primeiro todos os vizinhos imediatos antes de avançar:
+
+    ```
+    Algorithm: void BFS(G g, int start)
+    1   Q ← create_queue();
+    2   enqueue(Q, start);
+    3   setMark(g, start, VISITED);
+    4   while length(Q) > 0 do
+    5       v ← dequeue(Q);
+    6       preVisit(g, v);
+    7       w ← first(g, v);
+    8       while w < n(g) do
+    9           if getMark(g, w) = UNVISITED then
+    10              setMark(g, w, VISITED);
+    11              enqueue(Q, w);
+    12          w ← next(g, v, w);
+    13      posVisit(g, v);
+    ```
+
+    ??? note "Imagem de referência (slides)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20137.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20138.png)
+
+    Grafo de exemplo, com todos os vértices inicialmente não marcados:
+
+    ??? note "Imagem de referência (diagrama)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20139.png)
 
     1. Escolhemos `0` (o menor), marcamos como visitado, colocamos na fila e já o removemos para checar seus vizinhos.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20140.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20140.png)
 
     2. Os vizinhos de `0` são `2` e `4`; ambos entram na fila e são marcados como visitados.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20141.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20141.png)
 
     3. `2` é o primeiro da fila; seus vizinhos não visitados (`1, 3, 5`) são adicionados e marcados; `2` sai da fila.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20142.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20142.png)
 
     4. O próximo é `4`, que só tem vizinhos já visitados (`0` e `5`); apenas sai da fila.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20143.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20143.png)
 
         O próximo é `1`, também só com vizinhos visitados; sai da fila.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20144.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20144.png)
 
         O próximo é `3`, idem; sai da fila.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20145.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20145.png)
 
         O próximo é `5`, idem; sai da fila, que fica vazia, terminando o algoritmo.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20146.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20146.png)
 
 ### Aplicações de DFS e BFS
 
@@ -1392,15 +1688,18 @@ O BFS começa em um vértice arbitrário e, a cada iteração, percorre **todos*
 Utiliza o conceito de DFS. Dado um grafo $G$ direcionado e acíclico, a ordenação topológica encontra uma ordem de vértices que satisfaz todas as relações de dependência (arestas direcionadas, sem formar ciclos).
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20147.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20147.png)
 
     Neste exemplo, antes de processar `J5` é preciso ter passado por `J2` e `J4`.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20148.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20148.png)
 
     (`push` é o comando que empilha novos valores.)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20149.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20149.png)
 
     Resultado da ordenação topológica (`toposort`) do grafo do exemplo.
 
@@ -1411,11 +1710,13 @@ Uma alternativa à ordenação topológica via DFS é o **algoritmo de Kahn**, q
 Utiliza o conceito de BFS: basta iniciar o BFS a partir do vértice de origem e parar quando o destino for alcançado (já que o BFS visita os vértices em ordem crescente de distância). Se for necessário reconstruir o caminho completo, basta manter uma array auxiliar de predecessores.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20150.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20150.png)
 
     Qual o menor caminho entre `0` e `5`?
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20151.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20151.png)
 
     `0` é predecessor de `2` e `4`; `2` é predecessor de `1`, `3` e `5`. Logo, um caminho mínimo é `0 → 2 → 5`, e outro seria `0 → 4 → 5`. Como `2` é descoberto antes de `4` pelo BFS, `0 → 2 → 5` é o caminho mínimo encontrado.
 
@@ -1429,34 +1730,54 @@ O algoritmo de **Dijkstra** encontra o menor caminho entre um vértice de origem
     São uma classe de algoritmos que fazem, a cada estágio, a escolha localmente ótima disponível, na esperança (nem sempre garantida, mas comprovada para Dijkstra, Prim e Kruskal) de alcançar uma solução globalmente ótima. Tomam decisões com base apenas na informação disponível no momento, sem reconsiderá-las depois.
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20152.png)
-
     Parâmetros: `s` (nó de partida) e `D[]` (array com as menores distâncias de `s` até cada outro vértice).
 
-    **Linhas 1 a 3** — inicialização:
+    ```
+    Algorithm: void Dijkstra(Graph G, int s, int[] D)
+    1   for i ← 0 to n(G) - 1 do
+    2       D[i] ← ∞; P[i] ← -;
+    3       setMark(G, i, UNVISITED);
+    4   H[1] ← (s, s, 0); D[s] ← 0;
+    5   for i ← 0 to n(G) - 1 do
+    6       repeat
+    7           (p, v) ← removemin(H);
+    8           if v = NULL then return;
+    9       until getMark(G, v) = UNVISITED;
+    10      setMark(G, v, VISITED); P[v] ← p;
+    11      w ← first(G, v);
+    12      while w < n(G) do
+    13          if getMark(G, w) ≠ VISITED ∧
+               D[w] > D[v] + weight(G, v, w) then
+    14              D[w] ← D[v] + weight(G, v, w);
+    15              insert(H, (v, w, D[w]));
+    16          w ← next(G, v, w);
+    ```
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20153.png)
+    **Linhas 1 a 3** — inicialização: todas as distâncias começam em infinito; o array `P` (de *parent*, usado para reconstruir caminhos — guarda de qual vértice se chegou a `i`) começa com `"-"` em todas as posições; todos os nós ficam desmarcados.
 
-    Todas as distâncias começam em infinito; o array `P` (de *parent*, usado para reconstruir caminhos — guarda de qual vértice se chegou a `i`) começa com `"-"` em todas as posições; todos os nós ficam desmarcados.
+    **Linha 4** — `D[s] = 0` (a distância de `s` até ele mesmo é zero). `H` é uma min-heap construída via top-down, cujos elementos são triplas: (de onde se veio, vértice atual, custo acumulado até esse vértice).
 
-    **Linha 4** — início do algoritmo propriamente dito:
+    **Linhas 5 a 16** — o restante do algoritmo processa a heap até encontrar o menor caminho entre `s` e todos os demais vértices.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20154.png)
+    ??? note "Imagem de referência (slides)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20152.png)
 
-    `D[s] = 0` (a distância de `s` até ele mesmo é zero). `H` é uma min-heap construída via top-down, cujos elementos são triplas: (de onde se veio, vértice atual, custo acumulado até esse vértice).
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20153.png)
 
-    O restante do algoritmo processa a heap até encontrar o menor caminho entre `s` e todos os demais vértices:
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20154.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20155.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20155.png)
 
     **Exemplo de execução, começando em A:**
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20156.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20156.png)
 
     - **Passo 1** — inicializamos todos os elementos; colocamos `(A, A, 0)` na heap e `D[s] = 0`.
     - **Passo 2** — no primeiro laço, entramos apenas uma vez (pois `s` ainda não está marcado); `(p, v) = (A, A)` (ignorando o custo acumulado); marcamos `v` como visitado e `P[v] = A`.
 
-        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20157.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20157.png)
 
     - **Passo 3** — `w` recebe o valor `B`.
     - **Passos 4 a 9** — o algoritmo continua expandindo os vizinhos não visitados, sempre escolhendo o de menor distância acumulada na heap, até visitar todos os vértices alcançáveis a partir de `A`.
@@ -1466,18 +1787,53 @@ O algoritmo de **Dijkstra** encontra o menor caminho entre um vértice de origem
 Encontra os menores caminhos entre **todos os pares** de vértices de um grafo. Funciona mesmo com pesos **negativos**, mas **não** pode ser usado em grafos com **ciclos negativos** (nesse caso, não existe caminho mínimo bem definido).
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20158.png)
+    ```
+    Algorithm: void Floyd(Graph G, int[][] D)
+    1  for i ← 0 to n(G) - 1 do
+    2      for j ← 0 to n(G) - 1 do
+    3          if i = j then D[i][j] ← 0;
+    4          else if weight(G, i, j) ≠ 0 then D[i][j] ← weight(G, i, j);
+    5          else D[i][j] ← ∞;
+    6  for k ← 0 to n(G) - 1 do
+    7      for i ← 0 to n(G) - 1 do
+    8          for j ← 0 to n(G) - 1 do
+    9              if D[i][k] ≠ ∞ ∧ D[k][j] ≠ ∞ ∧ D[i][j] > D[i][k] + D[k][j] then
+    10                 D[i][j] ← D[i][k] + D[k][j];
+    ```
 
-    **Linhas 1 a 5** — inicialização das distâncias: a diagonal recebe `0`; se não há aresta entre dois nós, a distância é infinito; caso contrário, é o peso da aresta.
+    **Linhas 1 a 5** — inicialização das distâncias: a diagonal recebe `0`; se não há aresta entre dois nós, a distância é infinito; caso contrário, é o peso da aresta. **Linhas 6 a 10** — para cada vértice intermediário `k`, atualiza a distância entre cada par `(i, j)` caso passar por `k` seja mais curto.
+
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20158.png)
 
 ### Algoritmo de Bellman-Ford
 
 Encontra o menor caminho entre um vértice de origem e **todos** os outros vértices de um grafo ponderado, inclusive com **pesos negativos**. É especialmente útil porque consegue **detectar ciclos de peso negativo** (nesses casos, não há caminho mínimo bem definido, e o algoritmo sinaliza isso).
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20159.png)
+    ```
+    Algorithm: void BellmanFord(Graph G, int s, int[] D)
+    1   for i ← 0 to n(G) - 1 do D[i] ← ∞;
+        D[s] ← 0;
+    2   for k ← 0 to n(G) - 2 do
+    3       for i ← 0 to n(G) - 1 do
+    4           j ← first(G, i);
+    5           while j < n(G) do
+    6               if D[j] > D[i] + weight(G, i, j) then
+    7                   D[j] ← D[i] + weight(G, i, j);
+    8               j ← next(G, i, j);
+    9   for i ← 0 to n(G) - 1 do
+    10      j ← first(G, i);
+    11      while j < n(G) do
+    12          if D[j] > D[i] + weight(G, i, j) then
+    13              negative cycle detected
+    14          j ← next(G, i, j);
+    ```
 
-    Primeiro preenchemos a matriz/lista de distâncias entre a origem e todos os outros nós. No segundo laço, verificamos a existência de ciclos negativos (relaxando as arestas uma vez mais do que o necessário e checando se alguma distância ainda diminui).
+    Primeiro preenchemos a matriz/lista de distâncias entre a origem e todos os outros nós (`n(G) - 1` rodadas de relaxamento de todas as arestas). No segundo laço, verificamos a existência de ciclos negativos: relaxamos as arestas uma vez mais do que o necessário e checamos se alguma distância ainda diminui — se sim, há um ciclo de peso negativo.
+
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20159.png)
 
 ### Árvore Geradora de Custo Mínimo (Minimum Spanning Tree — MST)
 
@@ -1502,9 +1858,31 @@ Semelhante ao de Dijkstra, é um algoritmo **guloso**. Começa escolhendo um vé
 - Melhor adequado a grafos **densos**.
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20160.png)
+    ```
+    Algorithm: void Prim(Graph G, int[] D, int[] V)
+    1   for i ← 0 to n(G) - 1 do
+    2       D[i] ← ∞; V[i] ← -;
+    3       setMark(G, i, UNVISITED);
+    4   H[1] ← (0, 0, 0); D[0] ← 0;
+    5   for i ← 0 to n(G) - 1 do
+    6       repeat
+    7           (p, v) ← removemin(H);
+    8           if v = NULL then return;
+    9       until getMark(G, v) = UNVISITED;
+    10      setMark(G, v, VISITED); V[v] ← p;
+    11      w ← first(G, v);
+    12      while w < n(G) do
+    13          if getMark(G, w) ≠ VISITED ∧
+               D[w] > weight(G, v, w) then
+    14              D[w] ← weight(G, v, w);
+    15              insert(H, (v, w, D[w]));
+    16          w ← next(G, v, w);
+    ```
 
-    Em vermelho, as alterações em relação ao pseudocódigo de Dijkstra. O primeiro laço inicializa as variáveis: a array de distâncias, a array que guarda as arestas que fazem parte da MST (para cada vértice, indicando a quem ele está conectado) e marca todos os vértices como não visitados. Em seguida, inicializamos a heap e executamos o algoritmo propriamente dito.
+    (Em destaque no slide original: as alterações em relação ao pseudocódigo de Dijkstra — a linha 13/14 compara apenas com `weight(G, v, w)`, não com `D[v] + weight(G, v, w)`, já que o custo de Prim é sempre o da aresta, não um caminho acumulado.) O primeiro laço inicializa as variáveis: a array de distâncias, a array `V` que guarda as arestas que fazem parte da MST (para cada vértice, indicando a quem ele está conectado) e marca todos os vértices como não visitados. Em seguida, inicializamos a heap e executamos o algoritmo propriamente dito.
+
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20160.png)
 
 #### Algoritmo de Kruskal
 
@@ -1522,51 +1900,114 @@ Oferece duas operações:
 É importante que cada subconjunto tenha um elemento **representativo**.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20161.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20161.png)
 
 **Quick-find**
 
 Usa duas estruturas internas: uma array de inteiros para armazenar o representante de cada elemento, e uma array de listas encadeadas para armazenar os conjuntos propriamente ditos (o representante de cada conjunto é o primeiro elemento de sua lista).
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20162.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20162.png)
 
 !!! example "Algoritmo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20163.png)
+    `find` apenas consulta a array de representantes `R`; `union` troca o representante de todos os elementos da lista menor para o da lista maior, concatenando as duas listas:
+
+    ```
+    Algorithm: int find(DS ds, int curr)
+    1  return ds.R[curr];
+
+    Algorithm: void union(DS ds, int a, int b)
+    1   root1, root2 ← find(ds, a), find(ds, b);
+    2   if root1 ≠ root2 then
+    3       l1, l2 ← ds.sets[root1], ds.sets[root2];
+    4       if l1.size < l2.size then swap(l1, l2);
+    5       temp ← l2.first;
+    6       while temp ≠ NULL do
+    7           ds.R[temp.element] ← l1.first.element;
+    8           temp ← temp.next;
+    9       l1.last.next ← l2.first; l1.last ← l2.last;
+    10      l1.size, l2.size ← (l1.size + l2.size), 0;
+    11      l2.first ← l2.last ← NULL;
+    ```
 
     Uma otimização válida é unir sempre a lista **menor** dentro da **maior** (no pseudocódigo, `l1` é a maior lista e `l2` a menor).
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20164.png)
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20163.png)
+
+    Exemplo após `union(ds,1,4)`, `union(ds,4,5)`, `union(1,2)`, `union(ds,3,6)`: a lista 1 passa a conter `{1,4,5,2}` (representante `1`) e a lista 3 passa a conter `{3,6}` (representante `3`); as demais listas ficam vazias.
+
+    ??? note "Imagem de referência (diagrama)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20164.png)
 
 **Quick-union**
 
 Usa uma *parent pointer tree* (uma árvore onde cada filho aponta para seu pai), cuja raiz é o elemento representativo. Em código, isso equivale a uma array em que cada índice representa um nó, e `array[nó]` guarda o pai desse nó.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20165.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20165.png)
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20166.png)
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20166.png)
 
 Neste exemplo, o pai de `B` é o índice `0`, que corresponde a `A`.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20167.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20167.png)
 
 **Otimizações**: na união, priorizar unir pelo tamanho (número de nós) e depois pelo rank (tamanho da subárvore), desempatando pela ordem lexicográfica dos parâmetros.
 
 Uma segunda otimização (opcional) é a **compressão de caminhos** (*path compression*) no `find`: toda vez que percorremos o caminho de um nó até a raiz, tornamos esses nós **filhos diretos da raiz**, tornando `find`s futuros mais rápidos.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20168.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20168.png)
 
 !!! example "Compressão de caminhos"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20169.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20169.png)
 
     Ao unir `H` e `E`: o caminho de `H` até a raiz é `H → C → A`; o caminho de `E` é `E → D → F`. Sem compressão de caminhos, comparamos apenas o tamanho das subárvores: a subárvore de raiz `A` tem 4 nós, a de raiz `F` tem 5 — como `A` tem menos nós, `A` passa a apontar para `F`. Com compressão de caminhos, depois de descobrir as raízes via `find`, atualizamos diretamente o array de pais: `H` e `C` passam a apontar para `A`; `E` e `D` passam a apontar para `F`. Só então a união é realizada.
 
 !!! example "Algoritmo (com compressão de caminhos no find)"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20170.png)
+    ```
+    Algorithm: int find(DS ds, int curr)
+    1  if ds.A[curr] = NULL then return curr;
+    2  ds.A[curr] ← find(ds, ds.A[curr]);
+    3  return ds.A[curr];
 
-    Este pseudocódigo já inclui compressão de caminho no `find`, mas não tem otimização de rank/tamanho no `union`.
+    Algorithm: void union(DS ds, int a, int b)
+    1  root1 ← find(ds, a);
+    2  root2 ← find(ds, b);
+    3  if root1 ≠ root2 then ds.A[root2] ← root1;
+    ```
+
+    Este pseudocódigo já inclui compressão de caminho no `find` (linha 2, que reatribui `ds.A[curr]` diretamente à raiz encontrada), mas não tem otimização de rank/tamanho no `union`.
+
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20170.png)
 
 !!! example "Algoritmo de Kruskal completo"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20171.png)
+    ```
+    Algorithm: void Kruskal(Graph G, Graph G')
+    1   edgecnt ← 1;
+    2   for i ← 0 to n(G) - 1 do
+    3       w ← first(G, i);
+    4       while w < n(G) do
+    5           H[edgecnt++] ← (i, w, weight(G, i, w));
+    6           w ← next(G, i, w);
+    7   HeapBottomUp(H);
+    8   ds ← create_disjointSubset(n(G));
+    9   numMST ← n(G);
+    10  while numMST > 1 do
+    11      (v, u, wt) ← removemin(H);
+    12      if find(ds, v) ≠ find(ds, u) then
+    13          union(ds, v, u);
+    14          setEdge(G', v, u, wt);
+    15          numMST--;
+    ```
+
+    ??? note "Imagem de referência (slide)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20171.png)
 
     Teoricamente, usar uma heap construída via bottom-up é melhor (a `priority_queue` do C++ é top-down; para obter o melhor desempenho teórico, é necessário implementar a heap manualmente). Os parâmetros são o grafo original e um grafo `G'` onde é armazenada a MST final (pode ser substituído por uma array `V`, de forma similar ao algoritmo de Prim).
 
@@ -1583,7 +2024,8 @@ Uma segunda otimização (opcional) é a **compressão de caminhos** (*path comp
 
 Todos esses problemas são, pelo menos, **decidíveis** — mas existem problemas que nem isso: não são decidíveis por **nenhum** algoritmo (por exemplo, o *Halting Problem* e o *Entscheidungsproblem*).
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20172.png)
+??? note "Imagem de referência (diagrama)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20172.png)
 
 ### Algoritmos determinísticos vs. não-determinísticos
 
@@ -1592,39 +2034,46 @@ Todos esses problemas são, pelo menos, **decidíveis** — mas existem problema
 
 Algoritmos não-determinísticos operam em dois estágios: **adivinhação** (propor uma possível solução) e **verificação** (checar se a solução proposta é válida). Um algoritmo não-determinístico resolve um problema de decisão se, ao menos uma vez, consegue "adivinhar" uma solução e verificar sua validade. Formalmente, um algoritmo não-determinístico hipotético possui todos os comandos típicos de uma linguagem, mais um comando especial de salto não-determinístico (*nd-jump*).
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20173.png)
+??? note "Imagem de referência (diagrama)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20173.png)
 
 !!! example "k-clique"
     Dado um grafo $G = (V, E)$ não-direcionado e sem pesos, e $k \in \mathbb{N}$ com $k \leq |V|$: existe algum subgrafo completo de $G$ com $k$ vértices?
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20174.png)
+    ??? note "Imagem de referência (diagrama)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20174.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20175.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20175.png)
 
 ### Classes de complexidade
 
 **P** — classe dos problemas de decisão (resposta sim/não) resolvíveis em tempo polinomial por algoritmos **determinísticos**. Muitos problemas que não são, a princípio, problemas de decisão podem ser reduzidos a uma série de problemas de decisão.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20176.png)
+??? note "Imagem de referência (diagrama)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20176.png)
 
 **NP** — classe dos problemas de decisão resolvíveis em tempo polinomial por algoritmos **não-determinísticos** (ou seja, cuja fase de verificação é polinomial). O problema do k-clique é um exemplo clássico de problema em NP.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20177.png)
+??? note "Imagem de referência (diagrama)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20177.png)
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20178.png)
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20178.png)
 
 **NP-complete** — os problemas mais difíceis **dentro** da classe NP: todo problema em NP pode ser reduzido a eles em tempo polinomial.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20179.png)
+??? note "Imagem de referência (diagrama)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20179.png)
 
 Exemplos: SAT, 3-SAT e o problema do ciclo hamiltoniano.
 
 !!! example "3-SAT"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20180.png)
+    ??? note "Imagem de referência (diagrama)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20180.png)
 
 **NP-hard** — todos os problemas que são **pelo menos** tão difíceis quanto o problema mais difícil de NP (não precisam, necessariamente, estar em NP — podem ser ainda mais difíceis, até indecidíveis).
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20181.png)
+??? note "Imagem de referência (diagrama)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20181.png)
 
 ## Backtracking
 
@@ -1633,29 +2082,59 @@ O **backtracking** é uma estratégia que permite resolver instâncias maiores d
 A estratégia constrói (implícita ou explicitamente) uma **árvore do espaço de estados**: a partir de uma solução parcial, tentamos expandi-la até uma solução completa. Se, em algum ponto, a solução parcial se mostra não promissora, **retrocedemos** (*backtrack*) um passo e tentamos outra alternativa, recursivamente. A ideia é muito parecida com uma busca em profundidade (DFS) sobre um grafo implícito.
 
 !!! example "Problema das N-rainhas"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20182.png)
+    Posicionar `n` rainhas em um tabuleiro `n × n` de forma que nenhuma ataque outra. Para `n = 1` há solução trivial; para `n = 2` ou `n = 3` não há solução. Simplificação: atribuir uma coluna (ou linha) para cada rainha — começa com o tabuleiro vazio, tenta posicionar a primeira rainha na primeira posição possível; se possível, tenta posicionar a próxima; se não, tenta uma posição diferente para a rainha anterior; se todas as rainhas forem posicionadas, uma solução foi encontrada.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20183.png)
+    ```
+    Algorithm: bool qns(int l, int M[0..n-1, 0..n-1])
+    1  if l = n then return true;
+    2  else
+    3      for i ← 0 to n - 1 do
+    4          if valid(M, l, i) then
+    5              M[l][i] ← 1;
+    6              if qns(l + 1, M) then
+    7                  return true;
+    8              else M[l][i] ← 0;
+    9      return false;
+    ```
 
-    `Valid()` é a função que checa se a posição de uma rainha está na mesma coluna ou diagonal que outra rainha já posicionada.
+    `valid()` é a função que checa se a posição de uma rainha está na mesma coluna ou diagonal que outra rainha já posicionada.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20184.png)
+    ??? note "Imagem de referência (slides e árvore do espaço de estados para n=4)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20182.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20183.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20184.png)
 
 !!! example "Problema do circuito hamiltoniano"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20185.png)
+    Começa-se em um vértice arbitrário, avançando para os próximos até voltar ao primeiro. Se não for possível continuar, retrocede e tenta o próximo vértice — mesma lógica geral do backtracking aplicada à busca de um ciclo que visite todos os vértices exatamente uma vez.
+
+    ??? note "Imagem de referência (grafo de exemplo e árvore de busca)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20185.png)
 
 !!! example "Problema da soma de subconjuntos"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20186.png)
+    Dado $A = \{a_1, \ldots, a_n\}$ um conjunto de inteiros positivos, encontrar $A' \subseteq A$ tal que a soma dos elementos de $A'$ seja igual a $d \in \mathbb{N}$. É conveniente ordenar os elementos em ordem crescente. Retrocede (poda o ramo) se:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20187.png)
+    - $s + a_{i+1} > d$ (a soma parcial `s` já ficou grande demais), ou
+    - $\left(s + \sum_{j=i+1}^{n} a_j\right) < d$ (mesmo somando tudo que resta, a soma `s` ainda ficaria pequena demais).
+
+    Exemplo: $A = \{3, 5, 6, 7\}$ e $d = 15$. A árvore de busca explora, para cada elemento, os ramos "com" e "sem" esse elemento: começando com `3`, depois `5`, chega-se a `8`; incluindo `6` chega-se a `14` (`14 + 7 > 15`, poda); sem `6` mas com `7` chega-se a `15` — **solução**. Os demais ramos (`9`, `3`, `11`, `5`, `0`) são todos podados por excederem ou não conseguirem alcançar `15`.
+
+    ??? note "Imagem de referência (slide e árvore de busca)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20186.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20187.png)
 
 ## Branch and Bound
 
 Estratégia parecida com o backtracking, mas em vez de se assemelhar a uma busca em profundidade, se assemelha a uma busca em largura (mais precisamente, *best-first*, não estritamente *breadth-first*). A diferença crucial em relação ao BFS padrão é que o branch-and-bound incorpora critérios de corte (*bounding*) para eliminar ramos pouco promissores antes mesmo de explorá-los por completo.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20188.png)
+É um **problema de otimização**: minimizar ou maximizar alguma **função objetivo**. Uma solução é *factível* se satisfaz todas as restrições; é *ótima* se, além de factível, tem o melhor valor possível da função objetivo. Comparado ao backtracking, o branch-and-bound acrescenta dois elementos: para cada nó da árvore do espaço de estados, um **bound** (limite) sobre o melhor valor possível da função objetivo a partir dali; e o valor da **melhor solução encontrada até o momento**. Tipicamente, a expansão segue a estratégia *best-first*: nós cujo bound é pior que a melhor solução já encontrada são podados.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20189.png)
+??? note "Imagem de referência (slides)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20188.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20189.png)
 
 !!! tip "Como escolher um bom bound"
     Um bom limite (*bound*) precisa ser:
@@ -1666,14 +2145,28 @@ Estratégia parecida com o backtracking, mas em vez de se assemelhar a uma busca
     Encontrar esse equilíbrio é o principal desafio no projeto de um algoritmo branch-and-bound.
 
 !!! example "Problema da atribuição (Assignment Problem)"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20190.png)
+    Atribuir `n` pessoas a `n` tarefas de forma que o custo total da atribuição seja o menor possível. Por exemplo, com a matriz de custos (pessoa × tarefa)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20191.png)
+    $$C = \begin{bmatrix} 9 & 2 & 7 & 8 \\ 6 & 4 & 3 & 7 \\ 5 & 8 & 1 & 8 \\ 7 & 6 & 9 & 4 \end{bmatrix} \begin{matrix} \text{pessoa } a \\ \text{pessoa } b \\ \text{pessoa } c \\ \text{pessoa } d \end{matrix}$$
+
+    o **lower bound** é a soma do menor elemento de cada linha (não necessariamente uma solução factível).
+
+    Árvore de busca: o nó raiz tem `lb = 10`; expandindo a partir de `a`, os ramos `a→1` (`lb=17`), `a→3` (`lb=20`) e `a→4` (`lb=18`) são podados por terem bound pior que soluções já encontradas, restando `a→2` (`lb=10`); daí expande-se `b`, podando `b→3` (`lb=14`) e `b→4` (`lb=17`), restando `b→1` (`lb=13`); por fim, as duas atribuições possíveis para `c` e `d` dão `custo=13` (**solução ótima**) e `custo=25` (solução inferior). Existe também um algoritmo polinomial e determinístico para esse problema: o **método húngaro**.
+
+    ??? note "Imagem de referência (slides)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20190.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20191.png)
 
 !!! example "Problema do caixeiro viajante (TSP)"
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20192.png)
+    Encontrar o circuito hamiltoniano mais curto em um grafo `G`. **Lower bound**: para cada cidade $1 \le i \le n$, encontra-se a soma $s_i$ das distâncias às duas cidades mais próximas; computa-se $s = s_1 + \cdots + s_n$; o lower bound é $\lceil s/2 \rceil$ (ajustado conforme as arestas já selecionadas no ramo). Simplificações (sem perda de generalidade): considerar apenas tours que começam em um nó arbitrário; depois de visitar `n - 1` cidades, a última e a volta à origem já estão determinadas; se o grafo é não-direcionado, ignorar tours simétricos.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20193.png)
+    No exemplo, a árvore de busca parte de `lb = 14` no nó raiz; o ramo `(a,c)` é descartado porque `b` deveria vir antes de `c`; os ramos `(a,d)` e `(a,e)` são podados por terem bound pior que o de outro nó já expandido; seguindo por `(a,b)`, chega-se a três tours completos com comprimento `l = 24`, `19` e `16` — o de `l = 16` (`a,b,d,e,(c,a)`) é o **tour ótimo**.
+
+    ??? note "Imagem de referência (slides)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20192.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20193.png)
 
 ## Programação dinâmica
 
@@ -1684,73 +2177,198 @@ A **programação dinâmica** (DP) resolve um problema dividindo-o em subproblem
 - **Bottom-up (Tabulation)** — começamos pelos subproblemas menores e construímos gradualmente a solução do problema maior, preenchendo a tabela de baixo para cima.
 - **Top-down (Memoization)** — projetamos a solução final recursivamente e, à medida que a recursão desce aos subproblemas, guardamos (*memoizamos*) suas soluções em uma tabela, evitando recalcular um subproblema já resolvido.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20194.png)
+??? note "Imagem de referência (diagrama bottom-up vs. top-down)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20194.png)
 
 ### Exemplos
 
 #### Problema de Fibonacci
 
-Calcular o `n`-ésimo número de Fibonacci.
+Calcular o `n`-ésimo número de Fibonacci (assumindo `n ≥ 0`).
 
 Sem DP (recursão pura, recalcula os mesmos subproblemas repetidamente):
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20195.png)
+```
+Algorithm: int Fib(n)
+1  if n ≤ 1 then return n;
+2  else return Fib(n - 1) + Fib(n - 2);
+```
 
-Usando DP (memoization ou tabulation, cada subproblema é resolvido uma única vez):
+Usando DP (tabulation — cada subproblema é resolvido uma única vez, guardando os resultados em `F`):
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20196.png)
+```
+Algorithm: int Fib2(n)
+1  F[0], F[1] ← 0, 1;
+2  for i ← 2 to n do
+3      F[i] ← F[i - 1] + F[i - 2];
+4  return F[n];
+```
 
-A árvore de recursão de `Fibonacci(5)` sem DP evidencia a sobreposição de subproblemas (por exemplo, `Fib(3)` é calculado mais de uma vez):
+A árvore de recursão de `Fibonacci(5)` sem DP evidencia a sobreposição de subproblemas (por exemplo, `F(3)` e `F(2)` são calculados mais de uma vez, `F(1)` e `F(0)` várias vezes):
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20197.png)
+```
+                    F(5)
+              /            \
+           F(4)              F(3)
+          /    \            /    \
+       F(3)    F(2)       F(2)   F(1)
+      /   \    /  \       /  \
+   F(2)  F(1) F(1) F(0) F(1) F(0)
+   /  \
+ F(1) F(0)
+```
+
+??? note "Imagem de referência (slides e árvore de recursão)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20195.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20196.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20197.png)
 
 #### Problema da linha de moedas (Coin-Row)
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20198.png)
+Há uma fileira de `n` moedas cujos valores são inteiros positivos $c_1, c_2, \ldots, c_n$, não necessariamente distintos. Objetivo: pegar a maior quantia possível de dinheiro, sem pegar duas moedas adjacentes.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20199.png)
+Relação de recorrência: $F(n) = \max\{c_n + F(n-2),\ F(n-1)\}$, para $n > 1$; $F(0) = 0$ e $F(1) = c_1$.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20200.png)
+```
+Algorithm: int CoinRow(C[1..n])
+1  F[0], F[1] ← 0, C[1];
+2  for i ← 2 to n do
+3      F[i] ← max(C[i] + F[i - 2], F[i - 1]);
+4  return F[n];
+```
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20201.png)
+Exemplo com as moedas `5, 1, 2, 10, 6, 2`: `F[0] = 0`, `F[1] = c₁ = 5`; `F[2] = max{1+0, 5} = 5`; `F[3] = max{2+5, 5} = 7`; `F[4] = max{10+5, 7} = 15`; `F[5] = max{6+7, 15} = 15`; `F[6] = max{2+15, 15} = 17` (resposta final).
+
+??? note "Imagem de referência (slides e tabela de execução)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20198.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20199.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20200.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20201.png)
 
 #### Problema de troco (Change-making problem)
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20202.png)
+Dar troco para um valor `n` usando o número mínimo de moedas, com denominações $d_1 < d_2 < \ldots < d_m$ onde $d_1 = 1$ (assumindo moedas ilimitadas).
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20203.png)
+Relação de recorrência: $F(n) = \min_{j: n \ge d_j}\{F(n - d_j)\} + 1$, para $n > 0$; $F(0) = 0$.
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20204.png)
+```
+Algorithm: int ChangeMaking(D[1..m], n)
+1  F[0] ← 0;
+2  for i ← 1 to n do
+3      temp, j ← ∞, 1;
+4      while j ≤ m ∧ i ≥ D[j] do
+5          temp ← min(F[i - D[j]], temp);
+6          j ← j + 1;
+7      F[i] ← temp + 1;
+8  return F[n];
+```
+
+Exemplo com `n = 6` e denominações `1, 3, 4`: `F[0]=0`; `F[1]=min{F[0]}+1=1`; `F[2]=min{F[1]}+1=2`; `F[3]=min{F[2],F[0]}+1=1`; `F[4]=min{F[3],F[1],F[0]}+1=1`; `F[5]=min{F[4],F[2],F[1]}+1=2`; `F[6]=min{F[5],F[3],F[2]}+1=2` (resposta final: 2 moedas).
+
+??? note "Imagem de referência (slides e tabela de execução)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20202.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20203.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20204.png)
 
 #### Problema da mochila (Knapsack problem)
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20205.png)
+Dados `n` itens de peso $w_i$ e valor $v_i$ (com $i = 1 \ldots n$) e uma capacidade `W`, encontrar o subconjunto mais valioso de itens que cabe na capacidade da mochila.
+
+??? note "Imagem de referência (slide)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20205.png)
 
 **Bottom-up:**
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20206.png)
+```
+Algorithm: int Knapsack(n, W, w[1..n], v[1..n], F[0..n, 0..W])
+1  for i ← 0 to n do
+2      for j ← 0 to W do
+3          if i = 0 ∨ j = 0 then F[i][j] ← 0;
+4          else if w[i] ≤ j then
+               F[i][j] ← max(F[i-1][j], v[i] + F[i-1][j-w[i]]);
+5          else F[i][j] ← F[i-1][j];
+6  return F[n][W];
+```
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20207.png)
+Exemplo com capacidade máxima `5` e itens `(w₁,v₁)=(2,12)`, `(w₂,v₂)=(1,10)`, `(w₃,v₃)=(3,20)`, `(w₄,v₄)=(2,15)` — a tabela `F[i][j]` (linha = item considerado, coluna = capacidade) é preenchida célula a célula, chegando ao valor ótimo `F[4][5] = 37`:
+
+```
+capacidade j:     0   1   2   3   4   5
+i=0:              0   0   0   0   0   0
+i=1 (w=2,v=12):   0   0  12  12  12  12
+i=2 (w=1,v=10):   0  10  12  22  22  22
+i=3 (w=3,v=20):   0  10  12  22  30  32
+i=4 (w=2,v=15):   0  10  15  25  30  37
+```
+
+??? note "Imagem de referência (slide e tabela)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20206.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20207.png)
 
 **Top-down:**
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20208.png)
+A versão memoizada parte da tabela `F` preenchida com valores negativos (indicando "ainda não calculado") e só resolve, recursivamente, os subproblemas de fato necessários:
 
-![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20209.png)
+```
+Algorithm: int MFKnapsack(i, j, w[1..n], v[1..n], F[0..n, 0..W])
+1  if F[i][j] < 0 then
+2      if j < w[i] then value ← MFKnapsack(i - 1, j, w, v, F);
+3      else
+4          value ← max(MFKnapsack(i - 1, j, w, v, F),
+5                       v[i] + MFKnapsack(i - 1, j - w[i], w, v, F));
+6      F[i][j] ← value;
+7  return F[i][j];
+```
+
+Para o mesmo exemplo, apenas as células efetivamente visitadas pela recursão são calculadas (as demais ficam marcadas com `—`, nunca computadas):
+
+```
+capacidade j:     0   1   2   3   4   5
+i=0:              0   0   0   0   0   0
+i=1 (w=2,v=12):   0   0  12  12  12  12
+i=2 (w=1,v=10):   0   —  12  22   —  22
+i=3 (w=3,v=20):   0   —   —  22  30  32
+i=4 (w=2,v=15):   0   —   —   —   —  37
+```
+
+??? note "Imagem de referência (slide e tabela)"
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20208.png)
+
+    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20209.png)
 
 ## Algoritmos de aproximação
 
 Para alguns problemas (especialmente os NP-difíceis), encontrar a solução **ótima** é computacionalmente inviável. Uma alternativa prática é usar um **algoritmo de aproximação**, que busca uma solução **aceitável** (dentro de uma margem de erro conhecida em relação ao ótimo), mas não necessariamente ótima — em troca de uma eficiência muito maior.
 
 !!! example "Aproximação gulosa para o problema do caixeiro viajante (TSP)"
-    **Algoritmo do vizinho mais próximo (Nearest Neighbor)** — a cada passo, visita a cidade não visitada mais próxima da atual.
+    **Algoritmo do vizinho mais próximo (Nearest Neighbor)** — a cada passo, visita a cidade não visitada mais próxima da atual:
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20210.png)
+    1. Escolhe uma cidade arbitrária como partida.
+    2. Repete até todas as cidades terem sido visitadas: vai para a cidade não visitada mais próxima da última visitada (empates podem ser resolvidos arbitrariamente).
+    3. Retorna à cidade de partida.
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20211.png)
+    Exemplo: partindo de `a` no grafo `a-b-c-d` (arestas `ab=1`, `bc=2`, `cd=1`, `da=6`, `ac=3`, `bd=3`), o Nearest Neighbor dá `s_a = a-b-c-d-a`, com custo `10`. A solução ótima é `s* = a-b-d-c-a`, com custo `8` — uma razão de precisão $r(s_a) = \frac{10}{8} = 1{,}25$. Trocando o peso de `(a,d)` para `w`, a razão passa a ser $r(s_a) = \frac{4+w}{8}$, que pode crescer arbitrariamente — ou seja, o algoritmo não tem uma garantia de aproximação constante.
 
-    **Algoritmo baseado em MST** — constrói uma árvore geradora mínima sobre as cidades e deriva um tour aproximado a partir dela (por exemplo, percorrendo a MST em pré-ordem).
+    ??? note "Imagem de referência (slides)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20210.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20212.png)
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20211.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20213.png)
+    **Algoritmo baseado em MST** — constrói uma árvore geradora mínima sobre as cidades e deriva um tour aproximado a partir dela:
+
+    1. Constrói uma MST correspondente à instância do TSP.
+    2. A partir de um vértice arbitrário, percorre a MST (por exemplo, via DFS), registrando a ordem dos vértices visitados.
+    3. Elimina as ocorrências repetidas de cada vértice na lista obtida (exceto a primeira), exceto o vértice inicial ao final — isso equivale a criar atalhos no percurso. Os vértices restantes formam um circuito hamiltoniano, que é a saída do algoritmo.
+
+    ??? note "Imagem de referência (slides)"
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20212.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/algoritmos-e-estruturas-de-dados/Untitled%20213.png)

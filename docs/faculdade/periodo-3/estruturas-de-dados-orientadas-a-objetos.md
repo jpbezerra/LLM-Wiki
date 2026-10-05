@@ -12,19 +12,67 @@ C++ é uma linguagem orientada a objetos com **grande controle sobre a memória*
 
 C++ oferece uma variedade de tipos inteiros e de ponto flutuante, cada um com um intervalo de valores e um tamanho em memória diferentes:
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image.png)
+**Tipos inteiros e `char`:**
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%201.png)
+| Type | Size | Range of Values (decimal) |
+|---|---|---|
+| `char` | 1 byte | -128 a +127 ou 0 a 255 |
+| `unsigned char` | 1 byte | 0 a 255 |
+| `signed char` | 1 byte | -128 a +127 |
+| `int` | 2 bytes resp. 4 bytes | -32768 a +32767 resp. -2147483648 a +2147483647 |
+| `unsigned int` | 2 bytes resp. 4 bytes | 0 a 65535 resp. 0 a 4294967295 |
+| `short` | 2 bytes | -32768 a +32767 |
+| `unsigned short` | 2 bytes | 0 a 65535 |
+| `long` | 4 bytes | -2147483648 a +2147483647 |
+| `unsigned long` | 4 bytes | 0 a 4294967295 |
+
+**Tipos de ponto flutuante:**
+
+| Type | Size | Range of Values | Lowest Positive Value | Accuracy (decimal) |
+|---|---|---|---|---|
+| `float` | 4 bytes | -3.4E+38 | 1.2E-38 | 6 dígitos |
+| `double` | 8 bytes | -1.7E+308 | 2.3E-308 | 15 dígitos |
+| `long double` | 10 bytes | -1.1E+4932 | 3.4E-4932 | 19 dígitos |
+
+??? note "Fotos do livro-texto (tabelas de tipos)"
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image.png)
+
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%201.png)
 
 A linguagem também define uma sequência de **caracteres especiais** (sequências de escape, como `\n`, `\t`, `\\`), usadas para representar caracteres que não podem ser digitados diretamente em uma string:
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%202.png)
+| Caractere | Significado | Código ASCII (decimal) |
+|---|---|---|
+| `\a` | alert (BEL) | 7 |
+| `\b` | backspace (BS) | 8 |
+| `\t` | horizontal tab (HT) | 9 |
+| `\n` | line feed (LF) | 10 |
+| `\v` | vertical tab (VT) | 11 |
+| `\f` | form feed (FF) | 12 |
+| `\r` | carriage return (CR) | 13 |
+| `\"` | " (double quote) | 34 |
+| `\'` | ' (single quote) | 39 |
+| `\?` | ? (question mark) | 63 |
+| `\\` | \ (backslash) | 92 |
+| `\0` | caractere terminador de string | 0 |
+| `\ooo` (até 3 dígitos octais) | valor numérico de um caractere | ooo (octal) |
+| `\xhh` (dígitos hexadecimais) | valor numérico de um caractere | hh (hexadecimal) |
+
+??? note "Foto do livro-texto (tabela de caracteres especiais)"
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%202.png)
 
 ### Macros
 
 **Macros** são comandos que permitem a substituição de texto *antes* de o código ser compilado, usando a diretiva `#define`:
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%203.png)
+```cpp
+#define DELAY  10000000L
+#define CLS    (cout << "\033[2J")          // Clear screen
+#define LOCATE(z,s) (cout << "\033[" << z << ';' << s << 'H') // Positiona o cursor
+```
+
+??? note "Foto do livro-texto (exemplo de macros)"
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%203.png)
 
 Além do `#define`, o pré-processador do C++ oferece outras diretivas relacionadas:
 
@@ -66,11 +114,31 @@ Além do `#define`, o pré-processador do C++ oferece outras diretivas relaciona
 | `scientific` | Exibe em notação científica. |
 | `setprecision(int n)` | Define a precisão (número de dígitos) de um `float` ou `double`. |
 
-Os manipuladores atuam sobre *fields* (campos) específicos da formatação:
+Os manipuladores atuam sobre *fields* (campos) específicos da formatação, por meio de métodos e manipuladores dedicados:
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%204.png)
+**Element functions for output in fields:**
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%205.png)
+| Método | Efeito |
+|---|---|
+| `int width() const;` | Retorna o field width mínimo usado. |
+| `int width(int n);` | Define o field width mínimo como `n`. |
+| `int fill() const;` | Retorna o caractere de preenchimento usado. |
+| `int fill(int ch);` | Define o caractere de preenchimento como `ch`. |
+
+**Manipulators for output in fields:**
+
+| Manipulador | Efeito |
+|---|---|
+| `setw(int n)` | Define o field width mínimo como `n`. |
+| `setfill(int ch)` | Define o caractere de preenchimento como `ch`. |
+| `left` | Alinha a saída à esquerda nos campos. |
+| `right` | Alinha a saída à direita nos campos. |
+| `internal` | Alinha o sinal à esquerda e o valor numérico à direita. |
+
+??? note "Fotos do livro-texto (tabelas de manipuladores de campo)"
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%204.png)
+
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%205.png)
 
 O método **`.setf()`** faz parte da classe `std::ios`, sendo, portanto, aplicável a todas as classes de `iostream`. Ele é usado para configurar *flags* que definem o comportamento de uma stream. Sua sintaxe é `stream.setf(flag, mask)`, em que `flag` define qual funcionalidade se quer modificar, e `mask` (opcional) determina qual configuração está sendo modificada — por exemplo, `cout.setf(std::ios::showpos)`. O método **`.unsetf()`** faz o inverso de `.setf()`.
 
@@ -88,9 +156,10 @@ Strings em C++ (via `std::string`) suportam uma série de operações convenient
 
 ### Funções
 
-Em C++, é possível declarar **protótipos de funções** separadamente da sua implementação — útil para organizar código em arquivos de cabeçalho. Quando uma função é chamada, a pilha de execução (*stack*) do programa registra o estado da chamada:
+Em C++, é possível declarar **protótipos de funções** separadamente da sua implementação — útil para organizar código em arquivos de cabeçalho. Quando uma função é chamada, a pilha de execução (*stack*) do programa registra o estado da chamada: ao entrar na função (`push`), são empilhados, de baixo para cima, o último parâmetro, ..., o primeiro parâmetro, o **return address** (endereço de retorno) e outros objetos locais; ao retornar (`pop`), essa pilha é desempilhada na ordem inversa.
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%206.png)
+??? note "Foto do livro-texto (pilha de execução de uma chamada de função)"
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%206.png)
 
 Uma **inline function** é uma função em que o compilador tenta expandir o próprio corpo da função diretamente no ponto onde ela é chamada, em vez de realizar uma chamada de função tradicional (com todo o custo de salvar/restaurar a pilha). O compilador já considera, por padrão, que funções definidas dentro de uma classe são inline — não é preciso usar explicitamente a palavra-chave `inline`, a não ser que o compilador decida que a função é muito grande, envolve operações complexas demais, ou que a expansão inline não traria ganho de desempenho. Inline é útil, portanto, para funções pequenas e simples.
 
@@ -204,17 +273,27 @@ Um **ponteiro** é um tipo de variável cujo valor corresponde a um endereço de
 
 ### Arrays e ponteiros
 
-Em C++, arrays e ponteiros estão intimamente relacionados: o nome de um array, por si só, já se comporta como um ponteiro para o seu primeiro elemento.
+Em C++, arrays e ponteiros estão intimamente relacionados: o nome de um array, por si só, já se comporta como um ponteiro para o seu primeiro elemento. Dado um array `arr`, a relação entre o ponteiro e os elementos é:
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%207.png)
+| Expressão | Aponta para | Equivalente a |
+|---|---|---|
+| `arr` | `arr[0]` | — |
+| `arr + 1` | `arr[1]` | — |
+| `arr + 2` | `arr[2]` | — |
+| `arr + 3` | `arr[3]` | — |
 
-Por exemplo, em `int* ptr = arr;`, o ponteiro `ptr` passa a apontar para `arr[0]`. A partir disso, as três formas de expressão abaixo são equivalentes:
+??? note "Foto do livro-texto (relação entre ponteiros e elementos do array)"
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%207.png)
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%208.png)
+Por exemplo, em `int* ptr = arr;`, o ponteiro `ptr` passa a apontar para `arr[0]`. A partir disso, as três formas de expressão abaixo são equivalentes: **`&arr[i]`**, **`arr + i`** e **`ptr + i`**.
 
-E, de forma mais geral, as quatro formas abaixo também são equivalentes entre si:
+??? note "Foto do livro-texto (formas equivalentes de endereço)"
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%208.png)
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%209.png)
+E, de forma mais geral, as quatro formas abaixo também são equivalentes entre si: **`arr[i]`**, **`*(arr + i)`**, **`*(ptr + i)`** e **`ptr[i]`**.
+
+??? note "Foto do livro-texto (formas equivalentes de acesso)"
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%209.png)
 
 ### Exception handling (tratamento de exceções)
 
@@ -251,9 +330,23 @@ Dentro de uma classe, existe um ponteiro embutido chamado **`this`**, que repres
 
 #### Operadores
 
-Os operadores convencionais (`+`, `-`, `==` etc.) podem ser **reprogramados** (sobrecarregados) para uma classe:
+Os operadores convencionais (`+`, `-`, `==` etc.) podem ser **reprogramados** (sobrecarregados) para uma classe, por exemplo, para uma classe `DayTime`:
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%2010.png)
+```cpp
+bool operator<(const DayTime& t) const // compare *this and t
+{
+    return asSeconds() < t.asSeconds();
+}
+
+DayTime& operator++() // Increment seconds and handle overflow.
+{
+    ++second;
+    return *this;
+}
+```
+
+??? note "Foto do livro-texto (sobrecarga de operadores)"
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%2010.png)
 
 Com isso, objetos de uma classe podem ser usados em operações aritméticas e lógicas, e o que acontece exatamente depende de como o operador foi implementado para aquela classe.
 
@@ -581,7 +674,14 @@ Nesse exemplo, a classe `Dog` herda o método `eat()` de `Animal`, além de ter 
 
 Em C++, o tipo de herança é determinado pelo especificador de acesso usado (`public`, `protected` ou `private`). Um caso especial é o modificador **`protected`**: membros protegidos são inacessíveis diretamente fora da classe, mas são acessíveis pelas classes que herdam dela.
 
-![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%2011.png)
+| Aspecto | `private` | `protected` |
+|---|---|---|
+| Acesso direto | Apenas pela própria classe. | Pela própria classe e classes derivadas. |
+| Classes derivadas | Não podem acessar membros `private` diretamente. | Podem acessar membros `protected` diretamente. |
+| Objetivo | Esconde completamente os membros de outros contextos. | Oferece acesso controlado para classes derivadas. |
+
+??? note "Foto do livro-texto (private vs. protected)"
+    ![image.png](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/image%2011.png)
 
 Os construtores da classe base **não são herdados automaticamente**, mas podem (e normalmente devem) ser chamados explicitamente a partir da classe derivada.
 
@@ -858,7 +958,11 @@ Antes de estudar estruturas de dados específicas, é importante entender a term
 
 Em linguagens orientadas a objetos, o ADT, juntamente com sua implementação, corresponde a uma **classe**, e cada operação associada ao ADT é implementada por um **método**. Um **objeto** é uma instância de uma classe — algo criado que efetivamente ocupa espaço de armazenamento durante a execução do programa. As variáveis que definem o espaço necessário para armazenar um item de dado são chamadas de **data members** (membros de dado).
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2032.png)
+!!! quote "Data structure vs. file structure"
+    O termo "data structure" costuma se referir a dados armazenados na memória principal de um computador. O termo relacionado **file structure** costuma se referir à organização de dados em armazenamento periférico, como um disco rígido ou CD.
+
+??? note "Foto do livro-texto (trecho original)"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2032.png)
 
 ### Listas
 
@@ -1028,15 +1132,16 @@ Essa abordagem utiliza ponteiros e alocação de memória dinâmica, em vez de u
 
 Na classe da lista propriamente dita, costuma haver três ponteiros: um apontando para o início da lista (`head`), outro para o final (`tail`) e outro para a posição do elemento atual (`curr`). Diferentemente das listas baseadas em array, **não é preciso declarar um tamanho fixo** quando a lista encadeada é criada — por isso, o parâmetro de tamanho é dispensável nesse tipo de implementação.
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2033.png)
+??? note "Diagrama de referência (nó de uma lista encadeada simples)"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2033.png)
 
 Existem ainda variações sobre a lista encadeada simples:
 
 - **Doubly Linked Lists (listas duplamente encadeadas)** — cada nó mantém dois ponteiros: um para o próximo nó e outro para o nó anterior, permitindo percorrer a lista em ambas as direções.
-
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2034.png)
-
 - **Circular Linked Lists (listas circulares)** — o último nó da lista aponta de volta para o primeiro (em vez de apontar para `nullptr`), formando um ciclo.
+
+??? note "Diagramas de referência (lista duplamente encadeada e lista circular)"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2034.png)
 
     ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2035.png)
 
@@ -1059,7 +1164,8 @@ Uma **pilha (stack)** é uma estrutura semelhante a uma lista, mas na qual os el
 
 Na prática, quase sempre se usa a disciplina **LIFO**. O exemplo clássico para entender esse comportamento é uma pilha de pratos: o último prato colocado é o primeiro a ser removido. Essa restrição torna a pilha menos flexível do que uma lista genérica, mas não compromete sua eficiência — pelo contrário, é justamente essa restrição que permite implementações extremamente simples e rápidas.
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2036.png)
+??? note "Diagrama de referência (push/pop em uma pilha, LIFO)"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2036.png)
 
 #### Operações básicas
 
@@ -1156,7 +1262,8 @@ Ambas as abordagens (array e encadeada) são eficientes para as operações típ
 
 Assim como as pilhas, as **filas (queues)** são estruturas semelhantes a uma lista, que fornecem acesso restrito aos seus elementos. A diferença central é a disciplina de acesso: os elementos são inseridos no **final** da fila (operação `enqueue`) e removidos do **início** da fila (operação `dequeue`) — seguindo a disciplina **FIFO** (*First In, First Out*).
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2037.png)
+??? note "Diagrama de referência (enqueue/dequeue em uma fila, FIFO)"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2037.png)
 
 #### Operações básicas
 
@@ -1287,9 +1394,19 @@ Na computação, as operações mais utilizadas sobre sets são: **encontrar** u
 
 Diversas aplicações práticas também requerem a **partição dinâmica** de um conjunto de `n` elementos em uma coleção de subconjuntos disjuntos: depois de inicializada como uma coleção de `n` subconjuntos de um único elemento cada, essa coleção fica sujeita a uma sequência de operações mistas de **união** e **busca** — o chamado **problema de união de conjuntos** (*union-find*).
 
-O ADT de um dicionário, de forma esquemática, é representado abaixo:
+O ADT de um dicionário, de forma esquemática, é representado pelas seguintes operações:
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2038.png)
+```cpp
+void clear(Dictionary d);
+void insert(Dictionary d, Key k, E e);  // refletir sobre: múltiplas entradas
+E remove(Dictionary d, Key k);          // refletir sobre: múltiplas entradas
+E removeAny(Dictionary d);              // alternativa: getKeys
+E find(Dictionary d, Key k);            // refletir sobre: múltiplas entradas
+int size(Dictionary d);
+```
+
+??? note "Foto do livro-texto (ADT do dicionário)"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2038.png)
 
 ---
 
@@ -1297,7 +1414,8 @@ O ADT de um dicionário, de forma esquemática, é representado abaixo:
 
 Uma **árvore** (mais precisamente, uma *árvore livre*) é um grafo **conectado** e **acíclico**. Um grafo acíclico, mas não necessariamente conectado, é chamado de **floresta** (uma coleção de árvores desconexas entre si).
 
-![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2039.png)
+??? note "Diagrama de referência (exemplo de árvore e de floresta)"
+    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2039.png)
 
 ### Árvores enraizadas
 
@@ -1329,7 +1447,9 @@ Uma **BST** é uma árvore binária ordenada em que cada vértice representa um 
 
 A raiz da árvore é o único vértice que não é filho de ninguém (não possui pai) — a árvore inteira é organizada em torno do valor da raiz. Para implementar uma BST, é necessário que cada vértice mantenha ponteiros para seus filhos (esquerdo e direito).
 
-!!! example
+??? example "Exemplo de BST (raiz 9)"
+    Árvore com raiz `9`: à esquerda, `5` (com filhos `1` e `7`, e `1` tendo ainda um filho à direita `4`); à direita, `12` (com filho à esquerda `10`). A mesma árvore pode ser representada com ponteiros explícitos de filho esquerdo/direito (`null` quando não há filho):
+
     ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2040.png)
 
     ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2041.png)
@@ -1343,39 +1463,42 @@ A raiz da árvore é o único vértice que não é filho de ninguém (não possu
 Na pré-ordem, percorremos primeiro a **raiz**, depois a **subárvore esquerda** e, por fim, a **subárvore direita** — tudo de forma recursiva. Ou seja: visita-se o vértice atual; em seguida, percorre-se (recursivamente, em pré-ordem) toda a subárvore à esquerda; só depois disso percorre-se (também recursivamente, em pré-ordem) toda a subárvore à direita.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2042.png)
-
     Pré-ordem: 37 (raiz), 24 (filho à esquerda da raiz), 7 (neto à esquerda-esquerda da raiz), 2 (bisneto à esquerda-esquerda-esquerda da raiz), 32 (neto à esquerda-direita da raiz), 42 (filho à direita da raiz), 40 (neto à direita-esquerda da raiz), 42 (neto à direita-direita da raiz), 120 (bisneto à direita-direita da raiz).
 
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2043.png)
+    Pré-ordem (segunda árvore, com valores representados em 4 dígitos): 5, 3, 2, 1, 4, 7, 6, 8, 7, 12, 9, 14, 23, 21, 18, 56.
 
-    Pré-ordem: 5, 3, 2, 1, 4, 7, 6, 8, 7, 12, 9, 14, 23, 21, 18, 56.
+    ??? note "Diagramas de referência (as duas árvores do exemplo)"
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2042.png)
+
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2043.png)
 
 #### In-order (em-ordem)
 
 Na em-ordem, percorremos primeiro toda a **subárvore esquerda**, depois a **raiz**, e por fim toda a **subárvore direita** — também recursivamente. Em uma BST válida, percorrer os vértices em-ordem produz exatamente os valores em **ordem não decrescente** — essa é, de fato, uma das propriedades mais úteis da travessia em-ordem.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2044.png)
-
     Em-ordem: 2, 7, 24, 32, 37, 40, 42, 42, 120.
 
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2045.png)
+    Em-ordem (segunda árvore): 1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 12, 14, 18, 21, 23, 56.
 
-    Em-ordem: 1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 12, 14, 18, 21, 23, 56.
+    ??? note "Diagramas de referência (as duas árvores do exemplo)"
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2044.png)
+
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2045.png)
 
 #### Post-order (pós-ordem)
 
 Na pós-ordem, percorremos primeiro toda a **subárvore esquerda**, depois toda a **subárvore direita**, e só então a **raiz** — ou seja, a raiz é a última coisa visitada em cada subárvore.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2046.png)
-
     Pós-ordem: 2, 7, 32, 24, 40, 120, 42, 42, 37.
 
-    ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2047.png)
+    Pós-ordem (segunda árvore): 1, 2, 4, 3, 6, 7, 9, 18, 21, 56, 23, 14, 12, 8, 7, 5.
 
-    Pós-ordem: 1, 2, 4, 3, 6, 7, 9, 18, 21, 56, 23, 14, 12, 8, 7, 5.
+    ??? note "Diagramas de referência (as duas árvores do exemplo)"
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2046.png)
+
+        ![Untitled](../../assets/faculdade/periodo3/estruturas-de-dados-orientadas-a-objetos/Untitled%2047.png)
 
 !!! tip "Quando usar cada travessia"
     - **Pré-ordem** é útil para *copiar* uma árvore (criar um clone), já que a raiz é processada antes das subárvores.

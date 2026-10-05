@@ -11,7 +11,8 @@ R é a linguagem da ciência de dados: é livre, de código aberto, e conta com 
 
 A atribuição de valores a variáveis pode ser feita de três formas:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled.png)
 
 ```r
 var = "Example"
@@ -64,19 +65,21 @@ var <- "Example" # também existe <<- (torna a variável global)
 
 Representa o conjunto de todos os números reais; números com ponto decimal são representados usando esse tipo, que utiliza o formato de ponto flutuante de precisão dupla (double) para representar valores numéricos. Mesmo que um número inteiro seja atribuído a uma variável, ele ainda é salvo como um valor numérico.
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%201.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%201.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%202.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%202.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%203.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%203.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%204.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%204.png)
 
 Quando o R armazena um número em uma variável, ele converte o valor para um "double", ou um tipo decimal com, no mínimo, duas casas decimais. Isso significa que um valor como "5" é armazenado como `5.00`, com tipo `double` e classe `numeric`; o fato de `y` não ser um inteiro pode ser confirmado com a função `is.integer()`.
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%205.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%205.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%206.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%206.png)
 
 ### Integer
 
@@ -174,12 +177,14 @@ Uma string é, essencialmente, um array de caracteres. Uma string vazia é repre
 
 Para obter o comprimento de uma string, usamos `str_length()`, do pacote `stringr`.
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%207.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%207.png)
 
 - Saída: `5`
 - Também podemos usar `nchar()`, que é uma função nativa (built-in):
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%208.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%208.png)
 
     - Saída: `6`
 
@@ -187,43 +192,48 @@ Para obter o comprimento de uma string, usamos `str_length()`, do pacote `string
 
 Para obter uma parte de uma string (substring), podemos usar `substr()` ou `substring()`; a sintaxe de ambas as funções é `funcao(string, indice_inicial, indice_final)`.
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%209.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%209.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2010.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2010.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2011.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2011.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2012.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2012.png)
 
 Combinando `length()` com substring, podemos fazer *slicing* de strings:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2013.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2013.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2014.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2014.png)
 
 **Conversão de caixa (case)**
 
 Usamos `toupper()` para obter a versão em maiúsculas, `tolower()` para minúsculas, e também podemos usar `casefold(..., upper = TRUE)` para obter maiúsculas (o valor de `upper` em `casefold()` é `FALSE` por padrão).
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2015.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2015.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2016.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2016.png)
 
 **Concatenação**
 
 Podemos concatenar strings usando a função `paste()` (a melhor opção, na minha opinião), entre outras.
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2017.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2017.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2018.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2018.png)
 
 **Atualizando strings**
 
 Podemos atualizar uma string usando a função `gsub()` (sintaxe: `gsub(palavra_que_quero_trocar, palavra_para_substituir, minha_string)`).
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2019.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2019.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2020.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2020.png)
 
 ### Vector
 
@@ -233,23 +243,26 @@ Um vetor é uma coleção ordenada de tipos básicos de dados com um comprimento
 
 Normalmente usamos a função `c()` para criar um vetor, cujos argumentos são os elementos que compõem o vetor. Outra função útil é `seq()`, que cria uma sequência de valores contínuos (sintaxe: `seq(primeiro_elemento, segundo_elemento, length.out)`). Por fim, podemos usar `:` para criar um vetor: basta colocar valores antes e depois do `:`, e ele retornará um vetor de valores contínuos.
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2021.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2021.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2022.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2022.png)
 
 Para obter o comprimento de um vetor, usamos a função `length()`:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2023.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2023.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2024.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2024.png)
 
 **Acessando elementos**
 
 Para acessar os elementos do vetor, usamos o operador de indexação `[]`, lembrando que o vetor é baseado em 1 (1-based):
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2025.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2025.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2026.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2026.png)
 
 Também podemos acessar múltiplos índices usando `c()` dentro do índice.
 
@@ -257,25 +270,29 @@ Também podemos acessar múltiplos índices usando `c()` dentro do índice.
 
 Podemos modificar um elemento específico, um subvetor ou o vetor inteiro:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2027.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2027.png)
 
 - Na primeira modificação, mudamos o vetor de `(2, 7, 9, 8, 2)` para `(2, 9, 1, 7, 8, 2)`.
 - Na segunda modificação, alteramos os índices de 1 a 5, colocando `0` em todos eles — vetor antes: `(2, 9, 1, 7, 8, 2)`; vetor depois: `(0, 0, 0, 0, 0, 2)`.
 - Na última modificação, trocamos o vetor `X`, com 6 posições, por outro vetor com 3 posições — que correspondem ao terceiro, segundo e primeiro elementos originais, nessa ordem — vetor antes: `(0, 0, 0, 0, 0, 2)`; vetor depois: `(0, 0, 0)`.
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2028.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2028.png)
 
 **Deletando um vetor**
 
 Podemos simplesmente atribuir `NULL` ao vetor:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2029.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2029.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2030.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2030.png)
 
 Outra forma:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2031.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2031.png)
 
 - Deletando os elementos 3, 4 e 5, caso estejam no vetor.
 
@@ -283,7 +300,8 @@ Outra forma:
 
 Podemos usar a função `sort()` para ordenar os elementos de um vetor em ordem crescente ou decrescente — `sort()` tem o argumento `decreasing`, que é `FALSE` por padrão, mas que, se `TRUE`, ordena em ordem decrescente.
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2032.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2032.png)
 
 ### Matrices
 
@@ -293,7 +311,8 @@ Uma matriz é um array bidimensional.
 
 Para criar uma matriz, usamos a função `matrix()`:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2033.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2033.png)
 
 !!! example
     ```r
@@ -384,7 +403,8 @@ cat('\014')
 
 Matriz diagonal — para criar uma matriz diagonal usamos a função `diag()`:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2034.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2034.png)
 
 ```r
 my_matrix <- diag(c(4, 9, 8), 3, 3)
@@ -809,19 +829,22 @@ Uma lista é como um vetor, mas com elementos de dados heterogêneos — podemos
 
 Para criar uma lista usamos a função `list()`:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2035.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2035.png)
 
 Nesse exemplo, criamos uma lista cujo primeiro índice contém um vetor de IDs, o segundo índice contém um vetor de nomes, e o terceiro índice contém o número de funcionários:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2036.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2036.png)
 
 **Lista nominada**
 
 Os índices `[[1]]`, `[[2]]` e `[[3]]` são os índices da lista, e `[1]` é o índice interno de um vetor dentro de um desses índices; podemos nomear os índices `[[1]]`, `[[2]]` e `[[3]]` atribuindo nomes aos vetores dentro da função `list()`:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2037.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2037.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2038.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2038.png)
 
 Agora temos o que se chama de lista nominada (*named list*).
 
@@ -829,9 +852,10 @@ Agora temos o que se chama de lista nominada (*named list*).
 
 Todos os componentes de uma lista podem ser nomeados, e podemos usar esses nomes para acessá-los usando o operador cifrão (`$`):
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2039.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2039.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2040.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2040.png)
 
 Também podemos acessar os componentes usando o operador de dupla indexação `[[...]]`; para acessar um nível interno, precisamos acrescentar outro `[...]` junto ao operador de dupla indexação. Dentro desses colchetes podemos colocar o índice ou o nome atribuído a ele (caso a lista seja nominada).
 
@@ -905,21 +929,23 @@ print(empList[[1]][4])
 
 Modificamos da mesma forma que acessamos os componentes, mas atribuindo um valor a esse acesso:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2041.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2041.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2042.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2042.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2043.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2043.png)
 
 **Concatenação de listas**
 
 Para concatenar listas, podemos usar a função `c()` passando listas como argumentos:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2044.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2044.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2045.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2045.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2046.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2046.png)
 
 **Adicionando itens**
 
@@ -1182,7 +1208,8 @@ Arrays são estruturas de armazenamento de dados definidas por um número fixo d
 
 Para criar um array usamos a função `array()`:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2047.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2047.png)
 
 Se quisermos criar um vetor usamos `c()`, e se quisermos criar uma matriz usamos `matrix()`. Também podemos criar uma matriz usando `array()`:
 
@@ -1639,15 +1666,17 @@ cat('\014')
 Usados para armazenar dados tabulares.
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2048.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2048.png)
 
 **Criação**
 
 Para criar um data frame, usamos a função `data.frame()`:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2049.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2049.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2050.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2050.png)
 
 ```r
 # Programa R para criar um data frame
@@ -1696,7 +1725,8 @@ Para ler uma entrada, podemos usar as funções `scan()` ou `readline()`.
 
 Sempre converte a entrada para string, então precisamos usar `as.data_type()` para converter. Se quisermos múltiplas entradas, podemos usar colchetes e colocar `readline()` dentro deles:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2051.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2051.png)
 
 Dentro da função, podemos escrever um prompt, como a função `input()` do Python.
 
@@ -1704,70 +1734,82 @@ Dentro da função, podemos escrever um prompt, como a função `input()` do Pyt
 
 Recebe entradas continuamente; para terminar o processo de entrada, precisamos pressionar Enter duas vezes no console.
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2052.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2052.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2053.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2053.png)
 
 Podemos especificar o tipo da entrada com o argumento `what`, seguido da função do tipo de dado:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2054.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2054.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2055.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2055.png)
 
 Também podemos ler arquivos com esse método:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2056.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2056.png)
 
 ## Output
 
 No R, temos a função `print()` para gerar saída, que pode imprimir uma string ou uma variável:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2057.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2057.png)
 
 Podemos usar `paste()` dentro de `print()` para imprimir string e variável juntas (existe também `paste0()`, que basicamente não adiciona um espaço "entre" as vírgulas):
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2058.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2058.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2059.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2059.png)
 
 **Argumentos de `print()`**
 
 - `quote` — podemos remover as aspas (ao imprimir uma string ou char) simplesmente colocando `quote = FALSE`.
 - `digits` — podemos definir o número mínimo de dígitos significativos.
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2060.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2060.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2061.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2061.png)
 
 - `na.print` — indica o que será impresso caso o valor seja `NA`.
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2062.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2062.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2063.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2063.png)
 
 Também podemos imprimir apenas escrevendo no console o nome da variável:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2064.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2064.png)
 
 Outra função de saída é `sprintf()`, que é literalmente a função da biblioteca C, com especificadores de formato:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2065.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2065.png)
 
 Outra forma de gerar saída é usando a função `cat()`, que é basicamente as funções `print()` + `paste()` juntas (converte os argumentos em strings de caracteres):
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2066.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2066.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2067.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2067.png)
 
 Também existe `message()`, mas essa função não é usada para saída normal — é usada para mostrar mensagens de diagnóstico simples, que não são avisos nem erros no programa, mas que também podem ser usadas para saída comum:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2068.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2068.png)
 
 Também podemos escrever um arquivo com a saída do programa usando `write()`, com a opção `table` para escrever o arquivo:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2069.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2069.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2070.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2070.png)
 
 Para limpar o terminal no RStudio podemos usar `cat("\014")`.
 
@@ -1775,7 +1817,8 @@ Para limpar o terminal no RStudio podemos usar `cat("\014")`.
 
 Comentários podem ser feitos usando `#`; apenas comentários de uma linha são suportados nativamente. Mas podemos fazer comentários com mais de uma linha usando este truque:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2071.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2071.png)
 
 - Saída: `[1] "This is fun!"`
 
@@ -1785,9 +1828,10 @@ Comentários podem ser feitos usando `#`; apenas comentários de uma linha são 
 
 `+` (soma), `-` (subtração), `*` (multiplicação), `/` (divisão), `^` (potência), `%%` (módulo/resto), `%/%` (quociente inteiro):
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2072.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2072.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2073.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2073.png)
 
 ### Lógicos
 
@@ -1796,37 +1840,42 @@ Os operadores lógicos em R simulam operações de decisão elemento a elemento,
 - **Elemento a elemento**: `&` (And — qualquer valor inteiro diferente de zero é considerado `TRUE`), `|` (Or).
 - **Escalares**: `!` (Not), `&&` (And), `||` (Or).
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2074.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2074.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2075.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2075.png)
 
 ### Relacionais
 
 `<` (menor que), `<=` (menor ou igual a), `>` (maior que), `>=` (maior ou igual a), `!=` (diferente de), `==` (igual a):
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2076.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2076.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2077.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2077.png)
 
 ### Diversos (miscellaneous)
 
 **`%in%`** — verifica se um elemento pertence a uma lista, retornando um valor booleano:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2078.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2078.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2079.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2079.png)
 
 **`%*%`** — operador para multiplicar uma matriz pela sua transposta:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2080.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2080.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2081.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2081.png)
 
 ## Conditionals
 
 Existem `if`'s, `else if`'s e `else`'s, com estrutura similar à do C/C++:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2082.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2082.png)
 
 !!! warning
     Os `else if`'s e `else`'s precisam vir estritamente logo após o fechamento das chaves; caso contrário, o código não roda.
@@ -1835,23 +1884,26 @@ Existem `if`'s, `else if`'s e `else`'s, com estrutura similar à do C/C++:
 
 É uma expressão condicional que tem uma lista de casos — se um deles for encontrado (match), algo acontece:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2083.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2083.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2084.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2084.png)
 
 Os casos podem ser qualquer coisa, inclusive outras saídas:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2085.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2085.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2086.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2086.png)
 
 - Se atribuirmos uma variável a uma instrução `switch`, e nenhum caso corresponder, ela retorna o valor `NULL`.
 
 Se quisermos um caso padrão (default), basta não atribuir nada a ele (deixar sem valor correspondente):
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2087.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2087.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2088.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2088.png)
 
 ## Loops
 
@@ -1859,17 +1911,20 @@ Se quisermos um caso padrão (default), basta não atribuir nada a ele (deixar s
 
 É um loop executado um número finito de vezes, até que a condição de saída seja atingida; muito comum para iterar sobre elementos.
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2089.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2089.png)
 
 Podemos iterar sobre uma variável:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2090.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2090.png)
 
 Podemos usar `for` para criar gráficos:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2091.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2091.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2092.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2092.png)
 
 ### While
 
@@ -1899,17 +1954,19 @@ while (val <= 5 ) {
 
 É uma instrução de salto usada para terminar o loop em uma iteração específica:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2093.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2093.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2094.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2094.png)
 
 ### Next
 
 É usado para pular quaisquer instruções restantes do loop e continuar a execução do programa — é uma instrução que pula a iteração atual, sem terminar o loop:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2095.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2095.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2096.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2096.png)
 
 ### Repeat
 
@@ -1953,11 +2010,13 @@ São, simplesmente, loops dentro de loops.
 - **`NULL`** — usado para representar valores ausentes e indefinidos; não é `TRUE` nem `FALSE`.
 - **`NaN`** — "Not a Number".
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2097.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2097.png)
 
 - **`Inf`** — palavra-chave para infinito negativo ou positivo; funções relacionadas: `is.finite()` e `is.infinite()`.
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2098.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2098.png)
 
 - **`NA`** — "Not Available", usado para representar valores ausentes.
 
@@ -1967,20 +2026,23 @@ Funções aceitam argumentos e podem retornar valores.
 
 **Sintaxe para criar uma função**
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2099.png)
+??? note "Imagem de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%2099.png)
 
 Os argumentos não precisam ter seu tipo de dado especificado; se quisermos especificar, precisamos verificar o tipo do argumento dentro da função, usando `is.data_type()`.
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20100.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20100.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20101.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20101.png)
 
 Podemos ter argumentos com valores padrão (default) dentro da função:
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20102.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20102.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20103.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20103.png)
 
 Outras funções podem ser passadas como argumentos, e uma função também pode ter zero argumentos.
 
@@ -1990,11 +2052,13 @@ Outras funções podem ser passadas como argumentos, e uma função também pode
 - **Infix** — são aquelas funções em que o nome da função fica entre seus argumentos, e que têm apenas dois argumentos; na prática, é um operador, mas definido por meio de uma função.
 
     !!! example
-        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20104.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20104.png)
 
         Essa função imprime quem é maior que quem; se os dois números forem iguais, imprime "equal".
 
-        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20105.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20105.png)
 
 - **Replacement**.
 
@@ -2007,23 +2071,25 @@ Palavra-chave usada para retornar algum valor de dentro de uma função. O valor
 São funções cujo `return` chama a própria função novamente.
 
 !!! example
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20106.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20106.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20107.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20107.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20108.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20108.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20109.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20109.png)
 
 ### Algumas funções nativas (built-in)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20110.png)
+??? note "Imagens de referência"
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20110.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20111.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20111.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20112.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20112.png)
 
-![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20113.png)
+    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20113.png)
 
 ## Tópicos ainda a desenvolver no material original
 
@@ -2043,21 +2109,23 @@ São funções cujo `return` chama a própria função novamente.
     **`barplot()`** — tem um parâmetro que define se o gráfico de barras é horizontal ou vertical.
 
     !!! example
-        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20114.png)
+        ??? note "Imagens de referência"
+            ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20114.png)
 
-        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20115.png)
+            ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20115.png)
 
     É bom para realizar um estudo comparativo entre as diversas categorias de dados do conjunto de dados.
 
     **`hist()`**
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20116.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20116.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20117.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20117.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20118.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20118.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20119.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20119.png)
 
     **`boxplot()`**, **`plot()`**
 
@@ -2065,25 +2133,30 @@ São funções cujo `return` chama a própria função novamente.
 
     Parâmetros:
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20120.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20120.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20121.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20121.png)
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20122.png)
-
-    !!! example
-        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20123.png)
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20122.png)
 
     !!! example
-        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20124.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20123.png)
+
+    !!! example
+        ??? note "Imagem de referência"
+            ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20124.png)
 
     Adicionando título, cor e rótulos:
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20125.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20125.png)
 
     Múltiplas linhas:
 
-    ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20126.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../../assets/faculdade/periodo2/estatistica-probabilidade-p-computacao/r/Untitled%20126.png)
 
     Outras funções de visualização mencionadas, mas não detalhadas no material original: `heatmap()`, `map()`, `persp()`, `table()`, `pie()`.
 

@@ -71,9 +71,10 @@ Tabela com os equipamentos:
 
 Envie também uma captura de tela de como ficou o diagrama final.
 
-Exemplo de captura de tela (lembrando que a rede será bem mais complexa que esse exemplo):
+Exemplo de captura de tela (lembrando que a rede será bem mais complexa que esse exemplo): um laboratório com 2 switches de acesso (2960-24TT) atendendo 12 PCs cada, ambos ligados por trunk a um Switch Core (3560-24PS), que por sua vez se conecta ao roteador de borda (2911, R-CIN).
 
-![image.png](../../../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia/image.png)
+??? note "Exemplo de topologia no Packet Tracer"
+    ![image.png](../../../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia/image.png)
 
 ---
 

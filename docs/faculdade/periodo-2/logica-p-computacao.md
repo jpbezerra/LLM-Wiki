@@ -19,9 +19,10 @@
 Um **silogismo** é uma inferência em que uma proposição (a conclusão) decorre de duas outras (as premissas).
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%201.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%201.png)
 
 ### Sentenças
 
@@ -31,7 +32,8 @@ Um **silogismo** é uma inferência em que uma proposição (a conclusão) decor
 
 - **Objeto → categoria** (classificação de um indivíduo específico):
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%202.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%202.png)
 
 - **Categoria → categoria**, subdividida em:
 
@@ -47,7 +49,8 @@ Uma **contradição** ocorre quando a combinação de sentenças declarativas le
 **Tipo 1 — triviais**
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%203.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%203.png)
 
 **Tipo 2 — identificadas pelo quadrado de oposições**
 
@@ -58,7 +61,8 @@ Para identificar contradições do tipo 2, usamos o **quadrado de oposições**,
 - **I** — Algum $A$ é $B$ (existencial positiva)
 - **O** — Algum $A$ não é $B$ (existencial negativa)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%204.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%204.png)
 
 | Relação | Condição | Exemplo |
 |---|---|---|
@@ -71,19 +75,22 @@ Para identificar contradições do tipo 2, usamos o **quadrado de oposições**,
 
 Um **ato de inferência** é o ato de tirar uma conclusão a partir de um conjunto de sentenças (as premissas).
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%205.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%205.png)
 
 **Validade do ato de inferência**
 
 Um ato de inferência é **válido** (logicamente seguro) quando, em toda situação em que as premissas são verdadeiras, a conclusão é obrigatoriamente verdadeira. Se um ato de inferência tem premissas falsas ou contraditórias, ele é dito **válido por vacuidade** (a implicação é "verdadeira" trivialmente, já que o antecedente nunca se realiza). Um ato de inferência válido é chamado de **silogismo**.
 
 !!! example "Válido com conclusão verdadeira"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%206.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%206.png)
 
     O ato de inferência é válido e a conclusão também é verdadeira.
 
 !!! example "Válido com conclusão não verdadeira no mundo real"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%207.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%207.png)
 
     O ato de inferência é válido, mas a conclusão não é verdadeira — está logicamente correto, mas não corresponde à realidade (uma premissa é falsa).
 
@@ -97,7 +104,8 @@ Um ato de inferência é **inválido** quando existe uma situação em que as pr
     Esse ato é **inválido**: Sócrates poderia não ser um homem — poderia ser, por exemplo, um cachorro (que também é mortal).
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%208.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%208.png)
 
     Ato de inferência inválido: não é porque eu não possuo todo o ouro do mundo que eu não sou rico — a conclusão é falsa.
 
@@ -116,36 +124,40 @@ Um **argumento** é uma coleção de atos de inferência.
 Diagramas de Venn são uma ferramenta visual útil para checar a validade de um ato de inferência, representando graficamente os conjuntos envolvidos nas premissas.
 
 !!! example "Exemplo 1"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%209.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%209.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/cb623669-c75b-4d1c-8699-b85946f84419.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/cb623669-c75b-4d1c-8699-b85946f84419.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/cbc75a60-98a0-4814-add1-94cca88d9f4d.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/cbc75a60-98a0-4814-add1-94cca88d9f4d.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/ce407048-6eae-4565-9912-764d1712e3f2.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/ce407048-6eae-4565-9912-764d1712e3f2.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/bfcd1549-a0a9-43b1-ad85-22b08267ec55.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/bfcd1549-a0a9-43b1-ad85-22b08267ec55.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/785399aa-ad17-4e14-b0a1-20ea3e578f04.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/785399aa-ad17-4e14-b0a1-20ea3e578f04.png)
 
     O ato de inferência é **válido**.
 
 !!! example "Exemplo 2"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2010.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2010.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/14818dc2-9b16-4cb7-b6d9-67dec568cf94.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/14818dc2-9b16-4cb7-b6d9-67dec568cf94.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/204a6ca2-f315-4459-b1c0-f1a95ed26a8d.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/204a6ca2-f315-4459-b1c0-f1a95ed26a8d.png)
 
     Como existe um caso em que as premissas são verdadeiras, mas a conclusão não é, este ato de inferência **não é válido**.
 
 !!! example "Exemplo 3"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2011.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2011.png)
 
     O ato de inferência é **válido**.
 
 !!! example "Exemplo 4"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2012.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2012.png)
 
     O ato de inferência **não é válido**.
 
@@ -160,39 +172,46 @@ Quando essa inconsistência não é imediatamente aparente, dizemos que $C$ cont
 
     2. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2013.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2014.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2014.png)
 
     3. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2015.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2016.png)
+        ??? note "Imagens de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2016.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2017.png)
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2017.png)
 
         Logo, a inferência é inválida.
 
 $C$ também é inconsistente se houver uma **contradição explícita**:
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2018.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2018.png)
 
 !!! example "Determinando consistência"
     Determine e justifique se o seguinte conjunto de sentenças é consistente:
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2019.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2019.png)
 
     O conjunto de sentenças é **consistente**, pois existe um caso em que $x$ é $B$ — ou seja, existe um caso em que o conjunto inteiro é verdadeiro:
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2020.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2020.png)
 
 ### Paradoxos
 
 !!! warning "Paradoxo do Barbeiro"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2021.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2021.png)
 
     Se o barbeiro barbeia a si mesmo, há uma contradição (ele só barbeia quem não se barbeia). Se o barbeiro não barbeia a si mesmo, então ele se encaixa na categoria de quem o barbeiro deveria barbear — mas essa categoria é ele mesmo, então ele deveria se barbear.
 
 !!! warning "Paradoxo de Russell"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2022.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2022.png)
 
 ## Lógica Simbólica de Boole e Frege
 
@@ -208,17 +227,20 @@ A **álgebra booleana** representa sentenças através dos números $0$ (falso) 
 A lógica simbólica de Frege é um método preciso de representação e manipulação simbólica das sentenças da álgebra booleana.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2023.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2023.png)
 
     Representando como conjunto:
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2024.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2024.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2025.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2025.png)
 
     O conjunto é consistente se cada argumento resultar em `1`:
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2026.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2026.png)
 
     Há um caso em que as três proposições valem `1`, logo é um conjunto consistente.
 
@@ -228,68 +250,77 @@ A **sintaxe** compreende as regras de formação (sem se preocupar com o signifi
 
 **Alfabeto**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2027.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2027.png)
 
 $\Sigma^*$ representa o conjunto de **todas** as sequências (expressões) construídas a partir do alfabeto $\Sigma$, incluindo a sequência vazia.
 
 **Conjunto $\Sigma^*$**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2028.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2028.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2029.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2029.png)
 
 Note que há muitas expressões em $\Sigma^*$ que não têm nenhum significado lógico válido.
 
 **Definição dos operadores**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2030.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2030.png)
 
 ### Conjuntos indutivos
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2031.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2031.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2032.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2032.png)
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2033.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2033.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2034.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2034.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2035.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2035.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2036.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2036.png)
 
 ### Expressões legítimas
 
 Um conjunto indutivo que contém apenas as expressões, construídas a partir do alfabeto $\Sigma$, que têm significado lógico válido (dentro da lógica simbólica/álgebra booleana) — esse conjunto é chamado de $\langle expr \rangle$ ou **PROP**.
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2037.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2037.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2038.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2038.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2039.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2039.png)
 
 $\langle expr \rangle$ é o **fecho indutivo** de $X$ sobre $F$.
 
 **Definindo $\langle expr \rangle$ — de cima para baixo**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2040.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2040.png)
 
 **Definindo $\langle expr \rangle$ — de baixo para cima**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2041.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2041.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2042.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2042.png)
 
 **Relacionando as duas definições**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2043.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2043.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2044.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2044.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2045.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2045.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2046.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2046.png)
 
 ### Conjuntos livremente gerados
 
@@ -300,29 +331,31 @@ Seja $A$ um conjunto qualquer e $X$ um subconjunto de $A$ (analogia a $A = $ PRO
 - Nenhum elemento da base $X$ está na imagem de alguma $f \in F$ sob $X^{+v}$.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2047.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2047.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2048.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2048.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2049.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2049.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2050.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2050.png)
 
     A resposta é **não**: o elemento $a$ é representado tanto por $*(b, c)$ quanto por $*(c, b)$; logo $*$ não é uma função injetora.
 
 **PROP é livremente gerado**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2051.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2051.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2052.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2052.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2053.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2053.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2054.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2054.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2055.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2055.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2056.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2056.png)
 
 Com isso, fica provado que PROP é livremente gerado.
 
@@ -334,67 +367,80 @@ Como PROP é um conjunto **livremente gerado**, podemos definir funções **recu
 
 - Número de símbolos de uma expressão:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image.png)
 
 - Número de parênteses à esquerda:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%201.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%201.png)
 
 - Número de parênteses à direita:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%202.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%202.png)
 
 - Número total de parênteses:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%203.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%203.png)
 
 - Número de operadores:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%204.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%204.png)
 
 - Subexpressões de uma expressão:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%205.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%205.png)
 
 - **Posto** (altura da árvore sintática) de uma expressão:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%206.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%206.png)
 
 Uma vez definidas essas funções recursivas sobre os elementos de PROP, podemos provar propriedades sobre eles usando **indução matemática**.
 
 **Provando propriedades sobre PROP**
 
 !!! example "Para toda $\varphi \in$ PROP, o número de parênteses de $\varphi$ é par"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%207.png)
+    ??? note "Imagens de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%207.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%208.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%208.png)
 
 !!! example "Para toda $\varphi \in$ PROP, o número total de símbolos de $\varphi$ é, no mínimo, igual ao número de operadores de $\varphi$"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%209.png)
+    ??? note "Imagens de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%209.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2010.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2010.png)
 
 !!! example "Para toda $\varphi \in$ PROP, o número de parênteses à esquerda é igual ao número de parênteses à direita"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2011.png)
+    ??? note "Imagens de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2011.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2012.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2012.png)
 
 !!! example "Para toda $\varphi \in$ PROP, o número de subfórmulas é, no máximo, o dobro do número de operadores mais 1"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2013.png)
+    ??? note "Imagens de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2013.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2014.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2014.png)
 
 !!! example "Para toda $\varphi \in$ PROP, o posto de $\varphi$ é, no máximo, igual ao número total de símbolos de $\varphi$"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2015.png)
+    ??? note "Imagens de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2015.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2016.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2016.png)
 
 !!! example
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2017.png)
+    ??? note "Imagens de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2017.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2018.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2018.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2019.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2019.png)
 
 ### Semântica
 
@@ -402,7 +448,8 @@ A **semântica** está relacionada ao valor matemático (de verdade) de uma expr
 
 **Definição formal**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2057.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2057.png)
 
 A função `Valor` atribui uma valoração (`0` ou `1`) a cada elemento de uma expressão pertencente a $X^{+v}$:
 
@@ -411,15 +458,17 @@ A função `Valor` atribui uma valoração (`0` ou `1`) a cada elemento de uma e
 - A função $d$ é a que define o comportamento de cada operador.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2058.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2058.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2059.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2059.png)
 
 ### Teorema da extensão homomórfica única
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2060.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2060.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2061.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2061.png)
 
 (Aqui, $A = $ PROP.)
 
@@ -427,21 +476,24 @@ A função `Valor` atribui uma valoração (`0` ou `1`) a cada elemento de uma e
 
 Uma **valoração** é uma função $v: X \rightarrow Z$ tal que existe uma função $\hat{v}: X^{+v} \rightarrow Z$ satisfazendo:
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2062.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2062.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2063.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2063.png)
 
 !!! note
     Lembrando que $a \rightarrow b \equiv \neg a \lor b$.
 
 **Definição da função**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2064.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2064.png)
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2065.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2065.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2066.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2066.png)
 
 ### Satisfabilidade
 
@@ -452,12 +504,14 @@ Seja $\varphi$ uma proposição:
 - $\varphi$ é **refutável** se existe pelo menos uma valoração $w$ que **não** a satisfaz ($\hat{w}(\varphi) = 0$).
 - $\varphi$ é **insatisfatível** se **nenhuma** valoração a satisfaz.
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2067.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2067.png)
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2068.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2068.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2069.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2069.png)
 
     Como há pelo menos um caso em que $\hat{w}(\varphi) = 1$, $\varphi$ é satisfatível.
 
@@ -466,9 +520,10 @@ Seja $\varphi$ uma proposição:
 Suponha que $S$ seja um conjunto de proposições. Dizemos que $S$ é **satisfatível** se existe pelo menos uma valoração que satisfaz **todas** as proposições de $S$ simultaneamente ($S$ é insatisfatível caso contrário).
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2070.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2070.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2071.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2071.png)
 
     Como existe um caso em que as três proposições de $S$ valem `1`, $S$ é satisfatível.
 
@@ -477,11 +532,13 @@ Suponha que $S$ seja um conjunto de proposições. Dizemos que $S$ é **satisfat
 Dizemos que uma proposição $\varphi$ é uma **consequência lógica** de um conjunto $S$ se toda valoração que satisfaz $S$ também satisfaz $\varphi$.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2072.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2072.png)
 
     Nesse caso, é verdade.
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2073.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2073.png)
 
     Nesse caso, não é verdade.
 
@@ -490,16 +547,18 @@ Formalmente: seja $\Gamma$ um conjunto de sentenças lógicas e $\varphi$ uma se
 **Teoremas**
 
 !!! example "Teorema 1"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2074.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2074.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2075.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2075.png)
 
 !!! example "Teorema 2"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2076.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2076.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2077.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2077.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2078.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2078.png)
 
 ### Problema da satisfatibilidade (SAT)
 
@@ -507,7 +566,8 @@ Formalmente: seja $\Gamma$ um conjunto de sentenças lógicas e $\varphi$ uma se
 
 **Custo computacional**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2079.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2079.png)
 
 ### Métodos para resolver SAT
 
@@ -516,9 +576,10 @@ Formalmente: seja $\Gamma$ um conjunto de sentenças lógicas e $\varphi$ uma se
 Consiste em construir uma tabela onde cada **linha** representa uma valoração possível e cada **coluna** representa uma subexpressão da proposição cuja satisfabilidade queremos avaliar. Se o valor `1` aparecer em algum lugar da última coluna, a expressão é satisfatível.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2080.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2080.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2081.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2081.png)
 
     Sim, é satisfatível.
 
@@ -532,42 +593,51 @@ As regras se dividem em dois tipos: $\alpha$ (não bifurcam a árvore) e $\beta$
 
 **Tipo $\alpha$**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2082.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2082.png)
 
 Se $\hat{v}(\neg\varphi) = 1$, então $\hat{v}(\varphi)$ só pode ser `0`, e vice-versa.
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2083.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2083.png)
 
 Se um "E" ($\land$) vale `1`, então **ambos** os operandos valem `1`.
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2084.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2084.png)
 
 Se um "OU" ($\lor$) vale `0`, então **ambos** os operandos valem `0`.
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2085.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2085.png)
 
 Se um "SE-ENTÃO" ($\rightarrow$) vale `0`, então o antecedente ("SE") vale `1` e o consequente ("ENTÃO") vale `0`.
 
 **Tipo $\beta$**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2086.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2086.png)
 
 Se um "E" ($\land$) vale `0`, então o primeiro operando, ou o segundo, ou ambos valem `0` (bifurca).
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2087.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2087.png)
 
 Se um "OU" ($\lor$) vale `1`, então o primeiro operando, ou o segundo, ou ambos valem `1` (bifurca).
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2088.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2088.png)
 
 Se um "SE-ENTÃO" ($\rightarrow$) vale `1`, então o antecedente vale `0`, ou ambos valem `1` (bifurca).
 
 !!! example "Tableaux de satisfabilidade"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2089.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2089.png)
 
     Sim, é satisfatível — existe pelo menos um ramo que satisfaz.
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2090.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2090.png)
 
     Sim, é satisfatível — existe pelo menos um ramo que satisfaz.
 
@@ -575,11 +645,13 @@ Se um "SE-ENTÃO" ($\rightarrow$) vale `1`, então o antecedente vale `0`, ou am
     Quando queremos saber se uma fórmula é **tautologia**, verificamos se existe a possibilidade dela ser falsa (assumimos $\hat{v}(\varphi) = 0$ e construímos o tableau). Se **todos** os ramos se fecham (contradição em cada um), então $\varphi$ é de fato uma tautologia; caso contrário, não é. Por isso, o método tableaux é um método de prova por refutação.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2091.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2091.png)
 
     Como todos os ramos estão fechados, não existe possibilidade para a pergunta feita, logo $\hat{v}(\varphi) = 1$ sempre, e $\varphi$ é uma tautologia.
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2092.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2092.png)
 
     Como todos os ramos estão fechados, não existe possibilidade para a pergunta feita, logo $\hat{v}(\varphi) = 1$ sempre, e $\varphi$ é uma tautologia.
 
@@ -591,13 +663,15 @@ Se um "SE-ENTÃO" ($\rightarrow$) vale `1`, então o antecedente vale `0`, ou am
 - $\Gamma \models \varphi$ (com $\Gamma = \{a_1, \ldots, a_n\}$)? É equivalente a perguntar se $\hat{v}(\{a_1, \ldots, a_n\} \rightarrow \varphi)$ é uma tautologia. No método tableaux, buscamos valorações que satisfaçam $\{a_1, \ldots, a_n\}$ e refutem $\varphi$; se tal valoração não existir, $\varphi$ é de fato consequência lógica de $\Gamma$.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2093.png)
+    ??? note "Imagens de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2093.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2094.png)
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2094.png)
 
 **Vantagens e desvantagens**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2095.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2095.png)
 
 #### Resolução
 
@@ -613,20 +687,24 @@ Se um "SE-ENTÃO" ($\rightarrow$) vale `1`, então o antecedente vale `0`, ou am
 
     **Teorema**
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2096.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2096.png)
 
     !!! example
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2097.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2097.png)
 
 === "Forma Normal Disjuntiva (FND)"
     Uma fórmula está na FND se é uma **disjunção de cláusulas** ($\lor$ entre as cláusulas), onde cada cláusula é uma **conjunção de literais** ($\land$ entre os literais). A FND é, em essência, um "ou de es".
 
     **Teorema**
 
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2098.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2098.png)
 
     !!! example
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2099.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%2099.png)
 
 **Procedimento para obter uma forma normal**
 
@@ -635,31 +713,38 @@ Se um "SE-ENTÃO" ($\rightarrow$) vale `1`, então o antecedente vale `0`, ou am
 3. Obter a forma normal desejada (conjuntiva ou disjuntiva) aplicando as regras distributivas e as demais regras necessárias.
 
 !!! example "Exemplos do procedimento"
-    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20100.png)
+    ??? note "Imagem de referência"
+        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20100.png)
 
     1. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20101.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20102.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20102.png)
 
     2. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20103.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20104.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20104.png)
 
     3. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20105.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20106.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20106.png)
 
     4. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20107.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20108.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20108.png)
 
     5. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20109.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20110.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20110.png)
 
     6. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20111.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20112.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20112.png)
 
 **O método da resolução em si**
 
@@ -671,44 +756,51 @@ Se um "SE-ENTÃO" ($\rightarrow$) vale `1`, então o antecedente vale `0`, ou am
 
 **Teoremas sobre consequência lógica**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20113.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20113.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20114.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20114.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20115.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20115.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20116.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20116.png)
 
 Se a resposta do método for "sim" ($\alpha$ é INSAT), então $\Gamma$ é consequência lógica de $\varphi$; caso contrário, $\Gamma$ não é consequência lógica de $\varphi$.
 
 Para resolver SAT por resolução: primeiro transformamos a fórmula em FNC. Depois, criamos novas cláusulas combinando as existentes:
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20117.png)
+??? note "Imagem de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20117.png)
 
 **Teorema**
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20118.png)
+??? note "Imagens de referência"
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20118.png)
 
-![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20119.png)
+    ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20119.png)
 
 !!! example "Exemplos"
     1. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20120.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20121.png)
+        ??? note "Imagens de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20121.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20122.png)
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20122.png)
 
     2. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20123.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20124.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20124.png)
 
     3. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20125.png)
 
-        ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20126.png)
+        ??? note "Imagem de referência"
+            ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20126.png)
 
     4. ![Untitled](../../assets/faculdade/periodo2/logica-p-computacao/Untitled%20127.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2020.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2020.png)
 
 #### Dedução natural
 
@@ -719,42 +811,51 @@ Uma **dedução** de uma fórmula $A$ é uma árvore de fórmulas em que cada f�
 **Conjunção ($\land$)**
 
 !!! example "Introdução"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2021.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2021.png)
 
 !!! example "Eliminação"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2022.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2022.png)
 
 **Implicação ($\rightarrow$)**
 
 !!! example "Introdução"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2023.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2023.png)
 
     Há o descarte da hipótese (1): a partir daqui não importa mais se $A$ é verdadeira ou não — o que importa é que provamos que $A$ implica $B$.
 
     **Caso especial** — quando os três pontinhos representam o conjunto vazio:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2024.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2024.png)
 
 !!! example "Eliminação (Modus Ponens)"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2025.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2025.png)
 
 **Disjunção ($\lor$)**
 
 !!! example "Introdução"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2026.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2026.png)
 
 !!! example "Eliminação"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2027.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2027.png)
 
 **Redução ao absurdo intuicionista** (*Ex falso quodlibet*, EFQ, ou RAI)
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2028.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2028.png)
 
 Do falso, pode-se inferir **qualquer coisa** (se $A$ for atômica).
 
 **Redução ao absurdo clássica** (RAC)
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2029.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2029.png)
 
 Mesma observação do RAI.
 
@@ -763,10 +864,12 @@ Mesma observação do RAI.
 Sabemos que $\neg A \equiv A \rightarrow \bot$ (onde $\bot$ = falso), logo as regras de introdução e eliminação da negação são casos especiais das regras $I_\rightarrow$ e $E_\rightarrow$.
 
 !!! example "Introdução"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2030.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2030.png)
 
 !!! example "Eliminação"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2031.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2031.png)
 
 !!! note "Cálculos"
     - **NJ** — inclui todas as regras acima.
@@ -784,39 +887,48 @@ Quando há dependência de hipóteses (como em $\Psi \vdash \varphi$), usamos $\
 !!! example "Exemplos de derivação"
     1. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2032.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2033.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2033.png)
 
     2. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2034.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2035.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2035.png)
 
     3. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2036.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2037.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2037.png)
 
     4. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2038.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2039.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2039.png)
 
     5. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2040.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2041.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2041.png)
 
     6. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2042.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2043.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2043.png)
 
     7. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2044.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2045.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2045.png)
 
     8. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2046.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2047.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2047.png)
 
     9. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2048.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2049.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2049.png)
 
 #### Cálculo de sequentes
 
@@ -825,7 +937,8 @@ Quando há dependência de hipóteses (como em $\Psi \vdash \varphi$), usamos $\
 Um **sequente** é uma estrutura formada por duas sequências de fórmulas, separadas por uma seta (ou símbolo de derivabilidade).
 
 !!! example
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2050.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2050.png)
 
     Onde cada $A_i$ e $B_j$ é uma fórmula.
 
@@ -837,25 +950,30 @@ Usamos letras gregas maiúsculas como metavariáveis para listas (sequências fi
 !!! note
     Qualquer uma dessas sequências pode ser **vazia**.
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2051.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2051.png)
 
 **Significado, de acordo com $n$ (tamanho do antecedente) e $m$ (tamanho do consequente)**
 
 - $n \neq 0$, $m \neq 0$:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2052.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2052.png)
 
 - $n = 0$, $m \neq 0$:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2053.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2053.png)
 
 - $n \neq 0$, $m = 0$:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2054.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2054.png)
 
 - $n = 0$, $m = 0$:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2055.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2055.png)
 
 O cálculo de sequentes é, em essência, uma **árvore**: as folhas são sequentes chamados de **axiomas**, e cada nó interno é um sequente obtido a partir do(s) sequente(s) anterior(es) pela aplicação de uma regra. A raiz da árvore é o **sequente final**.
 
@@ -863,32 +981,39 @@ O cálculo de sequentes é, em essência, uma **árvore**: as folhas são sequen
 
 === "Weakening"
     !!! example "Left"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2056.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2056.png)
 
     !!! example "Right"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2057.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2057.png)
 
 === "Contraction"
     Duplica o elemento mais longe da "catraca" (a posição em que a regra pode ser aplicada).
 
     !!! example "Left"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2058.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2058.png)
 
     !!! example "Right"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2059.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2059.png)
 
 === "Interchange (Permutation)"
     - Com 1 traço: troca exclusiva de um termo por outro.
     - Com 2 traços: reorganização livre de qualquer termo por qualquer outro.
 
     !!! example "Left"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2060.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2060.png)
 
     !!! example "Right"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2061.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2061.png)
 
 === "Cut"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2062.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2062.png)
 
     !!! note "Teorema da eliminação do corte (Hauptsatz)"
         Toda derivação pode ser transformada numa equivalente sem o uso da regra do corte.
@@ -897,31 +1022,39 @@ O cálculo de sequentes é, em essência, uma **árvore**: as folhas são sequen
 
 === "Conjunção"
     !!! example "Left"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2063.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2063.png)
 
     !!! example "Right"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2064.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2064.png)
 
 === "Disjunção"
     !!! example "Left"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2065.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2065.png)
 
     !!! example "Right"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2066.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2066.png)
 
 === "Implicação"
     !!! example "Left"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2067.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2067.png)
 
     !!! example "Right"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2068.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2068.png)
 
 === "Negação"
     !!! example "Left"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2069.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2069.png)
 
     !!! example "Right"
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2070.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2070.png)
 
 !!! warning
     As regras só podem ser aplicadas sobre o axioma (à esquerda ou à direita) mais longe da "catraca".
@@ -955,28 +1088,33 @@ O cálculo de sequentes é, em essência, uma **árvore**: as folhas são sequen
 
     9. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2079.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2080.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2080.png)
 
 ## Lógica de primeira ordem
 
 A **lógica de primeira ordem** (FOL) é uma linguagem simbólica para representação de enunciados em que os objetos mencionados têm representação própria nas sentenças simbólicas — o **vocabulário**. Precisamos de símbolos para os objetos e para predicados/relações; esse conjunto de símbolos forma o vocabulário dessa lógica.
 
 !!! example
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2081.png)
+    ??? note "Imagens de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2081.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2082.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2082.png)
 
     **Símbolos dos objetos:**
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2083.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2083.png)
 
     **Símbolos dos predicados e relações:**
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2084.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2084.png)
 
     **Resultado:**
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2085.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2085.png)
 
 ### Estrutura
 
@@ -992,23 +1130,27 @@ Uma estrutura $A$ é definida por quatro componentes (qualquer um deles pode ser
 4. Um conjunto de **funções** sobre $\text{dom}(A)$, cada uma com sua aridade.
 
 !!! example
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2086.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2086.png)
 
 !!! example "Exemplos"
     1. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2087.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2088.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2088.png)
 
     2. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2089.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2090.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2090.png)
 
 ### Assinaturas
 
 Para definir o vocabulário usado na formalização de sentenças sobre uma dada estrutura de primeira ordem, precisamos identificar: os elementos destacados, as relações (com suas aridades) e as funções (com suas aridades). O conjunto que reúne esses três componentes é chamado de **assinatura**.
 
 !!! example
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2091.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2091.png)
 
     **Assinatura:**
 
@@ -1020,23 +1162,28 @@ Para definir o vocabulário usado na formalização de sentenças sobre uma dada
 
     - $A$:
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2092.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2092.png)
 
     - $B$:
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2093.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2093.png)
 
     **Sentenças sobre essa assinatura:**
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2094.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2094.png)
 
     Avaliadas em $A$:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2095.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2095.png)
 
     Avaliadas em $B$:
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2096.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%2096.png)
 
     As interpretações têm significados diferentes: as sentenças fazem sentido na interpretação $A$ dessa assinatura, mas não fazem sentido na interpretação $B$, por conta do vocabulário envolvido.
 
@@ -1063,7 +1210,8 @@ Seja $L$ uma assinatura e $A, B$ duas $L$-estruturas. Seja $h$ uma função $\te
 
         $h$ **é** um homomorfismo de $A$ em $B$, pois para todo símbolo de função $n$-ária $f$ de $L$ e toda $n$-upla $(a_1, \ldots, a_n)$ de elementos de $A$: $h(f^A(a_1, \ldots, a_n)) = f^B(h(a_1), \ldots, h(a_n))$.
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20100.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20100.png)
 
 **Imersão**
 
@@ -1079,26 +1227,30 @@ Uma **imersão** é um homomorfismo em que a função $h$ é **injetora**, e em 
 
 ### Sub-estrutura
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20101.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20101.png)
 
 ### Termos
 
 Um **termo** é qualquer expressão que pode denotar um objeto do domínio da estrutura: constantes, variáveis, funções aplicadas a termos, e combinações entre eles.
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20102.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20102.png)
 
 O conjunto de termos de uma assinatura $L$ é o fecho indutivo do conjunto $X = \{\text{constantes}\} \cup \{\text{variáveis}\} \cup \{\text{destaques sob o conjunto dos símbolos de funções de } L\}$. Um **termo fechado** não contém variáveis livres.
 
 ### Fórmulas atômicas
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20103.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20103.png)
 
 ### Escopo dos quantificadores
 
 O **escopo** de um quantificador é a porção da fórmula que está "sob o controle" desse quantificador.
 
 !!! example
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20104.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20104.png)
 
 ### Variável livre e ligada
 
@@ -1107,7 +1259,8 @@ O **escopo** de um quantificador é a porção da fórmula que está "sob o cont
 - Uma variável é dita ligada numa fórmula se **pelo menos uma** ocorrência dela é ligada; senão, é livre.
 
 !!! example
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20105.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20105.png)
 
     - $a$ é ligada, pois a ocorrência de $a$ no "para todo" ($\forall$) é ligada.
     - $x$ é ligada, pois a ocorrência de $x$ no "existe" ($\exists$) é ligada.
@@ -1117,7 +1270,8 @@ O **escopo** de um quantificador é a porção da fórmula que está "sob o cont
 
 Uma **fórmula bem formada** (FBF) da lógica de primeira ordem é definida recursivamente:
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20106.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20106.png)
 
 Fórmulas são geradas apenas por um número finito de aplicações das regras acima.
 
@@ -1130,7 +1284,8 @@ Uma **sentença** é uma fórmula **sem variáveis livres**. Uma **sentença at�
 Seja $L$ uma assinatura e $\varphi$ uma sentença atômica de $L$. O significado de $\varphi$, segundo uma interpretação de $L$ numa $L$-estrutura $A$, é determinado pelo resultado da interpretação sobre os termos de $\varphi$ e sobre o símbolo de relação de $\varphi$.
 
 !!! example
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20107.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20107.png)
 
 ### Modelo e contra-modelo
 
@@ -1156,21 +1311,24 @@ Seja $A$ uma $L$-estrutura. Quando queremos produzir o diagrama positivo de $A$ 
 !!! example "Exemplos"
     1. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20108.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20109.png)
+        ??? note "Imagens de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20109.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20110.png)
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20110.png)
 
         Diagrama positivo: $\{Q(c), f(c, c) = 0, g(c) = 3, P(c, f(c, c)), f(f(c, c), c) = 1, Q(g(c)), \ldots\}$
 
     2. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20108.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20111.png)
+        ??? note "Imagens de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20111.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20112.png)
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20112.png)
 
     3. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20113.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20114.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20114.png)
 
 ### Modelo canônico
 
@@ -1186,24 +1344,28 @@ Dado um conjunto de sentenças atômicas $T$ numa linguagem $L$, se quisermos co
 A $L$-estrutura $B$, construída a partir de $L$ e $T$, é chamada de **modelo canônico** de $T$. Essa estrutura é tão parecida com o modelo "original" descrito por $T$ que é possível construir um homomorfismo de $B$ para qualquer outro modelo de $T$ — por isso, $B$ funciona como uma espécie de referencial para todos os modelos de $T$.
 
 !!! example "Mostrando que $A$ é modelo canônico"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20115.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20115.png)
 
 !!! example "Exemplos"
     1. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20116.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20117.png)
+        ??? note "Imagens de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20117.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20118.png)
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20118.png)
 
     2. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20116.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20119.png)
+        ??? note "Imagens de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20119.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20120.png)
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20120.png)
 
     3. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20121.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20122.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20122.png)
 
 ### Problema da satisfatibilidade em FOL
 
@@ -1213,7 +1375,8 @@ Dado um conjunto de sentenças $C$: se $C$ é um conjunto de sentenças **atômi
 
 Técnica em que substituímos variáveis de uma FBF por termos constantes ou por termos mais complexos, simplificando a expressão e movendo-a em direção a um formato mais próximo da lógica proposicional. Queremos definir precisamente o resultado de substituir as ocorrências da variável $x$ numa FBF $\varphi$ por um termo $t$:
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20123.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20123.png)
 
 Nos quantificadores, a substituição só ocorre se $x$ é uma variável livre.
 
@@ -1262,29 +1425,34 @@ Nos quantificadores, a substituição só ocorre se $x$ é uma variável livre.
 
 Seja $L$ uma assinatura, $A$ uma $L$-estrutura e $.^A$ uma interpretação dos símbolos de $L$ na estrutura. O valor verdade de uma sentença $\varphi$ de $L$ é definido **indutivamente** da seguinte forma:
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20133.png)
+??? note "Imagens de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20133.png)
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20134.png)
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20134.png)
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20135.png)
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20135.png)
 
 #### Satisfabilidade de uma sentença
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20136.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20136.png)
 
 **Satisfabilidade de um conjunto de sentenças**
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20137.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20137.png)
 
 #### Equivalência lógica
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20138.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20138.png)
 
 #### Satisfabilidade de uma fórmula
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20139.png)
+??? note "Imagens de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20139.png)
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20140.png)
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20140.png)
 
 #### Resolução para lógica de predicados
 
@@ -1295,49 +1463,58 @@ Usamos os mesmos conceitos de literal, cláusula e FNC da lógica proposicional,
 Uma fórmula $\varphi$ da FOL está na **forma normal prenex** (FNP) se, e somente se, está na forma $(Q_1x_1)\ldots(Q_nx_n)(M)$, onde cada $(Q_ix_i)$, $i = 1 \ldots n$, é $\forall x_i$ ou $\exists x_i$, e $M$ é uma fórmula sem quantificadores. $(Q_1x_1)\ldots(Q_nx_n)$ é chamado de **prefixo**, e $M$ de **matriz** da fórmula $\varphi$.
 
 !!! example "Fórmulas na FNP"
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20141.png)
+    ??? note "Imagens de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20141.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20142.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20142.png)
 
 **Teorema**
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20143.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20143.png)
 
 **Algoritmo**
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20144.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20144.png)
 
 **Leis usadas no algoritmo**
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20145.png)
+??? note "Imagens de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20145.png)
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20146.png)
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20146.png)
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20147.png)
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20147.png)
 
 !!! warning
     Nas leis 7 e 8, é preciso renomear uma das variáveis ligadas (para evitar colisão de nomes).
 
 **O algoritmo completo**
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20148.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20148.png)
 
 !!! example "Exemplos"
     1. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20149.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20150.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20150.png)
 
     2. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20151.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20152.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20152.png)
 
     3. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20153.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20154.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20154.png)
 
     4. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20155.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20156.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20156.png)
 
 **Forma padrão de Skolem (Skolemização)**
 
@@ -1345,7 +1522,8 @@ Transformação de uma fórmula da FOL que **elimina os quantificadores existenc
 
 **Como construir**
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20157.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20157.png)
 
 !!! note "Teorema de Löwenheim-Skolem"
     Seja $\varphi$ uma fórmula da lógica de predicados numa assinatura $L$, tal que $\varphi$ está na FNP. Seja $\varphi'$ a fórmula resultante da eliminação dos quantificadores existenciais em $\varphi$, cujas variáveis correspondentes são substituídas por termos do tipo $f(x_1, \ldots, x_n)$, onde $f$ é um novo símbolo de função e $x_1, \ldots, x_n$ são as variáveis universalmente quantificadas imediatamente anteriores a esse existencial.
@@ -1355,24 +1533,29 @@ Transformação de uma fórmula da FOL que **elimina os quantificadores existenc
     Caso não haja quantificadores universais (por exemplo, em $\exists x \exists y (P(x, y) \rightarrow Q(y))$), $x$ e $y$ são substituídas por **constantes**, gerando $P(a, b) \rightarrow Q(b)$, já na Forma Padrão de Skolem (FPS) — nesse caso, $A'$ precisa apenas de dois novos elementos destacados.
 
 !!! example
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20158.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20158.png)
 
     A fórmula já está na FNP, e a matriz já está na FNC — agora precisamos eliminar os quantificadores existenciais e substituí-los por funções de Skolem. Ao eliminar o quantificador existencial $\exists y$, o argumento $y$ dentro de $R(x, y)$ é substituído por uma função de Skolem que depende das variáveis ligadas aos quantificadores universais anteriores.
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20159.png)
+    ??? note "Imagem de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20159.png)
 
 !!! example "Exemplos"
     1. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20160.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20161.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20161.png)
 
     2. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20162.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20163.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20163.png)
 
     3. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20164.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20165.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20165.png)
 
 **Herbrand**
 
@@ -1387,7 +1570,8 @@ Herbrand desenvolveu um algoritmo para provar teoremas na FOL (decidir se uma f�
 
 **Instância básica de uma cláusula**
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20166.png)
+??? note "Imagem de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20166.png)
 
 **Teorema de Herbrand**: um conjunto $S$ de cláusulas é insatisfatível se, e somente se, existe um conjunto finito insatisfatível $S'$ de instâncias básicas de cláusulas de $S$.
 
@@ -1401,60 +1585,71 @@ Uma equação $x = t$ está na **forma resolvida** em um sistema $S$ se $x$ é u
 
 **Método**: um conjunto de três regras.
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20167.png)
+??? note "Imagens de referência"
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20167.png)
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20168.png)
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20168.png)
 
-![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20169.png)
+    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20169.png)
 
 !!! example "Exemplos de unificação"
     1. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20170.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20171.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20171.png)
 
     2. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20172.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20173.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20173.png)
 
     3. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20174.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20175.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20175.png)
 
     4. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20176.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20177.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20177.png)
 
     5. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20178.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20179.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20179.png)
 
         Unificador: $[y/b, y/v, h(a, g(v))/x, g(y)/w, a/z]$.
 
 !!! example "Mais exemplos"
     1. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20180.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20181.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20181.png)
 
     2. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20182.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20183.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20183.png)
 
         Faltou incluir $[h(g(a))/x]$.
 
     3. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20184.png)
 
-        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20185.png)
+        ??? note "Imagem de referência"
+            ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20185.png)
 
 **Exemplos finais do método de resolução em FOL**
 
 1. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20186.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20187.png)
+    ??? note "Imagens de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20187.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20188.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20188.png)
 
 2. ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20189.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20190.png)
+    ??? note "Imagens de referência"
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20190.png)
 
-    ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20191.png)
+        ![image.png](../../assets/faculdade/periodo2/logica-p-computacao/image%20191.png)

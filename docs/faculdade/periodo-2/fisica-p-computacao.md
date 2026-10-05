@@ -30,7 +30,8 @@ De acordo com sua capacidade de conduzir eletricidade, os materiais são classif
 
 A **força elétrica** é a força de interação entre duas cargas.
 
-![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled.png)
+??? note "Diagrama de referência"
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled.png)
 
 **Fórmula (Lei de Coulomb)**
 
@@ -49,7 +50,8 @@ Onde:
 A força elétrica é uma grandeza vetorial, podendo ser decomposta em $F_e \hat{x}$ e $F_e \hat{y}$ — isto é, a componente da força elétrica na coordenada $x$ e na coordenada $y$, respectivamente.
 
 !!! note "Revisão de vetores"
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%201.png)
+    ??? note "Diagrama de referência"
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%201.png)
 
 **Atração e repulsão**
 
@@ -57,34 +59,37 @@ A força elétrica é uma grandeza vetorial, podendo ser decomposta em $F_e \hat
 - Cargas iguais se **repelem**.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%202.png)
-
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%203.png)
-
     (O objetivo do exercício é determinar a quantidade de elétrons presente em cada carga.)
 
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%204.png)
+    ??? note "Resolução passo a passo (foto do caderno)"
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%202.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%205.png)
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%203.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%206.png)
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%204.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%205.png)
+
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%206.png)
 
 ### Princípio da superposição
 
 Trata da força resultante entre três ou mais cargas. O princípio afirma que a força entre duas cargas, dentro de um grupo de cargas, é **independente** da presença das demais cargas do grupo. Logo, a força elétrica resultante entre três ou mais cargas é o vetor resultante da soma das forças elétricas entre cada par de cargas.
 
-![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%207.png)
+??? note "Diagrama de referência"
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%207.png)
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%208.png)
+    ??? note "Resolução passo a passo (foto do caderno)"
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%208.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%209.png)
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%209.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2010.png)
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2010.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2011.png)
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2011.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2012.png)
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2012.png)
 
     !!! warning "Correção de cálculo"
         Na resolução original, foi usado por engano $0{,}9/4{,}4$; o valor correto é $0{,}9/4{,}7 = 0{,}1914893617$. O $\arctan(0{,}1914893617)$ é exatamente $10{,}8°$.
@@ -113,37 +118,42 @@ Onde:
 **Sinal da carga e direção do campo**
 
 === "Carga positiva"
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2013.png)
-
     A direção do campo elétrico é contrária ao local onde a carga está (aponta para fora da carga).
 
-=== "Carga negativa"
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2014.png)
+    ??? note "Diagrama de referência"
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2013.png)
 
+=== "Carga negativa"
     O campo elétrico aponta em direção ao local onde a carga está.
+
+    ??? note "Diagrama de referência"
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2014.png)
 
 **Linhas de fluxo**
 
 As linhas de fluxo fornecem a direção e o sentido do campo $E$ local. A densidade das linhas é proporcional à intensidade de $E$, que por sua vez é proporcional à carga $q$ e inversamente proporcional a $r^2$. Em outras palavras, onde as linhas de fluxo estão mais próximas umas das outras (mais densas), existem mais linhas; onde estão mais espaçadas, existem menos linhas.
 
-![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2015.png)
+??? note "Diagrama de referência"
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2015.png)
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2016.png)
+    ??? note "Resolução passo a passo (foto do caderno)"
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2016.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2017.png)
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2017.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2018.png)
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2018.png)
 
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2019.png)
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2019.png)
 
 **Campo gerado por várias cargas**
 
 Da mesma forma que a força elétrica, o campo elétrico resultante gerado por várias cargas é a soma vetorial (princípio da superposição) do campo gerado por cada carga individualmente.
 
-![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2020.png)
+??? note "Diagramas de referência"
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2020.png)
 
-![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2021.png)
+    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2021.png)
 
 ### Energia potencial elétrica
 
@@ -163,7 +173,8 @@ Onde:
 Para calcular a energia potencial elétrica entre **duas** cargas, basta aplicar a fórmula acima diretamente. Para calcular a energia potencial elétrica entre **três ou mais** cargas, deve-se fazer o somatório das energias potenciais de cada par de cargas.
 
 !!! example
-    ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2022.png)
+    ??? note "Resolução passo a passo (foto do caderno)"
+        ![Untitled](../../assets/faculdade/periodo2/fisica-p-computacao/Untitled%2022.png)
 
 ### Potencial elétrico
 

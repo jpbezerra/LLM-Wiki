@@ -175,23 +175,86 @@ Inclua no relatório capturas de tela como nos exemplos abaixo. Lembre-se de tes
 
 **Exemplo:**
 
-1. Ping intra-VLAN bem-sucedido (172.20.X.5 → 172.20.X.68)
+1. Ping intra-VLAN bem-sucedido (172.20.26.5 → 172.20.26.68):
 
-![image.png](../../../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/image.png)
+```text
+C:\>ping 172.20.26.68
 
-2. Ping inter-VLAN bem-sucedido (ex: 172.20.X.68 → 200.160.7.186)
+Pinging 172.20.26.68 with 32 bytes of data:
 
-![image.png](../../../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/image%201.png)
+Request timed out.
+Reply from 172.20.26.68: bytes=32 time=18ms TTL=127
+Reply from 172.20.26.68: bytes=32 time=1ms TTL=127
+Reply from 172.20.26.68: bytes=32 time=1ms TTL=127
 
-3. Saída do comando `tracert 172.20.X.10` no terminal do PC
+Ping statistics for 172.20.26.68:
+    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 18ms, Average = 6ms
+```
 
-![image.png](../../../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/image%202.png)
+Repare que o primeiro ping deu timeout (resolução ARP) e os seguintes tiveram sucesso — exatamente o comportamento esperado.
 
-4. Saída do comando `tracert 200.160.7.186` no terminal do PC
+2. Ping externo bem-sucedido (172.20.26.68 → 200.160.7.186, a RNP):
 
-![image.png](../../../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/image%203.png)
+```text
+C:\>ping 200.160.7.186
+
+Pinging 200.160.7.186 with 32 bytes of data:
+
+Reply from 200.160.7.186: bytes=32 time<1ms TTL=255
+Reply from 200.160.7.186: bytes=32 time<1ms TTL=255
+Reply from 200.160.7.186: bytes=32 time<1ms TTL=255
+Reply from 200.160.7.186: bytes=32 time<1ms TTL=255
+
+Ping statistics for 200.160.7.186:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+```
+
+3. Saída do comando `tracert 172.20.26.10` no terminal do PC:
+
+```text
+C:\>tracert 172.20.26.10
+
+Tracing route to 172.20.26.10 over a maximum of 30 hops:
+
+  1    0 ms    0 ms    0 ms    172.20.26.10
+
+Trace complete.
+```
+
+4. Saída do comando `tracert 200.160.7.186` no terminal do PC:
+
+```text
+C:\>tracert 200.160.7.186
+
+Tracing route to 200.160.7.186 over a maximum of 30 hops:
+
+  1    0 ms    0 ms    0 ms    200.160.7.186
+
+Trace complete.
+```
 
 5. Saída do comando `show ip route` no roteador
+
+??? note "Capturas de tela originais (Packet Tracer)"
+    1. Ping intra-VLAN (172.20.26.5 → 172.20.26.68)
+
+    ![image.png](../../../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/image.png)
+
+    2. Ping externo (172.20.26.68 → 200.160.7.186)
+
+    ![image.png](../../../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/image%201.png)
+
+    3. `tracert 172.20.26.10`
+
+    ![image.png](../../../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/image%202.png)
+
+    4. `tracert 200.160.7.186`
+
+    ![image.png](../../../../assets/faculdade/periodo5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/image%203.png)
 
 ---
 
