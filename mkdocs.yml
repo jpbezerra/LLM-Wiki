@@ -68,6 +68,9 @@ plugins:
 
 nav:
   - Início: index.md
+  - Estudos:
+      - estudos/index.md
+      - NÚMEROS COMPLEXOS: estudos/numeros-complexos.md
   - Faculdade:
       - faculdade/index.md
       - PERÍODO 1:
