@@ -77,6 +77,9 @@ nav:
           - OTIMIZAÇÃO DE TOKENS E ROTEAMENTO DE MODELOS: estudos/agentes-de-ia/otimizacao-tokens-roteamento.md
           - "FINE-TUNING AGÊNTICO: A ABORDAGEM DA META": estudos/agentes-de-ia/fine-tuning-agentico-meta.md
           - "JEV: MODELOS DE DECISÃO": estudos/agentes-de-ia/jev-modelos-decisao.md
+      - COMPUTAÇÃO QUÂNTICA (IBM):
+          - estudos/computacao-quantica-ibm/index.md
+          - AULA 1 - SISTEMAS ÚNICOS: estudos/computacao-quantica-ibm/aula-1.md
       - OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS): estudos/otimizacao-de-joins.md
       - "BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS": estudos/bend2-tipos-dependentes-provas-formais.md
   - Faculdade:

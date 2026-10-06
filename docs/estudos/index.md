@@ -6,5 +6,6 @@ Resumos e anotações de tópicos que estudo por conta própria, fora da grade d
 
 - [NÚMEROS COMPLEXOS](numeros-complexos.md)
 - [AGENTES DE IA](agentes-de-ia/index.md) — harness e Pi, roteamento de tokens, fine-tuning agêntico (Meta), modelos de decisão (Jev).
+- [COMPUTAÇÃO QUÂNTICA (IBM)](computacao-quantica-ibm/index.md) — curso "Understanding Quantum Information and Computation" (IBM Quantum), aula a aula.
 - [OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS)](otimizacao-de-joins.md)
 - [BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS](bend2-tipos-dependentes-provas-formais.md)
