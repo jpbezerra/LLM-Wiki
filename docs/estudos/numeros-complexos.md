@@ -19,7 +19,7 @@ A partir disso, as potências de $i$ entram num ciclo de período 4:
 
 $$i^0=1,\quad i^1=i,\quad i^2=-1,\quad i^3=-i,\quad i^4=1,\quad i^5=i,\ \dots$$
 
-!!! tip "Calculando $i^n$ rapidamente"
+!!! tip "Calculando potências de i rapidamente"
     Para qualquer expoente $n$, divida $n$ por $4$ e olhe só o resto $r$: $i^n = i^r$. Exemplo: $i^{37}$, como $37 = 4\cdot9+1$, então $i^{37}=i^1=i$.
 
 ## Forma algébrica (ou retangular)
@@ -101,6 +101,9 @@ Propriedades:
 
 $$|z_1 z_2| = |z_1||z_2| \qquad\qquad \left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|} \qquad\qquad |z_1+z_2| \le |z_1|+|z_2| \text{ (desigualdade triangular)}$$
 
+!!! note "Notação: r ou rô?"
+    É comum ver o módulo denotado pela letra grega $\rho$ (rô) em vez de $r$ — principalmente a partir da forma polar em diante. São exatamente a mesma coisa: $\rho = r = |z|$. Este resumo usa $r$, mas se o seu professor/livro usar $\rho$, é só trocar o símbolo — nenhuma fórmula muda.
+
 ## Plano complexo (plano de Argand-Gauss)
 
 Como $z=a+bi$ é determinado por dois números reais, ele pode ser representado como um ponto $(a,b)$ (ou um vetor da origem até esse ponto) num plano cartesiano: o eixo horizontal é o **eixo real** e o vertical é o **eixo imaginário**.
@@ -110,6 +113,8 @@ Como $z=a+bi$ é determinado por dois números reais, ele pode ser representado 
 - $|z|$ = comprimento do vetor (distância até a origem)
 - $\bar z$ = reflexo de $z$ no eixo real
 - $-z$ = reflexo de $z$ na origem (rotação de $180°$)
+
+O ponto $(a,b)$ que representa $z$ nesse plano tem um nome: é o **afixo** de $z$ (também chamado de "imagem" de $z$). Ou seja, "o afixo de $z=3+4i$" é simplesmente o ponto $(3,4)$ — é só o termo técnico para a localização geométrica de um complexo. Toda a discussão de módulo, argumento e forma polar a seguir é, no fundo, uma forma de descrever onde fica o afixo de $z$.
 
 Essa representação geométrica é o que faz os números complexos serem especialmente úteis: soma de complexos é soma vetorial, e — como veremos a seguir — multiplicação tem uma interpretação geométrica igualmente limpa em termos de rotação e escala.
 
@@ -121,6 +126,12 @@ $$\theta = \arg(z) = \arctan\!\left(\frac{b}{a}\right) \;\; \text{(ajustando o q
 
 !!! warning "Cuidado com o quadrante"
     $\arctan(b/a)$ sozinho só dá o ângulo certo diretamente para $z$ no primeiro ou quarto quadrante ($a>0$). Para $a<0$, some $180°$ ($\pi$ rad) ao resultado; para $a=0$, o ângulo é $90°$ ou $270°$ dependendo do sinal de $b$. Na prática, é mais seguro desenhar o ponto $(a,b)$ e raciocinar geometricamente, ou usar a função `atan2(b,a)` de uma calculadora/linguagem de programação, que já trata os quadrantes automaticamente.
+
+**$\arctan$ não é a única forma de calcular $\theta$** — é só a mais usada porque dá um número direto. O jeito mais fundamental, que não tem ambiguidade de quadrante nenhuma, é usar as duas equações que definem o próprio ponto $(a,b)=(r\cos\theta,\,r\sin\theta)$:
+
+$$\cos\theta = \frac{a}{r} \qquad\qquad \sin\theta = \frac{b}{r}$$
+
+Como $\cos\theta$ sozinho já diz se $\theta$ está mais perto do eixo positivo ou negativo, e $\sin\theta$ sozinho já diz se está "em cima" ou "embaixo", **os sinais de $\cos\theta$ e $\sin\theta$ juntos identificam o quadrante sem ambiguidade** — diferente de $\tan\theta=\sin\theta/\cos\theta$, que "perde" essa informação porque $\tan$ tem o mesmo valor em quadrantes opostos (ex.: $\tan(45°)=\tan(225°)=1$). $\arctan(b/a)$ é justamente a razão $\sin\theta/\cos\theta$ — daí a necessidade de "consertar" o quadrante na mão depois.
 
 O argumento não é único — $\theta$ e $\theta+360°k$ (para qualquer inteiro $k$) representam o mesmo ponto, já que somar uma volta completa não muda a direção. O valor de $\theta$ no intervalo $(-180°,180°]$ (ou $(-\pi,\pi]$) é chamado **argumento principal**, e é o que normalmente se usa como "o" argumento de $z$ quando não se especifica outra coisa.
 
@@ -135,11 +146,25 @@ $$a = r\cos\theta \qquad b = r\sin\theta \qquad \Longrightarrow \qquad z = r(\co
 
     Logo, $z = 2(\cos 60° + i\sin 60°)$.
 
+### Notação "cis"
+
+A expressão $\cos\theta+i\sin\theta$ aparece tanto que ganhou uma abreviação: $\text{cis}\,\theta$, lida literalmente como "**c**osseno **i**mais **s**eno de $\theta$" (c-i-s = cos + i + sen). Por definição,
+
+$$\text{cis}\,\theta := \cos\theta+i\sin\theta$$
+
+e por isso a forma polar costuma aparecer escrita de forma mais compacta como:
+
+$$z = r\,\text{cis}\,\theta$$
+
+Não é uma fórmula nova nem um conceito diferente — é exatamente $z=r(\cos\theta+i\sin\theta)$ de antes, só que "cis $\theta$" é mais rápido de escrever do que repetir "$\cos\theta+i\sin\theta$" toda vez (vai aparecer bastante nas próximas seções, sobre multiplicação/divisão e nas fórmulas de De Moivre).
+
 ### Multiplicação e divisão em forma polar
 
 A forma polar é o que torna multiplicação/divisão de complexos geometricamente intuitivas: **módulos se multiplicam/dividem, argumentos se somam/subtraem**.
 
 $$z_1 z_2 = r_1 r_2\big(\cos(\theta_1+\theta_2) + i\sin(\theta_1+\theta_2)\big) \qquad\qquad \frac{z_1}{z_2} = \frac{r_1}{r_2}\big(\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2)\big)$$
+
+Com a notação "cis" da seção anterior, fica ainda mais curto de escrever: $z_1z_2 = r_1r_2\,\text{cis}(\theta_1+\theta_2)$ e $z_1/z_2 = (r_1/r_2)\,\text{cis}(\theta_1-\theta_2)$.
 
 Ou seja: multiplicar por $z_2$ é "esticar" por um fator $r_2$ e "girar" por um ângulo $\theta_2$. Esse é o motivo pelo qual multiplicar por $i$ (que tem $r=1,\ \theta=90°$) corresponde a girar $90°$ no plano complexo.
 
@@ -168,9 +193,20 @@ $$z_1 z_2 = r_1 r_2\, e^{i(\theta_1+\theta_2)} \qquad\qquad \frac{z_1}{z_2} = \f
 
 Elevar um complexo em forma polar/exponencial a uma potência inteira $n$ é direto:
 
-$$z^n = r^n\big(\cos(n\theta)+i\sin(n\theta)\big) = r^n e^{in\theta}$$
+$$z^n = r^n\big(\cos(n\theta)+i\sin(n\theta)\big) = r^n\,\text{cis}(n\theta) = r^n e^{in\theta}$$
 
 Essa é a **fórmula de De Moivre**: eleva o módulo à $n$-ésima potência e multiplica o argumento por $n$.
+
+### Por que isso "é" a fórmula de Euler
+
+A fórmula de De Moivre não é um fato separado da fórmula de Euler — ela **sai direto** da fórmula de Euler, bastando elevar os dois lados à potência $n$. Relembrando Euler, $\cos\theta+i\sin\theta = e^{i\theta}$. Então:
+
+$$z^n = \big(\cos\theta+i\sin\theta\big)^n = \big(e^{i\theta}\big)^n = e^{in\theta} = \cos(n\theta)+i\sin(n\theta)$$
+
+O passo do meio, $\left(e^{i\theta}\right)^n=e^{in\theta}$, é só a regra de potência de expoentes que já valia pra exponencial real ($(e^x)^n=e^{nx}$) — Euler garante que ela continua valendo com expoente imaginário. É exatamente isso que faz $\cos(n\theta)+i\sin(n\theta)$ aparecer do lado direito "de graça": a fórmula de Euler é o motivo pelo qual De Moivre funciona, não uma coisa à parte dela. Dito de outro modo: **De Moivre é Euler elevado à $n$-ésima potência.**
+
+!!! tip "Se preferir pensar sem Euler"
+    Dá pra chegar no mesmo resultado só com geometria, sem passar pela exponencial: multiplicar por $z=r\,\text{cis}\,\theta$ gira o afixo por $\theta$ e estica por $r$ (visto na seção de multiplicação em forma polar). Elevar a $z^n$ é multiplicar $z$ por si mesmo $n$ vezes, ou seja, aplicar essa rotação+escala $n$ vezes seguidas — gira $n\cdot\theta$ no total e estica por $r^n$. As duas explicações (via Euler, ou via "rotações que se acumulam") levam exatamente à mesma fórmula.
 
 !!! example "Exemplo"
     Calcular $(1+i)^{10}$. Primeiro em forma polar: $r=\sqrt2$, $\theta=45°$. Então:
@@ -187,14 +223,30 @@ $$w_k = \sqrt[n]{r}\left(\cos\frac{\theta+360°k}{n} + i\sin\frac{\theta+360°k}
 
 Geometricamente, essas $n$ raízes estão todas sobre um círculo de raio $\sqrt[n]{r}$, igualmente espaçadas por um ângulo de $360°/n$ entre si — formam os vértices de um polígono regular de $n$ lados.
 
-!!! example "Raízes cúbicas de $8$"
-    $z=8=8(\cos0°+i\sin0°)$, $r=8$, $\theta=0°$, $n=3$. $\sqrt[3]{8}=2$.
+!!! example "Raízes cúbicas de 8"
+    O que esse exemplo está pedindo: encontrar **todo** número complexo $w$ tal que $w^3=8$. Nos reais, só existe uma resposta ($w=2$). Nos complexos, pela 2ª fórmula de De Moivre, existem exatamente $n=3$ respostas — é isso que vamos calcular.
 
-    $$w_0 = 2(\cos0°+i\sin0°) = 2$$
+    **Passo 1 — escrever $z=8$ em forma polar.** $8$ é um número real positivo, então no plano complexo seu afixo está sobre o eixo real positivo: $r=|8|=8$ e $\theta=0°$. Logo $z=8(\cos0°+i\sin0°)$.
+
+    **Passo 2 — aplicar a fórmula das raízes $n$-ésimas**, com $n=3$ (queremos raiz cúbica) e $k=0,1,2$ (são $n=3$ raízes, então $k$ vai de $0$ até $n-1=2$):
+
+    $$w_k = \sqrt[3]{8}\left(\cos\frac{0°+360°k}{3}+i\sin\frac{0°+360°k}{3}\right)$$
+
+    O módulo de toda raiz é o mesmo, $\sqrt[3]{8}=2$ — só o ângulo muda com $k$. Calculando o ângulo pra cada $k$:
+
+    - $k=0$: ângulo $=\dfrac{0°+360°\cdot0}{3}=\dfrac{0°}{3}=0°$
+    - $k=1$: ângulo $=\dfrac{0°+360°\cdot1}{3}=\dfrac{360°}{3}=120°$
+    - $k=2$: ângulo $=\dfrac{0°+360°\cdot2}{3}=\dfrac{720°}{3}=240°$
+
+    **Passo 3 — converter cada raiz de volta pra forma algébrica**, usando os valores conhecidos de seno/cosseno:
+
+    $$w_0 = 2(\cos0°+i\sin0°) = 2(1+0i) = 2$$
     $$w_1 = 2(\cos120°+i\sin120°) = 2\left(-\tfrac12+i\tfrac{\sqrt3}{2}\right) = -1+i\sqrt3$$
     $$w_2 = 2(\cos240°+i\sin240°) = 2\left(-\tfrac12-i\tfrac{\sqrt3}{2}\right) = -1-i\sqrt3$$
 
-    Só $w_0=2$ é uma raiz "real" — as outras duas são genuinamente complexas, mas todas as três, elevadas ao cubo, dão $8$. Note que formam um triângulo equilátero no plano complexo.
+    **Conferindo**: se elevar qualquer um dos três ao cubo, o resultado tem que dar $8$ de volta — é assim que se sabe que a conta está certa (tente com $w_0=2$: $2^3=8$ ✓).
+
+    Só $w_0=2$ é uma raiz "real" (a mesma que já conhecíamos) — as outras duas, $w_1$ e $w_2$, são raízes genuinamente complexas que não existiam nos números reais, mas que valem igualmente como "raiz cúbica de 8". Geometricamente, os três afixos $(2,0)$, $(-1,\sqrt3)$ e $(-1,-\sqrt3)$ ficam todos sobre o círculo de raio $2$ centrado na origem, espaçados $120°$ um do outro — ou seja, formam os vértices de um **triângulo equilátero** inscrito nesse círculo. Isso é geral: as $n$ raízes $n$-ésimas de qualquer complexo sempre formam um polígono regular de $n$ lados.
 
 ## Por que isso importa: Teorema Fundamental da Álgebra
 
