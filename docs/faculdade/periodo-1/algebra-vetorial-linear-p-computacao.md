@@ -428,6 +428,7 @@ Essa é a forma **cartesiana** de uma reta: $v=(a,b)$ é o **vetor normal** da r
     Expandindo e simplificando ambas:
 
     $$4x-4+4y+8=0 \;\Rightarrow\; 4x+4y+4=0 \;\Rightarrow\; x+y+1=0$$
+
     $$4x-20+4y+24=0 \;\Rightarrow\; 4x+4y+4=0 \;\Rightarrow\; x+y+1=0$$
 
     Ambos os pontos levam à mesma reta: $r: x+y+1=0$.
@@ -591,6 +592,7 @@ $$r = \left\{(x,y,z)\in\mathbb{R}^3 \;\middle|\; \begin{cases}ax+by+cz+d=0\\ex+f
     Escolhendo $v_1=(1,1,0)$ e $v_2=(1,0,-2)$, os planos são:
 
     $$\pi_1: 1(x-1)+1(y-3)+0(z+1) = x+y-4=0$$
+
     $$\pi_2: 1(x-1)+0(y-3)+(-2)(z+1) = x-2z-3=0$$
 
     ![](../../assets/faculdade/periodo1/20231115225752.png)
@@ -598,6 +600,7 @@ $$r = \left\{(x,y,z)\in\mathbb{R}^3 \;\middle|\; \begin{cases}ax+by+cz+d=0\\ex+f
     **Forma algébrica alternativa:** isolamos $t$ em um dos eixos de $r$ e substituímos nos outros dois. De $z=-1-t$, $t=-1-z$:
 
     $$x=1-2(-1-z)=3+2z \;\Rightarrow\; x-2z-3=0$$
+
     $$y=3+2(-1-z)=1-2z \;\Rightarrow\; y+2z-1=0$$
 
 !!! example "Exemplo: de interseção de planos para forma paramétrica"
@@ -933,7 +936,9 @@ Os $a_{ij}$ são os **coeficientes** do sistema; $x_1,x_2,\dots,x_n$ são as **i
     ![](../../assets/faculdade/periodo1/20231130110140.png)
 
 !!! example "Exemplo"
-    $$\begin{cases}2x_1-3x_3+5x_5=-2\\x_2+x_3-4x_4+x_5=0\\4x_1-x_2+2x_3-5x_5=5\end{cases}$$ — sistema linear com 3 equações e 5 incógnitas.
+    $$\begin{cases}2x_1-3x_3+5x_5=-2\\x_2+x_3-4x_4+x_5=0\\4x_1-x_2+2x_3-5x_5=5\end{cases}$$
+
+    Sistema linear com 3 equações e 5 incógnitas.
 
     ??? note "Foto do quadro"
         ![](../../assets/faculdade/periodo1/20231130110203.png)

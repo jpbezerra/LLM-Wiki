@@ -803,8 +803,11 @@ $$1000\,0000\,0000\,0000\,0000\,0000\,0000\,0000_{\text{two}} = -2{,}147{,}483{,
     Qual o valor decimal deste número de 32 bits que utiliza complemento de dois? `1111 1111 1111 1111 1111 1111 1111 1100₂`
 
     $$(1 \square -2^{31}) + (1 \square 2^{30}) + (1 \square 2^{29}) + \ldots + (1 \square 2^2) + (0 \square 2^1) + (0 \square 2^0)$$
+
     $$= -2^{31} + 2^{30} + 2^{29} + \ldots + 2^2 + 0 + 0$$
+
     $$= -2{,}147{,}483{,}648_{\text{ten}} + 2{,}147{,}483{,}644_{\text{ten}}$$
+
     $$= -4_{\text{ten}}$$
 
     ??? note "Fotos do livro-texto (enunciado e resolução)"

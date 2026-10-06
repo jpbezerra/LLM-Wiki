@@ -727,10 +727,15 @@ Algumas gramáticas ambíguas têm uma gramática não ambígua equivalente (que
     **4 — Converter as regras remanescentes para a forma $A \to BC$ ou $A \to a$.** Introduzindo a variável auxiliar $A_1 \to SA$ (para quebrar $ASA$ em $AA_1$) e a variável terminal $U \to a$ (para usar $a$ em posições que exigem variável), chega-se à gramática final em forma normal de Chomsky, equivalente a $G_6$:
 
     $$S_0 \to AA_1 \mid UB \mid a \mid SA \mid AS$$
+
     $$S \to AA_1 \mid UB \mid a \mid SA \mid AS$$
+
     $$A \to b \mid AA_1 \mid UB \mid a \mid SA \mid AS$$
+
     $$A_1 \to SA$$
+
     $$U \to a$$
+
     $$B \to b$$
 
     ??? note "Fotos do livro-texto com a conversão completa"

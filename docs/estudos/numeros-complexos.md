@@ -241,7 +241,9 @@ Geometricamente, essas $n$ raízes estão todas sobre um círculo de raio $\sqrt
     **Passo 3 — converter cada raiz de volta pra forma algébrica**, usando os valores conhecidos de seno/cosseno:
 
     $$w_0 = 2(\cos0°+i\sin0°) = 2(1+0i) = 2$$
+
     $$w_1 = 2(\cos120°+i\sin120°) = 2\left(-\tfrac12+i\tfrac{\sqrt3}{2}\right) = -1+i\sqrt3$$
+
     $$w_2 = 2(\cos240°+i\sin240°) = 2\left(-\tfrac12-i\tfrac{\sqrt3}{2}\right) = -1-i\sqrt3$$
 
     **Conferindo**: se elevar qualquer um dos três ao cubo, o resultado tem que dar $8$ de volta — é assim que se sabe que a conta está certa (tente com $w_0=2$: $2^3=8$ ✓).
@@ -380,6 +382,7 @@ Números complexos não são só um exercício abstrato — aparecem em vários 
     $$w_k = 2\left(\cos\frac{0°+360°k}{4}+i\sin\frac{0°+360°k}{4}\right),\quad k=0,1,2,3$$
 
     $$w_0=2(\cos0°+i\sin0°)=2 \qquad w_1=2(\cos90°+i\sin90°)=2i$$
+
     $$w_2=2(\cos180°+i\sin180°)=-2 \qquad w_3=2(\cos270°+i\sin270°)=-2i$$
 
     As quatro raízes ($2,\ 2i,\ -2,\ -2i$) formam um quadrado no plano complexo, como esperado — todas elevadas à quarta dão $16$.

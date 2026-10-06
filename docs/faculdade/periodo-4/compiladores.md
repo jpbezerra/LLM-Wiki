@@ -185,6 +185,7 @@ Derivamos palavras de uma gramática $G$ a partir do seu símbolo inicial, subst
     Para a gramática $G$ abaixo:
 
     $$exp \to exp + exp \mid exp - exp \mid digit$$
+
     $$digit \to 0\mid1\mid2\mid3\mid4\mid5\mid6\mid7\mid8\mid9$$
 
     $$L(G) = \{0, 1, \ldots, 0{+}1, 0{+}2, \ldots, 1{-}1, \ldots\}$$

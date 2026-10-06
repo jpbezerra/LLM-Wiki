@@ -145,6 +145,7 @@ $$p(x) \cdot q(x) = (a_0b_0) + (a_1b_0 + a_0b_1)x + (a_2b_0 + a_1b_1 + a_0b_2)x^
     Sejam $p(x) = x^3 + 2x$ e $q(x) = 3x^2 + x + 2$. Multiplicando termo a termo:
 
     $$p(x)\cdot q(x) = 2\cdot 2x + x\cdot 2x + 2\cdot x^3 + 3x^2\cdot 2x + x\cdot x^3 + 3x^2\cdot x^3$$
+
     $$= 4x + 2x^2 + 2x^3 + 6x^3 + x^4 + 3x^5 = 3x^5 + x^4 + 8x^3 + 2x^2 + 4x$$
 
 Note que $\text{grau}(p \cdot q) = \text{grau}(p) + \text{grau}(q)$. Se $\text{grau}(p) \neq \text{grau}(q)$, para a **soma** $p+q$ vale $\text{grau}(p+q) = \max\big(\text{grau}(p), \text{grau}(q)\big)$.
@@ -286,6 +287,7 @@ $$y_v = f(x_v) = \frac{-\Delta}{4a}$$
 ### Operações com funções
 
 $$(f+g)(x) = f(x)+g(x) \qquad (f-g)(x) = f(x)-g(x)$$
+
 $$(kf)(x) = k\cdot f(x) \qquad (f\cdot g)(x) = f(x)\cdot g(x)$$
 
 Para a divisão, o domínio resultante é $D = D(f)\cap D(g)$ (excluindo onde $g(x)=0$):
@@ -1090,6 +1092,7 @@ Problemas de otimização usam derivadas para encontrar o maior ou menor valor p
     ![](../../assets/faculdade/periodo1/20240111163557.png)
 
     $$V = (50-2x)(30-2x)\cdot x = 4x^3 - 160x^2 + 1500x$$
+
     $$V' = 12x^2 - 320x + 1500$$
 
     Igualando a zero: $12x^2 - 320x + 1500 = 0 \Rightarrow 3x^2 - 80x + 375 = 0$.
