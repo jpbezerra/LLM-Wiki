@@ -80,6 +80,7 @@ nav:
       - COMPUTAÇÃO QUÂNTICA (IBM):
           - estudos/computacao-quantica-ibm/index.md
           - AULA 1 - SISTEMAS ÚNICOS: estudos/computacao-quantica-ibm/aula-1.md
+          - AULA 1 - IMPLEMENTAÇÃO EM QISKIT: estudos/computacao-quantica-ibm/aula-1-qiskit.md
       - OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS): estudos/otimizacao-de-joins.md
       - "BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS": estudos/bend2-tipos-dependentes-provas-formais.md
   - Faculdade:

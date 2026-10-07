@@ -348,6 +348,55 @@ Assim como no caso probabilístico, compor operações unitárias é representad
 
     Isso é peculiar — não existe nenhuma operação **clássica** (representada por matriz estocástica) tal que aplicá-la duas vezes dê um NOT. É um primeiro sinal concreto de que operações quânticas permitem coisas que operações clássicas simplesmente não conseguem replicar.
 
+## Complementos (lições escritas do IBM Quantum Learning)
+
+As lições escritas que cobrem o mesmo material ([Classical information](https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/single-systems/classical-information) e [Quantum information](https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/single-systems/quantum-information)) seguem essencialmente a mesma estrutura do vídeo, mas acrescentam alguns pontos que vale registrar aqui.
+
+### Fase global
+
+Dois estados quânticos que diferem apenas por um fator de fase global — isto é, $|\varphi\rangle = e^{i\theta}|\psi\rangle$ para algum $\theta$ real — são **fisicamente indistinguíveis**: toda medição na base padrão dá exatamente as mesmas probabilidades para os dois, porque $|e^{i\theta}\alpha|^2 = |\alpha|^2$ para qualquer amplitude $\alpha$ (multiplicar por um número complexo de módulo 1 não muda o módulo de nada). O mesmo vale depois de qualquer sequência de operações unitárias, já que $U(e^{i\theta}|\psi\rangle) = e^{i\theta}(U|\psi\rangle)$.
+
+Isso costuma gerar confusão na prática: ao medir um qubit duas vezes com simuladores diferentes (ou o mesmo simulador em execuções diferentes), o estado "colapsado" reportado pode vir multiplicado por uma fase global diferente a cada vez — por exemplo, $|0\rangle$ numa execução e $-|0\rangle$ (ou $i|0\rangle$) em outra. Isso **não** é um erro nem contradiz nada: são representações equivalentes do mesmo estado físico. Por convenção, diz-se que dois vetores de estado representam o mesmo estado físico se e somente se diferem por (no máximo) uma fase global.
+
+!!! note "Fase global vs. fase relativa"
+    Fase global (um fator comum multiplicando o vetor inteiro) não tem efeito observável. Já uma **fase relativa** — como o sinal de menos que distingue $|+\rangle$ de $|-\rangle$, ou a diferença de fase entre as duas entradas de um estado qualquer — tem efeito físico real e observável (foi exatamente isso que o truque de "aplicar Hadamard antes de medir" explorou para distinguir $|+\rangle$ de $|-\rangle$ na seção anterior).
+
+### Operações unitárias em sistemas maiores: matrizes de permutação
+
+A definição de operação unitária não depende do número de estados clássicos do sistema — vale para sistemas com qualquer número finito de estados, não só qubits. Uma família simples (e instrutiva) de exemplos em sistemas maiores são as **matrizes de permutação**: matrizes que têm exatamente um $1$ em cada linha e em cada coluna, e $0$ no resto (generalização direta das matrizes de operações determinísticas clássicas invertíveis).
+
+Toda matriz de permutação é unitária — multiplicar por ela só reordena as entradas do vetor, o que preserva a norma euclidiana automaticamente. E, de fato, as matrizes de permutação são precisamente a **interseção** entre as matrizes estocásticas e as matrizes unitárias: uma matriz que é ao mesmo tempo estocástica e unitária só pode ser uma permutação.
+
+!!! example "Soma módulo 3"
+    Considere um sistema com três estados clássicos $\Sigma=\{0,1,2\}$, e a operação "somar 1 módulo 3": $0\mapsto1$, $1\mapsto2$, $2\mapsto0$. A matriz correspondente é uma permutação:
+
+    $$M = \begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix}$$
+
+    e de fato $M^\dagger M = \mathbb{1}$ (aqui $M^\dagger=M^T$ pois as entradas já são reais) — confirmando que é unitária, além de estocástica.
+
+!!! example "Transformada de Fourier quântica (QFT), caso $4\times4$"
+    Um exemplo bem menos trivial de matriz unitária (e que **não** é uma matriz de permutação nem estocástica) é a transformada de Fourier quântica, para um sistema com quatro estados clássicos $\{0,1,2,3\}$. Com $\omega = e^{2\pi i/4} = i$:
+
+    $$F = \frac12\begin{pmatrix}1&1&1&1\\1&\omega&\omega^2&\omega^3\\1&\omega^2&\omega^4&\omega^6\\1&\omega^3&\omega^6&\omega^9\end{pmatrix} = \frac12\begin{pmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{pmatrix}$$
+
+    Pode-se verificar que $F^\dagger F = \mathbb{1}$ — é unitária, apesar de ter entradas negativas e imaginárias que impedem qualquer interpretação como "matriz estocástica" (que exigiria entradas reais não negativas). A QFT é uma operação central em vários algoritmos quânticos importantes (ela reaparece, generalizada, bem mais adiante no curso).
+
+    ??? note "Verificação numérica (NumPy)"
+        ```python
+        import numpy as np
+
+        omega = np.exp(2j * np.pi / 4)
+        F = (1/2) * np.array([[omega**(j*k) for k in range(4)] for j in range(4)])
+
+        print(np.round(F.conj().T @ F, 6))
+        # [[1.+0.j 0.+0.j 0.+0.j 0.+0.j]
+        #  [0.+0.j 1.+0.j 0.+0.j 0.+0.j]
+        #  [0.+0.j 0.+0.j 1.+0.j 0.+0.j]
+        #  [0.+0.j 0.+0.j 0.+0.j 1.+0.j]]
+        ```
+
+A implementação prática de boa parte do conteúdo desta aula (vetores, medições e operações unitárias, usando o Qiskit) está na página seguinte: [Implementação em Qiskit](aula-1-qiskit.md).
+
 ---
 
 ## Anotações e observações pessoais
