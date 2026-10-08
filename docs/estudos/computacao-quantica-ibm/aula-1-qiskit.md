@@ -159,5 +159,26 @@ print(contagens)
 # {'0': ~3414, '1': ~586}   (≈ 85.4% / 14.6%, consistente com |amplitude|² de cada entrada)
 ```
 
+??? note "Passo a passo: de onde vem essa matriz U, e por que U|0⟩ dá esse vetor"
+    **Por que $U = H\,T\,H$ (nessa ordem) e não outra coisa.** O circuito aplica as portas na ordem $H$, depois $T$, depois $H$ de novo. Aplicar operações em sequência a um vetor $v$ — primeiro $H$, depois $T$, depois $H$ — significa calcular
+
+    $$H\big(T(Hv)\big) = (H\,T\,H)\,v$$
+
+    Ou seja, a matriz combinada é o produto das matrizes **na ordem inversa** da aplicação: a primeira porta aplicada fica mais à **direita** no produto, a última fica mais à **esquerda** (a mesma regra de composição de operações unitárias vista na Aula 1). Por isso `Operator.from_circuit(qc)` calcula $U = H\,T\,H$, não $H\,H\,T$ nem qualquer outra ordem.
+
+    **Calculando $U = HTH$ na mão.** Com $c=\dfrac{1+i}{\sqrt2}$ (a entrada não trivial de $T$):
+
+    $$TH = \frac{1}{\sqrt2}\begin{pmatrix}1&1\\c&-c\end{pmatrix} \qquad\Longrightarrow\qquad U = H(TH) = \frac12\begin{pmatrix}1+c & 1-c\\ 1-c & 1+c\end{pmatrix}$$
+
+    Substituindo $c\approx0{,}7071+0{,}7071i$:
+
+    $$\frac{1+c}{2}\approx 0{,}8536+0{,}3536i \qquad \frac{1-c}{2}\approx 0{,}1464-0{,}3536i$$
+
+    que são exatamente os quatro números impressos em `U`.
+
+    **Por que `Statevector([1, 0]).evolve(U)` dá a primeira coluna de `U`.** $(1,0)$ é o vetor $|0\rangle$, e multiplicar qualquer matriz por $|0\rangle$ sempre devolve a sua **primeira coluna** (o mesmo truque de "jogar o vetor da base dentro da matriz" usado na Aula 1 para calcular a ação de operações sobre estados da base padrão). Por isso `resultado` sai idêntico à primeira coluna de `U`.
+
+    **Por que esse número já apareceu antes.** Isso não é coincidência: o circuito faz $H|0\rangle=|+\rangle$, depois $T$, depois $H$ de novo — ou seja, calcula exatamente $H\big(T|+\rangle\big) = HT|+\rangle$, que é o mesmo valor obtido em [2.3](#23-operacoes-com-operator) com `plus.evolve(T).evolve(H)`. O circuito só está automatizando (e confirmando numericamente) a mesma conta.
+
 !!! tip "Por que isso importa"
     Essa seção já antecipa a virada de chave do curso: tudo que fizemos até aqui (vetores, medição, matrizes unitárias) tem uma representação direta como **circuito** — a forma universal de descrever algoritmos quânticos e de efetivamente rodá-los num computador quântico real (via `qiskit-ibm-runtime`) ou num simulador. As próximas lições do curso (sistemas múltiplos, e depois a unidade de circuitos) constroem em cima exatamente dessa ponte.
