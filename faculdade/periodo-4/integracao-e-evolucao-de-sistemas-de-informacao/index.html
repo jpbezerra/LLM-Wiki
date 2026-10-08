@@ -1,0 +1,4592 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Base de conhecimento pessoal — faculdade e estudos">
+      
+      
+        <meta name="author" content="João Pedro Bezerra">
+      
+      
+      
+        <link rel="prev" href="../informatica-teorica/">
+      
+      
+        <link rel="next" href="../../periodo-5/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO - LLM Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integracao-e-evolucao-de-sistemas-de-informacao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="LLM Wiki" class="md-header__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLM Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../estudos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Estudos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Faculdade
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LLM Wiki" class="md-nav__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLM Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estudos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estudos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/numeros-complexos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NÚMEROS COMPLEXOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/agentes-de-ia/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTES DE IA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AGENTES DE IA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/harness-e-pi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HARNESS E PI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/otimizacao-tokens-roteamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE TOKENS E ROTEAMENTO DE MODELOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/fine-tuning-agentico-meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FINE-TUNING AGÊNTICO: A ABORDAGEM DA META
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/jev-modelos-decisao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JEV: MODELOS DE DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/computacao-quantica-ibm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - SISTEMAS ÚNICOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1-qiskit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - IMPLEMENTAÇÃO EM QISKIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/otimizacao-de-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/bend2-tipos-dependentes-provas-formais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faculdade
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Faculdade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 1
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/calculo-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CÁLCULO 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/matematica-discreta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATEMÁTICA DISCRETA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/algebra-vetorial-linear-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 2
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA E PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/assuncoes-da-regressao-linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assunções da regressão linear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/fisica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FÍSICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/logica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LÓGICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SISTEMAS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 3
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/arquitetura-de-computadores-e-sistemas-operacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepção de Artefatos Digitais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/grupo-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grupo 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/desenvolvimento-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DESENVOLVIMENTO DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/estruturas-de-dados-orientadas-a-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTRUTURAS DE DADOS ORIENTADAS À OBJETOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 4
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../banco-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BANCO DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compiladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPILADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../informatica-teorica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA TEÓRICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sistemas-de-informacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistemas de Informação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sistemas de Informação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-piramide-dikw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A pirâmide DIKW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistemas-abertos-e-fechados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistemas abertos e fechados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnologia-da-informacao-vs-sistema-de-informacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tecnologia da Informação vs. Sistema de Informação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tecnologia da Informação vs. Sistema de Informação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evolucao-da-infraestrutura-de-ti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolução da infraestrutura de TI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diamante-de-leavitt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diamante de Leavitt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-si" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de SI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smacit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMACIT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fatores-criticos-de-sucesso-na-implantacao-de-erps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fatores críticos de sucesso na implantação de ERPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processos-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processos de Negócio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processos de Negócio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-processos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de processos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-mining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Mining
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kpi-key-performance-indicator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPI (Key Performance Indicator)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abordagens-de-gestao-e-melhoria-de-processos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abordagens de gestão e melhoria de processos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bpmn-business-process-model-and-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BPMN (Business Process Model and Notation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Computing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud Computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtualizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtualização
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos-de-implantacao-deployment-de-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelos de implantação (deployment) de cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos-de-servico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelos de serviço
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguranca-da-informacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança da Informação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segurança da Informação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triade-cia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tríade CIA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#malwares-malicious-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Malwares (Malicious Software)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integração
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teorema-cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teorema CAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-para-integracao-de-aplicacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios para integração de aplicações
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilos-de-integracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estilos de integração
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 5
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/projeto-aprendizagem-de-maquina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Aprendizagem de Máquina
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3_2" id="__nav_3_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projeto Packet Tracer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 - Design Físico e Topologia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e2-design-de-enderecamento-vlsm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2 - Design de Endereçamento VLSM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e3-design-de-segmentacao-vlans-e-dhcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E3 - Design de Segmentação (VLANs e DHCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E4 - Roteamento Inter-VLAN e Conectividade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e5-apresentacao-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E5 - Apresentação Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/referencias-bibliograficas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências Bibliográficas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/untitled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untitled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/metodologia-e-expressao-tecnico-cientifica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    METODOLOGIA E EXPRESSÃO TÉCNICO-CIENTÍFICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/paradigmas-de-linguagens-computacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PARADIGMAS DE LINGUAGENS COMPUTACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-6/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 6
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/empreendimentos-em-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EMPREENDIMENTOS EM INFORMÁTICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/engenharia-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENGENHARIA DE REQUISITOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/informatica-e-sociedade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA E SOCIEDADE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/topicos-avancados-em-si-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TÓPICOS AVANÇADOS EM SI 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sistemas-de-informacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistemas de Informação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sistemas de Informação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-piramide-dikw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A pirâmide DIKW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistemas-abertos-e-fechados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistemas abertos e fechados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnologia-da-informacao-vs-sistema-de-informacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tecnologia da Informação vs. Sistema de Informação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tecnologia da Informação vs. Sistema de Informação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evolucao-da-infraestrutura-de-ti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolução da infraestrutura de TI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diamante-de-leavitt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diamante de Leavitt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-si" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de SI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smacit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMACIT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fatores-criticos-de-sucesso-na-implantacao-de-erps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fatores críticos de sucesso na implantação de ERPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processos-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processos de Negócio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processos de Negócio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-processos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de processos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-mining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Mining
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kpi-key-performance-indicator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPI (Key Performance Indicator)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abordagens-de-gestao-e-melhoria-de-processos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abordagens de gestão e melhoria de processos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bpmn-business-process-model-and-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BPMN (Business Process Model and Notation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Computing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud Computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtualizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtualização
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos-de-implantacao-deployment-de-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelos de implantação (deployment) de cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos-de-servico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelos de serviço
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguranca-da-informacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança da Informação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segurança da Informação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triade-cia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tríade CIA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#malwares-malicious-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Malwares (Malicious Software)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integração
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teorema-cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teorema CAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-para-integracao-de-aplicacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios para integração de aplicações
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estilos-de-integracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estilos de integração
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/jpbezerra/llm-wiki/edit/main/docs/faculdade/periodo-4/integracao-e-evolucao-de-sistemas-de-informacao.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="integracao-e-evolucao-de-sistemas-de-informacao">INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO<a class="headerlink" href="#integracao-e-evolucao-de-sistemas-de-informacao" title="Permanent link">&para;</a></h1>
+<h2 id="sistemas-de-informacao">Sistemas de Informação<a class="headerlink" href="#sistemas-de-informacao" title="Permanent link">&para;</a></h2>
+<p>Um <strong>Sistema de Informação (SI)</strong> é um conjunto de componentes inter-relacionados que coletam, processam, armazenam e distribuem informações para apoiar a tomada de decisões e o controle em uma organização. Seu valor está em transformar dados brutos em valor estratégico para o negócio.</p>
+<h3 id="a-piramide-dikw">A pirâmide DIKW<a class="headerlink" href="#a-piramide-dikw" title="Permanent link">&para;</a></h3>
+<p>Os SI são o motor que movimenta a <strong>pirâmide DIKW</strong> — um modelo que representa a progressão hierárquica da informação, desde o dado bruto até a sabedoria aplicada:</p>
+<details class="note">
+<summary>Diagrama da pirâmide</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image.png" /></p>
+</details>
+<table>
+<thead>
+<tr>
+<th>Nível</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data</strong> (Dado)</td>
+<td>Elementos brutos, sem contexto.</td>
+</tr>
+<tr>
+<td><strong>Information</strong> (Informação)</td>
+<td>Dados organizados e contextualizados.</td>
+</tr>
+<tr>
+<td><strong>Knowledge</strong> (Conhecimento)</td>
+<td>Interpretação da informação para a tomada de decisão — saber <em>como</em> usar a informação adequadamente.</td>
+</tr>
+<tr>
+<td><strong>Wisdom</strong> (Sabedoria)</td>
+<td>Uso consciente do conhecimento, baseado em experiência, ética e visão estratégica.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sistemas-abertos-e-fechados">Sistemas abertos e fechados<a class="headerlink" href="#sistemas-abertos-e-fechados" title="Permanent link">&para;</a></h3>
+<p>Um <strong>sistema</strong>, de forma geral, é uma coleção de componentes que interagem entre si e que, coletivamente, podem ser vistos como algo que trabalha em direção a um objetivo comum. Classificam-se em:</p>
+<ul>
+<li><strong>Sistemas fechados</strong>: não interagem além de suas próprias fronteiras;</li>
+<li><strong>Sistemas abertos</strong>: interagem ativamente com o ambiente ao seu redor.</li>
+</ul>
+<p>Esquematicamente, todo sistema aberto tem essa forma: um fluxo de <strong>entrada</strong> atravessa a <strong>fronteira do sistema</strong>, passa por etapas de processamento internas, gera um <strong>feedback</strong> que realimenta o próprio processamento, e produz um fluxo de <strong>saída</strong> que cruza a fronteira de volta para o ambiente.</p>
+<details class="note">
+<summary>Diagrama de um sistema aberto genérico</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%201.png" /></p>
+</details>
+<p>Os SI são, por definição, exemplos de <strong>sistemas abertos</strong> — são estabelecidos para servir à estratégia geral de uma organização, ajudando-a a cumprir seus objetivos no contexto de um ambiente externo em constante mudança.</p>
+<div class="admonition note">
+<p class="admonition-title">Nem todo SI é digital</p>
+<p>Um Sistema de Informação não precisa necessariamente envolver computadores — um sistema de fichas de papel em uma biblioteca também é um SI. O que nos interessa aqui, especificamente, é o <strong>SI baseado em computador</strong>, composto por:</p>
+<ul>
+<li><strong>Componentes de Tecnologia da Informação</strong>: hardware, software, banco de dados e rede;</li>
+<li><strong>Procedimentos/processos</strong>;</li>
+<li><strong>Pessoas</strong>.</li>
+</ul>
+<details class="note">
+<summary>Diagrama de referência</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%202.png" /></p>
+</details>
+</div>
+<h3 id="tecnologia-da-informacao-vs-sistema-de-informacao">Tecnologia da Informação vs. Sistema de Informação<a class="headerlink" href="#tecnologia-da-informacao-vs-sistema-de-informacao" title="Permanent link">&para;</a></h3>
+<p>É importante não confundir os dois termos:</p>
+<ul>
+<li><strong>TI (Tecnologia da Informação)</strong>: refere-se a qualquer ferramenta baseada em computador que as pessoas usam para trabalhar com informação, apoiando as necessidades de processamento de informação de uma organização.</li>
+<li><strong>SI (Sistema de Informação)</strong>: coleta, processa, armazena, analisa e dissemina informações para um fim <strong>específico</strong> — a TI é o conjunto de ferramentas; o SI é a solução organizacional construída sobre essas ferramentas.</li>
+</ul>
+<p><strong>Infraestrutura de TI em um SI</strong> é composta por seis componentes: hardware, software, redes, bancos de dados, pessoas e serviços.</p>
+<h4 id="evolucao-da-infraestrutura-de-ti">Evolução da infraestrutura de TI<a class="headerlink" href="#evolucao-da-infraestrutura-de-ti" title="Permanent link">&para;</a></h4>
+<p>A infraestrutura de TI evoluiu por sucessivas eras: <strong>mainframe</strong> → <strong>computador pessoal</strong> → <strong>modelo client/server</strong> → <strong>enterprise computing</strong> → <strong>cloud e mobile computing</strong>. Essa evolução foi impulsionada por forças econômicas e tecnológicas bem definidas:</p>
+<div class="admonition note">
+<p class="admonition-title">Leis que impulsionaram a evolução</p>
+<ul>
+<li><strong>Custo de hardware (processamento)</strong> — <strong>Lei de Moore</strong>: o poder de processamento dobra a cada dois anos.</li>
+<li><strong>Custo de hardware (armazenamento)</strong> — <strong>Law of Mass Digital Storage</strong>: o número de kilobytes que podem ser armazenados ao custo de 1 dólar dobra a cada 15 meses.</li>
+<li><strong>Redução dos custos de comunicação</strong> — <strong>Lei de Metcalfe</strong>: o valor de uma rede é proporcional ao quadrado do seu número de nós.</li>
+</ul>
+</div>
+<p>O ecossistema de infraestrutura de TI é formado por sete categorias de fornecedores que se interligam: plataformas de hardware de computador (ex.: Dell, IBM, Sun, HP, Apple, máquinas Linux), plataformas de sistemas operacionais (ex.: Microsoft Windows, Unix, Linux, Mac OS X, Google Chrome), aplicações de software empresarial — incluindo middleware (ex.: SAP, Oracle, Microsoft, BEA), gerenciamento e armazenamento de dados (ex.: IBM DB2, Oracle, SQL Server, Sybase, MySQL, EMC Systems), plataformas de internet (ex.: Apache, Microsoft IIS/.NET, Unix, Cisco, Java), redes e telecomunicações (ex.: Microsoft Windows Server, Linux, Novell, Cisco, Alcatel-Lucent, Nortel, AT&amp;T, Verizon) e consultores/integradores de sistemas (ex.: IBM, EDS, Accenture).</p>
+<details class="note">
+<summary>Diagrama do ecossistema de infraestrutura de TI</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%203.png" /></p>
+</details>
+<div class="admonition example">
+<p class="admonition-title">Tendências (2012)</p>
+<ul>
+<li><strong>Hardware</strong>: The Emerging Mobile Digital Platform; Grid Computing; Virtualization; Cloud Computing; Green Computing; Autonomic Computing; High-Performance and Power-Saving Processors.</li>
+<li><strong>Software</strong>: Linux and Open Source Software; Software for the Web (Java and Ajax); Web Services and Service-Oriented Architecture; Software Outsourcing and Cloud Services.</li>
+</ul>
+</div>
+<details class="note">
+<summary>Imagens de referência (listas de tendências)</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%204.png" />
+<img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%205.png" /></p>
+</details>
+<h3 id="diamante-de-leavitt">Diamante de Leavitt<a class="headerlink" href="#diamante-de-leavitt" title="Permanent link">&para;</a></h3>
+<p>O <strong>Diamante de Leavitt</strong> é um modelo de análise organizacional que ajuda a entender como diferentes elementos de uma organização estão interligados, trazendo uma visão sistêmica do negócio:</p>
+<details class="note">
+<summary>Diagrama do Diamante de Leavitt</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%206.png" /></p>
+</details>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Pergunta que responde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Task</strong> (Tarefa)</td>
+<td>O que precisa ser feito para atingir os objetivos da organização?</td>
+</tr>
+<tr>
+<td><strong>People</strong> (Pessoas)</td>
+<td>Quem executa as tarefas?</td>
+</tr>
+<tr>
+<td><strong>Technology</strong> (Tecnologia)</td>
+<td>Quais ferramentas e sistemas são usados para realizar as tarefas?</td>
+</tr>
+<tr>
+<td><strong>Structure</strong> (Estrutura)</td>
+<td>Como a organização se organiza para coordenar pessoas e tarefas?</td>
+</tr>
+</tbody>
+</table>
+<p>O SI se relaciona com <strong>todos</strong> os vértices do diamante, mas principalmente com o da tecnologia:</p>
+<ul>
+<li>é a <strong>tecnologia organizacional central</strong>, automatizando tarefas, armazenando dados, apoiando decisões e conectando setores;</li>
+<li><strong>redesenha processos</strong>, transformando atividades manuais em práticas guiadas por dados;</li>
+<li><strong>muda a forma como as pessoas trabalham</strong>, exigindo novas competências e alterando papéis e relações;</li>
+<li>pode <strong>descentralizar decisões</strong>, eliminando camadas hierárquicas — ou, ao contrário, exigir a criação de novas unidades organizacionais.</li>
+</ul>
+<h3 id="tipos-de-si">Tipos de SI<a class="headerlink" href="#tipos-de-si" title="Permanent link">&para;</a></h3>
+<p>A escolha de qual tipo de SI usar depende bastante do setor, e vários tipos podem coexistir na mesma organização:</p>
+<table>
+<thead>
+<tr>
+<th>Sigla</th>
+<th>Nome</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EIS</strong></td>
+<td>Executive Information Systems</td>
+<td>Oferece visão global e estratégica da organização para a alta direção.</td>
+</tr>
+<tr>
+<td><strong>DSS</strong></td>
+<td>Decision Support Systems</td>
+<td>Ajuda a tomar decisões não-estruturadas ou semi-estruturadas, com uso de modelos e simulações.</td>
+</tr>
+<tr>
+<td><strong>ERP</strong></td>
+<td>Enterprise Resource Planning</td>
+<td>Integra todos os processos da empresa em um único sistema.</td>
+</tr>
+<tr>
+<td><strong>CRM</strong></td>
+<td>Customer Relationship Management</td>
+<td>Gerencia o ciclo de vida do cliente, melhorando o relacionamento.</td>
+</tr>
+<tr>
+<td><strong>SCM</strong></td>
+<td>Supply Chain Management</td>
+<td>Gerencia o fluxo de materiais e informações da cadeia logística.</td>
+</tr>
+<tr>
+<td><strong>MIS</strong></td>
+<td>Management Information Systems</td>
+<td>Gera relatórios a partir dos dados de sistemas transacionais (<strong>TPS</strong> — Transaction Processing Systems) para apoiar o gerenciamento.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Lei de Conway</p>
+<p>A forma como as pessoas e equipes se comunicam dentro da empresa se reflete <strong>diretamente</strong> na estrutura do sistema construído — equipes fragmentadas tendem a produzir sistemas fragmentados, e vice-versa.</p>
+</div>
+<h3 id="smacit">SMACIT<a class="headerlink" href="#smacit" title="Permanent link">&para;</a></h3>
+<p><strong>SMACIT</strong> é o conjunto de tecnologias que vêm transformando a forma como as empresas operam:</p>
+<ul>
+<li><strong>S</strong>ocial — uso de mídias sociais e plataformas de comunicação para interagir com clientes e construir comunidades;</li>
+<li><strong>M</strong>obile — uso de dispositivos móveis para acessar informações e serviços da empresa;</li>
+<li><strong>A</strong>nalytics — coleta, análise e interpretação de dados para entender comportamento de clientes, tendências de mercado e outros aspectos do negócio;</li>
+<li><strong>C</strong>loud Computing — uso de serviços em nuvem para armazenar dados, hospedar aplicações e outros recursos;</li>
+<li><strong>I</strong>nternet of <strong>T</strong>hings — conexão de dispositivos físicos à internet para coletar e transmitir dados, permitindo automação e controle remoto.</li>
+</ul>
+<h3 id="fatores-criticos-de-sucesso-na-implantacao-de-erps">Fatores críticos de sucesso na implantação de ERPs<a class="headerlink" href="#fatores-criticos-de-sucesso-na-implantacao-de-erps" title="Permanent link">&para;</a></h3>
+<p>Implantar um ERP é um dos projetos de TI mais arriscados e caros que uma organização pode empreender — a literatura identifica vários fatores críticos de sucesso:</p>
+<ol>
+<li><strong>Composição e trabalho em equipe.</strong> Definir uma equipe multidisciplinar: gerente de projeto, usuários-chave, especialistas de TI e consultores do parceiro de implementação.</li>
+<li><strong>Apoio da alta gestão.</strong> Comunicar a importância do projeto para toda a empresa; definir a visão estratégica para o ERP; resolver conflitos entre departamentos; garantir que os melhores funcionários participem do projeto.</li>
+<li><strong>Plano de negócios e visão.</strong> O <strong>plano</strong> define os benefícios esperados em termos mensuráveis (KPIs); a <strong>visão</strong> garante que todos entendam o objetivo como algo transformador, não apenas uma troca de software.</li>
+<li><strong>Comunicação efetiva.</strong> Presente durante todo o projeto, com o objetivo de manter todos informados, gerenciar expectativas sobre o que o sistema pode (e não pode) fazer, reduzir medo e resistência, e coletar feedback continuamente.</li>
+<li><strong>Gestão de projeto.</strong> Controlar escopo, tempo, custo, qualidade, riscos e recursos.</li>
+<li><strong>Defensor do projeto (<em>champion</em>).</strong> Uma figura específica que serve como ponto focal da mudança, ajudando a superar barreiras políticas e culturais, construindo apoio em todos os níveis da organização, e servindo de exemplo de otimismo e comprometimento com o novo sistema.</li>
+<li><strong>Sistemas legados e de negócio adequados.</strong> Fazer um inventário e análise profunda dos sistemas existentes: entender o que funciona bem e o que é problemático; decidir quais sistemas serão substituídos pelo ERP e quais precisam ser integrados a ele; planejar como os dados legados serão limpos e migrados.</li>
+<li><strong>Programa de gestão da mudança e cultura.</strong> Estruturar um programa que vá além de comunicação e treinamento: análise de impacto (como a mudança afeta cada cargo/departamento), mapeamento cultural (o que facilita ou dificulta a adoção) e um plano de ação concreto para mitigar resistências.</li>
+<li><strong>Redesenho de processos (BPR) e mínima customização.</strong> A empresa deve adaptar seus processos às melhores práticas já embutidas no ERP, em vez de customizar o software para replicar processos antigos — cada alteração no código-fonte do ERP gera custo, complexidade, dificulta atualizações futuras e aumenta o risco de bugs; customizar apenas quando for absolutamente essencial para uma vantagem competitiva real.</li>
+<li><strong>Desenvolvimento, teste e solução de problemas de software.</strong> A fase técnica mais intensa: desenvolvimento/configuração (ajustar o sistema aos processos definidos), testes (unitários, de integração — para ver se os módulos conversam entre si — e o <strong>UAT</strong>, <em>User Acceptance Testing</em>, onde usuários-chave validam o sistema em cenários reais), e um processo claro de <em>troubleshooting</em> para identificar, priorizar e corrigir erros.</li>
+<li><strong>Monitoramento e avaliação do desempenho.</strong> Crucial após a implementação: monitorar o desempenho técnico (velocidade, estabilidade), avaliar se os KPIs do plano de negócios estão sendo alcançados, e coletar feedback dos usuários para identificar necessidades de treinamento adicional ou pequenos ajustes — garantindo que o investimento realmente traga o retorno esperado.</li>
+</ol>
+<hr />
+<h2 id="processos-de-negocio">Processos de Negócio<a class="headerlink" href="#processos-de-negocio" title="Permanent link">&para;</a></h2>
+<p>Um <strong>processo de negócio</strong> é um conjunto de atividades ou tarefas estruturadas e relacionadas que produzem um serviço ou produto específico para seus clientes. É parte central dos SI, já que estes suportam, viabilizam e integram os processos de negócio da organização.</p>
+<p><strong>Elementos básicos de um processo:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entrada</strong></td>
+<td>Insumos, materiais, serviços e informações que fluem e são transformados pelas atividades do processo.</td>
+</tr>
+<tr>
+<td><strong>Recursos</strong></td>
+<td>Pessoas e equipamentos que realizam as atividades.</td>
+</tr>
+<tr>
+<td><strong>Saída</strong></td>
+<td>O produto ou serviço criado pelo processo.</td>
+</tr>
+</tbody>
+</table>
+<p>Se o processo envolve um cliente, esse cliente pode ser <strong>interno</strong> (ex.: um gerente que recebe um relatório interno) ou <strong>externo</strong> (ex.: um indivíduo ou empresa que adquire os produtos da organização, cliente de um processo de atendimento).</p>
+<h3 id="tipos-de-processos">Tipos de processos<a class="headerlink" href="#tipos-de-processos" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primários</strong> (ou centrais)</td>
+<td>Mais operacionais, diretamente ligados à missão da organização.</td>
+<td>Processos ligados a vendas.</td>
+</tr>
+<tr>
+<td><strong>De suporte</strong> (ou habilitadores)</td>
+<td>Apoiam os processos primários.</td>
+<td>Processos ligados a atividades de RH.</td>
+</tr>
+<tr>
+<td><strong>De gerenciamento</strong> (ou governança)</td>
+<td>Medem/monitoram atividades da organização, auxiliando em políticas e diretrizes.</td>
+<td>Processos ligados a planejamento estratégico.</td>
+</tr>
+</tbody>
+</table>
+<p>Gerentes precisam prestar atenção especial aos processos de negócio, pois eles determinam o quão bem a organização executa seus negócios — e podem se tornar uma vantagem estratégica real. Algumas <strong>métricas de eficiência</strong> comuns: tempo para concluir o processo, satisfação do cliente, taxa de erros na entrada de dados, e disponibilidade de recursos.</p>
+<h3 id="process-mining">Process Mining<a class="headerlink" href="#process-mining" title="Permanent link">&para;</a></h3>
+<p><strong>Process Mining</strong> é uma abordagem que combina técnicas de ciência de dados com gestão de processos, para descobrir, monitorar e melhorar processos de negócio com base em dados extraídos diretamente dos sistemas de informação — revelando como os processos realmente ocorrem na prática (e não como deveriam, segundo o modelo teórico).</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Discovery</strong></td>
+<td>Reconstrói o processo real a partir dos logs de eventos, sem necessidade de um modelo prévio.</td>
+</tr>
+<tr>
+<td><strong>Conformance Checking</strong></td>
+<td>Compara o processo real com o modelo esperado, mostrando desvios.</td>
+</tr>
+<tr>
+<td><strong>Enhancement</strong></td>
+<td>Usa dados reais para ajustar e melhorar o modelo de processo existente.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kpi-key-performance-indicator">KPI (Key Performance Indicator)<a class="headerlink" href="#kpi-key-performance-indicator" title="Permanent link">&para;</a></h3>
+<p>Um <strong>KPI</strong> é um indicador-chave que mostra o quão bem um processo está atingindo seus objetivos — auxiliando a monitorar performance, identificar gargalos, embasar decisões e validar o impacto de melhorias implementadas. Exemplos comuns: CSAT, ROI, NPS.</p>
+<div class="admonition tip">
+<p class="admonition-title">KPIs devem ser SMART</p>
+<p><strong>S</strong>pecific (específicos), <strong>M</strong>easurable (mensuráveis), <strong>A</strong>chievable (atingíveis), <strong>R</strong>elevant (relevantes) e <strong>T</strong>ime-bound (com prazo definido).</p>
+</div>
+<h3 id="abordagens-de-gestao-e-melhoria-de-processos">Abordagens de gestão e melhoria de processos<a class="headerlink" href="#abordagens-de-gestao-e-melhoria-de-processos" title="Permanent link">&para;</a></h3>
+<p>O objetivo geral é redesenhar processos de negócio para serem mais eficientes, reduzir custos e melhorar a qualidade. Existem três abordagens complementares:</p>
+<p><strong>BPR (Business Process Reengineering).</strong> Uma estratégia para tornar os processos de negócio de uma organização mais produtivos e lucrativos, determinando como eles podem ser <strong>reconstruídos do zero</strong> para melhorar suas funções. É, normalmente, uma estratégia radical dentro da organização.</p>
+<p><strong>BPI (Business Process Improvement).</strong> Um conjunto de métodos e ferramentas para identificar ineficiências e otimizar processos <strong>já existentes</strong> (mais incremental que o BPR). Técnicas usadas:</p>
+<table>
+<thead>
+<tr>
+<th>Técnica</th>
+<th>Foco</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PDCA</strong> (Plan-Do-Check-Act)</td>
+<td>Ciclo genérico de melhoria contínua.</td>
+</tr>
+<tr>
+<td><strong>DMADV</strong> (Define, Measure, Analyze, Design, Verify)</td>
+<td>Criar <strong>novos</strong> produtos e processos.</td>
+</tr>
+<tr>
+<td><strong>DMAIC</strong> (Define, Measure, Analyze, Improve, Control)</td>
+<td>Melhorar processos de negócio <strong>já existentes</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BPM (Business Process Management).</strong> Uma abordagem sistemática para modelar, analisar, melhorar, automatizar e monitorar processos de negócio — ajuda a <strong>sustentar</strong> os esforços do BPI ao longo do tempo, em vez de ser um projeto único.</p>
+<h3 id="bpmn-business-process-model-and-notation">BPMN (Business Process Model and Notation)<a class="headerlink" href="#bpmn-business-process-model-and-notation" title="Permanent link">&para;</a></h3>
+<p>O <strong>BPMN</strong> é uma linguagem padronizada para modelagem de processos de negócio, facilitando a comunicação entre analistas, desenvolvedores e gestores. Seus principais elementos:</p>
+<p><strong>Activities</strong> (ações realizadas no processo):</p>
+<ul>
+<li><strong>Tasks</strong>: passos simples e indivisíveis (ex.: "edit order");</li>
+<li><strong>Subprocessos</strong>: representam um conjunto de tarefas colapsadas em um único elemento, identificado por um pequeno "+" no retângulo (ex.: "procure goods").</li>
+</ul>
+<details class="example">
+<summary>Exemplo de processo BPMN (pedido com procurement)</summary>
+<p>Um exemplo típico: o processo começa com o evento <em>Order Received</em>; segue para a task <em>Check Availability</em>; um gateway exclusivo (XOR) verifica se o artigo está disponível — se <strong>sim</strong>, vai direto para <em>Ship Article</em> e depois <em>Financial Settlement</em> (um subprocesso), terminando em <em>Payment Received</em>; se <strong>não</strong>, entra no subprocesso <em>Procurement</em>, que pode terminar em <em>Undelivered</em> (via evento intermediário de erro) ou <em>Late Delivery</em> (via evento intermediário de timer) — ambos os casos acionam a task <em>Inform Customer</em>, e o caminho de entrega atrasada ainda segue para <em>Remove Article from Catalogue</em>, terminando em <em>Article Removed</em>.</p>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%207.png" />
+<img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%208.png" /></p>
+</details>
+<p><strong>Events</strong> (pontos de entrada, interrupção ou saída):</p>
+<ul>
+<li><strong>Start events</strong>: iniciam a instância do processo;</li>
+<li><strong>Intermediate events</strong>: representam marcos ou condições intermediárias;</li>
+<li><strong>End events</strong>: encerram o processo.</li>
+</ul>
+<p><strong>Gateways</strong> (controles do fluxo de decisão):</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Comportamento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Exclusive (XOR)</strong></td>
+<td>Apenas uma única saída é escolhida.</td>
+</tr>
+<tr>
+<td><strong>Inclusive (OR)</strong></td>
+<td>Uma ou mais saídas podem ser tomadas.</td>
+</tr>
+<tr>
+<td><strong>Parallel (AND)</strong></td>
+<td>Todas as saídas são ativadas simultaneamente.</td>
+</tr>
+<tr>
+<td><strong>Event-based</strong></td>
+<td>O processo continua pelo primeiro evento que ocorrer.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Connecting Objects</strong> (conectam os elementos do processo entre si):</p>
+<ul>
+<li><strong>Sequence flow</strong>: fluxo de sequência entre tarefas, gateways e eventos;</li>
+<li><strong>Message flow</strong>: comunicação entre <em>pools</em>;</li>
+<li><strong>Association</strong>: liga dados ou artefatos a atividades.</li>
+</ul>
+<p><strong>Artefatos</strong> (fornecem dados e informações de apoio, como complementos de informação):</p>
+<ul>
+<li><strong>Data objects</strong>: representam arquivos ou documentos usados/gerados pelo processo;</li>
+<li><strong>IT Systems</strong>: representam sistemas que executam tarefas automatizadas;</li>
+<li><strong>Comentário/Nota</strong>: pode ser associado a qualquer elemento via uma <em>association</em>.</li>
+</ul>
+<p><strong>Swimlanes</strong> (organização por responsabilidades, mostrando quem é responsável por cada parte do processo):</p>
+<ul>
+<li><strong>Pools</strong>: representam entidades organizacionais inteiras;</li>
+<li><strong>Lanes</strong>: representam grupos ou papéis específicos dentro de uma pool.</li>
+</ul>
+<details class="note">
+<summary>Ícones de notação BPMN (Events, Gateways, Connecting Objects, Artifacts, Swimlanes)</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%209.png" />
+<img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2010.png" />
+<img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2011.png" />
+<img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2012.png" />
+<img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2013.png" /></p>
+</details>
+<hr />
+<h2 id="cloud-computing">Cloud Computing<a class="headerlink" href="#cloud-computing" title="Permanent link">&para;</a></h2>
+<p><strong>Cloud Computing</strong> é a entrega de serviços de computação pela internet. Suas duas propriedades centrais são a escalabilidade e a elasticidade: recursos podem ser ampliados ou reduzidos de forma inteligente conforme a demanda — envolvendo monitoramento contínuo e provisionamento automático —, e o contratante paga apenas pelo que efetivamente utiliza.</p>
+<h3 id="virtualizacao">Virtualização<a class="headerlink" href="#virtualizacao" title="Permanent link">&para;</a></h3>
+<p>A <strong>virtualização</strong> é o motor do Cloud Computing: permite que um único computador físico se comporte como vários computadores virtuais independentes, sendo o próprio motivo pelo qual a nuvem consegue ser escalável e elástica.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Máquina Virtual (VM)</th>
+<th>Container</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nível de virtualização</strong></td>
+<td>Hardware — cria uma máquina completa e virtual.</td>
+<td>Sistema operacional.</td>
+</tr>
+<tr>
+<td><strong>O que precisa instalar</strong></td>
+<td>Um SO completo (com drivers e arquivos), e só então a aplicação com suas dependências.</td>
+<td>Apenas as dependências e bibliotecas da própria aplicação.</td>
+</tr>
+<tr>
+<td><strong>Peso/velocidade</strong></td>
+<td>Alta demora, pesada.</td>
+<td>Leve e rápida — melhora bastante a eficiência.</td>
+</tr>
+<tr>
+<td><strong>Portabilidade</strong></td>
+<td>Limitada ao hypervisor.</td>
+<td>Alta — roda em qualquer ambiente (cloud, local, servidor próprio), compartilhando o mesmo SO entre containers.</td>
+</tr>
+<tr>
+<td><strong>Exemplo</strong></td>
+<td>VMware, VirtualBox</td>
+<td>Docker</td>
+</tr>
+</tbody>
+</table>
+<p>Containers permitem empacotar aplicações junto com suas dependências, garantindo execução consistente em qualquer ambiente — e são altamente compartilháveis entre si.</p>
+<h3 id="modelos-de-implantacao-deployment-de-cloud">Modelos de implantação (deployment) de cloud<a class="headerlink" href="#modelos-de-implantacao-deployment-de-cloud" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Modelo</th>
+<th>Característica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Public</strong></td>
+<td>Infraestrutura oferecida por terceiros via internet; alta escalabilidade e pagamento conforme uso; recursos compartilhados entre clientes (ex.: AWS, Azure, Google Cloud).</td>
+</tr>
+<tr>
+<td><strong>Private</strong></td>
+<td>Infraestrutura exclusiva de uma organização, hospedada internamente (<em>on-premise</em>) ou por terceiros; maior controle, segurança e personalização; ideal para dados sensíveis e ambientes regulados.</td>
+</tr>
+<tr>
+<td><strong>Hybrid</strong></td>
+<td>Combina o melhor dos dois mundos: a flexibilidade/personalização do modelo privado com a otimização e eficiência do modelo público.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Cloud Bursting</p>
+<p>Uma forma comum de implementar o modelo híbrido é o <strong>Cloud Bursting</strong>: uma configuração da aplicação que permite que a nuvem privada "rompa" para a nuvem pública quando precisa de recursos computacionais adicionais, sem interrupção do serviço. Isso combina maior poder computacional sob demanda com a proteção dos dados privados — mantendo a segurança e a conformidade regulatória (como a LGPD).</p>
+</div>
+<h3 id="modelos-de-servico">Modelos de serviço<a class="headerlink" href="#modelos-de-servico" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Modelo</th>
+<th>O que inclui</th>
+<th>Quem gerencia o quê</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IaaS</strong> (Infrastructure as a Service)</td>
+<td>VMs, redes e armazenamento — infraestrutura de TI básica sob demanda.</td>
+<td>O provedor gerencia apenas hardware e virtualização; o usuário gerencia SO, armazenamento, aplicações, etc. — maior controle para o usuário.</td>
+<td>Amazon EC2, Azure VMs, Google Compute Engine</td>
+</tr>
+<tr>
+<td><strong>PaaS</strong> (Platform as a Service)</td>
+<td>Linguagem de programação, banco de dados, etc. — uma plataforma completa para desenvolvimento e implantação.</td>
+<td>O provedor gerencia, além de HW e virtualização, também o SO e os logs; o usuário foca exclusivamente no desenvolvimento.</td>
+<td>Google App Engine, Heroku, Azure App Services</td>
+</tr>
+<tr>
+<td><strong>SaaS</strong> (Software as a Service)</td>
+<td>O software em si, acessado via internet.</td>
+<td>O provedor gerencia praticamente tudo; o usuário gerencia apenas seus dados e configurações — menos controle geral, mas uso muito mais simples.</td>
+<td>Gmail, Microsoft 365, Salesforce</td>
+</tr>
+</tbody>
+</table>
+<p>A tabela acima mostra apenas três modelos, mas a divisão de responsabilidades entre contratante e provedor é, na prática, um espectro mais granular. Considerando as camadas de uma aplicação (dados/configurações, código da aplicação, escalonamento, runtime, SO, virtualização e hardware), quem gerencia cada camada varia conforme o modelo:</p>
+<table>
+<thead>
+<tr>
+<th>Camada</th>
+<th>On-Premises</th>
+<th>IaaS</th>
+<th>CaaS (Containers)</th>
+<th>PaaS</th>
+<th>FaaS (Function)</th>
+<th>SaaS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dados e configurações</td>
+<td>Você</td>
+<td>Você</td>
+<td>Você</td>
+<td>Você</td>
+<td>Você</td>
+<td>Você</td>
+</tr>
+<tr>
+<td>Código da aplicação</td>
+<td>Você</td>
+<td>Você</td>
+<td>Você</td>
+<td>Você</td>
+<td>Você</td>
+<td>Provedor</td>
+</tr>
+<tr>
+<td>Escalonamento</td>
+<td>Você</td>
+<td>Você</td>
+<td>Você</td>
+<td>Você</td>
+<td>Provedor</td>
+<td>Provedor</td>
+</tr>
+<tr>
+<td>Runtime</td>
+<td>Você</td>
+<td>Você</td>
+<td>Você</td>
+<td>Provedor</td>
+<td>Provedor</td>
+<td>Provedor</td>
+</tr>
+<tr>
+<td>Sistema operacional</td>
+<td>Você</td>
+<td>Você</td>
+<td>Provedor</td>
+<td>Provedor</td>
+<td>Provedor</td>
+<td>Provedor</td>
+</tr>
+<tr>
+<td>Virtualização</td>
+<td>Você</td>
+<td>Provedor</td>
+<td>Provedor</td>
+<td>Provedor</td>
+<td>Provedor</td>
+<td>Provedor</td>
+</tr>
+<tr>
+<td>Hardware</td>
+<td>Você</td>
+<td>Provedor</td>
+<td>Provedor</td>
+<td>Provedor</td>
+<td>Provedor</td>
+<td>Provedor</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>Diagramas de referência (pirâmide SaaS/PaaS/IaaS e tabela de responsabilidades completa)</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2014.png" />
+<img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2015.png" /></p>
+</details>
+<hr />
+<h2 id="seguranca-da-informacao">Segurança da Informação<a class="headerlink" href="#seguranca-da-informacao" title="Permanent link">&para;</a></h2>
+<h3 id="triade-cia">Tríade CIA<a class="headerlink" href="#triade-cia" title="Permanent link">&para;</a></h3>
+<p>A <strong>Tríade CIA</strong> descreve os pilares fundamentais para a proteção de dados, cruciais para garantir que as informações sejam acessadas apenas por pessoas autorizadas, mantenham sua precisão, e estejam acessíveis quando necessário.</p>
+<table>
+<thead>
+<tr>
+<th>Pilar</th>
+<th>Garantia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Confidencialidade</strong> (Confidentiality)</td>
+<td>Evitar a divulgação não autorizada de informação — fornecendo acesso a quem tem permissão, e impedindo que outros saibam qualquer coisa sobre o conteúdo.</td>
+</tr>
+<tr>
+<td><strong>Integridade</strong> (Integrity)</td>
+<td>A informação não é alterada de forma não autorizada.</td>
+</tr>
+<tr>
+<td><strong>Disponibilidade</strong> (Availability)</td>
+<td>A informação é acessível e modificável em tempo hábil por aqueles autorizados a fazê-lo.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="malwares-malicious-software">Malwares (Malicious Software)<a class="headerlink" href="#malwares-malicious-software" title="Permanent link">&para;</a></h3>
+<p><strong>Malware</strong> é qualquer software projetado para causar danos ou realizar atividades maliciosas em sistemas de computador.</p>
+<p><strong>Insider Attacks</strong> ocorrem quando uma pessoa com acesso autorizado a um sistema (um funcionário ou parceiro) abusa desse acesso para causar danos à organização. Podem ser <strong>intencionais</strong> (visando prejudicar a empresa por motivos pessoais ou financeiros) ou <strong>acidentais</strong> (erros de configuração, falta de atenção). Dois mecanismos comuns:</p>
+<ul>
+<li><strong>Backdoor</strong>: uma funcionalidade camuflada que permite ao usuário realizar ações normalmente não permitidas — geralmente envolvendo mecanismos de <em>bypassing authentication</em>.</li>
+<li><strong>Logic Bomb</strong>: um programa que executa uma ação maliciosa quando condições específicas são atingidas, geralmente causando danos ou interrupções.</li>
+</ul>
+<p>Os malwares também se classificam por <strong>como se propagam</strong> e <strong>como se ocultam</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Categoria</th>
+<th>Tipo</th>
+<th>Comportamento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Propagação</td>
+<td><strong>Vírus</strong></td>
+<td>Se replica e se espalha anexando cópias de si mesmo a outros arquivos/programas.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Worm</strong></td>
+<td>Se replica e se espalha entre computadores, geralmente sem interação humana após a infecção inicial e sem precisar de um arquivo hospedeiro; na maioria das vezes carrega um <em>payload</em> malicioso.</td>
+</tr>
+<tr>
+<td>Ocultação</td>
+<td><strong>Rootkit</strong></td>
+<td>Projetado para ocultar a presença de um invasor no sistema, dando acesso contínuo e controle remoto; feito para se esconder tanto do software de segurança quanto do usuário.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Trojan</strong></td>
+<td>Se disfarça de programa legítimo para enganar usuários; precisa de interação do usuário para ser executado e causar dano.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Botnet</strong></td>
+<td>Rede de dispositivos comprometidos, infectados com malware, controlada por um atacante (<em>Botnet Controller</em>) para realizar atividades maliciosas em larga escala.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="integracao">Integração<a class="headerlink" href="#integracao" title="Permanent link">&para;</a></h2>
+<p>Integrar sistemas é conectar aplicações (muitas vezes legadas, construídas em épocas e com tecnologias diferentes) para que troquem dados e funcionalidades de forma consistente — um dos maiores desafios práticos da evolução de sistemas de informação em qualquer organização grande.</p>
+<h3 id="teorema-cap">Teorema CAP<a class="headerlink" href="#teorema-cap" title="Permanent link">&para;</a></h3>
+<p>Em sistemas <strong>distribuídos</strong>, o Teorema CAP afirma que não é possível garantir simultaneamente as três propriedades a seguir:</p>
+<details class="note">
+<summary>Diagrama de Venn do Teorema CAP</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2016.png" /></p>
+</details>
+<table>
+<thead>
+<tr>
+<th>Propriedade</th>
+<th>Garantia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C</strong>onsistência</td>
+<td>Todos os nós veem os mesmos dados ao mesmo tempo.</td>
+</tr>
+<tr>
+<td><strong>A</strong>vailability (Disponibilidade)</td>
+<td>Cada requisição recebe uma resposta, mesmo que algum nó esteja offline.</td>
+</tr>
+<tr>
+<td><strong>P</strong>artition tolerance (Tolerância à partição)</td>
+<td>O sistema continua funcionando mesmo havendo falhas de comunicação entre nós (partição de rede).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Na prática</p>
+<p>Como falhas de rede são inevitáveis em sistemas distribuídos reais, a tolerância à partição é, em geral, obrigatória — o verdadeiro trade-off do CAP, na prática, é entre <strong>Consistência</strong> e <strong>Disponibilidade</strong>: sistemas CP sacrificam disponibilidade durante uma partição para manter consistência (ex.: bancos relacionais distribuídos tradicionais); sistemas AP sacrificam consistência imediata para continuar disponíveis (ex.: muitos bancos NoSQL, com consistência eventual).</p>
+</div>
+<h3 id="criterios-para-integracao-de-aplicacoes">Critérios para integração de aplicações<a class="headerlink" href="#criterios-para-integracao-de-aplicacoes" title="Permanent link">&para;</a></h3>
+<p>Ao desenhar uma integração entre sistemas, vários critérios concorrentes precisam ser balanceados:</p>
+<ul>
+<li><strong>Acoplamento de aplicações</strong>: minimizar dependências — toda suposição implícita que uma integração carrega é um ponto que, se quebrado, quebra a aplicação inteira. A interface de integração deve ser específica o suficiente para implementar funcionalidade útil, mas genérica o suficiente para mudar quando necessário.</li>
+<li><strong>Simplicidade da integração</strong>: minimizar as mudanças exigidas nas aplicações e a quantidade de código de integração necessário — mas é preciso balancear: a abordagem com menos código não necessariamente fornece a melhor integração a longo prazo.</li>
+<li><strong>Tecnologia de integração</strong>: a necessidade de software (e, às vezes, hardware) específico para viabilizar a integração.</li>
+<li><strong>Formato de dados</strong>: a necessidade de um formato comum entre os sistemas, mas que não seja excessivamente genérico (perdendo expressividade) nem excessivamente específico (perdendo interoperabilidade).</li>
+<li><strong>Tempo de comunicação</strong>: a preocupação com o tempo entre o envio e a recepção dos dados. As aplicações devem ser informadas logo que os dados estiverem disponíveis para consumo, e deve existir também a notificação inversa — de quando os dados foram efetivamente consumidos. Quanto mais tempo o dado demora a ser consumido, maior a chance de ele ficar desatualizado.</li>
+<li><strong>Dados vs. Funcionalidade</strong>: uma integração pode envolver não apenas dados, mas também o compartilhamento de funcionalidades inteiras — o que traz benefícios de reuso, mas também complica a lógica de invocação e pode ter impactos de execução e consequências adicionais para a integração.</li>
+<li><strong>Assincronismo</strong>: aplicações são independentes, e idealmente não deveriam precisar esperar pela execução de outras — especialmente quando o outro lado da comunicação está indisponível. Uma aplicação pode simplesmente querer disponibilizar um dado para consumo posterior, via execuções em paralelo e notificações/callbacks na conclusão das operações.</li>
+</ul>
+<h3 id="estilos-de-integracao">Estilos de integração<a class="headerlink" href="#estilos-de-integracao" title="Permanent link">&para;</a></h3>
+<p>Existem quatro estilos clássicos de integração entre aplicações, cada um com um trade-off diferente entre simplicidade, acoplamento e capacidades.</p>
+<p><strong>File Transfer.</strong> Uma aplicação escreve um arquivo (em um formato acordado) que outra aplicação posteriormente lê.</p>
+<details class="note">
+<summary>Diagrama: File Transfer</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2017.png" /></p>
+</details>
+<ul>
+<li>Gera um <strong>acoplamento fraco</strong> entre os sistemas (eles nem precisam saber da existência um do outro diretamente, apenas do formato do arquivo);</li>
+<li>Tem desvantagens relacionadas a aspectos temporais — não há garantia de quando o arquivo será lido, nem notificação imediata de disponibilidade.</li>
+</ul>
+<p><strong>Shared Database.</strong> Múltiplas aplicações leem e escrevem diretamente no mesmo banco de dados.</p>
+<details class="note">
+<summary>Diagrama: Shared Database</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2018.png" /></p>
+</details>
+<ul>
+<li>O gerenciamento de transações é garantido pelo próprio SGBD;</li>
+<li>Mas gera <strong>acoplamento forte</strong> no nível do schema: qualquer mudança na estrutura dos dados pode quebrar todas as aplicações que compartilham o banco.</li>
+</ul>
+<p><strong>Remote Procedure Invocation.</strong> Uma aplicação chama diretamente uma função/método exposto por outra, como se fosse uma chamada local.</p>
+<details class="note">
+<summary>Diagrama: Remote Procedure Invocation</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2019.png" /></p>
+</details>
+<ul>
+<li>O acesso aos dados fica <strong>encapsulado</strong> atrás da interface da função (em vez de exposto diretamente, como no shared database);</li>
+<li>Passa a ser possível também expor <strong>funcionalidades</strong>, não apenas dados — mas isso introduz acoplamento temporal forte: ambos os lados precisam estar disponíveis simultaneamente para a chamada funcionar.</li>
+</ul>
+<p><strong>Messaging.</strong> As aplicações trocam mensagens assíncronas através de um canal intermediário (fila, tópico, barramento de mensagens).</p>
+<details class="note">
+<summary>Diagrama: Messaging</summary>
+<p><img alt="image.png" src="../../../assets/faculdade/periodo4/integracao-e-evolucao-de-sistemas-de-informacao/image%2020.png" /></p>
+</details>
+<ul>
+<li>O envio de mensagens não exige que todos os sistemas estejam funcionando ao mesmo tempo;</li>
+<li>Produz <strong>baixo acoplamento</strong> temporal — o receptor pode processar a mensagem quando estiver disponível;</li>
+<li>A comunicação assíncrona força os desenvolvedores a lidar com a realidade distribuída do sistema (falhas parciais, entregas fora de ordem, duplicação de mensagens), em vez de assumir uma ilusão de execução síncrona e confiável.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Padrões construídos sobre esses estilos</p>
+<p>Na prática, arquiteturas de integração modernas combinam esses estilos básicos em padrões mais sofisticados:</p>
+<ul>
+<li><strong>EAI (Enterprise Application Integration)</strong>: uma camada central (muitas vezes um <strong>ESB</strong> — <em>Enterprise Service Bus</em>) que roteia, transforma e orquestra mensagens entre sistemas legados e novos, reduzindo o número de integrações ponto-a-ponto necessárias.</li>
+<li><strong>API Gateway</strong>: um ponto único de entrada que expõe funcionalidades de múltiplos sistemas internos como APIs (tipicamente REST ou GraphQL) para consumidores externos, cuidando de autenticação, <em>rate limiting</em> e roteamento.</li>
+<li><strong>SOA (Service-Oriented Architecture)</strong> e, mais recentemente, <strong>microsserviços</strong>: decompõem funcionalidades de negócio em serviços independentes, cada um dono dos seus próprios dados, comunicando-se via chamadas remotas (síncronas) ou mensageria (assíncrona) — levando os critérios de acoplamento, assincronismo e formato de dados discutidos acima ao centro das decisões arquiteturais de um sistema inteiro, não apenas de uma integração pontual.</li>
+</ul>
+<p>Essa evolução — de monólitos fortemente acoplados a um banco compartilhado, para arquiteturas distribuídas de serviços fracamente acoplados — é, em grande medida, a própria história da <strong>evolução de sistemas de informação</strong> nas últimas duas décadas: cada nova geração de arquitetura tenta resolver os problemas de acoplamento, escalabilidade e manutenibilidade deixados pela geração anterior, geralmente ao custo de maior complexidade operacional (observabilidade, consistência eventual, versionamento de contratos entre serviços).</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../informatica-teorica/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: INFORMÁTICA TEÓRICA">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                INFORMÁTICA TEÓRICA
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../periodo-5/" class="md-footer__link md-footer__link--next" aria-label="Próximo: PERÍODO 5">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                PERÍODO 5
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>

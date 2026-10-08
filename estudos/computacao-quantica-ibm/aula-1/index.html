@@ -1,0 +1,4149 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Base de conhecimento pessoal — faculdade e estudos">
+      
+      
+        <meta name="author" content="João Pedro Bezerra">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../aula-1-qiskit/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AULA 1 - SISTEMAS ÚNICOS - LLM Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aula-1-sistemas-unicos-single-systems" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="LLM Wiki" class="md-header__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLM Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AULA 1 - SISTEMAS ÚNICOS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Estudos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../faculdade/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Faculdade
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LLM Wiki" class="md-nav__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLM Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estudos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estudos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../numeros-complexos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NÚMEROS COMPLEXOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../agentes-de-ia/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTES DE IA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AGENTES DE IA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentes-de-ia/harness-e-pi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HARNESS E PI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentes-de-ia/otimizacao-tokens-roteamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE TOKENS E ROTEAMENTO DE MODELOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentes-de-ia/fine-tuning-agentico-meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FINE-TUNING AGÊNTICO: A ABORDAGEM DA META
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentes-de-ia/jev-modelos-decisao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JEV: MODELOS DE DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - SISTEMAS ÚNICOS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - SISTEMAS ÚNICOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duas-descricoes-de-informacao-quantica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duas descrições de informação quântica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacao-classica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informação clássica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Informação clássica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estados-classicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados clássicos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estados-probabilisticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados probabilísticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notacao-de-dirac-parte-1-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notação de Dirac (parte 1): ket
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medindo-estados-probabilisticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medindo estados probabilísticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-deterministicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações determinísticas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notacao-de-dirac-parte-2-bra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notação de Dirac (parte 2): bra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-probabilisticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações probabilísticas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composicao-de-operacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composição de operações
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacao-quantica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informação quântica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Informação quântica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definindo-um-estado-quantico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definindo um estado quântico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#norma-euclidiana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Norma euclidiana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-estados-de-qubit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos de estados de qubit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notacao-de-dirac-parte-3-vetores-arbitrarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notação de Dirac (parte 3): vetores arbitrários
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medindo-estados-quanticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medindo estados quânticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-unitarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações unitárias
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operações unitárias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-de-pauli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações de Pauli
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacao-de-hadamard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operação de Hadamard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-de-fase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações de fase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-acao-dessas-operacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos de ação dessas operações
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composicao-de-operacoes-unitarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composição de operações unitárias
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complementos-licoes-escritas-do-ibm-quantum-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complementos (lições escritas do IBM Quantum Learning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complementos (lições escritas do IBM Quantum Learning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fase-global" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase global
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-unitarias-em-sistemas-maiores-matrizes-de-permutacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações unitárias em sistemas maiores: matrizes de permutação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anotacoes-e-observacoes-pessoais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anotações e observações pessoais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula-1-qiskit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - IMPLEMENTAÇÃO EM QISKIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../otimizacao-de-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bend2-tipos-dependentes-provas-formais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../faculdade/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faculdade
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Faculdade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../faculdade/periodo-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 1
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-1/calculo-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CÁLCULO 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-1/matematica-discreta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATEMÁTICA DISCRETA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-1/algebra-vetorial-linear-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../faculdade/periodo-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 2
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-2/algoritmos-e-estruturas-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-2/algoritmos-e-estruturas-de-dados/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-2/estatistica-probabilidade-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA E PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-2/estatistica-probabilidade-p-computacao/assuncoes-da-regressao-linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assunções da regressão linear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-2/estatistica-probabilidade-p-computacao/r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-2/fisica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FÍSICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-2/logica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LÓGICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SISTEMAS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-2/sistemas-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-2/sistemas-digitais/assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../faculdade/periodo-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 3
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-3/arquitetura-de-computadores-e-sistemas-operacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-3/concepcao-de-artefatos-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepção de Artefatos Digitais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-3/concepcao-de-artefatos-digitais/grupo-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grupo 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-3/desenvolvimento-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DESENVOLVIMENTO DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-3/estruturas-de-dados-orientadas-a-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTRUTURAS DE DADOS ORIENTADAS À OBJETOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../faculdade/periodo-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 4
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-4/banco-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BANCO DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-4/compiladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPILADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-4/informatica-teorica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA TEÓRICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-4/integracao-e-evolucao-de-sistemas-de-informacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../faculdade/periodo-5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 5
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/projeto-aprendizagem-de-maquina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Aprendizagem de Máquina
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3_2" id="__nav_3_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projeto Packet Tracer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 - Design Físico e Topologia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e2-design-de-enderecamento-vlsm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2 - Design de Endereçamento VLSM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e3-design-de-segmentacao-vlans-e-dhcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E3 - Design de Segmentação (VLANs e DHCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E4 - Roteamento Inter-VLAN e Conectividade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e5-apresentacao-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E5 - Apresentação Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/referencias-bibliograficas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências Bibliográficas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/untitled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untitled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/metodologia-e-expressao-tecnico-cientifica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    METODOLOGIA E EXPRESSÃO TÉCNICO-CIENTÍFICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-5/paradigmas-de-linguagens-computacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PARADIGMAS DE LINGUAGENS COMPUTACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../faculdade/periodo-6/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 6
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-6/empreendimentos-em-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EMPREENDIMENTOS EM INFORMÁTICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-6/engenharia-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENGENHARIA DE REQUISITOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-6/informatica-e-sociedade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA E SOCIEDADE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faculdade/periodo-6/topicos-avancados-em-si-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TÓPICOS AVANÇADOS EM SI 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duas-descricoes-de-informacao-quantica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duas descrições de informação quântica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacao-classica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informação clássica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Informação clássica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estados-classicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados clássicos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estados-probabilisticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados probabilísticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notacao-de-dirac-parte-1-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notação de Dirac (parte 1): ket
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medindo-estados-probabilisticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medindo estados probabilísticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-deterministicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações determinísticas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notacao-de-dirac-parte-2-bra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notação de Dirac (parte 2): bra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-probabilisticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações probabilísticas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composicao-de-operacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composição de operações
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacao-quantica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informação quântica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Informação quântica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definindo-um-estado-quantico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definindo um estado quântico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#norma-euclidiana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Norma euclidiana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-estados-de-qubit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos de estados de qubit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notacao-de-dirac-parte-3-vetores-arbitrarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notação de Dirac (parte 3): vetores arbitrários
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medindo-estados-quanticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medindo estados quânticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-unitarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações unitárias
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operações unitárias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-de-pauli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações de Pauli
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacao-de-hadamard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operação de Hadamard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-de-fase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações de fase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-acao-dessas-operacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos de ação dessas operações
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composicao-de-operacoes-unitarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composição de operações unitárias
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complementos-licoes-escritas-do-ibm-quantum-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complementos (lições escritas do IBM Quantum Learning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complementos (lições escritas do IBM Quantum Learning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fase-global" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase global
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-unitarias-em-sistemas-maiores-matrizes-de-permutacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações unitárias em sistemas maiores: matrizes de permutação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anotacoes-e-observacoes-pessoais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anotações e observações pessoais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/jpbezerra/llm-wiki/edit/main/docs/estudos/computacao-quantica-ibm/aula-1.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="aula-1-sistemas-unicos-single-systems">AULA 1 — SISTEMAS ÚNICOS (SINGLE SYSTEMS)<a class="headerlink" href="#aula-1-sistemas-unicos-single-systems" title="Permanent link">&para;</a></h1>
+<p>Primeira lição da Unidade 1 do curso. O foco aqui é <strong>um único sistema físico isolado</strong> (um bit, um qubit) — nada de múltiplos sistemas, emaranhamento ou algoritmos ainda. A ideia é que entender como a informação quântica funciona para um sistema isolado é o passo natural antes de falar de múltiplos sistemas (próxima lição).</p>
+<p>A estratégia do curso é começar pela <strong>informação clássica</strong>, não porque o objetivo seja explicar computação clássica, mas porque matematicamente a informação quântica é uma <em>extensão</em> da informação clássica, com diferenças pontuais e fundamentais. Entender bem a versão clássica (e a notação usada para descrevê-la) torna a versão quântica muito menos estranha.</p>
+<h2 id="duas-descricoes-de-informacao-quantica">Duas descrições de informação quântica<a class="headerlink" href="#duas-descricoes-de-informacao-quantica" title="Permanent link">&para;</a></h2>
+<p>Existem duas formas de descrever formalmente a informação quântica:</p>
+<ul>
+<li><strong>Descrição simplificada</strong> (o assunto desta unidade): estados quânticos são representados por <strong>vetores</strong>, e operações são representadas por <strong>matrizes unitárias</strong>. É suficiente para entender a maioria dos algoritmos quânticos — não é uma simplificação "incompleta", é "a coisa de verdade", só que restrita a um caso mais simples. A limitação principal aparece quando se quer modelar <strong>ruído</strong> em sistemas quânticos reais.</li>
+<li><strong>Descrição geral</strong> (coberta numa unidade posterior do curso): estados quânticos são representados por uma classe especial de matrizes chamadas <strong>matrizes densas</strong> (density matrices), permitindo uma classe mais geral de medições e operações, incluindo ruído. A descrição simplificada é um caso especial da geral — e a informação clássica (inclusive estados probabilísticos) também é um caso especial dela.</li>
+</ul>
+<p>Este curso (e esta primeira unidade) trabalha com a descrição simplificada.</p>
+<h2 id="informacao-classica">Informação clássica<a class="headerlink" href="#informacao-classica" title="Permanent link">&para;</a></h2>
+<h3 id="estados-classicos">Estados clássicos<a class="headerlink" href="#estados-classicos" title="Permanent link">&para;</a></h3>
+<p>Considere um sistema físico qualquer que armazena informação — vamos chamá-lo de <span class="arithmatex">\(X\)</span> (o nome é arbitrário). Assumimos que <span class="arithmatex">\(X\)</span> pode estar em um número <strong>finito</strong> de estados possíveis a cada momento. Um <strong>estado clássico</strong> é uma configuração do sistema que pode ser reconhecida e descrita sem ambiguidade, sem incerteza.</p>
+<p>Chamamos de <span class="arithmatex">\(\Sigma\)</span> o conjunto desses estados clássicos possíveis — e <span class="arithmatex">\(\Sigma\)</span> é sempre um conjunto <strong>finito e não vazio</strong> (precisa ter pelo menos um estado, e pelo menos dois se o sistema for útil para guardar informação).</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplos de conjuntos de estados clássicos</p>
+<ul>
+<li>Se <span class="arithmatex">\(X\)</span> é um bit: <span class="arithmatex">\(\Sigma = \{0, 1\}\)</span> (o "alfabeto binário").</li>
+<li>Se <span class="arithmatex">\(X\)</span> é um dado de seis lados: <span class="arithmatex">\(\Sigma = \{1, 2, 3, 4, 5, 6\}\)</span>.</li>
+<li>Se <span class="arithmatex">\(X\)</span> é o interruptor de um ventilador: <span class="arithmatex">\(\Sigma = \{\text{alto}, \text{médio}, \text{baixo}, \text{desligado}\}\)</span>.</li>
+</ul>
+</div>
+<h3 id="estados-probabilisticos">Estados probabilísticos<a class="headerlink" href="#estados-probabilisticos" title="Permanent link">&para;</a></h3>
+<p>Em muitas situações há incerteza sobre o estado clássico atual de um sistema, de modo que cada estado possível tem uma probabilidade associada. Por exemplo, se <span class="arithmatex">\(X\)</span> é um bit, pode ser que</p>
+<div class="arithmatex">\[\Pr(X=0) = \tfrac{3}{4} \qquad \Pr(X=1) = \tfrac{1}{4}\]</div>
+<p>Chamamos isso de <strong>estado probabilístico</strong> de <span class="arithmatex">\(X\)</span>. A forma mais compacta de expressar um estado probabilístico é por um <strong>vetor coluna</strong>:</p>
+<div class="arithmatex">\[\begin{pmatrix} 3/4 \\ 1/4 \end{pmatrix}\]</div>
+<p>onde a primeira entrada é a probabilidade do estado <span class="arithmatex">\(0\)</span> e a segunda, a probabilidade do estado <span class="arithmatex">\(1\)</span> — seguindo a ordem natural do alfabeto binário (zero primeiro, um depois).</p>
+<p>Um vetor desse tipo é chamado <strong>vetor de probabilidade</strong>: todas as entradas são números reais não negativos, e a soma das entradas é igual a <span class="arithmatex">\(1\)</span>.</p>
+<h3 id="notacao-de-dirac-parte-1-ket">Notação de Dirac (parte 1): ket<a class="headerlink" href="#notacao-de-dirac-parte-1-ket" title="Permanent link">&para;</a></h3>
+<p>Para descrever vetores e matrizes ao longo de todo o curso, usa-se a <strong>notação de Dirac</strong> — que não é específica de computação quântica, funciona igualmente bem para informação clássica (e qualquer outro contexto com vetores e matrizes).</p>
+<p>Assuma que <span class="arithmatex">\(\Sigma\)</span> é um conjunto de estados clássicos com uma ordenação fixada (os elementos de <span class="arithmatex">\(\Sigma\)</span> em correspondência com os inteiros <span class="arithmatex">\(1, \dots, |\Sigma|\)</span>). A ordem escolhida não importa muito — o que importa é escolher uma e <strong>manter</strong> essa escolha.</p>
+<p>Denotamos por <span class="arithmatex">\(|a\rangle\)</span> ("ket <span class="arithmatex">\(a\)</span>") o vetor coluna que tem um <span class="arithmatex">\(1\)</span> na entrada correspondente a <span class="arithmatex">\(a \in \Sigma\)</span> e <span class="arithmatex">\(0\)</span> em todas as outras.</p>
+<div class="admonition example">
+<p class="admonition-title">Alfabeto binário</p>
+<div class="arithmatex">\[|0\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \qquad |1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Naipes de um baralho</p>
+<p>Para <span class="arithmatex">\(\Sigma = \{\clubsuit, \diamondsuit, \heartsuit, \spadesuit\}\)</span>, escolhendo a ordem alfabética (em inglês: clubs, diamonds, hearts, spades):</p>
+<div class="arithmatex">\[|\clubsuit\rangle = \begin{pmatrix}1\\0\\0\\0\end{pmatrix} \quad |\diamondsuit\rangle = \begin{pmatrix}0\\1\\0\\0\end{pmatrix} \quad |\heartsuit\rangle = \begin{pmatrix}0\\0\\1\\0\end{pmatrix} \quad |\spadesuit\rangle = \begin{pmatrix}0\\0\\0\\1\end{pmatrix}\]</div>
+</div>
+<p>Vetores dessa forma são chamados <strong>vetores da base padrão</strong> (<em>standard basis vectors</em>). Todo vetor pode ser expresso, de forma única, como combinação linear desses vetores — por exemplo, o vetor de probabilidade de antes:</p>
+<div class="arithmatex">\[\begin{pmatrix} 3/4 \\ 1/4 \end{pmatrix} = \tfrac{3}{4}|0\rangle + \tfrac{1}{4}|1\rangle\]</div>
+<h3 id="medindo-estados-probabilisticos">Medindo estados probabilísticos<a class="headerlink" href="#medindo-estados-probabilisticos" title="Permanent link">&para;</a></h3>
+<p>O que acontece quando medimos um sistema <span class="arithmatex">\(X\)</span> enquanto ele está em um estado probabilístico? Vemos um estado clássico, escolhido aleatoriamente de acordo com as probabilidades. Suponha que vemos o estado clássico <span class="arithmatex">\(a \in \Sigma\)</span> — a partir daí, não há mais incerteza: <span class="arithmatex">\(\Pr(X=a) = 1\)</span>. Esse novo estado probabilístico (com probabilidade <span class="arithmatex">\(1\)</span> em <span class="arithmatex">\(a\)</span> e <span class="arithmatex">\(0\)</span> no resto) é exatamente o vetor <span class="arithmatex">\(|a\rangle\)</span>.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
+<p>Com o bit do exemplo anterior, medir seleciona uma transição aleatória:</p>
+<div class="arithmatex">\[\tfrac{3}{4}|0\rangle + \tfrac{1}{4}|1\rangle \;\longrightarrow\; \begin{cases} |0\rangle &amp; \text{com probabilidade } 3/4 \\ |1\rangle &amp; \text{com probabilidade } 1/4 \end{cases}\]</div>
+</div>
+<p>Pode-se pensar nisso como uma transição de conhecimento, não necessariamente física: o sistema já estava naquele estado, e só "descobrimos" qual era. De qualquer forma, o que importa aqui é como a matemática funciona — porque isso prepara o terreno para o caso quântico, que é matematicamente análogo (mas com uma interpretação bem menos trivial, como veremos adiante).</p>
+<h3 id="operacoes-deterministicas">Operações determinísticas<a class="headerlink" href="#operacoes-deterministicas" title="Permanent link">&para;</a></h3>
+<p>Toda função <span class="arithmatex">\(f: \Sigma \to \Sigma\)</span> descreve uma <strong>operação determinística</strong>, que transforma o estado <span class="arithmatex">\(a\)</span> em <span class="arithmatex">\(f(a)\)</span>. O termo "determinístico" significa que o resultado depende inteiramente do estado anterior — não há aleatoriedade envolvida.</p>
+<p>Para toda função <span class="arithmatex">\(f\)</span> desse tipo existe uma <strong>única matriz</strong> <span class="arithmatex">\(M\)</span> satisfazendo</p>
+<div class="arithmatex">\[M|a\rangle = |f(a)\rangle \quad \text{para todo } a \in \Sigma\]</div>
+<p>Essa matriz sempre tem exatamente um <span class="arithmatex">\(1\)</span> em cada coluna (e <span class="arithmatex">\(0\)</span> nas demais entradas), definido por:</p>
+<div class="arithmatex">\[M(b,a) = \begin{cases} 1 &amp; \text{se } b = f(a) \\ 0 &amp; \text{caso contrário} \end{cases}\]</div>
+<p>(convenção: linha <span class="arithmatex">\(b\)</span>, coluna <span class="arithmatex">\(a\)</span>). A ação da operação sobre um estado probabilístico é dada por multiplicação matriz-vetor: <span class="arithmatex">\(v \mapsto Mv\)</span>.</p>
+<div class="admonition example">
+<p class="admonition-title">As quatro funções do alfabeto binário</p>
+<p>Existem exatamente quatro funções <span class="arithmatex">\(f: \{0,1\} \to \{0,1\}\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><span class="arithmatex">\(f_1\)</span> (constante 0)</th>
+<th><span class="arithmatex">\(f_2\)</span> (identidade)</th>
+<th><span class="arithmatex">\(f_3\)</span> (negação/bit flip)</th>
+<th><span class="arithmatex">\(f_4\)</span> (constante 1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(f(0)\)</span></td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(f(1)\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>E as matrizes correspondentes:</p>
+<div class="arithmatex">\[M_1=\begin{pmatrix}1&amp;1\\0&amp;0\end{pmatrix} \quad M_2=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix} \quad M_3=\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix} \quad M_4=\begin{pmatrix}0&amp;0\\1&amp;1\end{pmatrix}\]</div>
+<p><span class="arithmatex">\(f_3\)</span> é a função <strong>NOT</strong> (negação lógica), também chamada de <strong>bit flip</strong>: inverte <span class="arithmatex">\(0\)</span> para <span class="arithmatex">\(1\)</span> e <span class="arithmatex">\(1\)</span> para <span class="arithmatex">\(0\)</span>.</p>
+<details class="note">
+<summary>Como ler a matriz</summary>
+<p>Multiplicar uma matriz por um vetor da base padrão equivale a "jogar" o estado de entrada na coluna correspondente da matriz, e ler essa coluna como o vetor de probabilidade de saída. Por exemplo, <span class="arithmatex">\(M_3|0\rangle\)</span> dá a primeira coluna de <span class="arithmatex">\(M_3\)</span>, que é <span class="arithmatex">\((0,1)\)</span> — ou seja, <span class="arithmatex">\(|1\rangle\)</span>. E <span class="arithmatex">\(M_3|1\rangle\)</span> dá a segunda coluna, <span class="arithmatex">\((1,0)\)</span>, ou seja, <span class="arithmatex">\(|0\rangle\)</span>.</p>
+</details>
+</div>
+<h3 id="notacao-de-dirac-parte-2-bra">Notação de Dirac (parte 2): bra<a class="headerlink" href="#notacao-de-dirac-parte-2-bra" title="Permanent link">&para;</a></h3>
+<p>Com a mesma ordenação de <span class="arithmatex">\(\Sigma\)</span>, denotamos por <span class="arithmatex">\(\langle a|\)</span> ("bra <span class="arithmatex">\(a\)</span>") o <strong>vetor linha</strong> que tem um <span class="arithmatex">\(1\)</span> na entrada correspondente a <span class="arithmatex">\(a\)</span> e <span class="arithmatex">\(0\)</span> nas demais (é a transposta de <span class="arithmatex">\(|a\rangle\)</span>, sem nenhuma outra mudança neste caso clássico).</p>
+<div class="admonition example">
+<p class="admonition-title">Alfabeto binário</p>
+<div class="arithmatex">\[\langle 0| = \begin{pmatrix}1 &amp; 0\end{pmatrix} \qquad \langle 1| = \begin{pmatrix}0 &amp; 1\end{pmatrix}\]</div>
+</div>
+<p>Multiplicar um vetor-linha por um vetor-coluna dá um <strong>escalar</strong> (matriz <span class="arithmatex">\(1\times 1\)</span>):</p>
+<div class="arithmatex">\[\langle a|b\rangle = \langle a||b\rangle = \begin{cases} 1 &amp; a=b \\ 0 &amp; a\neq b \end{cases}\]</div>
+<p>Esse produto — "bra" encontrando "ket" para formar um "bracket" — também é chamado de <strong>produto interno</strong>.</p>
+<p>Multiplicar um vetor-coluna por um vetor-linha, na ordem inversa, dá uma <strong>matriz</strong>:</p>
+<div class="arithmatex">\[|a\rangle\langle b| \;=\; \text{matriz com um 1 na entrada } (a,b) \text{ e 0 no resto}\]</div>
+<div class="admonition example">
+<p class="admonition-title">Alfabeto binário</p>
+<div class="arithmatex">\[|0\rangle\langle 0| = \begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix} \qquad |0\rangle\langle 1| = \begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix} \qquad |1\rangle\langle 0| = \begin{pmatrix}0&amp;0\\1&amp;0\end{pmatrix} \qquad |1\rangle\langle 1| = \begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix}\]</div>
+</div>
+<p>Com as duas partes da notação de Dirac (bra e ket), fica fácil reescrever a matriz <span class="arithmatex">\(M\)</span> de uma operação determinística inteiramente nesses termos, sem nunca escrever a matriz explicitamente como "retângulo de números":</p>
+<div class="arithmatex">\[M = \sum_{b\in\Sigma} |f(b)\rangle\langle b|\]</div>
+<details class="note">
+<summary>Por que essa soma funciona</summary>
+<p>Aplicando <span class="arithmatex">\(M\)</span> a <span class="arithmatex">\(|a\rangle\)</span>:</p>
+<div class="arithmatex">\[M|a\rangle = \left(\sum_{b\in\Sigma}|f(b)\rangle\langle b|\right)|a\rangle = \sum_{b\in\Sigma}|f(b)\rangle\langle b|a\rangle\]</div>
+<p>Como <span class="arithmatex">\(\langle b|a\rangle\)</span> vale <span class="arithmatex">\(1\)</span> quando <span class="arithmatex">\(b=a\)</span> e <span class="arithmatex">\(0\)</span> caso contrário, só sobra o termo com <span class="arithmatex">\(b=a\)</span>: o resultado é exatamente <span class="arithmatex">\(|f(a)\rangle\)</span>, como queríamos.</p>
+</details>
+<h3 id="operacoes-probabilisticas">Operações probabilísticas<a class="headerlink" href="#operacoes-probabilisticas" title="Permanent link">&para;</a></h3>
+<p>Operações probabilísticas são operações que <strong>podem</strong> introduzir aleatoriedade/incerteza (operações determinísticas são o caso particular em que isso não acontece).</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
+<p>Uma operação em um bit: se o estado é <span class="arithmatex">\(0\)</span>, nada acontece; se o estado é <span class="arithmatex">\(1\)</span>, o bit é invertido para <span class="arithmatex">\(0\)</span> com probabilidade <span class="arithmatex">\(1/2\)</span>. A matriz correspondente é</p>
+<div class="arithmatex">\[\begin{pmatrix}1 &amp; 1/2\\ 0 &amp; 1/2\end{pmatrix} \;=\; \tfrac{1}{2}\begin{pmatrix}1&amp;1\\0&amp;0\end{pmatrix} + \tfrac{1}{2}\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\]</div>
+<p>— ou seja, equivalente a jogar uma moeda honesta e, com 50% de chance, aplicar a função constante-zero, e com os outros 50%, aplicar a identidade.</p>
+</div>
+<p>Essas são chamadas <strong>matrizes estocásticas</strong>: todas as entradas são números reais não negativos, e as entradas de <strong>cada coluna</strong> somam <span class="arithmatex">\(1\)</span> (equivalentemente: cada coluna, isolada, é um vetor de probabilidade válido). Toda matriz estocástica pode ser pensada como uma "escolha aleatória" entre operações determinísticas — basta decompor as colunas como combinação convexa de vetores da base padrão.</p>
+<h3 id="composicao-de-operacoes">Composição de operações<a class="headerlink" href="#composicao-de-operacoes" title="Permanent link">&para;</a></h3>
+<p>Se <span class="arithmatex">\(M_1, \dots, M_n\)</span> são matrizes estocásticas representando operações sucessivas sobre um sistema <span class="arithmatex">\(X\)</span>, aplicar a primeira e depois a segunda a um vetor <span class="arithmatex">\(v\)</span> dá <span class="arithmatex">\(M_2(M_1 v) = (M_2 M_1)v\)</span>. Como multiplicação de matrizes é associativa, a composição das duas operações é representada pelo <strong>produto de matrizes</strong> <span class="arithmatex">\(M_2 M_1\)</span> — e, de forma geral, compor <span class="arithmatex">\(M_1, \dots, M_n\)</span> nessa ordem é representado por</p>
+<div class="arithmatex">\[M_n \cdots M_2 M_1\]</div>
+<p>Note a <strong>ordem invertida</strong>: a primeira operação aplicada fica mais à direita no produto, a última fica mais à esquerda — porque é a matriz da direita que multiplica o vetor primeiro.</p>
+<div class="admonition warning">
+<p class="admonition-title">A ordem importa</p>
+<p>Multiplicação de matrizes <strong>não é comutativa</strong>. Com <span class="arithmatex">\(M_1\)</span> = constante-zero e <span class="arithmatex">\(M_2\)</span> = NOT (bit flip):</p>
+<div class="arithmatex">\[M_2 M_1 = \begin{pmatrix}0&amp;0\\1&amp;1\end{pmatrix} \qquad M_1 M_2 = \begin{pmatrix}1&amp;1\\0&amp;0\end{pmatrix}\]</div>
+<p>Fazer <span class="arithmatex">\(M_1\)</span> depois <span class="arithmatex">\(M_2\)</span> (zerar e depois inverter) dá a função constante-um; fazer <span class="arithmatex">\(M_2\)</span> depois <span class="arithmatex">\(M_1\)</span> (inverter e depois zerar) dá a função constante-zero. São operações diferentes — assim como acender um fósforo e depois soprar é diferente de soprar e depois acender.</p>
+</div>
+<p>As matrizes estocásticas são <strong>fechadas sob multiplicação</strong>: o produto de matrizes estocásticas é sempre uma matriz estocástica.</p>
+<h2 id="informacao-quantica">Informação quântica<a class="headerlink" href="#informacao-quantica" title="Permanent link">&para;</a></h2>
+<p>Matematicamente, informação quântica funciona de um jeito bem parecido com informação clássica — com algumas diferenças-chave. A primeira e mais fundamental é <strong>como se define um estado</strong>.</p>
+<h3 id="definindo-um-estado-quantico">Definindo um estado quântico<a class="headerlink" href="#definindo-um-estado-quantico" title="Permanent link">&para;</a></h3>
+<p>Um estado quântico de um sistema é representado por um <strong>vetor coluna</strong> cujos índices correspondem aos estados clássicos daquele sistema, com duas condições:</p>
+<ul>
+<li>as entradas são <strong>números complexos</strong> (em vez de reais não negativos, como no caso probabilístico);</li>
+<li>a soma dos <strong>valores absolutos ao quadrado</strong> das entradas deve ser igual a <span class="arithmatex">\(1\)</span> (em vez da soma simples ser <span class="arithmatex">\(1\)</span>).</li>
+</ul>
+<p>Os números complexos que aparecem num vetor de estado quântico são chamados de <strong>amplitudes</strong>. Elas desempenham um papel parecido com o de probabilidades, mas <strong>não são</strong> probabilidades e não têm a mesma interpretação direta.</p>
+<div class="admonition note">
+<p class="admonition-title">Por que definir assim?</p>
+<p>Não existe uma justificativa a priori — essa é simplesmente a definição que a física descobriu ser a correta para modelar sistemas quânticos reais. Escolhe-se essa definição porque ela <strong>funciona</strong> (reproduz o que se observa experimentalmente), não por alguma necessidade lógica prévia. Boa parte do estudo de computação e informação quântica é, nesse sentido, uma exploração das consequências dessa única escolha de definição.</p>
+</div>
+<h3 id="norma-euclidiana">Norma euclidiana<a class="headerlink" href="#norma-euclidiana" title="Permanent link">&para;</a></h3>
+<p>Para um vetor coluna <span class="arithmatex">\(v\)</span> com entradas complexas <span class="arithmatex">\(\alpha_1,\dots,\alpha_n\)</span>, a <strong>norma euclidiana</strong> é definida como</p>
+<div class="arithmatex">\[\|v\| = \sqrt{\sum_{k=1}^{n} |\alpha_k|^2}\]</div>
+<p>Um vetor de estado quântico é, portanto, um <strong>vetor unitário</strong> (norma <span class="arithmatex">\(1\)</span>) com respeito a essa norma — e essa é uma definição equivalente à anterior (soma dos valores absolutos ao quadrado igual a <span class="arithmatex">\(1\)</span>).</p>
+<div class="admonition note">
+<p class="admonition-title">Outras normas existem</p>
+<p>A notação com barras duplas <span class="arithmatex">\(\|\cdot\|\)</span> não significa sempre norma euclidiana em todo contexto matemático — por exemplo, a soma simples dos valores absolutos (sem elevar ao quadrado nem tirar raiz) é outra norma, chamada <strong>norma um</strong> (<em>one-norm</em>). Neste curso, porém, sempre que aparecer essa notação aplicada a um vetor coluna, significa norma euclidiana.</p>
+</div>
+<h3 id="exemplos-de-estados-de-qubit">Exemplos de estados de qubit<a class="headerlink" href="#exemplos-de-estados-de-qubit" title="Permanent link">&para;</a></h3>
+<p><strong>Qubit</strong> é a abreviação de <em>quantum bit</em> — um bit que pode estar em um estado quântico, isto é, um sistema cujos estados clássicos são <span class="arithmatex">\(\{0,1\}\)</span>.</p>
+<div class="admonition example">
+<p class="admonition-title">Estados da base padrão</p>
+<p><span class="arithmatex">\(|0\rangle\)</span> e <span class="arithmatex">\(|1\rangle\)</span> são estados quânticos válidos (entradas reais — logo também complexas — com soma dos quadrados igual a <span class="arithmatex">\(1\)</span>).</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Estados mais e menos (plus/minus)</p>
+<div class="arithmatex">\[|+\rangle = \tfrac{1}{\sqrt2}|0\rangle + \tfrac{1}{\sqrt2}|1\rangle \qquad |-\rangle = \tfrac{1}{\sqrt2}|0\rangle - \tfrac{1}{\sqrt2}|1\rangle\]</div>
+<p>Em ambos os casos, <span class="arithmatex">\(\left(\tfrac{1}{\sqrt2}\right)^2 + \left(\tfrac{1}{\sqrt2}\right)^2 = \tfrac12+\tfrac12 = 1\)</span>. O sinal de mais/menos dentro do ket não corresponde a nenhum estado clássico do sistema — é só um nome escolhido para o vetor, assim como qualquer outro símbolo poderia ser.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Um estado sem nome especial</p>
+<div class="arithmatex">\[\tfrac{1+2i}{3}|0\rangle - \tfrac{2}{3}|1\rangle\]</div>
+<p>Os valores absolutos ao quadrado das entradas são <span class="arithmatex">\(5/9\)</span> e <span class="arithmatex">\(4/9\)</span>, que somam <span class="arithmatex">\(1\)</span>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Estado de um sistema com quatro estados clássicos (naipes)</p>
+<div class="arithmatex">\[\tfrac12|\clubsuit\rangle - \tfrac{i}{2}|\diamondsuit\rangle + 0\,|\heartsuit\rangle + \tfrac{1}{\sqrt2}|\spadesuit\rangle\]</div>
+<p>Os quadrados dos valores absolutos são <span class="arithmatex">\(1/4\)</span>, <span class="arithmatex">\(1/4\)</span>, <span class="arithmatex">\(0\)</span> e <span class="arithmatex">\(1/2\)</span> — soma <span class="arithmatex">\(1\)</span>.</p>
+</div>
+<h3 id="notacao-de-dirac-parte-3-vetores-arbitrarios">Notação de Dirac (parte 3): vetores arbitrários<a class="headerlink" href="#notacao-de-dirac-parte-3-vetores-arbitrarios" title="Permanent link">&para;</a></h3>
+<p>A notação de Dirac pode ser usada para <strong>qualquer</strong> vetor, não só vetores da base padrão correspondentes a estados clássicos — qualquer nome pode ir dentro de um ket. É comum usar a letra grega <span class="arithmatex">\(\psi\)</span> ("psi") para nomear um vetor arbitrário, como em <span class="arithmatex">\(|\psi\rangle\)</span>.</p>
+<p>A regra importante: se <span class="arithmatex">\(|\psi\rangle\)</span> é um vetor coluna, então <span class="arithmatex">\(\langle\psi|\)</span> é entendido como o <strong>conjugado transposto</strong> de <span class="arithmatex">\(|\psi\rangle\)</span>, denotado <span class="arithmatex">\(|\psi\rangle^\dagger\)</span>. Conjugado transposto significa duas operações (que comutam entre si, podem ser feitas em qualquer ordem): transpor o vetor (virar coluna em linha) e tomar o conjugado complexo de cada entrada.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
+<p>Para <span class="arithmatex">\(|\psi\rangle = \dfrac{1+2i}{3}|0\rangle - \dfrac{2}{3}|1\rangle\)</span>:</p>
+<div class="arithmatex">\[\langle\psi| = \dfrac{1-2i}{3}\langle 0| - \dfrac{2}{3}\langle 1|\]</div>
+<p>Note que o sinal da parte imaginária inverte (<span class="arithmatex">\(1+2i \to 1-2i\)</span>) por causa do conjugado complexo — a parte real (<span class="arithmatex">\(-2/3\)</span>) não muda porque já é um número real.</p>
+</div>
+<p>Essa regra é consistente com a notação para estados clássicos: lá, as entradas são só <span class="arithmatex">\(0\)</span>s e <span class="arithmatex">\(1\)</span>, então tomar o conjugado complexo não faz diferença nenhuma.</p>
+<h3 id="medindo-estados-quanticos">Medindo estados quânticos<a class="headerlink" href="#medindo-estados-quanticos" title="Permanent link">&para;</a></h3>
+<p>Medições fornecem o mecanismo para extrair informação <strong>clássica</strong> de sistemas <strong>quânticos</strong>: quando olhamos para um sistema em estado quântico, não vemos o estado quântico em si — vemos um estado clássico. Por ora, o curso trata apenas da versão mais simples de medição, chamada <strong>medição na base padrão</strong> (<em>standard basis measurement</em>); versões mais gerais (medições projetivas, e depois POVMs) aparecem em lições posteriores.</p>
+<p>Numa medição na base padrão, os possíveis resultados são exatamente os estados clássicos do sistema. A probabilidade de cada estado clássico ser o resultado é o <strong>valor absoluto ao quadrado</strong> da entrada correspondente no vetor de estado quântico imediatamente antes da medição.</p>
+<div class="admonition example">
+<p class="admonition-title">Medindo o estado mais (<span class="arithmatex">\(|+\rangle\)</span>)</p>
+<div class="arithmatex">\[\Pr(\text{resultado}=0) = \left|\tfrac{1}{\sqrt2}\right|^2 = \tfrac12 \qquad \Pr(\text{resultado}=1) = \left|\tfrac{1}{\sqrt2}\right|^2 = \tfrac12\]</div>
+<p>Um bit uniformemente aleatório.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Medindo o estado menos (<span class="arithmatex">\(|-\rangle\)</span>)</p>
+<p>Mesma coisa: <span class="arithmatex">\(1/2\)</span> para cada resultado — o sinal de menos some ao tomar o valor absoluto.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Medindo <span class="arithmatex">\(\frac{1+2i}{3}|0\rangle - \frac23|1\rangle\)</span></p>
+<div class="arithmatex">\[\Pr(\text{resultado}=0) = \left|\tfrac{1+2i}{3}\right|^2 = \tfrac59 \qquad \Pr(\text{resultado}=1) = \left|-\tfrac23\right|^2 = \tfrac49\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Medindo os estados da base padrão</p>
+<p>Medir <span class="arithmatex">\(|0\rangle\)</span> dá o resultado <span class="arithmatex">\(0\)</span> com certeza; medir <span class="arithmatex">\(|1\rangle\)</span> dá o resultado <span class="arithmatex">\(1\)</span> com certeza (valor absoluto de <span class="arithmatex">\(1\)</span> ao quadrado é <span class="arithmatex">\(1\)</span>) — consistente com associar esses vetores diretamente aos respectivos estados clássicos.</p>
+</div>
+<p>Assim como no caso probabilístico, medir um sistema <strong>muda</strong> seu estado: se o resultado obtido é o estado clássico <span class="arithmatex">\(a\)</span>, o novo estado quântico do sistema passa a ser <span class="arithmatex">\(|a\rangle\)</span>. Esse fenômeno é por vezes chamado de <strong>colapso</strong> do estado quântico — e é o tipo de coisa que tira o sono de quem estuda os fundamentos da mecânica quântica, mesmo sendo, do ponto de vista puramente matemático, bem análogo ao caso probabilístico. Uma consequência direta: medir o mesmo sistema uma segunda vez (sem nenhuma operação no meio) sempre dá o mesmo resultado da primeira — há um limite de quanta informação clássica pode ser extraída de um estado quântico.</p>
+<h3 id="operacoes-unitarias">Operações unitárias<a class="headerlink" href="#operacoes-unitarias" title="Permanent link">&para;</a></h3>
+<p>Assim como estados quânticos são diferentes de estados probabilísticos, o conjunto de operações permitidas também é diferente: operações sobre estados probabilísticos são matrizes <strong>estocásticas</strong>; operações sobre estados quânticos são matrizes <strong>unitárias</strong>.</p>
+<p>Uma matriz quadrada <span class="arithmatex">\(U\)</span> com entradas complexas é <strong>unitária</strong> se satisfaz</p>
+<div class="arithmatex">\[U^\dagger U = \mathbb{1} = UU^\dagger\]</div>
+<p>onde <span class="arithmatex">\(U^\dagger\)</span> é o conjugado transposto de <span class="arithmatex">\(U\)</span> e <span class="arithmatex">\(\mathbb{1}\)</span> é a matriz identidade. As duas igualdades são equivalentes entre si (ter uma implica a outra) e equivalem a dizer que <span class="arithmatex">\(U\)</span> é invertível com <span class="arithmatex">\(U^{-1}=U^\dagger\)</span> — o que só vale para matrizes quadradas.</p>
+<p>Equivalentemente: <span class="arithmatex">\(U\)</span> é unitária se e somente se ela <strong>nunca muda a norma euclidiana</strong> de nenhum vetor — <span class="arithmatex">\(\|Uv\| = \|v\|\)</span> para todo vetor coluna complexo <span class="arithmatex">\(v\)</span>. Como consequência direta: se <span class="arithmatex">\(v\)</span> é um estado quântico (norma <span class="arithmatex">\(1\)</span>), então <span class="arithmatex">\(Uv\)</span> também é um estado quântico. De fato, as matrizes unitárias são <strong>precisamente</strong> as matrizes que sempre transformam estados quânticos em estados quânticos — o análogo exato do que as matrizes estocásticas são para vetores de probabilidade.</p>
+<h4 id="operacoes-de-pauli">Operações de Pauli<a class="headerlink" href="#operacoes-de-pauli" title="Permanent link">&para;</a></h4>
+<p>As <strong>operações de Pauli</strong> correspondem às matrizes de Pauli:</p>
+<div class="arithmatex">\[\mathbb{1} = \begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix} \quad \sigma_x = \begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix} \quad \sigma_y = \begin{pmatrix}0&amp;-i\\i&amp;0\end{pmatrix} \quad \sigma_z = \begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}\]</div>
+<p>Também chamadas simplesmente de <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(Y\)</span> e <span class="arithmatex">\(Z\)</span> (cuidado: essas letras também são usadas para outras coisas em computação quântica, mas são nomes bem padronizados para essas matrizes específicas).</p>
+<p>Todas são unitárias — e, nesse caso particular, todas são também <strong>hermitianas</strong> (iguais ao próprio conjugado transposto), então verificar que são unitárias é só elevar cada uma ao quadrado e checar que dá a identidade.</p>
+<p><span class="arithmatex">\(\sigma_x\)</span> é chamada de <strong>bit flip</strong> (ou operação NOT) — é a mesma operação NOT que já apareceu no contexto clássico:</p>
+<div class="arithmatex">\[\sigma_x|0\rangle = |1\rangle \qquad \sigma_x|1\rangle = |0\rangle\]</div>
+<p><span class="arithmatex">\(\sigma_z\)</span> é chamada de <strong>phase flip</strong> (inversão de fase):</p>
+<div class="arithmatex">\[\sigma_z|0\rangle = |0\rangle \qquad \sigma_z|1\rangle = -|1\rangle\]</div>
+<p>(o significado mais profundo de "inverter a fase" — por que colocar um sinal de menos na frente de <span class="arithmatex">\(|1\rangle\)</span> e não de <span class="arithmatex">\(|0\rangle\)</span> é chamado assim — fica mais claro em lições futuras.)</p>
+<h4 id="operacao-de-hadamard">Operação de Hadamard<a class="headerlink" href="#operacao-de-hadamard" title="Permanent link">&para;</a></h4>
+<p>A <strong>operação de Hadamard</strong>, quase sempre chamada apenas de <span class="arithmatex">\(H\)</span>:</p>
+<div class="arithmatex">\[H = \begin{pmatrix} \tfrac{1}{\sqrt2} &amp; \tfrac{1}{\sqrt2} \\ \tfrac{1}{\sqrt2} &amp; -\tfrac{1}{\sqrt2} \end{pmatrix}\]</div>
+<p><span class="arithmatex">\(H\)</span> também é sua própria conjugada transposta, então verificar que é unitária é só multiplicá-la por si mesma e checar que dá a identidade:</p>
+<div class="arithmatex">\[H^\dagger H = H H = \begin{pmatrix}\tfrac12+\tfrac12 &amp; \tfrac12-\tfrac12\\ \tfrac12-\tfrac12 &amp; \tfrac12+\tfrac12\end{pmatrix} = \begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\]</div>
+<h4 id="operacoes-de-fase">Operações de fase<a class="headerlink" href="#operacoes-de-fase" title="Permanent link">&para;</a></h4>
+<p>Uma <strong>operação de fase</strong> é qualquer matriz da forma</p>
+<div class="arithmatex">\[P_\theta = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; e^{i\theta}\end{pmatrix}\]</div>
+<p>para qualquer número real <span class="arithmatex">\(\theta\)</span> — a entrada <span class="arithmatex">\(e^{i\theta}\)</span> está sempre sobre o círculo unitário, então matrizes desse formato são sempre unitárias (a transposição não faz nada a essa matriz; o conjugado complexo troca <span class="arithmatex">\(e^{i\theta}\)</span> por <span class="arithmatex">\(e^{-i\theta}\)</span>, e o produto dá <span class="arithmatex">\(e^{i\theta}e^{-i\theta}=1\)</span>). Quando <span class="arithmatex">\(\theta \in \{0,\pi\}\)</span>, essa operação coincide com a identidade ou com <span class="arithmatex">\(\sigma_z\)</span>, respectivamente.</p>
+<p>Dois casos particulares, muito usados, têm nome próprio:</p>
+<div class="arithmatex">\[S = P_{\pi/2} = \begin{pmatrix}1&amp;0\\0&amp;i\end{pmatrix} \qquad T = P_{\pi/4} = \begin{pmatrix}1&amp;0\\0&amp;\tfrac{1+i}{\sqrt2}\end{pmatrix}\]</div>
+<p><span class="arithmatex">\(S\)</span> e <span class="arithmatex">\(T\)</span> são chamadas de <strong>portas</strong> (<em>gates</em>) <span class="arithmatex">\(S\)</span> e <span class="arithmatex">\(T\)</span> quando se fala em circuitos — assunto de uma lição futura.</p>
+<h4 id="exemplos-de-acao-dessas-operacoes">Exemplos de ação dessas operações<a class="headerlink" href="#exemplos-de-acao-dessas-operacoes" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Hadamard em <span class="arithmatex">\(|0\rangle\)</span>, <span class="arithmatex">\(|1\rangle\)</span>, <span class="arithmatex">\(|+\rangle\)</span>, <span class="arithmatex">\(|-\rangle\)</span></p>
+<div class="arithmatex">\[H|0\rangle = |+\rangle \qquad H|1\rangle = |-\rangle \qquad H|+\rangle = |0\rangle \qquad H|-\rangle = |1\rangle\]</div>
+<p>Ou seja: <span class="arithmatex">\(H\)</span> alterna entre o estado zero e o estado mais, e entre o estado um e o estado menos. Isso também dá um jeito simples de <strong>distinguir</strong> <span class="arithmatex">\(|+\rangle\)</span> de <span class="arithmatex">\(|-\rangle\)</span>: medir qualquer um dos dois diretamente na base padrão dá um bit uniformemente aleatório nos dois casos (não ajuda a diferenciá-los) — mas aplicar <span class="arithmatex">\(H\)</span> e <strong>depois</strong> medir dá <span class="arithmatex">\(0\)</span> com certeza se o estado original era <span class="arithmatex">\(|+\rangle\)</span>, e <span class="arithmatex">\(1\)</span> com certeza se era <span class="arithmatex">\(|-\rangle\)</span>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Hadamard no estado sem nome especial</p>
+<div class="arithmatex">\[H\left(\tfrac{1+2i}{3}|0\rangle - \tfrac23|1\rangle\right) = \tfrac{-1+2i}{3\sqrt2}|0\rangle + \tfrac{3+2i}{3\sqrt2}|1\rangle\]</div>
+<details class="note">
+<summary>Passo a passo</summary>
+<p>Na forma de vetor coluna:</p>
+<div class="arithmatex">\[H\begin{pmatrix}\frac{1+2i}{3}\\[2pt]-\frac23\end{pmatrix} = \begin{pmatrix}\frac{1}{\sqrt2} &amp; \frac{1}{\sqrt2}\\[2pt]\frac{1}{\sqrt2} &amp; -\frac{1}{\sqrt2}\end{pmatrix}\begin{pmatrix}\frac{1+2i}{3}\\[2pt]-\frac23\end{pmatrix} = \begin{pmatrix}\frac{-1+2i}{3\sqrt2}\\[4pt]\frac{3+2i}{3\sqrt2}\end{pmatrix}\]</div>
+<p>É simplesmente multiplicação matriz-vetor padrão, com os números complexos somados/subtraídos entrada por entrada.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Operação T em <span class="arithmatex">\(|+\rangle\)</span>, usando a notação de Dirac direto (sem converter para matriz)</p>
+<p><span class="arithmatex">\(T|0\rangle=|0\rangle\)</span> e <span class="arithmatex">\(T|1\rangle=\dfrac{1+i}{\sqrt2}|1\rangle\)</span> (ação da matriz <span class="arithmatex">\(T\)</span> sobre a base padrão). Expandindo <span class="arithmatex">\(|+\rangle\)</span> e usando linearidade:</p>
+<div class="arithmatex">\[T|+\rangle = T\left(\tfrac{1}{\sqrt2}|0\rangle+\tfrac{1}{\sqrt2}|1\rangle\right) = \tfrac{1}{\sqrt2}T|0\rangle + \tfrac{1}{\sqrt2}T|1\rangle = \tfrac{1}{\sqrt2}|0\rangle + \tfrac{1+i}{2}|1\rangle\]</div>
+<p>E se depois quisermos aplicar Hadamard ao resultado, repetimos o mesmo truque — expandir, usar linearidade, substituir a ação de <span class="arithmatex">\(H\)</span> sobre <span class="arithmatex">\(|0\rangle\)</span> e <span class="arithmatex">\(|1\rangle\)</span> (que já conhecemos: <span class="arithmatex">\(|+\rangle\)</span> e <span class="arithmatex">\(|-\rangle\)</span>), e por fim simplificar:</p>
+<div class="arithmatex">\[HT|+\rangle = \tfrac{1}{\sqrt2}H|0\rangle + \tfrac{1+i}{2}H|1\rangle = \tfrac{1}{\sqrt2}|+\rangle + \tfrac{1+i}{2}|-\rangle = \left(\tfrac12+\tfrac{1+i}{2\sqrt2}\right)|0\rangle + \left(\tfrac12-\tfrac{1+i}{2\sqrt2}\right)|1\rangle\]</div>
+<p>Essa é uma forma alternativa (e equivalente) de calcular a ação de uma operação, sem nunca escrever a matriz explicitamente como "retângulo de números" — útil quando é mais conveniente trabalhar direto na notação de Dirac.</p>
+</div>
+<h4 id="composicao-de-operacoes-unitarias">Composição de operações unitárias<a class="headerlink" href="#composicao-de-operacoes-unitarias" title="Permanent link">&para;</a></h4>
+<p>Assim como no caso probabilístico, compor operações unitárias é representado por <strong>multiplicação de matrizes</strong> (na mesma ordem invertida: a primeira operação aplicada fica à direita no produto). As matrizes unitárias também são <strong>fechadas sob multiplicação</strong> — compor operações unitárias sempre dá outra operação unitária.</p>
+<div class="admonition example">
+<p class="admonition-title">A operação 'raiz quadrada de NOT'</p>
+<p>Aplicar Hadamard, depois <span class="arithmatex">\(S\)</span>, depois Hadamard de novo:</p>
+<div class="arithmatex">\[HSH = \begin{pmatrix}\tfrac{1}{\sqrt2}&amp;\tfrac{1}{\sqrt2}\\\tfrac{1}{\sqrt2}&amp;-\tfrac{1}{\sqrt2}\end{pmatrix}\begin{pmatrix}1&amp;0\\0&amp;i\end{pmatrix}\begin{pmatrix}\tfrac{1}{\sqrt2}&amp;\tfrac{1}{\sqrt2}\\\tfrac{1}{\sqrt2}&amp;-\tfrac{1}{\sqrt2}\end{pmatrix} = \begin{pmatrix}\tfrac{1+i}{2} &amp; \tfrac{1-i}{2}\\[2pt]\tfrac{1-i}{2} &amp; \tfrac{1+i}{2}\end{pmatrix}\]</div>
+<p>Por que esse nome? Porque aplicar essa operação <strong>duas vezes</strong> (elevar a matriz ao quadrado) dá exatamente a operação NOT (<span class="arithmatex">\(\sigma_x\)</span>):</p>
+<div class="arithmatex">\[(HSH)^2 = \begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix} = \sigma_x\]</div>
+<p>Isso é peculiar — não existe nenhuma operação <strong>clássica</strong> (representada por matriz estocástica) tal que aplicá-la duas vezes dê um NOT. É um primeiro sinal concreto de que operações quânticas permitem coisas que operações clássicas simplesmente não conseguem replicar.</p>
+</div>
+<h2 id="complementos-licoes-escritas-do-ibm-quantum-learning">Complementos (lições escritas do IBM Quantum Learning)<a class="headerlink" href="#complementos-licoes-escritas-do-ibm-quantum-learning" title="Permanent link">&para;</a></h2>
+<p>As lições escritas que cobrem o mesmo material (<a href="https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/single-systems/classical-information">Classical information</a> e <a href="https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/single-systems/quantum-information">Quantum information</a>) seguem essencialmente a mesma estrutura do vídeo, mas acrescentam alguns pontos que vale registrar aqui.</p>
+<h3 id="fase-global">Fase global<a class="headerlink" href="#fase-global" title="Permanent link">&para;</a></h3>
+<p>Dois estados quânticos que diferem apenas por um fator de fase global — isto é, <span class="arithmatex">\(|\varphi\rangle = e^{i\theta}|\psi\rangle\)</span> para algum <span class="arithmatex">\(\theta\)</span> real — são <strong>fisicamente indistinguíveis</strong>: toda medição na base padrão dá exatamente as mesmas probabilidades para os dois, porque <span class="arithmatex">\(|e^{i\theta}\alpha|^2 = |\alpha|^2\)</span> para qualquer amplitude <span class="arithmatex">\(\alpha\)</span> (multiplicar por um número complexo de módulo 1 não muda o módulo de nada). O mesmo vale depois de qualquer sequência de operações unitárias, já que <span class="arithmatex">\(U(e^{i\theta}|\psi\rangle) = e^{i\theta}(U|\psi\rangle)\)</span>.</p>
+<p>Isso costuma gerar confusão na prática: ao medir um qubit duas vezes com simuladores diferentes (ou o mesmo simulador em execuções diferentes), o estado "colapsado" reportado pode vir multiplicado por uma fase global diferente a cada vez — por exemplo, <span class="arithmatex">\(|0\rangle\)</span> numa execução e <span class="arithmatex">\(-|0\rangle\)</span> (ou <span class="arithmatex">\(i|0\rangle\)</span>) em outra. Isso <strong>não</strong> é um erro nem contradiz nada: são representações equivalentes do mesmo estado físico. Por convenção, diz-se que dois vetores de estado representam o mesmo estado físico se e somente se diferem por (no máximo) uma fase global.</p>
+<div class="admonition note">
+<p class="admonition-title">Fase global vs. fase relativa</p>
+<p>Fase global (um fator comum multiplicando o vetor inteiro) não tem efeito observável. Já uma <strong>fase relativa</strong> — como o sinal de menos que distingue <span class="arithmatex">\(|+\rangle\)</span> de <span class="arithmatex">\(|-\rangle\)</span>, ou a diferença de fase entre as duas entradas de um estado qualquer — tem efeito físico real e observável (foi exatamente isso que o truque de "aplicar Hadamard antes de medir" explorou para distinguir <span class="arithmatex">\(|+\rangle\)</span> de <span class="arithmatex">\(|-\rangle\)</span> na seção anterior).</p>
+</div>
+<h3 id="operacoes-unitarias-em-sistemas-maiores-matrizes-de-permutacao">Operações unitárias em sistemas maiores: matrizes de permutação<a class="headerlink" href="#operacoes-unitarias-em-sistemas-maiores-matrizes-de-permutacao" title="Permanent link">&para;</a></h3>
+<p>A definição de operação unitária não depende do número de estados clássicos do sistema — vale para sistemas com qualquer número finito de estados, não só qubits. Uma família simples (e instrutiva) de exemplos em sistemas maiores são as <strong>matrizes de permutação</strong>: matrizes que têm exatamente um <span class="arithmatex">\(1\)</span> em cada linha e em cada coluna, e <span class="arithmatex">\(0\)</span> no resto (generalização direta das matrizes de operações determinísticas clássicas invertíveis).</p>
+<p>Toda matriz de permutação é unitária — multiplicar por ela só reordena as entradas do vetor, o que preserva a norma euclidiana automaticamente. E, de fato, as matrizes de permutação são precisamente a <strong>interseção</strong> entre as matrizes estocásticas e as matrizes unitárias: uma matriz que é ao mesmo tempo estocástica e unitária só pode ser uma permutação.</p>
+<div class="admonition example">
+<p class="admonition-title">Soma módulo 3</p>
+<p>Considere um sistema com três estados clássicos <span class="arithmatex">\(\Sigma=\{0,1,2\}\)</span>, e a operação "somar 1 módulo 3": <span class="arithmatex">\(0\mapsto1\)</span>, <span class="arithmatex">\(1\mapsto2\)</span>, <span class="arithmatex">\(2\mapsto0\)</span>. A matriz correspondente é uma permutação:</p>
+<div class="arithmatex">\[M = \begin{pmatrix}0&amp;0&amp;1\\1&amp;0&amp;0\\0&amp;1&amp;0\end{pmatrix}\]</div>
+<p>e de fato <span class="arithmatex">\(M^\dagger M = \mathbb{1}\)</span> (aqui <span class="arithmatex">\(M^\dagger=M^T\)</span> pois as entradas já são reais) — confirmando que é unitária, além de estocástica.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Transformada de Fourier quântica (QFT), caso <span class="arithmatex">\(4\times4\)</span></p>
+<p>Um exemplo bem menos trivial de matriz unitária (e que <strong>não</strong> é uma matriz de permutação nem estocástica) é a transformada de Fourier quântica, para um sistema com quatro estados clássicos <span class="arithmatex">\(\{0,1,2,3\}\)</span>. Com <span class="arithmatex">\(\omega = e^{2\pi i/4} = i\)</span>:</p>
+<div class="arithmatex">\[F = \frac12\begin{pmatrix}1&amp;1&amp;1&amp;1\\1&amp;\omega&amp;\omega^2&amp;\omega^3\\1&amp;\omega^2&amp;\omega^4&amp;\omega^6\\1&amp;\omega^3&amp;\omega^6&amp;\omega^9\end{pmatrix} = \frac12\begin{pmatrix}1&amp;1&amp;1&amp;1\\1&amp;i&amp;-1&amp;-i\\1&amp;-1&amp;1&amp;-1\\1&amp;-i&amp;-1&amp;i\end{pmatrix}\]</div>
+<p>Pode-se verificar que <span class="arithmatex">\(F^\dagger F = \mathbb{1}\)</span> — é unitária, apesar de ter entradas negativas e imaginárias que impedem qualquer interpretação como "matriz estocástica" (que exigiria entradas reais não negativas). A QFT é uma operação central em vários algoritmos quânticos importantes (ela reaparece, generalizada, bem mais adiante no curso).</p>
+<details class="note">
+<summary>Verificação numérica (NumPy)</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">F</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">omega</span><span class="o">**</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">F</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># [[1.+0.j 0.+0.j 0.+0.j 0.+0.j]</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">#  [0.+0.j 1.+0.j 0.+0.j 0.+0.j]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">#  [0.+0.j 0.+0.j 1.+0.j 0.+0.j]</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">#  [0.+0.j 0.+0.j 0.+0.j 1.+0.j]]</span>
+</code></pre></div>
+</details>
+</div>
+<p>A implementação prática de boa parte do conteúdo desta aula (vetores, medições e operações unitárias, usando o Qiskit) está na página seguinte: <a href="../aula-1-qiskit/">Implementação em Qiskit</a>.</p>
+<hr />
+<h2 id="anotacoes-e-observacoes-pessoais">Anotações e observações pessoais<a class="headerlink" href="#anotacoes-e-observacoes-pessoais" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Conteúdo não-oficial</p>
+<p>Esta seção reúne minhas próprias anotações, dúvidas e observações feitas durante/depois da aula — não é conteúdo do curso, e pode conter entendimentos equivocados ou opiniões pessoais. Tratar como complementar, não como referência.</p>
+</div>
+<ul>
+<li>A analogia clássico → quântico ficou bem clara estruturalmente (vetor de probabilidade → vetor de estado quântico; matriz estocástica → matriz unitária; "ver um estado ao medir" em ambos os casos), mas a pergunta que ficou em aberto é sempre a mesma: <strong>por que</strong> a definição de estado quântico é "essa" especificamente (números complexos, soma dos módulos ao quadrado igual a 1)? A aula é explícita que não há uma razão a priori — só "é assim que a física funciona e essa definição é a que reproduz os experimentos" — mas queria entender melhor esse ponto no futuro (talvez fique mais claro nas lições sobre medição geral/POVM ou na unidade de descrição geral).</li>
+<li>Queria revisar com mais calma, passo a passo, a parte de <strong>transposição + conjugado complexo</strong> (notação de Dirac parte 3) — entendi o mecanismo (transpor + conjugar cada entrada), mas quero me sentir mais confortável fazendo isso "no automático" para vetores com números complexos mais complicados.</li>
+<li>Idem para os exemplos de <strong>medição de estados quânticos</strong>: entendi a regra (prob. = módulo ao quadrado da amplitude), mas quero revisar o passo a passo de cada exemplo (principalmente os com números complexos) até estar 100% automático.</li>
+<li>Fiquei na dúvida se "operações unitárias" se refere sempre a <strong>matrizes quadradas</strong> — a aula confirma isso (a própria definição de unitária, com <span class="arithmatex">\(U^\dagger U = UU^\dagger = \mathbb{1}\)</span>, só faz sentido/é bem definida para matrizes quadradas).</li>
+<li>Queria entender melhor a <strong>origem/motivação</strong> das matrizes de Pauli, Hadamard e de fase — de onde "vieram" essas matrizes específicas, não só que elas são unitárias. Acho que isso deve aparecer melhor com mais contexto físico (spin, interferômetros, etc.) em lições futuras, ou lendo um pouco mais no Qiskit Textbook em paralelo.</li>
+<li>Achei a notação de "estados sem nome" (ex.: <span class="arithmatex">\(\tfrac{1+2i}{3}|0\rangle-\tfrac23|1\rangle\)</span>) meio contraintuitiva no começo — ainda bom revisitar por que faz sentido usar números complexos "genéricos" assim, e não só casos com significado físico claro (base padrão, plus/minus).</li>
+<li>Quero voltar e reorganizar mentalmente os exemplos de "qubit unitary operations" e "composing unitary operations" de forma mais estratificada/visual — a aula passa eles em sequência meio corrida, achei que ajudaria ter cada operação (Pauli, Hadamard, fase) com seu próprio bloco bem isolado antes de ir para composição (o que tentei refletir na organização desta página, usando os dropdowns para os passos de cálculo).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Anterior: COMPUTAÇÃO QUÂNTICA (IBM)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                COMPUTAÇÃO QUÂNTICA (IBM)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../aula-1-qiskit/" class="md-footer__link md-footer__link--next" aria-label="Próximo: AULA 1 - IMPLEMENTAÇÃO EM QISKIT">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                AULA 1 - IMPLEMENTAÇÃO EM QISKIT
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>

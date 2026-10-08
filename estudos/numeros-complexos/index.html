@@ -1,0 +1,4312 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Base de conhecimento pessoal — faculdade e estudos">
+      
+      
+        <meta name="author" content="João Pedro Bezerra">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../agentes-de-ia/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>NÚMEROS COMPLEXOS - LLM Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#numeros-complexos" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="LLM Wiki" class="md-header__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLM Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NÚMEROS COMPLEXOS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Estudos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faculdade/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Faculdade
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LLM Wiki" class="md-nav__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLM Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estudos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estudos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NÚMEROS COMPLEXOS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NÚMEROS COMPLEXOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introdução
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-unidade-imaginaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A unidade imaginária
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A unidade imaginária">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potencias-de-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Potências de \(i\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-algebrica-ou-retangular" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forma algébrica (ou retangular)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forma algébrica (ou retangular)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classificacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#igualdade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Igualdade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacoes-basicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações básicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conjugado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conjugado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Módulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plano-complexo-plano-de-argand-gauss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plano complexo (plano de Argand-Gauss)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argumento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argumento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-polar-trigonometrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forma polar (trigonométrica)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forma polar (trigonométrica)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notacao-cis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notação "cis"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicacao-e-divisao-em-forma-polar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiplicação e divisão em forma polar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-exponencial-e-formula-de-euler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forma exponencial e fórmula de Euler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#potenciacao-1a-formula-de-de-moivre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Potenciação: 1ª Fórmula de De Moivre
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Potenciação: 1ª Fórmula de De Moivre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-isso-e-a-formula-de-euler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que isso "é" a fórmula de Euler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radiciacao-2a-formula-de-de-moivre-raizes-n-esimas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Radiciação: 2ª Fórmula de De Moivre (raízes \(n\)-ésimas)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-isso-importa-teorema-fundamental-da-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que isso importa: Teorema Fundamental da Álgebra
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicações
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-resolvidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercícios Resolvidos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercícios Resolvidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potencias-de-i_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Potências de \(i\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forma-algebrica-classificacao-e-igualdade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forma algébrica, classificação e igualdade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-na-forma-algebrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações na forma algébrica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divisao-na-forma-algebrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Divisão na forma algébrica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpretacao-geometrica-e-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretação geométrica e módulo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argumento_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argumento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forma-polar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forma polar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicacao-e-divisao-na-forma-polar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiplicação e divisão na forma polar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1a-formula-de-de-moivre-potenciacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1ª Fórmula de De Moivre (potenciação)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2a-formula-de-de-moivre-radiciacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2ª Fórmula de De Moivre (radiciação)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-de-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumo de fórmulas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../agentes-de-ia/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTES DE IA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AGENTES DE IA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes-de-ia/harness-e-pi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HARNESS E PI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes-de-ia/otimizacao-tokens-roteamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE TOKENS E ROTEAMENTO DE MODELOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes-de-ia/fine-tuning-agentico-meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FINE-TUNING AGÊNTICO: A ABORDAGEM DA META
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes-de-ia/jev-modelos-decisao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JEV: MODELOS DE DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../computacao-quantica-ibm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../computacao-quantica-ibm/aula-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - SISTEMAS ÚNICOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../computacao-quantica-ibm/aula-1-qiskit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - IMPLEMENTAÇÃO EM QISKIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../otimizacao-de-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bend2-tipos-dependentes-provas-formais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faculdade/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faculdade
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Faculdade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faculdade/periodo-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 1
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-1/calculo-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CÁLCULO 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-1/matematica-discreta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATEMÁTICA DISCRETA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-1/algebra-vetorial-linear-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faculdade/periodo-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 2
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-2/algoritmos-e-estruturas-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-2/algoritmos-e-estruturas-de-dados/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-2/estatistica-probabilidade-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA E PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-2/estatistica-probabilidade-p-computacao/assuncoes-da-regressao-linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assunções da regressão linear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-2/estatistica-probabilidade-p-computacao/r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-2/fisica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FÍSICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-2/logica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LÓGICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SISTEMAS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-2/sistemas-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-2/sistemas-digitais/assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faculdade/periodo-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 3
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-3/arquitetura-de-computadores-e-sistemas-operacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-3/concepcao-de-artefatos-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepção de Artefatos Digitais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-3/concepcao-de-artefatos-digitais/grupo-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grupo 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-3/desenvolvimento-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DESENVOLVIMENTO DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-3/estruturas-de-dados-orientadas-a-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTRUTURAS DE DADOS ORIENTADAS À OBJETOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faculdade/periodo-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 4
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-4/banco-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BANCO DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-4/compiladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPILADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-4/informatica-teorica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA TEÓRICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-4/integracao-e-evolucao-de-sistemas-de-informacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faculdade/periodo-5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 5
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/projeto-aprendizagem-de-maquina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Aprendizagem de Máquina
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3_2" id="__nav_3_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projeto Packet Tracer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 - Design Físico e Topologia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e2-design-de-enderecamento-vlsm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2 - Design de Endereçamento VLSM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e3-design-de-segmentacao-vlans-e-dhcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E3 - Design de Segmentação (VLANs e DHCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E4 - Roteamento Inter-VLAN e Conectividade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e5-apresentacao-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E5 - Apresentação Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/referencias-bibliograficas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências Bibliográficas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/untitled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untitled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/metodologia-e-expressao-tecnico-cientifica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    METODOLOGIA E EXPRESSÃO TÉCNICO-CIENTÍFICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-5/paradigmas-de-linguagens-computacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PARADIGMAS DE LINGUAGENS COMPUTACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faculdade/periodo-6/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 6
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-6/empreendimentos-em-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EMPREENDIMENTOS EM INFORMÁTICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-6/engenharia-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENGENHARIA DE REQUISITOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-6/informatica-e-sociedade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA E SOCIEDADE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faculdade/periodo-6/topicos-avancados-em-si-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TÓPICOS AVANÇADOS EM SI 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introdução
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-unidade-imaginaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A unidade imaginária
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A unidade imaginária">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potencias-de-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Potências de \(i\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-algebrica-ou-retangular" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forma algébrica (ou retangular)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forma algébrica (ou retangular)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classificacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#igualdade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Igualdade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacoes-basicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações básicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conjugado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conjugado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Módulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plano-complexo-plano-de-argand-gauss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plano complexo (plano de Argand-Gauss)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argumento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argumento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-polar-trigonometrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forma polar (trigonométrica)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forma polar (trigonométrica)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notacao-cis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notação "cis"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicacao-e-divisao-em-forma-polar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiplicação e divisão em forma polar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-exponencial-e-formula-de-euler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forma exponencial e fórmula de Euler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#potenciacao-1a-formula-de-de-moivre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Potenciação: 1ª Fórmula de De Moivre
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Potenciação: 1ª Fórmula de De Moivre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-isso-e-a-formula-de-euler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que isso "é" a fórmula de Euler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radiciacao-2a-formula-de-de-moivre-raizes-n-esimas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Radiciação: 2ª Fórmula de De Moivre (raízes \(n\)-ésimas)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-isso-importa-teorema-fundamental-da-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que isso importa: Teorema Fundamental da Álgebra
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicações
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-resolvidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercícios Resolvidos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercícios Resolvidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potencias-de-i_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Potências de \(i\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forma-algebrica-classificacao-e-igualdade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forma algébrica, classificação e igualdade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-na-forma-algebrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operações na forma algébrica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divisao-na-forma-algebrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Divisão na forma algébrica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpretacao-geometrica-e-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretação geométrica e módulo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argumento_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argumento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forma-polar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forma polar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicacao-e-divisao-na-forma-polar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiplicação e divisão na forma polar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1a-formula-de-de-moivre-potenciacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1ª Fórmula de De Moivre (potenciação)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2a-formula-de-de-moivre-radiciacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2ª Fórmula de De Moivre (radiciação)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-de-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumo de fórmulas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/jpbezerra/llm-wiki/edit/main/docs/estudos/numeros-complexos.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="numeros-complexos">NÚMEROS COMPLEXOS<a class="headerlink" href="#numeros-complexos" title="Permanent link">&para;</a></h1>
+<h2 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h2>
+<p>Os números complexos surgem de um problema simples: a equação <span class="arithmatex">\(x^2+1=0\)</span> não tem solução dentro dos números reais, porque nenhum real ao quadrado dá <span class="arithmatex">\(-1\)</span>. Em vez de descartar esse tipo de equação, definimos um novo número, <span class="arithmatex">\(i\)</span>, que resolve exatamente esse problema, e construímos um sistema numérico inteiro em torno dele — os números complexos — que contém os reais como caso particular e permite resolver qualquer equação polinomial.</p>
+<div class="admonition note">
+<p class="admonition-title">Um pouco de história</p>
+<p>O nome "imaginário" é um acidente histórico, não uma descrição precisa. Raízes quadradas de negativos apareciam já no século XVI, nas fórmulas de Cardano/Tartaglia para resolver equações cúbicas — curiosamente, mesmo quando a equação tinha três raízes <strong>reais</strong>, a fórmula passava por um passo intermediário com <span class="arithmatex">\(\sqrt{-1}\)</span>. Bombelli (1572) foi o primeiro a manipular essas quantidades com regras consistentes, mas só com Euler (que introduziu a notação <span class="arithmatex">\(i\)</span>) e, depois, com a interpretação geométrica de Wessel, Argand e Gauss (fim do séc. XVIII/início do XIX) como pontos de um plano, os complexos deixaram de ser vistos como um truque de cálculo e passaram a ser um sistema numérico tão legítimo quanto os reais.</p>
+</div>
+<h2 id="a-unidade-imaginaria">A unidade imaginária<a class="headerlink" href="#a-unidade-imaginaria" title="Permanent link">&para;</a></h2>
+<p>Define-se a <strong>unidade imaginária</strong> <span class="arithmatex">\(i\)</span> como uma raiz quadrada de <span class="arithmatex">\(-1\)</span>:</p>
+<div class="arithmatex">\[i^2 = -1 \qquad \text{ou, equivalentemente,} \qquad i = \sqrt{-1}\]</div>
+<h3 id="potencias-de-i">Potências de <span class="arithmatex">\(i\)</span><a class="headerlink" href="#potencias-de-i" title="Permanent link">&para;</a></h3>
+<p>A partir disso, as potências de <span class="arithmatex">\(i\)</span> entram num ciclo de período 4:</p>
+<div class="arithmatex">\[i^0=1,\quad i^1=i,\quad i^2=-1,\quad i^3=-i,\quad i^4=1,\quad i^5=i,\ \dots\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Calculando potências de i rapidamente</p>
+<p>Para qualquer expoente <span class="arithmatex">\(n\)</span>, divida <span class="arithmatex">\(n\)</span> por <span class="arithmatex">\(4\)</span> e olhe só o resto <span class="arithmatex">\(r\)</span>: <span class="arithmatex">\(i^n = i^r\)</span>. Exemplo: <span class="arithmatex">\(i^{37}\)</span>, como <span class="arithmatex">\(37 = 4\cdot9+1\)</span>, então <span class="arithmatex">\(i^{37}=i^1=i\)</span>.</p>
+</div>
+<h2 id="forma-algebrica-ou-retangular">Forma algébrica (ou retangular)<a class="headerlink" href="#forma-algebrica-ou-retangular" title="Permanent link">&para;</a></h2>
+<p>Um <strong>número complexo</strong> <span class="arithmatex">\(z\)</span> é escrito como:</p>
+<div class="arithmatex">\[z = a + bi, \qquad a,b \in \mathbb{R}\]</div>
+<ul>
+<li><span class="arithmatex">\(a = \text{Re}(z)\)</span> é a <strong>parte real</strong>.</li>
+<li><span class="arithmatex">\(b = \text{Im}(z)\)</span> é a <strong>parte imaginária</strong> (note que <span class="arithmatex">\(b\)</span> é um número real — "parte imaginária" é o coeficiente que multiplica <span class="arithmatex">\(i\)</span>, não <span class="arithmatex">\(bi\)</span> em si).</li>
+</ul>
+<p>O conjunto de todos os números complexos é denotado <span class="arithmatex">\(\mathbb{C}\)</span>. Quando <span class="arithmatex">\(b=0\)</span>, <span class="arithmatex">\(z=a\)</span> é só um número real — ou seja, <span class="arithmatex">\(\mathbb{R}\subset\mathbb{C}\)</span>. Quando <span class="arithmatex">\(a=0\)</span> e <span class="arithmatex">\(b\neq0\)</span>, <span class="arithmatex">\(z=bi\)</span> é chamado <strong>imaginário puro</strong>.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplos</p>
+<p><span class="arithmatex">\(z_1 = 3+2i\)</span> tem <span class="arithmatex">\(\text{Re}(z_1)=3\)</span> e <span class="arithmatex">\(\text{Im}(z_1)=2\)</span>.</p>
+<p><span class="arithmatex">\(z_2 = -5i\)</span> é imaginário puro, com <span class="arithmatex">\(\text{Re}(z_2)=0\)</span> e <span class="arithmatex">\(\text{Im}(z_2)=-5\)</span>.</p>
+<p><span class="arithmatex">\(z_3 = 7\)</span> é um real "disfarçado" de complexo, com <span class="arithmatex">\(\text{Im}(z_3)=0\)</span>.</p>
+</div>
+<h3 id="classificacao">Classificação<a class="headerlink" href="#classificacao" title="Permanent link">&para;</a></h3>
+<p>Todo <span class="arithmatex">\(z=a+bi\)</span> se encaixa em exatamente uma destas categorias:</p>
+<table>
+<thead>
+<tr>
+<th>Condição</th>
+<th>Classificação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(b=0\)</span></td>
+<td><strong>número real</strong> (<span class="arithmatex">\(z=a\)</span>)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(a=0\)</span> e <span class="arithmatex">\(b\neq0\)</span></td>
+<td><strong>imaginário puro</strong> (<span class="arithmatex">\(z=bi\)</span>)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(a\neq0\)</span> e <span class="arithmatex">\(b\neq0\)</span></td>
+<td><strong>complexo não-real</strong> (as duas partes contam)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(a=0\)</span> e <span class="arithmatex">\(b=0\)</span></td>
+<td><strong>complexo nulo</strong> (<span class="arithmatex">\(z=0\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="igualdade">Igualdade<a class="headerlink" href="#igualdade" title="Permanent link">&para;</a></h3>
+<p>Dois complexos são iguais se e somente se têm a mesma parte real <strong>e</strong> a mesma parte imaginária:</p>
+<div class="arithmatex">\[a+bi = c+di \iff a=c \text{ e } b=d\]</div>
+<p>Isso é o que permite "separar em parte real e imaginária" ao resolver equações com complexos — cada lado tem que bater componente a componente.</p>
+<h2 id="operacoes-basicas">Operações básicas<a class="headerlink" href="#operacoes-basicas" title="Permanent link">&para;</a></h2>
+<p>Com <span class="arithmatex">\(z_1 = a+bi\)</span> e <span class="arithmatex">\(z_2=c+di\)</span>:</p>
+<p><strong>Soma e subtração</strong> — some/subtraia parte real com parte real, imaginária com imaginária:</p>
+<div class="arithmatex">\[z_1 \pm z_2 = (a\pm c) + (b\pm d)i\]</div>
+<p><strong>Multiplicação</strong> — distribui normalmente, usando <span class="arithmatex">\(i^2=-1\)</span>:</p>
+<div class="arithmatex">\[z_1 \cdot z_2 = (a+bi)(c+di) = ac + adi + bci + bdi^2 = (ac-bd) + (ad+bc)i\]</div>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
+<p><span class="arithmatex">\((2+3i)(1-4i) = 2\cdot1 + 2\cdot(-4i) + 3i\cdot1 + 3i\cdot(-4i) = 2 - 8i + 3i -12i^2 = 2-5i+12 = 14-5i\)</span></p>
+</div>
+<p><strong>Divisão</strong> — multiplica-se numerador e denominador pelo <strong>conjugado</strong> do denominador (ver próxima seção), pra eliminar <span class="arithmatex">\(i\)</span> do denominador:</p>
+<div class="arithmatex">\[\frac{z_1}{z_2} = \frac{a+bi}{c+di} = \frac{(a+bi)(c-di)}{(c+di)(c-di)} = \frac{(ac+bd)+(bc-ad)i}{c^2+d^2}\]</div>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
+<p><span class="arithmatex">\(\dfrac{1+2i}{3-i} = \dfrac{(1+2i)(3+i)}{(3-i)(3+i)} = \dfrac{3+i+6i+2i^2}{9+1} = \dfrac{1+7i}{10} = \dfrac{1}{10}+\dfrac{7}{10}i\)</span></p>
+</div>
+<h2 id="conjugado">Conjugado<a class="headerlink" href="#conjugado" title="Permanent link">&para;</a></h2>
+<p>O <strong>conjugado</strong> de <span class="arithmatex">\(z=a+bi\)</span> é <span class="arithmatex">\(\bar z = a-bi\)</span> (mesma parte real, parte imaginária com o sinal trocado). Geometricamente, é o reflexo de <span class="arithmatex">\(z\)</span> em torno do eixo real.</p>
+<p>Propriedades úteis:</p>
+<div class="arithmatex">\[z \cdot \bar z = a^2+b^2 \in \mathbb{R} \qquad\qquad z+\bar z = 2a = 2\,\text{Re}(z) \qquad\qquad z-\bar z = 2bi\]</div>
+<p>A primeira propriedade — o produto de <span class="arithmatex">\(z\)</span> pelo conjugado ser sempre real e não-negativo — é exatamente o que torna possível "racionalizar" denominadores complexos na divisão acima, e é a base da definição de módulo a seguir.</p>
+<h2 id="modulo">Módulo<a class="headerlink" href="#modulo" title="Permanent link">&para;</a></h2>
+<p>O <strong>módulo</strong> (ou valor absoluto) de <span class="arithmatex">\(z=a+bi\)</span> mede sua distância até a origem no plano complexo:</p>
+<div class="arithmatex">\[|z| = \sqrt{a^2+b^2} = \sqrt{z\cdot\bar z}\]</div>
+<p>Propriedades:</p>
+<div class="arithmatex">\[|z_1 z_2| = |z_1||z_2| \qquad\qquad \left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|} \qquad\qquad |z_1+z_2| \le |z_1|+|z_2| \text{ (desigualdade triangular)}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Notação: r ou rô?</p>
+<p>É comum ver o módulo denotado pela letra grega <span class="arithmatex">\(\rho\)</span> (rô) em vez de <span class="arithmatex">\(r\)</span> — principalmente a partir da forma polar em diante. São exatamente a mesma coisa: <span class="arithmatex">\(\rho = r = |z|\)</span>. Este resumo usa <span class="arithmatex">\(r\)</span>, mas se o seu professor/livro usar <span class="arithmatex">\(\rho\)</span>, é só trocar o símbolo — nenhuma fórmula muda.</p>
+</div>
+<h2 id="plano-complexo-plano-de-argand-gauss">Plano complexo (plano de Argand-Gauss)<a class="headerlink" href="#plano-complexo-plano-de-argand-gauss" title="Permanent link">&para;</a></h2>
+<p>Como <span class="arithmatex">\(z=a+bi\)</span> é determinado por dois números reais, ele pode ser representado como um ponto <span class="arithmatex">\((a,b)\)</span> (ou um vetor da origem até esse ponto) num plano cartesiano: o eixo horizontal é o <strong>eixo real</strong> e o vertical é o <strong>eixo imaginário</strong>.</p>
+<ul>
+<li><span class="arithmatex">\(\text{Re}(z)\)</span> = coordenada <span class="arithmatex">\(x\)</span></li>
+<li><span class="arithmatex">\(\text{Im}(z)\)</span> = coordenada <span class="arithmatex">\(y\)</span></li>
+<li><span class="arithmatex">\(|z|\)</span> = comprimento do vetor (distância até a origem)</li>
+<li><span class="arithmatex">\(\bar z\)</span> = reflexo de <span class="arithmatex">\(z\)</span> no eixo real</li>
+<li><span class="arithmatex">\(-z\)</span> = reflexo de <span class="arithmatex">\(z\)</span> na origem (rotação de <span class="arithmatex">\(180°\)</span>)</li>
+</ul>
+<p>O ponto <span class="arithmatex">\((a,b)\)</span> que representa <span class="arithmatex">\(z\)</span> nesse plano tem um nome: é o <strong>afixo</strong> de <span class="arithmatex">\(z\)</span> (também chamado de "imagem" de <span class="arithmatex">\(z\)</span>). Ou seja, "o afixo de <span class="arithmatex">\(z=3+4i\)</span>" é simplesmente o ponto <span class="arithmatex">\((3,4)\)</span> — é só o termo técnico para a localização geométrica de um complexo. Toda a discussão de módulo, argumento e forma polar a seguir é, no fundo, uma forma de descrever onde fica o afixo de <span class="arithmatex">\(z\)</span>.</p>
+<p>Essa representação geométrica é o que faz os números complexos serem especialmente úteis: soma de complexos é soma vetorial, e — como veremos a seguir — multiplicação tem uma interpretação geométrica igualmente limpa em termos de rotação e escala.</p>
+<h2 id="argumento">Argumento<a class="headerlink" href="#argumento" title="Permanent link">&para;</a></h2>
+<p>O <strong>argumento</strong> de <span class="arithmatex">\(z=a+bi\)</span> (não-nulo), denotado <span class="arithmatex">\(\arg(z)\)</span> ou <span class="arithmatex">\(\theta\)</span>, é o ângulo que o vetor <span class="arithmatex">\(z\)</span> faz com o semieixo real positivo, medido no sentido anti-horário:</p>
+<div class="arithmatex">\[\theta = \arg(z) = \arctan\!\left(\frac{b}{a}\right) \;\; \text{(ajustando o quadrante)}\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Cuidado com o quadrante</p>
+<p><span class="arithmatex">\(\arctan(b/a)\)</span> sozinho só dá o ângulo certo diretamente para <span class="arithmatex">\(z\)</span> no primeiro ou quarto quadrante (<span class="arithmatex">\(a&gt;0\)</span>). Para <span class="arithmatex">\(a&lt;0\)</span>, some <span class="arithmatex">\(180°\)</span> (<span class="arithmatex">\(\pi\)</span> rad) ao resultado; para <span class="arithmatex">\(a=0\)</span>, o ângulo é <span class="arithmatex">\(90°\)</span> ou <span class="arithmatex">\(270°\)</span> dependendo do sinal de <span class="arithmatex">\(b\)</span>. Na prática, é mais seguro desenhar o ponto <span class="arithmatex">\((a,b)\)</span> e raciocinar geometricamente, ou usar a função <code>atan2(b,a)</code> de uma calculadora/linguagem de programação, que já trata os quadrantes automaticamente.</p>
+</div>
+<p><strong><span class="arithmatex">\(\arctan\)</span> não é a única forma de calcular <span class="arithmatex">\(\theta\)</span></strong> — é só a mais usada porque dá um número direto. O jeito mais fundamental, que não tem ambiguidade de quadrante nenhuma, é usar as duas equações que definem o próprio ponto <span class="arithmatex">\((a,b)=(r\cos\theta,\,r\sin\theta)\)</span>:</p>
+<div class="arithmatex">\[\cos\theta = \frac{a}{r} \qquad\qquad \sin\theta = \frac{b}{r}\]</div>
+<p>Como <span class="arithmatex">\(\cos\theta\)</span> sozinho já diz se <span class="arithmatex">\(\theta\)</span> está mais perto do eixo positivo ou negativo, e <span class="arithmatex">\(\sin\theta\)</span> sozinho já diz se está "em cima" ou "embaixo", <strong>os sinais de <span class="arithmatex">\(\cos\theta\)</span> e <span class="arithmatex">\(\sin\theta\)</span> juntos identificam o quadrante sem ambiguidade</strong> — diferente de <span class="arithmatex">\(\tan\theta=\sin\theta/\cos\theta\)</span>, que "perde" essa informação porque <span class="arithmatex">\(\tan\)</span> tem o mesmo valor em quadrantes opostos (ex.: <span class="arithmatex">\(\tan(45°)=\tan(225°)=1\)</span>). <span class="arithmatex">\(\arctan(b/a)\)</span> é justamente a razão <span class="arithmatex">\(\sin\theta/\cos\theta\)</span> — daí a necessidade de "consertar" o quadrante na mão depois.</p>
+<p>O argumento não é único — <span class="arithmatex">\(\theta\)</span> e <span class="arithmatex">\(\theta+360°k\)</span> (para qualquer inteiro <span class="arithmatex">\(k\)</span>) representam o mesmo ponto, já que somar uma volta completa não muda a direção. O valor de <span class="arithmatex">\(\theta\)</span> no intervalo <span class="arithmatex">\((-180°,180°]\)</span> (ou <span class="arithmatex">\((-\pi,\pi]\)</span>) é chamado <strong>argumento principal</strong>, e é o que normalmente se usa como "o" argumento de <span class="arithmatex">\(z\)</span> quando não se especifica outra coisa.</p>
+<h2 id="forma-polar-trigonometrica">Forma polar (trigonométrica)<a class="headerlink" href="#forma-polar-trigonometrica" title="Permanent link">&para;</a></h2>
+<p>Em vez de descrever <span class="arithmatex">\(z\)</span> pelas coordenadas <span class="arithmatex">\((a,b)\)</span>, pode-se descrevê-lo pelo módulo <span class="arithmatex">\(r=|z|\)</span> e pelo argumento <span class="arithmatex">\(\theta=\arg(z)\)</span> definidos acima:</p>
+<div class="arithmatex">\[a = r\cos\theta \qquad b = r\sin\theta \qquad \Longrightarrow \qquad z = r(\cos\theta+i\sin\theta)\]</div>
+<div class="admonition example">
+<p class="admonition-title">Convertendo para forma polar</p>
+<p><span class="arithmatex">\(z = 1+i\sqrt3\)</span>: <span class="arithmatex">\(r = \sqrt{1^2+(\sqrt3)^2} = \sqrt{4} = 2\)</span>. Como <span class="arithmatex">\(a=1&gt;0\)</span>, <span class="arithmatex">\(\theta=\arctan(\sqrt3/1) = 60° = \pi/3\)</span>.</p>
+<p>Logo, <span class="arithmatex">\(z = 2(\cos 60° + i\sin 60°)\)</span>.</p>
+</div>
+<h3 id="notacao-cis">Notação "cis"<a class="headerlink" href="#notacao-cis" title="Permanent link">&para;</a></h3>
+<p>A expressão <span class="arithmatex">\(\cos\theta+i\sin\theta\)</span> aparece tanto que ganhou uma abreviação: <span class="arithmatex">\(\text{cis}\,\theta\)</span>, lida literalmente como "<strong>c</strong>osseno <strong>i</strong>mais <strong>s</strong>eno de <span class="arithmatex">\(\theta\)</span>" (c-i-s = cos + i + sen). Por definição,</p>
+<div class="arithmatex">\[\text{cis}\,\theta := \cos\theta+i\sin\theta\]</div>
+<p>e por isso a forma polar costuma aparecer escrita de forma mais compacta como:</p>
+<div class="arithmatex">\[z = r\,\text{cis}\,\theta\]</div>
+<p>Não é uma fórmula nova nem um conceito diferente — é exatamente <span class="arithmatex">\(z=r(\cos\theta+i\sin\theta)\)</span> de antes, só que "cis <span class="arithmatex">\(\theta\)</span>" é mais rápido de escrever do que repetir "<span class="arithmatex">\(\cos\theta+i\sin\theta\)</span>" toda vez (vai aparecer bastante nas próximas seções, sobre multiplicação/divisão e nas fórmulas de De Moivre).</p>
+<h3 id="multiplicacao-e-divisao-em-forma-polar">Multiplicação e divisão em forma polar<a class="headerlink" href="#multiplicacao-e-divisao-em-forma-polar" title="Permanent link">&para;</a></h3>
+<p>A forma polar é o que torna multiplicação/divisão de complexos geometricamente intuitivas: <strong>módulos se multiplicam/dividem, argumentos se somam/subtraem</strong>.</p>
+<div class="arithmatex">\[z_1 z_2 = r_1 r_2\big(\cos(\theta_1+\theta_2) + i\sin(\theta_1+\theta_2)\big) \qquad\qquad \frac{z_1}{z_2} = \frac{r_1}{r_2}\big(\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2)\big)\]</div>
+<p>Com a notação "cis" da seção anterior, fica ainda mais curto de escrever: <span class="arithmatex">\(z_1z_2 = r_1r_2\,\text{cis}(\theta_1+\theta_2)\)</span> e <span class="arithmatex">\(z_1/z_2 = (r_1/r_2)\,\text{cis}(\theta_1-\theta_2)\)</span>.</p>
+<p>Ou seja: multiplicar por <span class="arithmatex">\(z_2\)</span> é "esticar" por um fator <span class="arithmatex">\(r_2\)</span> e "girar" por um ângulo <span class="arithmatex">\(\theta_2\)</span>. Esse é o motivo pelo qual multiplicar por <span class="arithmatex">\(i\)</span> (que tem <span class="arithmatex">\(r=1,\ \theta=90°\)</span>) corresponde a girar <span class="arithmatex">\(90°\)</span> no plano complexo.</p>
+<h2 id="forma-exponencial-e-formula-de-euler">Forma exponencial e fórmula de Euler<a class="headerlink" href="#forma-exponencial-e-formula-de-euler" title="Permanent link">&para;</a></h2>
+<p>A <strong>fórmula de Euler</strong> conecta a exponencial complexa com seno e cosseno:</p>
+<div class="arithmatex">\[e^{i\theta} = \cos\theta + i\sin\theta\]</div>
+<p>Combinando com a forma polar, qualquer complexo pode ser escrito na <strong>forma exponencial</strong>:</p>
+<div class="arithmatex">\[z = re^{i\theta}\]</div>
+<p>Essa forma deixa multiplicação/divisão/potenciação ainda mais diretas, já que viram só álgebra de expoentes:</p>
+<div class="arithmatex">\[z_1 z_2 = r_1 r_2\, e^{i(\theta_1+\theta_2)} \qquad\qquad \frac{z_1}{z_2} = \frac{r_1}{r_2}\,e^{i(\theta_1-\theta_2)}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Identidade de Euler</p>
+<p>Um caso particular famoso: fazendo <span class="arithmatex">\(\theta=\pi\)</span> na fórmula de Euler, <span class="arithmatex">\(e^{i\pi} = \cos\pi+i\sin\pi = -1+0i\)</span>, ou seja:</p>
+<div class="arithmatex">\[e^{i\pi}+1=0\]</div>
+<p>Essa equação é frequentemente citada como uma das mais bonitas da matemática por juntar cinco constantes fundamentais (<span class="arithmatex">\(e\)</span>, <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(\pi\)</span>, <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(0\)</span>) e as três operações básicas (soma, multiplicação, potenciação) numa única igualdade.</p>
+</div>
+<h2 id="potenciacao-1a-formula-de-de-moivre">Potenciação: 1ª Fórmula de De Moivre<a class="headerlink" href="#potenciacao-1a-formula-de-de-moivre" title="Permanent link">&para;</a></h2>
+<p>Elevar um complexo em forma polar/exponencial a uma potência inteira <span class="arithmatex">\(n\)</span> é direto:</p>
+<div class="arithmatex">\[z^n = r^n\big(\cos(n\theta)+i\sin(n\theta)\big) = r^n\,\text{cis}(n\theta) = r^n e^{in\theta}\]</div>
+<p>Essa é a <strong>fórmula de De Moivre</strong>: eleva o módulo à <span class="arithmatex">\(n\)</span>-ésima potência e multiplica o argumento por <span class="arithmatex">\(n\)</span>.</p>
+<h3 id="por-que-isso-e-a-formula-de-euler">Por que isso "é" a fórmula de Euler<a class="headerlink" href="#por-que-isso-e-a-formula-de-euler" title="Permanent link">&para;</a></h3>
+<p>A fórmula de De Moivre não é um fato separado da fórmula de Euler — ela <strong>sai direto</strong> da fórmula de Euler, bastando elevar os dois lados à potência <span class="arithmatex">\(n\)</span>. Relembrando Euler, <span class="arithmatex">\(\cos\theta+i\sin\theta = e^{i\theta}\)</span>. Então:</p>
+<div class="arithmatex">\[z^n = \big(\cos\theta+i\sin\theta\big)^n = \big(e^{i\theta}\big)^n = e^{in\theta} = \cos(n\theta)+i\sin(n\theta)\]</div>
+<p>O passo do meio, <span class="arithmatex">\(\left(e^{i\theta}\right)^n=e^{in\theta}\)</span>, é só a regra de potência de expoentes que já valia pra exponencial real (<span class="arithmatex">\((e^x)^n=e^{nx}\)</span>) — Euler garante que ela continua valendo com expoente imaginário. É exatamente isso que faz <span class="arithmatex">\(\cos(n\theta)+i\sin(n\theta)\)</span> aparecer do lado direito "de graça": a fórmula de Euler é o motivo pelo qual De Moivre funciona, não uma coisa à parte dela. Dito de outro modo: <strong>De Moivre é Euler elevado à <span class="arithmatex">\(n\)</span>-ésima potência.</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Se preferir pensar sem Euler</p>
+<p>Dá pra chegar no mesmo resultado só com geometria, sem passar pela exponencial: multiplicar por <span class="arithmatex">\(z=r\,\text{cis}\,\theta\)</span> gira o afixo por <span class="arithmatex">\(\theta\)</span> e estica por <span class="arithmatex">\(r\)</span> (visto na seção de multiplicação em forma polar). Elevar a <span class="arithmatex">\(z^n\)</span> é multiplicar <span class="arithmatex">\(z\)</span> por si mesmo <span class="arithmatex">\(n\)</span> vezes, ou seja, aplicar essa rotação+escala <span class="arithmatex">\(n\)</span> vezes seguidas — gira <span class="arithmatex">\(n\cdot\theta\)</span> no total e estica por <span class="arithmatex">\(r^n\)</span>. As duas explicações (via Euler, ou via "rotações que se acumulam") levam exatamente à mesma fórmula.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
+<p>Calcular <span class="arithmatex">\((1+i)^{10}\)</span>. Primeiro em forma polar: <span class="arithmatex">\(r=\sqrt2\)</span>, <span class="arithmatex">\(\theta=45°\)</span>. Então:</p>
+<div class="arithmatex">\[(1+i)^{10} = (\sqrt2)^{10}\big(\cos(450°)+i\sin(450°)\big) = 32\big(\cos(90°)+i\sin(90°)\big) = 32(0+1i) = 32i\]</div>
+<p>(usei <span class="arithmatex">\(450° = 360°+90°\)</span>, que dá o mesmo ponto que <span class="arithmatex">\(90°\)</span>.)</p>
+</div>
+<h2 id="radiciacao-2a-formula-de-de-moivre-raizes-n-esimas">Radiciação: 2ª Fórmula de De Moivre (raízes <span class="arithmatex">\(n\)</span>-ésimas)<a class="headerlink" href="#radiciacao-2a-formula-de-de-moivre-raizes-n-esimas" title="Permanent link">&para;</a></h2>
+<p>Diferente dos reais, todo número complexo não-nulo tem exatamente <span class="arithmatex">\(n\)</span> raízes <span class="arithmatex">\(n\)</span>-ésimas distintas. Se <span class="arithmatex">\(z=r(\cos\theta+i\sin\theta)\)</span>, suas <span class="arithmatex">\(n\)</span> raízes <span class="arithmatex">\(n\)</span>-ésimas são:</p>
+<div class="arithmatex">\[w_k = \sqrt[n]{r}\left(\cos\frac{\theta+360°k}{n} + i\sin\frac{\theta+360°k}{n}\right), \qquad k=0,1,2,\dots,n-1\]</div>
+<p>Geometricamente, essas <span class="arithmatex">\(n\)</span> raízes estão todas sobre um círculo de raio <span class="arithmatex">\(\sqrt[n]{r}\)</span>, igualmente espaçadas por um ângulo de <span class="arithmatex">\(360°/n\)</span> entre si — formam os vértices de um polígono regular de <span class="arithmatex">\(n\)</span> lados.</p>
+<div class="admonition example">
+<p class="admonition-title">Raízes cúbicas de 8</p>
+<p>O que esse exemplo está pedindo: encontrar <strong>todo</strong> número complexo <span class="arithmatex">\(w\)</span> tal que <span class="arithmatex">\(w^3=8\)</span>. Nos reais, só existe uma resposta (<span class="arithmatex">\(w=2\)</span>). Nos complexos, pela 2ª fórmula de De Moivre, existem exatamente <span class="arithmatex">\(n=3\)</span> respostas — é isso que vamos calcular.</p>
+<p><strong>Passo 1 — escrever <span class="arithmatex">\(z=8\)</span> em forma polar.</strong> <span class="arithmatex">\(8\)</span> é um número real positivo, então no plano complexo seu afixo está sobre o eixo real positivo: <span class="arithmatex">\(r=|8|=8\)</span> e <span class="arithmatex">\(\theta=0°\)</span>. Logo <span class="arithmatex">\(z=8(\cos0°+i\sin0°)\)</span>.</p>
+<p><strong>Passo 2 — aplicar a fórmula das raízes <span class="arithmatex">\(n\)</span>-ésimas</strong>, com <span class="arithmatex">\(n=3\)</span> (queremos raiz cúbica) e <span class="arithmatex">\(k=0,1,2\)</span> (são <span class="arithmatex">\(n=3\)</span> raízes, então <span class="arithmatex">\(k\)</span> vai de <span class="arithmatex">\(0\)</span> até <span class="arithmatex">\(n-1=2\)</span>):</p>
+<div class="arithmatex">\[w_k = \sqrt[3]{8}\left(\cos\frac{0°+360°k}{3}+i\sin\frac{0°+360°k}{3}\right)\]</div>
+<p>O módulo de toda raiz é o mesmo, <span class="arithmatex">\(\sqrt[3]{8}=2\)</span> — só o ângulo muda com <span class="arithmatex">\(k\)</span>. Calculando o ângulo pra cada <span class="arithmatex">\(k\)</span>:</p>
+<ul>
+<li><span class="arithmatex">\(k=0\)</span>: ângulo <span class="arithmatex">\(=\dfrac{0°+360°\cdot0}{3}=\dfrac{0°}{3}=0°\)</span></li>
+<li><span class="arithmatex">\(k=1\)</span>: ângulo <span class="arithmatex">\(=\dfrac{0°+360°\cdot1}{3}=\dfrac{360°}{3}=120°\)</span></li>
+<li><span class="arithmatex">\(k=2\)</span>: ângulo <span class="arithmatex">\(=\dfrac{0°+360°\cdot2}{3}=\dfrac{720°}{3}=240°\)</span></li>
+</ul>
+<p><strong>Passo 3 — converter cada raiz de volta pra forma algébrica</strong>, usando os valores conhecidos de seno/cosseno:</p>
+<div class="arithmatex">\[w_0 = 2(\cos0°+i\sin0°) = 2(1+0i) = 2\]</div>
+<div class="arithmatex">\[w_1 = 2(\cos120°+i\sin120°) = 2\left(-\tfrac12+i\tfrac{\sqrt3}{2}\right) = -1+i\sqrt3\]</div>
+<div class="arithmatex">\[w_2 = 2(\cos240°+i\sin240°) = 2\left(-\tfrac12-i\tfrac{\sqrt3}{2}\right) = -1-i\sqrt3\]</div>
+<p><strong>Conferindo</strong>: se elevar qualquer um dos três ao cubo, o resultado tem que dar <span class="arithmatex">\(8\)</span> de volta — é assim que se sabe que a conta está certa (tente com <span class="arithmatex">\(w_0=2\)</span>: <span class="arithmatex">\(2^3=8\)</span> ✓).</p>
+<p>Só <span class="arithmatex">\(w_0=2\)</span> é uma raiz "real" (a mesma que já conhecíamos) — as outras duas, <span class="arithmatex">\(w_1\)</span> e <span class="arithmatex">\(w_2\)</span>, são raízes genuinamente complexas que não existiam nos números reais, mas que valem igualmente como "raiz cúbica de 8". Geometricamente, os três afixos <span class="arithmatex">\((2,0)\)</span>, <span class="arithmatex">\((-1,\sqrt3)\)</span> e <span class="arithmatex">\((-1,-\sqrt3)\)</span> ficam todos sobre o círculo de raio <span class="arithmatex">\(2\)</span> centrado na origem, espaçados <span class="arithmatex">\(120°\)</span> um do outro — ou seja, formam os vértices de um <strong>triângulo equilátero</strong> inscrito nesse círculo. Isso é geral: as <span class="arithmatex">\(n\)</span> raízes <span class="arithmatex">\(n\)</span>-ésimas de qualquer complexo sempre formam um polígono regular de <span class="arithmatex">\(n\)</span> lados.</p>
+</div>
+<h2 id="por-que-isso-importa-teorema-fundamental-da-algebra">Por que isso importa: Teorema Fundamental da Álgebra<a class="headerlink" href="#por-que-isso-importa-teorema-fundamental-da-algebra" title="Permanent link">&para;</a></h2>
+<p>O motivo histórico/estrutural pelo qual os complexos são tão importantes: o <strong>Teorema Fundamental da Álgebra</strong> garante que todo polinômio de grau <span class="arithmatex">\(n \ge 1\)</span> com coeficientes complexos (em particular, reais) tem exatamente <span class="arithmatex">\(n\)</span> raízes em <span class="arithmatex">\(\mathbb{C}\)</span>, contando multiplicidade. Nos reais isso é falso (<span class="arithmatex">\(x^2+1\)</span> não tem raiz real), mas nos complexos é sempre verdade — é nesse sentido que <span class="arithmatex">\(\mathbb{C}\)</span> "completa" os reais algebricamente.</p>
+<p>Uma consequência prática: polinômios reais com raízes complexas sempre têm essas raízes em <strong>pares conjugados</strong>. Se <span class="arithmatex">\(z=a+bi\)</span> é raiz de um polinômio com coeficientes reais, <span class="arithmatex">\(\bar z = a-bi\)</span> também é.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
+<p><span class="arithmatex">\(x^2-2x+5=0\)</span>: usando Bhaskara, <span class="arithmatex">\(x = \dfrac{2\pm\sqrt{4-20}}{2} = \dfrac{2\pm\sqrt{-16}}{2} = \dfrac{2\pm4i}{2} = 1\pm2i\)</span>.</p>
+<p>As duas raízes, <span class="arithmatex">\(1+2i\)</span> e <span class="arithmatex">\(1-2i\)</span>, são conjugadas uma da outra — como esperado, já que os coeficientes do polinômio são reais.</p>
+</div>
+<h2 id="aplicacoes">Aplicações<a class="headerlink" href="#aplicacoes" title="Permanent link">&para;</a></h2>
+<p>Números complexos não são só um exercício abstrato — aparecem em vários lugares por causa exatamente da propriedade de "rotação + escala" vista na forma polar:</p>
+<ul>
+<li><strong>Engenharia elétrica</strong>: em circuitos de corrente alternada, resistências, capacitores e indutores são combinados usando uma grandeza complexa chamada <strong>impedância</strong> (<span class="arithmatex">\(Z=R+jX\)</span>, onde engenheiros costumam usar <span class="arithmatex">\(j\)</span> no lugar de <span class="arithmatex">\(i\)</span> para não confundir com corrente). Isso transforma equações diferenciais de circuitos em álgebra complexa simples.</li>
+<li><strong>Processamento de sinais</strong>: a Transformada de Fourier, usada para decompor um sinal (áudio, imagem, etc.) em frequências, é definida inteiramente em termos de <span class="arithmatex">\(e^{i\theta}\)</span> — a forma exponencial é o que faz essa decomposição funcionar de forma compacta.</li>
+<li><strong>Computação gráfica e rotações 2D</strong>: como visto na seção de forma polar, multiplicar por <span class="arithmatex">\(e^{i\theta}\)</span> gira um ponto do plano por <span class="arithmatex">\(\theta\)</span> — uma forma elegante de representar rotações 2D, análoga ao papel que os quaternions têm para rotações 3D.</li>
+<li><strong>Fractais</strong>: o conjunto de Mandelbrot é definido por uma iteração puramente em <span class="arithmatex">\(\mathbb{C}\)</span>: <span class="arithmatex">\(z_{n+1}=z_n^2+c\)</span>, testando para quais valores de <span class="arithmatex">\(c\in\mathbb{C}\)</span> essa sequência permanece limitada.</li>
+<li><strong>Mecânica quântica</strong>: a função de onda que descreve o estado de um sistema quântico é, por definição, uma função de valores complexos — não é só uma conveniência de cálculo, é parte da própria formulação da teoria.</li>
+</ul>
+<h2 id="exercicios-resolvidos">Exercícios Resolvidos<a class="headerlink" href="#exercicios-resolvidos" title="Permanent link">&para;</a></h2>
+<h3 id="potencias-de-i_1">Potências de <span class="arithmatex">\(i\)</span><a class="headerlink" href="#potencias-de-i_1" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exercício 1</p>
+<p>Calcule <span class="arithmatex">\(i^{58}\)</span>.</p>
+<p><strong>Solução.</strong> <span class="arithmatex">\(58 = 4\cdot14+2\)</span>, resto <span class="arithmatex">\(2\)</span>. Logo <span class="arithmatex">\(i^{58}=i^2=-1\)</span>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercício 2</p>
+<p>Calcule <span class="arithmatex">\(i^{15}+i^{20}\)</span>.</p>
+<p><strong>Solução.</strong> <span class="arithmatex">\(15=4\cdot3+3 \Rightarrow i^{15}=i^3=-i\)</span>. <span class="arithmatex">\(20=4\cdot5+0 \Rightarrow i^{20}=i^0=1\)</span>. Soma: <span class="arithmatex">\(-i+1=1-i\)</span>.</p>
+</div>
+<h3 id="forma-algebrica-classificacao-e-igualdade">Forma algébrica, classificação e igualdade<a class="headerlink" href="#forma-algebrica-classificacao-e-igualdade" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exercício 3</p>
+<p>Classifique <span class="arithmatex">\(z_1=4-7i\)</span>, <span class="arithmatex">\(z_2=9i\)</span>, <span class="arithmatex">\(z_3=\sqrt2\)</span> e <span class="arithmatex">\(z_4=0\)</span> quanto ao tipo (real, imaginário puro, complexo não-real ou nulo).</p>
+<p><strong>Solução.</strong> <span class="arithmatex">\(z_1\)</span>: <span class="arithmatex">\(a=4\neq0,\ b=-7\neq0\)</span> → complexo não-real. <span class="arithmatex">\(z_2\)</span>: <span class="arithmatex">\(a=0,\ b=9\neq0\)</span> → imaginário puro. <span class="arithmatex">\(z_3\)</span>: <span class="arithmatex">\(b=0\)</span> → real. <span class="arithmatex">\(z_4\)</span>: <span class="arithmatex">\(a=b=0\)</span> → complexo nulo.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercício 4</p>
+<p>Determine <span class="arithmatex">\(x\)</span> e <span class="arithmatex">\(y\)</span> reais tais que <span class="arithmatex">\((2x-1)+3i = 5+(y+1)i\)</span>.</p>
+<p><strong>Solução.</strong> Pela igualdade de complexos, parte real com parte real e imaginária com imaginária: <span class="arithmatex">\(2x-1=5 \Rightarrow x=3\)</span>; e <span class="arithmatex">\(3=y+1 \Rightarrow y=2\)</span>.</p>
+</div>
+<h3 id="operacoes-na-forma-algebrica">Operações na forma algébrica<a class="headerlink" href="#operacoes-na-forma-algebrica" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exercício 5</p>
+<p>Calcule <span class="arithmatex">\((5-2i)+(3+6i)-(1-i)\)</span>.</p>
+<p><strong>Solução.</strong> Separando partes reais e imaginárias: <span class="arithmatex">\((5+3-1)+(-2+6+1)i = 7+5i\)</span>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercício 6</p>
+<p>Calcule <span class="arithmatex">\((3-2i)(4+5i)\)</span>.</p>
+<p><strong>Solução.</strong> <span class="arithmatex">\(3\cdot4 + 3\cdot5i -2i\cdot4 -2i\cdot5i = 12+15i-8i-10i^2 = 12+7i+10 = 22+7i\)</span>.</p>
+</div>
+<h3 id="divisao-na-forma-algebrica">Divisão na forma algébrica<a class="headerlink" href="#divisao-na-forma-algebrica" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exercício 7</p>
+<p>Calcule <span class="arithmatex">\(\dfrac{5+i}{2-3i}\)</span>.</p>
+<p><strong>Solução.</strong> Multiplica numerador e denominador pelo conjugado do denominador, <span class="arithmatex">\(2+3i\)</span>:</p>
+<div class="arithmatex">\[\frac{(5+i)(2+3i)}{(2-3i)(2+3i)} = \frac{10+15i+2i+3i^2}{4+9} = \frac{7+17i}{13} = \frac{7}{13}+\frac{17}{13}i\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercício 8</p>
+<p>Simplifique <span class="arithmatex">\(\dfrac{1}{i}\)</span>.</p>
+<p><strong>Solução.</strong> Multiplica por <span class="arithmatex">\(\dfrac{-i}{-i}\)</span> (ou pelo conjugado de <span class="arithmatex">\(i\)</span>, que é <span class="arithmatex">\(-i\)</span>): <span class="arithmatex">\(\dfrac{1}{i}\cdot\dfrac{-i}{-i} = \dfrac{-i}{-i^2} = \dfrac{-i}{1} = -i\)</span>.</p>
+</div>
+<h3 id="interpretacao-geometrica-e-modulo">Interpretação geométrica e módulo<a class="headerlink" href="#interpretacao-geometrica-e-modulo" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exercício 9</p>
+<p>Calcule o módulo de <span class="arithmatex">\(z=-6+8i\)</span> e localize-o no plano complexo (indique o quadrante).</p>
+<p><strong>Solução.</strong> <span class="arithmatex">\(|z|=\sqrt{(-6)^2+8^2}=\sqrt{36+64}=\sqrt{100}=10\)</span>. Como <span class="arithmatex">\(a=-6&lt;0\)</span> e <span class="arithmatex">\(b=8&gt;0\)</span>, <span class="arithmatex">\(z\)</span> está no 2º quadrante.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercício 10</p>
+<p>Sabendo que <span class="arithmatex">\(|z|=5\)</span>, que curva no plano complexo é formada por todos os <span class="arithmatex">\(z\)</span> que satisfazem essa condição?</p>
+<p><strong>Solução.</strong> <span class="arithmatex">\(|z|=5\)</span> significa que a distância de <span class="arithmatex">\(z\)</span> até a origem é sempre <span class="arithmatex">\(5\)</span> — ou seja, é a equação de uma <strong>circunferência de raio <span class="arithmatex">\(5\)</span> centrada na origem</strong>.</p>
+</div>
+<h3 id="argumento_1">Argumento<a class="headerlink" href="#argumento_1" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exercício 11</p>
+<p>Determine o argumento principal de <span class="arithmatex">\(z=-1-i\)</span>.</p>
+<p><strong>Solução.</strong> <span class="arithmatex">\(a=-1,\ b=-1\)</span>, ambos negativos → 3º quadrante. <span class="arithmatex">\(\arctan(b/a)=\arctan(1)=45°\)</span>, mas como estamos no 3º quadrante, somamos <span class="arithmatex">\(180°\)</span>: <span class="arithmatex">\(\theta=45°+180°=225°\)</span>. Como argumento principal fica em <span class="arithmatex">\((-180°,180°]\)</span>, equivalentemente <span class="arithmatex">\(\theta=225°-360°=-135°\)</span>.</p>
+</div>
+<h3 id="forma-polar">Forma polar<a class="headerlink" href="#forma-polar" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exercício 12</p>
+<p>Escreva <span class="arithmatex">\(z=-4\)</span> na forma polar.</p>
+<p><strong>Solução.</strong> <span class="arithmatex">\(r=|-4|=4\)</span>. Como <span class="arithmatex">\(z\)</span> está sobre o eixo real negativo, <span class="arithmatex">\(\theta=180°\)</span>. Logo <span class="arithmatex">\(z=4(\cos180°+i\sin180°)\)</span>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercício 13</p>
+<p>Converta <span class="arithmatex">\(z=3(\cos210°+i\sin210°)\)</span> de volta para a forma algébrica.</p>
+<p><strong>Solução.</strong> <span class="arithmatex">\(\cos210°=-\frac{\sqrt3}{2}\)</span>, <span class="arithmatex">\(\sin210°=-\frac12\)</span>. <span class="arithmatex">\(z = 3\left(-\frac{\sqrt3}{2}-\frac12 i\right) = -\frac{3\sqrt3}{2}-\frac32 i\)</span>.</p>
+</div>
+<h3 id="multiplicacao-e-divisao-na-forma-polar">Multiplicação e divisão na forma polar<a class="headerlink" href="#multiplicacao-e-divisao-na-forma-polar" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exercício 14</p>
+<p>Com <span class="arithmatex">\(z_1=2(\cos40°+i\sin40°)\)</span> e <span class="arithmatex">\(z_2=5(\cos20°+i\sin20°)\)</span>, calcule <span class="arithmatex">\(z_1z_2\)</span> e <span class="arithmatex">\(z_1/z_2\)</span>.</p>
+<p><strong>Solução.</strong> Multiplicação: módulos multiplicam, argumentos somam: <span class="arithmatex">\(z_1z_2=2\cdot5\big(\cos(40°+20°)+i\sin(40°+20°)\big)=10(\cos60°+i\sin60°)\)</span>.</p>
+<p>Divisão: módulos dividem, argumentos subtraem: <span class="arithmatex">\(z_1/z_2=\frac{2}{5}\big(\cos(40°-20°)+i\sin(40°-20°)\big)=0{,}4(\cos20°+i\sin20°)\)</span>.</p>
+</div>
+<h3 id="1a-formula-de-de-moivre-potenciacao">1ª Fórmula de De Moivre (potenciação)<a class="headerlink" href="#1a-formula-de-de-moivre-potenciacao" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exercício 15</p>
+<p>Calcule <span class="arithmatex">\(\left(\sqrt3+i\right)^6\)</span>.</p>
+<p><strong>Solução.</strong> Forma polar: <span class="arithmatex">\(r=\sqrt{3+1}=2\)</span>, <span class="arithmatex">\(\theta=\arctan(1/\sqrt3)=30°\)</span>. Pela 1ª fórmula de De Moivre:</p>
+<div class="arithmatex">\[z^6 = 2^6\big(\cos(6\cdot30°)+i\sin(6\cdot30°)\big) = 64(\cos180°+i\sin180°) = 64(-1+0i) = -64\]</div>
+</div>
+<h3 id="2a-formula-de-de-moivre-radiciacao">2ª Fórmula de De Moivre (radiciação)<a class="headerlink" href="#2a-formula-de-de-moivre-radiciacao" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exercício 16</p>
+<p>Determine as raízes quartas de <span class="arithmatex">\(z=16\)</span>.</p>
+<p><strong>Solução.</strong> <span class="arithmatex">\(z=16(\cos0°+i\sin0°)\)</span>, <span class="arithmatex">\(r=16\)</span>, <span class="arithmatex">\(n=4\)</span>. <span class="arithmatex">\(\sqrt[4]{16}=2\)</span>.</p>
+<div class="arithmatex">\[w_k = 2\left(\cos\frac{0°+360°k}{4}+i\sin\frac{0°+360°k}{4}\right),\quad k=0,1,2,3\]</div>
+<div class="arithmatex">\[w_0=2(\cos0°+i\sin0°)=2 \qquad w_1=2(\cos90°+i\sin90°)=2i\]</div>
+<div class="arithmatex">\[w_2=2(\cos180°+i\sin180°)=-2 \qquad w_3=2(\cos270°+i\sin270°)=-2i\]</div>
+<p>As quatro raízes (<span class="arithmatex">\(2,\ 2i,\ -2,\ -2i\)</span>) formam um quadrado no plano complexo, como esperado — todas elevadas à quarta dão <span class="arithmatex">\(16\)</span>.</p>
+</div>
+<h2 id="resumo-de-formulas">Resumo de fórmulas<a class="headerlink" href="#resumo-de-formulas" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Conceito</th>
+<th>Fórmula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unidade imaginária</td>
+<td><span class="arithmatex">\(i^2=-1\)</span></td>
+</tr>
+<tr>
+<td>Forma algébrica</td>
+<td><span class="arithmatex">\(z=a+bi\)</span></td>
+</tr>
+<tr>
+<td>Conjugado</td>
+<td><span class="arithmatex">\(\bar z = a-bi\)</span></td>
+</tr>
+<tr>
+<td>Módulo</td>
+<td><span class="arithmatex">\(\vert z\vert=\sqrt{a^2+b^2}=\sqrt{z\bar z}\)</span></td>
+</tr>
+<tr>
+<td>Forma polar</td>
+<td><span class="arithmatex">\(z=r(\cos\theta+i\sin\theta)\)</span></td>
+</tr>
+<tr>
+<td>Forma exponencial</td>
+<td><span class="arithmatex">\(z=re^{i\theta}\)</span></td>
+</tr>
+<tr>
+<td>Fórmula de Euler</td>
+<td><span class="arithmatex">\(e^{i\theta}=\cos\theta+i\sin\theta\)</span></td>
+</tr>
+<tr>
+<td>De Moivre (potência)</td>
+<td><span class="arithmatex">\(z^n=r^n(\cos n\theta+i\sin n\theta)\)</span></td>
+</tr>
+<tr>
+<td>Raízes <span class="arithmatex">\(n\)</span>-ésimas</td>
+<td><span class="arithmatex">\(w_k=\sqrt[n]{r}\left(\cos\frac{\theta+360°k}{n}+i\sin\frac{\theta+360°k}{n}\right)\)</span></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Anterior: ESTUDOS">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                ESTUDOS
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../agentes-de-ia/" class="md-footer__link md-footer__link--next" aria-label="Próximo: AGENTES DE IA">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                AGENTES DE IA
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>
