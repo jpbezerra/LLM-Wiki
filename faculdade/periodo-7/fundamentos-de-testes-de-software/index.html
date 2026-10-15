@@ -1,0 +1,5563 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Base de conhecimento pessoal — faculdade e estudos">
+      
+      
+        <meta name="author" content="João Pedro Bezerra">
+      
+      
+      
+        <link rel="prev" href="../data-warehousing/">
+      
+      
+        <link rel="next" href="../redes-neurais/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>FUNDAMENTOS DE TESTES DE SOFTWARE - LLM Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fundamentos-de-testes-de-software" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="LLM Wiki" class="md-header__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLM Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FUNDAMENTOS DE TESTES DE SOFTWARE
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../estudos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Estudos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Faculdade
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LLM Wiki" class="md-nav__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLM Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estudos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estudos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/numeros-complexos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NÚMEROS COMPLEXOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/agentes-de-ia/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTES DE IA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AGENTES DE IA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/harness-e-pi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HARNESS E PI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/otimizacao-tokens-roteamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE TOKENS E ROTEAMENTO DE MODELOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/fine-tuning-agentico-meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FINE-TUNING AGÊNTICO: A ABORDAGEM DA META
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/jev-modelos-decisao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JEV: MODELOS DE DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/computacao-quantica-ibm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - SISTEMAS ÚNICOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1-qiskit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - IMPLEMENTAÇÃO EM QISKIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/otimizacao-de-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/bend2-tipos-dependentes-provas-formais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faculdade
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Faculdade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 1
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/calculo-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CÁLCULO 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/matematica-discreta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATEMÁTICA DISCRETA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/algebra-vetorial-linear-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 2
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA E PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/assuncoes-da-regressao-linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assunções da regressão linear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/fisica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FÍSICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/logica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LÓGICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SISTEMAS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 3
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/arquitetura-de-computadores-e-sistemas-operacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepção de Artefatos Digitais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/grupo-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grupo 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/desenvolvimento-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DESENVOLVIMENTO DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/estruturas-de-dados-orientadas-a-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTRUTURAS DE DADOS ORIENTADAS À OBJETOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 4
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/banco-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BANCO DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/compiladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPILADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/informatica-teorica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA TEÓRICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/integracao-e-evolucao-de-sistemas-de-informacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 5
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/projeto-aprendizagem-de-maquina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Aprendizagem de Máquina
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3_2" id="__nav_3_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projeto Packet Tracer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 - Design Físico e Topologia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e2-design-de-enderecamento-vlsm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2 - Design de Endereçamento VLSM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e3-design-de-segmentacao-vlans-e-dhcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E3 - Design de Segmentação (VLANs e DHCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E4 - Roteamento Inter-VLAN e Conectividade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e5-apresentacao-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E5 - Apresentação Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/referencias-bibliograficas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências Bibliográficas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/untitled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untitled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/metodologia-e-expressao-tecnico-cientifica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    METODOLOGIA E EXPRESSÃO TÉCNICO-CIENTÍFICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/paradigmas-de-linguagens-computacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PARADIGMAS DE LINGUAGENS COMPUTACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-6/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 6
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/empreendimentos-em-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EMPREENDIMENTOS EM INFORMÁTICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/engenharia-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENGENHARIA DE REQUISITOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/informatica-e-sociedade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA E SOCIEDADE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/topicos-avancados-em-si-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TÓPICOS AVANÇADOS EM SI 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 7
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 7
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analise-e-especificacao-avancada-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-warehousing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DATA WAREHOUSING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FUNDAMENTOS DE TESTES DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FUNDAMENTOS DE TESTES DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cronograma-e-conteudo-coberto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cronograma e conteúdo coberto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducao-a-teste-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introdução a Teste de Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introdução a Teste de Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-testar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que testar?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceitos-fundamentais-erro-falta-e-falha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceitos fundamentais: erro, falta e falha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomia-de-um-caso-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomia de um caso de teste
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracterizacao-do-teste-alvo-visibilidade-e-objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caracterização do teste: alvo, visibilidade e objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quando-comecar-a-escrever-os-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quando começar a escrever os testes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnicas-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas de teste
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Técnicas de teste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-em-intuicao-e-experiencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas em intuição e experiência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-no-dominio-de-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas no domínio de entrada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-no-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas no código
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-em-falhas-fault-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas em falhas (fault-based)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-no-uso-usage-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas no uso (usage-based)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-em-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas em modelo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-segundo-a-natureza-da-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas segundo a natureza da aplicação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-adequacao-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de adequação de teste
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-de-mutacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teste de mutação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste de mutação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-duas-hipoteses-do-teste-de-mutacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As duas hipóteses do teste de mutação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medindo-adequacao-com-mutacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medindo adequação com mutação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-de-regressao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teste de regressão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste de regressão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemas-de-pesquisa-em-aberto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemas de pesquisa em aberto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testes-flaky" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes flaky
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testes flaky">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-sao-problematicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que são problemáticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#causas-principais-dados-empiricos-fse-2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Causas principais (dados empíricos — FSE 2014)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detecção
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitigação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-combinatorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teste combinatorial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste combinatorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-achado-empirico-central-nist-sp-800-142" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O achado empírico central (NIST SP 800-142)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#covering-arrays-e-pairwise-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Covering arrays e pairwise testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abordagens-de-teste-combinatorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abordagens de teste combinatorial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-problema-do-oraculo-permanece" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O problema do oráculo permanece
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medindo-cobertura-combinatorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medindo cobertura combinatorial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuzzing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuzzing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fuzzing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#origem-historica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Origem histórica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eficacia-comprovada-na-industria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eficácia comprovada na indústria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-de-fuzzing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas de fuzzing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categorias-de-bugs-tipicamente-encontrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categorias de bugs tipicamente encontrados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-demonstracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ferramentas e demonstração
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tdd-e-bdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TDD e BDD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TDD e BDD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-driven-development-tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test-Driven Development (TDD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behavior-driven-development-bdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavior-Driven Development (BDD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-de-sistemas-baseados-em-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teste de sistemas baseados em IA
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste de sistemas baseados em IA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desafio-1-logica-codificada-vs-logica-aprendida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desafio 1 — Lógica codificada vs. lógica aprendida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desafio-2-quando-nao-temos-um-oraculo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desafio 2 — Quando não temos um oráculo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desafio-3-espacos-de-entrada-de-alta-dimensionalidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desafio 3 — Espaços de entrada de alta dimensionalidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desafio-4-comportamento-nao-deterministico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desafio 4 — Comportamento não determinístico
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ia-para-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IA para testes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IA para testes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-problema-central-llms-reproduzem-o-codigo-inclusive-seus-erros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O problema central: LLMs reproduzem o código, inclusive seus erros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alem-dos-llms-geracao-baseada-em-busca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Além dos LLMs: geração baseada em busca
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avaliando-testes-gerados-por-ia-mutacao-como-juiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avaliando testes gerados por IA: mutação como juiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccao-de-testes-flaky-sem-reexecucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detecção de testes flaky sem reexecução
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-aplicada-ao-fuzzing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IA aplicada ao fuzzing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#em-resumo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Em resumo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redes-neurais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDES NEURAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cronograma-e-conteudo-coberto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cronograma e conteúdo coberto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducao-a-teste-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introdução a Teste de Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introdução a Teste de Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-testar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que testar?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceitos-fundamentais-erro-falta-e-falha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceitos fundamentais: erro, falta e falha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomia-de-um-caso-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomia de um caso de teste
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracterizacao-do-teste-alvo-visibilidade-e-objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caracterização do teste: alvo, visibilidade e objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quando-comecar-a-escrever-os-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quando começar a escrever os testes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnicas-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas de teste
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Técnicas de teste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-em-intuicao-e-experiencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas em intuição e experiência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-no-dominio-de-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas no domínio de entrada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-no-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas no código
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-em-falhas-fault-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas em falhas (fault-based)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-no-uso-usage-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas no uso (usage-based)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-baseadas-em-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas baseadas em modelo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-segundo-a-natureza-da-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas segundo a natureza da aplicação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-adequacao-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de adequação de teste
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-de-mutacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teste de mutação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste de mutação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-duas-hipoteses-do-teste-de-mutacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As duas hipóteses do teste de mutação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medindo-adequacao-com-mutacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medindo adequação com mutação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-de-regressao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teste de regressão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste de regressão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemas-de-pesquisa-em-aberto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemas de pesquisa em aberto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testes-flaky" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes flaky
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testes flaky">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-sao-problematicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que são problemáticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#causas-principais-dados-empiricos-fse-2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Causas principais (dados empíricos — FSE 2014)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detecção
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitigação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-combinatorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teste combinatorial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste combinatorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-achado-empirico-central-nist-sp-800-142" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O achado empírico central (NIST SP 800-142)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#covering-arrays-e-pairwise-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Covering arrays e pairwise testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abordagens-de-teste-combinatorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abordagens de teste combinatorial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-problema-do-oraculo-permanece" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O problema do oráculo permanece
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medindo-cobertura-combinatorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medindo cobertura combinatorial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuzzing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuzzing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fuzzing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#origem-historica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Origem histórica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eficacia-comprovada-na-industria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eficácia comprovada na indústria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-de-fuzzing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas de fuzzing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categorias-de-bugs-tipicamente-encontrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categorias de bugs tipicamente encontrados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-demonstracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ferramentas e demonstração
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tdd-e-bdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TDD e BDD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TDD e BDD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-driven-development-tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test-Driven Development (TDD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behavior-driven-development-bdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavior-Driven Development (BDD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-de-sistemas-baseados-em-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teste de sistemas baseados em IA
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste de sistemas baseados em IA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desafio-1-logica-codificada-vs-logica-aprendida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desafio 1 — Lógica codificada vs. lógica aprendida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desafio-2-quando-nao-temos-um-oraculo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desafio 2 — Quando não temos um oráculo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desafio-3-espacos-de-entrada-de-alta-dimensionalidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desafio 3 — Espaços de entrada de alta dimensionalidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desafio-4-comportamento-nao-deterministico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desafio 4 — Comportamento não determinístico
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ia-para-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IA para testes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IA para testes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-problema-central-llms-reproduzem-o-codigo-inclusive-seus-erros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O problema central: LLMs reproduzem o código, inclusive seus erros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alem-dos-llms-geracao-baseada-em-busca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Além dos LLMs: geração baseada em busca
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avaliando-testes-gerados-por-ia-mutacao-como-juiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avaliando testes gerados por IA: mutação como juiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccao-de-testes-flaky-sem-reexecucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detecção de testes flaky sem reexecução
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-aplicada-ao-fuzzing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IA aplicada ao fuzzing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#em-resumo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Em resumo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/jpbezerra/llm-wiki/edit/main/docs/faculdade/periodo-7/fundamentos-de-testes-de-software.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="fundamentos-de-testes-de-software">FUNDAMENTOS DE TESTES DE SOFTWARE<a class="headerlink" href="#fundamentos-de-testes-de-software" title="Permanent link">&para;</a></h1>
+<hr />
+<p>Disciplina <strong>CIN0168 — Fundamentos de Teste de Software</strong>, do Centro de Informática da UFPE, ministrada pela <strong>Prof.ª Paola Accioly</strong> (prga@cin.ufpe.br), edição 2026.2, com parte do material baseado nos slides de Marcelo d'Amorim, Breno Miranda e Leopoldo Teixeira. O conteúdo desta página segue a ordem cronológica das aulas, conforme o cronograma oficial da disciplina.</p>
+<div class="admonition note">
+<p class="admonition-title">Dados da disciplina</p>
+<ul>
+<li><strong>Avaliação</strong>: 10% APS, 30% prova escrita, 60% projeto.</li>
+<li><strong>Aviso em destaque dos slides</strong>: a entrega do projeto é obrigatória para aprovação — a não entrega resulta em reprovação automática, independentemente da média nas demais avaliações.</li>
+<li><strong>Google Classroom</strong>: código da turma <code>yofr5aoo</code>.</li>
+<li><strong>Bibliografia principal</strong>:<ul>
+<li>ZELLER, Andreas et al. <em>Generating Software Tests — Breaking Software for Fun and Profit</em>. Disponível online em <a href="https://www.fuzzingbook.org">fuzzingbook.org</a>.</li>
+<li>PEZZÈ, Mauro; YOUNG, Michal. <em>Software Testing and Analysis: Process, Principles, and Techniques</em>. Wiley, 2008.</li>
+<li>ZELLER, Andreas. <em>Why Programs Fail?</em>. 2ª ed. Morgan Kaufmann, 2009.</li>
+<li>MYERS, Glenford. <em>Software Testing</em>. 2ª ed. Wiley, 2004.</li>
+</ul>
+</li>
+<li><strong>Material "em destaque" apontado pela disciplina</strong>: <a href="https://www.fuzzingbook.org">fuzzingbook.org</a> (fuzzing) e <a href="https://mlip-cmu.github.io/book/">mlip-cmu.github.io/book</a> (IA aplicada à engenharia de software/testes).</li>
+</ul>
+</div>
+<h3 id="cronograma-e-conteudo-coberto">Cronograma e conteúdo coberto<a class="headerlink" href="#cronograma-e-conteudo-coberto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Tópico</th>
+<th>Cobertura nesta página</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12/8</td>
+<td>Apresentação do curso e introdução a Teste de Software</td>
+<td>✅ <a href="#introducao-a-teste-de-software">Introdução</a></td>
+</tr>
+<tr>
+<td>17/8</td>
+<td>Falta vs. falha, Teste vs. depuração, tipos de teste</td>
+<td>✅ embutido na <a href="#conceitos-fundamentais-erro-falta-e-falha">Introdução</a> (sem slide próprio enviado)</td>
+</tr>
+<tr>
+<td>19/8</td>
+<td>Técnicas funcionais/estruturais</td>
+<td>✅ <a href="#tecnicas-de-teste">Técnicas de teste</a></td>
+</tr>
+<tr>
+<td>24/8</td>
+<td>Critérios de adequação</td>
+<td>✅ <a href="#criterios-de-adequacao-de-teste">Critérios de adequação</a></td>
+</tr>
+<tr>
+<td>26/8</td>
+<td>Teste de mutação</td>
+<td>✅ <a href="#teste-de-mutacao">Teste de mutação</a></td>
+</tr>
+<tr>
+<td>31/8</td>
+<td>Teste de regressão</td>
+<td>✅ <a href="#teste-de-regressao">Teste de regressão</a></td>
+</tr>
+<tr>
+<td>2/9, 9/9</td>
+<td>APS — Framework de testes</td>
+<td>projeto/APS, sem material de aula</td>
+</tr>
+<tr>
+<td>7/9</td>
+<td>Feriado (Independência do Brasil)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>14/9, 21/9</td>
+<td>Aula não ocorrida (ausência da professora)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>16/9</td>
+<td>Teste Flaky</td>
+<td>✅ <a href="#testes-flaky">Testes flaky</a></td>
+</tr>
+<tr>
+<td>23/9</td>
+<td>Lançamento do projeto</td>
+<td>projeto, sem material de aula</td>
+</tr>
+<tr>
+<td>28/9</td>
+<td>Teste Combinatorial</td>
+<td>✅ <a href="#teste-combinatorial">Teste combinatorial</a></td>
+</tr>
+<tr>
+<td>30/9</td>
+<td>Fuzzing</td>
+<td>✅ <a href="#fuzzing">Fuzzing</a></td>
+</tr>
+<tr>
+<td>5/10</td>
+<td>TDD/BDD</td>
+<td>✅ <a href="#tdd-e-bdd">TDD e BDD</a></td>
+</tr>
+<tr>
+<td>7/10</td>
+<td>Teste de Sistemas Baseados em IA</td>
+<td>✅ <a href="#teste-de-sistemas-baseados-em-ia">Teste de sistemas de IA</a></td>
+</tr>
+<tr>
+<td>12/10</td>
+<td>Feriado (Nossa Senhora Aparecida)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>14/10</td>
+<td>IA para Testes</td>
+<td>✅ <a href="#ia-para-testes">IA para testes</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Sobre a numeração dos arquivos de slide</p>
+<p>Os nomes dos arquivos originais (<code>1_-_Introduction</code>, <code>3_-_Test_techniques</code>, <code>4_-_Test_adequacy</code> etc.) não correspondem exatamente à ordem cronológica das aulas no calendário oficial — por isso esta página segue o cronograma, não a numeração dos arquivos. Não há material de slide enviado especificamente para o tópico de 17/8 ("Falta vs. falha, Teste vs. depuração"); os conceitos desse tópico já aparecem cobertos no material introdutório (12/8) e estão descritos na seção correspondente abaixo.</p>
+</div>
+<h2 id="introducao-a-teste-de-software">Introdução a Teste de Software<a class="headerlink" href="#introducao-a-teste-de-software" title="Permanent link">&para;</a></h2>
+<h3 id="por-que-testar">Por que testar?<a class="headerlink" href="#por-que-testar" title="Permanent link">&para;</a></h3>
+<p>Bugs têm causas variadas — erros de lógica, tratamento incorreto de dados, <em>race conditions</em>, integrações mal definidas, requisitos ambíguos, erros humanos (copy-paste sem adaptação), diferenças de ambiente/configuração, regressões por refatoração, dependências externas que mudam. Diante disso, três linhas de defesa são possíveis: <em>code review</em>/<em>peer review</em>, análise estática e <strong>teste</strong> — o foco da disciplina.</p>
+<div class="admonition quote">
+<p class="admonition-title">Citações centrais da aula de abertura</p>
+<p><strong>Michael Feathers</strong>: "Code without tests is bad code."</p>
+<p><strong>Edsger Dijkstra</strong>: "Program testing can be used to show the presence of bugs, but never to show their absence!"</p>
+</div>
+<p><strong>Definição formal (SWEBOK 3.0, 2014)</strong>: teste de software é a verificação <strong>dinâmica</strong> de que um programa fornece comportamentos <strong>esperados</strong> em um conjunto <strong>finito</strong> de casos de teste, adequadamente <strong>selecionados</strong> a partir do domínio de execução usualmente infinito.</p>
+<p>Quando o software falha, o custo pode ser apenas um incômodo, pode custar tempo, dinheiro — ou vidas (os slides citam como leitura complementar o caso do Boeing 737 MAX, a explosão do foguete Ariane 5 e as <em>race conditions</em> do Therac-25). Mesmo sendo caro — tanto o esforço humano de escrever casos de teste quanto o custo computacional de executá-los —, o teste é amplamente praticado na indústria.</p>
+<div class="admonition example">
+<p class="admonition-title">Um bug real que durou 9 anos escondido em Java</p>
+<p>No algoritmo de busca binária abaixo, a linha <code>int mid = (low + high) / 2;</code> pode causar <em>overflow</em> de inteiro quando <code>low + high</code> excede o limite do tipo <code>int</code>, produzindo um valor negativo que, dividido por 2, permanece negativo — um índice de array inválido.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">binarySearch</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">low</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">high</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">low</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">high</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">midVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">midVal</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="n">low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">midVal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="n">low</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</code></pre></div>
+<p>O bug ficou escondido por quase 9 anos na biblioteca padrão do Java (<a href="https://dev.to/matheusgomes062/a-bug-was-found-in-java-after-almost-9-years-of-hiding-2d4k">fonte</a>) — ilustrando como a escolha dos dados de teste é determinante: só arrays suficientemente grandes revelam o problema.</p>
+</div>
+<h3 id="conceitos-fundamentais-erro-falta-e-falha">Conceitos fundamentais: erro, falta e falha<a class="headerlink" href="#conceitos-fundamentais-erro-falta-e-falha" title="Permanent link">&para;</a></h3>
+<p>A terminologia (seguindo IEEE/SWEBOK) distingue três conceitos que frequentemente se confundem:</p>
+<ul>
+<li><strong>Erro (<em>error</em>/<em>bug</em>)</strong>: um engano cometido pelo desenvolvedor — uma condição <code>if</code>/<code>else</code> errada, um cálculo mal feito, um mal-entendido de requisito.</li>
+<li><strong>Falta (<em>fault</em>)</strong>: o ponto no código onde o erro se manifesta como uma diferença entre o que o programa faz e o que a especificação exige. Um erro pode gerar zero ou mais faults.</li>
+<li><strong>Falha (<em>failure</em>)</strong>: um resultado observável que diverge do resultado correto especificado. Uma falta no código pode gerar zero ou mais failures, dependendo da entrada e do caminho de execução percorrido.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Erro, falta e falha no mesmo trecho de código</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>   <span class="c1"># erro: deveria ser "&lt;", não "&lt;="</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="o">...</span><span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">...</span>       <span class="c1"># falta: acesso fora dos limites</span>
+</code></pre></div>
+A execução com uma lista cujo tamanho expõe o índice inválido produz a falha observável <code>IndexError: list index out of range</code>.</p>
+</div>
+<p>O <strong>modelo RIP</strong> (<em>Reachability, Infection, Propagation</em> — Voas, "PIE: A Dynamic Failure-Based Technique", IEEE TSE, 1992) formaliza as três condições necessárias para que um teste revele uma falta:</p>
+<ol>
+<li><strong>Reachability (alcance)</strong>: o caso de teste precisa executar a linha/componente com a falta.</li>
+<li><strong>Infection (infecção)</strong>: a execução do código com falta precisa corromper o estado interno do programa.</li>
+<li><strong>Propagation (propagação)</strong>: o estado corrompido precisa se propagar até afetar a saída observável.</li>
+</ol>
+<p>O <strong>foco do teste</strong> está em observar a <em>failure</em>; o <strong>foco da depuração</strong> (<em>debugging</em>) está em rastrear de volta até o <em>bug</em>/erro original — um processo que os slides descrevem como <strong>depuração científica</strong>: observar a falha → formular hipótese → prever comportamento → fazer experimento → observar → repetir até a hipótese ser consistente, então corrigir.</p>
+<p><strong>Teste vs. depuração</strong>, portanto, são atividades complementares mas distintas: o teste existe para <strong>detectar</strong> a presença de falhas (nunca prova a ausência — Dijkstra); a depuração existe para <strong>localizar e corrigir</strong> a falta que as causou.</p>
+<h3 id="anatomia-de-um-caso-de-teste">Anatomia de um caso de teste<a class="headerlink" href="#anatomia-de-um-caso-de-teste" title="Permanent link">&para;</a></h3>
+<p>Um caso de teste automatizado segue tipicamente o padrão <strong>AAA</strong> (<em>Arrange–Act–Assert</em>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@Test</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testEmptyStack</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span><span class="w">  </span><span class="c1">// Arrange (fixture)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">();</span><span class="w">               </span><span class="c1">// Act (operation)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">assertTrue</span><span class="p">(</span><span class="n">empty</span><span class="p">);</span><span class="w">                              </span><span class="c1">// Assert (oracle)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>O <strong>oráculo</strong> (<em>oracle</em>) é o componente que compara o resultado observado com o esperado — definido pela IEEE como "um conjunto de entradas de teste, condições de execução e resultados esperados desenvolvidos para um objetivo específico". Frameworks de teste (<em>xUnit</em>) existem para praticamente toda linguagem: JUnit (Java), <code>unittest</code>/<code>pytest</code> (Python), RSpec (Ruby), Jest (JavaScript), CUnit (C), CppUnit (C++), NUnit (C#).</p>
+<p>A automação de testes reduz o tempo de execução e melhora a reprodutibilidade, mas tem custos: o próprio código de teste precisa ser mantido, e nem todo tipo de teste se beneficia de automação (teste de usabilidade, por exemplo, costuma ser manual/exploratório).</p>
+<h3 id="caracterizacao-do-teste-alvo-visibilidade-e-objetivo">Caracterização do teste: alvo, visibilidade e objetivo<a class="headerlink" href="#caracterizacao-do-teste-alvo-visibilidade-e-objetivo" title="Permanent link">&para;</a></h3>
+<p>O teste pode ser caracterizado em três eixos independentes:</p>
+<p><strong>Por alvo (granularidade)</strong> — a pirâmide de testes clássica:</p>
+<table>
+<thead>
+<tr>
+<th>Nível</th>
+<th>Granularidade</th>
+<th>Quantidade</th>
+<th>Velocidade</th>
+<th>Custo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sistema (<em>system</em>)</td>
+<td>Maior</td>
+<td>Menor</td>
+<td>Mais lentos</td>
+<td>Maior</td>
+</tr>
+<tr>
+<td>Integração</td>
+<td>Intermediária</td>
+<td>Intermediária</td>
+<td>Intermediária</td>
+<td>Intermediário</td>
+</tr>
+<tr>
+<td>Unidade (<em>unit</em>)</td>
+<td>Menor</td>
+<td>Maior</td>
+<td>Mais rápidos</td>
+<td>Menor</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Teste de unidade</strong>: verifica elementos de software isoladamente, tipicamente com acesso ao código e ferramentas de depuração.</li>
+<li><strong>Teste de integração</strong>: verifica as interações entre componentes do sistema.</li>
+<li><strong>Teste de sistema</strong>: testa o comportamento do sistema inteiro, adequado para avaliar requisitos não funcionais (segurança, desempenho, confiabilidade).</li>
+</ul>
+<p><strong>Por visibilidade (acesso ao código)</strong>:</p>
+<ul>
+<li><strong>Caixa-branca (<em>white-box</em>)</strong>: os testes são projetados com conhecimento da estrutura interna/implementação.</li>
+<li><strong>Caixa-preta (<em>black-box</em>)</strong>: os testes dependem apenas do comportamento observável (entrada/saída), sem olhar a implementação.</li>
+</ul>
+<p><strong>Por objetivo</strong> — alguns exemplos definidos nos slides:</p>
+<ul>
+<li><strong>Aceitação</strong>: verifica se o sistema satisfaz os critérios de aceitação do cliente.</li>
+<li><strong>Alpha/Beta</strong>: testes com usuários reais antes do lançamento (grupo pequeno selecionado vs. grupo maior representativo).</li>
+<li><strong>Desempenho (<em>performance</em>)</strong>: verifica requisitos de desempenho especificados (ex.: tempo de resposta).</li>
+<li><strong>Estresse (<em>stress</em>)</strong>: exercita o software na carga máxima de projeto e além dela, para determinar limites de comportamento.</li>
+<li><strong>Segurança</strong>: verifica confidencialidade, integridade e disponibilidade de sistema e dados.</li>
+<li><strong>Interface</strong>: verifica a correta troca de dados/controle entre componentes de interface.</li>
+<li><strong>Usabilidade</strong>: avalia a facilidade de aprendizado e uso do software por usuários finais.</li>
+<li><strong>Regressão</strong>: reteste seletivo para verificar que modificações não introduziram efeitos colaterais indesejados (ver seção dedicada <a href="#teste-de-regressao">Teste de regressão</a>).</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Qualidade interna vs. externa — e por que não existe bala de prata</p>
+<p><strong>Qualidade interna</strong> refere-se ao artefato de código (modularidade, coesão, acoplamento, legibilidade). <strong>Qualidade externa</strong> refere-se a aspectos observáveis de fora (segurança, desempenho, funcionalidade). O teste de software foca na <strong>qualidade externa</strong> — mas não é a única peça: qualidade interna, escolha de linguagem/ferramentas, processo de desenvolvimento e uma equipe treinada e motivada são igualmente necessários.</p>
+</div>
+<h3 id="quando-comecar-a-escrever-os-testes">Quando começar a escrever os testes?<a class="headerlink" href="#quando-comecar-a-escrever-os-testes" title="Permanent link">&para;</a></h3>
+<p>Duas estratégias, sem uma resposta universalmente correta — a decisão varia com o projeto e a equipe:</p>
+<ul>
+<li><strong>Top-down</strong>: assim que os requisitos são conhecidos (abordagem de TDD/BDD — ver <a href="#tdd-e-bdd">TDD e BDD</a>); desvantagem: exige código auxiliar (mocks, stubs) antes de a implementação existir.</li>
+<li><strong>Bottom-up</strong>: assim que o código é desenvolvido, dos testes de unidade aos de integração e sistema.</li>
+</ul>
+<p>Duas observações destacadas nos slides: os testes devem refletir os requisitos (funcionais ou não) mesmo que implementados depois do código; e não é necessário esperar a última função do sistema estar pronta para começar testes de integração/sistema — bibliotecas de <em>mock</em> viabilizam isso antes.</p>
+<h2 id="tecnicas-de-teste">Técnicas de teste<a class="headerlink" href="#tecnicas-de-teste" title="Permanent link">&para;</a></h2>
+<p>Seguindo a taxonomia do <strong>SWEBOK 3.0 (2014)</strong>, as técnicas de teste são classificadas de acordo com a origem da geração dos casos de teste: a intuição/experiência do testador, a especificação, a estrutura do código, as faltas reais ou imaginadas a serem descobertas, ou o uso previsto do sistema.</p>
+<p>A distinção mais básica é entre:</p>
+<ul>
+<li><strong>Caixa-branca</strong>: os testes exploram informação sobre como o software foi projetado/codificado.</li>
+<li><strong>Caixa-preta</strong>: os casos de teste dependem apenas do comportamento de entrada/saída.</li>
+</ul>
+<h3 id="tecnicas-baseadas-em-intuicao-e-experiencia">Técnicas baseadas em intuição e experiência<a class="headerlink" href="#tecnicas-baseadas-em-intuicao-e-experiencia" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Ad hoc</strong>: testes informais, sem roteiro estruturado, guiados pela intuição do testador (análogo ao <em>monkey testing</em> — entradas aleatórias "de macaco no teclado").</li>
+<li><strong>Teste exploratório</strong>: aprendizado, projeto e execução dos testes ocorrem simultaneamente, guiados por quem testa — como uma investigação.</li>
+</ul>
+<h3 id="tecnicas-baseadas-no-dominio-de-entrada">Técnicas baseadas no domínio de entrada<a class="headerlink" href="#tecnicas-baseadas-no-dominio-de-entrada" title="Permanent link">&para;</a></h3>
+<p><strong>Particionamento em classes de equivalência (<em>equivalence partitioning</em>)</strong>: divide o domínio de entrada em subconjuntos que, por hipótese, se comportam de forma similar.</p>
+<div class="admonition example">
+<p class="admonition-title">Classes de equivalência — campo idade</p>
+<p>Campo que aceita idades de 18 a 56:</p>
+<table>
+<thead>
+<tr>
+<th>Inválido</th>
+<th>Válido</th>
+<th>Inválido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤17</td>
+<td>18–56</td>
+<td>≥57</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Análise de valor-limite (<em>boundary-value analysis</em>)</strong>: testa valores exatamente nas fronteiras e imediatamente antes/depois delas, já que erros de programação (operadores de comparação errados, <em>off-by-one</em>) se concentram ali.</p>
+<div class="admonition example">
+<p class="admonition-title">Valor-limite — função raiz quadrada</p>
+<p>Domínio válido: números reais ≥ 0.</p>
+<table>
+<thead>
+<tr>
+<th>Número</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-5</td>
+<td>Não existe</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>Não existe</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Teste de pares (<em>pairwise testing</em>)</strong>: garante que todas as combinações de pares de valores de parâmetros sejam testadas ao menos uma vez — reduzindo drasticamente o número de casos de teste necessário (tratado em profundidade em <a href="#teste-combinatorial">Teste combinatorial</a>).</p>
+<div class="admonition example">
+<p class="admonition-title">Pairwise — navegador × sistema operacional × login</p>
+<p>3 navegadores × 3 sistemas operacionais × 2 métodos de login = 18 combinações possíveis, mas apenas <strong>9 casos de teste</strong> cobrem todos os pares:</p>
+<table>
+<thead>
+<tr>
+<th>Teste</th>
+<th>Navegador</th>
+<th>SO</th>
+<th>Login</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Chrome</td>
+<td>Windows</td>
+<td>Senha</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Chrome</td>
+<td>macOS</td>
+<td>Biometria</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Chrome</td>
+<td>Linux</td>
+<td>Senha</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Firefox</td>
+<td>Windows</td>
+<td>Biometria</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Firefox</td>
+<td>macOS</td>
+<td>Senha</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Firefox</td>
+<td>Linux</td>
+<td>Biometria</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Edge</td>
+<td>Windows</td>
+<td>Senha</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Edge</td>
+<td>macOS</td>
+<td>Biometria</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Edge</td>
+<td>Linux</td>
+<td>Senha</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Teste aleatório (<em>random testing</em>)</strong>: geração de entradas puramente aleatórias — citado como quarta técnica da família, aprofundado na seção de <a href="#fuzzing">fuzzing</a>.</p>
+<h3 id="tecnicas-baseadas-no-codigo">Técnicas baseadas no código<a class="headerlink" href="#tecnicas-baseadas-no-codigo" title="Permanent link">&para;</a></h3>
+<p><strong>Critérios de fluxo de controle (<em>control-flow-based</em>)</strong>, usando o grafo de fluxo de controle de um programa (nós = blocos sequenciais, ramos = transferências de controle):</p>
+<ul>
+<li><strong>Cobertura de instruções (nós)</strong>: cada instrução deve ser executada ao menos uma vez.</li>
+<li><strong>Cobertura de ramos</strong>: cada ramo de decisão (<code>if</code>/<code>else</code>) deve ser percorrido ao menos uma vez.</li>
+<li><strong>Cobertura de condições</strong>: cada subcondição dentro de uma expressão composta deve ser avaliada como verdadeira e falsa.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Cobertura de instruções vs. ramos</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>1. if (x&gt;0 and y&gt;100)
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>2.     x = x+y+1;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>3. else x = x+y-1;
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>4. write x,y
+</code></pre></div>
+| x | y | Ramos percorridos |
+|---|---|---|
+| 1 | 101 | {(1,1A),(1A,2),(2,4)} |
+| 1 | 99 | {(1,1A),(1A,3),(2,4)} |
+| -1 | 100 | {(1,3),(3,4)} |</p>
+</div>
+<p><strong>Critérios de fluxo de dados (<em>data-flow-based</em>)</strong>: rastreiam onde variáveis são <strong>definidas</strong> (<code>def</code>) e <strong>usadas</strong> (<em>c-use</em> = uso computacional, <em>p-use</em> = uso em predicado), exigindo que um teste cubra o caminho entre a definição de uma variável e seu uso. Técnicas comuns: <em>all-definitions</em>, <em>all-c-uses</em>, <em>all-p-uses</em>, <em>all-uses</em>, <em>all-DU-paths</em>.</p>
+<h3 id="tecnicas-baseadas-em-falhas-fault-based">Técnicas baseadas em falhas (<em>fault-based</em>)<a class="headerlink" href="#tecnicas-baseadas-em-falhas-fault-based" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Error guessing</strong>: casos de teste criados para antecipar as falhas mais plausíveis, com base no histórico de bugs de projetos anteriores e na experiência do testador.</li>
+<li><strong>Teste de mutação</strong>: ver seção dedicada <a href="#teste-de-mutacao">Teste de mutação</a>.</li>
+</ul>
+<h3 id="tecnicas-baseadas-no-uso-usage-based">Técnicas baseadas no uso (<em>usage-based</em>)<a class="headerlink" href="#tecnicas-baseadas-no-uso-usage-based" title="Permanent link">&para;</a></h3>
+<p><strong>Perfil operacional (<em>operational profile</em>)</strong>: prioriza casos de teste de acordo com a frequência real de uso de cada operação, por tipo de usuário — a percepção de confiabilidade do sistema varia conforme o perfil de quem o usa (um autor que só navega publicações pode achar o sistema perfeito, enquanto um administrador que faz backups frequentes pode perceber mais falhas).</p>
+<h3 id="tecnicas-baseadas-em-modelo">Técnicas baseadas em modelo<a class="headerlink" href="#tecnicas-baseadas-em-modelo" title="Permanent link">&para;</a></h3>
+<p><strong>Tabelas de decisão</strong>: mapeiam combinações de condições para as ações correspondentes — útil para lógica de negócio com múltiplas regras combinadas (ex.: um fluxograma de diagnóstico "a impressora não imprime").</p>
+<h3 id="tecnicas-segundo-a-natureza-da-aplicacao">Técnicas segundo a natureza da aplicação<a class="headerlink" href="#tecnicas-segundo-a-natureza-da-aplicacao" title="Permanent link">&para;</a></h3>
+<p>Categorias de software que exigem técnicas específicas: orientado a objetos, baseado em componentes, <em>web</em>, programas concorrentes, baseado em protocolo, sistemas de tempo real, sistemas críticos de segurança (<em>safety-critical</em>), orientado a serviços, código aberto, sistemas embarcados.</p>
+<div class="admonition quote">
+<p class="admonition-title">Mensagem de encerramento do material sobre técnicas</p>
+<p>"Each technique has its focus, advantages, and limitations, and it is the role of the test engineer to know how to select and combine these strategies according to the context of the project. More than memorizing definitions, what truly matters is developing critical awareness to apply the right test, at the right time, with the right purpose."</p>
+</div>
+<h2 id="criterios-de-adequacao-de-teste">Critérios de adequação de teste<a class="headerlink" href="#criterios-de-adequacao-de-teste" title="Permanent link">&para;</a></h2>
+<p>Uma suíte com 120 testes, todos passando, com 85% de cobertura de código — isso significa que o software está bem testado? Não necessariamente: <strong>cobertura é necessária, mas não suficiente</strong> para garantir ausência de bugs.</p>
+<div class="admonition example">
+<p class="admonition-title">100% de cobertura de instruções não é garantia de correção</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>
+Com <code>x = 5</code>, esse código atinge 100% de cobertura de instruções — mas <code>x = 0</code> causa um <em>crash</em> em tempo de execução que a cobertura de instruções não detecta.</p>
+</div>
+<p><strong>Critério de adequação de teste</strong>: define requisitos de teste e mede quantos deles foram cobertos pela suíte — a suposição subjacente é que cobertura mais alta aumenta a chance de detectar falhas (mas não a garante). A pergunta "quando parar de testar?" não tem resposta cientificamente justificada apenas por "quando o tempo acaba" ou "quando o produto é lançado" — os critérios de adequação existem para dar uma resposta mais fundamentada.</p>
+<p>Duas grandes famílias de critérios:</p>
+<p><strong>Critérios funcionais</strong> (baseados na especificação, independentes da estrutura interna):</p>
+<ul>
+<li><strong>Cobertura de requisitos</strong>: mede quantos requisitos do sistema são exercitados pela suíte.</li>
+<li><strong>Cobertura de classes de equivalência</strong>: entradas divididas em classes esperadas comportar-se de forma similar.</li>
+<li><strong>Cobertura de valor-limite</strong>: valores nas fronteiras dos domínios de entrada.</li>
+<li><strong>Cobertura de cenários</strong>: cada cenário relevante do sistema deve ser coberto por ao menos um teste.</li>
+</ul>
+<p><strong>Critérios estruturais</strong> (baseados na estrutura do programa, dependentes da implementação):</p>
+<ul>
+<li><strong>Cobertura de instruções, ramos e caminhos</strong> — como descrito em <a href="#tecnicas-baseadas-no-codigo">Técnicas baseadas no código</a>.</li>
+<li><strong>Cobertura de fluxo de dados</strong> — idem.</li>
+<li><strong>MC/DC (<em>Modified Condition/Decision Coverage</em>)</strong>: critério mais rigoroso, exige que cada condição dentro de uma decisão composta tenha, isoladamente, afetado o resultado da decisão ao menos uma vez — usando apenas <strong>n+1</strong> testes em vez dos 2ⁿ necessários para testar todas as combinações de n condições booleanas.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">MC/DC — (a &amp;&amp; (b || c)) com apenas 4 testes</p>
+<p>Em vez de testar as 8 combinações possíveis de <code>a</code>, <code>b</code>, <code>c</code>, o MC/DC identifica pares de linhas que isolam o efeito de cada variável (flipando uma condição e mantendo as outras fixas), chegando a uma suíte reduzida: <strong>Teste Suite = {2, 3, 4, 6}</strong> — muito menor que 2ⁿ, mas ainda garantindo que cada condição influencia o resultado de forma independente.</p>
+</div>
+<p>Os critérios estruturais e funcionais se somam a um terceiro tipo — os <strong>critérios baseados em falhas</strong> (<em>fault-based</em>), fundamento do teste de mutação, abordado na próxima seção.</p>
+<h2 id="teste-de-mutacao">Teste de mutação<a class="headerlink" href="#teste-de-mutacao" title="Permanent link">&para;</a></h2>
+<p>Se todos os testes passam, isso significa que você confia 100% no seu código? Considere:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">boolean</span><span class="w"> </span><span class="nf">ehPositivo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">   </span><span class="c1">// assertTrue(ehPositivo(10)) passa</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">boolean</span><span class="w"> </span><span class="nf">ehPositivo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// assertTrue(ehPositivo(10)) também passa!</span>
+</code></pre></div>
+<p>O mesmo teste passa em duas implementações sutilmente diferentes — isso mostra que <strong>a suíte de testes pode não ser sensível o bastante</strong> para distinguir um programa correto de uma variação dele com uma falta.</p>
+<p><strong>Teste de mutação</strong>: falhas sintáticas são inseridas no código através de <strong>operadores de mutação</strong> (<em>mutation operators</em>), gerando <strong>mutantes</strong> — clones do programa original com uma ou mais faltas inseridas propositalmente. A suíte de testes é executada contra cada mutante:</p>
+<ul>
+<li>Se <strong>ao menos um teste falhar</strong> no mutante, o mutante é considerado <strong>morto</strong> (<em>killed</em>).</li>
+<li>Se <strong>todos os testes passarem</strong>, o mutante está <strong>vivo</strong> (<em>alive</em>) — sinal de que a suíte não é sensível a essa mutação.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Operador de mutação — troca de operador relacional</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">threshold</span><span class="p">){...}</span><span class="w">   </span><span class="c1">// SUT original</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">threshold</span><span class="p">){...}</span><span class="w">   </span><span class="c1">// mutante gerado pelo operador de mutação</span>
+</code></pre></div>
+</div>
+<p>Categorias de operadores de mutação cobertas no material: modificações de operando (troca de constante/variável/referência de array), modificações de expressão (operadores aritméticos, condicionais, relacionais, de deslocamento, de atribuição abreviada), e modificações de instrução (remoção de instrução, troca de rótulo de <code>case</code>, deslocamento de chaves de bloco).</p>
+<h3 id="as-duas-hipoteses-do-teste-de-mutacao">As duas hipóteses do teste de mutação<a class="headerlink" href="#as-duas-hipoteses-do-teste-de-mutacao" title="Permanent link">&para;</a></h3>
+<p>Para que mutantes sintéticos sejam representativos de falhas reais, duas hipóteses precisam se sustentar:</p>
+<ul>
+<li><strong>Hipótese do Programador Competente</strong>: um programa com falta difere de um programa correto apenas por uma pequena alteração textual — o SUT está "próximo" de correto.</li>
+<li><strong>Hipótese do Efeito de Acoplamento (<em>Coupling Effect</em>)</strong>: a maioria das faltas são erros sintáticos pequenos; faltas complexas são combinações de pequenas mudanças; um teste capaz de expor uma pequena mudança também tende a detectar uma mudança mais complexa.</li>
+</ul>
+<h3 id="medindo-adequacao-com-mutacao">Medindo adequação com mutação<a class="headerlink" href="#medindo-adequacao-com-mutacao" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\text{Mutation Coverage} = \frac{\text{mutantes mortos}}{\text{total de mutantes}} \qquad \text{Tests Strength} = \frac{\text{mutantes executados}}{\text{total de mutantes}}\]</div>
+<p>Na prática, o teste de mutação é <strong>caro</strong> — exige executar toda a suíte contra cada mutante gerado, e tipicamente muitos mutantes são gerados (um operador por mutante). Pesquisa ativa na área inclui seleção de mutantes (eliminando mutantes equivalentes e redundantes), mutantes de ordem superior, e o uso de mutação para avaliar testes gerados por IA — um achado citado nos slides é que "IA gera testes com alta cobertura, porém matando poucos mutantes", reforçando que cobertura de linha e qualidade de teste não são a mesma coisa (tema retomado em <a href="#ia-para-testes">IA para testes</a>).</p>
+<p>A ferramenta <a href="https://pitest.org/">PITest</a> foi usada como demonstração prática de teste de mutação em Java.</p>
+<h2 id="teste-de-regressao">Teste de regressão<a class="headerlink" href="#teste-de-regressao" title="Permanent link">&para;</a></h2>
+<p>Toda vez que o software é modificado, surge a pergunta: as mudanças quebraram algo que já funcionava? Reexecutar toda a suíte de testes a cada modificação parece a solução óbvia — mas na prática é quase sempre inviável: estudos citam suítes de 30.000 casos de teste consumindo mais de 1.000 horas-máquina, e o Google relata que, por dia, realiza 800 mil builds e 150 milhões de execuções de teste em mais de 13 mil projetos de código.</p>
+<p>O dilema do <strong>teste de regressão</strong>: reexecutar tudo é caro; não reexecutar tudo arrisca deixar passar faltas de regressão não detectadas. O desafio central é <strong>reduzir o esforço de reteste sem comprometer sua efetividade</strong>.</p>
+<p>Três dimensões de técnicas se destacam:</p>
+<p><strong>Redução</strong>: elimina definitivamente testes redundantes ou desatualizados da suíte. Risco: remover testes que poderiam detectar problemas futuros, exigindo análise criteriosa para evitar lacunas de cobertura. Técnicas principais: eliminação de testes redundantes, agrupamento de testes, cobertura de testes, particionamento de equivalência, priorização de requisitos.</p>
+<p><strong>Seleção</strong>: seleciona dinamicamente, para uma execução específica, os testes que exercitam as áreas do código modificadas/impactadas, ou que historicamente revelam mais falhas. Risco: pode ser difícil rastrear com precisão o impacto de uma mudança, e testes ignorados podem deixar passar bugs não aparentes de imediato. Técnicas principais: impacto das mudanças, cobertura de código crítico, histórico de falhas, uso do software.</p>
+<p><strong>Priorização</strong>: determina a ordem ideal de execução dos casos de teste, com o objetivo de detectar falhas o mais cedo possível, minimizando custo/tempo de execução. Critérios: criticidade da funcionalidade, impacto das mudanças, probabilidade de falha (dados históricos), frequência de uso, risco ao negócio, cobertura de código, tempo de execução, e algoritmos automáticos baseados em heurísticas.</p>
+<div class="admonition example">
+<p class="admonition-title">Avaliando a priorização com APFD</p>
+<p><em>Average Percentage of Faults Detected</em> (APFD) mede quão rápido uma ordenação de testes detecta faltas. Com a mesma suíte (A, B, C, D, E) cobrindo 10 faltas:</p>
+<ul>
+<li>Ordem <strong>A-B-C-D-E</strong> → <strong>APFD = 30%</strong></li>
+<li>Ordem <strong>C-E-B-A-D</strong> → <strong>APFD = 64%</strong></li>
+</ul>
+<p>A mesma suíte, reordenada, detecta faltas muito mais rapidamente — ilustrando o valor da priorização.</p>
+</div>
+<h3 id="problemas-de-pesquisa-em-aberto">Problemas de pesquisa em aberto<a class="headerlink" href="#problemas-de-pesquisa-em-aberto" title="Permanent link">&para;</a></h3>
+<p>Duas limitações práticas das técnicas propostas na literatura, segundo o material:</p>
+<ol>
+<li><strong>Eficiência/escalabilidade</strong>: "se a técnica de regressão demora muito, ela consome tempo que poderia ser destinado à execução de testes" (Henard et al., "Comparing white-box and black-box test prioritization", ICSE 2016).</li>
+<li><strong>Contexto</strong>: muitas técnicas assumem disponibilidade de artefatos de entrada (suíte de testes, código-fonte, <em>traces</em> de cobertura) que nem sempre existem em contextos reais de teste.</li>
+</ol>
+<h2 id="testes-flaky">Testes flaky<a class="headerlink" href="#testes-flaky" title="Permanent link">&para;</a></h2>
+<p>Um <strong>teste flaky</strong> é definido como: <em>"test failures not related to the latest changes but due to non-determinism in the tests"</em> — ou seja, a mesma versão do código, com os mesmos testes, pode produzir resultados diferentes em execuções distintas, sem relação com nenhuma mudança real no software.</p>
+<h3 id="por-que-sao-problematicos">Por que são problemáticos<a class="headerlink" href="#por-que-sao-problematicos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Perda de confiança</strong>: desenvolvedores passam a ignorar builds que falham ("é só flaky mesmo").</li>
+<li><strong>Bugs escondidos</strong>: falhas reais acabam descartadas como se fossem flakiness.</li>
+<li><strong>Tempo desperdiçado</strong>: investigação de falhas que não são bugs reais, à espera de reexecuções.</li>
+<li><strong>Entrega bloqueada</strong>: uma falha espúria pode bloquear <em>merges</em> e <em>releases</em>.</li>
+</ul>
+<p>Flakiness também compromete pressupostos de outras técnicas: no <strong>teste de regressão</strong>, quebra a suposição de que "passou antes, falha agora = a mudança quebrou algo" (oráculo ruidoso), confunde <code>git bisect</code> (depuração enganosa) e prejudica a seleção/priorização de testes. No <strong>teste de mutação</strong>, gera "mortes falsas" de mutantes (inflando artificialmente o <em>mutation score</em>) e cobertura instável.</p>
+<h3 id="causas-principais-dados-empiricos-fse-2014">Causas principais (dados empíricos — FSE 2014)<a class="headerlink" href="#causas-principais-dados-empiricos-fse-2014" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Async wait (45%)</strong>: código que assume um tempo fixo de resposta, como <code>Thread.sleep(2000);</code> antes de verificar um estado — e quebra se a resposta real demorar mais.</li>
+<li><strong>Concurrency (20%)</strong>: condições de corrida entre threads acessando memória compartilhada sem sincronização adequada, causando <em>lost updates</em>.</li>
+</ul>
+<p>Dados de empresas reais citados no material: <strong>Google</strong> reportou 16% de seus 4,2 milhões de testes como flaky, causando 1,5% das execuções a falharem intermitentemente; <strong>Microsoft</strong> encontrou 4,6% de testes flaky em 5 projetos analisados; <strong>Mozilla</strong> estima um crescimento de mais de 100 novos testes flaky por semana em seu banco de dados de testes.</p>
+<h3 id="deteccao">Detecção<a class="headerlink" href="#deteccao" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Rerun (reexecução)</strong>: a abordagem típica — reexecutar os testes que falharam —, mas custosa e pode não capturar flakiness intermitente (um exemplo real no material mostra um teste passando em 14 de 20 execuções e falhando nas outras 6, com valores diferentes a cada falha).</li>
+<li><strong>Rerun + perturbação</strong>: mudar ordem, coleções ou carga para expor flakiness mais cedo (ferramenta citada: <a href="https://pypi.org/project/pytest-randomly/">pytest-randomly</a>).</li>
+<li><strong>No rerun</strong>: se um teste falha mas não cobre o código alterado, ele é suspeito de ser flaky, sem precisar reexecutar (ferramenta citada: <a href="http://www.deflaker.org/">DeFlaker</a>).</li>
+<li><strong>Predição</strong>: classificar testes como propensos a flakiness usando características estáticas do código, sem executá-los (ferramenta citada: FlakeFlagger).</li>
+</ul>
+<h3 id="mitigacao">Mitigação<a class="headerlink" href="#mitigacao" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Corrigir a causa raiz</strong> (majoritariamente no código de teste — 71% das correções, segundo Lam et al., "A Study on the Lifecycle of Flaky Tests", ICSE 2020).</li>
+<li><strong>Quarentena</strong>: isolar o teste do pipeline bloqueante, com responsável e prazo definidos.</li>
+<li><strong>Reparo automatizado</strong>: por exemplo, ferramentas como iFixFlakies para testes dependentes de ordem.</li>
+<li><strong>Deletar</strong>: último recurso, se o teste não agrega valor nenhum.</li>
+</ul>
+<h2 id="teste-combinatorial">Teste combinatorial<a class="headerlink" href="#teste-combinatorial" title="Permanent link">&para;</a></h2>
+<p>Imagine um bug que só ocorre quando um tipo específico de navegador, sistema operacional, versão de driver e idioma estão todos presentes simultaneamente — nenhum desses fatores, isoladamente, causa o erro. Essas são <strong>falhas de interação</strong> (<em>interaction failures</em>): disparadas apenas quando dois ou mais valores de entrada interagem para produzir um resultado incorreto.</p>
+<p>Testar exaustivamente todas as combinações (<em>brute force</em>) costuma ser inviável pelo custo — mas e se for possível garantir que todas as interações entre pares (ou trios) de fatores sejam testadas, reduzindo milhões de casos para poucas dezenas, sem perder a capacidade de detectar esse tipo de defeito? É exatamente isso que o <strong>teste combinatorial</strong> faz, usando princípios de matemática combinatorial para identificar o conjunto mínimo de testes que cobre todas as interações relevantes entre parâmetros.</p>
+<h3 id="o-achado-empirico-central-nist-sp-800-142">O achado empírico central (NIST SP 800-142)<a class="headerlink" href="#o-achado-empirico-central-nist-sp-800-142" title="Permanent link">&para;</a></h3>
+<p>A referência central desta seção é o <strong>NIST Special Publication 800-142 — "Practical Combinatorial Testing"</strong> (Kuhn, Kacker e Lei, 2010), que investigou, a partir de 1999, quantos fatores tipicamente interagem para causar falhas reais em sistemas de diferentes domínios (dispositivos médicos, navegadores, servidores, banco de dados distribuído da NASA):</p>
+<table>
+<thead>
+<tr>
+<th>Fatores envolvidos</th>
+<th>Dispositivos Médicos</th>
+<th>Navegador</th>
+<th>Servidor</th>
+<th>NASA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>66%</td>
+<td>29%</td>
+<td>42%</td>
+<td>68%</td>
+</tr>
+<tr>
+<td>2 (cumulativo)</td>
+<td>97%</td>
+<td>76%</td>
+<td>70%</td>
+<td>93%</td>
+</tr>
+<tr>
+<td>3 (cumulativo)</td>
+<td>99%</td>
+<td>95%</td>
+<td>89%</td>
+<td>98%</td>
+</tr>
+<tr>
+<td>4 (cumulativo)</td>
+<td>100%</td>
+<td>97%</td>
+<td>96%</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition quote">
+<p class="admonition-title">Interaction Rule (regra empírica)</p>
+<p>"Most failures are induced by single factor faults or by the joint combinatorial effect (interaction) of two factors, with progressively fewer failures induced by interactions between three or more factors."</p>
+</div>
+<p>Na prática, <strong>todas as falhas estudadas puderam ser disparadas por interações de no máximo 4-way a 6-way</strong> — o que torna viável testar sistematicamente essas combinações em vez de todas as combinações possíveis.</p>
+<h3 id="covering-arrays-e-pairwise-testing">Covering arrays e pairwise testing<a class="headerlink" href="#covering-arrays-e-pairwise-testing" title="Permanent link">&para;</a></h3>
+<p>Um <strong>covering array</strong> é a estrutura central: uma matriz onde toda combinação de <em>t</em> colunas contém todos os valores possíveis dessas <em>t</em> variáveis em pelo menos uma linha. O número de testes necessário é proporcional a <strong>v^t · log n</strong> (para <em>n</em> parâmetros com <em>v</em> valores cada) — cresce exponencialmente com <em>t</em>, mas apenas logaritmicamente com o número de parâmetros.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplo prático de combinatória — 5 parâmetros de configuração</p>
+<p>Sistema operacional (3 opções) × navegador (2) × protocolo (2) × CPU (2) × SGBD (3) = <strong>72 combinações exaustivas</strong>. Um covering array <strong>pairwise (2-way)</strong> reduz isso para apenas <strong>10 testes</strong>, cobrindo todos os pares possíveis de valores:</p>
+<table>
+<thead>
+<tr>
+<th>Teste</th>
+<th>OS</th>
+<th>Browser</th>
+<th>Protocolo</th>
+<th>CPU</th>
+<th>SGBD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Windows</td>
+<td>Chrome</td>
+<td>IPv4</td>
+<td>Intel</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Windows</td>
+<td>Firefox</td>
+<td>IPv6</td>
+<td>AMD</td>
+<td>Sybase</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Mac OS</td>
+<td>Firefox</td>
+<td>IPv6</td>
+<td>AMD</td>
+<td>Oracle</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>O algoritmo guloso (<em>greedy</em>) para gerar essas combinações: gerar todos os pares possíveis de valor-parâmetro, inicializar a suíte vazia, e enquanto houver pares não cobertos, montar um novo caso de teste escolhendo, para cada parâmetro, o valor que cobre o maior número de pares ainda não cobertos — repetindo até cobertura total.</p>
+<h3 id="abordagens-de-teste-combinatorial">Abordagens de teste combinatorial<a class="headerlink" href="#abordagens-de-teste-combinatorial" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Category-partition testing</strong>: identificação manual dos valores que caracterizam o espaço de entrada, seguida de geração automática das combinações.</li>
+<li><strong>Pairwise testing</strong>: testa sistematicamente as interações 2-way entre atributos, com um número relativamente pequeno de casos.</li>
+<li><strong>Catalog-based testing</strong>: agrega e sintetiza a experiência de testadores de uma organização/domínio para identificar valores significativos.</li>
+</ul>
+<h3 id="o-problema-do-oraculo-permanece">O problema do oráculo permanece<a class="headerlink" href="#o-problema-do-oraculo-permanece" title="Permanent link">&para;</a></h3>
+<p>Mesmo com a geração eficiente de covering arrays, resta determinar o resultado esperado para cada combinação. Abordagens citadas: <em>crash testing</em> (teste aleatório, verificando apenas se a combinação causa falha evidente), asserções embutidas (como JML, que podem servir de oráculo), e geração de testes baseada em modelo (usando um <em>model checker</em> para derivar entrada + saída esperada simultaneamente).</p>
+<h3 id="medindo-cobertura-combinatorial">Medindo cobertura combinatorial<a class="headerlink" href="#medindo-cobertura-combinatorial" title="Permanent link">&para;</a></h3>
+<p>Como as métricas tradicionais de cobertura de código (instrução, ramo, MC/DC) dependem de acesso ao código-fonte, e o teste combinatorial é essencialmente uma técnica de caixa-preta, usam-se métricas próprias: <strong>cobertura simples t-way</strong> (proporção de combinações de <em>t</em> variáveis totalmente cobertas), <strong>cobertura (t+k)-way</strong>, e <strong>cobertura de configuração variável-valor</strong> (proporção de combinações específicas de valores cobertas).</p>
+<p>Ferramenta de demonstração citada: <a href="https://csrc.nist.gov/projects/automated-combinatorial-testing-for-software/downloadable-tools">CSRC/NIST — Automated Combinatorial Testing for Software</a>, que inclui o <strong>ACTS</strong> (gerador de covering arrays) e ferramentas de medição de cobertura combinatorial.</p>
+<h2 id="fuzzing">Fuzzing<a class="headerlink" href="#fuzzing" title="Permanent link">&para;</a></h2>
+<p><strong>Fuzzing (<em>fuzz testing</em>)</strong>: técnica de teste automatizado que insere entradas inválidas, inesperadas ou aleatórias para encontrar falhas — muito usada em segurança de software e teste de robustez.</p>
+<div class="admonition example">
+<p class="admonition-title">Motivação — um buffer overflow clássico em C</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">print_name</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span><span class="w">        </span><span class="c1">// buffer de 16 bytes</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="n">strcpy</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">);</span><span class="w">  </span><span class="c1">// sem verificar o tamanho de input!</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Voce digitou: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">);</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
+</code></pre></div>
+Com uma entrada curta, o programa funciona normalmente. Com uma entrada muito maior que 16 caracteres, o <code>strcpy</code> escreve além dos limites do buffer, corrompendo a memória e causando um erro de segmentação — um <strong>buffer overflow</strong> que pode ser explorado para execução arbitrária de código.</p>
+</div>
+<h3 id="origem-historica">Origem histórica<a class="headerlink" href="#origem-historica" title="Permanent link">&para;</a></h3>
+<p>O fuzzing surgiu em 1988, quando o professor <strong>Barton Miller</strong> (Universidade de Wisconsin-Madison), percebendo que ruídos em sua conexão telefônica corrompiam comandos UNIX e os fazia falhar de forma inesperada, criou um exercício para seus alunos testarem a robustez de utilitários UNIX com entradas aleatórias — nascendo os primeiros fuzzers. O resultado: em média, <strong>1/3 dos programas testados quebrou</strong>. O estudo foi publicado em 1990 ("An Empirical Study of the Reliability of UNIX Utilities", Miller, Fredriksen e So) — achando que 24% dos programas testados quebravam com entradas inválidas. Um estudo de replicação, 31 anos depois (2021, na <em>IEEE Transactions on Software Engineering</em>), mostrou que fuzzers clássicos <strong>ainda</strong> encontram falhas em utilitários modernos.</p>
+<h3 id="eficacia-comprovada-na-industria">Eficácia comprovada na indústria<a class="headerlink" href="#eficacia-comprovada-na-industria" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mozilla</strong>: fuzzers já encontraram mais de 6.450 defeitos, incluindo 790 marcados como críticos de segurança.</li>
+<li><strong>Google</strong>: em 30 dias usando <strong>libFuzzer</strong>, mais de 320 defeitos encontrados no Chrome; mantém o <strong><a href="https://github.com/google/oss-fuzz">OSS-Fuzz</a></strong> para projetos <em>open source</em>.</li>
+<li><strong>AFL (American Fuzzy Lop)</strong>: um dos fuzzers mais conhecidos da atualidade.</li>
+</ul>
+<p>Outras empresas com fuzzing em produção: Microsoft (drivers, parsers do Windows/Office/Edge), Apple (protocolos iOS/macOS), Mozilla (Firefox, com fuzzing simbólico + cobertura), Intel (firmwares), Amazon AWS (segurança em APIs de nuvem).</p>
+<h3 id="tecnicas-de-fuzzing">Técnicas de fuzzing<a class="headerlink" href="#tecnicas-de-fuzzing" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Baseado em mutação</strong>: modifica entradas válidas existentes, gerando variações inválidas — bom para testar <em>parsers</em>.</li>
+<li><strong>Baseado em gramática</strong>: gera entradas do zero a partir de um modelo/estrutura esperada (XML, JSON, requisições HTTP).</li>
+<li><strong>Cego (<em>dumb fuzzing</em>)</strong>: gera entradas totalmente aleatórias, sem considerar a estrutura esperada.</li>
+<li><strong>Dirigido por cobertura</strong>: usa informação de cobertura de código para guiar a geração de entradas, maximizando a exploração de novos caminhos.</li>
+</ol>
+<h3 id="categorias-de-bugs-tipicamente-encontrados">Categorias de bugs tipicamente encontrados<a class="headerlink" href="#categorias-de-bugs-tipicamente-encontrados" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Buffer overflows</strong> — escrita fora dos limites de um array.</li>
+<li><strong>Ausência de verificação de erros</strong> — código que assume que tudo deu certo (ex.: abrir um arquivo sem checar se ele existe).</li>
+<li><strong>Valores numéricos fora do esperado</strong> (<em>rogue numbers</em>) — ex.: divisão por zero não tratada.</li>
+<li><strong>Erros de acesso à memória</strong> — ponteiros nulos ou desalocados (<em>use-after-free</em>), detectáveis com ferramentas como <strong>AddressSanitizer</strong>.</li>
+<li><strong>Vazamento de informação</strong> — exposição de dados internos, como em vulnerabilidades de <em>format string</em>.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Heartbleed (2014, OpenSSL)</p>
+<p>Um exemplo real amplamente conhecido de bug de vazamento de memória encontrável por fuzzing: o servidor não verificava corretamente o tamanho da mensagem de "heartbeat" retornada, vazando conteúdo arbitrário da memória do servidor.</p>
+</div>
+<h3 id="ferramentas-e-demonstracao">Ferramentas e demonstração<a class="headerlink" href="#ferramentas-e-demonstracao" title="Permanent link">&para;</a></h3>
+<p>O deck de aula inclui um tutorial de uso do <strong>AFL++</strong> — um fuzzer guiado por cobertura que gera entradas mutadas, monitora a execução e aprende quais mutações são mais eficazes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>afl++<span class="w"> </span>-y
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>afl-gcc<span class="w"> </span>-o<span class="w"> </span>program<span class="w"> </span>program.c
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nv">AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>afl-fuzz<span class="w"> </span>-i<span class="w"> </span>inputs<span class="w"> </span>-o<span class="w"> </span>outputs<span class="w"> </span>--<span class="w"> </span>./program<span class="w"> </span>@@
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Leitura complementar destacada pela disciplina</p>
+<p>O livro online <strong><a href="https://www.fuzzingbook.org">fuzzingbook.org</a></strong> (Zeller, Gopinath, Böhme, Fraser e Holler) é a referência-base deste tópico e da bibliografia geral da disciplina, com implementações em Python de fuzzers desde o exemplo histórico de Barton Miller até técnicas modernas baseadas em gramática e cobertura.</p>
+</div>
+<h2 id="tdd-e-bdd">TDD e BDD<a class="headerlink" href="#tdd-e-bdd" title="Permanent link">&para;</a></h2>
+<h3 id="test-driven-development-tdd">Test-Driven Development (TDD)<a class="headerlink" href="#test-driven-development-tdd" title="Permanent link">&para;</a></h3>
+<p>TDD nasce do <strong>Manifesto Ágil</strong>, via Kent Beck e <strong>XP (Extreme Programming)</strong> — definido como Valores + Princípios + Práticas:</p>
+<ul>
+<li><strong>Valores</strong>: comunicação, simplicidade, feedback, coragem, respeito, qualidade de vida (semana de 40h).</li>
+<li><strong>Princípios</strong>: economicidade, melhorias contínuas, "falhas acontecem", <em>baby steps</em>, responsabilidade pessoal.</li>
+<li><strong>Prática central</strong>: <strong>escrever o teste antes do código de produção</strong>.</li>
+</ul>
+<p>O ciclo TDD segue três passos, repetidos continuamente:</p>
+<ol>
+<li><strong>Red</strong> (vermelho): escreva um teste que falha, porque a funcionalidade ainda não existe.</li>
+<li><strong>Green</strong> (verde): implemente o mínimo de código necessário para o teste passar.</li>
+<li><strong>Refactor</strong> (refatorar): melhore o código mantendo os testes passando, repetindo o ciclo com mais testes conforme necessário.</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">TDD aplicado a um validador de CPF (Python)</p>
+<p><strong>Red</strong> — primeiro teste, falha porque <code>cpf_valido</code> não existe:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_cpf_valido_simples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">cpf_valido</span><span class="p">(</span><span class="s2">"11144477735"</span><span class="p">))</span>
+</code></pre></div>
+<strong>Green</strong> — implementação mínima ("burra") só para passar:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">cpf_valido</span><span class="p">(</span><span class="n">cpf</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="k">return</span> <span class="n">cpf</span> <span class="o">==</span> <span class="s2">"11144477735"</span>
+</code></pre></div>
+Novos testes forçam a evolução da implementação (mais <strong>Red</strong>), até uma versão real que valida tamanho, sequências repetidas e os dois dígitos verificadores do CPF (mais <strong>Green</strong>).</p>
+</div>
+<p><strong>Vantagens do TDD</strong>, segundo o material: ao escrever o teste primeiro, o requisito é olhado antes do código (evitando código desnecessário); o ritmo de escrita pode ser controlado quebrando problemas complexos em partes menores; os testes derivam dos requisitos, não da implementação já existente; o código nasce testável; o feedback é rápido (problemas identificados logo após a adição de pouco código); e há <em>feedback</em> sobre o próprio design (muitos testes para uma classe pode indicar excesso de responsabilidades; muitos <em>mocks</em> pode indicar acoplamento excessivo).</p>
+<p><strong>Quando usar TDD</strong>: quando não se sabe como projetar/arquitetar uma parte do sistema, ou ao lidar com um problema complexo e pouco familiar — os <em>baby steps</em> ajudam a explorar e aprender gradualmente. <strong>Quando não usar</strong>: quando o problema e as decisões de design já são claras — nesse caso, não há "nada a explorar" e o TDD pode não agregar benefício significativo.</p>
+<h3 id="behavior-driven-development-bdd">Behavior-Driven Development (BDD)<a class="headerlink" href="#behavior-driven-development-bdd" title="Permanent link">&para;</a></h3>
+<p>O BDD é apresentado como uma evolução do TDD, motivada por: confusão conceitual em torno do próprio TDD, necessidade de melhorar a comunicação com <em>stakeholders</em>, foco no <strong>comportamento</strong> (não em métodos individuais), documentação executável, e encaixe natural com pipelines de DevOps.</p>
+<p>A sintaxe <strong>Gherkin</strong> estrutura cenários de comportamento em linguagem natural estruturada:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">Feature:</span><span class="nf"> Login functionality</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nf">  Given The login page is loaded</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nf">  When I input username, password and click the Login button</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nf">  Then I am on the Homepage</span>
+</code></pre></div>
+<ul>
+<li><strong>Given</strong>: pré-condições ou contexto inicial.</li>
+<li><strong>When</strong>: evento ou gatilho.</li>
+<li><strong>Then</strong>: resultado esperado.</li>
+</ul>
+<h2 id="teste-de-sistemas-baseados-em-ia">Teste de sistemas baseados em IA<a class="headerlink" href="#teste-de-sistemas-baseados-em-ia" title="Permanent link">&para;</a></h2>
+<p>As técnicas clássicas de teste carregam pressupostos que deixam de valer quando o "sistema sob teste" é baseado em aprendizado de máquina — por exemplo, particionamento por classes de equivalência assume que conseguimos identificar as classes corretamente e que entradas similares produzem saídas similares; cobertura estrutural assume que a lógica do sistema está no código que conseguimos ler. Esta aula revisita quatro desafios centrais e as técnicas que ajudam a mitigá-los.</p>
+<h3 id="desafio-1-logica-codificada-vs-logica-aprendida">Desafio 1 — Lógica codificada vs. lógica aprendida<a class="headerlink" href="#desafio-1-logica-codificada-vs-logica-aprendida" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Detector de spam: regras explícitas vs. pesos de uma rede neural</p>
+<p><strong>Código tradicional</strong> — cada regra é legível, testável individualmente, e a cobertura de código funciona perfeitamente:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">is_spam</span><span class="p">(</span><span class="n">email</span><span class="p">):</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="n">spam_score</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="k">if</span> <span class="s2">"GRÁTIS"</span> <span class="ow">in</span> <span class="n">email</span><span class="p">:</span> <span class="n">spam_score</span> <span class="o">+=</span> <span class="mi">2</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="k">if</span> <span class="s2">"URGENTE"</span> <span class="ow">in</span> <span class="n">email</span><span class="p">:</span> <span class="n">spam_score</span> <span class="o">+=</span> <span class="mi">2</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="c1"># ...</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="k">return</span> <span class="n">spam_score</span> <span class="o">&gt;</span> <span class="mi">5</span>
+</code></pre></div>
+<strong>Sistema de IA</strong> — a lógica está embutida nos pesos de uma rede (<code>Embedding → LSTM → Dense → sigmoid</code>), e a função apenas chama <code>model.predict</code>. Não há "regra" para ler ou testar isoladamente.</p>
+</div>
+<p>A pergunta central: como testar algo quando não se consegue "ler" a lógica, e como garantir que o modelo aprendeu os padrões certos (e não correlações espúrias)?</p>
+<p><strong>Mitigação — SHAP (SHapley Additive exPlanations)</strong>: técnica que isola a contribuição de cada <em>feature</em> para a predição final, funcionando como uma espécie de "caixa branca" para modelos de IA. Permite: testes de regressão (comparar explicações SHAP entre versões do modelo), testes de <em>bias</em> (monitorar a contribuição de atributos sensíveis — ex.: <code>assert abs(shap_gender) &lt; 0.05</code>), e testes de regras de negócio (verificar que atributos importantes de fato pesam na decisão — ex.: <code>assert shap_credit_score &gt; 0.1</code>). Limitações: é uma explicação local (válida só para aquela predição específica), pode ser lenta para modelos complexos, e é uma aproximação, não 100% precisa.</p>
+<div class="admonition warning">
+<p class="admonition-title">Estudo de caso: Amazon e o recrutamento com viés de gênero (2018)</p>
+<p>A Amazon desenvolveu um modelo para analisar currículos e priorizar candidatos, treinado com o próprio histórico de contratações da empresa. O modelo aprendeu a <strong>penalizar</strong> currículos contendo o termo "women" (ex.: "women's chess club"), refletindo o viés histórico presente nos dados de treino — não um erro de "inteligência" do modelo, mas um problema dos dados em que foi treinado. A Amazon descontinuou a ferramenta (<a href="https://www.ml.cmu.edu/news/news-archive/2016-2020/2018/october/amazon-scraps-secret-artificial-intelligence-recruiting-engine-that-showed-biases-against-women.html">fonte</a>).</p>
+</div>
+<h3 id="desafio-2-quando-nao-temos-um-oraculo">Desafio 2 — Quando não temos um oráculo<a class="headerlink" href="#desafio-2-quando-nao-temos-um-oraculo" title="Permanent link">&para;</a></h3>
+<p>Para um classificador de imagens de raio-x, qual é a saída "correta"? Cenários desafiadores citados: um modelo erra uma imagem claramente anormal (como saber se é bug de implementação ou limitação inerente do modelo?); um modelo com 95% de acerto em teste cai para 78% em produção (<em>overfitting</em>? <em>domain shift</em>?); dois especialistas humanos discordam sobre o mesmo caso (qual é a "resposta certa" a validar?).</p>
+<p><strong>Mitigação — testes metamórficos</strong>: em vez de comparar com um resultado esperado absoluto, define-se uma <strong>relação metamórfica (MR)</strong>: se eu transformar a entrada de uma forma específica, como a saída deveria mudar (ou se manter)?</p>
+<div class="admonition example">
+<p class="admonition-title">Relações metamórficas — classificador de imagens</p>
+<ul>
+<li><strong>MR1 (rotação)</strong>: se classificar(foto) = "gato", então classificar(rotacionar_90°(foto)) = "gato".</li>
+<li><strong>MR2 (espelhamento)</strong>: se classificar(foto) = "cão", então classificar(espelhar(foto)) = "cão".</li>
+<li><strong>MR3 (brilho)</strong>: se classificar(foto) = "gato", então classificar(aumentar_brilho_10%(foto)) = "gato".</li>
+</ul>
+</div>
+<p>Vantagens: não exige oráculo absoluto (definem-se relações, não respostas); detecta inconsistências sutis de comportamento; é automatizável em larga escala; é agnóstico de domínio. Limitações: exige pensar nas relações corretas (espelhar um raio-x pode mudar o diagnóstico real — lado esquerdo/direito importa em anatomia); pode ser superficial (propriedades óbvias não capturam bugs profundos); pode gerar falsos positivos quando a violação é, na verdade, aceitável.</p>
+<h3 id="desafio-3-espacos-de-entrada-de-alta-dimensionalidade">Desafio 3 — Espaços de entrada de alta dimensionalidade<a class="headerlink" href="#desafio-3-espacos-de-entrada-de-alta-dimensionalidade" title="Permanent link">&para;</a></h3>
+<p>Em sistemas tradicionais, uma fronteira de decisão é explícita no código (<code>age &gt;= 18 &amp;&amp; income &gt;= 50000</code>). Em sistemas de IA, um email de spam é transformado em um vetor de centenas de atributos — não há como visualizar ou testar "o valor-limite" de um espaço com 768 dimensões, e uma mudança mínima na entrada (trocar "!!!" por "..") pode cruzar a fronteira de decisão sem aviso.</p>
+<p><strong>Mitigação — testes adversariais (<em>adversarial testing</em>)</strong>: em vez de buscar fronteiras manualmente, usam-se algoritmos que encontram automaticamente as entradas mais propensas a "quebrar" o modelo — a famosa perturbação imperceptível que transforma a classificação de um panda (57,7% de confiança) em gibão (99,3%) é um exemplo clássico da literatura.</p>
+<div class="admonition example">
+<p class="admonition-title">Teste de robustez e invariância (Python)</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_invariancia_atributo_irrelevante</span><span class="p">():</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="n">cliente</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"nome"</span><span class="p">:</span> <span class="s2">"João"</span><span class="p">,</span> <span class="s2">"idade"</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="s2">"renda"</span><span class="p">:</span> <span class="mi">8000</span><span class="p">,</span> <span class="s2">"score"</span><span class="p">:</span> <span class="mi">700</span><span class="p">}</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">p_original</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">cliente</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">for</span> <span class="n">nome</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Maria"</span><span class="p">,</span> <span class="s2">"Ana"</span><span class="p">,</span> <span class="s2">"José"</span><span class="p">,</span> <span class="s2">"Francisca"</span><span class="p">]:</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        <span class="n">variante</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">cliente</span><span class="p">,</span> <span class="s2">"nome"</span><span class="p">:</span> <span class="n">nome</span><span class="p">}</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">variante</span><span class="p">)</span> <span class="o">-</span> <span class="n">p_original</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.01</span>
+</code></pre></div>
+Trocar apenas o nome do cliente não deveria alterar a predição do modelo de crédito — um teste de invariância a um atributo que não deveria ser relevante.</p>
+</div>
+<p>Vantagens: encontra casos que humanos jamais pensariam, automatizável em escala, matematicamente rigoroso, expõe vulnerabilidades reais. Limitações: pode ser computacionalmente caro, nem sempre transfere para o mundo real, e exige acesso ao modelo (<em>white-box</em>) ou um número alto de consultas (<em>black-box</em>).</p>
+<h3 id="desafio-4-comportamento-nao-deterministico">Desafio 4 — Comportamento não determinístico<a class="headerlink" href="#desafio-4-comportamento-nao-deterministico" title="Permanent link">&para;</a></h3>
+<p>Modelos com <em>temperature</em> (como LLMs) produzem saídas diferentes para o mesmo <em>prompt</em>; mesmo output pode ter sido alcançado por razões internas completamente diferentes. No exemplo do material, três modelos aprovam o mesmo crédito, mas um foca na profissão, outro na idade, e outro em uma correlação espúria com o nome do cliente — como testar se o sistema decidiu pelas razões "certas"?</p>
+<p><strong>Mitigação — testes estatísticos</strong>: em vez de comparar <code>output == expected</code>, testa-se se o <strong>comportamento estatístico</strong> do sistema está dentro do esperado, rodando múltiplas execuções.</p>
+<div class="admonition example">
+<p class="admonition-title">Teste de consistência semântica de um resumo gerado por LLM</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_content_consistency</span><span class="p">():</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">summaries</span> <span class="o">=</span> <span class="p">[</span><span class="n">llm</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="n">similarities</span> <span class="o">=</span> <span class="n">calculate_pairwise_similarity</span><span class="p">(</span><span class="n">summaries</span><span class="p">)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">similarities</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.75</span>  <span class="c1"># similares, mas não idênticos</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">similarities</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.15</span>   <span class="c1"># baixa variabilidade</span>
+</code></pre></div>
+</div>
+<p>Vantagens: funciona com sistemas não-determinísticos, detecta degradação sutil de desempenho, quantifica incerteza, compatível com <em>thresholds</em> em CI/CD. Limitações: mais lento (requer múltiplas execuções), exige definir métricas apropriadas, e os <em>thresholds</em> escolhidos podem ser arbitrários.</p>
+<h2 id="ia-para-testes">IA para testes<a class="headerlink" href="#ia-para-testes" title="Permanent link">&para;</a></h2>
+<p>Esta aula inverte a perspectiva da anterior: em vez de testar sistemas de IA, discute como a IA (sobretudo LLMs) pode ser usada <strong>como ferramenta de teste</strong> — e onde isso falha.</p>
+<h3 id="o-problema-central-llms-reproduzem-o-codigo-inclusive-seus-erros">O problema central: LLMs reproduzem o código, inclusive seus erros<a class="headerlink" href="#o-problema-central-llms-reproduzem-o-codigo-inclusive-seus-erros" title="Permanent link">&para;</a></h3>
+<p>Quando um LLM gera testes a partir apenas do código-fonte (sem mais contexto), ele tende a reproduzir o comportamento implementado, não o comportamento especificado: as classes e limites testados são os que o código implementa, e os resultados esperados são os que o código produz — não os que deveria produzir. Se o código tiver um bug, o LLM tende a "validar" esse bug como comportamento correto.</p>
+<div class="admonition example">
+<p class="admonition-title">Um LLM gerando uma asserção incorreta de limite</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">situacao_aluno</span><span class="p">(</span><span class="n">media</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="k">if</span> <span class="n">media</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">media</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Média inválida"</span><span class="p">)</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="k">if</span> <span class="n">media</span> <span class="o">&gt;</span> <span class="mf">7.0</span><span class="p">:</span> <span class="k">return</span> <span class="s2">"aprovado"</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="k">if</span> <span class="n">media</span> <span class="o">&gt;=</span> <span class="mf">3.0</span><span class="p">:</span> <span class="k">return</span> <span class="s2">"final"</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="k">return</span> <span class="s2">"reprovado"</span>
+</code></pre></div>
+Teste gerado por um LLM (errado): <code>assert situacao_aluno(3.0) == "reprovado"</code> — mas, pela regra do código, 3.0 cai em "final". É justamente o tipo de erro de valor-limite que esta disciplina busca ensinar a evitar.</p>
+<p>Referência citada: Yuan et al., "Evaluating and Improving ChatGPT for Unit Test Generation", FSE 2024.</p>
+</div>
+<p>Fornecer a especificação via <em>docstring</em> ajuda parcialmente — mas persiste um limite estrutural: <strong>LLMs alucinam</strong>, podendo inventar regras que a especificação não contém ou esquecer limites implícitos.</p>
+<h3 id="alem-dos-llms-geracao-baseada-em-busca">Além dos LLMs: geração baseada em busca<a class="headerlink" href="#alem-dos-llms-geracao-baseada-em-busca" title="Permanent link">&para;</a></h3>
+<p>Abordagens alternativas ou complementares aos LLMs: <strong>geração baseada em busca</strong> (algoritmos genéticos evoluem testes para maximizar cobertura — ferramentas <strong>Evosuite</strong>, Java, e <strong>Pynguin</strong>, Python) e <strong>abordagens híbridas</strong>, como o <strong>CodaMosa</strong>, que chama o Pynguin e recorre a um LLM quando a busca estagna na cobertura. Desafio comum: baixa legibilidade dos testes, e ainda refletem o comportamento atual do código (um "oráculo de regressão", não um oráculo de correção).</p>
+<div class="admonition quote">
+<p class="admonition-title">Cobertura não é garantia de qualidade</p>
+<p>"We found that there is a low to moderate correlation between coverage and effectiveness when the number of test cases in the suite is controlled for... coverage, while useful for identifying under-tested parts of a program, should not be used as a quality target because it is not a good indicator of test suite effectiveness." — Inozemtseva and Holmes, "Coverage Is Not Strongly Correlated with Test Suite Effectiveness", ICSE 2014.</p>
+</div>
+<h3 id="avaliando-testes-gerados-por-ia-mutacao-como-juiz">Avaliando testes gerados por IA: mutação como juiz<a class="headerlink" href="#avaliando-testes-gerados-por-ia-mutacao-como-juiz" title="Permanent link">&para;</a></h3>
+<p>Independentemente de quem gerou os testes (humano ou IA), o <strong>teste de mutação</strong> (já apresentado em <a href="#teste-de-mutacao">Teste de mutação</a>) serve como critério objetivo de avaliação — "testes de mutação podem atuar como juízes". Permite expor cobertura inflada (100% de cobertura de linhas com <em>mutation score</em> baixo), expor testes sem <em>assert</em> efetivo, e guiar a geração de novos testes a partir do relatório de mutação.</p>
+<p>Pesquisa recente conecta IA e mutação de duas formas: arquiteturas multiagente, onde um agente "revisor" corrige o que um agente "gerador" produziu (ex.: <em>TestAgent</em>, Shang et al., FSE 2026, usando um grafo de conhecimento de código para reduzir alucinações e erros de compilação), e mutantes "semânticos" gerados com apoio de IA — não apenas trocas sintáticas de operador, mas falhas plausíveis de domínio.</p>
+<div class="admonition example">
+<p class="admonition-title">Mutante de domínio, gerado com apoio do Claude.ai</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Original</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">pode_ver_perfil</span><span class="p">(</span><span class="n">visitante</span><span class="p">,</span> <span class="n">dono</span><span class="p">):</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="k">if</span> <span class="n">visitante</span> <span class="ow">in</span> <span class="n">dono</span><span class="o">.</span><span class="n">bloqueados</span><span class="p">:</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>        <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="k">if</span> <span class="n">dono</span><span class="o">.</span><span class="n">perfil_privado</span> <span class="ow">and</span> <span class="n">visitante</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dono</span><span class="o">.</span><span class="n">amigos</span><span class="p">:</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>        <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="c1"># Mutante — falha plausível de domínio, não mera troca de operador</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">pode_ver_perfil</span><span class="p">(</span><span class="n">visitante</span><span class="p">,</span> <span class="n">dono</span><span class="p">):</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>    <span class="k">if</span> <span class="n">visitante</span> <span class="ow">in</span> <span class="n">dono</span><span class="o">.</span><span class="n">bloqueados</span> <span class="ow">and</span> <span class="n">visitante</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dono</span><span class="o">.</span><span class="n">amigos</span><span class="p">:</span>  <span class="c1"># MUTANT</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>        <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>    <span class="k">if</span> <span class="n">dono</span><span class="o">.</span><span class="n">perfil_privado</span> <span class="ow">and</span> <span class="n">visitante</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dono</span><span class="o">.</span><span class="n">amigos</span><span class="p">:</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>        <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+O mutante introduz uma falha sutil: um visitante bloqueado que também seja "amigo" passaria a conseguir ver o perfil, quebrando a regra de bloqueio — bem mais próximo de um bug real do que uma simples troca de <code>&lt;</code> por <code>&gt;</code>.</p>
+<p>Referência citada: Foster et al., "Mutation-Guided LLM-based Test Generation at Meta", FSE 2025.</p>
+</div>
+<h3 id="deteccao-de-testes-flaky-sem-reexecucao">Detecção de testes flaky sem reexecução<a class="headerlink" href="#deteccao-de-testes-flaky-sem-reexecucao" title="Permanent link">&para;</a></h3>
+<p>Retomando o tema de <a href="#testes-flaky">testes flaky</a>: em vez da detecção clássica por reexecução repetida (custosa), estudos usam o <strong>vocabulário textual dos testes</strong> (análise estática) para prever flakiness com classificadores de <em>machine learning</em> como Random Forest e KNN (Verdecchia et al., "Know Your Neighbor: Fast Static Prediction of Test Flakiness", IEEE Access 2021).</p>
+<h3 id="ia-aplicada-ao-fuzzing">IA aplicada ao fuzzing<a class="headerlink" href="#ia-aplicada-ao-fuzzing" title="Permanent link">&para;</a></h3>
+<p>Retomando <a href="#fuzzing">fuzzing</a>: o ponto fraco do fuzzing clássico é gerar entradas <strong>estruturadas</strong> que passem pelo parser do sistema (um JSON ou SQL válidos). LLMs ajudam criando entradas plausíveis que conseguem "ir mais fundo" no sistema testado — ferramenta citada: <strong><a href="https://github.com/fuzz4all/fuzz4all">Fuzz4All</a></strong>, "Universal Fuzzing with Large Language Models". O desafio é performance/custo: um fuzzer clássico gera milhares de entradas por segundo, enquanto cada chamada a um LLM leva segundos.</p>
+<div class="admonition tip">
+<p class="admonition-title">Leitura complementar destacada pela disciplina</p>
+<p>O livro <strong><a href="https://mlip-cmu.github.io/book/">mlip-cmu.github.io/book</a></strong> (Machine Learning in Production, Carnegie Mellon University) é indicado como referência complementar para os temas de IA aplicada à engenharia de software e ao teste de sistemas de/com IA cobertos nesta e na aula anterior.</p>
+</div>
+<h3 id="em-resumo">Em resumo<a class="headerlink" href="#em-resumo" title="Permanent link">&para;</a></h3>
+<ol>
+<li>A IA é ótima para gerar entradas e escrever testes — rápida, legível, incansável.</li>
+<li>A IA não sabe o que o sistema <em>deveria</em> fazer — sem especificação, ela fotografa o código, bugs incluídos.</li>
+<li>Os fundamentos clássicos continuam sendo os juízes: valor-limite para escolher os casos, mutação para medir a força dos testes, especificação para definir o que é correto.</li>
+<li>Use a IA, mas verifique: o teste compila, roda, verifica algo, e verifica a coisa certa.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../data-warehousing/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: DATA WAREHOUSING">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                DATA WAREHOUSING
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../redes-neurais/" class="md-footer__link md-footer__link--next" aria-label="Próximo: REDES NEURAIS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                REDES NEURAIS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>

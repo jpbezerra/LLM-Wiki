@@ -1,0 +1,4037 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Base de conhecimento pessoal — faculdade e estudos">
+      
+      
+        <meta name="author" content="João Pedro Bezerra">
+      
+      
+      
+        <link rel="prev" href="../engenharia-de-requisitos/">
+      
+      
+        <link rel="next" href="../topicos-avancados-em-si-3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>INFORMÁTICA E SOCIEDADE - LLM Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#informatica-e-sociedade" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="LLM Wiki" class="md-header__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLM Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              INFORMÁTICA E SOCIEDADE
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../estudos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Estudos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Faculdade
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LLM Wiki" class="md-nav__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLM Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estudos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estudos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/numeros-complexos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NÚMEROS COMPLEXOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/agentes-de-ia/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTES DE IA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AGENTES DE IA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/harness-e-pi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HARNESS E PI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/otimizacao-tokens-roteamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE TOKENS E ROTEAMENTO DE MODELOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/fine-tuning-agentico-meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FINE-TUNING AGÊNTICO: A ABORDAGEM DA META
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/jev-modelos-decisao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JEV: MODELOS DE DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/computacao-quantica-ibm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - SISTEMAS ÚNICOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1-qiskit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - IMPLEMENTAÇÃO EM QISKIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/otimizacao-de-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/bend2-tipos-dependentes-provas-formais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faculdade
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Faculdade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 1
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/calculo-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CÁLCULO 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/matematica-discreta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATEMÁTICA DISCRETA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/algebra-vetorial-linear-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 2
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA E PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/assuncoes-da-regressao-linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assunções da regressão linear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/fisica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FÍSICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/logica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LÓGICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SISTEMAS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 3
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/arquitetura-de-computadores-e-sistemas-operacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepção de Artefatos Digitais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/grupo-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grupo 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/desenvolvimento-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DESENVOLVIMENTO DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/estruturas-de-dados-orientadas-a-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTRUTURAS DE DADOS ORIENTADAS À OBJETOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 4
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/banco-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BANCO DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/compiladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPILADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/informatica-teorica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA TEÓRICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/integracao-e-evolucao-de-sistemas-de-informacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 5
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/projeto-aprendizagem-de-maquina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Aprendizagem de Máquina
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3_2" id="__nav_3_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projeto Packet Tracer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 - Design Físico e Topologia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e2-design-de-enderecamento-vlsm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2 - Design de Endereçamento VLSM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e3-design-de-segmentacao-vlans-e-dhcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E3 - Design de Segmentação (VLANs e DHCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E4 - Roteamento Inter-VLAN e Conectividade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e5-apresentacao-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E5 - Apresentação Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/referencias-bibliograficas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências Bibliográficas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/untitled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untitled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/metodologia-e-expressao-tecnico-cientifica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    METODOLOGIA E EXPRESSÃO TÉCNICO-CIENTÍFICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/paradigmas-de-linguagens-computacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PARADIGMAS DE LINGUAGENS COMPUTACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 6
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../empreendimentos-em-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EMPREENDIMENTOS EM INFORMÁTICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engenharia-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENGENHARIA DE REQUISITOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA E SOCIEDADE
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA E SOCIEDADE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral-da-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão geral da disciplina
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#competencias-cha-conhecimentos-habilidades-e-atitudes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Competências CHA: Conhecimentos, Habilidades e Atitudes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-mercado-de-trabalho-em-ti-na-era-da-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O mercado de trabalho em TI na era da IA
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O mercado de trabalho em TI na era da IA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#um-mercado-sob-pressao-mas-com-demanda-estrutural" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Um mercado sob pressão, mas com demanda estrutural
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drivers-que-explicam-essa-mudanca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drivers que explicam essa mudança
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quais-competencias-o-mercado-mais-valoriza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quais competências o mercado mais valoriza
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformacao-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformação digital
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformação digital">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-e-aplicacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos e aplicações
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beneficios-e-etapas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefícios e etapas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-modelos-e-o-papel-do-profissional-de-computacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados, modelos e o papel do profissional de computação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados, modelos e o papel do profissional de computação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-poder-dos-dados-da-descricao-a-prescricao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O poder dos dados: da descrição à prescrição
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos-como-abstracoes-do-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelos como abstrações do mundo real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entender-o-problema-antes-de-desenhar-a-solucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entender o problema antes de desenhar a solução
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformacao-digital-segundo-a-fia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformação digital, segundo a FIA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principios-da-educacao-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Princípios da Educação Online
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topicos-avancados-em-si-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TÓPICOS AVANÇADOS EM SI 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-7/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 7
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 7
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-7/analise-e-especificacao-avancada-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-7/data-warehousing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DATA WAREHOUSING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-7/fundamentos-de-testes-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FUNDAMENTOS DE TESTES DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-7/redes-neurais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDES NEURAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral-da-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão geral da disciplina
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#competencias-cha-conhecimentos-habilidades-e-atitudes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Competências CHA: Conhecimentos, Habilidades e Atitudes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-mercado-de-trabalho-em-ti-na-era-da-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O mercado de trabalho em TI na era da IA
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O mercado de trabalho em TI na era da IA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#um-mercado-sob-pressao-mas-com-demanda-estrutural" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Um mercado sob pressão, mas com demanda estrutural
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drivers-que-explicam-essa-mudanca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drivers que explicam essa mudança
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quais-competencias-o-mercado-mais-valoriza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quais competências o mercado mais valoriza
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformacao-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformação digital
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformação digital">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-e-aplicacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos e aplicações
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beneficios-e-etapas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefícios e etapas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-modelos-e-o-papel-do-profissional-de-computacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados, modelos e o papel do profissional de computação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados, modelos e o papel do profissional de computação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-poder-dos-dados-da-descricao-a-prescricao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O poder dos dados: da descrição à prescrição
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos-como-abstracoes-do-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelos como abstrações do mundo real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entender-o-problema-antes-de-desenhar-a-solucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entender o problema antes de desenhar a solução
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformacao-digital-segundo-a-fia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformação digital, segundo a FIA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principios-da-educacao-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Princípios da Educação Online
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/jpbezerra/llm-wiki/edit/main/docs/faculdade/periodo-6/informatica-e-sociedade.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="informatica-e-sociedade">INFORMÁTICA E SOCIEDADE<a class="headerlink" href="#informatica-e-sociedade" title="Permanent link">&para;</a></h1>
+<hr />
+<p>A disciplina (CIN0149, professora Carina Frota Alves) discute o papel da computação na sociedade contemporânea: como a transformação digital muda o trabalho e as organizações, quais competências o mercado de TI exige na era da IA, e como construir sistemas que resolvam o problema certo, não apenas um problema qualquer. A metodologia é baseada em <em>Problem Based Learning</em> (PBL), aprendizagem colaborativa e discussões em sala, com dois projetos em equipe ao longo do semestre.</p>
+<h2 id="visao-geral-da-disciplina">Visão geral da disciplina<a class="headerlink" href="#visao-geral-da-disciplina" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Estrutura da disciplina</p>
+<ul>
+<li><strong>Metodologia</strong>: PBL, aprendizagem colaborativa, aulas focadas em discussão de problemas reais.</li>
+<li><strong>Competências desenvolvidas</strong>: pensamento crítico, criatividade e colaboração em equipe, uso responsável e ético de ferramentas de IA, comunicação oral e escrita.</li>
+<li><strong>Avaliação</strong>: nota = (Projeto 1 + Projeto 2) / 2, somada à participação nas discussões e à avaliação por pares (autoavaliação interna da equipe).</li>
+<li><strong>Equipes</strong>: cerca de 5 participantes, alocadas a partir de perfis de personalidade (teste MBTI/16Personalities) e do mix de perfis entre os estudantes.</li>
+</ul>
+</div>
+<p>A disciplina é conduzida em torno de dois projetos:</p>
+<ul>
+<li><strong>Projeto 1 — Seminários sobre temas de Informática e Sociedade</strong>: cada equipe escolhe um tema (ex.: IA e ética, privacidade e LGPD, cibersegurança, inclusão digital, desinformação, trabalho e automação, saúde digital), conduz pesquisa desk e pesquisa de campo (entrevistas, surveys), reflete sobre o uso de IA no próprio processo de pesquisa e apresenta um seminário. A entrega é um documento com resumo executivo + slides.</li>
+<li><strong>Projeto 2 — Plano de Projeto de Extensão</strong>: cada equipe escolhe um ODS (Objetivo de Desenvolvimento Sustentável), define um público-alvo (ONGs, escolas, órgãos públicos etc.) e propõe um plano de projeto de extensão a ser executado ao longo da jornada acadêmica no CIn, fomentando autonomia e pensamento criativo aplicado a problemas reais.</li>
+</ul>
+<h2 id="competencias-cha-conhecimentos-habilidades-e-atitudes">Competências CHA: Conhecimentos, Habilidades e Atitudes<a class="headerlink" href="#competencias-cha-conhecimentos-habilidades-e-atitudes" title="Permanent link">&para;</a></h2>
+<p><strong>Competência</strong> é o conjunto de conhecimentos, habilidades e atitudes que possibilita desempenhar uma função na busca de resultados concretos — o modelo <strong>CHA</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Dimensão</th>
+<th>Pergunta</th>
+<th>Natureza</th>
+<th>Como se desenvolve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C</strong>onhecimento</td>
+<td>Saber <em>o que</em> fazer</td>
+<td>Teórica</td>
+<td>Formação universitária, cursos, treinamentos</td>
+</tr>
+<tr>
+<td><strong>H</strong>abilidade</td>
+<td>Saber <em>como</em> fazer</td>
+<td>Prática</td>
+<td>Treinamento prático, aplicação</td>
+</tr>
+<tr>
+<td><strong>A</strong>titude</td>
+<td><em>Querer</em> fazer</td>
+<td>Comportamental, ligada à personalidade</td>
+<td>Convivência e experiências pessoais, desde a infância</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Você só é competente quando...</p>
+<p>Dominar bem o <strong>conhecimento</strong> a respeito de algo, for capaz de aplicá-lo para <strong>produzir um resultado</strong> (habilidade), e tiver a <strong>atitude</strong> necessária para realmente fazer isso acontecer. As três dimensões combinadas, em conjunto com as competências de outras pessoas, formam as <strong>competências centrais</strong> de uma organização — um sistema de conhecimentos e experiências integrados que gera vantagem competitiva.</p>
+</div>
+<p>O CHA técnico (conhecimento + habilidade) costuma ser chamado de <strong>hard skills</strong> — específicas à área, certificáveis, adquiridas por capacitação formal (ex.: idiomas, normas, ferramentas, cálculos). O "A" de atitude está mais próximo das <strong>soft skills</strong> — habilidades globais, subjetivas, não certificáveis, ligadas ao desenvolvimento pessoal (ex.: iniciativa, criatividade, comunicação, flexibilidade, foco no cliente, foco em resultados).</p>
+<p>Exemplos de soft skills e seu valor prático:</p>
+<ul>
+<li><strong>Saber ouvir</strong> → integra ideias diversas, gera estratégias mais criativas.</li>
+<li><strong>Ser aberto a feedback</strong> → melhoria contínua, alinhamento com expectativas.</li>
+<li><strong>Inteligência emocional</strong> → resolução eficaz de conflitos, fidelização.</li>
+<li><strong>Ser curioso</strong> → insights valiosos, estratégias mais assertivas.</li>
+<li><strong>Adaptabilidade</strong> → eficiência e competitividade em mercado em mudança constante.</li>
+</ul>
+<h2 id="o-mercado-de-trabalho-em-ti-na-era-da-ia">O mercado de trabalho em TI na era da IA<a class="headerlink" href="#o-mercado-de-trabalho-em-ti-na-era-da-ia" title="Permanent link">&para;</a></h2>
+<h3 id="um-mercado-sob-pressao-mas-com-demanda-estrutural">Um mercado sob pressão, mas com demanda estrutural<a class="headerlink" href="#um-mercado-sob-pressao-mas-com-demanda-estrutural" title="Permanent link">&para;</a></h3>
+<p>O mercado de tecnologia vive uma contradição: de um lado, grandes empresas (Amazon, Duolingo, entre outras) anunciaram cortes de vagas e reposicionamento de equipes para usar mais IA ("AI-first"); o medo constante de automação e layoffs já é descrito como o fim da "era de ouro" do trabalho em tech. De outro lado, o <em>Future of Jobs Report 2025</em> do World Economic Forum projeta <strong>170 milhões de empregos novos até 2030</strong>, contra 92 milhões de postos eliminados — um saldo líquido positivo, puxado por tecnologia, dados e áreas STEM/saúde.</p>
+<div class="admonition note">
+<p class="admonition-title">Débito cognitivo</p>
+<p>O uso intenso de IA generativa no desenvolvimento de software traz um risco análogo ao débito técnico, mas no plano cognitivo: perda de entendimento do código, lacunas de conhecimento e confusão de equipe quando ninguém mais domina de fato o que foi gerado pela IA. É um trade-off entre velocidade de entrega e profundidade de compreensão do sistema.</p>
+</div>
+<h3 id="drivers-que-explicam-essa-mudanca">Drivers que explicam essa mudança<a class="headerlink" href="#drivers-que-explicam-essa-mudanca" title="Permanent link">&para;</a></h3>
+<p>O mundo de referência para entender essas mudanças evoluiu de <strong>VUCA</strong> (volátil, incerto, complexo, ambíguo — modelo da Guerra Fria) para <strong>BANI</strong> (frágil, ansioso, não linear, incompreensível — modelo pós-pandemia). Entre as macrotendências que mais impulsionam a transformação dos negócios (World Economic Forum, 2024-2025), destacam-se: ampliação do acesso digital (60%), custo de vida/inflação (50%) e, entre as tendências tecnológicas especificamente, <strong>IA e processamento de informação lidera disparado com 86%</strong> de menções, seguida por robôs e sistemas autônomos (58%).</p>
+<h3 id="quais-competencias-o-mercado-mais-valoriza">Quais competências o mercado mais valoriza<a class="headerlink" href="#quais-competencias-o-mercado-mais-valoriza" title="Permanent link">&para;</a></h3>
+<p>Segundo o <em>Future of Jobs Report 2025</em> (WEF), as competências centrais (<em>core skills</em>) mais citadas pelos empregadores em 2025 são, em ordem: pensamento analítico, resiliência/flexibilidade/agilidade, liderança e influência social, pensamento criativo, automotivação e autoconsciência, letramento tecnológico, empatia e escuta ativa, curiosidade e aprendizado contínuo.</p>
+<p>Olhando para o crescimento até 2030 (<em>skills on the rise</em>), as competências com maior <strong>aumento líquido de importância</strong> são:</p>
+<ol>
+<li>IA e big data</li>
+<li>Redes e cibersegurança</li>
+<li>Letramento tecnológico</li>
+<li>Pensamento criativo</li>
+<li>Resiliência, flexibilidade e agilidade</li>
+</ol>
+<p>Já <strong>destreza manual</strong> e <strong>leitura, escrita e matemática básicas</strong> aparecem como as únicas competências em queda líquida de relevância — não porque deixem de importar, mas porque perdem peso relativo frente às competências digitais e socioemocionais.</p>
+<div class="admonition note">
+<p class="admonition-title">39% das habilidades profissionais vão mudar até 2030</p>
+<p>Segundo o World Economic Forum, a IA, a automação de tarefas cognitivas e os novos modelos de trabalho digital tornam quase 40% do conjunto de competências profissionais atual obsoleto ou insuficiente em menos de uma década — daí a importância de competências de meta-aprendizagem (aprender a aprender) além do conhecimento técnico específico.</p>
+</div>
+<p>Na prática, hoje a IA já afeta diretamente <em>como</em> o trabalho de TI é feito — geração automática de código, debugging assistido por IA, geração de testes, análise automática de logs — a ponto de, segundo relatos do próprio Google, cerca de 75% do código já ser gerado por IA em parte dos seus processos.</p>
+<h2 id="transformacao-digital">Transformação digital<a class="headerlink" href="#transformacao-digital" title="Permanent link">&para;</a></h2>
+<h3 id="o-que-e">O que é<a class="headerlink" href="#o-que-e" title="Permanent link">&para;</a></h3>
+<p>Transformação digital <strong>não é apenas adotar ferramentas</strong> — é uma mudança de mentalidade e de cultura organizacional, em que a empresa passa a operar com a lógica do mundo digital: agilidade, foco no cliente, respostas rápidas a feedback, capacidade de adaptação. A tecnologia é meio, não fim.</p>
+<p>Diferentes autores e organizações enquadram o conceito de formas complementares:</p>
+<ul>
+<li><strong>Silvio Meira</strong> separa dois componentes: a <strong>inovação digital</strong> (o passo técnico — desenvolver formas mais eficientes de operar via plataformas digitais) e a <strong>transformação estratégica</strong> (uma mudança radical na tomada de decisão do negócio, dando liberdade para que quem está na ponta, em contato com o cliente, decida).</li>
+<li><strong>Accenture</strong> define como o processo pelo qual empresas incorporam tecnologias em todo o negócio para gerar mudança fundamental — eficiência, agilidade e novo valor para funcionários, clientes e acionistas.</li>
+<li><strong>David L. Rogers</strong> propõe cinco pilares: <strong>cliente, competição, dados, inovação e valor</strong>. Pequenas melhorias incrementais já geram valor, e dados só importam quando viram informação útil para decisões estratégicas.</li>
+</ul>
+<h3 id="exemplos-e-aplicacoes">Exemplos e aplicações<a class="headerlink" href="#exemplos-e-aplicacoes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Itaú Unibanco</strong>: mudança estrutural e cultural baseada em <em>lean digital transformation</em>, com foco em cliente, colaboração, experimentação e orientação a dados.</li>
+<li><strong>Saúde</strong>: acesso a prontuários eletrônicos e bancos de dados globais.</li>
+<li><strong>Educação</strong>: plataformas de ensino personalizadas e a distância.</li>
+<li><strong>Processos seletivos</strong>: softwares de triagem automatizada de currículos.</li>
+<li><strong>Varejo</strong>: ofertas e recomendações personalizadas via dados do cliente.</li>
+</ul>
+<h3 id="beneficios-e-etapas">Benefícios e etapas<a class="headerlink" href="#beneficios-e-etapas" title="Permanent link">&para;</a></h3>
+<p>A transformação digital bem conduzida traz mais inovação, agilidade e flexibilidade; rompe silos entre áreas, com equipes multidisciplinares; reduz custos e aumenta produtividade (filosofia <em>lean</em>); e melhora a assertividade das decisões com apoio de dados.</p>
+<div class="admonition example">
+<p class="admonition-title">Etapas para conduzir uma transformação digital</p>
+<ol>
+<li>Definir valores e propósito digital.</li>
+<li>Garantir liderança comprometida, que adote as ferramentas e predisponha a equipe à mudança.</li>
+<li>Investir em capacitação contínua.</li>
+<li>Manter comunicação aberta e transparente.</li>
+<li>Incentivar a experimentação e os ajustes constantes.</li>
+<li>Adotar flexibilidade no trabalho (modelos híbridos/remotos).</li>
+<li>Garantir segurança da informação.</li>
+<li>Medir resultados com métricas claras (produtividade, eficiência, NPS, retenção).</li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">A maioria das transformações falha</p>
+<p>Um estudo do Boston Consulting Group mostra o tamanho do hiato entre aspiração e realidade: <strong>80%</strong> das empresas dizem que a transformação digital é uma necessidade estratégica e <strong>75%</strong> dos executivos afirmam que a pandemia aumentou essa necessidade — mas só <strong>30%</strong> das transformações de fato atingem seus objetivos, e apenas <strong>29%</strong> dos gestores consideram suas organizações líderes em transformação digital. As principais barreiras citadas (também por um estudo do BCG) são: falta de profissionais capacitados, ausência de planejamento e falta de investimento. Segundo o BCG, o "ingrediente secreto" do sucesso não é a tecnologia em si (só 20% dados/tecnologia + 10% algoritmos de IA), mas <strong>pessoas e processos (70%)</strong> — repensar o que é possível, migrar de "gerenciar" para "habilitar", e transformar propósito em ação.</p>
+</div>
+<p>Isso também aparece nos projetos de IA especificamente: estima-se que cerca de <strong>80% dos projetos de IA fracassam</strong>, principalmente por: (1) stakeholders não entenderem ou comunicarem bem qual problema a IA deveria resolver; (2) falta de dados adequados para treinar um modelo eficaz; (3) foco na tecnologia mais nova em vez de resolver o problema real do usuário; (4) infraestrutura inadequada para gerir dados e modelos; (5) aplicação da IA a problemas difíceis demais para a tecnologia resolver.</p>
+<h2 id="dados-modelos-e-o-papel-do-profissional-de-computacao">Dados, modelos e o papel do profissional de computação<a class="headerlink" href="#dados-modelos-e-o-papel-do-profissional-de-computacao" title="Permanent link">&para;</a></h2>
+<h3 id="o-poder-dos-dados-da-descricao-a-prescricao">O poder dos dados: da descrição à prescrição<a class="headerlink" href="#o-poder-dos-dados-da-descricao-a-prescricao" title="Permanent link">&para;</a></h3>
+<p>O <strong>Gartner Analytic Ascendancy Model</strong> descreve quatro estágios de maturidade analítica, cada um mais valioso e mais difícil que o anterior:</p>
+<table>
+<thead>
+<tr>
+<th>Estágio</th>
+<th>Pergunta</th>
+<th>Natureza</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Descritiva</strong></td>
+<td>O que aconteceu?</td>
+<td>Retrospecto (<em>hindsight</em>)</td>
+</tr>
+<tr>
+<td><strong>Diagnóstica</strong></td>
+<td>Por que aconteceu?</td>
+<td>Entendimento (<em>insight</em>)</td>
+</tr>
+<tr>
+<td><strong>Preditiva</strong></td>
+<td>O que vai acontecer?</td>
+<td>Previsão (<em>foresight</em>)</td>
+</tr>
+<tr>
+<td><strong>Prescritiva</strong></td>
+<td>O que devo fazer?</td>
+<td>Otimização</td>
+</tr>
+</tbody>
+</table>
+<p>Nos dois primeiros estágios, a análise apoia a decisão humana; nos dois últimos, ela pode chegar a automatizar a própria decisão (<em>decision support</em> → <em>decision automation</em>). Usar dados em projetos de software passa por três etapas: perguntar as questões certas e explorar os dados, modelar os dados com algoritmos apropriados, e comunicar/visualizar os resultados com os stakeholders — sempre entendendo o <strong>contexto</strong> em que os dados estão inseridos, porque dados fora de contexto induzem a conclusões erradas.</p>
+<h3 id="modelos-como-abstracoes-do-mundo-real">Modelos como abstrações do mundo real<a class="headerlink" href="#modelos-como-abstracoes-do-mundo-real" title="Permanent link">&para;</a></h3>
+<p><strong>Modelos</strong> são representações simplificadas e abstratas de um mundo real complexo (um diagrama de classes, um conjunto de regras de negócio, um esquema de banco de dados). Antes de minerar datasets e implementar sistemas complexos, é fundamental <strong>entender o problema</strong> — princípio resumido no acrônimo <strong>KISS</strong> (<em>Keep It Simple, Stupid</em>).</p>
+<h3 id="entender-o-problema-antes-de-desenhar-a-solucao">Entender o problema antes de desenhar a solução<a class="headerlink" href="#entender-o-problema-antes-de-desenhar-a-solucao" title="Permanent link">&para;</a></h3>
+<p>Esta é talvez a lição central da disciplina: <strong>o problema mais óbvio nem sempre é o problema correto a ser resolvido</strong>, um mesmo problema pode ter diversas soluções igualmente corretas (mas com valores diferentes para os stakeholders), e um problema é percebido de formas diferentes por pessoas diferentes — entender cada uma dessas percepções é condição para resolvê-lo de forma adequada.</p>
+<div class="admonition example">
+<p class="admonition-title">\"Se eu tivesse perguntado às pessoas o que elas queriam, elas teriam dito cavalos mais rápidos\" — Henry Ford</p>
+<p>O exemplo ilustra por que entender a <strong>essência do problema</strong> (a necessidade de deslocamento mais rápido) é mais útil do que aceitar literalmente a solução que o próprio usuário propõe (um cavalo mais rápido).</p>
+</div>
+<p>O papel do analista/engenheiro de requisitos é atuar como <strong>"tradutor"</strong>: entender as necessidades e desejos dos stakeholders e traduzi-los em requisitos — que devem descrever o <strong>problema</strong>, não antecipar a solução — garantindo que a visão do cliente e dos usuários seja compartilhada com toda a equipe de desenvolvimento. Um exemplo clássico de interpretação equivocada do problema do usuário é o <strong>Juicero</strong>, máquina de US$ 400 para extrair suco de sachês que acabou sendo substituída, na prática, pelo simples gesto de apertar o sachê com a mão.</p>
+<p>A abordagem recomendada segue três movimentos:</p>
+<ol>
+<li><strong>Focar primeiro no problema</strong>, entendendo-o profundamente sob várias perspectivas (<strong>viewpoints</strong>) antes de cogitar soluções tecnológicas ou não-tecnológicas — sistemas de software coexistem em um ambiente complexo que envolve aspectos sociais, políticos, éticos e econômicos.</li>
+<li><strong>Descoberta</strong>: desapegar-se de pressupostos e estar aberto a novos pontos de vista sobre o problema, percebendo o contexto sob diferentes perspectivas (focar só no problema, sem olhar o contexto ao redor, pode levar a perder a solução mais simples).</li>
+<li>
+<p>Usar ferramentas de pensamento sistêmico, como o <strong>modelo do iceberg</strong>, para ir além do evento superficial e entender padrões, estruturas subjacentes e modelos mentais:</p>
+<table>
+<thead>
+<tr>
+<th>Camada</th>
+<th>Pergunta</th>
+<th>Postura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eventos</td>
+<td>O que aconteceu?</td>
+<td>Reagir</td>
+</tr>
+<tr>
+<td>Padrões/tendências</td>
+<td>O que mudou ao longo do tempo?</td>
+<td>Antecipar</td>
+</tr>
+<tr>
+<td>Estruturas subjacentes</td>
+<td>O que influenciou os padrões? Quais as relações entre as partes?</td>
+<td>Projetar</td>
+</tr>
+<tr>
+<td>Modelos mentais</td>
+<td>Quais crenças e valores sustentam o sistema?</td>
+<td>Transformar</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="transformacao-digital-segundo-a-fia">Transformação digital, segundo a FIA<a class="headerlink" href="#transformacao-digital-segundo-a-fia" title="Permanent link">&para;</a></h2>
+<p>Como complemento, o artigo <a href="https://fia.com.br/blog/transformacao-digital/">Transformação Digital</a> (FIA Business School) reforça essa visão de que transformação digital é, antes de tudo, uma <strong>mudança cultural</strong> — não a simples adoção de ferramentas. Destaca o caso do <strong>Itaú Unibanco</strong> como exemplo nacional de transformação baseada em foco no cliente, colaboração, experimentação e dados, e lista etapas práticas muito próximas às discutidas em aula: definir propósito, ter liderança comprometida, capacitar continuamente, manter comunicação aberta, experimentar, adotar flexibilidade (trabalho híbrido/remoto), garantir segurança da informação e medir resultados com métricas claras. O artigo também cita o estudo do Boston Consulting Group segundo o qual cerca de 70% das empresas não conseguem concluir sua transformação digital com sucesso — alinhado ao dado de 30% de sucesso visto em aula —, atribuindo o fracasso principalmente à falta de profissionais capacitados, de planejamento e de investimento.</p>
+<h2 id="principios-da-educacao-online">Princípios da Educação Online<a class="headerlink" href="#principios-da-educacao-online" title="Permanent link">&para;</a></h2>
+<p>A partir do trabalho do professor Mariano Pimentel (<a href="http://horizontes.sbc.org.br/index.php/2020/05/principios-educacao-online/">Princípios da Educação Online</a>, SBC Horizontes), a disciplina também discute como ensinar e aprender de forma online — tema relevante tanto para quem vai atuar em EdTechs quanto para a própria forma como a disciplina é conduzida.</p>
+<p>Dois conceitos de partida: <strong>Educação a Distância (EAD)</strong> é a modalidade educacional alternativa ao ensino presencial; <strong>Educação Online (EOL)</strong> é a abordagem didático-pedagógica que pode (ou não) ser praticada dentro da EAD, baseada em interação, colaboração e autoria — em oposição ao modelo <strong>massivo-instrucionista</strong>, no qual o computador funciona como "máquina de ensinar" e o aluno estuda sozinho, modelo criticado pelos autores por gerar altas taxas de evasão.</p>
+<p>Os oito princípios da educação online:</p>
+<ol>
+<li><strong>Conhecimento como "obra aberta"</strong> (em vez de "mensagem fechada") — o saber é construído socialmente, em construção sem fim, que convida à ressignificação, interferência, completação, cocriação e autoria, em vez de ser apresentado como algo acabado, irretocável, que precisa apenas ser memorizado e repetido.</li>
+<li><strong>Curadoria de conteúdos + sínteses e roteiros de estudo</strong> (em vez da produção de conteúdos próprios para EAD) — o professor busca, filtra (curadoria) e organiza conteúdos já disponíveis na web, elaborando sínteses e roteiros de estudo, podendo incorporar produções dos próprios alunos.</li>
+<li><strong>Ambiências computacionais diversas</strong> — o uso não se limita ao Ambiente Virtual de Aprendizagem (AVA); pode incluir fontes de informação (e-books, Wikipedia, sites), sistemas de autoria (editores de imagem/vídeo/som, mapas interativos) e mídias sociais (YouTube, Instagram, blogs), compondo "aulas híbridas".</li>
+<li><strong>Aprendizagem em rede, colaborativa</strong> (em vez de isolada) — os alunos constroem conhecimento em grupo, com mediação do professor; o computador serve sobretudo para interação social.</li>
+<li><strong>Conversação entre todos, em interatividade</strong> (em vez de apresentação de conteúdos) — a interação deve ser planejada, síncrona ou assíncrona, com ferramentas como videoconferência, fóruns, chats e grupos de mensagens.</li>
+<li><strong>Atividades autorais inspiradas nas práticas da cibercultura</strong> (em vez de "estudo dirigido") — os alunos criam, aplicam e transformam conhecimentos, promovendo multiletramentos, em vez de responder listas de exercícios de fixação.</li>
+<li><strong>Mediação docente online para colaboração</strong> (em vez de "tutoria reativa") — o professor atua como dinamizador do grupo, com mediação compartilhada e atenção às emoções presentes nas conversas, substituindo os plantões curtos de tutoria reativa (que atendem centenas de alunos apenas quando provocados) por uma presença ativa e contínua.</li>
+<li><strong>Avaliação formativa e colaborativa, baseada em competências</strong> (em vez de apenas exames presenciais) — a avaliação é contínua, combina autoavaliação, avaliação pelo professor e avaliação pelos colegas (avaliação 360º), e considera competências (conhecimentos, habilidades e atitudes), não só acertos e erros em prova.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Principais recomendações dos autores</p>
+<ul>
+<li>Evitar práticas instrucionistas-massivas, que levam a altas taxas de evasão em cursos massivos online.</li>
+<li>Não restringir as aulas ao AVA.</li>
+<li>Promover conversação regular entre professor e alunos, e entre os próprios alunos.</li>
+<li>Substituir a "tutoria reativa" por mediação ativa e contínua.</li>
+<li>Planejar atividades criativas, não apenas de fixação.</li>
+<li>Garantir políticas de inclusão digital, já que o acesso à internet é condição para a participação.</li>
+<li>Investir na formação docente para a atuação online.</li>
+<li>Manter uma visão crítica sobre as tecnologias: "nem tudo é potência, nem tudo é adequado".</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../engenharia-de-requisitos/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: ENGENHARIA DE REQUISITOS">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                ENGENHARIA DE REQUISITOS
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../topicos-avancados-em-si-3/" class="md-footer__link md-footer__link--next" aria-label="Próximo: TÓPICOS AVANÇADOS EM SI 3">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                TÓPICOS AVANÇADOS EM SI 3
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>
