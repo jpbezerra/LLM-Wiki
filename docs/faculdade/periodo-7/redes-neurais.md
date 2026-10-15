@@ -2,7 +2,7 @@
 
 ---
 
-Disciplina **Redes Neurais**, do Centro de Informática da UFPE, ministrada pelo **Prof. Germano Crispim Vasconcelos** (gcv@cin.ufpe.br, ramal 2126-8430 r. 4310). Parte do material é datada (©2006) e revisada ao longo dos anos; outra parte é mais recente, incluindo material complementar enviado por e-mail aos alunos. Esta página cobre os **Conteúdos 1 a 14** da ementa oficial da disciplina — uma segunda parte, cobrindo os conteúdos a partir do 15 (Mini-projeto 2, KANs, Reinforcement Learning, Transformers, LLMs, Projeto de Classificação de Dados Tabulares), será adicionada posteriormente.
+Disciplina **Redes Neurais**, do Centro de Informática da UFPE, ministrada pelo **Prof. Germano Crispim Vasconcelos** (gcv@cin.ufpe.br, ramal 2126-8430 r. 4310). Parte do material é datada (©2006) e revisada ao longo dos anos; outra parte é mais recente, incluindo material complementar enviado por e-mail aos alunos. Esta página cobre a ementa completa da disciplina, do **Conteúdo 1 ao 27**: dos fundamentos (Perceptrons, MLP, Backpropagation) até CNNs, RBFs, Autoencoders, GANs, Kohonen, Redes Recorrentes/LSTM/GRU, KANs, Transformers e o projeto final de classificação de dados tabulares (Churn).
 
 !!! note "Dados da disciplina"
     - **Site**: [www.cin.ufpe.br/~gcv/web_lci/intro.html](http://www.cin.ufpe.br/~gcv/web_lci/intro.html)
@@ -38,6 +38,15 @@ Disciplina **Redes Neurais**, do Centro de Informática da UFPE, ministrada pelo
 | 12 | Apresentação do Mini-projeto 1 | sem material de aula (data de apresentação) |
 | 13 | Redes de Kohonen (SOMs) | ✅ [Kohonen](#redes-de-kohonen-self-organizing-maps) |
 | 14 | BPTT, LSTMs e GRUs | ✅ [Recorrentes/LSTM/GRU](#redes-recorrentes-lstms-e-grus) |
+| 15 | Mini-projeto 2 (LSTMs) | ✅ [Mini-projeto 2](#mini-projeto-2-previsao-do-preco-do-bitcoin-com-lstm) |
+| 16 | Kolmogorov-Arnold Networks (KANs) | ✅ [KANs](#kolmogorov-arnold-networks-kans) |
+| 17 | Aprendizagem por Reforço | ⚠️ sem slide próprio — [nota conceitual](#aprendizagem-por-reforco-reinforcement-learning) |
+| 18–19 | Transformers (1 e 2) | ✅ [Transformers](#transformers) |
+| 20–21 | Large Language Models (LLMs) | ✅ embutido em [Transformers](#transformers-decoder-only-e-llms) |
+| 22 | Transformers para dados tabulares (FT-Transformer, STab) | ✅ [Transformers tabulares](#transformers-para-dados-tabulares-ft-transformer-e-stab) |
+| 23 | PatchTST (Transformers para séries temporais) | ✅ [PatchTST](#patchtst-transformers-para-series-temporais) |
+| 24 | Pré-processamento de dados | ✅ [Pré-processamento](#pre-processamento-de-dados) |
+| 25–27 | Projeto final: Classificação de Dados Tabulares (Churn) | ✅ [Projeto Churn](#projeto-final-previsao-de-churn) |
 
 !!! warning "Sobre a numeração dos arquivos de slide"
     Os nomes dos arquivos originais não seguem necessariamente a ordem de apresentação do cronograma de aulas — por exemplo, o arquivo de Perceptrons cobre dois conteúdos (Perceptrons/Adaline **e** MLP), e o material do mini-projeto 1 cobre tanto a parte de MLP quanto a de CNN. Esta página segue a ordem pedagógica do material, agrupando por tema.
@@ -612,3 +621,233 @@ $$\Gamma_r = \sigma(W_r[c^{\langle t-1\rangle},x^{\langle t\rangle}]+b_r) \qquad
 ### Codificação de dados textuais
 
 Para alimentar RNNs/LSTMs/GRUs com texto, a opção mais simples é o **one-hot encoding**: cada palavra única do vocabulário recebe um vetor binário com um único 1 na posição correspondente.
+
+## Mini-projeto 2: previsão do preço do Bitcoin com LSTM
+
+!!! note "O que consta no material"
+    O slide desse mini-projeto é enxuto (6 páginas) e **não especifica** prazos de entrega, formato de entrega, composição de grupos, arquitetura detalhada da rede, hiperparâmetros a variar ou critérios de avaliação — apenas o objetivo, a regra de divisão dos dados e os links de referência, reproduzidos fielmente abaixo.
+
+**Objetivo**: empregar uma LSTM para prever o preço do Bitcoin no período de dezembro de 2014 a maio de 2018, usando os primeiros 80% dos registros para treino e os 20% finais para teste (dados plotados ao longo de ~1.280 dias, com o corte de treino/teste por volta do dia 1000).
+
+O material de referência indicado é o projeto de **Brian Mwangi**, repositório GitHub `predicting-bitcoin-prices-using-LSTM` (arquivo de dados `btc.csv`, notebook `btc.ipynb` em Google Colab), e o guia [*"A Beginner's Guide to Implementing Long Short-Term Memory Networks (LSTM)"*](https://heartbeat.fritz.ai/a-beginners-guide-to-implementing-long-short-term-memory-networks-lstm-eb7a2ff09a27). As bibliotecas sugeridas no trecho de código do slide são `tensorflow` (implementação da LSTM), `numpy` (álgebra matricial), `pandas` (estruturas de dados), `matplotlib` (visualização) e `scikit-learn` — `StandardScaler` (normalização dos dados).
+
+!!! tip "Fora do escopo do mini-projeto"
+    O slide também aponta, como aplicação adicional **não obrigatória**, a geração de textos com LSTMs (tarefa de previsão de sequências), com o link [*"Fundamentals of Deep Learning – Introduction to LSTM"*](https://www.analyticsvidhya.com/blog/2017/12/fundamentals-of-deep-learning-introduction-to-lstm/).
+
+## Kolmogorov-Arnold Networks (KANs)
+
+### MLP vs. KAN: a mudança de paradigma
+
+O **Teorema da Representação de Kolmogorov-Arnold** é a base teórica alternativa ao Teorema da Aproximação Universal (base dos MLPs):
+
+| | MLP | KAN |
+|---|---|---|
+| Teorema | Teorema da Aproximação Universal | Teorema da Representação de Kolmogorov-Arnold |
+| Fórmula (rasa) | $f(x) \approx \sum_{i=1}^{N} a_i \sigma(w_i \cdot x + b_i)$ | $f(x) = \sum_{q=1}^{2n+1} \Phi_q\left(\sum_{p=1}^{n}\varphi_{q,p}(x_p)\right)$ |
+| Onde fica o "aprendível" | Funções de ativação **fixas** nos nós; **pesos aprendíveis** nas arestas | Funções de ativação **aprendíveis** nas arestas; operação de **soma** nos nós |
+| Fórmula (profunda) | $\text{MLP}(x) = (W_3 \circ \sigma_2 \circ W_2 \circ \sigma_1 \circ W_1)(x)$ | $\text{KAN}(x) = (\Phi_3 \circ \Phi_2 \circ \Phi_1)(x)$ |
+
+Ou seja: uma KAN **inverte** a lógica do MLP — em vez de pesos escalares fixos combinados com uma não-linearidade fixa, cada "aresta" da rede é, ela mesma, uma função 1D aprendível (tipicamente parametrizada como uma *B-spline*), e os nós apenas somam as saídas dessas funções.
+
+### Camada KAN e empilhamento
+
+Uma camada KAN com $n_{in}$ entradas e $n_{out}$ saídas é definida como uma matriz de funções 1D $\Phi = \{\varphi_{q,p}\}$, $p=1,...,n_{in}$, $q=1,...,n_{out}$, cada $\varphi_{q,p}$ com parâmetros treináveis. No teorema de Kolmogorov-Arnold, as funções internas formam uma camada KAN com $n_{in}=n$, $n_{out}=2n+1$, e as funções externas formam uma segunda camada com $n_{in}=2n+1$, $n_{out}=1$ — a representação completa é a composição de duas camadas KAN. **Empilhar mais camadas KAN** é o que permite redes KAN profundas, exatamente como MLPs profundos empilham camadas lineares + não-linearidade.
+
+Para obter a saída de uma camada, o vetor de entrada passa pela matriz de funções:
+
+$$z^1 = \Phi^1 \cdot X, \qquad \Phi^1 = \begin{bmatrix}\varphi_{11}(\cdot) & \varphi_{12}(\cdot) & \cdots \\ \varphi_{21}(\cdot) & \varphi_{22}(\cdot) & \cdots \\ \vdots & & \ddots\end{bmatrix}$$
+
+!!! example "Interpretabilidade: regressão simbólica com KAN"
+    Um exemplo do material mostra uma KAN aprendendo a função $e^{\sin(\pi x) + y^2}$ a partir de dados, em 6 passos: (1) treino com esparsificação; (2) *pruning* da rede; (3) identificação simbólica de cada ramo (seno, quadrado, exponencial); (4) ajuste fino dos parâmetros afins; (5) fórmula simbólica obtida por precisão numérica: $1{,}0\,e^{1{,}0y^2+1{,}0\sin(3{,}14x)}$; (6) simplificação/arredondamento final: $e^{y^2+\sin(\pi x)}$ — demonstrando como uma KAN treinada pode ser lida de volta como uma expressão matemática interpretável, algo não trivial em um MLP.
+
+### Variantes de KANs
+
+| Variante | Ideia |
+|---|---|
+| **Conv-KANs** | Integra ativações spline aprendíveis em camadas convolucionais, com eficiência de parâmetros melhorada em visão computacional. |
+| **T-KANs / MT-KANs** | Para séries temporais; incorporam mecanismos recorrentes e de *gating* para dependências temporais longas, superando RNNs tradicionais em alguns casos. |
+| **GKANs / KA-GNNs** | Para dados em grafo; substituem operações fixas de GCNs por funções univariadas aprendíveis. |
+| **Wav-KANs** | Usam funções *wavelet* como base, capturando padrões de baixa e alta frequência (ex.: monitoramento ambiental, imagens hiperespectrais). |
+| **QKANs / VQKANs** | Integração com computação quântica (circuitos quânticos parametrizados). |
+| **MonoKAN** | *Splines* de Hermite cúbicas com restrição de monotonicidade — mais explicável, útil em diagnóstico médico. |
+| **CoxKAN** | Combina KAN com o Modelo de Riscos Proporcionais de Cox para análise de sobrevivência interpretável. |
+| **KAN-XGBoost / U-KAN** | Modelos híbridos — detecção de intrusão e segmentação de imagens médicas (U-Net + KAN), respectivamente. |
+
+!!! tip "Papers e vídeos citados no material"
+    - GAO et al. "TabKANet: Tabular Data Modeling with Kolmogorov-Arnold Network and Transformer" (2024), Tsinghua University.
+    - YANG, X.; WANG, X. "Kolmogorov–Arnold Transformer" (2024), National University of Singapore.
+    - JI, T.; HOU, Y.; ZHANG, D. "A Comprehensive Survey on Kolmogorov Arnold Networks (KAN)" (jan. 2025), Xi'an Jiaotong-Liverpool University.
+    - Vídeos: ["Kolmogorov Arnold Networks (KAN) Paper Explained"](https://www.youtube.com/watch?v=7zpz_AlFW2w); Luis Serrano, [explicação do paper](https://www.youtube.com/watch?v=myFtp5zMv8U) e [matemática do teorema](https://www.youtube.com/watch?v=nS2hnm0JRBk).
+
+## Aprendizagem por Reforço (Reinforcement Learning)
+
+!!! warning "Nota sobre esta seção"
+    A disciplina **não enviou slide próprio** sobre Aprendizagem por Reforço (RL) para este conteúdo. Diferentemente do restante desta página — que reproduz fielmente apenas o que está nos slides da disciplina —, o resumo abaixo é uma síntese conceitual de conhecimento geral sobre o tema, incluída a pedido do usuário ("sobre reinforcement learning, não tem slide próprio, faça como achar melhor"). Trate-a como contexto introdutório, não como conteúdo oficial da disciplina.
+
+**Aprendizagem por Reforço** é o terceiro grande paradigma de aprendizagem de máquina (ao lado do supervisionado e do não-supervisionado), em que um **agente** aprende a tomar decisões ao interagir com um **ambiente**, recebendo **recompensas** (ou punições) em resposta às suas **ações**, com o objetivo de maximizar a recompensa acumulada ao longo do tempo — e não a partir de exemplos rotulados fornecidos de antemão.
+
+Conceitos centrais:
+
+- **Estado ($s$)**: a situação atual do ambiente, do ponto de vista do agente.
+- **Ação ($a$)**: o que o agente pode fazer em cada estado.
+- **Política ($\pi$)**: a estratégia do agente — um mapeamento de estados para ações (determinística ou probabilística).
+- **Recompensa ($r$)**: o sinal de feedback numérico recebido após uma ação.
+- **Função de valor ($V$) e função Q ($Q$)**: estimam o retorno esperado a partir de um estado (ou de um par estado-ação), usadas para avaliar quão boa é uma política.
+- **Trade-off exploração vs. explotação**: o agente precisa balancear tentar ações novas (exploração) com repetir ações já conhecidas como boas (explotação).
+
+Algoritmos clássicos incluem **Q-Learning** e **SARSA** (baseados em tabelas de valor), e, na era do Deep Learning, o **Deep Q-Network (DQN)** — que usa uma rede neural para aproximar a função $Q(s,a)$ em espaços de estado muito grandes (ex.: pixels de um jogo de Atari) — além de métodos de **gradiente de política** (*policy gradient*, ex.: REINFORCE, PPO) e métodos **ator-crítico** (*actor-critic*), que combinam uma rede que aprende a política com outra que aprende a função de valor. RL teve destaque público com sistemas como o AlphaGo/AlphaZero (DeepMind) e é também a técnica usada no **RLHF** (*Reinforcement Learning from Human Feedback*), etapa de alinhamento usada no treinamento de LLMs como o ChatGPT.
+
+## Transformers
+
+### Arquitetura geral
+
+O slide da disciplina reproduz o diagrama clássico encoder-decoder do Transformer, com créditos ao vídeo *"Illustrated Guide to Transformers Neural Network"* (canal The AI Hacker):
+
+- **Encoder**: `Inputs → Input Embedding (+ codificação posicional)` → bloco repetido de `Multi-Headed Attention → Add & Norm → Feed Forward → Add & Norm`.
+- **Decoder**: `Outputs (shifted right) → Output Embedding (+ codificação posicional)` → bloco repetido de `Multi-Headed Attention (mascarada) → Add & Norm → Multi-Headed Attention (atenção encoder-decoder) → Add & Norm → Feed Forward → Add & Norm` → `Linear → Softmax → Output Probabilities`.
+
+O slide descreve textualmente o funcionamento: *"the encoder output is a continuous vector representation of the inputs"*; e o decoder opera de forma autoregressiva, realimentando suas próprias saídas até gerar um token especial de fim de sentença (`<end>`): *"Feed previous outputs into the decoder recurrently until an 'end of sentence' token is generated."* Um diagrama de arcos sobre uma frase de exemplo ("As aliens entered our planet and began to colonize earth a certain group of extraterrestrials...") ilustra como o self-attention conecta palavras semanticamente relacionadas mesmo quando distantes na sequência — diferente de uma RNN, que processa a sequência estritamente em ordem.
+
+!!! note "Sobre a fonte deste material"
+    O slide da disciplina não traz fórmulas matemáticas escritas — ele é essencialmente um roteiro visual que **delega a explicação matemática detalhada** a uma lista de vídeos externos (créditos explícitos no próprio slide). A formalização abaixo (scaled dot-product attention e multi-head attention) foi complementada a partir de um desses recursos linkados pelo slide — o vídeo ["The math behind Attention: Keys, Queries, and Values matrices"](https://www.youtube.com/watch?v=UPtG_38Oq8o), de Luis Serrano — e está equivalente à formulação do paper "Attention Is All You Need" (Vaswani et al., 2017), que não é citado diretamente nos slides.
+
+### Self-attention: a formalização matemática
+
+Cada palavra de entrada é representada por um vetor de embedding; empilhando esses vetores forma-se a matriz $X$ (nº de palavras × dimensão do embedding). Três matrizes de pesos **aprendidas no treinamento** — $W_Q$, $W_K$, $W_V$ — projetam $X$ em três papéis:
+
+$$Q = X W_Q \qquad K = X W_K \qquad V = X W_V$$
+
+A atenção é calculada por:
+
+$$\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$$
+
+- **Scores** ($QK^\top$): a entrada $(i,j)$ mede o quanto a *query* da palavra $i$ combina com a *key* da palavra $j$.
+- **Escala** ($\sqrt{d_k}$): evita que o softmax produza valores extremos (saturação), suavizando a distribuição sem mudar qual palavra recebe maior peso.
+- **Softmax**: normaliza cada linha para pesos positivos que somam 1.
+- **Saída**: combinação ponderada dos vetores *Value* de todas as palavras da sequência.
+
+!!! example "Exemplo numérico (Luis Serrano)"
+    Para a palavra "I" em uma frase curta, com $d_k=3$, os *scores* brutos eram aproximadamente $[1, 5, 3]$. Divididos por $\sqrt{3}\approx 1{,}732$: $[0{,}577;\ 2{,}887;\ 1{,}732]$. Após softmax: pesos de atenção $\approx [0{,}070;\ 0{,}707;\ 0{,}223]$ — a palavra "I" atende principalmente a "love" (peso ≈ 0,707), resultando no vetor de saída $\approx [1{,}000;\ 1{,}637;\ 0{,}070]$.
+
+**Multi-head attention**: o mesmo cálculo de $Q,K,V$ é executado em paralelo por várias "cabeças", cada uma com seus próprios pesos aprendidos, permitindo capturar diferentes tipos de relação entre palavras simultaneamente; os resultados são concatenados e passam por uma transformação linear final.
+
+### Transformers decoder-only e LLMs
+
+O material da disciplina não traz slide próprio detalhando LLMs — em vez disso, aponta uma lista de vídeos complementares sobre o tema (ver abaixo). Em linhas gerais (conhecimento complementar, na mesma linha dos recursos linkados pelo slide): os **LLMs modernos baseados em GPT** usam apenas a parte **decoder** do Transformer original (arquitetura *decoder-only*, com atenção mascarada/causal — cada token só pode atender a tokens anteriores, nunca ao futuro), treinados primeiro por **pré-treinamento auto-supervisionado** (prever o próximo token em grandes corpora de texto) e depois ajustados por **fine-tuning** supervisionado e por **RLHF** (*Reinforcement Learning from Human Feedback* — ver seção de Aprendizagem por Reforço acima) para seguir instruções de forma alinhada e segura.
+
+!!! tip "Vídeos indicados pelo slide da disciplina"
+    **Passo a passo**: ["Illustrated Guide to Transformers Neural Network"](https://www.youtube.com/watch?v=4Bdc55j80l8) (The AI Hacker) · ["Word Embedding e Word2Vec, claramente explicados"](https://www.youtube.com/watch?v=viZrOnJclY0) (Josh Starmer) · ["All The Math You Need For Attention In 15 Minutes"](https://www.youtube.com/watch?v=wU9CZIFkO6U) · ["Rede neural transformer, a fundação do ChatGPT, explicada"](https://www.youtube.com/watch?v=zxQyTK8quyY) (Josh Starmer) · ["Deep Dive into LLMs like ChatGPT"](https://www.youtube.com/watch?v=7xTGNNLPyMI) (Andrej Karpathy).
+
+    **Complementares**: ["Let's build GPT: from scratch, in code, spelled out"](https://www.youtube.com/watch?v=kCc8FmEb1nY) (Karpathy) · ["A matemática matricial por trás dos transformers"](https://www.youtube.com/watch?v=KphmOJnLAdI) (Josh Starmer) · ["The Attention Mechanism in Large Language Models"](https://www.youtube.com/watch?v=OxCpWwDCDFQ) (Luis Serrano) · ["The math behind Attention: Keys, Queries, and Values matrices"](https://www.youtube.com/watch?v=UPtG_38Oq8o) (Luis Serrano) · ["What are Transformer Models and how do they work?"](https://www.youtube.com/watch?v=qaWMOYf4ri8) (Luis Serrano).
+
+## Transformers para dados tabulares: FT-Transformer e STab
+
+A disciplina também estuda arquiteturas Transformer adaptadas a **dados tabulares** (como o problema de churn do projeto final), comparando dois modelos em um estudo de caso de um cliente de telecom (Cliente C0001).
+
+### Semelhanças entre os dois modelos
+
+Ambos tokenizam cada **coluna/atributo** da tabela separadamente (não concatenam a linha inteira em um único vetor de entrada), aplicam **self-attention multi-cabeça** entre as colunas (permitindo, por exemplo, que o modelo aprenda como `tipo_contrato` amplifica ou atenua o peso de `atrasos_6m`), injetam uma codificação posicional/espacial fixa por coluna, e em ambos os casos o material fixa o mesmo protocolo experimental (70% treino / 30% teste, *oversampling* no treino, limiar de decisão 0,30, semente aleatória fixa).
+
+### FT-Transformer (Feature Tokenizer Transformer)
+
+Cada variável (numérica ou categórica) é projetada em um vetor de dimensão fixa $d_{model}$ (projeção linear para numéricas, *embedding lookup* para categóricas), e um **token especial [CLS]**, inicializado como vetor treinável, é adicionado ao início da sequência. Após a camada de self-attention, o [CLS] agrega informação de todas as variáveis via seus pesos de atenção; uma FFN padrão é aplicada **token a token, de forma independente** (sem troca de informação entre colunas nessa etapa); ao final, **todos os tokens de variáveis são descartados** e apenas o vetor do [CLS] alimenta a MLP de classificação final.
+
+!!! example "Por que usar [CLS] em vez de concatenar tudo?"
+    O material apresenta três justificativas: **(1)** regularização estrutural — concatenar tudo dá liberdade excessiva à camada final para "decorar" combinações específicas de treino (overfitting), enquanto o [CLS] força o modelo a aprender padrões gerais de interação via atenção; **(2)** a agregação via [CLS] é **dinâmica por amostra** (os pesos de atenção mudam cliente a cliente), enquanto a concatenação + FFN usa pesos estáticos fixos após o treino; **(3)** interpretabilidade "de graça" — basta ler os pesos de atenção do [CLS] para saber exatamente qual variável pesou mais na decisão, sem precisar de técnicas pós-hoc como SHAP ou LIME.
+
+### STab (Spatial-Tabular Transformer)
+
+Não usa token [CLS]: a sequência mantém exatamente um token por atributo. Em vez da FFN padrão, usa um **Modulador Espacial de Canais** (*Spatial Channel Modulator*), que trata o conjunto de todas as variáveis como um "campo espacial" e re-escala ativamente a amplitude de cada canal de cada variável, antes de concatenar todos os tokens atualizados em um único vetor denso (*spatial flattening*) que alimenta a MLP final — nenhuma variável é descartada.
+
+A fórmula central do modulador:
+
+$$y_i = s_i(Z_{\text{todas}}) \odot H_{\text{proj}}(x_i) + x_i$$
+
+onde $H_{\text{proj}}(x_i) = W_2 \cdot \text{GELU}(W_1 x_i + b_1) + b_2$ é uma sugestão de ajuste local (MLP de 2 camadas), $s_i(Z_{\text{todas}}) = \sigma(W_s \cdot \text{Pooling}(Z_{\text{todas}}) + b_s)$ é um "controle de volume" (0 a 1) calculado a partir de um resumo global de **todas** as variáveis da linha, $\odot$ é o produto de Hadamard (elemento a elemento, não produto escalar), e a soma final com $x_i$ é uma conexão residual que preserva o dado original.
+
+!!! example "Analogia da mesa de som"
+    O FFN comum do FT-Transformer é como "músicos em cabines isoladas", cada um ajustando seu próprio equalizador sem saber o volume dos outros. O Modulador Espacial do STab é o "engenheiro de som mestre": escuta a banda inteira tocando junto e, com um fader por canal, pode subir o volume do "atraso de pagamento" e baixar variáveis secundárias, deixando o sinal de alerta de churn mais evidente para o classificador final.
+
+### Comparação de resultados
+
+No estudo de caso de churn, o **FT-Transformer** obteve o maior AUROC (0,8052) no conjunto de teste; o **STab** obteve o maior Recall (94,02%) e a maior estatística KS (0,4680) — ou seja, cada arquitetura se destacou em uma métrica diferente, sem um "vencedor" absoluto nos slides.
+
+## PatchTST: Transformers para séries temporais
+
+Baseado no paper **NIE, Y.; NGUYEN, N. H.; SINTHONG, P.; KALAGNANAM, J. "A Time Series is Worth 64 Words: Long-term Forecasting with Transformers"** (ICLR 2023, Princeton University e IBM Research), aplicado no material a um estudo de caso com a série histórica do Bitcoin (2017–2023).
+
+### Patching e independência de canais
+
+O problema que o PatchTST resolve: um Transformer clássico, processando a série ponto a ponto (dia a dia), fica excessivamente sensível ao ruído de alta frequência e tende a cair em falsos sinais (*bull traps*). A solução:
+
+- **Patching**: agrupar dias consecutivos em *patches* (ex.: 7 dias = 1 semana), convertendo cada patch em um único token via projeção linear — o número de patches é $N = \lfloor (L-P)/S \rfloor + 1$, onde $L$ é o tamanho da janela, $P$ o tamanho do patch e $S$ o *stride*. Isso reduz a complexidade da atenção de $O(L^2)$ para $O((L/P)^2)$ — no exemplo do material, ~49× mais rápido.
+- **Channel independence (CI)**: cada variável (preço, volume, indicadores) é tratada como uma série univariada isolada, processada pela mesma rede/pesos compartilhados, evitando contaminação de escala entre variáveis heterogêneas.
+
+!!! note "Atenção bidirecional no Encoder (não causal)"
+    O PatchTST usa apenas o **Encoder** do Transformer (como o BERT), não o Decoder (como o GPT) — por isso a atenção **não é mascarada**: um patch mais antigo (ex.: Semana 1) pode legitimamente atribuir peso alto a um patch mais recente (Semana 2), porque toda a janela de histórico já é conhecida de uma vez. O objetivo do encoder é construir a representação mais rica possível de todo o passado antes de prever o futuro real — diferente de um decoder causal, que nunca pode "olhar para frente".
+
+### Resultados no estudo de caso (Bitcoin, teste 2022–2023)
+
+| Modo | Métrica | Resultado |
+|---|---|---|
+| Residual (preço em USD, $P_{pred} = SMA_7 + \hat\Delta_{PatchTST}$) | RMSE | \$1.084,22 (−36,8% vs. SMA-7 pura) |
+| Residual | MAPE / R² | 2,45% / 98,84% |
+| Classificação (convicção ≥ 70% compra / ≤ 30% venda) | Acurácia direcional (POCID) | 63,48% (+7,09 p.p. vs. SMA-7) |
+
+## Pré-processamento de dados
+
+Passos de tratamento da base de dados antes da modelagem (ex.: para o projeto final de churn):
+
+- **Análise exploratória**: histogramas, *box plots* e estatísticas descritivas (mínimo, máximo, mediana, média, quartis).
+- **Dados ausentes e outliers**: identificação e tratamento.
+- **Codificação de variáveis categóricas**:
+    - **Integer encoding** — quando há ordem natural entre as categorias.
+    - **One-hot encoding** — para variáveis com poucos valores possíveis (ex.: 3 a 5 categorias).
+    - **Binary encoding** — para variáveis com muitos valores possíveis.
+- **Normalização** de variáveis numéricas.
+- **Binning** — agrupamento de valores contínuos em faixas.
+- **Análise de correlação** — entre variáveis independentes, e de cada uma com a variável dependente (alvo).
+- **Seleção e combinação de variáveis** (ex.: soma, divisão entre colunas, gerando novas variáveis agregadas).
+
+!!! tip "Recursos citados no material"
+    [Tutorial completo de ciência de dados em Python](https://www.analyticsvidhya.com/blog/2016/01/complete-tutorial-learn-data-science-python-scratch-2/) · [Entendendo distribuições populacionais via estatística](https://www.analyticsvidhya.com/blog/2014/07/statistics/) · [100 Days of ML Code](https://github.com/Avik-Jain/100-Days-Of-ML-Code) · [Histogramas e Binning (Python Data Science Handbook)](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/04.05-Histograms-and-Binnings.ipynb).
+
+## Projeto final: previsão de Churn
+
+### O problema
+
+Prever se um cliente de telecomunicações vai **abandonar (churn)** a empresa — classificação binária — usando a base pública do Kaggle [*"Customers Churned in Telecom Services"*](https://www.kaggle.com/datasets/kapturovalexander/customers-churned-in-telecom-services/data): ~7.000 registros, 19 variáveis independentes (gênero, se é idoso, se tem parceiro/dependentes, tempo como cliente, tipo de serviço de internet/telefone, tipo de contrato, método de pagamento, faturamento sem papel, etc.) e a variável alvo **Churn** (27% dos clientes da base migraram, 73% permaneceram).
+
+### Objetivo pedagógico
+
+Dar uma visão prática do uso de redes neurais na solução de um problema real, consolidar os conhecimentos teóricos da disciplina e permitir contato com ferramentas como GitHub, Keras e Scikit-learn em Python.
+
+### Modelos a investigar
+
+MLP, modelo baseado em Transformer (STab), TabPFN v2 Transformer, KAN (versão mais recente), TabKAN, Mitra (Amazon) e Gradient Boosting/XGBoost como baseline de comparação. Recomendação de ordem: começar por MLP e XGBoost, só então experimentar os modelos mais complexos (STab, TabPFNv2).
+
+### Preparação dos dados
+
+Divisão em conjuntos de **Treinamento, Validação e Teste**, estatisticamente representativos e **sem sobreposição** (nenhuma informação do teste pode influenciar normalização/ajuste feitos no treino — vazamento de dados). O particionamento é feito por classe (separando Classe 1 e Classe 2), depois cada classe é subdividida (50%/25%/25%), e os blocos finais são recombinados e aleatorizados para formar treino/validação/teste mantendo a proporção de classes.
+
+### Métricas de avaliação
+
+- **Estatística de Kolmogorov-Smirnov (KS)** — métrica **principal** do projeto.
+- MSE (erro médio quadrático) ou entropia cruzada (comparados entre si como parâmetros a variar).
+- Matriz de confusão, curva ROC, Precision, Recall, F-measure e Acurácia.
+
+!!! example "Lendo o KS Statistic"
+    O material mostra três faixas de referência: KS ≈ 0,247 → "desempenho ainda ruim"; KS ≈ 0,278 → "desempenho bom"; KS ≈ 0,302 → "desempenho muito bom".
+
+### Lições práticas repassadas pelo professor
+
+- Comece com uma rede **pequena** (1 camada, 10 unidades) — a melhor rede costuma ser a menor que resolve bem o problema (navalha de Occam).
+- Defina um número máximo de épocas alto (10.000) e use critério de parada por paciência (*patience*, *max fail* = 20).
+- Taxas de aprendizagem menores custam mais tempo, mas tendem a gerar melhores resultados.
+- Faça backup automático dos experimentos, documente o processo e registre o desempenho de forma evolutiva a cada etapa — e **não elimine variáveis** no primeiro modelo (exceto identificadores).
+- Comece o projeto com antecedência — deixar para a última semana não funciona.
+- Considere o **Optuna** para busca de hiperparâmetros (ou *grid search*, como alternativa).
+
+### Entrega
+
+Apresentação final com todos os integrantes do grupo, cobrindo a estrutura experimental e a interpretação dos resultados, com entrega de PPT e código ao final do semestre. Repositório de apoio da disciplina: [github.com/RomeroBarata/IF702-redes-neurais](https://github.com/RomeroBarata/IF702-redes-neurais).
