@@ -247,13 +247,122 @@ Satisfeitos os axiomas, existe $u$ tal que $P \succsim Q \Leftrightarrow u(P) \g
 $u[\lambda P + (1-\lambda)Q] = \lambda u(P) + (1-\lambda)u(Q)$ — ou seja, **a utilidade de uma loteria é o
 valor esperado das utilidades das consequências**, ponderado pelas probabilidades.
 
-??? example "Construção de uma função utilidade — exemplo das frutas"
-    Preferência: $Maçã \succ Pera \succ Laranja \succ Goiaba \succ Uva$. Fixando $u(Pera)=1$ e
-    $u(Goiaba)=0$: por introspecção, o decisor é indiferente entre receber uma Laranja certa e um jogo com
-    40% de chance de Pera e 60% de Goiaba — logo $v(Laranja) = 0{,}4 \cdot 1 + 0{,}6 \cdot 0 = 0{,}4$.
-    Estendendo a escala para Uva–Maçã e reconciliando por transformação linear
-    $u^*(F) = \dfrac{u(F)-u(Goiaba)}{u(Pera)-u(Goiaba)}$, chega-se à tabela final: Maçã $=9/7$, Pera $=1$,
-    Laranja $=0{,}4$, Goiaba $=0$, Uva $=-1/7$.
+??? example "Construção de uma função utilidade — exemplo das frutas (passo a passo)"
+    **A ideia geral primeiro**: ordenar preferências ("gosto mais de maçã do que de pera") é fácil, mas não
+    diz **o quanto** mais se gosta — não dá para fazer contas com um ranking. O método da **loteria de
+    referência** transforma preferências em números fazendo uma pergunta engenhosa: *"você prefere ganhar
+    este item com certeza, ou prefere apostar entre o seu item favorito e o seu item menos favorito?"* A
+    probabilidade de ganhar o item favorito que te deixaria **indiferente** entre as duas opções é, por
+    definição, a utilidade do item em questão. É basicamente perguntar "o quanto esse item vale, numa escala
+    de 0 a 1, entre o pior e o melhor cenário possíveis?".
+
+    **Dados do problema**: um decisor tem a seguinte ordem de preferência entre 5 frutas (da mais para a
+    menos desejada):
+
+    $$Maçã \succ Pera \succ Laranja \succ Goiaba \succ Uva$$
+
+    Queremos transformar esse ranking em números (utilidades) que permitam, mais tarde, calcular valores
+    esperados em situações de risco (ex.: "prefiro um saco com 50% de chance de maçã e 50% de uva, ou uma
+    laranja certa?").
+
+    ---
+
+    **Passo 1 — Escolher dois pontos de referência e fixar suas utilidades.**
+
+    Qualquer função utilidade é definida a menos de uma transformação linear (podemos escolher livremente os
+    valores dos dois extremos, como "0°C" e "100°C" são escolhas arbitrárias na escala Celsius). Para
+    começar, escolhe-se **Pera** (a mais desejável dentre as 3 frutas "do meio") como referência superior e
+    **Goiaba** como referência inferior, e arbitra-se:
+
+    $$u(Pera) = 1 \qquad u(Goiaba) = 0$$
+
+    Isso **não** significa que Pera é a fruta mais desejada de todas (Maçã é) — é só a referência superior
+    *desta primeira rodada* de perguntas. Resolveremos Maçã e Uva depois, numa segunda rodada.
+
+    **Passo 2 — Descobrir a utilidade da Laranja por meio de uma loteria imaginária.**
+
+    Pergunta-se ao decisor: *"Você prefere receber uma Laranja com certeza, ou participar de uma loteria em
+    que você tem probabilidade $\lambda$ de ganhar uma Pera e probabilidade $(1-\lambda)$ de ganhar uma
+    Goiaba?"* Varia-se $\lambda$ até o decisor ficar **indiferente** entre as duas opções:
+
+    ```mermaid
+    flowchart LR
+        Q{{"Laranja certa<br/>⟷<br/>Loteria?"}}
+        Q -.indiferente.-> L["Laranja (certa)"]
+        Q -.indiferente.-> J((Loteria))
+        J -->|"λ = 40%"| P["Pera (u=1)"]
+        J -->|"1−λ = 60%"| G["Goiaba (u=0)"]
+    ```
+
+    Suponha que, por introspecção, o decisor diga que fica indiferente quando $\lambda = 0{,}4$ (ou seja,
+    uma Laranja certa "vale" o mesmo que 40% de chance de Pera + 60% de chance de Goiaba). Como a utilidade
+    de uma loteria é a **média ponderada** das utilidades dos prêmios (propriedade de linearidade vista
+    acima), a utilidade da Laranja é exatamente esse $\lambda$:
+
+    $$u(Laranja) = \lambda \cdot u(Pera) + (1-\lambda) \cdot u(Goiaba) = 0{,}4 \times 1 + 0{,}6 \times 0 = \mathbf{0{,}4}$$
+
+    *(Note que isso só funciona porque fixamos $u(Pera)=1$ e $u(Goiaba)=0$ no Passo 1 — a conta "zera" o
+    termo da Goiaba e "isola" o $\lambda$ como a própria utilidade procurada.)*
+
+    **Passo 3 — Repetir o processo numa segunda rodada, agora para toda a escala (Uva até Maçã).**
+
+    O problema do Passo 1-2 é que ele só cobre o intervalo entre Pera e Goiaba — não diz nada sobre Maçã
+    (mais desejada que Pera) nem sobre Uva (menos desejada que Goiaba). Por isso, repete-se o mesmo
+    procedimento, mas agora usando os **extremos reais** do conjunto como referência:
+
+    $$u_{Uv,Ma}(Maçã) = 1 \qquad u_{Uv,Ma}(Uva) = 0$$
+
+    *(a notação $u_{Uv,Ma}$ só indica "nesta escala, Uva vale 0 e Maçã vale 1" — é uma escala diferente da
+    do Passo 1, com números que ainda não são diretamente comparáveis aos anteriores)*
+
+    Repetindo a pergunta da loteria para Pera e para Goiaba **nesta nova escala**, suponha que o decisor
+    responda, por introspecção:
+
+    $$u_{Uv,Ma}(Pera) = 0{,}8 \qquad u_{Uv,Ma}(Goiaba) = 0{,}1$$
+
+    (ou seja: nesta escala Uva–Maçã, uma Pera certa equivale a 80% de chance de Maçã + 20% de chance de Uva;
+    uma Goiaba certa equivale a 10% de chance de Maçã + 90% de chance de Uva)
+
+    **Passo 4 — Reconciliar as duas escalas numa única escala comum.**
+
+    Agora temos dois conjuntos de números que usam escalas diferentes — é como ter uma temperatura em
+    Celsius e outra em Fahrenheit e precisar comparar. A solução é a mesma: uma **transformação linear**
+    (multiplicar por uma constante e somar outra), pois a propriedade de "extensão" da utilidade (Lema 5)
+    garante que qualquer transformação $u^* = au + b$ (com $a>0$) representa as mesmas preferências.
+
+    Queremos reescalar a escala $u_{Uv,Ma}$ de volta para a escala original do Passo 1 (onde Pera$=1$ e
+    Goiaba$=0$). A fórmula de reescalonamento (uma regra de três disfarçada) é:
+
+    $$u^*(F) = \frac{u_{Uv,Ma}(F) - u_{Uv,Ma}(Goiaba)}{u_{Uv,Ma}(Pera) - u_{Uv,Ma}(Goiaba)} = \frac{u_{Uv,Ma}(F) - 0{,}1}{0{,}8 - 0{,}1} = \frac{u_{Uv,Ma}(F) - 0{,}1}{0{,}7}$$
+
+    O denominador $0{,}7$ é a "distância", na escala Uva–Maçã, entre os dois pontos que viram 0 e 1 na escala
+    original — dividir por ele é o que "estica" a escala de volta ao tamanho certo.
+
+    **Passo 5 — Aplicar a fórmula a cada fruta e montar a tabela final.**
+
+    | Fruta | $u_{Uv,Ma}(F)$ (escala do Passo 3) | Cálculo de $u^*(F)$ | Utilidade final |
+    |---|---|---|---|
+    | Maçã | $1{,}0$ | $(1{,}0 - 0{,}1)/0{,}7$ | $9/7 \approx 1{,}29$ |
+    | Pera | $0{,}8$ | $(0{,}8 - 0{,}1)/0{,}7$ | $1{,}00$ |
+    | Laranja | *(não precisa recalcular — já está na escala certa desde o Passo 2)* | — | $0{,}40$ |
+    | Goiaba | $0{,}1$ | $(0{,}1 - 0{,}1)/0{,}7$ | $0{,}00$ |
+    | Uva | $0{,}0$ | $(0{,}0 - 0{,}1)/0{,}7$ | $-1/7 \approx -0{,}14$ |
+
+    !!! tip "Como ler esse resultado"
+        Note que a ordem dos números bate exatamente com a ordem de preferência original
+        ($Maçã \succ Pera \succ Laranja \succ Goiaba \succ Uva$, e $1{,}29 > 1{,}00 > 0{,}40 > 0{,}00 >
+        -0{,}14$) — isso é esperado, pois a utilidade **preserva a ordem** (Lema 3). A utilidade da Uva deu
+        **negativa**: isso é normal e não representa um "dano" — é só consequência de termos fixado
+        Goiaba$=0$ no Passo 1; o zero da escala é arbitrário, só a **ordem** e as **diferenças relativas**
+        entre os valores têm significado (ex.: a "distância" de Pera a Laranja, $1{,}00-0{,}40=0{,}60$, é
+        maior que a distância de Laranja a Goiaba, $0{,}40-0{,}00=0{,}40$ — ou seja, o decisor se importa
+        relativamente mais com a diferença entre Pera e Laranja do que entre Laranja e Goiaba).
+
+    **Para que serve, na prática**: com esses números, dá para comparar alternativas arriscadas calculando
+    o valor esperado da utilidade. Por exemplo, um saco com 50% de chance de Maçã e 50% de chance de Uva tem
+    utilidade esperada $0{,}5(9/7) + 0{,}5(-1/7) = 4/7 \approx 0{,}57$ — portanto esse saco é **preferível**
+    a uma Laranja certa ($u=0{,}40$), mesmo sem saber "quanto vale" uma Maçã ou uma Uva em termos absolutos,
+    só usando os números construídos acima.
 
 ### Utilidade para dinheiro e atitude ao risco
 
