@@ -43,7 +43,11 @@ theme:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -149,3 +153,4 @@ nav:
         - FUNDAMENTOS DE TESTES DE SOFTWARE: faculdade/periodo-7/fundamentos-de-testes-de-software.md
         - REDES NEURAIS: faculdade/periodo-7/redes-neurais.md
         - "TECNOLOGIA, DIVERSIDADE, EQUIDADE E INCLUSÃO": faculdade/periodo-7/tecnologia-diversidade-equidade-e-inclusao.md
+        - SISTEMAS DE APOIO A DECISÃO: faculdade/periodo-7/sistemas-de-apoio-a-decisao.md
