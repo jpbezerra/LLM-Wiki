@@ -6,9 +6,8 @@
     Avaliação: prova + trabalho final (Projeto SAD), com bonificação eventual por participação.
 
     Esta página reúne o conteúdo apresentado em aula (handouts/slides fornecidos pelo professor) e, em
-    seção dedicada ao final, **todas as atividades propostas na disciplina, sem exceção** — cada uma com
-    seu passo a passo de resolução. Quando uma atividade foi postada no classroom sem material anexo
-    além do título, isso é informado explicitamente em vez de se inventar conteúdo.
+    seção dedicada ao final, as atividades propostas na disciplina que têm enunciado ou material associado
+    — cada uma com seu passo a passo de resolução.
 
 ## Apresentação da disciplina
 
@@ -263,36 +262,75 @@ sucesso/fracasso próprios, resolvido via *fold back* para decidir se vale a pen
 ## Atividades Resolvidas
 
 !!! danger "Sobre esta seção"
-    Esta seção cobre **todas** as atividades propostas na disciplina (conforme o classroom), sem exceção,
-    como solicitado. Para as atividades acompanhadas de enunciado/material, apresenta-se o passo a passo
-    completo de resolução. Para as atividades postadas no classroom **sem nenhum material ou descrição além
-    do título** (apenas o nome da atividade), isso é dito explicitamente — não foi inventado conteúdo.
+    Esta seção cobre as atividades propostas na disciplina que vieram acompanhadas de enunciado ou material
+    (as postagens do classroom que eram puramente administrativas, ou sem nenhuma descrição além do título,
+    foram deixadas de fora a pedido). Para cada atividade, apresenta-se o passo a passo completo de
+    resolução.
 
-### 1. Problemas não-estruturados numa organização
+### 1. Desafio I — Problema do Transporte (slides)
 
-*(postada em 25/08 — sem material/descrição além do título)*
+*(postada em 08/09, editada no mesmo dia — material: exemplo numérico ao final do handout "Parte I
+Handouts - IF983 SAD - Modelagem de Problemas.pdf", p. 20)*
 
-!!! warning "Sem material disponível"
-    O classroom registra apenas o título "Problemas não-estruturados numa organização", postado em
-    25/08/2026, sem anexos nem enunciado. Pelo contexto (logo após a aula de Arquitetura de SAD), é
-    razoável supor que se trata de um exercício de identificação, em uma organização real ou hipotética, de
-    decisões caindo na célula "não estruturada" da matriz de Gorry & Scott-Morton (vista na seção
-    [Arquitetura de um SAD](#arquitetura-de-um-sad)) — mas nenhum enunciado formal foi fornecido para
-    confirmar o escopo exato ou produzir uma resolução.
+**Enunciado**: determinar a distribuição de menor custo de um produto entre 3 fábricas (origens, com
+capacidade de produção) e 4 depósitos (destinos, com demanda), dados os custos unitários de transporte
+entre cada par origem-destino.
 
-### 2. Desafio I — Problema do Transporte (slides)
+| Fábricas \ Depósitos | Florianópolis | Rio de Janeiro | Salvador | Manaus | Produção |
+|---|---|---|---|---|---|
+| Curitiba | 1,0 | 0,8 | 3,0 | 4,5 | 470 |
+| São Paulo | 1,5 | 0,6 | 2,5 | 3,0 | 400 |
+| Aracaju | 6,0 | 5,0 | 1,2 | 2,8 | 400 |
+| **Demanda** | 350 | 300 | 300 | 120 | |
 
-*(postada em 08/09, editada no mesmo dia — sem material anexo além do título)*
+*(custos em R\$/unidade; produção e demanda em unidades)*
 
-!!! warning "Sem material disponível"
-    Apenas o título "Desafio I - Problema do Transporte (slides)" está registrado no classroom. Os slides
-    citados não foram fornecidos. A teoria de problemas de transporte está coberta na seção
-    [Modelagem e Problemas de Otimização](#problema-de-transporte-formulacao-geral) (formulação geral de
-    minimização de custo entre origens e destinos), que é a base teórica necessária para resolver este
-    desafio — mas sem o enunciado numérico específico não é possível produzir aqui a resolução do desafio em
-    si.
+**Passo 1 — Variáveis de decisão**: $x_{ij}$ = quantidade transportada da fábrica $i$ para o depósito $j$,
+$i \in \{\text{Curitiba, São Paulo, Aracaju}\}$, $j \in \{\text{Florianópolis, Rio, Salvador, Manaus}\}$.
 
-### 3. Estudo de Caso: Modelagem para Publicidade
+**Passo 2 — Função objetivo** (minimizar custo total de transporte):
+
+$$\text{minimizar } Z = \sum_i \sum_j c_{ij}\,x_{ij}$$
+
+**Passo 3 — Restrições**: oferta de cada fábrica não pode ser excedida; demanda de cada depósito deve ser
+exatamente atendida. Note que a **oferta total (470+400+400 = 1.270) é maior que a demanda total
+(350+300+300+120 = 1.070)** — há 200 unidades de capacidade produtiva ociosa, o que é permitido (restrição
+de oferta como "≤", não "=").
+
+$$
+\begin{aligned}
+\sum_j x_{ij} &\le \text{Produção}_i \quad \text{(cada fábrica)}\\
+\sum_i x_{ij} &= \text{Demanda}_j \quad \text{(cada depósito)}\\
+x_{ij} &\ge 0
+\end{aligned}
+$$
+
+**Passo 4 — Resolução** (método simplex para transporte — ou pelo método do canto noroeste seguido de
+otimização, ou diretamente por solver de PL):
+
+!!! example "Solução ótima"
+    | Rota | Quantidade | Custo unitário | Custo da rota |
+    |---|---|---|---|
+    | Curitiba → Florianópolis | 350 | 1,0 | R\$ 350,00 |
+    | São Paulo → Rio de Janeiro | 300 | 0,6 | R\$ 180,00 |
+    | São Paulo → Manaus | 20 | 3,0 | R\$ 60,00 |
+    | Aracaju → Salvador | 300 | 1,2 | R\$ 360,00 |
+    | Aracaju → Manaus | 100 | 2,8 | R\$ 280,00 |
+
+    **Custo total mínimo: R\$ 1.230,00**.
+
+    **Uso da capacidade produtiva**: Curitiba usa 350/470 (folga de 120 — maior parte de sua capacidade
+    fica ociosa, pois sua rota mais barata, Florianópolis, só tem demanda de 350); São Paulo usa 320/400;
+    Aracaju usa 400/400 (capacidade **totalmente** utilizada, pois é a única fábrica com rota barata para
+    Salvador).
+
+    **Intuição**: o algoritmo aloca primeiro as rotas de menor custo unitário disponíveis para cada
+    depósito — Curitiba→Florianópolis (1,0) e São Paulo→Rio (0,6) são as mais baratas e saturam totalmente
+    essas demandas; o restante da demanda de Manaus (120 un.) é dividido entre São Paulo (3,0, mais barato
+    que Aracaju) e Aracaju (2,8) apenas na medida necessária, já que Aracaju precisa reservar capacidade
+    para atender Salvador, sua única rota realmente vantajosa (1,2, muito abaixo dos seus outros custos).
+
+### 2. Estudo de Caso: Modelagem para Publicidade
 
 *(postada em 10/09 — material: "Exercício Modelagem Mkt.pdf")*
 
@@ -335,16 +373,30 @@ Resolvendo numericamente (maximizando $Z$ sujeito às restrições acima, com va
 
 !!! example "Solução ótima"
     $x_1 = 3$ (mínimo de TV normal), $x_2 = 2$ (mínimo de TV nobre), $x_3 = 5$ (mínimo de rádio), $x_4 = 10$
-    (máximo de revistas). Custo: $40.000(3)+75.000(2)+30.000(5)+15.000(10) = 120.000+150.000+150.000+150.000
-    = \text{R\$ }570.000 \le 800.000$ ✓. Mulheres atingidas:
-    $300.000(3)+400.000(2)+200.000(5)+100.000(10) = 900.000+800.000+1.000.000+1.000.000 = 3.700.000 \ge
-    2.000.000$ ✓. **Clientes atingidos**: $Z = 400.000(3)+900.000(2)+500.000(5)+200.000(10) = 1.200.000 +
-    1.800.000 + 2.500.000 + 2.000.000 = \mathbf{7.500.000}$.
+    (máximo de revistas).
 
-    Intuição: como TV horário nobre e rádio têm o maior "retorno por real" relativamente às suas restrições
-    de mínimo/orçamento, o modelo investe nos mínimos obrigatórios de TV e maximiza revistas (barata e com
-    boa razão clientes/custo: 200.000/15.000 ≈ 13,3 clientes por R\$), usando a folga orçamentária restante
-    em rádio.
+    **Verificação do orçamento**:
+
+    $$40.000(3) + 75.000(2) + 30.000(5) + 15.000(10) = 120.000 + 150.000 + 150.000 + 150.000 = 570.000$$
+
+    Custo total de R\$ 570.000, dentro do limite de R\$ 800.000. ✓
+
+    **Verificação de mulheres atingidas**:
+
+    $$300.000(3) + 400.000(2) + 200.000(5) + 100.000(10) = 900.000 + 800.000 + 1.000.000 + 1.000.000 = 3.700.000$$
+
+    3.700.000 mulheres atingidas, acima do mínimo de 2.000.000. ✓
+
+    **Clientes atingidos (valor da função objetivo)**:
+
+    $$Z = 400.000(3) + 900.000(2) + 500.000(5) + 200.000(10) = 1.200.000 + 1.800.000 + 2.500.000 + 2.000.000$$
+
+    $$Z = \mathbf{7.500.000 \text{ clientes}}$$
+
+    **Intuição**: como TV horário nobre e rádio têm o maior "retorno por real" relativamente às suas
+    restrições de mínimo/orçamento, o modelo investe nos mínimos obrigatórios de TV e maximiza revistas
+    (barata e com boa razão clientes/custo: 200.000/15.000 ≈ 13,3 clientes por real investido), usando a
+    folga orçamentária restante em rádio.
 
 **Outras restrições/fatores que poderiam ser acrescentados** (conforme pedido no enunciado): alcance
 duplicado (a mesma pessoa vendo o anúncio em mais de um meio); saturação de audiência (retornos
@@ -352,7 +404,7 @@ decrescentes ao aumentar veiculações no mesmo meio); sazonalidade (preços/aud
 ano); segmentação por faixa etária ou classe social; restrições de concorrência (não veicular nos mesmos
 horários que concorrentes); custo de produção de cada peça publicitária (distinto do custo de veiculação).
 
-### 4. Estudo de Caso: Problema do Planejamento Agregado em Rede (Desafio!)
+### 3. Estudo de Caso: Problema do Planejamento Agregado em Rede (Desafio!)
 
 *(postada em 10/09 — material: "Exercício Modelagem PA e Transporte.pdf")*
 
@@ -431,26 +483,7 @@ seguinte, respeitando as capacidades de armazenagem) — por isso não pode ser 
 de transporte independentes, mas sim como um único problema de PL com 180 variáveis de fluxo, resolvido de
 uma vez por um solver.
 
-### 5. Case Intel
-
-*(postada em 10/09 — sem material/descrição além do título)*
-
-!!! warning "Sem material disponível"
-    O classroom registra apenas o título "Case Intel", postado em 10/09/2026, sem anexos nem enunciado.
-    Pelo nome, trata-se provavelmente de um estudo de caso sobre a empresa Intel (comum em disciplinas de
-    SAD/PO para ilustrar decisões estratégicas de capacidade/investimento em semicondutores), mas nenhum
-    material foi fornecido para confirmar o escopo ou produzir uma resolução.
-
-### 6. Projeto SAD (Definição das equipes)
-
-*(postada em 22/09 — sem material/descrição além do título)*
-
-!!! warning "Sem material disponível"
-    Atividade administrativa de formação das equipes do Projeto SAD (o trabalho final da disciplina,
-    mencionado na apresentação da disciplina como parte da avaliação). Não há enunciado técnico a resolver
-    — apenas organização logística dos grupos, feita via comentários dos próprios alunos no classroom.
-
-### 7. Desafio II — Problema de Alocação de Capital e Portfólio de Projetos
+### 4. Desafio II — Problema de Alocação de Capital e Portfólio de Projetos
 
 *(postada em 22/09, editada — material: enunciado + imagem com a tabela de investimentos)*
 
@@ -518,7 +551,7 @@ $$
     lucratividade que oferecem (B, especialmente, tem alto consumo nos 3 anos e lucratividade relativamente
     baixa).
 
-### 8. Desafio III — Problema da Refinaria
+### 5. Desafio III — Problema da Refinaria
 
 *(postada em 22/09, editada — material: enunciado completo)*
 
@@ -579,22 +612,7 @@ $$
         em sua maior parte, consequência direta da restrição de proporção mínima, não uma escolha livre de
         lucratividade.
 
-### 9. Solver em planilha eletrônica
-
-*(postada em 22/09 — sem material/descrição além do título)*
-
-!!! warning "Sem material disponível"
-    O classroom registra apenas o título "Solver em planilha eletrônica", postado em 22/09/2026, sem
-    anexos nem enunciado. Pelo contexto (mesma data dos Desafios II e III, ambos problemas de programação
-    linear), é razoável supor que a atividade pede a resolução de um dos desafios usando a ferramenta
-    **Solver do Excel** (ou equivalente), em vez de código — os modelos matemáticos formulados nas seções
-    [Desafio II](#7-desafio-ii-problema-de-alocacao-de-capital-e-portfolio-de-projetos) e
-    [Desafio III](#8-desafio-iii-problema-da-refinaria) acima são diretamente aplicáveis a essa abordagem
-    (basta inserir as fórmulas de função objetivo e restrições em uma planilha e configurar o Solver com o
-    mesmo objetivo/restrições/variáveis). Nenhum enunciado específico foi fornecido para confirmar o escopo
-    exato desta atividade.
-
-### 10. APS — Estruturação de Problemas (VFT)
+### 6. APS — Estruturação de Problemas (VFT)
 
 *(postada em 06/10 — material: vídeo de Ralph Keeney + artigo de Keeney 1996 + artigos de aplicação em
 anexo)*
@@ -689,7 +707,7 @@ pares e trios de objetivos (passo recomendado por Keeney), chega-se a um conjunt
 "muito promissoras" que equilibram vários objetivos simultaneamente — e não apenas um, evitando o viés de
 ancoragem em alternativas óbvias.
 
-### 11. Árvore de Decisão — Desenvolvimento de App
+### 7. Árvore de Decisão — Desenvolvimento de App
 
 *(postada em 13/10 — material: enunciado completo)*
 
