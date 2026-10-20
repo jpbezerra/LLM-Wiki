@@ -1,0 +1,5238 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Base de conhecimento pessoal — faculdade e estudos">
+      
+      
+        <meta name="author" content="João Pedro Bezerra">
+      
+      
+      
+        <link rel="prev" href="../tecnologia-diversidade-equidade-e-inclusao/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>SISTEMAS DE APOIO A DECISÃO - LLM Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sistemas-de-apoio-a-decisao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="LLM Wiki" class="md-header__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLM Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SISTEMAS DE APOIO A DECISÃO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../estudos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Estudos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Faculdade
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LLM Wiki" class="md-nav__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLM Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estudos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estudos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/numeros-complexos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NÚMEROS COMPLEXOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/agentes-de-ia/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTES DE IA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AGENTES DE IA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/harness-e-pi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HARNESS E PI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/otimizacao-tokens-roteamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE TOKENS E ROTEAMENTO DE MODELOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/fine-tuning-agentico-meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FINE-TUNING AGÊNTICO: A ABORDAGEM DA META
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/jev-modelos-decisao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JEV: MODELOS DE DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/computacao-quantica-ibm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - SISTEMAS ÚNICOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1-qiskit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - IMPLEMENTAÇÃO EM QISKIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/otimizacao-de-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/bend2-tipos-dependentes-provas-formais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faculdade
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Faculdade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 1
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/calculo-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CÁLCULO 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/matematica-discreta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATEMÁTICA DISCRETA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/algebra-vetorial-linear-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 2
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA E PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/assuncoes-da-regressao-linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assunções da regressão linear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/fisica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FÍSICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/logica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LÓGICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SISTEMAS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 3
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/arquitetura-de-computadores-e-sistemas-operacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepção de Artefatos Digitais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/grupo-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grupo 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/desenvolvimento-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DESENVOLVIMENTO DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/estruturas-de-dados-orientadas-a-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTRUTURAS DE DADOS ORIENTADAS À OBJETOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 4
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/banco-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BANCO DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/compiladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPILADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/informatica-teorica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA TEÓRICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/integracao-e-evolucao-de-sistemas-de-informacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 5
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/projeto-aprendizagem-de-maquina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Aprendizagem de Máquina
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3_2" id="__nav_3_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projeto Packet Tracer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 - Design Físico e Topologia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e2-design-de-enderecamento-vlsm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2 - Design de Endereçamento VLSM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e3-design-de-segmentacao-vlans-e-dhcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E3 - Design de Segmentação (VLANs e DHCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E4 - Roteamento Inter-VLAN e Conectividade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e5-apresentacao-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E5 - Apresentação Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/referencias-bibliograficas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências Bibliográficas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/untitled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untitled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/metodologia-e-expressao-tecnico-cientifica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    METODOLOGIA E EXPRESSÃO TÉCNICO-CIENTÍFICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/paradigmas-de-linguagens-computacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PARADIGMAS DE LINGUAGENS COMPUTACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-6/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 6
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/empreendimentos-em-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EMPREENDIMENTOS EM INFORMÁTICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/engenharia-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENGENHARIA DE REQUISITOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/informatica-e-sociedade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA E SOCIEDADE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/topicos-avancados-em-si-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TÓPICOS AVANÇADOS EM SI 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 7
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 7
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analise-e-especificacao-avancada-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-warehousing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DATA WAREHOUSING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fundamentos-de-testes-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FUNDAMENTOS DE TESTES DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redes-neurais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDES NEURAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tecnologia-diversidade-equidade-e-inclusao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TECNOLOGIA, DIVERSIDADE, EQUIDADE E INCLUSÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DE APOIO A DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DE APOIO A DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apresentacao-da-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apresentação da disciplina
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura-de-um-sad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitetura de um SAD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquitetura de um SAD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-quatro-fases-de-simon-1977" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As quatro fases de Simon (1977)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentes-de-um-sad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes de um SAD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacoes-e-capacidades-de-um-sad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificações e capacidades de um SAD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelagem-e-problemas-de-otimizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelagem e Problemas de Otimização
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelagem e Problemas de Otimização">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-modelagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é modelagem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pesquisa-operacional-po" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pesquisa Operacional (PO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-introdutorio-linhas-de-producao-de-radios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo introdutório: linhas de produção de rádios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-classicos-de-problemas-de-otimizacao-linear-arenales-et-al-cap-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos clássicos de problemas de otimização linear (Arenales et al., cap. 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-de-transporte-formulacao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema de transporte — formulação geral
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teoria-da-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teoria da Decisão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teoria da Decisão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é decisão
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teoria-da-utilidade-de-von-neumann-morgenstern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teoria da Utilidade de von Neumann-Morgenstern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade-para-dinheiro-e-atitude-ao-risco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilidade para dinheiro e atitude ao risco
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arvore-de-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Árvore de decisão
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividades-resolvidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividades Resolvidas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atividades Resolvidas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-desafio-i-problema-do-transporte-slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Desafio I — Problema do Transporte (slides)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-estudo-de-caso-modelagem-para-publicidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Estudo de Caso: Modelagem para Publicidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-estudo-de-caso-problema-do-planejamento-agregado-em-rede-desafio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Estudo de Caso: Problema do Planejamento Agregado em Rede (Desafio!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-desafio-ii-problema-de-alocacao-de-capital-e-portfolio-de-projetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Desafio II — Problema de Alocação de Capital e Portfólio de Projetos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-desafio-iii-problema-da-refinaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Desafio III — Problema da Refinaria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-aps-estruturacao-de-problemas-vft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. APS — Estruturação de Problemas (VFT)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. APS — Estruturação de Problemas (VFT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-metodo-vft-keeney-1996" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O método VFT (Keeney, 1996)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo-da-resolucao-rede-de-objetivos-para-escolha-de-cidade-para-um-nomade-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo a passo da resolução — rede de objetivos para "escolha de cidade para um nômade digital"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-arvore-de-decisao-desenvolvimento-de-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Árvore de Decisão — Desenvolvimento de App
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Árvore de Decisão — Desenvolvimento de App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo-da-resolucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo a passo da resolução
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apresentacao-da-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apresentação da disciplina
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura-de-um-sad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitetura de um SAD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquitetura de um SAD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-quatro-fases-de-simon-1977" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As quatro fases de Simon (1977)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentes-de-um-sad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes de um SAD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacoes-e-capacidades-de-um-sad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificações e capacidades de um SAD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelagem-e-problemas-de-otimizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelagem e Problemas de Otimização
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelagem e Problemas de Otimização">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-modelagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é modelagem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pesquisa-operacional-po" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pesquisa Operacional (PO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-introdutorio-linhas-de-producao-de-radios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo introdutório: linhas de produção de rádios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-classicos-de-problemas-de-otimizacao-linear-arenales-et-al-cap-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos clássicos de problemas de otimização linear (Arenales et al., cap. 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-de-transporte-formulacao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema de transporte — formulação geral
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teoria-da-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teoria da Decisão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teoria da Decisão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é decisão
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teoria-da-utilidade-de-von-neumann-morgenstern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teoria da Utilidade de von Neumann-Morgenstern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade-para-dinheiro-e-atitude-ao-risco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilidade para dinheiro e atitude ao risco
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arvore-de-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Árvore de decisão
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividades-resolvidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividades Resolvidas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atividades Resolvidas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-desafio-i-problema-do-transporte-slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Desafio I — Problema do Transporte (slides)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-estudo-de-caso-modelagem-para-publicidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Estudo de Caso: Modelagem para Publicidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-estudo-de-caso-problema-do-planejamento-agregado-em-rede-desafio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Estudo de Caso: Problema do Planejamento Agregado em Rede (Desafio!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-desafio-ii-problema-de-alocacao-de-capital-e-portfolio-de-projetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Desafio II — Problema de Alocação de Capital e Portfólio de Projetos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-desafio-iii-problema-da-refinaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Desafio III — Problema da Refinaria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-aps-estruturacao-de-problemas-vft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. APS — Estruturação de Problemas (VFT)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. APS — Estruturação de Problemas (VFT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-metodo-vft-keeney-1996" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O método VFT (Keeney, 1996)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo-da-resolucao-rede-de-objetivos-para-escolha-de-cidade-para-um-nomade-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo a passo da resolução — rede de objetivos para "escolha de cidade para um nômade digital"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-arvore-de-decisao-desenvolvimento-de-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Árvore de Decisão — Desenvolvimento de App
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Árvore de Decisão — Desenvolvimento de App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo-da-resolucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo a passo da resolução
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/jpbezerra/llm-wiki/edit/main/docs/faculdade/periodo-7/sistemas-de-apoio-a-decisao.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="sistemas-de-apoio-a-decisao">SISTEMAS DE APOIO A DECISÃO<a class="headerlink" href="#sistemas-de-apoio-a-decisao" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Sobre a disciplina</p>
+<p><strong>CIN0192 — Sistemas de Apoio a Decisão</strong> (antiga IF983), UFPE, turma 2026.2.
+Professor: <strong>Adiel Teixeira de Almeida Filho</strong>. Aulas presenciais às terças e quintas, sala E113.
+Avaliação: prova + trabalho final (Projeto SAD), com bonificação eventual por participação.</p>
+<p>Esta página reúne o conteúdo apresentado em aula (handouts/slides fornecidos pelo professor) e, em
+seção dedicada ao final, as atividades propostas na disciplina que têm enunciado ou material associado
+— cada uma com seu passo a passo de resolução.</p>
+</div>
+<h2 id="apresentacao-da-disciplina">Apresentação da disciplina<a class="headerlink" href="#apresentacao-da-disciplina" title="Permanent link">&para;</a></h2>
+<p>Aula de abertura (13/08), com a ementa e os objetivos da disciplina.</p>
+<p><strong>Objetivo da disciplina</strong>: entender e relacionar os principais conceitos ligados a Sistemas de Apoio a
+Decisão (SAD): Processo Decisório, Estruturação de Problemas, Teoria da Decisão, Fundamentos de Teoria
+da Utilidade, Teoria dos Jogos, Fundamentos de Decisão Multicritério e Aplicações de SAD. Avaliação:
+prova e Projeto SAD.</p>
+<p><strong>Motivações para estudar SAD</strong>: investimentos em TI; problemas não estruturados; abundância de
+informações/estratégias (McGee &amp; Pruzak, 1994); concorrência, globalização e recursos escassos; Data
+Science e Big Data (SADs, ERPs, CRMs, BI); Business Intelligence &amp; Analytics.</p>
+<details class="note">
+<summary>O que é um problema não estruturado? (matriz de Gorry &amp; Scott-Morton)</summary>
+<p>A disciplina usa o framework clássico de Gorry &amp; Scott-Morton (1970), que cruza o <strong>nível de
+estruturação</strong> da decisão (Simon, 1977) com o <strong>tipo de controle</strong> (Anthony, 1965).</p>
+<p><strong>Nível de estruturação da decisão (Simon, 1977):</strong></p>
+<ul>
+<li><strong>Decisão estruturada (ou programada)</strong>: decisão repetitiva e rotineira, para a qual já existe um
+  procedimento bem definido de solução — não precisa ser tratada como um problema novo a cada vez que
+  ocorre. É facilmente automatizável, pois todas as suas etapas (dados necessários, regras de decisão,
+  critério de escolha) são conhecidas e fixas. Exemplos: processamento de um pedido de compra,
+  concessão de um crédito dentro de limites pré-definidos, cálculo de folha de pagamento.</li>
+<li><strong>Decisão não estruturada (ou não programada)</strong>: decisão "nebulosa", complexa, sem um procedimento
+  de solução padronizado — nenhuma das três fases do processo decisório (inteligência, design, escolha)
+  é estruturada. Costuma envolver múltiplos critérios, muitas vezes subjetivos, julgamento humano e
+  criatividade, e não existe um método padrão aplicável a todos os casos. Exemplos: contratar um
+  executivo, planejar P&amp;D, definir uma estratégia de responsabilidade social.</li>
+<li><strong>Decisão semiestruturada</strong>: situação intermediária, em que <strong>parte</strong> do processo de decisão é
+  estruturada (pode ser apoiada por modelos/procedimentos-padrão) e <strong>parte</strong> exige julgamento e
+  experiência do decisor humano. É exatamente essa categoria — nem totalmente automatizável, nem
+  totalmente dependente de intuição — que constitui o <strong>principal público-alvo de um SAD</strong>: ele apoia
+  (em vez de substituir) o decisor justamente onde a decisão não pode ser completamente programada.
+  Exemplos: programação de produção, avaliação de crédito fora dos limites-padrão, planejamento de um
+  novo produto.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Controle Operacional</th>
+<th>Controle Gerencial</th>
+<th>Planejamento Estratégico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Estruturada</strong></td>
+<td>Contas a receber/pagar, entrada de pedidos</td>
+<td>Análise orçamentária, previsão de curto prazo, relatórios de pessoal, <em>make-or-buy</em></td>
+<td>Gestão financeira, portfólio de investimentos, localização de depósitos, sistemas de distribuição</td>
+</tr>
+<tr>
+<td><strong>Semiestruturada</strong></td>
+<td>Programação de produção, controle de estoque</td>
+<td>Avaliação de crédito, orçamento, layout de planta, planejamento de projeto</td>
+<td>Construção de nova planta, fusões e aquisições, planejamento de novo produto</td>
+</tr>
+<tr>
+<td><strong>Não estruturada</strong></td>
+<td>Compra de software, aprovação de empréstimos, help desk</td>
+<td>Negociação, recrutamento de executivos, compra de hardware, <em>lobbying</em></td>
+<td>Planejamento de P&amp;D, novas tecnologias, responsabilidade social</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="arquitetura-de-um-sad">Arquitetura de um SAD<a class="headerlink" href="#arquitetura-de-um-sad" title="Permanent link">&para;</a></h2>
+<p>Handout "Arquitetura de um SAD: Fundamentos e tecnologias para tomada de decisão" (13/08). Bibliografia:
+Sharda, Delen &amp; Turban (2014); Burstein &amp; Holsapple (2008); Sprague &amp; Watson (1989).</p>
+<p><strong>Definição de SAD</strong>: <em>"Um sistema de informação consistindo de hardware/software e do elemento humano
+designado para assistir um tomador de decisão de qualquer nível, com ênfase em tarefas semi-estruturadas
+e não-estruturadas."</em></p>
+<h3 id="as-quatro-fases-de-simon-1977">As quatro fases de Simon (1977)<a class="headerlink" href="#as-quatro-fases-de-simon-1977" title="Permanent link">&para;</a></h3>
+<p>O processo de decisão, consciente ou subconscientemente, segue quatro (ou cinco) fases:</p>
+<pre class="mermaid"><code>flowchart LR
+    R[Reality] --&gt; I[Inteligência]
+    I --&gt; D[Design]
+    D --&gt; C[Escolha]
+    C --&gt; Im[Implementação]
+    Im -. sucesso/falha .-&gt; R</code></pre>
+<ul>
+<li><strong>Inteligência</strong>: escanear o ambiente, identificar problemas/oportunidades, coletar dados, classificar e
+  decompor o problema, estabelecer a "posse" (<em>ownership</em>) do problema. Resultado: uma definição formal do
+  problema. Problemas típicos: falta/custo/imprecisão de dados, dados qualitativos, dependência temporal.</li>
+<li><strong>Design</strong>: construir, testar e validar um modelo para o problema; selecionar um <strong>princípio de escolha</strong>
+  (critério de aceitabilidade — otimizar vs. satisfazer). <strong>Modelos normativos</strong> (otimização: a melhor
+  alternativa entre todas, assumindo racionalidade) vs. <strong>modelos heurísticos</strong> (sub-otimização: a melhor de
+  um subconjunto, quando otimizar é inviável) vs. <strong>modelos descritivos</strong> (descrevem o sistema como é —
+  simulação é o exemplo mais comum).</li>
+<li><strong>Escolha</strong>: busca, avaliação e recomendação de uma solução para o modelo. Abordagens: técnicas
+  analíticas, algoritmos, heurísticas, busca cega. Inclui análise de sensibilidade, análise se-então e busca
+  de objetivos.</li>
+<li><strong>Implementação</strong>: colocar a solução em prática — a fase mais difícil ("Nada mais difícil de realizar...
+  que iniciar uma nova ordem de coisas", Maquiavel, <em>O Príncipe</em>).</li>
+</ul>
+<h3 id="componentes-de-um-sad">Componentes de um SAD<a class="headerlink" href="#componentes-de-um-sad" title="Permanent link">&para;</a></h3>
+<p>Quatro subsistemas principais, todos conectados à interface do usuário:</p>
+<ol>
+<li><strong>Gerenciamento de Dados</strong> — banco de dados, DBMS, eventualmente um <em>data warehouse</em> corporativo.</li>
+<li><strong>Gerenciamento de Modelos</strong> — base de modelos (estratégicos/táticos/operacionais), MBMS, linguagem de
+   modelagem.</li>
+<li><strong>Interface do Usuário</strong> — GUI, portal, dashboards, processador de linguagem natural.</li>
+<li><strong>Gerenciamento de Base de Conhecimento</strong> — base de conhecimento organizacional.</li>
+</ol>
+<h3 id="classificacoes-e-capacidades-de-um-sad">Classificações e capacidades de um SAD<a class="headerlink" href="#classificacoes-e-capacidades-de-um-sad" title="Permanent link">&para;</a></h3>
+<p>A AIS SIGDSS classifica SAD como: orientado a comunicação/grupo, orientado a dados, orientado a
+documentos, orientado a conhecimento ou orientado a modelos — na prática, a maioria é híbrida.</p>
+<div class="admonition tip">
+<p class="admonition-title">14 capacidades típicas de um SAD</p>
+<p>Suporta problemas semi/não estruturados · decisores em todos os níveis · indivíduos e grupos · decisões
+interdependentes/sequenciais · todas as fases de Simon · vários estilos e processos de decisão ·
+adaptável e flexível · interativo e fácil de usar · eficaz e eficiente · controlado pelo humano · fácil
+de desenvolver por usuários finais · modelagem e análise · acesso a dados · standalone, integrado ou
+web-based.</p>
+</div>
+<h2 id="modelagem-e-problemas-de-otimizacao">Modelagem e Problemas de Otimização<a class="headerlink" href="#modelagem-e-problemas-de-otimizacao" title="Permanent link">&para;</a></h2>
+<p>Conteúdo construído a partir do handout "Modelagem de Problemas - Parte I" (08/09) e de um capítulo do
+livro-texto clássico <em>Pesquisa Operacional</em>, de Arenales, Armentano, Morabito e Yanasse (material "Modelagem
+e Problemas de Otimização", 03/09).</p>
+<h3 id="o-que-e-modelagem">O que é modelagem<a class="headerlink" href="#o-que-e-modelagem" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>"Essentially, all models are wrong, but some are useful." — George E. P. Box</p>
+</blockquote>
+<p>Um modelo é uma simplificação da realidade. Existem <strong>modelos físicos</strong> (protótipos, maquetes),
+<strong>modelos análogos</strong> (mapas, marcadores) e <strong>modelos matemáticos</strong> (a representação usada em Pesquisa
+Operacional). Toda modelagem envolve um trade-off entre a distância da realidade e o custo/esforço de
+construir e resolver o modelo.</p>
+<p><strong>Processo de modelagem</strong> (ciclo iterativo de 4 etapas, Arenales et al.):</p>
+<ol>
+<li><strong>Formulação</strong> — sistema/problema real → modelo matemático.</li>
+<li><strong>Dedução/análise</strong> — modelo matemático → conclusões do modelo (resolução via técnicas matemáticas).</li>
+<li><strong>Interpretação</strong> — conclusões do modelo → conclusões reais / decisões.</li>
+<li><strong>Avaliação</strong> — se as conclusões não forem adequadas, revisa-se o modelo e repete-se o ciclo.</li>
+</ol>
+<h3 id="pesquisa-operacional-po">Pesquisa Operacional (PO)<a class="headerlink" href="#pesquisa-operacional-po" title="Permanent link">&para;</a></h3>
+<p><strong>Definição</strong>: <em>"Arte de aplicar técnicas de modelagem a problemas de tomada de decisão, resolvendo-os por
+métodos matemáticos e estatísticos, visando a obtenção de uma solução ótima."</em> Sinônimo: <em>Operations
+Research</em> (OR) / <em>Management Science</em> (MS).</p>
+<details class="note">
+<summary>Breve histórico da Pesquisa Operacional</summary>
+<ul>
+<li>Origem: invenção do radar na Inglaterra (1934) e a Estação de Pesquisa Manor Bawdsey, estudando o uso
+  tático do radar — termo cunhado por A. P. Rowe (1938).</li>
+<li>1941: seção de PO do Comando da Força Aérea de Combate britânico.</li>
+<li>1947: projeto SCOOP no Pentágono — George Dantzig desenvolve e formaliza o <strong>método simplex</strong> para
+  programação linear, a partir de ideias precursoras do matemático soviético Leonid Kantorovich.</li>
+<li>1975: Prêmio Nobel de Economia para Koopmans e Kantorovich (alocação ótima de recursos).</li>
+<li>No Brasil: 1º simpósio brasileiro de PO em 1968 (ITA); fundação da SOBRAPO.</li>
+</ul>
+</details>
+<p><strong>Abordagem científica (6 passos)</strong>: (1) definir o problema e coletar dados; (2) formular um modelo; (3)
+desenvolver um procedimento de solução; (4) testar e refinar o modelo; (5) aplicar o modelo e desenvolver
+recomendações; (6) ajudar a implementar as recomendações adotadas.</p>
+<h3 id="exemplo-introdutorio-linhas-de-producao-de-radios">Exemplo introdutório: linhas de produção de rádios<a class="headerlink" href="#exemplo-introdutorio-linhas-de-producao-de-radios" title="Permanent link">&para;</a></h3>
+<p>Fábrica com 40 operários para alocar entre rádio <strong>padrão</strong> (linha comporta até 24 pessoas, 1 homem-dia por
+rádio, lucro R$ 30) e rádio <strong>luxo</strong> (linha comporta até 32 pessoas, 2 homens-dia por rádio, lucro R$ 40).</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{maximizar } &amp; \text{Lucro} = 30X_1 + 40X_2 \\
+\text{sujeito a: } &amp; X_1 \le 24 \\
+&amp; X_2 \le 16 \\
+&amp; X_1 + 2X_2 \le 40 \\
+&amp; X_1, X_2 \ge 0
+\end{aligned}
+\]</div>
+<h3 id="tipos-classicos-de-problemas-de-otimizacao-linear-arenales-et-al-cap-2">Tipos clássicos de problemas de otimização linear (Arenales et al., cap. 2)<a class="headerlink" href="#tipos-classicos-de-problemas-de-otimizacao-linear-arenales-et-al-cap-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Problemas de mistura</strong> — combinar ingredientes a custo mínimo respeitando composição mínima/máxima
+  (ex.: ração animal, ligas metálicas, agregados de concreto).</li>
+<li><strong>Problemas de transporte, transbordo e designação</strong> — minimizar custo de distribuição de origens
+  (ofertas) para destinos (demandas); transbordo adiciona pontos intermediários com conservação de fluxo;
+  designação é um caso especial 1-para-1 (maximizando "interesse").</li>
+<li><strong>Planejamento da produção</strong> — <em>mix</em> de produtos, seleção de processos, dimensionamento de lotes
+  mono/multiestágio (com demanda dependente entre itens).</li>
+<li><strong>Programação de projetos</strong> — sequenciamento de atividades com precedências (PERT/CPM simplificado).</li>
+<li><strong>Gestão financeira</strong> — alocação de fluxo de caixa entre opções de investimento ao longo de períodos.</li>
+<li><strong>Corte e empacotamento</strong> — minimizar número de peças/bobinas cortadas para atender uma demanda.</li>
+<li><strong>Ajuste de curvas e controle ótimo</strong> — regressão linear por desvios absolutos; controle de sistemas
+  dinâmicos lineares.</li>
+</ul>
+<p><strong>Três hipóteses fundamentais de linearidade</strong>: <strong>aditividade</strong> (o todo é a soma das partes), <strong>proporcionalidade</strong>
+(o consumo de recursos escala linearmente com a quantidade produzida) e <strong>fracionamento</strong> (variáveis podem
+assumir valores fracionários — quando isso não é aceitável, o problema é de otimização <strong>inteira</strong>).</p>
+<p><strong>Forma padrão de um problema de otimização linear</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{minimizar } &amp; f(x) = c^Tx \\
+\text{sujeito a: } &amp; Ax = b \\
+&amp; x \ge 0
+\end{aligned}
+\]</div>
+<h3 id="problema-de-transporte-formulacao-geral">Problema de transporte — formulação geral<a class="headerlink" href="#problema-de-transporte-formulacao-geral" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{minimizar } &amp; \sum_i \sum_j c_{ij}x_{ij} \\
+\text{sujeito a: } &amp; \sum_j x_{ij} \le a_i \quad (i=1,...,m) \\
+&amp; \sum_i x_{ij} \ge b_j \quad (j=1,...,n) \\
+&amp; x_{ij} \ge 0
+\end{aligned}
+\]</div>
+<p>onde <span class="arithmatex">\(a_i\)</span> é a oferta da origem <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(b_j\)</span> a demanda do destino <span class="arithmatex">\(j\)</span> e <span class="arithmatex">\(c_{ij}\)</span> o custo de transportar uma
+unidade de <span class="arithmatex">\(i\)</span> para <span class="arithmatex">\(j\)</span>.</p>
+<h2 id="teoria-da-decisao">Teoria da Decisão<a class="headerlink" href="#teoria-da-decisao" title="Permanent link">&para;</a></h2>
+<p>Handout "Teoria da Decisão" (08/10). Bibliografia: Howard &amp; Abbas (2015); Raiffa (1977); Souza (2007);
+Hillier &amp; Lieberman (2014); Berger (1980).</p>
+<h3 id="o-que-e-decisao">O que é decisão<a class="headerlink" href="#o-que-e-decisao" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>"Uma boa decisão deverá ser uma função lógica daquilo que se quer, daquilo que se sabe e daquilo que se
+pode fazer." — Souza (2007)</p>
+</blockquote>
+<ul>
+<li><strong>O que se quer</strong>: preferências pelas consequências (incertas ou distribuídas no tempo).</li>
+<li><strong>O que se sabe</strong>: conhecimento dos elementos do problema.</li>
+<li><strong>O que se pode fazer</strong>: alternativas de ação disponíveis (requer criatividade).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Decisão ≠ consequência</p>
+<p>Uma boa decisão <strong>não garante</strong> uma boa consequência. Exemplos clássicos: dirigir sóbrio e sofrer um
+acidente (boa decisão, má consequência) vs. dirigir bêbado e chegar em segurança (má decisão, boa
+consequência). A qualidade da decisão deve ser avaliada pelo processo, não apenas pelo resultado.</p>
+</div>
+<p><strong>Decisão sob incerteza</strong> (não se consegue estimar a probabilidade dos cenários) vs. <strong>decisão sob risco</strong>
+(as probabilidades são conhecidas, permitindo avaliar o risco).</p>
+<h3 id="teoria-da-utilidade-de-von-neumann-morgenstern">Teoria da Utilidade de von Neumann-Morgenstern<a class="headerlink" href="#teoria-da-utilidade-de-von-neumann-morgenstern" title="Permanent link">&para;</a></h3>
+<p>A função utilidade <span class="arithmatex">\(u\)</span> é uma medida cardinal (numérica), em <em>utils</em>, das preferências do decisor. Para que
+exista, quatro axiomas de racionalidade precisam valer sobre as relações de preferência <span class="arithmatex">\(P \succsim Q\)</span>:</p>
+<ol>
+<li><strong>Completeza (ordem total)</strong>: <span class="arithmatex">\(P \succsim Q\)</span> ou <span class="arithmatex">\(Q \succsim P\)</span>.</li>
+<li><strong>Transitividade</strong>: se <span class="arithmatex">\(P \succ Q\)</span> e <span class="arithmatex">\(Q \succsim R\)</span>, então <span class="arithmatex">\(P \succ R\)</span>.</li>
+<li><strong>Dominância</strong>: se <span class="arithmatex">\(P \succ Q\)</span>, então <span class="arithmatex">\(\lambda P + (1-\lambda)R \succ \lambda Q + (1-\lambda)R\)</span> para
+   qualquer <span class="arithmatex">\(R\)</span> e <span class="arithmatex">\(\lambda &gt; 0\)</span> — garante a linearidade da utilidade em probabilidade.</li>
+<li><strong>Arquimediano</strong>: se <span class="arithmatex">\(P \succ Q \succ R\)</span>, existem <span class="arithmatex">\(\lambda, \mu\)</span> tais que
+   <span class="arithmatex">\(\lambda P + (1-\lambda)R \succ Q \succ \mu P + (1-\mu)R\)</span>.</li>
+</ol>
+<p>Satisfeitos os axiomas, existe <span class="arithmatex">\(u\)</span> tal que <span class="arithmatex">\(P \succsim Q \Leftrightarrow u(P) \ge u(Q)\)</span> e
+<span class="arithmatex">\(u[\lambda P + (1-\lambda)Q] = \lambda u(P) + (1-\lambda)u(Q)\)</span> — ou seja, <strong>a utilidade de uma loteria é o
+valor esperado das utilidades das consequências</strong>, ponderado pelas probabilidades.</p>
+<details class="example">
+<summary>Construção de uma função utilidade — exemplo das frutas (passo a passo)</summary>
+<p><strong>A ideia geral primeiro</strong>: ordenar preferências ("gosto mais de maçã do que de pera") é fácil, mas não
+diz <strong>o quanto</strong> mais se gosta — não dá para fazer contas com um ranking. O método da <strong>loteria de
+referência</strong> transforma preferências em números fazendo uma pergunta engenhosa: <em>"você prefere ganhar
+este item com certeza, ou prefere apostar entre o seu item favorito e o seu item menos favorito?"</em> A
+probabilidade de ganhar o item favorito que te deixaria <strong>indiferente</strong> entre as duas opções é, por
+definição, a utilidade do item em questão. É basicamente perguntar "o quanto esse item vale, numa escala
+de 0 a 1, entre o pior e o melhor cenário possíveis?".</p>
+<p><strong>Dados do problema</strong>: um decisor tem a seguinte ordem de preferência entre 5 frutas (da mais para a
+menos desejada):</p>
+<div class="arithmatex">\[Maçã \succ Pera \succ Laranja \succ Goiaba \succ Uva\]</div>
+<p>Queremos transformar esse ranking em números (utilidades) que permitam, mais tarde, calcular valores
+esperados em situações de risco (ex.: "prefiro um saco com 50% de chance de maçã e 50% de uva, ou uma
+laranja certa?").</p>
+<hr />
+<p><strong>Passo 1 — Escolher dois pontos de referência e fixar suas utilidades.</strong></p>
+<p>Qualquer função utilidade é definida a menos de uma transformação linear (podemos escolher livremente os
+valores dos dois extremos, como "0°C" e "100°C" são escolhas arbitrárias na escala Celsius). Para
+começar, escolhe-se <strong>Pera</strong> (a mais desejável dentre as 3 frutas "do meio") como referência superior e
+<strong>Goiaba</strong> como referência inferior, e arbitra-se:</p>
+<div class="arithmatex">\[u(Pera) = 1 \qquad u(Goiaba) = 0\]</div>
+<p>Isso <strong>não</strong> significa que Pera é a fruta mais desejada de todas (Maçã é) — é só a referência superior
+<em>desta primeira rodada</em> de perguntas. Resolveremos Maçã e Uva depois, numa segunda rodada.</p>
+<p><strong>Passo 2 — Descobrir a utilidade da Laranja por meio de uma loteria imaginária.</strong></p>
+<p>Pergunta-se ao decisor: <em>"Você prefere receber uma Laranja com certeza, ou participar de uma loteria em
+que você tem probabilidade <span class="arithmatex">\(\lambda\)</span> de ganhar uma Pera e probabilidade <span class="arithmatex">\((1-\lambda)\)</span> de ganhar uma
+Goiaba?"</em> Varia-se <span class="arithmatex">\(\lambda\)</span> até o decisor ficar <strong>indiferente</strong> entre as duas opções:</p>
+<pre class="mermaid"><code>flowchart LR
+    Q{{"Laranja certa&lt;br/&gt;⟷&lt;br/&gt;Loteria?"}}
+    Q -.indiferente.-&gt; L["Laranja (certa)"]
+    Q -.indiferente.-&gt; J((Loteria))
+    J --&gt;|"λ = 40%"| P["Pera (u=1)"]
+    J --&gt;|"1−λ = 60%"| G["Goiaba (u=0)"]</code></pre>
+<p>Suponha que, por introspecção, o decisor diga que fica indiferente quando <span class="arithmatex">\(\lambda = 0{,}4\)</span> (ou seja,
+uma Laranja certa "vale" o mesmo que 40% de chance de Pera + 60% de chance de Goiaba). Como a utilidade
+de uma loteria é a <strong>média ponderada</strong> das utilidades dos prêmios (propriedade de linearidade vista
+acima), a utilidade da Laranja é exatamente esse <span class="arithmatex">\(\lambda\)</span>:</p>
+<div class="arithmatex">\[u(Laranja) = \lambda \cdot u(Pera) + (1-\lambda) \cdot u(Goiaba) = 0{,}4 \times 1 + 0{,}6 \times 0 = \mathbf{0{,}4}\]</div>
+<p><em>(Note que isso só funciona porque fixamos <span class="arithmatex">\(u(Pera)=1\)</span> e <span class="arithmatex">\(u(Goiaba)=0\)</span> no Passo 1 — a conta "zera" o
+termo da Goiaba e "isola" o <span class="arithmatex">\(\lambda\)</span> como a própria utilidade procurada.)</em></p>
+<p><strong>Passo 3 — Repetir o processo numa segunda rodada, agora para toda a escala (Uva até Maçã).</strong></p>
+<p>O problema do Passo 1-2 é que ele só cobre o intervalo entre Pera e Goiaba — não diz nada sobre Maçã
+(mais desejada que Pera) nem sobre Uva (menos desejada que Goiaba). Por isso, repete-se o mesmo
+procedimento, mas agora usando os <strong>extremos reais</strong> do conjunto como referência:</p>
+<div class="arithmatex">\[u_{Uv,Ma}(Maçã) = 1 \qquad u_{Uv,Ma}(Uva) = 0\]</div>
+<p><em>(a notação <span class="arithmatex">\(u_{Uv,Ma}\)</span> só indica "nesta escala, Uva vale 0 e Maçã vale 1" — é uma escala diferente da
+do Passo 1, com números que ainda não são diretamente comparáveis aos anteriores)</em></p>
+<p>Repetindo a pergunta da loteria para Pera e para Goiaba <strong>nesta nova escala</strong>, suponha que o decisor
+responda, por introspecção:</p>
+<div class="arithmatex">\[u_{Uv,Ma}(Pera) = 0{,}8 \qquad u_{Uv,Ma}(Goiaba) = 0{,}1\]</div>
+<p>(ou seja: nesta escala Uva–Maçã, uma Pera certa equivale a 80% de chance de Maçã + 20% de chance de Uva;
+uma Goiaba certa equivale a 10% de chance de Maçã + 90% de chance de Uva)</p>
+<p><strong>Passo 4 — Reconciliar as duas escalas numa única escala comum.</strong></p>
+<p>Agora temos dois conjuntos de números que usam escalas diferentes — é como ter uma temperatura em
+Celsius e outra em Fahrenheit e precisar comparar. A solução é a mesma: uma <strong>transformação linear</strong>
+(multiplicar por uma constante e somar outra), pois a propriedade de "extensão" da utilidade (Lema 5)
+garante que qualquer transformação <span class="arithmatex">\(u^* = au + b\)</span> (com <span class="arithmatex">\(a&gt;0\)</span>) representa as mesmas preferências.</p>
+<p>Queremos reescalar a escala <span class="arithmatex">\(u_{Uv,Ma}\)</span> de volta para a escala original do Passo 1 (onde Pera<span class="arithmatex">\(=1\)</span> e
+Goiaba<span class="arithmatex">\(=0\)</span>). A fórmula de reescalonamento (uma regra de três disfarçada) é:</p>
+<div class="arithmatex">\[u^*(F) = \frac{u_{Uv,Ma}(F) - u_{Uv,Ma}(Goiaba)}{u_{Uv,Ma}(Pera) - u_{Uv,Ma}(Goiaba)} = \frac{u_{Uv,Ma}(F) - 0{,}1}{0{,}8 - 0{,}1} = \frac{u_{Uv,Ma}(F) - 0{,}1}{0{,}7}\]</div>
+<p>O denominador <span class="arithmatex">\(0{,}7\)</span> é a "distância", na escala Uva–Maçã, entre os dois pontos que viram 0 e 1 na escala
+original — dividir por ele é o que "estica" a escala de volta ao tamanho certo.</p>
+<p><strong>Passo 5 — Aplicar a fórmula a cada fruta e montar a tabela final.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Fruta</th>
+<th><span class="arithmatex">\(u_{Uv,Ma}(F)\)</span> (escala do Passo 3)</th>
+<th>Cálculo de <span class="arithmatex">\(u^*(F)\)</span></th>
+<th>Utilidade final</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maçã</td>
+<td><span class="arithmatex">\(1{,}0\)</span></td>
+<td><span class="arithmatex">\((1{,}0 - 0{,}1)/0{,}7\)</span></td>
+<td><span class="arithmatex">\(9/7 \approx 1{,}29\)</span></td>
+</tr>
+<tr>
+<td>Pera</td>
+<td><span class="arithmatex">\(0{,}8\)</span></td>
+<td><span class="arithmatex">\((0{,}8 - 0{,}1)/0{,}7\)</span></td>
+<td><span class="arithmatex">\(1{,}00\)</span></td>
+</tr>
+<tr>
+<td>Laranja</td>
+<td><em>(não precisa recalcular — já está na escala certa desde o Passo 2)</em></td>
+<td>—</td>
+<td><span class="arithmatex">\(0{,}40\)</span></td>
+</tr>
+<tr>
+<td>Goiaba</td>
+<td><span class="arithmatex">\(0{,}1\)</span></td>
+<td><span class="arithmatex">\((0{,}1 - 0{,}1)/0{,}7\)</span></td>
+<td><span class="arithmatex">\(0{,}00\)</span></td>
+</tr>
+<tr>
+<td>Uva</td>
+<td><span class="arithmatex">\(0{,}0\)</span></td>
+<td><span class="arithmatex">\((0{,}0 - 0{,}1)/0{,}7\)</span></td>
+<td><span class="arithmatex">\(-1/7 \approx -0{,}14\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Como ler esse resultado</p>
+<p>Note que a ordem dos números bate exatamente com a ordem de preferência original
+(<span class="arithmatex">\(Maçã \succ Pera \succ Laranja \succ Goiaba \succ Uva\)</span>, e <span class="arithmatex">\(1{,}29 &gt; 1{,}00 &gt; 0{,}40 &gt; 0{,}00 &gt;
+-0{,}14\)</span>) — isso é esperado, pois a utilidade <strong>preserva a ordem</strong> (Lema 3). A utilidade da Uva deu
+<strong>negativa</strong>: isso é normal e não representa um "dano" — é só consequência de termos fixado
+Goiaba<span class="arithmatex">\(=0\)</span> no Passo 1; o zero da escala é arbitrário, só a <strong>ordem</strong> e as <strong>diferenças relativas</strong>
+entre os valores têm significado (ex.: a "distância" de Pera a Laranja, <span class="arithmatex">\(1{,}00-0{,}40=0{,}60\)</span>, é
+maior que a distância de Laranja a Goiaba, <span class="arithmatex">\(0{,}40-0{,}00=0{,}40\)</span> — ou seja, o decisor se importa
+relativamente mais com a diferença entre Pera e Laranja do que entre Laranja e Goiaba).</p>
+</div>
+<p><strong>Para que serve, na prática</strong>: com esses números, dá para comparar alternativas arriscadas calculando
+o valor esperado da utilidade. Por exemplo, um saco com 50% de chance de Maçã e 50% de chance de Uva tem
+utilidade esperada <span class="arithmatex">\(0{,}5(9/7) + 0{,}5(-1/7) = 4/7 \approx 0{,}57\)</span> — portanto esse saco é <strong>preferível</strong>
+a uma Laranja certa (<span class="arithmatex">\(u=0{,}40\)</span>), mesmo sem saber "quanto vale" uma Maçã ou uma Uva em termos absolutos,
+só usando os números construídos acima.</p>
+</details>
+<h3 id="utilidade-para-dinheiro-e-atitude-ao-risco">Utilidade para dinheiro e atitude ao risco<a class="headerlink" href="#utilidade-para-dinheiro-e-atitude-ao-risco" title="Permanent link">&para;</a></h3>
+<p>A relação entre dinheiro e utilidade tipicamente assume a <strong>forma em "S"</strong>: convexa (propensão ao risco)
+para pequenas quantias, aproximadamente linear numa faixa intermediária, e côncava (aversão ao risco) para
+grandes quantias — por exemplo, um decisor pode preferir R$1.000.000 certo a um jogo 60%/40% entre
+R$2.000.000 e R$0 (valor esperado R$1.200.000, maior, mas ele "já está satisfeito" com o milhão certo).</p>
+<h3 id="arvore-de-decisao">Árvore de decisão<a class="headerlink" href="#arvore-de-decisao" title="Permanent link">&para;</a></h3>
+<p><strong>Componentes</strong>: nó raiz, nós de evento (círculo — resultados de um processo estocástico), nós de decisão
+(quadrado — escolhas do decisor) e nós de fim (desfechos).</p>
+<p><strong>Etapas de análise</strong>: (1) dividir em fases de risco; (2) estimar probabilidades; (3) definir pontos de
+decisão; (4) calcular fluxos de caixa/valores nos nós de fim; (5) percorrer a árvore de trás para frente
+(<strong>fold back / rollback</strong>), calculando o valor esperado em cada nó de evento e escolhendo, em cada nó de
+decisão, o ramo de maior valor esperado.</p>
+<p><strong>Vantagens</strong>: resposta dinâmica ao risco, cálculo do valor da informação (<em>value of information</em>) e apoio
+à gestão de risco (ex.: hedge). Um exemplo didático clássico trabalhado no handout é o desenvolvimento de um
+medicamento, com 3 etapas sequenciais de testes clínicos (FDA), cada uma com custo e probabilidade de
+sucesso/fracasso próprios, resolvido via <em>fold back</em> para decidir se vale a pena seguir testando.</p>
+<hr />
+<h2 id="atividades-resolvidas">Atividades Resolvidas<a class="headerlink" href="#atividades-resolvidas" title="Permanent link">&para;</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Sobre esta seção</p>
+<p>Esta seção cobre as atividades propostas na disciplina que vieram acompanhadas de enunciado ou material
+(as postagens do classroom que eram puramente administrativas, ou sem nenhuma descrição além do título,
+foram deixadas de fora a pedido). Para cada atividade, apresenta-se o passo a passo completo de
+resolução.</p>
+</div>
+<h3 id="1-desafio-i-problema-do-transporte-slides">1. Desafio I — Problema do Transporte (slides)<a class="headerlink" href="#1-desafio-i-problema-do-transporte-slides" title="Permanent link">&para;</a></h3>
+<p><em>(postada em 08/09, editada no mesmo dia — material: exemplo numérico ao final do handout "Parte I
+Handouts - IF983 SAD - Modelagem de Problemas.pdf", p. 20)</em></p>
+<p><strong>Enunciado</strong>: determinar a distribuição de menor custo de um produto entre 3 fábricas (origens, com
+capacidade de produção) e 4 depósitos (destinos, com demanda), dados os custos unitários de transporte
+entre cada par origem-destino.</p>
+<table>
+<thead>
+<tr>
+<th>Fábricas \ Depósitos</th>
+<th>Florianópolis</th>
+<th>Rio de Janeiro</th>
+<th>Salvador</th>
+<th>Manaus</th>
+<th>Produção</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Curitiba</td>
+<td>1,0</td>
+<td>0,8</td>
+<td>3,0</td>
+<td>4,5</td>
+<td>470</td>
+</tr>
+<tr>
+<td>São Paulo</td>
+<td>1,5</td>
+<td>0,6</td>
+<td>2,5</td>
+<td>3,0</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Aracaju</td>
+<td>6,0</td>
+<td>5,0</td>
+<td>1,2</td>
+<td>2,8</td>
+<td>400</td>
+</tr>
+<tr>
+<td><strong>Demanda</strong></td>
+<td>350</td>
+<td>300</td>
+<td>300</td>
+<td>120</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>(custos em R$/unidade; produção e demanda em unidades)</em></p>
+<p><strong>Passo 1 — Variáveis de decisão</strong>: <span class="arithmatex">\(x_{ij}\)</span> = quantidade transportada da fábrica <span class="arithmatex">\(i\)</span> para o depósito <span class="arithmatex">\(j\)</span>,
+<span class="arithmatex">\(i \in \{\text{Curitiba, São Paulo, Aracaju}\}\)</span>, <span class="arithmatex">\(j \in \{\text{Florianópolis, Rio, Salvador, Manaus}\}\)</span>.</p>
+<p><strong>Passo 2 — Função objetivo</strong> (minimizar custo total de transporte):</p>
+<div class="arithmatex">\[\text{minimizar } Z = \sum_i \sum_j c_{ij}\,x_{ij}\]</div>
+<p><strong>Passo 3 — Restrições</strong>: oferta de cada fábrica não pode ser excedida; demanda de cada depósito deve ser
+exatamente atendida. Note que a <strong>oferta total (470+400+400 = 1.270) é maior que a demanda total
+(350+300+300+120 = 1.070)</strong> — há 200 unidades de capacidade produtiva ociosa, o que é permitido (restrição
+de oferta como "≤", não "=").</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\sum_j x_{ij} &amp;\le \text{Produção}_i \quad \text{(cada fábrica)}\\
+\sum_i x_{ij} &amp;= \text{Demanda}_j \quad \text{(cada depósito)}\\
+x_{ij} &amp;\ge 0
+\end{aligned}
+\]</div>
+<p><strong>Passo 4 — Resolução</strong> (método simplex para transporte — ou pelo método do canto noroeste seguido de
+otimização, ou diretamente por solver de PL):</p>
+<div class="admonition example">
+<p class="admonition-title">Solução ótima</p>
+<table>
+<thead>
+<tr>
+<th>Rota</th>
+<th>Quantidade</th>
+<th>Custo unitário</th>
+<th>Custo da rota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Curitiba → Florianópolis</td>
+<td>350</td>
+<td>1,0</td>
+<td>R$ 350,00</td>
+</tr>
+<tr>
+<td>São Paulo → Rio de Janeiro</td>
+<td>300</td>
+<td>0,6</td>
+<td>R$ 180,00</td>
+</tr>
+<tr>
+<td>São Paulo → Manaus</td>
+<td>20</td>
+<td>3,0</td>
+<td>R$ 60,00</td>
+</tr>
+<tr>
+<td>Aracaju → Salvador</td>
+<td>300</td>
+<td>1,2</td>
+<td>R$ 360,00</td>
+</tr>
+<tr>
+<td>Aracaju → Manaus</td>
+<td>100</td>
+<td>2,8</td>
+<td>R$ 280,00</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Custo total mínimo: R$ 1.230,00</strong>.</p>
+<p><strong>Uso da capacidade produtiva</strong>: Curitiba usa 350/470 (folga de 120 — maior parte de sua capacidade
+fica ociosa, pois sua rota mais barata, Florianópolis, só tem demanda de 350); São Paulo usa 320/400;
+Aracaju usa 400/400 (capacidade <strong>totalmente</strong> utilizada, pois é a única fábrica com rota barata para
+Salvador).</p>
+<p><strong>Intuição</strong>: o algoritmo aloca primeiro as rotas de menor custo unitário disponíveis para cada
+depósito — Curitiba→Florianópolis (1,0) e São Paulo→Rio (0,6) são as mais baratas e saturam totalmente
+essas demandas; o restante da demanda de Manaus (120 un.) é dividido entre São Paulo (3,0, mais barato
+que Aracaju) e Aracaju (2,8) apenas na medida necessária, já que Aracaju precisa reservar capacidade
+para atender Salvador, sua única rota realmente vantajosa (1,2, muito abaixo dos seus outros custos).</p>
+</div>
+<h3 id="2-estudo-de-caso-modelagem-para-publicidade">2. Estudo de Caso: Modelagem para Publicidade<a class="headerlink" href="#2-estudo-de-caso-modelagem-para-publicidade" title="Permanent link">&para;</a></h3>
+<p><em>(postada em 10/09 — material: "Exercício Modelagem Mkt.pdf")</em></p>
+<p><strong>Enunciado</strong>: uma companhia de propaganda planeja uma campanha em TV, rádio e revistas, maximizando o
+número de clientes atingidos, sujeita a: orçamento total ≤ R$ 800.000; mínimo de 2 milhões de mulheres
+atingidas; gasto com TV ≤ R$ 500.000; mínimo de 3 veiculações em TV horário normal e 2 em horário nobre;
+entre 5 e 10 veiculações em rádio e em revistas.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>TV normal</th>
+<th>TV nobre</th>
+<th>Rádio</th>
+<th>Revistas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custo por veiculação</td>
+<td>R$ 40.000</td>
+<td>R$ 75.000</td>
+<td>R$ 30.000</td>
+<td>R$ 15.000</td>
+</tr>
+<tr>
+<td>Clientes atingidos</td>
+<td>400.000</td>
+<td>900.000</td>
+<td>500.000</td>
+<td>200.000</td>
+</tr>
+<tr>
+<td>Mulheres atingidas</td>
+<td>300.000</td>
+<td>400.000</td>
+<td>200.000</td>
+<td>100.000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Passo 1 — Variáveis de decisão</strong>: <span class="arithmatex">\(x_1\)</span> = nº de veiculações em TV horário normal; <span class="arithmatex">\(x_2\)</span> = TV horário
+nobre; <span class="arithmatex">\(x_3\)</span> = rádio; <span class="arithmatex">\(x_4\)</span> = revistas.</p>
+<p><strong>Passo 2 — Função objetivo</strong> (maximizar clientes atingidos):</p>
+<div class="arithmatex">\[\text{maximizar } Z = 400.000\,x_1 + 900.000\,x_2 + 500.000\,x_3 + 200.000\,x_4\]</div>
+<p><strong>Passo 3 — Restrições</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+40.000x_1 + 75.000x_2 + 30.000x_3 + 15.000x_4 &amp;\le 800.000 \quad \text{(orçamento total)}\\
+40.000x_1 + 75.000x_2 &amp;\le 500.000 \quad \text{(orçamento TV)}\\
+300.000x_1 + 400.000x_2 + 200.000x_3 + 100.000x_4 &amp;\ge 2.000.000 \quad \text{(mulheres)}\\
+x_1 &amp;\ge 3\\
+x_2 &amp;\ge 2\\
+5 \le x_3 &amp;\le 10\\
+5 \le x_4 &amp;\le 10\\
+x_1, x_2, x_3, x_4 &amp;\ge 0 \text{ e inteiros}
+\end{aligned}
+\]</div>
+<p><strong>Passo 4 — Resolução</strong>: é um problema de <strong>programação linear inteira</strong> (número de veiculações é
+discreto) com 4 variáveis — tratável por <em>branch-and-bound</em> (ex.: Excel Solver ou <code>scipy</code>/<code>PuLP</code>).
+Resolvendo numericamente (maximizando <span class="arithmatex">\(Z\)</span> sujeito às restrições acima, com variáveis inteiras):</p>
+<div class="admonition example">
+<p class="admonition-title">Solução ótima</p>
+<p><span class="arithmatex">\(x_1 = 3\)</span> (mínimo de TV normal), <span class="arithmatex">\(x_2 = 2\)</span> (mínimo de TV nobre), <span class="arithmatex">\(x_3 = 5\)</span> (mínimo de rádio), <span class="arithmatex">\(x_4 = 10\)</span>
+(máximo de revistas).</p>
+<p><strong>Verificação do orçamento</strong>:</p>
+<div class="arithmatex">\[40.000(3) + 75.000(2) + 30.000(5) + 15.000(10) = 120.000 + 150.000 + 150.000 + 150.000 = 570.000\]</div>
+<p>Custo total de R$ 570.000, dentro do limite de R$ 800.000. ✓</p>
+<p><strong>Verificação de mulheres atingidas</strong>:</p>
+<div class="arithmatex">\[300.000(3) + 400.000(2) + 200.000(5) + 100.000(10) = 900.000 + 800.000 + 1.000.000 + 1.000.000 = 3.700.000\]</div>
+<p>3.700.000 mulheres atingidas, acima do mínimo de 2.000.000. ✓</p>
+<p><strong>Clientes atingidos (valor da função objetivo)</strong>:</p>
+<div class="arithmatex">\[Z = 400.000(3) + 900.000(2) + 500.000(5) + 200.000(10) = 1.200.000 + 1.800.000 + 2.500.000 + 2.000.000\]</div>
+<div class="arithmatex">\[Z = \mathbf{7.500.000 \text{ clientes}}\]</div>
+<p><strong>Intuição</strong>: como TV horário nobre e rádio têm o maior "retorno por real" relativamente às suas
+restrições de mínimo/orçamento, o modelo investe nos mínimos obrigatórios de TV e maximiza revistas
+(barata e com boa razão clientes/custo: 200.000/15.000 ≈ 13,3 clientes por real investido), usando a
+folga orçamentária restante em rádio.</p>
+</div>
+<p><strong>Outras restrições/fatores que poderiam ser acrescentados</strong> (conforme pedido no enunciado): alcance
+duplicado (a mesma pessoa vendo o anúncio em mais de um meio); saturação de audiência (retornos
+decrescentes ao aumentar veiculações no mesmo meio); sazonalidade (preços/audiência variam ao longo do
+ano); segmentação por faixa etária ou classe social; restrições de concorrência (não veicular nos mesmos
+horários que concorrentes); custo de produção de cada peça publicitária (distinto do custo de veiculação).</p>
+<h3 id="3-estudo-de-caso-problema-do-planejamento-agregado-em-rede-desafio">3. Estudo de Caso: Problema do Planejamento Agregado em Rede (Desafio!)<a class="headerlink" href="#3-estudo-de-caso-problema-do-planejamento-agregado-em-rede-desafio" title="Permanent link">&para;</a></h3>
+<p><em>(postada em 10/09 — material: "Exercício Modelagem PA e Transporte.pdf")</em></p>
+<p><strong>Contexto</strong>: a Empresa X (bens de consumo, demanda sazonal com pico de setembro a janeiro) quer
+distribuir seu produto, ao longo do ano, de 3 fábricas (Teresina, Natal, Recife) para 5 Centros de
+Distribuição — CDs (Salvador, João Pessoa, São Luís, Aracaju, Fortaleza), minimizando o custo total de
+transporte (suposto proporcional à distância × quantidade), respeitando capacidades de produção e
+armazenagem.</p>
+<p><strong>Passo 1 — Variáveis de decisão</strong>: <span class="arithmatex">\(x_{ij,m}\)</span> = quantidade transportada da fábrica <span class="arithmatex">\(i\)</span> para o CD <span class="arithmatex">\(j\)</span> no
+mês <span class="arithmatex">\(m\)</span> (<span class="arithmatex">\(i=1,2,3\)</span>; <span class="arithmatex">\(j=1,...,5\)</span>; <span class="arithmatex">\(m=1,...,12\)</span>) — um modelo de <strong>planejamento agregado</strong>, pois cobre o ano
+inteiro de uma vez (diferente do modelo de transporte convencional, que trata apenas um período).</p>
+<p><strong>Passo 2 — Parâmetros</strong>: <span class="arithmatex">\(P_i\)</span> = capacidade produtiva da fábrica <span class="arithmatex">\(i\)</span> no mês; <span class="arithmatex">\(C_i\)</span> = capacidade de
+armazenagem (estoque máximo) da fábrica <span class="arithmatex">\(i\)</span>; <span class="arithmatex">\(c_j\)</span> = capacidade de armazenagem do CD <span class="arithmatex">\(j\)</span>; <span class="arithmatex">\(d_{j,m}\)</span> =
+demanda do CD <span class="arithmatex">\(j\)</span> no mês <span class="arithmatex">\(m\)</span>; <span class="arithmatex">\(D_{i,m}\)</span> = demanda direta da fábrica <span class="arithmatex">\(i\)</span> no mês <span class="arithmatex">\(m\)</span> (revendas atendidas sem
+passar pelos CDs); <span class="arithmatex">\(s_{ij}\)</span> = distância entre a fábrica <span class="arithmatex">\(i\)</span> e o CD <span class="arithmatex">\(j\)</span>; <span class="arithmatex">\(E_{i,m}\)</span>, <span class="arithmatex">\(e_{j,m}\)</span> = estoques ao
+final do mês <span class="arithmatex">\(m\)</span> nas fábricas e CDs, com <span class="arithmatex">\(E_0, e_0\)</span> os estoques iniciais.</p>
+<p><strong>Passo 3 — Função objetivo</strong> (minimizar custo total de transporte, com <span class="arithmatex">\(c\)</span> = custo por km por unidade):</p>
+<div class="arithmatex">\[\text{minimizar } CT = c\sum_{m=1}^{12}\sum_{i=1}^{3}\sum_{j=1}^{5} s_{ij}\cdot x_{ij,m}\]</div>
+<p><strong>Passo 4 — Restrições</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{Balanço de estoque da fábrica } i: \quad &amp; E_{i,m} = E_{i,m-1} + P_{i,m} - D_{i,m} - \sum_j x_{ij,m} \\
+\text{Balanço de estoque do CD } j: \quad &amp; e_{j,m} = e_{j,m-1} + \sum_i x_{ij,m} - d_{j,m} \\
+\text{Capacidade de armazenagem: } \quad &amp; 0 \le E_{i,m} \le C_i, \qquad 0 \le e_{j,m} \le c_j \\
+\text{Não-negatividade: } \quad &amp; x_{ij,m} \ge 0
+\end{aligned}
+\]</div>
+<p>O modelo é <strong>linear</strong> (custo proporcional à distância e quantidade — transporte unicamente rodoviário).</p>
+<p><strong>Passo 5 — Resolução</strong>: o problema completo tem <span class="arithmatex">\(3 \times 5 \times 12 = 180\)</span> variáveis de transporte (mais
+as variáveis de estoque mensal), exigindo um solver de PL (ex.: <code>scipy.optimize.linprog</code>, Excel Solver ou
+CPLEX) — não é tratável manualmente mês a mês. Para ilustrar o <strong>método de solução</strong>, resolve-se abaixo um
+recorte de um único mês (janeiro) como um problema de transporte clássico (ofertas = capacidade produtiva
+menos demanda direta; demandas = demanda de cada CD), minimizando a soma de distância × quantidade:</p>
+<table>
+<thead>
+<tr>
+<th>Fábrica</th>
+<th>Produção (jan)</th>
+<th>Demanda direta (jan)</th>
+<th>Oferta disponível p/ CDs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Teresina</td>
+<td>107.465</td>
+<td>18.000</td>
+<td>89.465</td>
+</tr>
+<tr>
+<td>Natal</td>
+<td>69.508</td>
+<td>20.100</td>
+<td>49.408</td>
+</tr>
+<tr>
+<td>Recife</td>
+<td>131.134</td>
+<td>20.052</td>
+<td>111.082</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>CD</th>
+<th>Demanda (jan)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Salvador</td>
+<td>82.426</td>
+</tr>
+<tr>
+<td>João Pessoa</td>
+<td>43.722</td>
+</tr>
+<tr>
+<td>São Luís</td>
+<td>34.728</td>
+</tr>
+<tr>
+<td>Aracaju</td>
+<td>22.614</td>
+</tr>
+<tr>
+<td>Fortaleza</td>
+<td>66.480</td>
+</tr>
+</tbody>
+</table>
+<p>Resolvendo este subproblema de transporte (método simplex/solver, distâncias da Tabela 5 do material):</p>
+<div class="admonition example">
+<p class="admonition-title">Solução do subproblema de janeiro</p>
+<ul>
+<li>Teresina → São Luís: 34.728 un (429 km)</li>
+<li>Teresina → Fortaleza: 54.737 un (624 km)</li>
+<li>Natal → João Pessoa: 37.665 un (221 km)</li>
+<li>Natal → Fortaleza: 11.743 un (527 km)</li>
+<li>Recife → Salvador: 82.426 un (836 km)</li>
+<li>Recife → João Pessoa: 6.057 un (132 km)</li>
+<li>Recife → Aracaju: 22.614 un (528 km)</li>
+</ul>
+<p>A solução aloca as rotas de menor distância prioritariamente (ex.: Natal→João Pessoa a apenas 221 km),
+deixando as rotas mais longas (Recife→Salvador, 836 km) apenas para suprir demandas que as fábricas mais
+próximas não conseguem atender sozinhas — exatamente o comportamento esperado de uma solução ótima de
+transporte.</p>
+</div>
+<p><strong>Passo 6 — Extensão ao problema completo</strong>: para resolver o ano inteiro, o mesmo princípio se aplica mês a
+mês, mas <strong>acoplado</strong> pelas equações de balanço de estoque (o que sobra ou falta em um mês carrega para o
+seguinte, respeitando as capacidades de armazenagem) — por isso não pode ser resolvido como 12 subproblemas
+de transporte independentes, mas sim como um único problema de PL com 180 variáveis de fluxo, resolvido de
+uma vez por um solver.</p>
+<h3 id="4-desafio-ii-problema-de-alocacao-de-capital-e-portfolio-de-projetos">4. Desafio II — Problema de Alocação de Capital e Portfólio de Projetos<a class="headerlink" href="#4-desafio-ii-problema-de-alocacao-de-capital-e-portfolio-de-projetos" title="Permanent link">&para;</a></h3>
+<p><em>(postada em 22/09, editada — material: enunciado + imagem com a tabela de investimentos)</em></p>
+<p><strong>Enunciado</strong>: a Volto Venture Capital (VVC) tem orçamento de R$ 200 milhões (ano 0), R$ 250 milhões (ano
+1) e R$ 150 milhões (ano 2) para investir em 7 projetos (A–G), que podem ser <strong>fracionados</strong> (participação
+proporcional ao longo dos anos). Objetivo: maximizar a lucratividade total.</p>
+<table>
+<thead>
+<tr>
+<th>Projeto</th>
+<th>Ano 0</th>
+<th>Ano 1</th>
+<th>Ano 2</th>
+<th>Lucratividade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>12</td>
+<td>34</td>
+<td>12</td>
+<td>20</td>
+</tr>
+<tr>
+<td>B</td>
+<td>54</td>
+<td>94</td>
+<td>67</td>
+<td>15</td>
+</tr>
+<tr>
+<td>C</td>
+<td>65</td>
+<td>28</td>
+<td>49</td>
+<td>34</td>
+</tr>
+<tr>
+<td>D</td>
+<td>38</td>
+<td>0</td>
+<td>8</td>
+<td>17</td>
+</tr>
+<tr>
+<td>E</td>
+<td>52</td>
+<td>21</td>
+<td>42</td>
+<td>56</td>
+</tr>
+<tr>
+<td>F</td>
+<td>98</td>
+<td>73</td>
+<td>25</td>
+<td>76</td>
+</tr>
+<tr>
+<td>G</td>
+<td>15</td>
+<td>48</td>
+<td>53</td>
+<td>29</td>
+</tr>
+</tbody>
+</table>
+<p><em>(valores em milhões de R$; a tabela original rotula a 3ª coluna como "Ano 3" — tratado aqui como o
+terceiro ano do orçamento, "Ano 2", conforme o enunciado em texto, que descreve apenas 3 períodos
+orçamentários: este ano, o próximo e o seguinte)</em></p>
+<p><strong>Passo 1 — Variáveis de decisão</strong>: <span class="arithmatex">\(x_i \in [0,1]\)</span> = fração do projeto <span class="arithmatex">\(i\)</span> em que a VVC investe
+(<span class="arithmatex">\(i \in \{A,...,G\}\)</span>) — fracionável, pois o enunciado permite participação proporcional, sem limite mínimo
+de compra.</p>
+<p><strong>Passo 2 — Função objetivo</strong>:</p>
+<div class="arithmatex">\[\text{maximizar } Z = 20x_A + 15x_B + 34x_C + 17x_D + 56x_E + 76x_F + 29x_G\]</div>
+<p><strong>Passo 3 — Restrições</strong> (uma por ano, orçamento em milhões de R$):</p>
+<div class="arithmatex">\[
+\begin{aligned}
+12x_A + 54x_B + 65x_C + 38x_D + 52x_E + 98x_F + 15x_G &amp;\le 200 \quad \text{(Ano 0)}\\
+34x_A + 94x_B + 28x_C + 0x_D + 21x_E + 73x_F + 48x_G &amp;\le 250 \quad \text{(Ano 1)}\\
+12x_A + 67x_B + 49x_C + 8x_D + 42x_E + 25x_F + 53x_G &amp;\le 150 \quad \text{(Ano 2)}\\
+0 \le x_i &amp;\le 1, \quad i \in \{A,...,G\}
+\end{aligned}
+\]</div>
+<p><strong>Passo 4 — Resolução</strong> (programação linear contínua, resolvida via método simplex/solver):</p>
+<div class="admonition example">
+<p class="admonition-title">Solução ótima</p>
+<table>
+<thead>
+<tr>
+<th>Projeto</th>
+<th>Fração investida (<span class="arithmatex">\(x_i\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>C</td>
+<td><strong>35,4%</strong></td>
+</tr>
+<tr>
+<td>D</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>E</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>F</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>G</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lucratividade total máxima ≈ 193,0</strong> (em milhões de R$, na mesma unidade dos valores de
+lucratividade da tabela).</p>
+<p><strong>Verificação do uso do orçamento</strong>: Ano 0: R$ 200,0M usados / 200,0M disponíveis (restrição <strong>ativa</strong>
+— o orçamento do ano 0 é o fator limitante); Ano 1: R$ 185,9M usados / 250,0M (folga de ~64M); Ano 2:
+R$ 149,3M usados / 150,0M (quase todo usado).</p>
+<p><strong>Interpretação</strong>: os projetos A, E, F e G (que têm boa lucratividade por unidade de capital
+consumido, especialmente no Ano 0) entram <strong>integralmente</strong> (100%); o projeto C entra parcialmente
+(35,4%) porque é o "projeto marginal" que absorve exatamente o capital restante do Ano 0, sem violar os
+limites dos anos 1 e 2; B e D não entram porque consomem muito capital nos primeiros anos para a
+lucratividade que oferecem (B, especialmente, tem alto consumo nos 3 anos e lucratividade relativamente
+baixa).</p>
+</div>
+<h3 id="5-desafio-iii-problema-da-refinaria">5. Desafio III — Problema da Refinaria<a class="headerlink" href="#5-desafio-iii-problema-da-refinaria" title="Permanent link">&para;</a></h3>
+<p><em>(postada em 22/09, editada — material: enunciado completo)</em></p>
+<p><strong>Enunciado</strong>: uma refinaria produz gasolina <strong>verde</strong>, <strong>azul</strong> e <strong>comum</strong>, a partir de gasolina pura
+(9.600.000 L/semana disponíveis), octana (4.800.000 L/semana) e aditivo (2.200.000 L/semana).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Gasolina pura</th>
+<th>Octana</th>
+<th>Aditivo</th>
+<th>Margem de lucro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verde (por litro)</td>
+<td>0,22 L</td>
+<td>0,50 L</td>
+<td>0,28 L</td>
+<td>R$ 0,30</td>
+</tr>
+<tr>
+<td>Azul (por litro)</td>
+<td>0,52 L</td>
+<td>0,34 L</td>
+<td>0,14 L</td>
+<td>R$ 0,25</td>
+</tr>
+<tr>
+<td>Comum (por litro)</td>
+<td>0,74 L</td>
+<td>0,20 L</td>
+<td>0,06 L</td>
+<td>R$ 0,20</td>
+</tr>
+</tbody>
+</table>
+<p>Regras de produção: comum ≥ 16 × verde; azul ≤ 600.000 L/semana.</p>
+<p><strong>Passo 1 — Variáveis de decisão</strong>: <span class="arithmatex">\(x_v, x_a, x_c\)</span> = litros/semana de gasolina verde, azul e comum.</p>
+<p><strong>Passo 2 — Função objetivo</strong>:</p>
+<div class="arithmatex">\[\text{maximizar } Z = 0{,}30x_v + 0{,}25x_a + 0{,}20x_c\]</div>
+<p><strong>Passo 3 — Restrições</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+0{,}22x_v + 0{,}52x_a + 0{,}74x_c &amp;\le 9.600.000 \quad \text{(gasolina pura)}\\
+0{,}50x_v + 0{,}34x_a + 0{,}20x_c &amp;\le 4.800.000 \quad \text{(octana)}\\
+0{,}28x_v + 0{,}14x_a + 0{,}06x_c &amp;\le 2.200.000 \quad \text{(aditivo)}\\
+x_c &amp;\ge 16x_v \quad \text{(demanda mínima de comum)}\\
+x_a &amp;\le 600.000 \quad \text{(demanda máxima de azul)}\\
+x_v, x_a, x_c &amp;\ge 0
+\end{aligned}
+\]</div>
+<p><strong>Passo 4 — Resolução</strong> (programação linear, 3 variáveis, resolvida via método simplex/solver):</p>
+<div class="admonition example">
+<p class="admonition-title">Solução ótima</p>
+<p><span class="arithmatex">\(x_v \approx 770.149\)</span> L/semana, <span class="arithmatex">\(x_a = 600.000\)</span> L/semana (no limite máximo), <span class="arithmatex">\(x_c \approx 12.322.388\)</span>
+L/semana. <strong>Lucro máximo ≈ R$ 2.845.522/semana</strong>.</p>
+<p><strong>Restrições ativas (binding) na solução ótima</strong>:</p>
+<ul>
+<li><strong>Gasolina pura</strong>: <span class="arithmatex">\(0{,}22(770.149) + 0{,}52(600.000) + 0{,}74(12.322.388) = 9.600.000\)</span> — usada
+  <strong>100%</strong> (recurso escasso/gargalo).</li>
+<li><strong>Demanda mínima de comum</strong>: <span class="arithmatex">\(x_c = 16x_v\)</span> exatamente (12.322.388 ≈ 16 × 770.149) — a razão mínima
+  exigida pelo mercado é usada no limite, pois a gasolina comum é a que menos consome gasolina pura por
+  litro (0,22 vs. 0,74... na verdade o inverso: comum consome <strong>mais</strong> gasolina pura por litro, 0,74 L,
+  mas tem a menor margem; ver nota abaixo).</li>
+<li><strong>Azul no teto</strong>: <span class="arithmatex">\(x_a = 600.000\)</span> — compensa, por ter a segunda maior margem (R$0,25) e consumir
+  relativamente pouco do recurso mais escasso proporcionalmente ao seu lucro.</li>
+<li><strong>Octana</strong> (3.053.552 / 4.800.000) e <strong>aditivo</strong> (1.038.985 / 2.200.000) ficam com folga — não são
+  fatores limitantes.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Intuição econômica</p>
+<p>A gasolina pura é o recurso mais restritivo. Apesar da gasolina comum ter a menor margem unitária
+(R$0,20), a restrição <span class="arithmatex">\(x_c \ge 16x_v\)</span> obriga a produção de uma quantidade de comum <strong>16 vezes
+maior</strong> que a de verde sempre que se produz verde — então o modelo maximiza verde e azul (melhores
+margens) até o ponto em que o consumo de gasolina pura se esgota, e o volume de "comum" acaba sendo,
+em sua maior parte, consequência direta da restrição de proporção mínima, não uma escolha livre de
+lucratividade.</p>
+</div>
+</div>
+<h3 id="6-aps-estruturacao-de-problemas-vft">6. APS — Estruturação de Problemas (VFT)<a class="headerlink" href="#6-aps-estruturacao-de-problemas-vft" title="Permanent link">&para;</a></h3>
+<p><em>(postada em 06/10 — material: vídeo de Ralph Keeney + artigo de Keeney 1996 + artigos de aplicação em
+anexo)</em></p>
+<p><strong>Enunciado</strong>: assistir à aula de Ralph Keeney sobre <em>Value-Focused Thinking</em> (VFT) e ler o artigo
+seminal (Keeney, 1996); em grupo, elaborar a rede de <strong>objetivos-meio</strong> e <strong>objetivos-fim</strong> para o problema
+da escolha de cidade para um nômade digital.</p>
+<h4 id="o-metodo-vft-keeney-1996">O método VFT (Keeney, 1996)<a class="headerlink" href="#o-metodo-vft-keeney-1996" title="Permanent link">&para;</a></h4>
+<p>VFT é o oposto do "pensamento focado em alternativas": em vez de começar pela lista de alternativas
+disponíveis e só depois formular critérios, começa-se pelos <strong>valores</strong> (o que realmente importa), que
+guiam tanto a criação de alternativas quanto a identificação de melhores <em>oportunidades</em> de decisão.</p>
+<ul>
+<li><strong>Objetivo fundamental</strong>: um <strong>fim</strong> que o decisor valoriza naquele contexto — "simplesmente importante".</li>
+<li><strong>Objetivo-meio</strong>: um <strong>método</strong> para alcançar outro objetivo — sua importância deriva de levar a outro
+  objetivo.</li>
+<li><strong>Teste "por que isso é importante?"</strong> (<em>why-is-it-important</em> / WITI): aplicado repetidamente a cada
+  objetivo candidato. Se a resposta aponta para outro objetivo, o candidato é objetivo-meio; se a resposta é
+  "simplesmente importante" (não leva a mais nada), é um objetivo fundamental.</li>
+</ul>
+<p><strong>10 técnicas de Keeney para levantar a lista inicial de objetivos</strong> (Tabela 3 do artigo): lista de desejos;
+pensar em alternativas (o que é bom/ruim em cada); problemas e deficiências; consequências (boas/más já
+ocorridas); metas, restrições e diretrizes; perspectivas diferentes (concorrente, futuro); objetivos
+estratégicos; objetivos genéricos (clientes, funcionários, meio ambiente); estruturação (relações meio-fim);
+quantificação (como medir, pesos relativos).</p>
+<h4 id="passo-a-passo-da-resolucao-rede-de-objetivos-para-escolha-de-cidade-para-um-nomade-digital">Passo a passo da resolução — rede de objetivos para "escolha de cidade para um nômade digital"<a class="headerlink" href="#passo-a-passo-da-resolucao-rede-de-objetivos-para-escolha-de-cidade-para-um-nomade-digital" title="Permanent link">&para;</a></h4>
+<p><strong>Passo 1 — Levantamento da lista inicial (técnica "wish list" + perspectivas)</strong>: aplicando as perguntas de
+Keeney ("o que você quer alcançar ao escolher uma cidade?"), levanta-se uma lista bruta de itens — alguns
+serão objetivos-meio, outros fundamentais, e alguns nem objetivos são (seriam alternativas ou restrições):
+custo de vida baixo; boa internet; fuso horário compatível com clientes; clima agradável; comunidade de
+nômades/coworkings; visto fácil; segurança pública; boa qualidade de vida geral; idioma acessível;
+experiências culturais; transporte público eficiente.</p>
+<p><strong>Passo 2 — Aplicar o teste "por que isso é importante?" a cada item</strong>, para separar objetivos-meio de
+objetivos fundamentais:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>"Por que isso é importante?"</th>
+<th>Classificação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internet rápida/estável</td>
+<td>Porque permite trabalhar sem interrupções</td>
+<td><strong>Meio</strong> → leva a "maximizar produtividade no trabalho remoto"</td>
+</tr>
+<tr>
+<td>Fuso horário compatível</td>
+<td>Porque facilita reuniões com clientes/equipe</td>
+<td><strong>Meio</strong> → leva a "maximizar produtividade no trabalho remoto"</td>
+</tr>
+<tr>
+<td>Custo de vida baixo</td>
+<td>Porque sobra mais renda disponível</td>
+<td><strong>Meio</strong> → leva a "maximizar bem-estar financeiro"</td>
+</tr>
+<tr>
+<td>Visto fácil/barato</td>
+<td>Porque reduz burocracia e permite ficar mais tempo</td>
+<td><strong>Meio</strong> → leva a "minimizar atrito logístico"</td>
+</tr>
+<tr>
+<td>Segurança pública</td>
+<td>"Simplesmente importante" (não leva a mais nada)</td>
+<td><strong>Fundamental</strong></td>
+</tr>
+<tr>
+<td>Comunidade de nômades/coworkings</td>
+<td>Porque gera conexões sociais e profissionais</td>
+<td><strong>Meio</strong> → leva a "maximizar bem-estar social"</td>
+</tr>
+<tr>
+<td>Clima agradável</td>
+<td>"Simplesmente importante" (qualidade de vida direta)</td>
+<td><strong>Fundamental</strong></td>
+</tr>
+<tr>
+<td>Experiências culturais</td>
+<td>"Simplesmente importante" (enriquecimento pessoal)</td>
+<td><strong>Fundamental</strong></td>
+</tr>
+<tr>
+<td>Transporte público eficiente</td>
+<td>Porque reduz tempo perdido em deslocamento</td>
+<td><strong>Meio</strong> → leva a "maximizar produtividade" e "bem-estar"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Passo 3 — Objetivo estratégico</strong>: aplicando o teste recursivamente aos objetivos fundamentais
+encontrados, todos eles convergem, em última instância, para um único objetivo estratégico mais amplo:
+<strong>"Maximizar a qualidade de vida como nômade digital"</strong>.</p>
+<p><strong>Passo 4 — Rede de objetivos-meio e objetivos-fim</strong>:</p>
+<pre class="mermaid"><code>flowchart TB
+    EST["OBJETIVO ESTRATÉGICO&lt;br/&gt;Maximizar a qualidade de vida como nômade digital"]
+
+    F1["Fundamental: Maximizar&lt;br/&gt;bem-estar financeiro"]
+    F2["Fundamental: Maximizar&lt;br/&gt;produtividade no trabalho remoto"]
+    F3["Fundamental: Maximizar&lt;br/&gt;segurança pessoal"]
+    F4["Fundamental: Maximizar&lt;br/&gt;bem-estar social"]
+    F5["Fundamental: Maximizar&lt;br/&gt;enriquecimento cultural"]
+
+    M1[Minimizar custo de vida] --&gt; F1
+    M2[Minimizar burocracia de visto] --&gt; F1
+    M3[Maximizar velocidade/estabilidade da internet] --&gt; F2
+    M4[Minimizar diferença de fuso horário com clientes] --&gt; F2
+    M5[Maximizar eficiência do transporte público] --&gt; F2
+    M6[Minimizar índices de criminalidade] --&gt; F3
+    M7[Maximizar comunidade de nômades/coworkings] --&gt; F4
+    M5 --&gt; F4
+    M8[Maximizar acessibilidade do idioma] --&gt; F4
+    M9[Maximizar diversidade de atrações culturais] --&gt; F5
+    M10[Maximizar clima agradável] --&gt; F5
+
+    F1 --&gt; EST
+    F2 --&gt; EST
+    F3 --&gt; EST
+    F4 --&gt; EST
+    F5 --&gt; EST</code></pre>
+<p><strong>Passo 5 — Uso da rede para gerar/avaliar alternativas</strong> (conforme a Fase 3 do VFT): tomando cada objetivo
+fundamental isoladamente, geram-se candidatos "ideais" para aquele objetivo — ex., para "maximizar
+produtividade", cidades-hub conhecidas por internet rápida e comunidades de coworking (Lisboa, Chiang Mai,
+Medellín, Bali); para "minimizar custo de vida", cidades do Sudeste Asiático ou América Latina. Combinando
+pares e trios de objetivos (passo recomendado por Keeney), chega-se a um conjunto reduzido de alternativas
+"muito promissoras" que equilibram vários objetivos simultaneamente — e não apenas um, evitando o viés de
+ancoragem em alternativas óbvias.</p>
+<h3 id="7-arvore-de-decisao-desenvolvimento-de-app">7. Árvore de Decisão — Desenvolvimento de App<a class="headerlink" href="#7-arvore-de-decisao-desenvolvimento-de-app" title="Permanent link">&para;</a></h3>
+<p><em>(postada em 13/10 — material: enunciado completo)</em></p>
+<p><strong>Enunciado</strong>: estruturar um problema de decisão com etapas de decisão e etapas de resultados incertos
+(até 3 cenários, probabilidades arbitradas), elaborando uma árvore de decisão com pelo menos 6 desfechos
+possíveis, considerando a influência de decisões na fase de priorização de requisitos sobre um indicador de
+interesse; calcular o valor esperado do indicador.</p>
+<h4 id="passo-a-passo-da-resolucao">Passo a passo da resolução<a class="headerlink" href="#passo-a-passo-da-resolucao" title="Permanent link">&para;</a></h4>
+<p><strong>Passo 1 — Contexto e indicador de interesse</strong>: uma equipe de desenvolvimento de app precisa decidir <strong>que
+conjunto de requisitos priorizar</strong> na primeira versão do produto. O indicador de interesse escolhido:
+<strong>downloads no 1º trimestre após o lançamento</strong>.</p>
+<p><strong>Passo 2 — Nó de decisão</strong>: priorizar requisitos entre duas estratégias competidoras (restrição de tempo
+de equipe impede fazer as duas completamente):</p>
+<ul>
+<li><strong>Opção A</strong> — Funcionalidades <strong>sociais</strong> (convite de amigos, compartilhamento, feed de atividade).</li>
+<li><strong>Opção B</strong> — Funcionalidades <strong>premium</strong> (assinatura paga, personalização avançada).</li>
+</ul>
+<p><strong>Passo 3 — Nós de evento (incerteza de mercado)</strong>: para cada opção, a recepção do mercado é incerta, com 3
+cenários (6 desfechos no total, conforme pedido):</p>
+<pre class="mermaid"><code>flowchart LR
+    D{{"Priorizar&lt;br/&gt;requisitos?"}}
+    D --&gt;|Opção A: Social| EA((Recepção&lt;br/&gt;de mercado A))
+    D --&gt;|Opção B: Premium| EB((Recepção&lt;br/&gt;de mercado B))
+
+    EA --&gt;|"30% Alta adesão"| A1["150.000 downloads"]
+    EA --&gt;|"45% Média adesão"| A2["70.000 downloads"]
+    EA --&gt;|"25% Baixa adesão"| A3["20.000 downloads"]
+
+    EB --&gt;|"20% Alta adesão"| B1["200.000 downloads"]
+    EB --&gt;|"35% Média adesão"| B2["60.000 downloads"]
+    EB --&gt;|"45% Baixa adesão"| B3["10.000 downloads"]</code></pre>
+<p><em>(probabilidades e desfechos arbitrados conforme autorizado pelo enunciado — "arbitre as probabilidades")</em></p>
+<p><strong>Passo 4 — Fold back (cálculo do valor esperado em cada nó de evento)</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+EMV(\text{Opção A}) &amp;= 0{,}30(150.000) + 0{,}45(70.000) + 0{,}25(20.000) \\
+&amp;= 45.000 + 31.500 + 5.000 = \mathbf{81.500 \text{ downloads}}
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+EMV(\text{Opção B}) &amp;= 0{,}20(200.000) + 0{,}35(60.000) + 0{,}45(10.000) \\
+&amp;= 40.000 + 21.000 + 4.500 = \mathbf{65.500 \text{ downloads}}
+\end{aligned}
+\]</div>
+<p><strong>Passo 5 — Decisão</strong> (escolher o ramo de maior valor esperado no nó de decisão):</p>
+<div class="admonition example">
+<p class="admonition-title">Resultado</p>
+<p><span class="arithmatex">\(EMV(\text{A}) = 81.500 &gt; EMV(\text{B}) = 65.500\)</span> → a árvore recomenda a <strong>Opção A (priorizar
+funcionalidades sociais)</strong>, com valor esperado de <strong>81.500 downloads no 1º trimestre</strong>.</p>
+<p><strong>Interpretação</strong>: embora a Opção B tenha o <em>melhor cenário individual</em> (200.000 downloads no caso de
+alta adesão — mais que o melhor cenário de A), essa alta adesão é menos provável (20% vs. 30%) e o
+cenário de baixa adesão é mais provável e mais penalizante (45% de chance de apenas 10.000 downloads).
+A Opção A tem uma distribuição de resultados mais estável, resultando em maior valor esperado — este é
+exatamente o tipo de <em>trade-off</em> entre risco e retorno que a árvore de decisão torna explícito e
+quantificável, em vez de depender apenas de intuição.</p>
+</div>
+<p><strong>Requisitos recomendados para o App</strong> (conforme pedido no enunciado, "apresente os requisitos para o App
+em planejamento"): priorizar, na primeira versão, convite de amigos, compartilhamento em redes sociais e
+feed de atividade — funcionalidades premium (assinatura, personalização) ficam para uma segunda iteração,
+após validado o crescimento orgânico via adoção social.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../tecnologia-diversidade-equidade-e-inclusao/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: TECNOLOGIA, DIVERSIDADE, EQUIDADE E INCLUSÃO">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                TECNOLOGIA, DIVERSIDADE, EQUIDADE E INCLUSÃO
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4586 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Base de conhecimento pessoal — faculdade e estudos">
+      
+      
+        <meta name="author" content="João Pedro Bezerra">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../data-warehousing/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS - LLM Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#analise-e-especificacao-avancada-de-requisitos-de-sistemas" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="LLM Wiki" class="md-header__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLM Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../estudos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Estudos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Faculdade
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LLM Wiki" class="md-nav__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLM Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estudos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estudos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/numeros-complexos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NÚMEROS COMPLEXOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/agentes-de-ia/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTES DE IA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AGENTES DE IA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/harness-e-pi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HARNESS E PI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/otimizacao-tokens-roteamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE TOKENS E ROTEAMENTO DE MODELOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/fine-tuning-agentico-meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FINE-TUNING AGÊNTICO: A ABORDAGEM DA META
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/jev-modelos-decisao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JEV: MODELOS DE DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/computacao-quantica-ibm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - SISTEMAS ÚNICOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1-qiskit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - IMPLEMENTAÇÃO EM QISKIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/otimizacao-de-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/bend2-tipos-dependentes-provas-formais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faculdade
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Faculdade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 1
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/calculo-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CÁLCULO 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/matematica-discreta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATEMÁTICA DISCRETA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/algebra-vetorial-linear-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 2
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA E PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/assuncoes-da-regressao-linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assunções da regressão linear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/fisica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FÍSICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/logica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LÓGICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SISTEMAS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 3
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/arquitetura-de-computadores-e-sistemas-operacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepção de Artefatos Digitais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/grupo-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grupo 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/desenvolvimento-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DESENVOLVIMENTO DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/estruturas-de-dados-orientadas-a-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTRUTURAS DE DADOS ORIENTADAS À OBJETOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 4
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/banco-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BANCO DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/compiladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPILADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/informatica-teorica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA TEÓRICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/integracao-e-evolucao-de-sistemas-de-informacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 5
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/projeto-aprendizagem-de-maquina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Aprendizagem de Máquina
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3_2" id="__nav_3_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projeto Packet Tracer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 - Design Físico e Topologia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e2-design-de-enderecamento-vlsm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2 - Design de Endereçamento VLSM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e3-design-de-segmentacao-vlans-e-dhcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E3 - Design de Segmentação (VLANs e DHCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E4 - Roteamento Inter-VLAN e Conectividade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e5-apresentacao-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E5 - Apresentação Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/referencias-bibliograficas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências Bibliográficas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/untitled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untitled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/metodologia-e-expressao-tecnico-cientifica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    METODOLOGIA E EXPRESSÃO TÉCNICO-CIENTÍFICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/paradigmas-de-linguagens-computacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PARADIGMAS DE LINGUAGENS COMPUTACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-6/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 6
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/empreendimentos-em-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EMPREENDIMENTOS EM INFORMÁTICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/engenharia-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENGENHARIA DE REQUISITOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/informatica-e-sociedade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA E SOCIEDADE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/topicos-avancados-em-si-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TÓPICOS AVANÇADOS EM SI 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 7
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 7
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unidade-1-processos-da-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unidade 1 — Processos da Engenharia de Requisitos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unidade 1 — Processos da Engenharia de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é Engenharia de Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolucao-dos-processos-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolução dos processos de desenvolvimento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcoes-da-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funções da Engenharia de Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-processo-generico-de-er" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O processo "genérico" de ER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-requisitos-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de requisitos de software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stakeholders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#praticas-por-fase-do-processo-ciclo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Práticas por fase do processo (ciclo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividades-da-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividades da Engenharia de Requisitos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atividades da Engenharia de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elicitacao-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elicitação de requisitos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elicitação de requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#questionarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questionários
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrevistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrevistas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grupo-focal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grupo focal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estudo-da-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estudo da documentação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abordagem-centrada-no-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abordagem centrada no usuário
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparando-as-tecnicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparando as técnicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-complementares-prototipacao-persona-e-cenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas complementares: prototipação, persona e cenário
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-e-negociacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise e negociação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-e-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificação e validação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerencia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerência de requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unidade-7-parcial-design-thinking-criatividade-e-empatia-na-elicitacao-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unidade 7 (parcial) — Design Thinking, Criatividade e Empatia na elicitação de requisitos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unidade 7 (parcial) — Design Thinking, Criatividade e Empatia na elicitação de requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-ir-alem-das-tecnicas-classicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que ir além das técnicas clássicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Thinking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criatividade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Criatividade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empatia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empatia
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-e-para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências e para saber mais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Referências e para saber mais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#citadas-diretamente-no-material-da-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citadas diretamente no material da disciplina
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leituras-complementares-indicadas-pela-professora-contexto-da-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leituras complementares indicadas pela professora (contexto da disciplina)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-warehousing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DATA WAREHOUSING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fundamentos-de-testes-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FUNDAMENTOS DE TESTES DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redes-neurais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDES NEURAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tecnologia-diversidade-equidade-e-inclusao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TECNOLOGIA, DIVERSIDADE, EQUIDADE E INCLUSÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas-de-apoio-a-decisao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DE APOIO A DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unidade-1-processos-da-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unidade 1 — Processos da Engenharia de Requisitos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unidade 1 — Processos da Engenharia de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é Engenharia de Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolucao-dos-processos-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolução dos processos de desenvolvimento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcoes-da-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funções da Engenharia de Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-processo-generico-de-er" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O processo "genérico" de ER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-requisitos-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de requisitos de software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stakeholders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#praticas-por-fase-do-processo-ciclo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Práticas por fase do processo (ciclo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividades-da-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividades da Engenharia de Requisitos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atividades da Engenharia de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elicitacao-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elicitação de requisitos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elicitação de requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#questionarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questionários
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrevistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrevistas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grupo-focal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grupo focal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estudo-da-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estudo da documentação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abordagem-centrada-no-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abordagem centrada no usuário
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparando-as-tecnicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparando as técnicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-complementares-prototipacao-persona-e-cenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas complementares: prototipação, persona e cenário
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-e-negociacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise e negociação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-e-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificação e validação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerencia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerência de requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unidade-7-parcial-design-thinking-criatividade-e-empatia-na-elicitacao-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unidade 7 (parcial) — Design Thinking, Criatividade e Empatia na elicitação de requisitos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unidade 7 (parcial) — Design Thinking, Criatividade e Empatia na elicitação de requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-ir-alem-das-tecnicas-classicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que ir além das técnicas clássicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Thinking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criatividade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Criatividade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empatia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empatia
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-e-para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências e para saber mais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Referências e para saber mais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#citadas-diretamente-no-material-da-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citadas diretamente no material da disciplina
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leituras-complementares-indicadas-pela-professora-contexto-da-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leituras complementares indicadas pela professora (contexto da disciplina)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/jpbezerra/llm-wiki/edit/main/docs/faculdade/periodo-7/analise-e-especificacao-avancada-de-requisitos.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="analise-e-especificacao-avancada-de-requisitos-de-sistemas">ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS<a class="headerlink" href="#analise-e-especificacao-avancada-de-requisitos-de-sistemas" title="Permanent link">&para;</a></h1>
+<hr />
+<p>Disciplina do Centro de Informática da UFPE, ministrada pela <strong>Profa. Dra. Edna Dias Canedo</strong>, que aprofunda a Engenharia de Requisitos (ER) além do que é visto em disciplinas introdutórias, com foco em requisitos não funcionais, segurança, privacidade, ética e nas técnicas mais recentes — especialmente <strong>Design Thinking, criatividade e empatia</strong> — usadas para elicitar requisitos de software.</p>
+<div class="admonition note">
+<p class="admonition-title">Organização da disciplina</p>
+<ul>
+<li><strong>Unidade 1</strong> — Processos da Engenharia de Requisitos</li>
+<li><strong>Unidade 2</strong> — Requisitos funcionais</li>
+<li><strong>Unidade 3</strong> — Requisitos não funcionais</li>
+<li><strong>Unidade 4</strong> — Requisitos de Segurança</li>
+<li><strong>Unidade 5</strong> — Requisitos de Privacidade</li>
+<li><strong>Unidade 6</strong> — Ética em Requisitos</li>
+<li><strong>Unidade 7</strong> — Técnicas, Metodologias, Frameworks e Ferramentas para Elicitar Requisitos</li>
+</ul>
+<p>O material-base desta página é o primeiro conjunto de slides da disciplina, que desenvolve a <strong>Unidade 1</strong> (processo de ER) por completo e avança bastante na <strong>Unidade 7</strong> (Design Thinking, criatividade e empatia como técnicas de elicitação). As Unidades 2 a 6 aparecem, neste material, apenas como os <strong>temas da Avaliação Diagnóstica</strong> (ver ao final) — cada aluno escolhe um deles, lê um artigo recente e apresenta à turma — e devem ser aprofundadas com o material específico de cada unidade conforme a disciplina avança.</p>
+</div>
+<h2 id="unidade-1-processos-da-engenharia-de-requisitos">Unidade 1 — Processos da Engenharia de Requisitos<a class="headerlink" href="#unidade-1-processos-da-engenharia-de-requisitos" title="Permanent link">&para;</a></h2>
+<h3 id="o-que-e-engenharia-de-requisitos">O que é Engenharia de Requisitos<a class="headerlink" href="#o-que-e-engenharia-de-requisitos" title="Permanent link">&para;</a></h3>
+<p>A ER surgiu como área de pesquisa em <strong>1993</strong>, com a primeira <em>IEEE International Symposium on Requirements Engineering</em>; em <strong>1994</strong> ocorreu a primeira <em>IEEE International Conference on Requirements Engineering (RE)</em> — conferência que segue acontecendo anualmente até hoje (ver referências externas ao final).</p>
+<p>Três definições clássicas, trabalhadas em aula:</p>
+<blockquote>
+<p>"Um conjunto de atividades utilizadas para <strong>identificar e comunicar</strong> a finalidade de um <strong>sistema de software</strong>, e o contexto no qual será usado. Assim, a ER atua como a <strong>ponte entre as necessidades reais</strong> dos usuários, clientes e outros grupos afetados por um sistema de software, e as potencialidades e oportunidades oferecidas pela tecnologia." — <strong>Easterbrook (2004)</strong></p>
+<p>"Uma <strong>área multidisciplinar, centrada no ser humano e em seus problemas</strong>. Deve investigar como as pessoas percebem e entendem o mundo ao seu redor, como interagem e como a sociologia dos locais de trabalho afeta suas ações. A ER deve se utilizar das ciências sociais e cognitivas — filosofia, psicologia cognitiva, sociologia e linguística — para fornecer fundamentos teóricos e técnicas para elicitar e modelar requisitos." — <strong>Nuseibeh (2000)</strong></p>
+<p>"Um processo <strong>iterativo, incremental, cognitivo, social, comunicativo e criativo</strong>, cujos objetivos são conhecer, entender, estruturar, representar, comunicar e transcrever as informações relevantes de um sistema, extraídas de diferentes segmentos: ambiente da organização, a organização, a gerência e o desenvolvimento." — <strong>Carvalho (2003)</strong></p>
+</blockquote>
+<p>A ER normalmente ocorre em um <strong>sistema de atividade humana</strong>, onde "os donos do problema" são pessoas: a obtenção incorreta dos requisitos leva à disponibilização de <strong>sistemas inadequados</strong> às organizações (<strong>Rocha, 2002</strong>). O desenvolvimento de software continua sendo, hoje, uma atividade <strong>imprevisível e de alto risco</strong>, com pouca transparência sobre o processo e baixa garantia do que o usuário vai efetivamente receber.</p>
+<div class="admonition quote">
+<p class="admonition-title">Fred Brooks</p>
+<p>"A parte mais difícil no desenvolvimento de um sistema de software é decidir, de forma precisa, <strong>o que precisa ser construído</strong>. Nenhuma outra parte é tão crítica quanto o entendimento do que o sistema precisa fazer. Nenhuma outra parte é tão difícil de ser corrigida depois."</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Tom DeMarco</p>
+<p>27 anos depois de cunhar a célebre frase "<strong>você não pode controlar o que você não consegue medir</strong>", o próprio DeMarco passou a considerar que o desenvolvimento de software é, na prática, uma atividade <strong>imprevisível e experimental</strong>. A qualidade de um sistema depende da qualidade dos requisitos: requisitos errados geram, inevitavelmente, sistema errado. São os requisitos que determinam escopo, prazo, custo e qualidade dos projetos.</p>
+</div>
+<h3 id="evolucao-dos-processos-de-desenvolvimento">Evolução dos processos de desenvolvimento<a class="headerlink" href="#evolucao-dos-processos-de-desenvolvimento" title="Permanent link">&para;</a></h3>
+<p>Entre 1970 e 2010 os processos evoluíram em camadas sucessivas: <strong>processos preditivos</strong> (cascata) → <strong>processos iterativos</strong> (Spiral, RAD, RUP) → <strong>processos ágeis/adaptativos</strong> (Scrum, XP, Lean, Open UP, FDD, Crystal) → <strong>Enterprise Agility</strong> (agilidade em escala organizacional). As chamadas "fábricas de software" ilustram o problema histórico: produtos customizados feitos com ferramentas ineficientes e processos pouco repetíveis, pouca coordenação entre profissionais capacitados, qualidade variável entre equipes e, no fim, um produto que "satisfaz os requisitos básicos" mas deixa de atender inúmeras necessidades nunca exploradas.</p>
+<p>A <strong>inovação de produtos</strong> depende de soluções criativas que atendam às necessidades reais e latentes dos usuários — daí a importância de <strong>técnicas de criatividade e empatia</strong> e do <strong>Design Thinking</strong> já na elicitação de requisitos (desenvolvido em detalhe mais adiante nesta página).</p>
+<p>A ER pode ser vista como a <strong>interseção</strong> (diagrama de Venn) entre os <em>requisitos dos usuários</em> e a <em>solução de software</em> — a disciplina que reduz esse gap. De forma geral, a ER executa as mesmas atividades tanto em processos tradicionais quanto ágeis; o que muda é a <strong>filosofia</strong> que orienta como essas atividades são conduzidas.</p>
+<h3 id="funcoes-da-engenharia-de-requisitos">Funções da Engenharia de Requisitos<a class="headerlink" href="#funcoes-da-engenharia-de-requisitos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Estabelece uma visão comum</strong> entre usuário e equipe de desenvolvimento sobre o que o software deve atender;</li>
+<li><strong>Documenta e controla</strong> os requisitos para uso gerencial e da engenharia de software;</li>
+<li><strong>Mantém</strong> artefatos e atividades consistentes com os requisitos alocados;</li>
+<li><strong>Navega</strong> por todo o processo de desenvolvimento, da elicitação até a manutenção e evolução.</li>
+</ul>
+<p>Se os requisitos não são bem capturados, o risco não é apenas atraso: pode-se construir um <strong>excelente software para resolver o problema errado</strong>, com perda de tempo e dinheiro, frustração da equipe e usuários insatisfeitos.</p>
+<p>Dependendo da complexidade do projeto e da equipe, vários papéis participam da ER: engenheiro de software, analista de sistemas, analista de negócios, analista de requisitos, revisor de requisitos e demais stakeholders.</p>
+<h3 id="o-processo-generico-de-er">O processo "genérico" de ER<a class="headerlink" href="#o-processo-generico-de-er" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Problemas do Mundo Real → Especificação do Problema → Especificação do Sistema → Sistema
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>         (tudo isso coberto pela Engenharia de Requisitos, com participação dos stakeholders
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>          e gerência de requisitos apoiada por um repositório/base de dados)
+</code></pre></div>
+<p>Em ciclo, as quatro grandes atividades se retroalimentam continuamente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Elicit Requirements → Analyze Requirements → Document Requirements → Validate Requirements
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        ↑__________________________|_________________________|______________________|
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Dados empíricos sobre o problema</p>
+<ul>
+<li>Pesquisas empíricas sugerem que o processo de ER é deficiente em <strong>75%</strong> das empresas de software.</li>
+<li>Um estudo com <strong>38 profissionais de TIC no Reino Unido</strong> apontou "obter requisitos claros e detalhados" como o principal fator crítico de sucesso de um projeto de software.</li>
+<li>Principais riscos de projetos de software, por frequência: <strong>requisitos instáveis / mudanças frequentes (66%)</strong>; <strong>especificação de requisitos pobre (55%)</strong>; <strong>atitudes dos stakeholders — demora na aprovação, mudanças, dificuldade de comunicação (42%)</strong>.</li>
+</ul>
+</div>
+<h3 id="tipos-de-requisitos-de-software">Tipos de requisitos de software<a class="headerlink" href="#tipos-de-requisitos-de-software" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Requisitos Funcionais</strong></td>
+<td>Definem as funcionalidades que o sistema deve satisfazer</td>
+</tr>
+<tr>
+<td><strong>Requisitos Não Funcionais</strong></td>
+<td>Restrições e atributos de qualidade: desempenho, usabilidade, confiabilidade, segurança, privacidade, escalabilidade, portabilidade, ética etc.</td>
+</tr>
+<tr>
+<td><strong>Requisitos Organizacionais (de domínio)</strong></td>
+<td>Metas da empresa/domínio, políticas internas e estratégicas, estilo de gestão, posição de mercado, legislação (ex.: <strong>LGPD</strong>) — podem ser funcionais ou não funcionais</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stakeholders">Stakeholders<a class="headerlink" href="#stakeholders" title="Permanent link">&para;</a></h3>
+<p>São toda e qualquer parte envolvida ou afetada pelo sistema — clientes, usuários, competidores, órgãos reguladores etc. Envolvê-los de forma eficaz esbarra em dificuldades recorrentes:</p>
+<ul>
+<li><strong>Compromisso</strong> — a alta gerência raramente tem tempo para se envolver na elicitação;</li>
+<li><strong>Habilidade</strong> — stakeholders tendem a descrever <em>soluções</em>, não <em>necessidades</em>;</li>
+<li><strong>Envolvimento</strong> — difícil manter interesse e participação ao longo de todo o projeto;</li>
+<li><strong>Divergência</strong> — o modelo conceitual da equipe de analistas pode ser muito diferente do dos stakeholders;</li>
+<li><strong>Conflito de interesse</strong> — grupos de stakeholders podem ter visões e objetivos opostos.</li>
+</ul>
+<h3 id="praticas-por-fase-do-processo-ciclo">Práticas por fase do processo (ciclo)<a class="headerlink" href="#praticas-por-fase-do-processo-ciclo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Práticas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Elicitação</strong></td>
+<td>Identificar stakeholders; definir escopo e problema; selecionar técnicas de elicitação</td>
+</tr>
+<tr>
+<td><strong>Modelagem</strong></td>
+<td>Modelar requisitos funcionais e não funcionais; verificar erros/problemas; armazenar artefatos</td>
+</tr>
+<tr>
+<td><strong>Análise</strong></td>
+<td>Criar modelos de análise; priorizar e negociar requisitos</td>
+</tr>
+<tr>
+<td><strong>Validação</strong></td>
+<td>Revisão e inspeção de requisitos; criar casos de teste</td>
+</tr>
+<tr>
+<td><strong>Gerenciamento</strong></td>
+<td>Gerenciar versões, controle de mudanças, análise de impacto e rastreabilidade</td>
+</tr>
+</tbody>
+</table>
+<p>O fluxo linear equivalente é <strong>Elicitação → Análise e Negociação → Documentação → Verificação → Validação</strong>, com retroalimentação contínua para o início.</p>
+<div class="admonition example">
+<p class="admonition-title">Scaled Agile Framework (SAFe)</p>
+<p>Como exemplo de processo ágil em escala organizacional, a disciplina apresenta o <strong>Scaled Agile Framework (SAFe)</strong>, estruturado em três camadas: <strong>Portfolio</strong> (Lean, Program Portfolio Management, métricas, <em>value streams</em>, épicos de negócio e de arquitetura), <strong>Program</strong> (roadmap, visão, <em>release management</em>, <em>backlog</em> de programa, requisitos não funcionais, <em>Agile Release Train</em>, <em>features</em>) e <strong>Team</strong> (Product Owner, Scrum Master, times ágeis, <em>backlog</em> do time, <em>sprint goals</em>, iterações). O framework mostra como os requisitos — incluindo os não funcionais — fluem do nível estratégico até a execução.</p>
+</div>
+<p>Para melhorar continuamente o processo de requisitos, a disciplina reforça quatro guidelines: se os requisitos não forem bem obtidos, nenhuma fase seguinte conseguirá garantir satisfação do cliente; o <strong>envolvimento de stakeholders, clientes e usuários</strong> é fator crítico de sucesso; <strong>mudanças são inevitáveis</strong> e precisam ser gerenciadas; e é fundamental garantir que <strong>todos os envolvidos compartilhem o mesmo entendimento</strong> sobre metas, expectativas e requisitos. Isso é resumido como um equilíbrio entre quatro peças: <strong>Pessoas, Processo, Melhores Práticas e Ferramentas</strong>, estimulando a troca de conhecimento em ER entre academia e indústria.</p>
+<h2 id="atividades-da-engenharia-de-requisitos">Atividades da Engenharia de Requisitos<a class="headerlink" href="#atividades-da-engenharia-de-requisitos" title="Permanent link">&para;</a></h2>
+<h3 id="elicitacao-de-requisitos">Elicitação de requisitos<a class="headerlink" href="#elicitacao-de-requisitos" title="Permanent link">&para;</a></h3>
+<p>A elicitação cruza o <strong>"gap semântico"</strong> entre o mundo dos problemas reais e o mundo da solução computacional. Pode ser considerada a <strong>atividade mais importante</strong> do processo de ER (<strong>Goguen, 1994</strong>): um processo cuidadoso de análise da organização, do domínio e do processo de negócio no qual o sistema será utilizado (<strong>Pressman, 2002</strong>), e também um processo de <strong>transferência de conhecimento</strong> do stakeholder para o engenheiro de requisitos (<strong>Kotonya, 1998</strong>), que exige forte comunicação entre as partes.</p>
+<p>Técnicas citadas: estudo de documentação, análise de contexto, observação, análise social, estudo etnográfico, entrevista, reunião <strong>JAD</strong> (<em>Joint Application Development</em>), <em>brainstorming</em>, <em>workshop</em>, grupo focal, questionário, prototipação, cenários, entre outras. As principais são detalhadas a seguir.</p>
+<h4 id="questionarios">Questionários<a class="headerlink" href="#questionarios" title="Permanent link">&para;</a></h4>
+<p>Técnica sólida de coleta de dados demográficos e de opinião, com a vantagem de poder ser distribuída a um grupo amplo e geograficamente disperso (papel, e-mail ou web). Questões fechadas são mais fáceis de analisar; é preciso cuidado para não induzir respostas com perguntas tendenciosas, lembrando sempre que <strong>o que as pessoas dizem nem sempre é o que fazem</strong>.</p>
+<details class="note">
+<summary>Recomendações para elaborar questionários</summary>
+<ol>
+<li>Perguntas claras e específicas.</li>
+<li>Preferir perguntas fechadas, com várias opções de resposta.</li>
+<li>Oferecer anonimato.</li>
+<li>Incluir uma opção "não tenho opinião".</li>
+<li>Evitar perguntas múltiplas e complexas.</li>
+<li>Garantir que a ordem das escalas seja intuitiva e consistente.</li>
+<li>Cuidado com o uso de negativas.</li>
+<li>Evitar jargões; considerar questionários diferentes para públicos diferentes.</li>
+<li>Referência prática: <strong>40%</strong> de taxa de resposta é excelente; <strong>20%</strong> é normalmente aceitável.</li>
+</ol>
+</details>
+<h4 id="entrevistas">Entrevistas<a class="headerlink" href="#entrevistas" title="Permanent link">&para;</a></h4>
+<p>Permitem contato direto entre analista e stakeholder; aplicar no ambiente de trabalho (ou de casa) do entrevistado costuma deixá-lo mais à vontade.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Características</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Não estruturada</strong></td>
+<td>Sem roteiro pré-definido; rica, mas difícil de replicar</td>
+</tr>
+<tr>
+<td><strong>Estruturada</strong></td>
+<td>Guiada por roteiro fixo, como um questionário; replicável, mas restritiva</td>
+</tr>
+<tr>
+<td><strong>Semiestruturada</strong></td>
+<td>Roteiro básico com espaço para questões emergentes; melhor equilíbrio entre riqueza e replicabilidade</td>
+</tr>
+</tbody>
+</table>
+<p>Boas práticas: gravar com permissão; evitar perguntas longas ou tendenciosas; evitar jargões que constranjam o stakeholder; pedir revisão de colegas e fazer um estudo-piloto. A entrevista segue cinco etapas — <strong>introdução</strong> (apresentação e questões éticas) → <strong>aquecimento</strong> (perguntas fáceis) → <strong>seção principal</strong> (sequência lógica, do mais fácil ao mais difícil) → <strong>período de descanso</strong> (perguntas leves) → <strong>encerramento</strong> (agradecimento, desligar o gravador). Recomenda-se vestir-se de forma similar ao entrevistado, usar carta de consentimento, <strong>aprender a ouvir sem interromper</strong>, registrar as respostas exatamente como dadas e apoiar-se em artefatos (protótipos, cenários) para estimular comentários.</p>
+<h4 id="grupo-focal">Grupo focal<a class="headerlink" href="#grupo-focal" title="Permanent link">&para;</a></h4>
+<p>Sessão com um grupo de stakeholders, facilitada pelo analista, partindo da premissa de que opiniões se desenvolvem em contexto social — útil para revelar consenso e também áreas de conflito. As reuniões <strong>JAD</strong> são um exemplo bastante estruturado. Recomenda-se reunir de <strong>3 a 10 pessoas</strong>, evitar que participantes de status elevado dominem a conversa, encorajar os mais quietos e, se possível, filmar a sessão. Vantagem: baixo custo e resultados rápidos; desafio: exige um facilitador habilidoso e agenda compatível com todos.</p>
+<h4 id="observacao">Observação<a class="headerlink" href="#observacao" title="Permanent link">&para;</a></h4>
+<p>Técnica de origem antropológica (etnografia), de abordagem interpretativa: o analista convive com os stakeholders observando o trabalho em seu ambiente natural. Três abordagens: <strong>"rápida e suja"</strong> (informal, feita a qualquer hora); <strong>em testes de usabilidade</strong> (ambiente controlado, vídeos e logs); <strong>em estudos de campo</strong> (o observador pode ter perspectiva interna ou externa ao grupo). Gera dados ricos (diários, vídeos, conversas), mas exige mais tempo, comprometimento da equipe e aceitação do observador pela comunidade de stakeholders.</p>
+<h4 id="estudo-da-documentacao">Estudo da documentação<a class="headerlink" href="#estudo-da-documentacao" title="Permanent link">&para;</a></h4>
+<p>Boa fonte para entender procedimentos, regras e o contexto de trabalho, sem exigir envolvimento direto dos stakeholders — útil sobretudo no início da elicitação, em domínios complexos pouco conhecidos pelo analista. Riscos: baixa confiabilidade (a documentação pode não refletir a realidade) e desatualização.</p>
+<h4 id="abordagem-centrada-no-usuario">Abordagem centrada no usuário<a class="headerlink" href="#abordagem-centrada-no-usuario" title="Permanent link">&para;</a></h4>
+<p>Foco no usuário e em suas tarefas desde o início, combinando <strong>avaliação empírica</strong> (contato direto, observação em ambiente natural) e <strong>design participativo</strong> (ciclos de design para identificar pontos de melhoria ao longo do desenvolvimento).</p>
+<h4 id="comparando-as-tecnicas">Comparando as técnicas<a class="headerlink" href="#comparando-as-tecnicas" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Técnica</th>
+<th>Boa para</th>
+<th>Tipo de dado</th>
+<th>Vantagens</th>
+<th>Desvantagens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Questionários</td>
+<td>Responder questões específicas</td>
+<td>Qualitativo e quantitativo</td>
+<td>Atinge muitas pessoas com poucos recursos</td>
+<td>Design crucial; demanda tempo; baixo índice de resposta</td>
+</tr>
+<tr>
+<td>Entrevistas</td>
+<td>Explorar questões</td>
+<td>Majoritariamente qualitativo</td>
+<td>Entrevistador guia o usuário; maior contato</td>
+<td>Demanda tempo; pode intimidar</td>
+</tr>
+<tr>
+<td>Grupo focal</td>
+<td>Coletar vários pontos de vista</td>
+<td>Majoritariamente qualitativo</td>
+<td>Ressalta consenso/conflito; maior contato</td>
+<td>Personalidades fortes dominam</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Entender o contexto da atividade</td>
+<td>Qualitativo</td>
+<td>Percepções que outras técnicas não oferecem</td>
+<td>Muito tempo; grande volume de dados</td>
+</tr>
+<tr>
+<td>Estudo da documentação</td>
+<td>Aprender procedimentos e padrões</td>
+<td>Quantitativo</td>
+<td>Não compromete o tempo dos usuários</td>
+<td>O trabalho real difere do documentado</td>
+</tr>
+</tbody>
+</table>
+<p>Escolher a técnica certa depende do tipo de informação desejada (qualitativa ou quantitativa), dos recursos disponíveis (tempo, orçamento) e da localização/acessibilidade dos stakeholders — e exige que o próprio analista domine a técnica escolhida.</p>
+<h4 id="tecnicas-complementares-prototipacao-persona-e-cenario">Técnicas complementares: prototipação, persona e cenário<a class="headerlink" href="#tecnicas-complementares-prototipacao-persona-e-cenario" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Prototipação</strong> — representação de um produto imaginário com a qual os stakeholders interagem para explorar sua adequação, testar viabilidade técnica e esclarecer requisitos vagos. Protótipos de <strong>baixa fidelidade</strong> (papel/fichas) têm baixo custo e avaliam vários conceitos, mas verificam erros de forma limitada; protótipos de <strong>alta fidelidade</strong> (ex.: feitos no <a href="https://www.figma.com/">Figma</a>) são totalmente interativos e funcionam como ferramenta de venda/marketing, mas são caros e demandam tempo.</li>
+<li><strong>Persona</strong> — arquétipo fictício de um grupo de usuários-alvo, com nome, características, metas e histórico pessoal, usado quando há milhares de potenciais usuários e não é viável ouvir todos.</li>
+<li><strong>Cenário</strong> — narrativa (storytelling) de uma situação real ou imaginária, sem mencionar explicitamente o uso de software. A partir da narrativa, extrai-se informação organizando as perguntas em <strong>Who</strong> (atores e stakeholders envolvidos), <strong>What</strong> (metas, o que acontece se não forem satisfeitas, o que dispara o cenário) e <strong>How</strong> (fluxo normal e fluxos alternativos de eventos) — de onde se deriva uma sequência de passos que já se aproxima de um caso de uso.</li>
+</ul>
+<h3 id="analise-e-negociacao">Análise e negociação<a class="headerlink" href="#analise-e-negociacao" title="Permanent link">&para;</a></h3>
+<p>Nem tudo o que se deseja em termos de software pode ser viabilizado: cabe ao engenheiro de requisitos expor os motivos que limitam certos requisitos e negociá-los, mostrando os riscos envolvidos, de modo a refinar os requisitos e assegurar que todas as partes compreendam os pontos de atenção e possíveis deficiências (<strong>Wiegers, 2003</strong>).</p>
+<h3 id="documentacao">Documentação<a class="headerlink" href="#documentacao" title="Permanent link">&para;</a></h3>
+<p>Os requisitos aprovados em análise e negociação devem ser registrados (<strong>Kotonya, 1998</strong>): a <strong>especificação do sistema</strong> é o produto de trabalho final do engenheiro de requisitos, e modelos gráficos ajudam a equipe a entender a estrutura do projeto (<strong>Pressman, 2002</strong>).</p>
+<h3 id="verificacao-e-validacao">Verificação e validação<a class="headerlink" href="#verificacao-e-validacao" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>"A validação de requisitos examina a especificação para garantir que todos os requisitos tenham sido declarados de modo não ambíguo, que inconsistências, omissões e erros tenham sido detectados e corrigidos e que os produtos de trabalho estejam de acordo com as normas estabelecidas para o processo, projeto e produto." — <strong>Pressman (2002)</strong></p>
+</blockquote>
+<p>Verificação e validação podem ser conduzidas por seis tipos de revisão:</p>
+<ol>
+<li><strong>Revisão de especialista</strong> — um especialista avalia a qualidade dos requisitos, busca inconsistências/ambiguidades e comenta na documentação os erros e possíveis soluções.</li>
+<li><strong>Inspeção dos requisitos</strong> — processo detalhado, com equipe formada por seis papéis: organizador, moderador, autor, leitor, inspetor e secretário.</li>
+<li><strong>Walkthrough</strong> — versão mais simples e menos rígida da inspeção, com papéis que podem se acumular; identifica falhas e compartilha o entendimento do projeto.</li>
+<li><strong>Verificação em diferentes perspectivas</strong> — valida os requisitos sob a ótica de diferentes stakeholders (cliente, desenvolvedor, teste) e de diferentes critérios de qualidade do sistema (documentação, conteúdo, acordo).</li>
+<li><strong>Validação por prototipagem</strong> — usa um protótipo (descartável ou evolutivo) para testar e validar requisitos na prática junto aos stakeholders.</li>
+<li><strong>Validação por checklist</strong> — usada em projetos complexos, com perguntas/afirmações que ajudam a identificar erros; a checklist é atualizada continuamente conforme o projeto evolui.</li>
+</ol>
+<p>A distinção clássica entre os dois conceitos: <strong>Verificação</strong> responde "estamos construindo o produto de maneira certa?" (comparação entre modelos); <strong>Validação</strong> responde "estamos construindo o produto certo?" (comparação entre o universo de informação real e um modelo).</p>
+<h3 id="gerencia-de-requisitos">Gerência de requisitos<a class="headerlink" href="#gerencia-de-requisitos" title="Permanent link">&para;</a></h3>
+<p>Administra os requisitos ao longo de todo o projeto, ajudando a equipe a identificar, controlar e rastrear requisitos e suas modificações a qualquer momento, mantendo a sincronia com as demais atividades do processo e avaliando impactos e riscos das mudanças. Princípios centrais: gerenciar as mudanças (aceite dos requisitos), gerenciar o relacionamento entre requisitos e gerenciar as dependências entre o documento de requisitos e os demais artefatos produzidos.</p>
+<ul>
+<li><strong>Identificação e armazenagem</strong> — cada requisito precisa de um identificador único (ex.: <em>Req1</em>, <em>Req2</em> — ferramentas como o <em>Rational RequisitePro</em> organizam requisitos em árvore, com prioridade, dificuldade e localização). O ideal é armazenar com rastreio de dependências, capacidade de busca, controle de versões e visualização dos relacionamentos.</li>
+<li><strong>Gerência de mudança</strong> — o grande problema é a <strong>informalidade</strong>: cerca de <strong>80%</strong> das mudanças em requisitos acontecem informalmente. O processo formal de mudança passa por três fases: análise do problema e especificação da mudança, análise de custo/risco e implementação da mudança.</li>
+<li><strong>Rastreabilidade</strong> — liga claramente os requisitos às suas fontes e aos artefatos criados ao longo do ciclo de vida, permitindo rastrear o impacto de qualquer mudança (em dependências, lógica ou código de implementação dos requisitos) através de uma matriz/tabela de rastreabilidade — por exemplo, encadeando <em>Stakeholder Request → Feature → Use Case</em>.</li>
+</ul>
+<h2 id="unidade-7-parcial-design-thinking-criatividade-e-empatia-na-elicitacao-de-requisitos">Unidade 7 (parcial) — Design Thinking, Criatividade e Empatia na elicitação de requisitos<a class="headerlink" href="#unidade-7-parcial-design-thinking-criatividade-e-empatia-na-elicitacao-de-requisitos" title="Permanent link">&para;</a></h2>
+<h3 id="por-que-ir-alem-das-tecnicas-classicas">Por que ir além das técnicas clássicas<a class="headerlink" href="#por-que-ir-alem-das-tecnicas-classicas" title="Permanent link">&para;</a></h3>
+<p>Muitos insucessos em projetos de software vêm de uma elicitação <strong>incompleta</strong>, que resulta em sistemas sem todas as funcionalidades necessárias ou sem espaço para inovação. Mesmo com o amplo ferramental já consolidado da ER, o mercado crescente de sistemas exige cada vez mais <strong>empatia, inovação e criatividade</strong> para entender as necessidades dos usuários e as particularidades de cada sistema — daí a adoção crescente de <strong>Design Thinking (DT)</strong>, <strong>técnicas de criatividade</strong> e <strong>empatia</strong> como complemento à elicitação tradicional.</p>
+<h3 id="design-thinking">Design Thinking<a class="headerlink" href="#design-thinking" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>"O Design Thinking (DT) fornece uma metodologia para elicitar, de forma mais eficiente, as necessidades dos usuários. É uma metodologia que reúne práticas inspiradas no processo de design, para resolução e desenvolvimento de projetos, utilizando a empatia, incentivando a criatividade e a racionalidade para atender as necessidades dos usuários, convergindo para soluções inovadoras."</p>
+</blockquote>
+<p>O objetivo central do DT é transformar observações dos usuários em <strong>insights</strong>, gerando produtos e serviços que melhorem a qualidade de vida de quem os usa. O foco é tratar o usuário com empatia, incentivando colaboração, participação e experimentação; a tarefa mais importante ao iniciar um projeto é entender <em>quem</em> são os usuários e <em>qual impacto</em> o produto final causará em suas vidas. No contexto de Engenharia de Software, o DT fornece uma metodologia de elicitação centrada no usuário que produz, tipicamente, uma série de protótipos convergindo para soluções inovadoras.</p>
+<p>A literatura registra <strong>diversos modelos de DT</strong>, cada um com fases próprias:</p>
+<table>
+<thead>
+<tr>
+<th>Modelo (autor/instituição)</th>
+<th>Fases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stanford University's D-School</td>
+<td>Empatia → Definição → Ideação → Prototipação → Teste</td>
+</tr>
+<tr>
+<td>HPI D-School</td>
+<td>Compreensão → Observação → Ponto de Vista → Ideação → Prototipação → Teste</td>
+</tr>
+<tr>
+<td>Brown</td>
+<td>Inspiração → Ideação → Implementação</td>
+</tr>
+<tr>
+<td>Hiremath e Sathiyam</td>
+<td>Escopo → Pesquisa → Síntese → Ideação → Prototipagem → Validação → Apresentação</td>
+</tr>
+<tr>
+<td>Sandino et al.</td>
+<td>Definir → Explorar → Idealizar → Prototipar → Escolher → Implementar → Revisar</td>
+</tr>
+<tr>
+<td>Coutinho et al.</td>
+<td>Definição → Pesquisa → Ideação → Prototipação → Seleção → Implementação → Aprendizagem</td>
+</tr>
+<tr>
+<td>De Paula e Araújo</td>
+<td>Definir desafios → Observar pessoas → Formular insights → Quadro de oportunidades → Brainstorm de ideias → Tentar experimentos</td>
+</tr>
+<tr>
+<td>Souza e Silva</td>
+<td>Imersão → Ideação → Prototipação</td>
+</tr>
+<tr>
+<td>DCIDT (Eris)</td>
+<td>Divergente → Convergente</td>
+</tr>
+<tr>
+<td>Dunne e Martin</td>
+<td>Abdução → Dedução → Teste → Indução</td>
+</tr>
+<tr>
+<td>DrivingBoard</td>
+<td>Abordar → Desenvolver → Apresentar e provocar → Explorar → Refletir → Escapar</td>
+</tr>
+</tbody>
+</table>
+<p>Apesar da nomenclatura variada, todos convergem para o mesmo núcleo: <strong>entender o usuário → gerar e refinar ideias → prototipar → validar</strong>.</p>
+<details class="note">
+<summary>Técnicas e ferramentas de apoio ao Design Thinking citadas em aula</summary>
+<p>A disciplina cita um levantamento com <strong>99 técnicas</strong> de criatividade e Design Thinking identificadas na literatura (algumas servem a ambas as abordagens). Entre as mais citadas: Mapa de Empatia, <em>Clustering</em>, Personas, Matriz 2×2, Pesquisa 360º, <em>Storytelling</em>, <em>Brainstorming</em> (e variações: <em>brainwriting</em>, <em>rolestorming</em>, associação livre), 5 Porquês, Diagrama de Afinidade, <em>Customer Journey Map</em>, <em>Stakeholder Map</em>, Protótipos rápidos/de experiência/de serviço, <em>Mockup</em>, <em>Moodboard</em>, <em>Role Play</em>, <em>Walkthroughs</em>, <em>Six Thinking Hats</em>, Diagrama de Ishikawa, Casos de Uso, <em>User Story</em>, entre muitas outras técnicas mais específicas (Bodystorming, S.O.D.A., Synectics, TRIZ, <em>Lego Serious Play</em> etc.).</p>
+<p>Como ferramentas de apoio citadas: <strong>Rabiscapp</strong> (prototipação/esboços), <strong>NVivo</strong> (imersão e ideação, análise qualitativa), <strong>Balsamiq</strong> e <strong>Axure RP</strong> (prototipação), <strong>Smaply</strong> e <strong>Stakeholder Circle</strong> (empatia, <em>stakeholder mapping</em>), <strong>Creately</strong> (<em>service blueprint</em>), <strong>Strategyzer</strong> (<em>business model innovation</em>), entre outras. Há também o <strong>DTA4RE</strong> — <em>Assistente de Design Thinking para Elicitação de Requisitos</em> (<a href="https://sites.google.com/site/dta4re/">sites.google.com/site/dta4re</a>) e um <strong>Guia de Criatividade</strong> para projetos de software (<a href="https://sites.google.com/site/guiadecriatividade">sites.google.com/site/guiadecriatividade</a>), ambos citados como recursos práticos elaborados a partir de pesquisas sobre o tema.</p>
+</details>
+<h3 id="criatividade">Criatividade<a class="headerlink" href="#criatividade" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Criatividade é "a capacidade de produzir um trabalho que seja ao mesmo tempo novo (original, inesperado) e apropriado (útil, adaptável em relação a tarefas e restrições)".</p>
+</blockquote>
+<p>Segundo <strong>Sommerville</strong>, o desenvolvimento de software é um processo mais <strong>criativo</strong> que mecânico: o produto nasce de um conceito inicial e evolui até se tornar um sistema funcional. Técnicas de criatividade bem estabelecidas na indústria incluem <em>Brainstorming</em>, Cenários, <em>Storyboards</em>, Diagrama de Ishikawa, <em>Workshops</em>, Mapas Mentais, Hall da Fama e Grupo Focal; técnicas menos conhecidas mas também relevantes incluem Analogias, <em>Customer Journey Maps</em>, Heurísticas, <em>Ideabox</em> e Similaridades e Diferenças. Conhecer o repertório de técnicas e saber quando aplicar cada uma é essencial, já que elicitar requisitos é uma atividade <strong>colaborativa</strong> entre analista/desenvolvedor e usuários/stakeholders.</p>
+<h3 id="empatia">Empatia<a class="headerlink" href="#empatia" title="Permanent link">&para;</a></h3>
+<p><strong>Levy e Hadar</strong> reforçam que a empatia com os usuários finais é uma habilidade de ER tão necessária quanto o conhecimento técnico e a competência social — sendo, segundo os mesmos autores, o <strong>primeiro passo</strong> do Design Thinking, o que tem despertado interesse das organizações por alavancar processos de design/inovação e melhorar a experiência do usuário final. <strong>Gasparini</strong> explora a empatia a partir de dois aspectos:</p>
+<ul>
+<li><strong>Empatia emocional (ou afetiva)</strong> — resposta emocional compartilhada entre dois ou mais indivíduos (ex.: sentir medo ou excitação junto com o outro);</li>
+<li><strong>Empatia cognitiva</strong> — capacidade de descobrir o que se passa na mente do outro, isto é, entender genuinamente o ponto de vista alheio.</li>
+</ul>
+<p>A técnica mais associada à empatia é o <strong>Mapa de Empatia (<em>Empathy Map</em>)</strong>, que ajuda a desenhar modelos de negócio/produto a partir da perspectiva real do usuário, permitindo levantar <strong>requisitos implícitos</strong> ao explicitar o ambiente, comportamento, aspirações e preocupações de quem vai usar o sistema. Os <em>templates</em> trabalhados em aula organizam perguntas em torno de: o que a pessoa <strong>vê</strong>, <strong>escuta</strong>, <strong>fala</strong>, <strong>faz</strong>, <strong>pensa e sente</strong> (dores e desejos); sua rotina, hobbies e ambiente; sua <strong>experiência com tecnologia</strong> (uso de celular, tablet, apps); e, por fim, o encadeamento <strong>Problemas → Necessidades → Soluções existentes</strong>.</p>
+<div class="admonition example">
+<p class="admonition-title">Avaliação Diagnóstica da disciplina</p>
+<p>Atividade individual: escolher um artigo recente sobre um dos dez temas a seguir, lê-lo e apresentá-lo à turma em até 45 minutos — técnicas/metodologias/frameworks/ferramentas para elicitar requisitos <strong>funcionais</strong> ou <strong>não funcionais</strong>; <strong>qualidade de requisitos</strong>; <strong>técnicas de inspeção de requisitos</strong>; <strong>Design Thinking</strong>, <strong>empatia</strong> ou <strong>criatividade</strong> na elicitação de requisitos; <strong>requisitos de privacidade</strong>; <strong>requisitos de segurança</strong>; e <strong>ética em requisitos</strong>. Esses dez temas correspondem, em boa parte, às Unidades 2 a 6 da ementa, que serão desenvolvidas em profundidade ao longo da disciplina.</p>
+</div>
+<h2 id="referencias-e-para-saber-mais">Referências e para saber mais<a class="headerlink" href="#referencias-e-para-saber-mais" title="Permanent link">&para;</a></h2>
+<h3 id="citadas-diretamente-no-material-da-disciplina">Citadas diretamente no material da disciplina<a class="headerlink" href="#citadas-diretamente-no-material-da-disciplina" title="Permanent link">&para;</a></h3>
+<ul>
+<li>EASTERBROOK, S. <strong>Definição de Engenharia de Requisitos</strong> (2004), citada como referência central do curso — ver também Nuseibeh, B.; Easterbrook, S. <a href="https://www.cs.utoronto.ca/~sme/papers/2000/Nuseibeh-Easterbrook-00.pdf"><em>Requirements Engineering: A Roadmap</em></a>, ICSE 2000 (<em>The Future of Software Engineering</em>), um dos artigos mais citados da área e provável origem/contexto da definição usada em aula.</li>
+<li>NUSEIBEH, B. <strong>Definição de ER como área multidisciplinar</strong> (2000).</li>
+<li>CARVALHO, A. <strong>Definição de ER como processo iterativo/incremental/cognitivo</strong> (2003).</li>
+<li>ROCHA, A. R. (2002) — sobre a obtenção incorreta de requisitos e sistemas inadequados.</li>
+<li>GOGUEN, J. (1994) — elicitação como a atividade mais importante da ER.</li>
+<li>KOTONYA, G.; SOMMERVILLE, I. <em><a href="https://eprints.lancs.ac.uk/id/eprint/57159">Requirements Engineering: Processes and Techniques</a></em>. Wiley, 1998 — citado para a definição de elicitação como transferência de conhecimento e para a atividade de documentação.</li>
+<li>PRESSMAN, R. S. <em>Engenharia de Software</em>. 2002 (edição em português; ver também edições posteriores, ex. 6ª ed., Bookman/McGraw-Hill) — citado para elicitação, documentação e verificação/validação de requisitos.</li>
+<li>WIEGERS, K. E. <em><a href="https://www.oreilly.com/library/view/-/0735618798/">Software Requirements</a></em>. 2ª ed., Microsoft Press, 2003 — citado na atividade de análise e negociação de requisitos.</li>
+<li>BROOKS, F. — citação sobre a dificuldade central de "decidir o que construir" (de <em>No Silver Bullet</em>, obra clássica de Brooks sobre engenharia de software, mencionada sem referência completa no slide).</li>
+<li>DEMARCO, T. — citação sobre a imprevisibilidade do desenvolvimento de software (autor de <em>Peopleware</em> e <em>Controlling Software Projects</em>, mencionado sem referência completa no slide).</li>
+<li>SOMMERVILLE, I. — citado sobre desenvolvimento de software como processo criativo (ver também Kotonya &amp; Sommerville acima).</li>
+<li>LEVY, M.; HADAR, I. — citados sobre empatia como habilidade de ER e como primeiro passo do Design Thinking. Ver, por exemplo: Hadar, I. et al. <a href="https://arxiv.org/pdf/1908.07223"><em>The importance of empathy for analyzing privacy requirements</em></a>, e Levy, M.; Hadar, I. <a href="https://arxiv.org/pdf/1907.12001"><em>Towards Understanding and Modeling Empathy for Use in Motivational Design Thinking</em></a>.</li>
+<li>GASPARINI, I. — citada sobre empatia emocional/cognitiva no contexto do Design Thinking.</li>
+<li>Modelos de Design Thinking atribuídos em aula a: Hiremath e Sathiyam; Sandino et al.; Coutinho et al.; De Paula e Araújo; HPI D-School; DrivingBoard; Stanford University D-School; Dunne e Martin; Souza e Silva; Brown; Eris (DCIDT) — citados apenas por autoria no material, sem referência bibliográfica completa.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Sobre a fidelidade das citações</p>
+<p>O material de aula cita a maioria dos autores acima apenas no formato <strong>Autor, Ano</strong> (ou só o sobrenome), sem título de obra, periódico ou DOI. Sempre que foi possível identificar com segurança a obra de origem (casos de Nuseibeh/Easterbrook, Kotonya/Sommerville, Wiegers e os artigos de Levy/Hadar), o link foi acrescentado acima como <strong>enriquecimento externo</strong>; os demais (Carvalho 2003, Rocha 2002, Goguen 1994, Gasparini, os autores dos modelos de Design Thinking) foram mantidos exatamente como citados em aula, sem inventar dados bibliográficos que não constam no material original.</p>
+</div>
+<h3 id="leituras-complementares-indicadas-pela-professora-contexto-da-disciplina">Leituras complementares indicadas pela professora (contexto da disciplina)<a class="headerlink" href="#leituras-complementares-indicadas-pela-professora-contexto-da-disciplina" title="Permanent link">&para;</a></h3>
+<p>A professora compartilha periodicamente, no fórum da turma, chamadas e links para as principais conferências e periódicos da área — úteis tanto para a Avaliação Diagnóstica quanto para quem quiser acompanhar a pesquisa atual em Engenharia de Requisitos. Os links abaixo foram repassados em sala; <strong>não foram lidos integralmente para esta página</strong> (ao contrário das referências da seção anterior), e são listados aqui como ponto de partida para leitura futura:</p>
+<p><strong>Conferências e periódicos da área:</strong></p>
+<ul>
+<li><a href="https://refsq.org/2026/">RefSQ 2026 — Research Papers track</a></li>
+<li><a href="https://conf.researchr.org/track/RE-2026/RE-2026-research-papers">RE 2026 — Research Papers track</a></li>
+<li><a href="https://conf.researchr.org/track/RE-2026/RE-2026-workshops">RE 2026 — Workshops (Accepted Workshops)</a></li>
+<li><a href="https://conf.researchr.org/track/RE-2025/RE-2025-research-papers">RE 2025 — Research Papers track</a></li>
+<li><a href="https://refsq.org/2025/">RefSQ 2025 — Research Papers track</a></li>
+<li><a href="https://link.springer.com/journal/766">Springer, periódico <em>Requirements Engineering</em></a> — lista de artigos</li>
+<li>ICSE 2026 e WER 2026 (Workshop em Engenharia de Requisitos, principal evento brasileiro da área) também foram mencionados como referências de acompanhamento.</li>
+</ul>
+<p><strong>Artigos e preprints específicos indicados:</strong></p>
+<ul>
+<li>Trabalhos recentes sobre o uso de <strong>LLMs (Large Language Models) para apoiar a Engenharia de Requisitos</strong> — incluindo preprints no arXiv e um artigo com o título <em>"Using Distinct LLMs to Generate an Initial Software Functional Requirements List in Multiple Interactions"</em> — refletindo uma linha de pesquisa atual e ativa (geração/análise automática de requisitos com LLMs) relevante para o Design Thinking e as técnicas de elicitação vistos nesta disciplina.</li>
+<li>
+<p>Artigos adicionais publicados em repositórios como ACM Digital Library, ScienceDirect, ResearchSquare, no repositório institucional do Politecnico di Torino (IRIS) e na AIS eLibrary, cobrindo temas afins de Engenharia de Requisitos.</p>
+<p>Como esses links vieram de um aviso de turma (não de um PDF anexado), eles não foram abertos/verificados nesta página — tratam-se de sugestões de leitura da professora, não de conteúdo já resumido aqui.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Anterior: PERÍODO 7">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                PERÍODO 7
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../data-warehousing/" class="md-footer__link md-footer__link--next" aria-label="Próximo: DATA WAREHOUSING">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                DATA WAREHOUSING
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>
