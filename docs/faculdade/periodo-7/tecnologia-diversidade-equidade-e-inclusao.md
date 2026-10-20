@@ -81,10 +81,49 @@ O artigo **"Making Software Development More Diverse and Inclusive"** (Hyrynsalm
 
 O PDF enviado para esta aula ("Um manifesto em favor da inclusão...") é na verdade uma **proposta de mesa temática** do EduComp'24 para apresentar o **Manifesto IDEA** (Inclusão, Diversidade, Equidade, Acessibilidade) da SBC, redigido pelo GT IDEA da CEduComp. O manifesto completo está publicado na *SBC Horizontes* (março de 2024) — não reproduzido neste PDF, apenas sua apresentação institucional.
 
-## Aula 3
+## Aula 3 — Engenharia de Requisitos da Opressão
 
-!!! warning "Sem material disponível"
-    Ainda não há material disponibilizado para esta aula no momento da escrita desta página.
+!!! note "Sobre esta seção"
+    Não havia PDF enviado para esta aula. Como o tema do cronograma ("Engenharia de Requisitos da Opressão") corresponde diretamente ao keynote de **Amy J. Ko** na RE'21 — já citado como referência em outros materiais da disciplina (Aula 7) —, esta seção foi construída a partir de fontes públicas sobre essa palestra e sobre o programa de pesquisa da autora, em vez de um PDF de aula. As fontes estão listadas ao final da seção.
+
+### O keynote "Requirements of Oppression" (Amy J. Ko, RE'21)
+
+Apresentado em 22 de setembro de 2021 na 29ª *IEEE International Requirements Engineering Conference* (RE'21), o keynote de **Amy J. Ko** (University of Washington, Information School e Paul G. Allen School of Computer Science and Engineering) questiona as lentes tradicionais com que a Engenharia de Requisitos enxerga seu próprio objeto de trabalho.
+
+**Argumento central:** a Engenharia de Requisitos tradicionalmente trata requisitos de forma técnica, contratual e abstrata — enquadramento que funcionou bem para sistemas operacionais e linguagens de programação, mas não atende às necessidades de pessoas nas margens da sociedade. Segundo a autora, o software ainda falha com grupos marginalizados em dimensões como classe, riqueza, sexo, gênero, raça, etnia, capacidade (deficiência) e cidadania:
+
+> "Software still fails to meet the needs of people at the margins of society." — o software ainda falha em atender às necessidades de pessoas nas margens da sociedade.
+
+Embora a área já tenha avançado ao incorporar dimensões humanas, sociais, organizacionais e éticas, Ko argumenta que essas abordagens continuam enquadrando requisitos sobretudo pelas lentes da **ética**, da **política** e do **direito** — e que definir requisitos por qualquer lente que não seja a da **justiça** pode levar à marginalização, à injustiça e à opressão. A palestra apresenta três estudos de caso sobre como requisitos se tornam opressivos, e propõe uma lente alternativa: a Engenharia de Requisitos como uma forma de **produção cultural**, que exige uma postura mais crítica e ativista por parte de quem projeta software.
+
+### A trajetória pessoal da autora e os três argumentos da "educação crítica em computação"
+
+Em outras palestras e materiais públicos (ex.: "Critical Computing Education", UC Irvine, 2021), Ko situa esse argumento dentro de uma trajetória pessoal: como mulher trans, relata experiências próprias de opressão mediada por tecnologia — revistas em aeroportos após escaneamento corporal, nomes antigos mantidos em bases acadêmicas, sistemas de saúde excludentes, cyberbullying. A partir dessa experiência, ela revisita o princípio de justiça que orientava seu próprio trabalho:
+
+- **Antes:** a computação deve ser útil e acessível a todos; todos devem poder usá-la.
+- **Depois:** a computação deve respeitar a dignidade de todas as pessoas, e todos devem poder usá-la para **resistir e desmontar sistemas de opressão**.
+
+Isso se desdobra em três argumentos:
+
+1. **A computação tem limites.** Há o mito de que a tecnologia resolve qualquer problema social (pobreza, crime, fome, mudança climática), mas ela pode desviar recursos de mudanças estruturais necessárias — ex.: juízes que delegam decisões a previsões algorítmicas enviesadas, sistemas automatizados que negam benefícios sociais. A computação não é neutra: código costuma conter erros, incorpora os valores de quem o criou, e frequentemente gera novos problemas em vez de resolver os antigos.
+2. **Os dados têm limites.** Dados são tratados como algo inerte, mas na verdade registram o passado e tendem a reproduzi-lo — ex.: dados de criminalidade racialmente enviesados que sustentam vigilância desproporcional; dados cisnormativos que expõem pessoas trans a constrangimentos; modelos de capacidade física que tornam telas sensíveis ao toque inacessíveis a pessoas com deficiência motora.
+3. **A área de Computação tem responsabilidade.** A cultura da área valoriza inovação, disrupção, poder e velocidade, frequentemente terceirizando escolhas morais para investidores ou para um discurso de determinismo tecnológico ("se pode ser feito, será feito"). Para Ko, as escolhas de design são coletivas e carregam os valores de quem as faz — os desenvolvedores são responsáveis pelo que criam.
+
+!!! tip "Recomendações da autora para a comunidade"
+    - **Pesquisadores:** considerar tanto o poder quanto o risco das próprias inovações.
+    - **Docentes:** questionar quais valores o ensino promove, quem ele empodera, e como exemplos e avaliações reforçam (ou não) esses valores.
+    - **Professores(as):** reconhecer o poder que têm — e que ser "apolítico" no ensino também é uma posição política.
+    - **Todos:** aprender a ter conversas difíceis sobre computação e justiça.
+
+### Trabalho relacionado: engenharia de requisitos "embutida em justiça"
+
+O keynote de Ko dialoga com um movimento mais amplo de propostas que buscam incorporar justiça explicitamente ao processo de levantamento de requisitos, em vez de tratá-la como preocupação posterior ou puramente ética/jurídica. Um exemplo é o **Justice-Embedded Requirements Engineering (JERE)** (Arkhurst & Fu, DESIGN 2024, Georgia Tech/Univ. of Wisconsin–Madison): um processo que ajuda engenheiros a considerar, desde o início do projeto, os impactos de um sistema sobre comunidades historicamente marginalizadas e vulneráveis — demonstrado no artigo com um exemplo de sistema de energia solar concentrada, sob a ótica da **justiça energética** (*energy justice*).
+
+### Referências
+
+- Ko, Amy J. **"Requirements of Oppression."** Keynote, 29th IEEE International Requirements Engineering Conference (RE'21), 22 set. 2021. [conf.researchr.org/details/RE-2021/RE-2021-keynotes/2/Requirements-of-Oppression](https://conf.researchr.org/details/RE-2021/RE-2021-keynotes/2/Requirements-of-Oppression)
+- Ko, Amy J. **"Critical Computing Education."** Palestra/slides, UC Irvine, 2021. [faculty.washington.edu/ajko/slides/UCIrvine2021CriticalComputingEducation.pdf](https://faculty.washington.edu/ajko/slides/UCIrvine2021CriticalComputingEducation.pdf)
+- Arkhurst, B. K.; Fu, K. **"Justice-Embedded Requirements Engineering (JERE) for system design."** 18th International Design Conference (DESIGN 2024), DS 129, pp. 2493–2502, 2024.
 
 ## Aula 4 — Viés algorítmico, Fairness e explicabilidade em IA
 
@@ -256,27 +295,10 @@ O **AdaptForge** (Wickramathilaka et al., *Automated Software Engineering*, 2025
 !!! note "Dado demográfico"
     Segundo a OMS, **1 em cada 6 habitantes do mundo** terá 60+ anos até 2030; a população global 60+ deve **dobrar para mais de 2 bilhões** até 2050.
 
-## Aula 10 — Diversidade percebida em equipes de software
+## Aula 10 — Desigualdades de gênero em equipes de software
 
-### O panorama da pesquisa: diversidade percebida em Engenharia de Software
-
-O SLR de referência **"Perceived diversity in software engineering"** (Rodríguez-Pérez, Nadri, Nagappan — *Empirical Software Engineering*, 2021) mapeou **131 estudos** (2003–2020), definindo **diversidade percebida** como "aspectos internos de diversidade com os quais os indivíduos nascem (gênero, idade, raça e nacionalidade)".
-
-!!! danger "Lacuna racial"
-    **Gênero** é a dimensão mais estudada (61% dos estudos); **raça** é a menos estudada (apenas 2%). Em open source, homens contribuíram com mais de 92% do código nos últimos 50 anos; mulheres só chegaram a 10% das contribuições anuais em 2019.
-
-    > "This SLR show that SE research in racial diversity is very limited [...] we would like to create a 'call for future action' to research quantitatively and qualitatively racial diversity in SE."
-
-O SLR também cataloga ferramentas propostas: **GenderMag**, **InclusiveMag** (generalização para outras dimensões), **AID Tool** (detector automatizado de bugs de inclusividade de gênero), **Themis** (ferramenta open-source para debugar discriminação em software).
-
-### Diversidade e inclusão em equipes: panorama e retrocesso (backlash)
-
-Os slides de aula (Kiev Gama) sintetizam dados de mercado — relatório **"Diversity Wins"** (McKinsey, 2020): diversidade de gênero na diretoria associada a 25% mais chance de lucratividade acima da média; diferença de 48% de desempenho entre empresas mais e menos diversas — e um estudo local sobre pessoas LGBTI+ em empresas de TI de Recife, concluindo que "diversidade sem inclusão = tokenismo".
-
-!!! warning "O backlash de DEI (2024–2026)"
-    Os slides documentam o retrocesso das iniciativas de DEI: ordens executivas nos EUA (jan. 2025) contra programas de DEI; Meta encerrou metas de representação; Google removeu Pride Month/Black History Month do Google Agenda; Amazon removeu seções sobre equidade racial; Microsoft dispensou sua equipe de DEI; interrupção de ~2.000 projetos da NSF (US$ 697 milhões), incluindo o **GenderMag**; queda estimada de 10% nas publicações sobre DEI em Engenharia de Software entre 2024 e 2025.
-
-## Aula 11 — Gênero em equipes de desenvolvimento de software
+!!! note "Nota sobre numeração"
+    Os arquivos de material enviados para esta aula estavam rotulados "aula 11" na pasta original. Pelo conteúdo (todo centrado em desigualdade de gênero em equipes de desenvolvimento), eles correspondem ao item 10 do cronograma oficial ("Desigualdades de gênero em equipes de software", 14/10/2026) — por isso foram posicionados aqui.
 
 ### Benefícios e dificuldades percebidas da diversidade de gênero
 
@@ -310,6 +332,38 @@ Os slides de aula (Kiev Gama) sintetizam dados de mercado — relatório **"Dive
     > "The frequent refrain that open source is a pure meritocracy must be reexamined."
 
 Esse estudo foi amplamente noticiado, incluindo pelo artigo complementar indicado para esta aula — **"Women considered better coders – but only if they hide their gender"** (*The Guardian*, 12 fev. 2016) — que reportou os mesmos achados (mulheres com perfil neutro têm PRs aceitos com mais frequência que homens, mas a vantagem desaparece/inverte quando o gênero é revelado), amplificando a discussão pública sobre o viés de gênero em comunidades de código aberto além do meio acadêmico. A teoria final dos autores combina **viés de sobrevivência** (mulheres menos competentes abandonam a área mais cedo) com **discriminação direta** contra mulheres identificáveis como tal (um viés que McLoughlin, 2005, chamou de **"Type III bias"**).
+
+## Aula 11 — Developer Experience e LGBTQIAPN+ em equipes de software
+
+!!! note "Nota sobre numeração"
+    Os arquivos de material enviados para esta aula estavam rotulados "aula 10" na pasta original. Pelo conteúdo (que inclui diversidade percebida em geral, mas sobretudo um bloco extenso sobre Developer Experience e pessoas LGBTQIAPN+ em equipes), eles correspondem ao item 11 do cronograma oficial ("Developer Experience e LGBTQIAPN+ em equipes de software", 21/10/2026) — por isso foram posicionados aqui.
+
+### O panorama da pesquisa: diversidade percebida em Engenharia de Software
+
+O SLR de referência **"Perceived diversity in software engineering"** (Rodríguez-Pérez, Nadri, Nagappan — *Empirical Software Engineering*, 2021) mapeou **131 estudos** (2003–2020), definindo **diversidade percebida** como "aspectos internos de diversidade com os quais os indivíduos nascem (gênero, idade, raça e nacionalidade)".
+
+!!! danger "Lacuna racial"
+    **Gênero** é a dimensão mais estudada (61% dos estudos); **raça** é a menos estudada (apenas 2%). Em open source, homens contribuíram com mais de 92% do código nos últimos 50 anos; mulheres só chegaram a 10% das contribuições anuais em 2019.
+
+    > "This SLR show that SE research in racial diversity is very limited [...] we would like to create a 'call for future action' to research quantitatively and qualitatively racial diversity in SE."
+
+O SLR também cataloga ferramentas propostas: **GenderMag**, **InclusiveMag** (generalização para outras dimensões), **AID Tool** (detector automatizado de bugs de inclusividade de gênero), **Themis** (ferramenta open-source para debugar discriminação em software).
+
+### Developer Experience (DX) de pessoas LGBTQIAPN+ em equipes ágeis
+
+Os slides de aula (Kiev Gama) dedicam um bloco inteiro ao tema central desta aula: **de Souza & Gama (2020, *IEEE RITA*)** entrevistaram pessoas LGBTI+ em duas empresas de TI multinacionais em Recife, concluindo que representatividade melhora o ambiente mas não garante por si só inovação — "**diversidade sem inclusão = tokenismo**". Um relato ilustra a tensão:
+
+> "O programa [de inclusão LGBTI], pra mim, é só uma fraude. [...] Eles aparecem como os bonzinhos, mas na verdade as coisas não acontecem."
+
+Estudos sobre **Developer Experience (DX)** de pessoas LGBTQIA+ em times ágeis (Wassouf-Jr, Fukuda & Fontão, 2025) mostram que invisibilidade, preconceito, discriminação e isolamento afetam negativamente a DX, enquanto segurança psicológica e políticas inclusivas favorecem coesão. Um mapeamento anterior (Silveira & Prikladnicki, 2019) achou 221 artigos sobre diversidade em ES, dos quais 129 sobre gênero e **apenas 2 sobre pessoas LGBTQI** — evidenciando a mesma lacuna que o SLR de diversidade percebida relata para raça.
+
+!!! note "Estudantes trans e não-binários em Engenharia de Software (Graßl, ICSE-SEIS 2026)"
+    13 entrevistas semiestruturadas; motivações para escolher a área incluem trabalho remoto como fonte de segurança (10 participantes), segurança financeira (7), desejo de criar tecnologias mais inclusivas (7). Desafios relatados: microagressões, *misgendering*, impactos na saúde mental, tensão entre "passing" e expressar identidade. Estratégias de inclusão propostas: representação/visibilidade, linguagem inclusiva, banheiros neutros em gênero, mentoria, bolsas direcionadas (com cuidado para evitar tokenismo).
+
+### O backlash de DEI (2024–2026)
+
+!!! warning "Retrocesso das iniciativas de DEI"
+    Os slides documentam o retrocesso das iniciativas de DEI, com efeito direto sobre a pesquisa e as iniciativas voltadas a grupos como o público LGBTQIAPN+: ordens executivas nos EUA (jan. 2025) contra programas de DEI; organizações como *Girls in Tech* e *Women Who Code* encerraram ou se reestruturaram; Meta encerrou metas de representação; Google removeu Pride Month/Black History Month do Google Agenda; Amazon removeu seções sobre equidade racial e **direitos LGBTQ+** do site; Microsoft dispensou sua equipe de DEI; interrupção de ~2.000 projetos da NSF (US$ 697 milhões), incluindo o **GenderMag**; queda estimada de 10% nas publicações sobre DEI em Engenharia de Software entre 2024 e 2025. Relatório **"Diversity Wins"** (McKinsey, 2020), citado nos mesmos slides como contraponto de mercado: diversidade de gênero na diretoria associada a 25% mais chance de lucratividade acima da média; diferença de 48% de desempenho entre empresas mais e menos diversas.
 
 ## Aulas 12 a 16
 
