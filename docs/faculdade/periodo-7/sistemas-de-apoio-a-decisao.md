@@ -24,7 +24,27 @@ Science e Big Data (SADs, ERPs, CRMs, BI); Business Intelligence & Analytics.
 
 ??? note "O que é um problema não estruturado? (matriz de Gorry & Scott-Morton)"
     A disciplina usa o framework clássico de Gorry & Scott-Morton (1970), que cruza o **nível de
-    estruturação** da decisão (Simon, 1977) com o **tipo de controle** (Anthony, 1965):
+    estruturação** da decisão (Simon, 1977) com o **tipo de controle** (Anthony, 1965).
+
+    **Nível de estruturação da decisão (Simon, 1977):**
+
+    - **Decisão estruturada (ou programada)**: decisão repetitiva e rotineira, para a qual já existe um
+      procedimento bem definido de solução — não precisa ser tratada como um problema novo a cada vez que
+      ocorre. É facilmente automatizável, pois todas as suas etapas (dados necessários, regras de decisão,
+      critério de escolha) são conhecidas e fixas. Exemplos: processamento de um pedido de compra,
+      concessão de um crédito dentro de limites pré-definidos, cálculo de folha de pagamento.
+    - **Decisão não estruturada (ou não programada)**: decisão "nebulosa", complexa, sem um procedimento
+      de solução padronizado — nenhuma das três fases do processo decisório (inteligência, design, escolha)
+      é estruturada. Costuma envolver múltiplos critérios, muitas vezes subjetivos, julgamento humano e
+      criatividade, e não existe um método padrão aplicável a todos os casos. Exemplos: contratar um
+      executivo, planejar P&D, definir uma estratégia de responsabilidade social.
+    - **Decisão semiestruturada**: situação intermediária, em que **parte** do processo de decisão é
+      estruturada (pode ser apoiada por modelos/procedimentos-padrão) e **parte** exige julgamento e
+      experiência do decisor humano. É exatamente essa categoria — nem totalmente automatizável, nem
+      totalmente dependente de intuição — que constitui o **principal público-alvo de um SAD**: ele apoia
+      (em vez de substituir) o decisor justamente onde a decisão não pode ser completamente programada.
+      Exemplos: programação de produção, avaliação de crédito fora dos limites-padrão, planejamento de um
+      novo produto.
 
     | | Controle Operacional | Controle Gerencial | Planejamento Estratégico |
     |---|---|---|---|
