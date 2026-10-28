@@ -151,10 +151,47 @@ Research* (OR) / *Management Science* (MS).
 desenvolver um procedimento de solução; (4) testar e refinar o modelo; (5) aplicar o modelo e desenvolver
 recomendações; (6) ajudar a implementar as recomendações adotadas.
 
+### Os três elementos de qualquer modelo
+
+O livro de Arenales et al. resume a modelagem em três perguntas, e são exatamente elas que o professor cobra
+na prova:
+
+1. **Decisões**: o que se quer determinar? Viram as **variáveis de decisão**.
+2. **Restrições**: o que limita as escolhas? Viram **equações e inequações**.
+3. **Objetivo**: o que faz uma decisão ser melhor que outra? Vira a **função objetivo** (maximizar ou
+   minimizar).
+
+Vocabulário (Seção 2.4 do livro): uma **solução factível** (viável) satisfaz todas as restrições; o conjunto
+delas é a **região factível**; a **solução ótima** é a factível com o melhor valor da função objetivo (pode
+haver uma ou várias). Um **método ótimo (exato)** garante achar a solução ótima; um **método heurístico**
+busca uma solução boa (subótima) quando o exato é caro demais.
+
+??? note "Exemplo do capítulo 1 do livro: o MRP e por que modelar"
+    O sistema MRP (*Material Requirements Planning*) calcula quanto e quando produzir cada item, mas faz
+    isso em duas fases: primeiro calcula os lotes de cada item **ignorando a capacidade**, depois verifica se
+    a capacidade foi respeitada e, se não foi, ajusta "na mão". O livro modela o mesmo problema (um item
+    final, um componente, 4 semanas, 80 horas por semana) como otimização:
+
+    $$
+    \begin{aligned}
+    \text{minimizar } & \sum_{i=1}^{2}\sum_{t=1}^{4} K_{it}(x_{it}) + h_i I_{it} \\
+    \text{sujeito a: } & I_{1t} = I_{1,t-1} + x_{1t} - d_{1t} \\
+    & I_{2t} = I_{2,t-1} + x_{2t} - x_{1t} \\
+    & a_1x_{1t} + a_2x_{2t} \le 80 \\
+    & x_{it} \ge 0, \; I_{it} \ge 0
+    \end{aligned}
+    $$
+
+    $x_{it}$ é a produção do item $i$ na semana $t$; $I_{it}$, o estoque; $K_{it}$, o custo de produção (com
+    custo fixo $S_i$ se $x_{it}>0$). A produção do item 1 vira **demanda dependente** do item 2. A heurística
+    do MRP gerou um plano que estourava a capacidade (110 h e 90 h); ajustando, chega-se a um plano factível
+    de custo 5.750 e depois a um de 5.700, que é o ótimo. Moral: o modelo enxerga o problema inteiro de uma
+    vez, e a heurística não.
+
 ### Exemplo introdutório: linhas de produção de rádios
 
 Fábrica com 40 operários para alocar entre rádio **padrão** (linha comporta até 24 pessoas, 1 homem-dia por
-rádio, lucro R$ 30) e rádio **luxo** (linha comporta até 32 pessoas, 2 homens-dia por rádio, lucro R$ 40).
+rádio, lucro R\$ 30) e rádio **luxo** (linha comporta até 32 pessoas, 2 homens-dia por rádio, lucro R\$ 40).
 
 $$
 \begin{aligned}
@@ -166,26 +203,179 @@ $$
 \end{aligned}
 $$
 
+Com duas variáveis, o problema pode ser resolvido **graficamente**: ótimo em $(24;\,8)$, lucro de R\$ 1.040.
+O passo a passo de como transformar as restrições em retas, achar a região factível e a solução ótima está
+na página [Resolução gráfica](sistemas-de-apoio-a-decisao/resolucao-grafica.md).
+
+!!! tip "Material de prática"
+    - [Resolução gráfica](sistemas-de-apoio-a-decisao/resolucao-grafica.md): método do livro, casos
+      especiais (ótimos múltiplos, ilimitado, infactível) e 7 exercícios com gráfico.
+    - [Exercícios de modelagem](sistemas-de-apoio-a-decisao/exercicios-de-modelagem.md): roteiro de 5
+      passos, dicionário "frase do enunciado → restrição", 12 exercícios no estilo da prova e 5 exemplos do
+      livro.
+
 ### Tipos clássicos de problemas de otimização linear (Arenales et al., cap. 2)
 
-- **Problemas de mistura** — combinar ingredientes a custo mínimo respeitando composição mínima/máxima
-  (ex.: ração animal, ligas metálicas, agregados de concreto).
-- **Problemas de transporte, transbordo e designação** — minimizar custo de distribuição de origens
-  (ofertas) para destinos (demandas); transbordo adiciona pontos intermediários com conservação de fluxo;
-  designação é um caso especial 1-para-1 (maximizando "interesse").
-- **Planejamento da produção** — *mix* de produtos, seleção de processos, dimensionamento de lotes
-  mono/multiestágio (com demanda dependente entre itens).
-- **Programação de projetos** — sequenciamento de atividades com precedências (PERT/CPM simplificado).
-- **Gestão financeira** — alocação de fluxo de caixa entre opções de investimento ao longo de períodos.
-- **Corte e empacotamento** — minimizar número de peças/bobinas cortadas para atender uma demanda.
-- **Ajuste de curvas e controle ótimo** — regressão linear por desvios absolutos; controle de sistemas
-  dinâmicos lineares.
+Cada classe abaixo tem uma "forma" de modelo que se repete. Reconhecer a classe no enunciado já entrega
+metade da formulação.
 
-**Três hipóteses fundamentais de linearidade**: **aditividade** (o todo é a soma das partes), **proporcionalidade**
-(o consumo de recursos escala linearmente com a quantidade produzida) e **fracionamento** (variáveis podem
-assumir valores fracionários — quando isso não é aceitável, o problema é de otimização **inteira**).
+#### Problemas de mistura
 
-**Forma padrão de um problema de otimização linear**:
+Combinar ingredientes para obter um produto com composição especificada, ao menor custo (ração, ligas
+metálicas, areias para filtro, concreto, sucos). Com $x_j$ = quantidade do ingrediente $j$ em uma unidade de
+mistura, $a_{ij}$ = fração do componente $i$ no ingrediente $j$, $b_i$ = fração exigida do componente $i$ e
+$c_j$ = custo do ingrediente $j$:
+
+$$
+\begin{aligned}
+\text{minimizar } & c_1x_1 + c_2x_2 + \dots + c_nx_n \\
+\text{sujeito a: } & a_{i1}x_1 + a_{i2}x_2 + \dots + a_{in}x_n = b_i \quad (i = 1,\dots,m) \\
+& x_1 + x_2 + \dots + x_n = 1 \\
+& x_j \ge 0
+\end{aligned}
+$$
+
+Se o enunciado diz "**pelo menos** 30% de proteína", a igualdade vira $\ge$ (Exemplo 2.1, a ração de osso,
+soja e peixe: ótimo com 50% de osso e 50% de peixe, custo \$0,51/kg). Quando a quantidade total não é fixa,
+as porcentagens viram restrições do tipo $0{,}04(x_1+\dots+x_4) \le x_1 \le 0{,}06(x_1+\dots+x_4)$ (exemplo
+da salada).
+
+#### Transporte, transbordo e designação
+
+**Transporte**: $m$ origens com oferta $a_i$, $n$ destinos com demanda $b_j$, custo unitário $c_{ij}$:
+
+$$
+\begin{aligned}
+\text{minimizar } & \sum_{i=1}^{m}\sum_{j=1}^{n} c_{ij}x_{ij} \\
+\text{sujeito a: } & \sum_{j=1}^{n} x_{ij} \le a_i \quad (i=1,\dots,m) \quad \text{(não enviar mais do que se tem)} \\
+& \sum_{i=1}^{m} x_{ij} = b_j \quad (j=1,\dots,n) \quad \text{(atender a demanda)} \\
+& x_{ij} \ge 0
+\end{aligned}
+$$
+
+O livro usa "$=$" na demanda; usar "$\ge$" dá o mesmo resultado quando se minimiza custo (ninguém manda a
+mais pagando frete).
+
+**Transbordo**: há pontos intermediários (depósitos, CDs) que não produzem nem consomem. Para cada um,
+acrescenta-se a **conservação de fluxo**: $\sum_i x_{ij} = \sum_k x_{jk}$ (tudo que entra, sai).
+
+**Designação**: $n$ tarefas para $n$ pessoas, $x_{ij} = 1$ se a pessoa $i$ faz a tarefa $j$:
+
+$$\text{maximizar } \sum_i\sum_j p_{ij}x_{ij} \quad \text{s.a. } \sum_j x_{ij} = 1, \;\; \sum_i x_{ij} = 1, \;\; x_{ij} \in \{0,1\}$$
+
+Pela estrutura especial, trocar $x_{ij} \in \{0,1\}$ por $x_{ij} \ge 0$ ainda dá solução inteira.
+
+#### Planejamento da produção
+
+**Mix de produção** (um período): $x_j$ = quantidade do produto $j$, $l_j$ = lucro unitário, $a_{ij}$ =
+consumo do recurso $i$, $C_i$ = disponibilidade, $d_j \le x_j \le v_j$ = mínimo de pedidos e máximo de
+mercado:
+
+$$\text{maximizar } \sum_j l_jx_j \quad \text{s.a. } \sum_j a_{ij}x_j \le C_i, \;\; d_j \le x_j \le v_j$$
+
+Exemplo 2.6 (geladeiras): max $100x_L + 50x_B$ com $10x_L + 8x_B \le 25.000$ (homens-hora),
+$x_L + x_B \le 4.500$ (linha), $0 \le x_L \le 1.500$, $0 \le x_B \le 6.000$. Ótimo: 1.500 de luxo e 1.250
+básicas.
+
+**Restrições de chance**: quando a demanda $D$ é incerta (normal, com média $E(D)$ e desvio $\sigma(D)$), em
+vez de $x \le E(D)$ exige-se que a probabilidade de superproduzir seja no máximo $\alpha$:
+$P(D \le x) \le \alpha$, que vira a restrição linear
+
+$$x \le E(D) + z_\alpha\,\sigma(D)$$
+
+Ex.: $E(D)=1.500$, $\sigma(D)=100$ e $\alpha=0{,}10$ dão $z_{0,10} = -1{,}282$ e $x \le 1.372$.
+
+**Seleção de processos**: o produto $i$ pode ser feito por processos alternativos $j \in J_i$ (máquinas,
+hora extra, terceirização), com custo $c_{ij}$ e consumo $a_{ijk}$ do recurso $k$:
+
+$$\text{minimizar } \sum_i\sum_{j \in J_i} c_{ij}x_{ij} \quad \text{s.a. } \sum_{j \in J_i} x_{ij} = d_i, \;\; \sum_i\sum_{j \in J_i} a_{ijk}x_{ij} \le b_k$$
+
+**Dimensionamento de lotes** (vários períodos, com estoque): $x_{it}$ = produção, $I_{it}$ = estoque no fim
+do período $t$:
+
+$$
+\begin{aligned}
+\text{minimizar } & \sum_i\sum_t c_{it}x_{it} + \sum_i\sum_t h_{it}I_{it} \\
+\text{sujeito a: } & x_{it} + I_{i,t-1} - I_{it} = d_{it} \quad \text{(conservação de estoque)} \\
+& r_1x_{1t} + r_2x_{2t} + \dots + r_nx_{nt} \le R_t \quad \text{(capacidade)} \\
+& x_{it}, I_{it} \ge 0
+\end{aligned}
+$$
+
+$I_{it} \ge 0$ é o que garante o atendimento da demanda sem atraso. No caso **multiestágio**, a demanda de
+um componente $j$ ganha a parcela interna $\sum_i b_{ji}x_{it}$ (o que os itens que o usam consomem).
+Atrasos (*backlogging*) entram trocando $I_{it}$ por $I^+_{it} - I^-_{it}$. O estudo de caso de
+planejamento agregado da disciplina (Atividade 3 abaixo) é desta família.
+
+#### Programação de projetos
+
+$t_i$ = instante de início da atividade $i$. Cada precedência "$D$ só começa depois que $B$ (5 h) termina"
+vira $t_D \ge t_B + 5$; o objetivo é minimizar o instante de término da última atividade. No exemplo dos
+pilares (8 atividades, de A a H), minimiza-se $t_H + 3$ sujeito a $t_C \ge t_A + 6$, $t_D \ge t_B + 5$,
+$t_D \ge t_C + 4$, $t_F \ge t_E + 2$, $t_F \ge t_D + 2$, $t_G \ge t_F + 3$, $t_H \ge t_G + 72$ e
+$t_A, t_B, t_E \ge 0$.
+
+#### Gestão financeira (fluxo de caixa)
+
+Em cada período, o dinheiro é dividido entre ficar em caixa (juros $\alpha$) e uma aplicação menos líquida
+(juros $\beta > \alpha$), com custos de aplicação e resgate. Modela-se como uma **rede de fluxos**: em
+cada nó (período e opção), **o que entra = o que sai**. O objetivo é maximizar o dinheiro no fim do
+horizonte. No Exemplo 2.9 do livro (3 períodos), o retorno final ótimo é de \$3,27.
+
+#### Meio ambiente
+
+Uma fábrica desvia água do rio e escolhe quanto tratar em cada um de 3 tratamentos ($x_i$ milhões de
+litros), com custo $c_i$ e poluentes remanescentes $a_i$ e $b_i$:
+
+$$
+\begin{aligned}
+\text{minimizar } & c_1x_1 + c_2x_2 + c_3x_3 \\
+\text{sujeito a: } & x_1 + x_2 + x_3 \ge U \quad \text{(água mínima para produzir)} \\
+& x_1 + x_2 + x_3 \le V \quad \text{(vazão do rio)} \\
+& (a_1x_1 + a_2x_2 + a_3x_3)/V \le a_0, \quad (b_1x_1 + b_2x_2 + b_3x_3)/V \le b_0 \quad \text{(limites legais)} \\
+& x_i \ge 0
+\end{aligned}
+$$
+
+#### Corte e empacotamento
+
+Barras (ou bobinas) de tamanho $L$ são cortadas em itens de tamanhos $l_1,\dots,l_m$ com demandas
+$b_1,\dots,b_m$. Cada **padrão de corte** $j$ é um vetor $a_j = (a_{1j},\dots,a_{mj})$ com quantos itens de
+cada tipo saem de uma barra; é válido se $l_1a_{1j} + \dots + l_ma_{mj} \le L$. Com $x_j$ = barras cortadas
+no padrão $j$:
+
+$$\text{minimizar } x_1 + x_2 + \dots + x_n \quad \text{s.a. } \sum_j a_{ij}x_j = b_i, \;\; x_j \ge 0 \text{ e inteiros}$$
+
+Quando a demanda é em toneladas, a integralidade pode ser relaxada (ex.: papel: 3,5 toneladas cortadas num
+padrão é uma resposta com sentido).
+
+#### Ajuste de curvas, controle ótimo e funções lineares por partes
+
+Funções que não são lineares, mas podem ser **linearizadas**:
+
+- **Soma dos módulos dos erros** $\sum|\varepsilon_i|$: escreve-se $\varepsilon_i = \varepsilon_i^+ -
+  \varepsilon_i^-$ com $\varepsilon_i^+, \varepsilon_i^- \ge 0$ e minimiza-se $\sum(\varepsilon_i^+ +
+  \varepsilon_i^-)$. No Exemplo 2.10, ajustar $y = ax + b$ aos pontos $(0,-1), (1,0), (2,1), (3,1)$ vira
+  um problema linear.
+- **Mínimo do máximo** $\min \max|y_t|$: cria-se $z$ com $-z \le y_t \le z$ e minimiza-se $z$ (controle
+  ótimo, ex.: aceleração de um foguete).
+- **Penalidade de estoque** diferente para sobra e falta: $I_{it} = I^+_{it} - I^-_{it}$, com custos $h^+$ e
+  $h^-$.
+
+### Hipóteses de linearidade (Seção 2.3)
+
+| Hipótese | O que supõe | Quando falha |
+|---|---|---|
+| **Aditividade** | O todo é a soma das partes | Ingredientes que reagem: 1 L de água + 0,1 L de açúcar não dá 1,1 L |
+| **Proporcionalidade** | Se 1 kg tem 200 g de um componente, 3 kg têm 600 g; $x_j$ unidades custam $c_jx_j$ | Descontos por volume, saturação de mercado, custos fixos |
+| **Fracionamento** | Valores fracionários fazem sentido | Número de máquinas ou veículos: precisa de otimização **inteira** |
+
+Bom senso no fracionamento: se a variável é o número de peças e o ótimo dá 331,4, produzir 331 ou 332 é
+aceitável e não vale tratar como inteiro. Já para comprar 1,4 caminhão, o arredondamento distorce.
+
+### Forma padrão e transformações (Seção 2.4)
+
+A **forma padrão** é: minimizar, restrições de **igualdade** e variáveis **não negativas**.
 
 $$
 \begin{aligned}
@@ -195,196 +385,57 @@ $$
 \end{aligned}
 $$
 
-### Problema de transporte — formulação geral
+$A$ é a matriz $m \times n$ dos coeficientes (matriz tecnológica), $c$ o vetor de custos, $b$ o vetor de
+recursos. Qualquer problema linear pode ser reescrito nessa forma:
 
-$$
-\begin{aligned}
-\text{minimizar } & \sum_i \sum_j c_{ij}x_{ij} \\
-\text{sujeito a: } & \sum_j x_{ij} \le a_i \quad (i=1,...,m) \\
-& \sum_i x_{ij} \ge b_j \quad (j=1,...,n) \\
-& x_{ij} \ge 0
-\end{aligned}
-$$
+| Situação | Transformação | Exemplo |
+|---|---|---|
+| **Maximizar** $f$ | Minimizar $-f$ | max $2x_1 - x_2 + 4x_3$ vira min $-2x_1 + x_2 - 4x_3$ |
+| Restrição $\le$ | Soma uma **variável de folga** $x_k \ge 0$ | $3x_1 + 4x_2 - x_3 \le 7$ vira $3x_1 + 4x_2 - x_3 + x_4 = 7$ |
+| Restrição $\ge$ | Subtrai uma **variável de excesso** $x_k \ge 0$ | $3x_1 + 4x_2 - x_3 \ge 7$ vira $3x_1 + 4x_2 - x_3 - x_4 = 7$ |
+| **Variável livre** (sinal irrestrito) | $x_i = x_i^+ - x_i^-$, com $x_i^+, x_i^- \ge 0$ | $x_1$ livre vira $x_1^+ - x_1^-$ em todo o modelo |
 
-onde $a_i$ é a oferta da origem $i$, $b_j$ a demanda do destino $j$ e $c_{ij}$ o custo de transportar uma
-unidade de $i$ para $j$.
+!!! example "Exemplo 2.15 do livro"
+    min $2x_1 - 3x_2 + 3x_3$ com $x_1 + 2x_2 - x_3 \ge 3$, $-2x_1 + x_2 + x_3 \le -1$ e $x \ge 0$ fica, na
+    forma padrão:
+
+    $$
+    \begin{aligned}
+    \text{min } & 2x_1 - 3x_2 + 3x_3 + 0x_4 + 0x_5 \\
+    \text{s.a. } & x_1 + 2x_2 - x_3 - x_4 = 3 \\
+    & -2x_1 + x_2 + x_3 + x_5 = -1 \\
+    & x_1, \dots, x_5 \ge 0
+    \end{aligned}
+    $$
+
+    A folga tem significado: no ótimo, uma folga zero indica que a restrição está **ativa** (o recurso é
+    gargalo).
 
 ## Teoria da Decisão
 
 Handout "Teoria da Decisão" (08/10). Bibliografia: Howard & Abbas (2015); Raiffa (1977); Souza (2007);
 Hillier & Lieberman (2014); Berger (1980).
 
-### O que é decisão
+O conteúdo completo, com a matemática passo a passo, está na página
+[Teoria da Decisão](sistemas-de-apoio-a-decisao/teoria-da-decisao.md), e os exercícios em
+[Exercícios de teoria da decisão](sistemas-de-apoio-a-decisao/exercicios-de-teoria-da-decisao.md). Resumo:
 
-> "Uma boa decisão deverá ser uma função lógica daquilo que se quer, daquilo que se sabe e daquilo que se
-> pode fazer." — Souza (2007)
-
-- **O que se quer**: preferências pelas consequências (incertas ou distribuídas no tempo).
-- **O que se sabe**: conhecimento dos elementos do problema.
-- **O que se pode fazer**: alternativas de ação disponíveis (requer criatividade).
-
-!!! warning "Decisão ≠ consequência"
-    Uma boa decisão **não garante** uma boa consequência. Exemplos clássicos: dirigir sóbrio e sofrer um
-    acidente (boa decisão, má consequência) vs. dirigir bêbado e chegar em segurança (má decisão, boa
-    consequência). A qualidade da decisão deve ser avaliada pelo processo, não apenas pelo resultado.
-
-**Decisão sob incerteza** (não se consegue estimar a probabilidade dos cenários) vs. **decisão sob risco**
-(as probabilidades são conhecidas, permitindo avaliar o risco).
-
-### Teoria da Utilidade de von Neumann-Morgenstern
-
-A função utilidade $u$ é uma medida cardinal (numérica), em *utils*, das preferências do decisor. Para que
-exista, quatro axiomas de racionalidade precisam valer sobre as relações de preferência $P \succsim Q$:
-
-1. **Completeza (ordem total)**: $P \succsim Q$ ou $Q \succsim P$.
-2. **Transitividade**: se $P \succ Q$ e $Q \succsim R$, então $P \succ R$.
-3. **Dominância**: se $P \succ Q$, então $\lambda P + (1-\lambda)R \succ \lambda Q + (1-\lambda)R$ para
-   qualquer $R$ e $\lambda > 0$ — garante a linearidade da utilidade em probabilidade.
-4. **Arquimediano**: se $P \succ Q \succ R$, existem $\lambda, \mu$ tais que
-   $\lambda P + (1-\lambda)R \succ Q \succ \mu P + (1-\mu)R$.
-
-Satisfeitos os axiomas, existe $u$ tal que $P \succsim Q \Leftrightarrow u(P) \ge u(Q)$ e
-$u[\lambda P + (1-\lambda)Q] = \lambda u(P) + (1-\lambda)u(Q)$ — ou seja, **a utilidade de uma loteria é o
-valor esperado das utilidades das consequências**, ponderado pelas probabilidades.
-
-??? example "Construção de uma função utilidade — exemplo das frutas (passo a passo)"
-    **A ideia geral primeiro**: ordenar preferências ("gosto mais de maçã do que de pera") é fácil, mas não
-    diz **o quanto** mais se gosta — não dá para fazer contas com um ranking. O método da **loteria de
-    referência** transforma preferências em números fazendo uma pergunta engenhosa: *"você prefere ganhar
-    este item com certeza, ou prefere apostar entre o seu item favorito e o seu item menos favorito?"* A
-    probabilidade de ganhar o item favorito que te deixaria **indiferente** entre as duas opções é, por
-    definição, a utilidade do item em questão. É basicamente perguntar "o quanto esse item vale, numa escala
-    de 0 a 1, entre o pior e o melhor cenário possíveis?".
-
-    **Dados do problema**: um decisor tem a seguinte ordem de preferência entre 5 frutas (da mais para a
-    menos desejada):
-
-    $$Maçã \succ Pera \succ Laranja \succ Goiaba \succ Uva$$
-
-    Queremos transformar esse ranking em números (utilidades) que permitam, mais tarde, calcular valores
-    esperados em situações de risco (ex.: "prefiro um saco com 50% de chance de maçã e 50% de uva, ou uma
-    laranja certa?").
-
-    ---
-
-    **Passo 1 — Escolher dois pontos de referência e fixar suas utilidades.**
-
-    Qualquer função utilidade é definida a menos de uma transformação linear (podemos escolher livremente os
-    valores dos dois extremos, como "0°C" e "100°C" são escolhas arbitrárias na escala Celsius). Para
-    começar, escolhe-se **Pera** (a mais desejável dentre as 3 frutas "do meio") como referência superior e
-    **Goiaba** como referência inferior, e arbitra-se:
-
-    $$u(Pera) = 1 \qquad u(Goiaba) = 0$$
-
-    Isso **não** significa que Pera é a fruta mais desejada de todas (Maçã é) — é só a referência superior
-    *desta primeira rodada* de perguntas. Resolveremos Maçã e Uva depois, numa segunda rodada.
-
-    **Passo 2 — Descobrir a utilidade da Laranja por meio de uma loteria imaginária.**
-
-    Pergunta-se ao decisor: *"Você prefere receber uma Laranja com certeza, ou participar de uma loteria em
-    que você tem probabilidade $\lambda$ de ganhar uma Pera e probabilidade $(1-\lambda)$ de ganhar uma
-    Goiaba?"* Varia-se $\lambda$ até o decisor ficar **indiferente** entre as duas opções:
-
-    ```mermaid
-    flowchart LR
-        Q{{"Laranja certa<br/>⟷<br/>Loteria?"}}
-        Q -.indiferente.-> L["Laranja (certa)"]
-        Q -.indiferente.-> J((Loteria))
-        J -->|"λ = 40%"| P["Pera (u=1)"]
-        J -->|"1−λ = 60%"| G["Goiaba (u=0)"]
-    ```
-
-    Suponha que, por introspecção, o decisor diga que fica indiferente quando $\lambda = 0{,}4$ (ou seja,
-    uma Laranja certa "vale" o mesmo que 40% de chance de Pera + 60% de chance de Goiaba). Como a utilidade
-    de uma loteria é a **média ponderada** das utilidades dos prêmios (propriedade de linearidade vista
-    acima), a utilidade da Laranja é exatamente esse $\lambda$:
-
-    $$u(Laranja) = \lambda \cdot u(Pera) + (1-\lambda) \cdot u(Goiaba) = 0{,}4 \times 1 + 0{,}6 \times 0 = \mathbf{0{,}4}$$
-
-    *(Note que isso só funciona porque fixamos $u(Pera)=1$ e $u(Goiaba)=0$ no Passo 1 — a conta "zera" o
-    termo da Goiaba e "isola" o $\lambda$ como a própria utilidade procurada.)*
-
-    **Passo 3 — Repetir o processo numa segunda rodada, agora para toda a escala (Uva até Maçã).**
-
-    O problema do Passo 1-2 é que ele só cobre o intervalo entre Pera e Goiaba — não diz nada sobre Maçã
-    (mais desejada que Pera) nem sobre Uva (menos desejada que Goiaba). Por isso, repete-se o mesmo
-    procedimento, mas agora usando os **extremos reais** do conjunto como referência:
-
-    $$u_{Uv,Ma}(Maçã) = 1 \qquad u_{Uv,Ma}(Uva) = 0$$
-
-    *(a notação $u_{Uv,Ma}$ só indica "nesta escala, Uva vale 0 e Maçã vale 1" — é uma escala diferente da
-    do Passo 1, com números que ainda não são diretamente comparáveis aos anteriores)*
-
-    Repetindo a pergunta da loteria para Pera e para Goiaba **nesta nova escala**, suponha que o decisor
-    responda, por introspecção:
-
-    $$u_{Uv,Ma}(Pera) = 0{,}8 \qquad u_{Uv,Ma}(Goiaba) = 0{,}1$$
-
-    (ou seja: nesta escala Uva–Maçã, uma Pera certa equivale a 80% de chance de Maçã + 20% de chance de Uva;
-    uma Goiaba certa equivale a 10% de chance de Maçã + 90% de chance de Uva)
-
-    **Passo 4 — Reconciliar as duas escalas numa única escala comum.**
-
-    Agora temos dois conjuntos de números que usam escalas diferentes — é como ter uma temperatura em
-    Celsius e outra em Fahrenheit e precisar comparar. A solução é a mesma: uma **transformação linear**
-    (multiplicar por uma constante e somar outra), pois a propriedade de "extensão" da utilidade (Lema 5)
-    garante que qualquer transformação $u^* = au + b$ (com $a>0$) representa as mesmas preferências.
-
-    Queremos reescalar a escala $u_{Uv,Ma}$ de volta para a escala original do Passo 1 (onde Pera$=1$ e
-    Goiaba$=0$). A fórmula de reescalonamento (uma regra de três disfarçada) é:
-
-    $$u^*(F) = \frac{u_{Uv,Ma}(F) - u_{Uv,Ma}(Goiaba)}{u_{Uv,Ma}(Pera) - u_{Uv,Ma}(Goiaba)} = \frac{u_{Uv,Ma}(F) - 0{,}1}{0{,}8 - 0{,}1} = \frac{u_{Uv,Ma}(F) - 0{,}1}{0{,}7}$$
-
-    O denominador $0{,}7$ é a "distância", na escala Uva–Maçã, entre os dois pontos que viram 0 e 1 na escala
-    original — dividir por ele é o que "estica" a escala de volta ao tamanho certo.
-
-    **Passo 5 — Aplicar a fórmula a cada fruta e montar a tabela final.**
-
-    | Fruta | $u_{Uv,Ma}(F)$ (escala do Passo 3) | Cálculo de $u^*(F)$ | Utilidade final |
-    |---|---|---|---|
-    | Maçã | $1{,}0$ | $(1{,}0 - 0{,}1)/0{,}7$ | $9/7 \approx 1{,}29$ |
-    | Pera | $0{,}8$ | $(0{,}8 - 0{,}1)/0{,}7$ | $1{,}00$ |
-    | Laranja | *(não precisa recalcular — já está na escala certa desde o Passo 2)* | — | $0{,}40$ |
-    | Goiaba | $0{,}1$ | $(0{,}1 - 0{,}1)/0{,}7$ | $0{,}00$ |
-    | Uva | $0{,}0$ | $(0{,}0 - 0{,}1)/0{,}7$ | $-1/7 \approx -0{,}14$ |
-
-    !!! tip "Como ler esse resultado"
-        Note que a ordem dos números bate exatamente com a ordem de preferência original
-        ($Maçã \succ Pera \succ Laranja \succ Goiaba \succ Uva$, e $1{,}29 > 1{,}00 > 0{,}40 > 0{,}00 >
-        -0{,}14$) — isso é esperado, pois a utilidade **preserva a ordem** (Lema 3). A utilidade da Uva deu
-        **negativa**: isso é normal e não representa um "dano" — é só consequência de termos fixado
-        Goiaba$=0$ no Passo 1; o zero da escala é arbitrário, só a **ordem** e as **diferenças relativas**
-        entre os valores têm significado (ex.: a "distância" de Pera a Laranja, $1{,}00-0{,}40=0{,}60$, é
-        maior que a distância de Laranja a Goiaba, $0{,}40-0{,}00=0{,}40$ — ou seja, o decisor se importa
-        relativamente mais com a diferença entre Pera e Laranja do que entre Laranja e Goiaba).
-
-    **Para que serve, na prática**: com esses números, dá para comparar alternativas arriscadas calculando
-    o valor esperado da utilidade. Por exemplo, um saco com 50% de chance de Maçã e 50% de chance de Uva tem
-    utilidade esperada $0{,}5(9/7) + 0{,}5(-1/7) = 4/7 \approx 0{,}57$ — portanto esse saco é **preferível**
-    a uma Laranja certa ($u=0{,}40$), mesmo sem saber "quanto vale" uma Maçã ou uma Uva em termos absolutos,
-    só usando os números construídos acima.
-
-### Utilidade para dinheiro e atitude ao risco
-
-A relação entre dinheiro e utilidade tipicamente assume a **forma em "S"**: convexa (propensão ao risco)
-para pequenas quantias, aproximadamente linear numa faixa intermediária, e côncava (aversão ao risco) para
-grandes quantias — por exemplo, um decisor pode preferir R\$1.000.000 certo a um jogo 60%/40% entre
-R\$2.000.000 e R\$0 (valor esperado R\$1.200.000, maior, mas ele "já está satisfeito" com o milhão certo).
-
-### Árvore de decisão
-
-**Componentes**: nó raiz, nós de evento (círculo — resultados de um processo estocástico), nós de decisão
-(quadrado — escolhas do decisor) e nós de fim (desfechos).
-
-**Etapas de análise**: (1) dividir em fases de risco; (2) estimar probabilidades; (3) definir pontos de
-decisão; (4) calcular fluxos de caixa/valores nos nós de fim; (5) percorrer a árvore de trás para frente
-(**fold back / rollback**), calculando o valor esperado em cada nó de evento e escolhendo, em cada nó de
-decisão, o ramo de maior valor esperado.
-
-**Vantagens**: resposta dinâmica ao risco, cálculo do valor da informação (*value of information*) e apoio
-à gestão de risco (ex.: hedge). Um exemplo didático clássico trabalhado no handout é o desenvolvimento de um
-medicamento, com 3 etapas sequenciais de testes clínicos (FDA), cada uma com custo e probabilidade de
-sucesso/fracasso próprios, resolvido via *fold back* para decidir se vale a pena seguir testando.
+- **Decisão** é uma função lógica "daquilo que se quer (preferências → utilidade), daquilo que se sabe
+  (estados e probabilidades) e daquilo que se pode fazer (alternativas)" (Souza, 2007). Uma boa decisão
+  não garante uma boa consequência.
+- **Sob incerteza** (sem probabilidades): critérios maximax, maximin (Wald), Laplace, Hurwicz e Savage
+  (mínimo arrependimento).
+- **Sob risco** (com probabilidades): valor monetário esperado e valor da informação perfeita (VEIP).
+- **Teoria da utilidade** (von Neumann-Morgenstern): quatro axiomas (completeza, transitividade,
+  dominância, arquimediano) garantem uma função utilidade que preserva a ordem e é linear nas
+  probabilidades, ou seja, a utilidade de uma loteria é a média das utilidades. Constrói-se a utilidade
+  com loterias de referência ($\lambda$ de indiferença) e junta-se escalas diferentes com $u^* = au + b$
+  (exemplo das frutas e utilidade para dinheiro).
+- **Atitude ao risco**: curva côncava (avesso), linear (neutro), convexa (propenso); a utilidade do
+  dinheiro costuma ter forma de "S". Equivalente certo e prêmio de risco medem a atitude.
+- **Árvore de decisão**: nós de decisão (□), de evento (○) e de fim; valores nos nós de fim e *fold back*
+  (média nos eventos, máximo nas decisões). Exemplo do medicamento para diabetes: valor de \$50,36
+  milhões para testar.
 
 ---
 
@@ -501,31 +552,38 @@ discreto) com 4 variáveis — tratável por *branch-and-bound* (ex.: Excel Solv
 Resolvendo numericamente (maximizando $Z$ sujeito às restrições acima, com variáveis inteiras):
 
 !!! example "Solução ótima"
-    $x_1 = 3$ (mínimo de TV normal), $x_2 = 2$ (mínimo de TV nobre), $x_3 = 5$ (mínimo de rádio), $x_4 = 10$
-    (máximo de revistas).
+    $x_1 = 3$ (mínimo de TV normal), $x_2 = 3$ (TV nobre), $x_3 = 10$ (máximo de rádio), $x_4 = 10$ (máximo
+    de revistas).
 
     **Verificação do orçamento**:
 
-    $$40.000(3) + 75.000(2) + 30.000(5) + 15.000(10) = 120.000 + 150.000 + 150.000 + 150.000 = 570.000$$
+    $$40.000(3) + 75.000(3) + 30.000(10) + 15.000(10) = 120.000 + 225.000 + 300.000 + 150.000 = 795.000$$
 
-    Custo total de R\$ 570.000, dentro do limite de R\$ 800.000. ✓
+    Custo total de R\$ 795.000, dentro do limite de R\$ 800.000 (sobram R\$ 5.000, que não pagam nenhuma
+    veiculação inteira). Gasto com TV: R\$ 345.000 ≤ R\$ 500.000. ✓
 
     **Verificação de mulheres atingidas**:
 
-    $$300.000(3) + 400.000(2) + 200.000(5) + 100.000(10) = 900.000 + 800.000 + 1.000.000 + 1.000.000 = 3.700.000$$
+    $$300.000(3) + 400.000(3) + 200.000(10) + 100.000(10) = 900.000 + 1.200.000 + 2.000.000 + 1.000.000 = 5.100.000$$
 
-    3.700.000 mulheres atingidas, acima do mínimo de 2.000.000. ✓
+    5.100.000 mulheres atingidas, acima do mínimo de 2.000.000. ✓
 
     **Clientes atingidos (valor da função objetivo)**:
 
-    $$Z = 400.000(3) + 900.000(2) + 500.000(5) + 200.000(10) = 1.200.000 + 1.800.000 + 2.500.000 + 2.000.000$$
+    $$Z = 400.000(3) + 900.000(3) + 500.000(10) + 200.000(10) = 1.200.000 + 2.700.000 + 5.000.000 + 2.000.000$$
 
-    $$Z = \mathbf{7.500.000 \text{ clientes}}$$
+    $$Z = \mathbf{10.900.000 \text{ clientes}}$$
 
-    **Intuição**: como TV horário nobre e rádio têm o maior "retorno por real" relativamente às suas
-    restrições de mínimo/orçamento, o modelo investe nos mínimos obrigatórios de TV e maximiza revistas
-    (barata e com boa razão clientes/custo: 200.000/15.000 ≈ 13,3 clientes por real investido), usando a
-    folga orçamentária restante em rádio.
+    Sem exigir números inteiros, o Solver dá $x_2 \approx 3{,}07$ e $Z \approx 10.960.000$ (o orçamento
+    total fica todo usado).
+
+    **Intuição**: dividindo clientes por custo, rádio rende cerca de 16,7 clientes por real, revista 13,3,
+    TV nobre 12 e TV normal 10. O modelo leva rádio e revista ao teto (10 cada), cumpre o mínimo de TV
+    normal e usa o resto da verba em TV nobre, que rende mais por real que TV normal.
+
+    !!! warning "Correção"
+        Uma versão anterior desta página trazia $x = (3, 2, 5, 10)$ e $Z = 7.500.000$. Essa solução é
+        factível, mas não é ótima: deixa R\$ 230 mil do orçamento sem uso.
 
 **Outras restrições/fatores que poderiam ser acrescentados** (conforme pedido no enunciado): alcance
 duplicado (a mesma pessoa vendo o anúncio em mais de um meio); saturação de audiência (retornos
@@ -680,6 +738,12 @@ $$
     lucratividade que oferecem (B, especialmente, tem alto consumo nos 3 anos e lucratividade relativamente
     baixa).
 
+**Outras restrições/fatores que poderiam ser acrescentados**: dinheiro não usado em um ano passar para o
+seguinte (variáveis de caixa, como no modelo de fluxo de caixa do livro); valor do dinheiro no tempo (os
+lucros acontecem em datas diferentes); risco de cada projeto e limite de concentração; participação mínima
+para ter influência na gestão (o que torna a decisão parcialmente inteira: "entra com pelo menos 20% ou
+não entra"); dependência entre projetos.
+
 ### 5. Desafio III — Problema da Refinaria
 
 *(postada em 22/09, editada — material: enunciado completo)*
@@ -724,10 +788,9 @@ $$
 
     - **Gasolina pura**: $0{,}22(770.149) + 0{,}52(600.000) + 0{,}74(12.322.388) = 9.600.000$ — usada
       **100%** (recurso escasso/gargalo).
-    - **Demanda mínima de comum**: $x_c = 16x_v$ exatamente (12.322.388 ≈ 16 × 770.149) — a razão mínima
-      exigida pelo mercado é usada no limite, pois a gasolina comum é a que menos consome gasolina pura por
-      litro (0,22 vs. 0,74... na verdade o inverso: comum consome **mais** gasolina pura por litro, 0,74 L,
-      mas tem a menor margem; ver nota abaixo).
+    - **Demanda mínima de comum**: $x_c = 16x_v$ exatamente (12.322.388 ≈ 16 × 770.149). A verde tem a
+      maior margem, mas cada litro de verde obriga 16 litros de comum, que gasta muita gasolina pura
+      (0,74 L por litro). Por isso a verde não cresce mais: a razão mínima fica no limite.
     - **Azul no teto**: $x_a = 600.000$ — compensa, por ter a segunda maior margem (R\$0,25) e consumir
       relativamente pouco do recurso mais escasso proporcionalmente ao seu lucro.
     - **Octana** (3.053.552 / 4.800.000) e **aditivo** (1.038.985 / 2.200.000) ficam com folga — não são

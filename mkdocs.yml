@@ -153,4 +153,9 @@ nav:
         - FUNDAMENTOS DE TESTES DE SOFTWARE: faculdade/periodo-7/fundamentos-de-testes-de-software.md
         - REDES NEURAIS: faculdade/periodo-7/redes-neurais.md
         - "TECNOLOGIA, DIVERSIDADE, EQUIDADE E INCLUSÃO": faculdade/periodo-7/tecnologia-diversidade-equidade-e-inclusao.md
-        - SISTEMAS DE APOIO A DECISÃO: faculdade/periodo-7/sistemas-de-apoio-a-decisao.md
+        - SISTEMAS DE APOIO A DECISÃO:
+            - faculdade/periodo-7/sistemas-de-apoio-a-decisao.md
+            - Resolução gráfica: faculdade/periodo-7/sistemas-de-apoio-a-decisao/resolucao-grafica.md
+            - Exercícios de modelagem: faculdade/periodo-7/sistemas-de-apoio-a-decisao/exercicios-de-modelagem.md
+            - Teoria da decisão: faculdade/periodo-7/sistemas-de-apoio-a-decisao/teoria-da-decisao.md
+            - Exercícios de teoria da decisão: faculdade/periodo-7/sistemas-de-apoio-a-decisao/exercicios-de-teoria-da-decisao.md
