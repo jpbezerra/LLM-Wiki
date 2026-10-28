@@ -1,0 +1,4735 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Base de conhecimento pessoal — faculdade e estudos">
+      
+      
+        <meta name="author" content="João Pedro Bezerra">
+      
+      
+      
+        <link rel="prev" href="../analise-e-especificacao-avancada-de-requisitos/">
+      
+      
+        <link rel="next" href="../fundamentos-de-testes-de-software/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>DATA WAREHOUSING - LLM Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-warehousing" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="LLM Wiki" class="md-header__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLM Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DATA WAREHOUSING
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../estudos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Estudos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Faculdade
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LLM Wiki" class="md-nav__button md-logo" aria-label="LLM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLM Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jpbezerra/llm-wiki" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jpbezerra/llm-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estudos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estudos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/numeros-complexos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NÚMEROS COMPLEXOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/agentes-de-ia/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTES DE IA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AGENTES DE IA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/harness-e-pi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HARNESS E PI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/otimizacao-tokens-roteamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE TOKENS E ROTEAMENTO DE MODELOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/fine-tuning-agentico-meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FINE-TUNING AGÊNTICO: A ABORDAGEM DA META
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/agentes-de-ia/jev-modelos-decisao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JEV: MODELOS DE DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../estudos/computacao-quantica-ibm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    COMPUTAÇÃO QUÂNTICA (IBM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - SISTEMAS ÚNICOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/computacao-quantica-ibm/aula-1-qiskit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AULA 1 - IMPLEMENTAÇÃO EM QISKIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/otimizacao-de-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTIMIZAÇÃO DE JOINS (BANCOS DE DADOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estudos/bend2-tipos-dependentes-provas-formais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BEND2: TIPOS DEPENDENTES E PROVAS FORMAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faculdade
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Faculdade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 1
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/calculo-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CÁLCULO 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/matematica-discreta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATEMÁTICA DISCRETA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-1/algebra-vetorial-linear-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ÁLGEBRA VETORIAL LINEAR P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 2
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALGORITMOS E ESTRUTURAS DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/algoritmos-e-estruturas-de-dados/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ESTATÍSTICA PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTATÍSTICA E PROBABILIDADE P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/assuncoes-da-regressao-linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assunções da regressão linear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/estatistica-probabilidade-p-computacao/r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/fisica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FÍSICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/logica-p-computacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LÓGICA P/ COMPUTAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SISTEMAS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-2/sistemas-digitais/assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 3
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/arquitetura-de-computadores-e-sistemas-operacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CONCEPÇÃO DE ARTEFATOS DIGITAIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepção de Artefatos Digitais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/concepcao-de-artefatos-digitais/grupo-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grupo 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/desenvolvimento-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DESENVOLVIMENTO DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-3/estruturas-de-dados-orientadas-a-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESTRUTURAS DE DADOS ORIENTADAS À OBJETOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 4
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/banco-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BANCO DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/compiladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPILADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/informatica-teorica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA TEÓRICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-4/integracao-e-evolucao-de-sistemas-de-informacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRAÇÃO E EVOLUÇÃO DE SISTEMAS DE INFORMAÇÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 5
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRENDIZAGEM DE MÁQUINA E CIÊNCIA DE DADOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/aprendizagem-de-maquina-e-ciencia-de-dados/projeto-aprendizagem-de-maquina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Aprendizagem de Máquina
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTRODUÇÃO À SISTEMAS DISTRIBUÍDOS E REDES DE COMPUTADORES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3_2" id="__nav_3_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projeto Packet Tracer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto Packet Tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e1-design-fisico-e-topologia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 - Design Físico e Topologia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e2-design-de-enderecamento-vlsm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2 - Design de Endereçamento VLSM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e3-design-de-segmentacao-vlans-e-dhcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E3 - Design de Segmentação (VLANs e DHCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e4-roteamento-inter-vlan-e-conectividade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E4 - Roteamento Inter-VLAN e Conectividade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/e5-apresentacao-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E5 - Apresentação Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/referencias-bibliograficas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências Bibliográficas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/introducao-a-sistemas-distribuidos-e-redes-de-computadores/projeto-packet-tracer/untitled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untitled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/metodologia-e-expressao-tecnico-cientifica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    METODOLOGIA E EXPRESSÃO TÉCNICO-CIENTÍFICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-5/paradigmas-de-linguagens-computacionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PARADIGMAS DE LINGUAGENS COMPUTACIONAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../periodo-6/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 6
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/empreendimentos-em-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EMPREENDIMENTOS EM INFORMÁTICA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/engenharia-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENGENHARIA DE REQUISITOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/informatica-e-sociedade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INFORMÁTICA E SOCIEDADE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../periodo-6/topicos-avancados-em-si-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TÓPICOS AVANÇADOS EM SI 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERÍODO 7
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PERÍODO 7
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analise-e-especificacao-avancada-de-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DATA WAREHOUSING
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DATA WAREHOUSING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#motivacao-business-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivação: Business Intelligence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motivação: Business Intelligence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bi-x-sistemas-operativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BI x Sistemas Operativos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-um-data-warehouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é um Data Warehouse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que é um Data Warehouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-warehouse-x-data-mart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Warehouse x Data Mart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inmon-x-kimball-duas-filosofias-de-construcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inmon x Kimball: duas filosofias de construção
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementos-basicos-do-data-warehousing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elementos básicos do Data Warehousing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-dimensional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo Dimensional
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo Dimensional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-estrela-star-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema Estrela (Star Schema)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esquema-floco-de-neve-snowflake-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema Floco de Neve (Snowflake Schema)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esquema-constelacao-fact-constellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema Constelação (Fact Constellation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelagem-tradicional-x-modelagem-dimensional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelagem tradicional x modelagem dimensional
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-de-dimensao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela de Dimensão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabela de Dimensão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-avancadas-de-dimensoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas avançadas de dimensões
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-dimensao-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A dimensão Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-de-fato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela de Fato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabela de Fato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-medida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de medida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabela-de-fatos-sem-medidas-factless-fact-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela de fatos sem medidas (factless fact table)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-3-tipos-de-tabela-de-fato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Os 3 tipos de tabela de fato
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matriz-de-barramento-do-dw-bus-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matriz de Barramento do DW (Bus Matrix)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fases-do-projeto-dimensional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fases do projeto dimensional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slowly-changing-dimensions-scd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slowly Changing Dimensions (SCD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstracao-do-dw-o-cubo-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstração do DW: o cubo de dados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#olap-on-line-analytical-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OLAP (On-Line Analytical Processing)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OLAP (On-Line Analytical Processing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-operacoes-olap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principais operações OLAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arquiteturas-olap-rolap-molap-holap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquiteturas OLAP: ROLAP, MOLAP, HOLAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estudo-de-caso-aplicado-um-data-warehouse-para-acompanhar-evasao-universitaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estudo de caso aplicado: um Data Warehouse para acompanhar evasão universitária
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estudo de caso aplicado: um Data Warehouse para acompanhar evasão universitária">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-problema-e-a-metodologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O problema e a metodologia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-modelo-dimensional-resultante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O modelo dimensional resultante
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-e-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado e validação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-e-para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências e para saber mais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Referências e para saber mais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bibliografia-da-disciplina-slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliografia da disciplina (slides)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bibliografia-do-estudo-de-caso-dissertacao-sobre-evasao-unifei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliografia do estudo de caso (dissertação sobre evasão, UNIFEI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fundamentos-de-testes-de-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FUNDAMENTOS DE TESTES DE SOFTWARE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redes-neurais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDES NEURAIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tecnologia-diversidade-equidade-e-inclusao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TECNOLOGIA, DIVERSIDADE, EQUIDADE E INCLUSÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas-de-apoio-a-decisao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SISTEMAS DE APOIO A DECISÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#motivacao-business-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivação: Business Intelligence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motivação: Business Intelligence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bi-x-sistemas-operativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BI x Sistemas Operativos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-um-data-warehouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é um Data Warehouse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que é um Data Warehouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-warehouse-x-data-mart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Warehouse x Data Mart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inmon-x-kimball-duas-filosofias-de-construcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inmon x Kimball: duas filosofias de construção
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementos-basicos-do-data-warehousing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elementos básicos do Data Warehousing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-dimensional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo Dimensional
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo Dimensional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-estrela-star-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema Estrela (Star Schema)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esquema-floco-de-neve-snowflake-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema Floco de Neve (Snowflake Schema)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esquema-constelacao-fact-constellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema Constelação (Fact Constellation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelagem-tradicional-x-modelagem-dimensional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelagem tradicional x modelagem dimensional
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-de-dimensao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela de Dimensão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabela de Dimensão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-avancadas-de-dimensoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Técnicas avançadas de dimensões
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-dimensao-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A dimensão Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-de-fato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela de Fato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabela de Fato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-medida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de medida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabela-de-fatos-sem-medidas-factless-fact-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela de fatos sem medidas (factless fact table)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-3-tipos-de-tabela-de-fato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Os 3 tipos de tabela de fato
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matriz-de-barramento-do-dw-bus-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matriz de Barramento do DW (Bus Matrix)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fases-do-projeto-dimensional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fases do projeto dimensional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slowly-changing-dimensions-scd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slowly Changing Dimensions (SCD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstracao-do-dw-o-cubo-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstração do DW: o cubo de dados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#olap-on-line-analytical-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OLAP (On-Line Analytical Processing)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OLAP (On-Line Analytical Processing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-operacoes-olap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principais operações OLAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arquiteturas-olap-rolap-molap-holap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquiteturas OLAP: ROLAP, MOLAP, HOLAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estudo-de-caso-aplicado-um-data-warehouse-para-acompanhar-evasao-universitaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estudo de caso aplicado: um Data Warehouse para acompanhar evasão universitária
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estudo de caso aplicado: um Data Warehouse para acompanhar evasão universitária">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-problema-e-a-metodologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O problema e a metodologia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-modelo-dimensional-resultante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O modelo dimensional resultante
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-e-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado e validação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-e-para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências e para saber mais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Referências e para saber mais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bibliografia-da-disciplina-slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliografia da disciplina (slides)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bibliografia-do-estudo-de-caso-dissertacao-sobre-evasao-unifei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliografia do estudo de caso (dissertação sobre evasão, UNIFEI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/jpbezerra/llm-wiki/edit/main/docs/faculdade/periodo-7/data-warehousing.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="data-warehousing">DATA WAREHOUSING<a class="headerlink" href="#data-warehousing" title="Permanent link">&para;</a></h1>
+<hr />
+<p>Disciplina <strong>IF696 — Integração de Dados e Warehousing</strong>, do Centro de Informática da UFPE, ministrada pelo <strong>Prof. Robson do Nascimento Fidalgo</strong> (rdnf@cin.ufpe.br). O material desta página combina (1) o conteúdo teórico da aula introdutória "DW e OLAP" e (2) um estudo de caso real — uma dissertação de mestrado que aplica a modelagem dimensional de Kimball para construir um DW institucional de acompanhamento de evasão universitária, usado aqui como referência de projeto.</p>
+<div class="admonition note">
+<p class="admonition-title">Dados da disciplina (slides de abertura)</p>
+<ul>
+<li><strong>Público-alvo</strong>: interessados em pesquisar e/ou adquirir competências para projetos de <em>Business Intelligence</em> (DW e OLAP) e Engenharia de Dados para Big Data.</li>
+<li><strong>Ementa</strong>: conceitos básicos, modelos, técnicas de modelagem e ferramentas para projetar e construir bancos de dados para ambientes de BI (DW e OLAP) e Big Data.</li>
+<li><strong>Objetivo</strong>: discutir e por em prática ETL, Data Warehouse, OLAP, painéis de indicadores e Big Data.</li>
+<li><strong>Avaliação</strong>: defesa de um projeto em equipe.</li>
+<li><strong>Bibliografia principal</strong>: KIMBALL, Ralph; ROSS, Margy. <em>The Data Warehouse Toolkit: The Definitive Guide to Dimensional Modeling</em>. Wiley, 2019.</li>
+<li><strong>Bibliografia complementar</strong>: LAGO, Karine; ALVES, Laennder. <em>Dominando o Power BI</em> (3ª ed. atualizada). DATAB, 2021.</li>
+</ul>
+</div>
+<h2 id="motivacao-business-intelligence">Motivação: Business Intelligence<a class="headerlink" href="#motivacao-business-intelligence" title="Permanent link">&para;</a></h2>
+<p>Vivemos uma "época de calamiDADOS" — o volume de dados gerados pelas organizações cresce muito mais rápido do que a capacidade de analisá-los. <strong>Business Intelligence (BI)</strong> é o termo guarda-chuva que representa toda a infraestrutura teórica e tecnológica para organizar e analisar dados de diversas fontes.</p>
+<p>A arquitetura típica de BI flui assim: fontes operacionais (sistema operacional, ERP, CRM, planilhas, SQL) → <strong>Extract</strong> → processo <strong>ETL</strong> (Validação → Limpeza → Transformação → Agregação → Carga) → <strong>Data Warehouse</strong> (com seus <em>Data Marts</em>) → consumo por OLAP, <em>Data Mining</em> (fora do escopo desta disciplina), visualização de dados, relatórios, <em>dashboards</em> e alertas.</p>
+<h3 id="bi-x-sistemas-operativos">BI x Sistemas Operativos<a class="headerlink" href="#bi-x-sistemas-operativos" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Business Intelligence</th>
+<th>Sistemas Operativos (OLTP)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visão da corporação (melhorar o entendimento)</td>
+<td>Visão de um negócio da corporação (melhorar o controle)</td>
+</tr>
+<tr>
+<td>Processamento analítico (carga e consulta)</td>
+<td>Processamento transacional (inclusão, atualização, exclusão, consulta)</td>
+</tr>
+<tr>
+<td>Agiliza e facilita análises para tomada de decisão</td>
+<td>Agiliza e automatiza funções repetitivas</td>
+</tr>
+<tr>
+<td>Histórico — grande volume, poucas atualizações (em lote)</td>
+<td>Status corrente — menor volume, muitas atualizações (on-line)</td>
+</tr>
+<tr>
+<td>Consultas <em>ad-hoc</em> e longas (agrupamentos)</td>
+<td>Consultas pré-definidas e diretas (seleções pontuais)</td>
+</tr>
+<tr>
+<td>BD desnormalizado (poucas junções, mais redundância, esquema simples)</td>
+<td>BD normalizado (mais junções, menos redundância, esquema complexo)</td>
+</tr>
+</tbody>
+</table>
+<p>Dada essa heterogeneidade, é interessante separar os dados em dois ambientes: o <strong>operacional</strong> (que normalmente já existe) e o de <strong>Business Intelligence</strong> (a construir — o Data Warehouse).</p>
+<h2 id="o-que-e-um-data-warehouse">O que é um Data Warehouse<a class="headerlink" href="#o-que-e-um-data-warehouse" title="Permanent link">&para;</a></h2>
+<p>Um DW é um <strong>banco de dados estruturado</strong> (normalmente relacional) que armazena dados homogeneizados e históricos para tomada de decisão, integrando diferentes dados de uma empresa em um único repositório. Serve para: integrar dados de múltiplas fontes; facilitar análise sem impactar os sistemas operacionais; obter informação de qualidade; atender diferentes usuários finais; dar flexibilidade a novas análises; e prover autonomia ao tomador de decisão.</p>
+<div class="admonition quote">
+<p class="admonition-title">Duas definições clássicas</p>
+<p><strong>William H. Inmon</strong> (o "pai do DW"): "Um DW é um conjunto de dados <strong>orientado por assuntos, não volátil, variável com o tempo e integrado</strong>, criado para dar suporte à decisão."</p>
+<p><strong>Ralph Kimball</strong>: "É uma <strong>cópia dos dados transacionais</strong> especificamente estruturada para consulta e análise — é o lugar onde as pessoas podem acessar seus dados."</p>
+</div>
+<p>As quatro características da definição de Inmon: <strong>orientado por assunto</strong> (organizado por processo, não por aplicação); <strong>não volátil</strong> (carga em lote, sem sobrescrever); <strong>variável com o tempo</strong> (dados históricos); <strong>integrado</strong> (homogeneizado e consistente).</p>
+<p>Principais objetivos de um DW: prover dados <strong>consistentes</strong> (tratando heterogeneidades de nomes/valores/tipos — ex.: "ECivil", "EC", "1", "S" todos convergindo para <code>EstadoCivil = Solteiro</code>); ser <strong>flexível</strong> a mudanças (sem invalidar aplicações existentes); ser um <strong>lugar seguro</strong> (controle de acesso a dados confidenciais); <strong>facilitar o acesso</strong> (dados e ferramentas intuitivos para o tomador de decisão, não para desenvolvedores); e ser <strong>bem aceito</strong> — aceitação tem mais a ver com simplicidade do que com tecnologia de ponta, e, diferente de um sistema operacional, o uso do DW é <strong>opcional</strong>.</p>
+<h3 id="data-warehouse-x-data-mart">Data Warehouse x Data Mart<a class="headerlink" href="#data-warehouse-x-data-mart" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Data Warehouse (DW)</strong>: banco otimizado para fornecer uma imagem global da realidade de negócio da organização; demorado, complexo e custoso de implementar.</li>
+<li><strong>Data Mart (DM)</strong>: um DW específico a um assunto/negócio/processo — subconjunto do DW que atende aos requisitos de uma atividade de negócio específica. Reduz tempo, complexidade e custo de implantação, mas exige planejamento prévio para evitar "ilhas de dados".</li>
+</ul>
+<h3 id="inmon-x-kimball-duas-filosofias-de-construcao">Inmon x Kimball: duas filosofias de construção<a class="headerlink" href="#inmon-x-kimball-duas-filosofias-de-construcao" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Inmon</th>
+<th>Kimball</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Implementação</td>
+<td>Monolítica (Top-Down)</td>
+<td>Modular (Bottom-Up)</td>
+</tr>
+<tr>
+<td>Fluxo</td>
+<td>DW central → se ramifica em Data Marts</td>
+<td>Data Marts → convergem para o DW</td>
+</tr>
+<tr>
+<td>Normalização</td>
+<td>DW/DM podem ser normalizados</td>
+<td>Não recomenda normalizar</td>
+</tr>
+<tr>
+<td>Classificação (Breslin, 2004)</td>
+<td><em>Data-driven</em> — repositório central no menor nível de detalhe (<em>atomic data warehouse</em>), com agregações feitas a nível departamental</td>
+<td><em>Process oriented</em> — granularidade e agregações definidas para atender a demanda de um processo de negócio específico</td>
+</tr>
+<tr>
+<td>Primeiro passo</td>
+<td>Integrar os dados disponíveis, entendê-los e só então determinar quais requisitos eles atendem</td>
+<td>Levantar requisitos de negócio/dados e avaliar a capacidade da organização de fornecê-los</td>
+</tr>
+</tbody>
+</table>
+<p>Constatação prática (reforçada tanto nos slides quanto na dissertação usada como estudo de caso): a solução completa é complexa demais para ser feita de uma vez — o ideal é <strong>planejar o todo e construir por partes</strong>, com um gestor "caxias" e um patrocinador influente, priorizando entregas rápidas que agradem aos usuários e justifiquem o investimento.</p>
+<h2 id="elementos-basicos-do-data-warehousing">Elementos básicos do Data Warehousing<a class="headerlink" href="#elementos-basicos-do-data-warehousing" title="Permanent link">&para;</a></h2>
+<p><strong>Data Warehouse</strong> (o banco de dados em si) é diferente de <strong>Data Warehousing</strong> (o processo de construí-lo). A arquitetura típica (KIMBALL et al., 2002) tem 4 colunas:</p>
+<ol>
+<li><strong>Operational Source Systems</strong> — os sistemas operacionais de onde os dados são extraídos.</li>
+<li><strong>Data Staging Area</strong> — onde os dados são limpos, combinados e padronizados ("conformados"); não oferece consulta ao usuário; usa arquivos simples/tabelas relacionais e processamento sequencial.</li>
+<li><strong>Data Presentation Area</strong> — onde os Data Marts dimensionais (atômicos e sumarizados, baseados em um único processo de negócio) ficam disponíveis, conectados entre si por um <strong>"DW Bus"</strong> de fatos e dimensões conformados.</li>
+<li><strong>Data Access Tools</strong> — ferramentas de consulta <em>ad hoc</em>, geradores de relatório, aplicações analíticas, modelagem preditiva.</li>
+</ol>
+<p>O processo de <strong>ETL</strong> (Extrair, Transformar, Carregar) resume-se a: <strong>Extrair</strong> (dados operacionais e externos) → <strong>Transformar</strong> (filtrar, limpar, recodificar, padronizar, integrar) → <strong>Carregar</strong> (povoar, indexar, testar) → resultado: o Data Mart/DW.</p>
+<h2 id="modelo-dimensional">Modelo Dimensional<a class="headerlink" href="#modelo-dimensional" title="Permanent link">&para;</a></h2>
+<p>O objetivo da modelagem dimensional é <strong>tornar o esquema do BD mais simples</strong> (menos tabelas), <strong>intuitivo</strong> (nomes significativos) e <strong>otimizado</strong> (desnormalizado, poucas junções) para favorecer consultas e análises. Seus dois componentes principais:</p>
+<ul>
+<li><strong>Tabelas de dimensão</strong> — propriedades descritivas (o contexto).</li>
+<li><strong>Tabelas de fato</strong> — medidas (o que aconteceu).</li>
+</ul>
+<h3 id="esquema-estrela-star-schema">Esquema Estrela (Star Schema)<a class="headerlink" href="#esquema-estrela-star-schema" title="Permanent link">&para;</a></h3>
+<p>Uma tabela fato central, com chaves estrangeiras para cada dimensão e as medidas do processo de negócio, cercada pelas tabelas de dimensão (cada uma desnormalizada, 1FN). É o modelo mais recomendado por Kimball:</p>
+<div class="admonition tip">
+<p class="admonition-title">Por que Kimball não recomenda normalizar as dimensões</p>
+<ol>
+<li>Depois da carga inicial, as dimensões crescem pouco — é a tabela fato que mais cresce, e ela já é bem normalizada por natureza.</li>
+<li>O espaço economizado ao normalizar dimensões é pequeno (dimensões são ~10% do volume do DW).</li>
+<li>A perda de performance causada pelas junções (<em>joins</em>) extras é grande.</li>
+</ol>
+</div>
+<h3 id="esquema-floco-de-neve-snowflake-schema">Esquema Floco de Neve (Snowflake Schema)<a class="headerlink" href="#esquema-floco-de-neve-snowflake-schema" title="Permanent link">&para;</a></h3>
+<p>Normaliza as tabelas de dimensão, quebrando-as em dimensões "principais" e "secundárias" encadeadas (ex.: Produto → Marca → Categoria). Resultado: mais tabelas, consultas mais complexas e mais lentas — mas esquema mais "limpo" sem redundância.</p>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>Estrela</th>
+<th>Floco de Neve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clareza</td>
+<td>Mais fácil</td>
+<td>Mais difícil</td>
+</tr>
+<tr>
+<td>Número de tabelas</td>
+<td>Menor</td>
+<td>Maior</td>
+</tr>
+<tr>
+<td>Complexidade de consultas</td>
+<td>Mais simples</td>
+<td>Mais complexa</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Mais rápida</td>
+<td>Mais lenta</td>
+</tr>
+</tbody>
+</table>
+<h3 id="esquema-constelacao-fact-constellation">Esquema Constelação (Fact Constellation)<a class="headerlink" href="#esquema-constelacao-fact-constellation" title="Permanent link">&para;</a></h3>
+<p>Permite que <strong>múltiplas tabelas de fatos compartilhem tabelas de dimensões</strong> — por exemplo, <code>Fato_Vendas</code> e <code>Fato_Compras</code> compartilhando <code>Dim_Funcionario</code> e <code>Dim_Produto</code>.</p>
+<h3 id="modelagem-tradicional-x-modelagem-dimensional">Modelagem tradicional x modelagem dimensional<a class="headerlink" href="#modelagem-tradicional-x-modelagem-dimensional" title="Permanent link">&para;</a></h3>
+<p>Um esquema tradicional (normalizado, tipo ERP, com dezenas/centenas de tabelas — ilegível para um usuário final) visa refletir fielmente os relacionamentos entre os dados e eliminar redundância; é inadequado para tomada de decisão porque vai contra os princípios de recuperação intuitiva e de alta performance do DW. A partir de um esquema tradicional único, <strong>vários esquemas dimensionais (Data Marts)</strong> podem ser derivados, cada um focado em um processo de negócio específico (ex.: DM_Vendas, DM_Estoque, DM_Produção).</p>
+<p>As "5 W e 3 H" ajudam a identificar dimensões típicas: <strong>When</strong> (Quando), <strong>Where</strong> (Onde), <strong>What</strong> (O quê) e <strong>Who</strong> (Quem) são os tipos de dimensão mais comuns; <strong>Why</strong> (Por quê) e <strong>How</strong> (Como) raramente viram dimensões; <strong>How many/How much</strong> corresponde às medidas/fatos.</p>
+<h2 id="tabela-de-dimensao">Tabela de Dimensão<a class="headerlink" href="#tabela-de-dimensao" title="Permanent link">&para;</a></h2>
+<p>Correspondem aos pontos de entrada das consultas e são fundamentais para tornar o DW compreensível — seus campos armazenam descrições de negócio e definem rótulos, restrições e agrupamentos dos relatórios.</p>
+<ul>
+<li><strong>Qualidade dos campos</strong>: devem refletir a terminologia do negócio, ser textuais e categóricos (ex.: idade/salário → faixa etária/faixa salarial), com rótulos intuitivos (evitar abreviaturas) e nunca armazenar "valores inteligentes" (códigos com significado embutido).</li>
+<li><strong>Hierarquias implícitas</strong>: uma dimensão pode ter várias hierarquias (ex.: Tempo pode ter H1: Ano→Semestre→Trimestre; H2: Ano→Bimestre→Mês→Dia). O nível hierárquico mais baixo define o <strong>grão</strong> da dimensão.</li>
+<li><strong>Granularidade</strong> = nível de detalhe, ilustrada pela metáfora da peneira: peneira de furos grandes (granularidade grande, ex. vendas por ano) retém poucos dados; peneira de furos pequenos (granularidade pequena, ex. vendas por dia) retém muitos dados.</li>
+<li><strong>Volume</strong>: dimensões têm muitos campos mas poucos registros (normalmente &lt; 10% do volume total do DW).</li>
+<li><strong>Chaves substitutas (<em>surrogate keys</em>)</strong>: as dimensões usam PKs simples — inteiros autoincrementáveis, sem significado de negócio — que garantem estabilidade e ficam transparentes para o usuário, servindo apenas de ligação entre dimensões e fatos. Evitar chaves "naturais" ou "inteligentes" (datas, códigos de negócio) como PK; usá-las apenas para manter o vínculo com a fonte.</li>
+</ul>
+<h3 id="tecnicas-avancadas-de-dimensoes">Técnicas avançadas de dimensões<a class="headerlink" href="#tecnicas-avancadas-de-dimensoes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dimensões degeneradas</strong>: uma chave (ex.: número de nota fiscal, pedido, tíquete) fica diretamente na tabela de fatos, sem tabela de dimensão própria, porque tem a mesma granularidade da TF — criar uma dimensão à parte geraria sobrecarga desnecessária (cardinalidade 1:1 com a TF).</li>
+<li><strong>Dimensões com papéis (<em>role-playing</em>)</strong>: a mesma dimensão (ex.: Data) aparece várias vezes na TF com papéis diferentes (data do pedido, data de envio). Solução: criar uma <em>view</em> por papel, cada uma com nomes de campo distintos, para que cada view seja "vista" como uma dimensão independente nos relatórios.</li>
+<li><strong>Relacionamentos M:N entre dimensão e fato</strong>: quando o relacionamento esperado 1:N não se sustenta (ex.: um paciente pode ter múltiplos diagnósticos), usa-se uma <strong>tabela ponte</strong> entre a dimensão e o fato, com um "fator de peso" indicando a participação percentual de cada valor (a soma dos pesos de um grupo deve totalizar 100%).</li>
+<li><strong>Produtos heterogêneos</strong>: quando a organização oferece produtos/serviços muito diferentes entre si (gerando muitos campos "não se aplica"), cria-se uma dimensão/fato geral mais dimensões/fatos específicos por produto, reutilizando a mesma PK da dimensão base nas dimensões específicas.</li>
+<li><strong>Dimensões conformadas</strong>: têm o <strong>mesmo significado</strong> em todas as tabelas de fato que as referenciam — mesmos nomes, tipos e valores — construídas de forma sincronizada na <em>staging area</em>. São essenciais para integrar Data Marts e permitir relatórios que cruzem diferentes processos de negócio; sem conformidade, relatórios ficam com rótulos/agrupamentos inconsistentes. A gestão de uma dimensão conformada cabe a um grupo chamado <strong>"autoridade da dimensão"</strong>.</li>
+<li><strong>Minidimensões</strong>: fragmentam uma dimensão grande (ex.: Cliente, com até 100 milhões de registros) separando atributos estáticos (dimensão base) dos voláteis (minidimensão), ligadas ambas à tabela fato — controla o crescimento explosivo e preserva histórico. Não é normalização; os atributos da minidimensão devem ter baixa cardinalidade (criar faixas/categorias).</li>
+<li><strong>Dimensões <em>outrigger</em></strong>: ligam-se apenas à dimensão base (não diretamente à TF) — devem ser exceção, não regra.</li>
+<li><strong>Esquema centopeia (<em>centipede schema</em>)</strong>: quando um modelo tem ≥ 25 dimensões, é sinal de dependência excessiva entre dimensões — a solução é fundir as dimensões dependentes.</li>
+<li><strong>Dimensão bugiganga (<em>junk dimension</em>)</strong>: reúne campos de baixa correlação da TF que funcionam como filtros (flags soltas) em uma única dimensão artificial, reduzindo o número de colunas da TF.</li>
+</ul>
+<h3 id="a-dimensao-data">A dimensão Data<a class="headerlink" href="#a-dimensao-data" title="Permanent link">&para;</a></h3>
+<p>Uma das dimensões mais frequentes e relevantes — complexa no mundo real (dia, mês, período fiscal, feriado, trimestre, semestre, ano...). Diferente das demais, pode ser <strong>carregada antecipadamente</strong> (sem precisar de fonte de dados), cobrindo de 5 a 10 anos (passado e futuro). Não se usa diretamente o tipo <code>DATE</code>/<code>TIMESTAMP</code> do SQL (nem funções como <code>DATEPART</code>/<code>DATEDIFF</code>) porque eles não capturam particularidades de negócio como calendário fiscal, estações ou feriados — daí a necessidade de uma tabela de dimensão dedicada com dezenas de atributos derivados. Quando a granularidade por dia não basta (ex.: análises por minuto/hora), cria-se uma dimensão <strong>Tempo do Dia</strong> separada, para não sobrecarregar a dimensão Data.</p>
+<h2 id="tabela-de-fato">Tabela de Fato<a class="headerlink" href="#tabela-de-fato" title="Permanent link">&para;</a></h2>
+<p>Basicamente normalizada (3FN), formada principalmente por chaves estrangeiras e medidas; raramente tem PK própria (quando necessária, prefere-se uma <em>surrogate key</em>). Tem muitas linhas (milhões/bilhões, crescendo a cada carga) e poucas colunas — representa ~90% do volume de dados do DW, e equivale a um relacionamento n-ário entre as dimensões.</p>
+<p>Um <strong>fato</strong> é a interseção das FKs das dimensões + medida(s); as dimensões definem o grão da tabela de fatos.</p>
+<h3 id="tipos-de-medida">Tipos de medida<a class="headerlink" href="#tipos-de-medida" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Regra</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aditivas</strong></td>
+<td><code>SUM</code> funciona ao longo de qualquer dimensão</td>
+<td>Valor vendido, quantidade vendida</td>
+</tr>
+<tr>
+<td><strong>Semi-aditivas</strong></td>
+<td><code>SUM</code> só funciona ao longo de algumas dimensões (tipicamente só pelo nível mais baixo da dimensão Data); nos demais casos, usar <code>AVG</code>/<code>MIN</code>/<code>MAX</code></td>
+<td>Quantidade em estoque, saldo em conta</td>
+</tr>
+<tr>
+<td><strong>Não aditivas</strong></td>
+<td><code>SUM</code> nunca funciona; usar <code>AVG</code>/<code>MIN</code>/<code>MAX</code>/<code>COUNT</code>, ou modelar como faixa/categoria em dimensão</td>
+<td>Valor unitário, percentual de desconto, temperatura</td>
+</tr>
+</tbody>
+</table>
+<p>Medidas textuais também existem (listas pré-definidas, ex.: "Péssimo"/"Bom"/"Ótimo"), mas só permitem contagem (<code>COUNT</code>) — prefira transformá-las em atributos de dimensão.</p>
+<h3 id="tabela-de-fatos-sem-medidas-factless-fact-table">Tabela de fatos sem medidas (<em>factless fact table</em>)<a class="headerlink" href="#tabela-de-fatos-sem-medidas-factless-fact-table" title="Permanent link">&para;</a></h3>
+<p>Uma tabela de fatos pode não ter medidas — serve apenas para registrar a <strong>cobertura/abrangência</strong> de uma ação (ex.: "quais produtos entraram em promoção"). Comparando (com <code>MINUS</code>/<code>EXCEPT</code>) essa tabela de cobertura com a tabela de fatos de vendas, é possível responder perguntas como "quais produtos entraram em promoção e não foram vendidos durante ela".</p>
+<h3 id="os-3-tipos-de-tabela-de-fato">Os 3 tipos de tabela de fato<a class="headerlink" href="#os-3-tipos-de-tabela-de-fato" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>Transação</th>
+<th>Instantâneo periódico</th>
+<th>Instantâneo acumulado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Período de tempo</td>
+<td>Um ponto no tempo</td>
+<td>Intervalos regulares pré-definidos</td>
+<td>Indeterminado, geralmente curto</td>
+</tr>
+<tr>
+<td>Grão</td>
+<td>Uma linha por transação</td>
+<td>Uma linha por período</td>
+<td>Uma linha por "tempo de vida" do processo</td>
+</tr>
+<tr>
+<td>Carga</td>
+<td><code>INSERT</code></td>
+<td><code>INSERT</code></td>
+<td><code>INSERT</code> e <code>UPDATE</code></td>
+</tr>
+<tr>
+<td>Atualizações</td>
+<td>Raras</td>
+<td>Raras</td>
+<td>Constantes</td>
+</tr>
+<tr>
+<td>Dimensão tempo</td>
+<td>Data da transação</td>
+<td>Data de final do período</td>
+<td>Várias datas, uma por etapa</td>
+</tr>
+<tr>
+<td>Exemplo</td>
+<td>Transações de venda</td>
+<td>Inventário diário/mensal</td>
+<td>Pedido com data de recebimento, inspeção, envio, venda</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Transação</strong>: captura detalhadamente cada evento/transação ocorrido, usando medidas aditivas; não confundir a frequência da <em>carga</em> com a <em>granularidade</em> do grão.</li>
+<li><strong>Instantâneo periódico</strong>: tira uma "fotografia" do estado em cada carga; usa medidas semi-aditivas (TFs densas — uma linha para cada combinação possível, mesmo sem movimento, ex.: estoque de todo produto registrado todo dia, o que pode gerar dezenas de GB/ano, exigindo estratégias como manter uma TF detalhada recente + uma TF histórica agregada).</li>
+<li><strong>Instantâneo acumulado</strong>: registra múltiplas datas/estágios de um mesmo processo (ex.: recebido → inspecionado → autorizado → enviado), atualizando a mesma linha a cada novo estágio (N-1 updates até o processo completar).</li>
+</ul>
+<h2 id="matriz-de-barramento-do-dw-bus-matrix">Matriz de Barramento do DW (<em>Bus Matrix</em>)<a class="headerlink" href="#matriz-de-barramento-do-dw-bus-matrix" title="Permanent link">&para;</a></h2>
+<p>Ferramenta — inspirada na arquitetura de computadores — para planejar o DW mostrando as interseções entre processos de negócio (linhas) e dimensões comuns/conformadas (colunas). Segundo Kimball, é <strong>"o artefato de análise mais importante do projeto de um DW"</strong>: serve para design técnico, gerência de projeto e comunicação organizacional. Permite que diferentes Data Marts sejam implementados por equipes/momentos diferentes e depois conectados em uma visão integrada, além de identificar imediatamente quais dimensões merecem atenção especial por aparecerem em muitos processos.</p>
+<h2 id="fases-do-projeto-dimensional">Fases do projeto dimensional<a class="headerlink" href="#fases-do-projeto-dimensional" title="Permanent link">&para;</a></h2>
+<p>Quatro perguntas norteiam toda modelagem dimensional (Kimball):</p>
+<ol>
+<li><strong>Selecionar o processo de negócio</strong> — qual processo é mais crítico e viável? (processo ≠ departamento)</li>
+<li><strong>Declarar o grão</strong> — o que descreve uma linha da tabela de fatos?</li>
+<li><strong>Identificar as dimensões</strong> — como o pessoal do negócio descreve os dados desse processo?</li>
+<li><strong>Identificar as medidas</strong> — o que podemos medir, de forma coerente com o grão escolhido?</li>
+</ol>
+<h2 id="slowly-changing-dimensions-scd">Slowly Changing Dimensions (SCD)<a class="headerlink" href="#slowly-changing-dimensions-scd" title="Permanent link">&para;</a></h2>
+<p>Jargão para o problema de <strong>como refletir, no DW, uma mudança no valor de um atributo de dimensão</strong> vinda do sistema operacional — sem colocar o atributo na tabela de fatos nem tornar as dimensões dependentes da dimensão tempo.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Estratégia</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SCD0</strong></td>
+<td>Não faz nada</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>SCD1</strong></td>
+<td>Sobrescreve o valor</td>
+<td>Simples e rápido, mas perde o histórico; indicado para correções</td>
+</tr>
+<tr>
+<td><strong>SCD2</strong></td>
+<td>Adiciona uma nova linha (nova <em>surrogate key</em>)</td>
+<td><strong>A mais usada</strong>; preserva histórico perfeitamente; cuidado em dimensões muito grandes</td>
+</tr>
+<tr>
+<td><strong>SCD3</strong></td>
+<td>Adiciona uma nova coluna (valor atual + anterior)</td>
+<td>Histórico limitado a uma mudança</td>
+</tr>
+<tr>
+<td><strong>SCD4</strong></td>
+<td>Cria uma minidimensão com os dados voláteis</td>
+<td>Controla o crescimento da dimensão</td>
+</tr>
+<tr>
+<td><strong>SCD5</strong></td>
+<td>SCD4 + SCD1 (view da minidimensão como <em>outrigger</em>)</td>
+<td>Evita <em>join</em> com a TF para saber o valor atual</td>
+</tr>
+<tr>
+<td><strong>SCD6</strong></td>
+<td>SCD3 + SCD1 + SCD2</td>
+<td>Complexa, mas permite comparar atual/anterior mantendo todo o histórico</td>
+</tr>
+<tr>
+<td><strong>SCD7</strong></td>
+<td>Duas FKs na TF (uma histórica via SCD2, uma atual via SCD1)</td>
+<td>Mesmo resultado do SCD6, de forma menos complexa</td>
+</tr>
+</tbody>
+</table>
+<p>Na dúvida entre as estratégias, Kimball recomenda <strong>optar pelo SCD2</strong> — é melhor manter o histórico completo.</p>
+<h2 id="abstracao-do-dw-o-cubo-de-dados">Abstração do DW: o cubo de dados<a class="headerlink" href="#abstracao-do-dw-o-cubo-de-dados" title="Permanent link">&para;</a></h2>
+<p>O <strong>cubo de dados</strong> é uma metáfora para visualizar e organizar os dados, permitindo analisar várias dimensões simultaneamente e manipular agregações em diferentes níveis de hierarquia. Elementos/metadados de um cubo: <strong>medida</strong> (o valor numérico, ex. Vendas_R$), <strong>membro</strong> (um valor específico de uma dimensão, ex. "Abril"), <strong>dimensão</strong> (ex. Tempo), <strong>hierarquia</strong> (ex. Ano→Semestre→Mês), <strong>nível</strong> (ex. "Ano") e <strong>fato</strong> (a célula = interseção de membros).</p>
+<h2 id="olap-on-line-analytical-processing">OLAP (<em>On-Line Analytical Processing</em>)<a class="headerlink" href="#olap-on-line-analytical-processing" title="Permanent link">&para;</a></h2>
+<p>Conjunto de tecnologias para analisar o DW/cubo de dados: fornece dados agregados (totais, médias, mínimos...), tem alta performance com consultas interativas, lida com a dimensão temporal/histórica, faz cruzamentos de dados e analisa em diferentes níveis de detalhe.</p>
+<h3 id="principais-operacoes-olap">Principais operações OLAP<a class="headerlink" href="#principais-operacoes-olap" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Drill Down / Roll Up</strong>: caminham pelos níveis de uma hierarquia — <em>drill down</em> desce (mais detalhe), <em>roll up</em> (ou <em>drill up</em>) sobe (mais agregado). Equivalem, em SQL, a mudar o nível do <code>GROUP BY</code> (ex.: agregar vendas por Estado → detalhar por Cidade).</li>
+<li><strong>Treliça de agregados</strong>: estrutura (grafo direcionado) que define a hierarquia de todas as combinações possíveis de <code>GROUP BY</code> entre as dimensões de um cubo — cada nó ("cuboid") é um agregado possível, e uma aresta de um nó para outro indica que o segundo pode ser derivado do primeiro.</li>
+<li><strong>Rotação (<em>pivot</em>)</strong>: gira o cubo, trocando a orientação dos eixos para obter diferentes visões dos mesmos dados.</li>
+<li><strong>Slice and Dice</strong>: "fatia" o cubo, restringindo a análise a um subconjunto dos dados <strong>sem inverter eixos</strong> — semelhante às cláusulas <code>SELECT</code>/<code>WHERE</code> do SQL. <em>Slice</em> corta o cubo em um só eixo; <em>dice</em> corta em múltiplos eixos simultaneamente.</li>
+</ul>
+<h3 id="arquiteturas-olap-rolap-molap-holap">Arquiteturas OLAP: ROLAP, MOLAP, HOLAP<a class="headerlink" href="#arquiteturas-olap-rolap-molap-holap" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ROLAP (Relacional)</th>
+<th>MOLAP (Multidimensional)</th>
+<th>HOLAP (Híbrido)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dados de base</td>
+<td>Tabela relacional</td>
+<td>Cubo proprietário</td>
+<td>Tabela relacional</td>
+</tr>
+<tr>
+<td>Agregações</td>
+<td>Tabela relacional</td>
+<td>Cubo proprietário</td>
+<td>Cubo proprietário</td>
+</tr>
+<tr>
+<td>Performance de consulta</td>
+<td>Rápida</td>
+<td>Imediata</td>
+<td>Mais rápida</td>
+</tr>
+<tr>
+<td>Consumo em disco</td>
+<td>Baixo</td>
+<td>Alto</td>
+<td>Médio</td>
+</tr>
+<tr>
+<td>Manutenção do cubo</td>
+<td>Baixa</td>
+<td>Alta</td>
+<td>Média</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>ROLAP</strong>: usa SQL sobre um SGBD relacional para manipular dados multidimensionais; lida bem com fatos atômicos e sumarizados, em ambientes dinâmicos com muitas dimensões.</li>
+<li><strong>MOLAP</strong>: usa um <strong>MDDB</strong> (banco de dados multidimensional) proprietário, com matrizes n-dimensionais, para manipular fatos agregados; não lida bem com fatos atômicos, muitas dimensões ou grandes volumes.</li>
+<li><strong>HOLAP</strong>: combina os dois — dados-base ficam relacionais (SQL), agregações ficam no cubo multidimensional (MDDB) — mais complexo de administrar, mas equilibra os pontos fortes de ambos.</li>
+</ul>
+<h2 id="estudo-de-caso-aplicado-um-data-warehouse-para-acompanhar-evasao-universitaria">Estudo de caso aplicado: um Data Warehouse para acompanhar evasão universitária<a class="headerlink" href="#estudo-de-caso-aplicado-um-data-warehouse-para-acompanhar-evasao-universitaria" title="Permanent link">&para;</a></h2>
+<p>Como material de apoio a projeto, a disciplina também trabalha com um exemplo real e completo de aplicação da modelagem de Kimball: a dissertação <em>"Proposta de um Data Warehouse para Apoio à Tomada de Decisão sobre Evasão Institucional em uma Instituição Federal de Ensino Superior"</em> (<strong>Felipe Rodrigo de Moraes Mendes</strong>, Mestrado Profissional em Administração, <strong>UNIFEI</strong>, 2020, orientador Prof. Dr. Fabio Favaretto), que constrói um DW para monitorar a evasão de alunos a partir dos dados do <strong>SIGAA</strong> (sistema acadêmico usado pela Unifei e por outras IFES, incluindo a UFRN, que o desenvolveu).</p>
+<h3 id="o-problema-e-a-metodologia">O problema e a metodologia<a class="headerlink" href="#o-problema-e-a-metodologia" title="Permanent link">&para;</a></h3>
+<p>A pergunta de pesquisa: <em>"Como os dados referentes aos discentes armazenados no SIGAA podem ser organizados em um repositório institucional que sirva de apoio à tomada de decisão sobre o fenômeno da evasão?"</em> O autor combina duas metodologias:</p>
+<ul>
+<li><strong>Soft Systems Methodology (SSM)</strong>, de Peter Checkland — metodologia geral de pesquisa-ação, baseada em um ciclo de aprendizagem de 4 fases: explorar a situação problemática → investigar ações intencionais relevantes → discutir mudanças possíveis → definir ações de melhoria.</li>
+<li>O <strong>método de Kimball</strong> (definição de requisitos → modelagem dimensional → modelagem física → ETL → implementação) encaixado como uma etapa dentro do ciclo da SSM.</li>
+</ul>
+<p>A proposta metodológica resultante tem 5 passos: (1) definir requisitos para o DW sobre evasão; (2) comparar <strong>visões de mundo</strong> da literatura (pesquisa bibliográfica) com a <strong>realidade dos dados</strong> do SIGAA (pesquisa documental); (3) discutir requisitos desejáveis x viáveis (triangulação); (4) criar o DW aplicando o método de Kimball; (5) implementar o DW como ação de melhoria — ciclo que pode se repetir iterativamente.</p>
+<div class="admonition note">
+<p class="admonition-title">Como calcular a taxa de evasão</p>
+<p>A pesquisa bibliográfica revelou três famílias de métodos para calcular taxas de evasão: (1) por <strong>gerações completas</strong> de alunos (até o prazo máximo de integralização); (2) por <strong>coorte de ingressantes</strong> em um período específico; (3) por <strong>acompanhamento de série histórica anual</strong> — este último grupo foi escolhido por ser mais flexível e permitir comparação ano a ano. O autor definiu, com base nesse grupo, as métricas usadas no DW:</p>
+<ul>
+<li><strong>VPA</strong> (Veteranos para o Próximo Ano) = ingressantes do ano − evadidos do ano (ano-base); nos anos seguintes, VPA do ano anterior + ingressantes − evadidos − diplomados do ano.</li>
+<li><strong>TMA</strong> (Total de Matrículas no Ano) = VPA do ano anterior + ingressantes do ano.</li>
+<li><strong>TEA</strong> (Taxa de Evasão no Ano) = evadidos do ano ÷ TMA × 100.</li>
+</ul>
+</div>
+<p>Da pesquisa bibliográfica, foram identificadas <strong>65 variáveis descritivas</strong> de alunos associadas à evasão na literatura (33 pessoais, 32 acadêmicas); confrontando com o que o SIGAA efetivamente registra (pesquisa documental em três <em>schemas</em> do PostgreSQL: <code>comum</code>, <code>public</code> e <code>ensino</code>), apenas <strong>23 (35,4%)</strong> estavam disponíveis — o restante (renda familiar, motivação, infraestrutura percebida etc.) simplesmente não é capturado por um sistema transacional acadêmico.</p>
+<h3 id="o-modelo-dimensional-resultante">O modelo dimensional resultante<a class="headerlink" href="#o-modelo-dimensional-resultante" title="Permanent link">&para;</a></h3>
+<p>O projeto usou <strong>duas tabelas fato</strong>, com um esquema estrela de <strong>dimensões conformadas</strong> (Tempo e Curso compartilhadas entre as duas tabelas fato):</p>
+<ul>
+<li><strong><code>fato_discente</code></strong> (grão: um registro por aluno) — liga-se a <code>dimensao_tempo</code>, <code>dimensao_pessoa</code>, <code>dimensao_curso</code> e <code>dimensao_situacao</code>; armazena os índices acadêmicos de desempenho do aluno (índices de conclusão, de eficiência em períodos letivos, de eficiência em carga horária, de rendimento acadêmico e de eficiência acadêmica).</li>
+<li><strong><code>fato_evasao</code></strong> (grão: a taxa de evasão por curso e ano) — liga-se apenas a <code>dimensao_tempo</code> e <code>dimensao_curso</code>; armazena total de ingressantes, total de evadidos, total de diplomados, VPA, TMA e a taxa de evasão (TEA) já calculada.</li>
+</ul>
+<p>As quatro dimensões: <code>dimensao_pessoa</code> (CPF, matrícula, nome, sexo, estado civil, nacionalidade, naturalidade, data de nascimento, raça, dados do ensino médio, forma e ano/período de ingresso), <code>dimensao_tempo</code> (ano e período letivo), <code>dimensao_curso</code> (curso, unidade acadêmica, turno, área CAPES, modalidade de ensino, campus, grau acadêmico) e <code>dimensao_situacao</code> (situação do aluno, tipo e data de saída).</p>
+<p>O <strong>ETL</strong> foi desenvolvido sob medida em <strong>SQL e Python</strong> (em vez de uma ferramenta comercial de mercado), por ser suficiente para a demanda inicial e evitar custo de licenciamento — seguindo a mesma lógica de "ETL histórica" (uma carga única cobrindo todo o período disponível, de 1998 a 2019) descrita por Kimball. A extração precisou unir <strong>17 tabelas do SIGAA</strong> via <code>JOIN</code>s e funções de agregação (<code>COUNT</code>) para transformar registros individuais em totais anuais — contra apenas 2 tabelas fato + 4 dimensões para consultar no DW já pronto, uma simplificação drástica para o usuário final.</p>
+<h3 id="resultado-e-validacao">Resultado e validação<a class="headerlink" href="#resultado-e-validacao" title="Permanent link">&para;</a></h3>
+<p>O protótipo foi apresentado e validado na 27ª Reunião Ordinária do Conselho de Ensino, Pesquisa, Extensão e Administração (CEPEAd) da Unifei, em 2019, e usado para comparar a evolução das taxas de evasão e diplomação entre diferentes unidades acadêmicas ao longo de 20 anos (1998–2018) — revelando, por exemplo, que um aumento abrupto do número de vagas (efeito do REUNI) pôde ser associado a quedas posteriores na taxa de diplomação, sinal de possível retenção de alunos.</p>
+<h2 id="referencias-e-para-saber-mais">Referências e para saber mais<a class="headerlink" href="#referencias-e-para-saber-mais" title="Permanent link">&para;</a></h2>
+<h3 id="bibliografia-da-disciplina-slides">Bibliografia da disciplina (slides)<a class="headerlink" href="#bibliografia-da-disciplina-slides" title="Permanent link">&para;</a></h3>
+<ul>
+<li>KIMBALL, Ralph; ROSS, Margy. <em><a href="https://www.wiley.com/en-us/The+Data+Warehouse+Toolkit%3A+The+Definitive+Guide+to+Dimensional+Modeling%2C+3rd+Edition-p-9781118530801">The Data Warehouse Toolkit: The Definitive Guide to Dimensional Modeling</a></em>. 3ª ed. Wiley, 2019. — obra de referência citada em praticamente todas as figuras da disciplina.</li>
+<li>KIMBALL, R. et al. <em>The Data Warehouse Toolkit: The Complete Guide to Dimensional Modeling</em>. 2ª ed. Wiley, 2002. — edição anterior, citada nas figuras clássicas (dimensão Data, tabela de fatos de vendas, minidimensões, <em>bus matrix</em> etc.).</li>
+<li>LAGO, Karine; ALVES, Laennder. <em>Dominando o Power BI</em>. 3ª ed. atualizada. DATAB, 2021.</li>
+<li>VATOVEC, Evelin. "Intelligent Value Chain Networks: Business Intelligence And Other ICT Tools And Technologies In Supply/Demand Chains". <em>Supply Chain Management — New Perspectives</em>, 2011.</li>
+<li>Fonte do diagrama Inmon x Kimball: <a href="http://www.dataprix.net/pt-pt/24-data-mart">dataprix.net/pt-pt/24-data-mart</a></li>
+<li>Diagramas de tabela de fato de vendas/estoque no varejo: J. Gamper, <a href="http://www.inf.unibz.it/dis/teaching/ADMT/ln/admt06_dw-case-studies.pdf">admt06_dw-case-studies.pdf</a> (Unibz).</li>
+<li>Mais sobre os tipos de SCD: <a href="https://www.kimballgroup.com/2013/02/design-tip-152-slowly-changing-dimension-types-0-4-5-6-7/">Kimball Group, Design Tip #152 — Slowly Changing Dimension Types 0, 4, 5, 6, 7</a>.</li>
+<li>Esquema de produtos heterogêneos: <a href="https://kimballgroup.forumotion.net/t284-heterogeneous-product-schema">kimballgroup.forumotion.net/t284-heterogeneous-product-schema</a>.</li>
+<li>Exemplo de <em>junk dimension</em>: <a href="https://support.jetglobal.com/hc/en-us/articles/218952368-Junk-Dimension-Automation-with-the-Jet-Data-Manager">support.jetglobal.com — Junk Dimension Automation with the Jet Data Manager</a>.</li>
+<li>Exemplo de modelagem dimensional de vendas em loja: baseado nas aulas de DW do Prof. <strong>Asterio K. Tanaka</strong> (UNIRIO).</li>
+</ul>
+<h3 id="bibliografia-do-estudo-de-caso-dissertacao-sobre-evasao-unifei">Bibliografia do estudo de caso (dissertação sobre evasão, UNIFEI)<a class="headerlink" href="#bibliografia-do-estudo-de-caso-dissertacao-sobre-evasao-unifei" title="Permanent link">&para;</a></h3>
+<p>A dissertação de Felipe R. de M. Mendes (2020) traz uma revisão bibliográfica extensa, tanto sobre Data Warehousing quanto sobre o fenômeno da evasão no ensino superior brasileiro. As referências técnicas de DW mais relevantes para esta disciplina:</p>
+<ul>
+<li>INMON, W. H. <em>Building the Data Warehouse</em>. 4ª ed. Wiley, 2005.</li>
+<li>KIMBALL, R. et al. <em>The Data Warehouse Lifecycle Toolkit: Expert Methods for Designing, Developing, and Deploying Data Warehouses</em>. 2ª ed. Wiley, 2008.</li>
+<li>LAUDON, K.; LAUDON, J. <em>Sistemas de Informação Gerenciais</em>. São Paulo: Pearson Prentice Hall, 2014.</li>
+<li>SINGH, Harry. <em>Data Warehouse: Conceitos, Tecnologias, Implementação e Gerenciamento</em>. São Paulo: Makron Books, 2001.</li>
+<li>BARBIERI, C. <em>BI2 — Business Intelligence: Modelagem &amp; Qualidade</em>. Elsevier, 2011.</li>
+<li>HEUSER, C. A. <em>Projeto de Banco de Dados</em>. Bookman, 2009.</li>
+<li>BRESLIN, M. "Data Warehousing Battle of the Giants: Comparing the Basics of the Kimball and Inmon Models". <em>Business Intelligence Journal</em>, 2004.</li>
+<li>ALJAWARNEH, I. M. "Design of a data warehouse model for decision support at higher education: A case study". <em>Information Development</em>, v. 32, n. 5, 2016.</li>
+<li>ZEA, O. M.; SAMPEDRO, A.; MORA, S. L. "Datawarehouse design for educational data mining". <em>15th International Conference on Information Technology Based Higher Education and Training (ITHET)</em>, 2016.</li>
+<li>ZEA, O. M.; GUALTOR, J. P.; MORA, S. L. "A Holistic View of Data Warehousing in Education". <em>IEEE Access</em>, v. 6, 2018.</li>
+<li>CHECKLAND, P.; POULTER, J. "Soft Systems Methodology". In: <em>Systems Approaches to Managing Change: A Practical Guide</em>. Springer, 2010. — base metodológica (SSM) usada no estudo de caso.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Lista completa de referências do estudo de caso</p>
+<p>A dissertação traz, em seus apêndices, uma tabela com os <strong>principais artigos de periódicos Qualis A1</strong> usados na revisão sobre evasão no ensino superior (22 artigos, publicados em periódicos como <em>Avaliação (Campinas)</em>, <em>Cadernos de Pesquisa</em>, <em>Ensaio — Avaliação e Políticas Públicas em Educação</em> e <em>Educação em Revista</em>), além de um dicionário de dados completo e os scripts SQL de criação e extração do DW (ETL). Por ser um material de apoio a projeto (não uma aula da disciplina), essa lista extensa — majoritariamente sobre evasão educacional e fora do escopo técnico de DW/OLAP — não foi reproduzida aqui na íntegra; vale consultar o documento original caso o projeto da disciplina envolva um tema de negócio semelhante (acompanhamento de indicadores institucionais ao longo do tempo).</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../analise-e-especificacao-avancada-de-requisitos/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                ANÁLISE E ESPECIFICAÇÃO AVANÇADA DE REQUISITOS DE SISTEMAS
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../fundamentos-de-testes-de-software/" class="md-footer__link md-footer__link--next" aria-label="Próximo: FUNDAMENTOS DE TESTES DE SOFTWARE">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                FUNDAMENTOS DE TESTES DE SOFTWARE
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>
